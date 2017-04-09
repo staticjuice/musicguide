@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proto-Punk</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre protopunk">
+    <div id="box-punk">
+        <h1>PROTO-PUNK</h1><br>
+            
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique id odio vitae malesuada. Vivamus fermentum ultricies vestibulum. Mauris pellentesque accumsan eros id dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet turpis ac erat dignissim tincidunt sit amet nec diam. Proin vel laoreet dui, vehicula venenatis risus. Nulla facilisi. Nullam quis blandit tellus, in vehicula nulla. Praesent gravida et eros et mollis. Curabitur eget nisi at erat aliquet gravida et in velit. Vivamus eget orci eu sem hendrerit condimentum. Vivamus ultrices, sem et sagittis pharetra, sapien nunc lacinia risus, eget venenatis erat nisi in urna. Proin ac sapien sit amet dui varius condimentum. Quisque dapibus eros et sapien semper, tristique commodo ante dapibus. Fusce ac felis sollicitudin, condimentum mi bibendum, fermentum risus. Nullam imperdiet velit et lacus lacinia blandit. Sed sed pulvinar arcu, nec lacinia metus. Donec lorem arcu, iaculis non eros eget, sagittis iaculis enim. Aenean ultricies vulputate ultricies. Nulla blandit semper neque eu accumsan. Pellentesque commodo tellus dapibus, auctor mauris vel, sodales turpis.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-xs-1">
+                <div class="buttons-punk">1</div>
+            </div>
+
+            <div class="col-xs-1">
+                <div class="buttons-punk">2</div>
+            </div>
+                  
+            <div class="col-xs-1">
+                <div class="buttons-punk">3</div>
+            </div>
+                  
+            <div class="col-xs-1">
+                <div class="buttons-punk">4</div>
+            </div>
+                
+            <div class="col-xs-1">
+                <div class="buttons-punk">5</div>
+            </div>
+
+            <div class="col-xs-1">
+                <div class="buttons-punk">6</div>
+            </div>
+
+            <div class="col-xs-1">
+                <div class="buttons-punk">7</div>
+            </div>
+
+            <div class="col-xs-1">
+                <div class="buttons-punk">8</div>
+            </div>
+
+            <div class="col-xs-1">
+                <div class="buttons-punk">9</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="col-md-1 stop">
+                 <div class="buttons-punk-stop">&#9724;</div>
+            </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Iggy Pop",
+                    track: "Search And Destroy",
+                    path: "../../../samples/rock/punk/protopunk1.ogg"
+                },
+                {
+                    artist: "MC5",
+                    track: "Kick Out The Jams",
+                    path: "../../../samples/rock/punk/protopunk2.ogg"
+                },
+                {
+                    artist: "The Velvet Underground",
+                    track: "I'm Waiting For The Man",
+                    path: "../../../samples/rock/punk/protopunk3.ogg"
+                },
+                {
+                    artist: "The Stooges",
+                    track: "I Wanna Be Your Dog",
+                    path: "../../../samples/rock/punk/protopunk4.ogg"
+                },
+                {
+                    artist: "New York Dolls",
+                    track: "Personality Crisis",
+                    path: "../../../samples/rock/punk/protopunk5.ogg"
+                },
+                {
+                    artist: "Mott The Hoople",
+                    track: "Roll Away The Stone",
+                    path: "../../../samples/rock/punk/protopunk6.ogg"
+                },
+                {
+                    artist: "Eggs Over Easy",
+                    track: "Night Flight",
+                    path: "../../../samples/rock/punk/protopunk7.ogg"
+                },
+                {
+                    artist: "The Modern Lovers",
+                    track: "Modern World",
+                    path: "../../../samples/rock/punk/protopunk8.ogg"
+                },
+                {
+                    artist: "Ducks Deluxe",
+                    track: "Fireball",
+                    path: "../../../samples/rock/punk/protopunk9.ogg"
+                }
+            ]
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-punk').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-punk-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-punk"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

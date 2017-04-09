@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Futurepop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre futurepop">
+    <div id="box-industrial">
+        <h1>FUTUREPOP</h1><br>
+
+        Futurepop can be seen as a subgenre of Electro-Industrial or as an evolution of it (i.e. something new). The latter is being preferred here. Although it is one of the smallest and least known genres on the Carta, Futurepop illustrates once again an interesting link between Industrial and Trance. This has happened before, when hard EBM beats found their way into the earliest forms of Goa Trance. Futurepop is as much Pop as Aggreppo is Pop, meaning it is barely true Pop at all. It is however a much cleaner, more produced type of Electro-Industrial, with no distortions, scary vocals, or obscene themes. This genre focuses on dark but beautiful melancholic synth melodies and powerful synth basslines, which can recollect and crossover to (dark) Trance (though regularly at a lower bpm). Futurepop can mirror a lot of Darkwave because the latter is Gothic Synthpop, where the former actually is Industrial Synthpop. Futurepop is the perfect soundtrack for anything sci-fi or futuristic: completely electronic and dark, but crystal clear. This is not instrumental music like Trance; equally melancholic vocals about bombastic, biblical topics (future oriented) mark this genre as a highly thematic one.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-xs-1">
+                <div class="buttons-industrial">1</div>
+            </div>
+
+            <div class="col-xs-1">
+                <div class="buttons-industrial">2</div>
+            </div>
+                  
+            <div class="col-xs-1">
+                <div class="buttons-industrial">3</div>
+            </div>
+                  
+            <div class="col-xs-1">
+                <div class="buttons-industrial">4</div>
+            </div>
+                
+            <div class="col-xs-1">
+                <div class="buttons-industrial">5</div>
+            </div>
+
+            <div class="col-xs-1">
+                <div class="buttons-industrial">6</div>
+            </div>
+
+            <div class="col-xs-1">
+                <div class="buttons-industrial">7</div>
+            </div>
+
+            <div class="col-xs-1">
+                <div class="buttons-industrial">8</div>
+            </div>
+
+            <div class="col-xs-1">
+                <div class="buttons-industrial">9</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="col-md-1 stop">
+                 <div class="buttons-industrial-stop">&#9724;</div>
+            </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Icon Of Coil",
+                    track: "Former Self",
+                    path: "../../samples/industrial/futurepop1.ogg"
+                },
+                {
+                    artist: "VNV Nation",
+                    track: "Dark Angel",
+                    path: "../../samples/industrial/futurepop2.ogg"
+                },
+                {
+                    artist: "Assemblage 23",
+                    track: "Let The Wind Erase Me",
+                    path: "../../samples/industrial/futurepop3.ogg"
+                },
+                {
+                    artist: "Decoded Feedback",
+                    track: "Ragescape",
+                    path: "../../samples/industrial/futurepop4.ogg"
+                },
+                {
+                    artist: "Melotron",
+                    track: "Erwartungen",
+                    path: "../../samples/industrial/futurepop5.ogg"
+                },
+                {
+                    artist: "Covenant",
+                    track: "Call The Ships To Port",
+                    path: "../../samples/industrial/futurepop6.ogg"
+                },
+                {
+                    artist: "Neuroticfish",
+                    track: "Velocity",
+                    path: "../../samples/industrial/futurepop7.ogg"
+                },
+                {
+                    artist: "Angels And Agony",
+                    track: "Forever",
+                    path: "../../samples/industrial/futurepop8.ogg"
+                },
+                {
+                    artist: "Mind.in.a.box",
+                    track: "Change",
+                    path: "../../samples/industrial/futurepop9.ogg"
+                }
+            ]
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-industrial').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-industrial-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-industrial"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
