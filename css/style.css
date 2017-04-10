@@ -129,15 +129,13 @@ a:active {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 1.7em;
-    overflow-x: hidden;
-    overflow-y: hidden;
     width: 100%;
     margin: 0 auto;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 100vh;
+    overflow: auto;
 }
 
 .intro:before {
@@ -199,7 +197,7 @@ a:active {
     width: 100vw;
     left: 50%;
     transform: translate(-50%, -50%);
-    bottom: 12.5%;
+    bottom: 7.5%;
 }
 
 #introbutton {
@@ -218,10 +216,6 @@ a:active {
     background: url("../images/wood.webp") no-repeat center center fixed;
 }
 
-.mobilebackground {
-    background-color: #FFF;
-}
-
 .maingospel:before {
     content: "";
     position: fixed;
@@ -232,13 +226,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.maingospel {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .mainblues:before {
@@ -253,13 +240,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.mainblues {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .mainjazz:before {
     content: "";
     position: fixed;
@@ -270,13 +250,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.mainjazz {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .maincountry:before {
@@ -291,13 +264,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.maincountry {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .mainrhythmandblues:before {
     content: "";
     position: fixed;
@@ -308,13 +274,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.mainrhythmandblues {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .mainpop:before {
@@ -329,13 +288,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.mainpop {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .mainrockandroll:before {
     content: "";
     position: fixed;
@@ -346,13 +298,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.mainrockandroll {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .mainclassicrock:before {
@@ -367,13 +312,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.mainclassicrock {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .mainpunk:before {
     content: "";
     position: fixed;
@@ -384,13 +322,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.mainpunk {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .mainalternativerock:before {
@@ -405,13 +336,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.mainalternativerock {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .maincontemporaryrock:before {
     content: "";
     position: fixed;
@@ -422,13 +346,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.maincontemporaryrock {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .mainmetal:before {
@@ -443,13 +360,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.mainmetal {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .mainreggae:before {
     content: "";
     position: fixed;
@@ -460,13 +370,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.mainreggae {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .mainhiphop:before {
@@ -481,13 +384,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.mainhiphop {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .mainindustrial:before {
     content: "";
     position: fixed;
@@ -498,13 +394,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.mainindustrial {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .mainhouse:before {
@@ -519,13 +408,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.mainhouse {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .maintrance:before {
     content: "";
     position: fixed;
@@ -536,13 +418,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.maintrance {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .maintechno:before {
@@ -557,13 +432,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.maintechno {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .mainhardcore:before {
     content: "";
     position: fixed;
@@ -574,13 +442,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.mainhardcore {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .mainbreakbeat:before {
@@ -595,13 +456,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.mainbreakbeat {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .maindrumandbass:before {
     content: "";
     position: fixed;
@@ -612,13 +466,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.maindrumandbass {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 .mainukgarage:before {
@@ -633,13 +480,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.mainukgarage {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .maindowntempo:before {
     content: "";
     position: fixed;
@@ -652,13 +492,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.maindowntempo {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-}
-
 .mainclassical:before {
     content: "";
     position: fixed;
@@ -669,13 +502,6 @@ a:active {
     width: 100vw;
     height: 100vh;
     filter: brightness(40%);
-}
-
-.mainclassical {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
 }
 
 #genres-heading {
@@ -691,12 +517,11 @@ a:active {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 1.5em;
-    color: #000;
+    color: #FFF;
 }
 
 #genres-heading-mobile h1 {
-    text-align: center;
-    font-size: 3.5em;
+    font-size: 2.5em;
 }
 
 #genres-grid {
@@ -740,7 +565,7 @@ a:active {
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
     font-weight: 300;
-    font-size: 4.5em;
+    font-size: 2.5em;
     color: #FFF;
     position: absolute;
     text-align: center;
@@ -764,7 +589,7 @@ a:active {
 }
 
 .mobilerow img {
-    height: 200px;
+    height: 100px;
     object-fit: cover;
 }
 
@@ -778,6 +603,12 @@ a:active {
 
 .genrelist h1 {
     font-size: 2.25em;
+}
+
+.genrelist-mobile {
+    color: #FFF;
+    padding: 1.5em;
+    font-size: 1.25em;
 }
 
 #box-subgospel {
@@ -1041,6 +872,14 @@ a:active {
     padding: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: right;
+    overflow: auto;
+}
+
+#box-subblues-mobile {
+    width: 100%;
+    background-color: #283593;
+    color: #FFF;
+    padding: 1.5em;
     overflow: auto;
 }
 
