@@ -875,12 +875,172 @@ a:active {
     overflow: auto;
 }
 
+#box-subgospel-mobile {
+    width: 100%;
+    background-color: #E57373;
+    color: #FFF;
+    padding: 1.5em;
+}
+
 #box-subblues-mobile {
     width: 100%;
     background-color: #283593;
     color: #FFF;
     padding: 1.5em;
-    overflow: auto;
+}
+
+#box-subjazz-mobile {
+    width: 100%;
+    background-color: #1565C0;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subcountry-mobile {
+    width: 100%;
+    background-color: #8A9A5B;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subrhythmandblues-mobile {
+    width: 100%;
+    background-color: #00695C;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subpop-mobile {
+    width: 100%;
+    background-color: #FFB300;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subrockandroll-mobile {
+    width: 100%;
+    background-color: #039BE5;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subclassicrock-mobile {
+    width: 100%;
+    background-color: #C62828;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subpunk-mobile {
+    width: 100%;
+    background-color: #EF6C00;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subalternativerock-mobile {
+    width: 100%;
+    background-color: #37474F;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subcontemporaryrock-mobile {
+    width: 100%;
+    background-color: #C19A6B;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-submetal-mobile {
+    width: 100%;
+    background-color: #000000;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subreggae-mobile {
+    width: 100%;
+    background-color: #2E7D32;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subhiphop-mobile {
+    width: 100%;
+    background-color: #4E3852;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subindustrial-mobile {
+    width: 100%;
+    background-color: #4E342E;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subhouse-mobile {
+    width: 100%;
+    background-color: #009F6B;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subtrance-mobile {
+    width: 100%;
+    background-color: #6A1B9A;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subtechno-mobile {
+    width: 100%;
+    background-color: #757575;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subhardcore-mobile {
+    width: 100%;
+    background-color: #464039;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subbreakbeat-mobile {
+    width: 100%;
+    background-color: #783F5D;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subdrumandbass-mobile {
+    width: 100%;
+    background-color: #9A1839;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subukgarage-mobile {
+    width: 100%;
+    background-color: #50444F;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subdowntempo-mobile {
+    width: 100%;
+    background-color: #C2185B;
+    color: #FFF;
+    padding: 1.5em;
+}
+
+#box-subclassical-mobile {
+    width: 100%;
+    background-color: #705A3D;
+    color: #FFF;
+    padding: 1.5em;
 }
 
 .negrospirituals {background: url("../images/gospel/negrospirituals.webp") no-repeat center center fixed;}
