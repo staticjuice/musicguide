@@ -214,6 +214,7 @@ a:active {
 
 .allgenres {
     background: url("../images/wood.webp") no-repeat center center fixed;
+    background-size: cover;
 }
 
 .maingospel:before {
@@ -608,7 +609,7 @@ a:active {
 .genrelist-mobile {
     color: #FFF;
     padding: 1.5em;
-    font-size: 1.25em;
+    font-size: 1.1em;
 }
 
 #box-subgospel {
