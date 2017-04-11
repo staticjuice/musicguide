@@ -519,6 +519,7 @@ a:active {
     font-weight: 300;
     font-size: 1.5em;
     color: #FFF;
+    text-align: center;
 }
 
 #genres-heading-mobile h1 {
@@ -609,7 +610,11 @@ a:active {
 .genrelist-mobile {
     color: #FFF;
     padding: 1.5em;
-    font-size: 1.1em;
+    font-size: 1.5em;
+}
+
+.genrelist-mobile h1 {
+    font-size: 1.75em;
 }
 
 #box-subgospel {
