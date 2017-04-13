@@ -131,9 +131,6 @@ a:active {
     font-size: 1.7em;
     width: 100%;
     margin: 0 auto;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     overflow: auto;
 }
@@ -582,7 +579,6 @@ a:active {
 .img-row img {
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-filter: brightness(40%);
     filter: brightness(40%);
 }
 
@@ -1528,9 +1524,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1543,9 +1536,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1558,9 +1548,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1573,9 +1560,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1588,9 +1572,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1603,9 +1584,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1618,9 +1596,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1633,9 +1608,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1648,9 +1620,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1663,9 +1632,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1678,9 +1644,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1693,9 +1656,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1708,9 +1668,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1723,9 +1680,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1738,9 +1692,6 @@ h1 {
   	text-align: center;
   	width: 175%;
   	line-height: 1.2em;
-  	-webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1753,9 +1704,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1768,9 +1716,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1783,9 +1728,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1798,9 +1740,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1813,9 +1752,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1828,9 +1764,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1843,9 +1776,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1858,9 +1788,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -1873,9 +1800,6 @@ h1 {
     text-align: center;
     width: 175%;
     line-height: 1.2em;
-    -webkit-user-select: none;  
-    -moz-user-select: none;
-    -o-user-select: none;
     user-select: none;
     cursor: default;
 }
@@ -2000,8 +1924,6 @@ h1 {
 .buttons-ukgarage.clicked, .buttons-ukgarage-stop.clicked,
 .buttons-downtempo.clicked, .buttons-downtempo-stop.clicked,
 .buttons-classical.clicked, .buttons-classical-stop.clicked {
-    -webkit-box-shadow:inset 0em 0em 0em 0.1em #FFF;
-    -moz-box-shadow:inset 0em 0em 0em 0.1em #FFF;
     box-shadow:inset 0em 0em 0em 0.1em #FFF;
 }
 
