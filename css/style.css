@@ -2462,9 +2462,8 @@ h1 {
 }
 
 .stop {
-    float: right;
     margin-top: -3.25em;
-    margin-right: 0.57em;
+    margin-left: 33.5em;
 }
 
 @media (min-width: 768px){
@@ -2500,7 +2499,7 @@ h1 {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
     #box-gospel, #box-blues, #box-jazz, #box-country, 
     #box-rhythmandblues, #box-pop, #box-rockandroll, #box-classicrock, 
     #box-punk, #box-alternativerock, #box-contemporaryrock, #box-metal, 
