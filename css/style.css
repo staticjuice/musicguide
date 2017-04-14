@@ -308,11 +308,10 @@ a:active {
 .allgenres {
     background: url("../images/wood.jpg") no-repeat center center fixed;
     background-size: cover;
-    margin: 0 auto;
 }
 
 .allgenres-mobile {
-    background-color: #212121;
+    
 }
 
 .maingospel:before {
@@ -685,6 +684,10 @@ a:active {
 
 .img-row-mobile {
     padding-bottom: 0;
+}
+
+.img-row-mobile img {
+    box-shadow: none;
 }
 
 .mobilerow img {
