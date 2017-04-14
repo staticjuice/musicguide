@@ -2546,9 +2546,9 @@ h1 {
     #box-reggae, #box-hiphop, #box-industrial, #box-house, 
     #box-trance, #box-techno, #box-hardcore, #box-breakbeat, 
     #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical {
-        font-size: 4.25vw;
-        width: 85%;
-        margin: 2em;
+        font-size: 4vw;
+        width: 94%;
+        margin: 1em;
   }
 }
 
