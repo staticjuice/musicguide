@@ -221,6 +221,102 @@ a:active {
     color: #A18259;
 }
 
+.maingospel .genrelist-tablet a:hover {
+    color: #F1B1B1;
+}
+
+.mainblues .genrelist-tablet a:hover {
+    color: #5361D0;
+}
+
+.mainjazz .genrelist-tablet a:hover {
+    color: #5199EC;
+}
+
+.maincountry .genrelist-tablet a:hover {
+    color: #B8C299;
+}
+
+.mainrhythmandblues .genrelist-tablet a:hover {
+    color: #26A69A;
+}
+
+.mainpop .genrelist-tablet a:hover {
+    color: #FFCA28;
+}
+
+.mainrockandroll .genrelist-tablet a:hover {
+    color: #4FC3F7;
+}
+
+.mainclassicrock .genrelist-tablet a:hover {
+    color: #EF5350;
+}
+
+.mainpunk .genrelist-tablet a:hover {
+    color: #FFA726;
+}
+
+.mainalternativerock .genrelist-tablet a:hover {
+    color: #78909C;
+}
+
+.maincontemporaryrock .genrelist-tablet a:hover {
+    color: #D8BFA2;
+}
+
+.mainmetal .genrelist-tablet a:hover {
+    color: #424242;
+}
+
+.mainreggae .genrelist-tablet a:hover {
+    color: #66BB6A;
+}
+
+.mainhiphop .genrelist-tablet a:hover {
+    color: #79577F;
+}
+
+.mainindustrial .genrelist-tablet a:hover {
+    color: #8D6E63;
+}
+
+.mainhouse .genrelist-tablet a:hover {
+    color: #00DE95;
+}
+
+.maintrance .genrelist-tablet a:hover {
+    color: #9426D9;
+}
+
+.maintechno .genrelist-tablet a:hover {
+    color: #BDBDBD;
+}
+
+.mainhardcore .genrelist-tablet a:hover {
+    color: #70675C;
+}
+
+.mainbreakbeat .genrelist-tablet a:hover {
+    color: #A95B83;
+}
+
+.maindrumandbass .genrelist-tablet a:hover {
+    color: #DD2251;
+}
+
+.mainukgarage .genrelist-tablet a:hover {
+    color: #796777;
+}
+
+.maindowntempo .genrelist-tablet a:hover {
+    color: #EC407A;
+}
+
+.mainclassical .genrelist-tablet a:hover {
+    color: #A18259;
+}
+
 .genre {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -647,12 +743,12 @@ a:active {
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
     font-weight: 300;
-    font-size: 2.75vw;
+    font-size: 2.85vw;
     color: #FFF;
     position: absolute;
     text-align: center;
     z-index: 1;
-    height: 15%;
+    height: 23%;
 }
 
 #genres-grid-rock {
@@ -668,7 +764,7 @@ a:active {
     position: absolute;
     text-align: center;
     z-index: 1;
-    height: 15%;
+    height: 21%;
 }
 
 #genres-grid-mobile {
@@ -685,7 +781,7 @@ a:active {
     position: absolute;
     text-align: center;
     z-index: 1;
-    height: 35%;
+    height: 40%;
 }
 
 .img-row img {
@@ -693,7 +789,7 @@ a:active {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-filter: brightness(40%);
     filter: brightness(40%);
-    padding-bottom: 2em;
+    padding-bottom: 1.5vw;
 }
 
 .img-row-mobile {
@@ -1939,7 +2035,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -1951,7 +2047,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -1963,7 +2059,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -1975,7 +2071,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -1987,7 +2083,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -1999,7 +2095,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2011,7 +2107,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2023,7 +2119,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2035,7 +2131,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2047,7 +2143,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2059,7 +2155,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2071,7 +2167,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2083,7 +2179,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2095,7 +2191,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2107,7 +2203,7 @@ h1 {
   	font-weight: 900;
   	font-size: 2.5em;
   	text-align: center;
-  	width: 175%;
+  	width: 1.03em;
   	line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2119,7 +2215,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2131,7 +2227,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2143,7 +2239,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2155,7 +2251,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2167,7 +2263,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2179,7 +2275,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2191,7 +2287,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2203,7 +2299,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2215,7 +2311,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 175%;
+    width: 1.03em;
     line-height: 1.2em;
     user-select: none;
     cursor: default;
@@ -2366,9 +2462,9 @@ h1 {
 }
 
 .stop {
+    float: right;
     margin-top: -3.25em;
-    margin-left: 33.25em;
-    width: 9.25%;
+    margin-right: 0.57em;
 }
 
 @media (min-width: 768px){
@@ -2401,5 +2497,16 @@ h1 {
     .allgenres {
         background-color: #212121;
         background-image: none;
+  }
+}
+
+@media (max-width: 767px) {
+    #box-gospel, #box-blues, #box-jazz, #box-country, 
+    #box-rhythmandblues, #box-pop, #box-rockandroll, #box-classicrock, 
+    #box-punk, #box-alternativerock, #box-contemporaryrock, #box-metal, 
+    #box-reggae, #box-hiphop, #box-industrial, #box-house, 
+    #box-trance, #box-techno, #box-hardcore, #box-breakbeat, 
+    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical {
+        margin: 2em;
   }
 }
