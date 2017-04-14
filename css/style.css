@@ -619,7 +619,7 @@ a:active {
 }
 
 #genres-heading {
-    margin: 2em 7.25em 0 7.25em;
+    margin: 2em 9vw 0 9vw;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 1.7em;
@@ -640,7 +640,7 @@ a:active {
 }
 
 #genres-grid {
-    margin: 0 12em 2em 12em;
+    margin: 0 9vw 2em 9vw;
 }
 
 #genres-grid h1 {
@@ -708,7 +708,7 @@ a:active {
 }
 
 .mobilerow img {
-    height: 100px;
+    height: 25vw;
     object-fit: cover;
 }
 
