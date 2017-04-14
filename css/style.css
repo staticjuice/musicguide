@@ -734,6 +734,14 @@ a:active {
     font-size: 1.7em;
 }
 
+.genrelist-tablet {
+    color: #FFF;
+    padding: 1.5em;
+    font-size: 1.38em;
+    width: auto;
+    overflow: hidden;
+}
+
 #box-subgospel {
     width: 40em;
     height: 100vh;
@@ -1188,6 +1196,270 @@ a:active {
     color: #FFF;
     padding: 1.5em;
     font-size: 4.2vw;
+}
+
+#box-subgospel-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #E57373;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subblues-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #283593;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+ #box-subjazz-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #1565C0;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subcountry-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #8A9A5B;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subrhythmandblues-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #00695C;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subpop-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #FFB300;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subrockandroll-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #039BE5;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subclassicrock-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #C62828;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subpunk-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #EF6C00;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subalternativerock-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #37474F;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subcontemporaryrock-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #C19A6B;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-submetal-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #000000;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subreggae-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #2E7D32;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subhiphop-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #4E3852;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subindustrial-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #4E342E;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subhouse-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #009F6B;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subtrance-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #6A1B9A;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subtechno-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #757575;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subhardcore-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #464039;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subbreakbeat-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #783F5D;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subdrumandbass-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #9A1839;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subukgarage-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #50444F;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subdowntempo-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #C2185B;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subclassical-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #705A3D;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
 }
 
 .negrospirituals {background: url("../images/gospel/negrospirituals.jpg") no-repeat center center fixed;}
