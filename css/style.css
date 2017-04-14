@@ -701,7 +701,10 @@ a:active {
 }
 
 .img-row-mobile img {
+    width: 100%;
     box-shadow: none;
+    -webkit-filter: brightness(40%);
+    filter: brightness(40%);
 }
 
 .mobilerow img {
