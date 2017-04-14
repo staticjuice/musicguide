@@ -2129,7 +2129,7 @@ h1 {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .allgenres {
         background-color: #212121;
         background-image: none;
