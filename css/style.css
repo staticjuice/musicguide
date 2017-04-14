@@ -50,7 +50,7 @@ a:active {
 }
 
 .mainpop .genrelist a:hover {
-    color: #FFCA28;
+    color: #FFF59D;
 }
 
 .mainrockandroll .genrelist a:hover {
@@ -146,7 +146,7 @@ a:active {
 }
 
 .mainpop .genrelist-mobile a:hover {
-    color: #FFCA28;
+    color: #FFF59D;
 }
 
 .mainrockandroll .genrelist-mobile a:hover {
@@ -242,7 +242,7 @@ a:active {
 }
 
 .mainpop .genrelist-tablet a:hover {
-    color: #FFCA28;
+    color: #FFF59D;
 }
 
 .mainrockandroll .genrelist-tablet a:hover {
@@ -896,8 +896,8 @@ a:active {
 #box-subpop {
     width: 40em;
     height: 100vh;
-    background-color: #FFB300;
-    color: #FFF;
+    background-color: #FFEB3B;
+    color: #333;
     padding: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: right;
@@ -1144,8 +1144,8 @@ a:active {
 
 #box-subpop-mobile {
     width: 100%;
-    background-color: #FFB300;
-    color: #FFF;
+    background-color: #FFEB3B;
+    color: #333;
     padding: 1.5em;
     font-size: 4.2vw;
 }
@@ -1352,8 +1352,8 @@ a:active {
 #box-subpop-tablet {
     width: 50%;
     height: 100vh;
-    background-color: #FFB300;
-    color: #FFF;
+    background-color: #FFEB3B;
+    color: #333;
     padding: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: right;
@@ -1860,8 +1860,8 @@ h1 {
 
 #box-pop {
     width: 40em;
-    background-color: #FFB300;
-    color: #FFF;
+    background-color: #FFEB3B;
+    color: #333;
     padding: 1.5em;
     margin: 4em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -2090,7 +2090,7 @@ h1 {
 }
 
 .buttons-pop, .buttons-pop-stop {
-    background-color: #FFC107;
+    background-color: #FFF176;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-size: 2.5em;
@@ -2338,7 +2338,7 @@ h1 {
 }
 
 .buttons-pop:hover, .buttons-pop-stop:hover {
-    background-color: #FFCA28;
+    background-color: #FFF59D;
 }
 
 .buttons-rockandroll:hover, .buttons-rockandroll-stop:hover {
@@ -2418,7 +2418,6 @@ h1 {
 .buttons-jazz.clicked, .buttons-jazz-stop.clicked,
 .buttons-country.clicked, .buttons-country-stop.clicked,
 .buttons-rhythmandblues.clicked, .buttons-rhythmandblues-stop.clicked,
-.buttons-pop.clicked, .buttons-pop-stop.clicked,
 .buttons-rockandroll.clicked, .buttons-rockandroll-stop.clicked,
 .buttons-classicrock.clicked, .buttons-classicrock-stop.clicked,
 .buttons-punk.clicked, .buttons-punk-stop.clicked,
@@ -2438,6 +2437,10 @@ h1 {
 .buttons-downtempo.clicked, .buttons-downtempo-stop.clicked,
 .buttons-classical.clicked, .buttons-classical-stop.clicked {
     box-shadow:inset 0em 0em 0em 0.1em #FFF;
+}
+
+.buttons-pop.clicked, .buttons-pop-stop.clicked {
+    box-shadow:inset 0em 0em 0em 0.1em #333;
 }
 
 .example {
