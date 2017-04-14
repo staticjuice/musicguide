@@ -310,10 +310,6 @@ a:active {
     background-size: cover;
 }
 
-.allgenres-mobile {
-    background-color: 212121;
-}
-
 .maingospel:before {
     content: "";
     position: fixed;
@@ -2085,5 +2081,12 @@ h1 {
     .five-cols .col-lg-1 {
     width: 20%;
     *width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+    .allgenres {
+        background-color: #212121;
+        background-image: none;
   }
 }
