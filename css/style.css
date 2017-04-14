@@ -290,15 +290,15 @@ a:active {
 }
 
 #introbutton {
-    font-size: 1.67em;
+    font-size: 1.7em;
     color: #FFF;
     padding: 0.25em;
     border: 0.07em solid #FFF;
 }
 
 #introbutton:hover {
-    color: #ff6d00;
-    border-color: #ff6d00;
+    color: #FF6D00;
+    border-color: #FF6D00;
 }
 
 .allgenres {
@@ -731,7 +731,7 @@ a:active {
 }
 
 .genrelist-mobile h1 {
-    font-size: 1.85em;
+    font-size: 1.7em;
 }
 
 #box-subgospel {
