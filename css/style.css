@@ -252,10 +252,10 @@ a:active {
 #introbox {
     font-family: 'Roboto', sans-serif;
     color: #FFF;
-    font-size: 4em;
+    font-size: 3.75vw;
     position: absolute;
     width: 100%;
-    top: 35%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -277,7 +277,7 @@ a:active {
     font-size: 2em;
     position: absolute;
     width: 100%;
-    top: 35%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -285,18 +285,13 @@ a:active {
 #introbox2-mobile {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    font-size: 1em;
-    position: absolute;
-    width: 100vw;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    bottom: 12.5%;
+    font-size: 0.7em;
 }
 
 #introbutton {
-    font-size: 400%;
+    font-size: 1.67em;
     color: #FFF;
-    padding: 0.3em;
+    padding: 0.25em;
     border: 0.07em solid #FFF;
 }
 
