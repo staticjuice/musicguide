@@ -125,6 +125,102 @@ a:active {
     color: #A18259;
 }
 
+.maingospel .genrelist-mobile a:hover {
+    color: #F1B1B1;
+}
+
+.mainblues .genrelist-mobile a:hover {
+    color: #5361D0;
+}
+
+.mainjazz .genrelist-mobile a:hover {
+    color: #5199EC;
+}
+
+.maincountry .genrelist-mobile a:hover {
+    color: #B8C299;
+}
+
+.mainrhythmandblues .genrelist-mobile a:hover {
+    color: #26A69A;
+}
+
+.mainpop .genrelist-mobile a:hover {
+    color: #FFCA28;
+}
+
+.mainrockandroll .genrelist-mobile a:hover {
+    color: #4FC3F7;
+}
+
+.mainclassicrock .genrelist-mobile a:hover {
+    color: #EF5350;
+}
+
+.mainpunk .genrelist-mobile a:hover {
+    color: #FFA726;
+}
+
+.mainalternativerock .genrelist-mobile a:hover {
+    color: #78909C;
+}
+
+.maincontemporaryrock .genrelist-mobile a:hover {
+    color: #D8BFA2;
+}
+
+.mainmetal .genrelist-mobile a:hover {
+    color: #424242;
+}
+
+.mainreggae .genrelist-mobile a:hover {
+    color: #66BB6A;
+}
+
+.mainhiphop .genrelist-mobile a:hover {
+    color: #79577F;
+}
+
+.mainindustrial .genrelist-mobile a:hover {
+    color: #8D6E63;
+}
+
+.mainhouse .genrelist-mobile a:hover {
+    color: #00DE95;
+}
+
+.maintrance .genrelist-mobile a:hover {
+    color: #9426D9;
+}
+
+.maintechno .genrelist-mobile a:hover {
+    color: #BDBDBD;
+}
+
+.mainhardcore .genrelist-mobile a:hover {
+    color: #70675C;
+}
+
+.mainbreakbeat .genrelist-mobile a:hover {
+    color: #A95B83;
+}
+
+.maindrumandbass .genrelist-mobile a:hover {
+    color: #DD2251;
+}
+
+.mainukgarage .genrelist-mobile a:hover {
+    color: #796777;
+}
+
+.maindowntempo .genrelist-mobile a:hover {
+    color: #EC407A;
+}
+
+.mainclassical .genrelist-mobile a:hover {
+    color: #A18259;
+}
+
 .genre {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -212,6 +308,11 @@ a:active {
 .allgenres {
     background: url("../images/wood.jpg") no-repeat center center fixed;
     background-size: cover;
+    margin: 0 auto;
+}
+
+.allgenres-mobile {
+    background-color: #212121;
 }
 
 .maingospel:before {
