@@ -2502,7 +2502,7 @@ h1 {
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
     #box-gospel, #box-blues, #box-jazz, #box-country, 
     #box-rhythmandblues, #box-pop, #box-rockandroll, #box-classicrock, 
     #box-punk, #box-alternativerock, #box-contemporaryrock, #box-metal, 
@@ -2511,6 +2511,17 @@ h1 {
     #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical {
         margin: 2em;
         font-size: 2.27vw;
+  }
+}
+
+@media (max-width: 1199px) {
+    #box-gospel, #box-blues, #box-jazz, #box-country, 
+    #box-rhythmandblues, #box-pop, #box-rockandroll, #box-classicrock, 
+    #box-punk, #box-alternativerock, #box-contemporaryrock, #box-metal, 
+    #box-reggae, #box-hiphop, #box-industrial, #box-house, 
+    #box-trance, #box-techno, #box-hardcore, #box-breakbeat, 
+    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical {
+        margin: 2em;
   }
 }
 
