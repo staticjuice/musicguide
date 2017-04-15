@@ -2534,7 +2534,7 @@ h1 {
     .buttons-trance, .buttons-techno, .buttons-hardcore, .buttons-breakbeat,
     .buttons-drumandbass, .buttons-ukgarage, .buttons-downtempo, .buttons-classical {
         font-size: 2.5em;
-        margin-bottom: 0.8em;
+        margin-bottom: 0.4em;
   }
 }
 
@@ -2547,8 +2547,8 @@ h1 {
 
 @media (max-width: 767px) {
     .stop {
-        margin-top: -10.35em;
-        margin-left: 15.1em;
+        margin-top: -9.29em;
+        margin-left: 15.05em;
         font-size: 1em;
   }
 }
