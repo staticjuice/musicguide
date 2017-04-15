@@ -1,16 +1,10 @@
 # The Music Guide
-The Music Guide is a website that I've been working on since September 2016 that aims to provide information and examples of every genre of music that exists. There are currently 224 genres spread across 24 supergenres. Each genre contains nine 30-second samples you can listen to, making a total of 2016 songs in the website! Most of the research in this guide came from musicmap.info and Ishkur's Guide, so at the moment most of the song ideas came straight from those sites, however I'm slowly working to change these up.
+The Music Guide is a website that I've been developing over the last year that aims to provide information and examples for all the genres of music we have today. There are currently 223 genres spread across 24 supergenres. Each genre contains 9 30-second samples that you can listen to, making a total of 2007 songs in the website. Most of the research I conducted for this guide came from musicmap.info and Ishkur's Guide, so at the moment there's a lot of similarity in terms of song selection, however I will eventually make the examples more unique.
 
-Current issues with the project:
-
-- The mobile version of the site is a work-in-progress. At the moment all pages should work on mobile except for the pages where you can listen to the samples.
-
+# Current issues
 - The site is full of lorem ipsum placeholder text. Writing all the text is going to be a huge and daunting task, so I'm not sure how I'll end up approaching this. Some of the placeholder text has been copied straight from musicmap.info as well.
 
-- I haven't finished recording the Classical music samples yet. Some Techno samples are also missing due to confusion over the genre. However, the rest of the samples are all done.
+- Some Techno samples are missing due to confusion over the genre. However, the rest of the samples are all done.
 
-- Some song examples may not be the best. Although I've done my best effort to make sure all the samples are accurate, there are obviously people who know way more about certain genres than me. If you see anything that looks a bit weird and out-of-place, feedback regarding this is always welcome.
-
-- Some of the background images may have sneaky watermarks in the corner. I kinda rushed the image gathering phase, so there's always room for better images.
-
-This website is strictly intended for educational purposes. Only small snippets of songs are used so I'm claiming everything under fair use. Please don't sue me.
+# Disclaimer
+This website is provided free-of-charge with the primary goal to educate. Although small snippets of songs are used, the New Zealand Copyright Act 1994 under the Fair Dealing section states "You don’t need to get permission to use an insubstantial part of a work.  Infringement only occurs when a whole work or a “substantial” part of a work is copied or used in a way that is reserved to the copyright owner." Moreover, fair use applies when the project is for "research or private study; criticism or review; or reporting current events." 
