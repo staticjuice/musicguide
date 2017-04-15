@@ -2533,7 +2533,7 @@ h1 {
     .buttons-reggae, .buttons-hiphop, .buttons-industrial, .buttons-house,
     .buttons-trance, .buttons-techno, .buttons-hardcore, .buttons-breakbeat,
     .buttons-drumandbass, .buttons-ukgarage, .buttons-downtempo, .buttons-classical {
-        font-size: 2em;
+        font-size: 2.5em;
         margin-bottom: 0.8em;
   }
 }
@@ -2547,9 +2547,9 @@ h1 {
 
 @media (max-width: 767px) {
     .stop {
-        margin-top: -11.77em;
-        margin-left: 17.85em;
-        font-size: 0.796em;
+        margin-top: -10.35em;
+        margin-left: 15.1em;
+        font-size: 1em;
   }
 }
 
@@ -2561,15 +2561,14 @@ h1 {
     #box-trance, #box-techno, #box-hardcore, #box-breakbeat, 
     #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical {
         font-size: 4vw;
-        width: 83.5%;
-        margin: 2em;
+        width: 88%;
+        margin: 1.5em;
         padding-bottom: 8em;
   }
 }
 
 @media (max-width: 767px) {
     .artisttrack {
-        font-size: 3.75vw;
-        padding: 0 !important;
+        font-size: 4vw;
   }
 }
