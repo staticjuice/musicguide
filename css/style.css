@@ -2466,33 +2466,34 @@ h1 {
 }
 
 .stop {
-    margin-top: -3.25em;
-    margin-left: 33.5em;
+    float: right;
+    margin-top: -3em;
+    margin-right: 0.25em;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
     .five-cols .col-sm-1 {
-    width: 33.333333333%;
-    *width: 33.333333333%;
+        width: 33.333333333%;
+        *width: 33.333333333%;
   }
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
     .five-cols .col-sm-1 {
-    width: 20%;
-    *width: 20%;
+        width: 20%;
+        *width: 20%;
   }
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
     #genres-grid-rock h1 {
-    font-size: 3vw;
+        font-size: 3vw;
   }
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
     #genres-grid-rock h1 {
-    font-size: 1.8vw;
+        font-size: 1.8vw;
   }
 }
 
@@ -2533,7 +2534,6 @@ h1 {
     .buttons-reggae, .buttons-hiphop, .buttons-industrial, .buttons-house,
     .buttons-trance, .buttons-techno, .buttons-hardcore, .buttons-breakbeat,
     .buttons-drumandbass, .buttons-ukgarage, .buttons-downtempo, .buttons-classical {
-        font-size: 2.5em;
         margin-bottom: 0.4em;
   }
 }
@@ -2547,9 +2547,7 @@ h1 {
 
 @media (max-width: 767px) {
     .stop {
-        margin-top: -9.29em;
-        margin-left: 15.05em;
-        font-size: 1em;
+        margin: 0 auto;
   }
 }
 
@@ -2560,15 +2558,14 @@ h1 {
     #box-reggae, #box-hiphop, #box-industrial, #box-house, 
     #box-trance, #box-techno, #box-hardcore, #box-breakbeat, 
     #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical {
-        font-size: 4vw;
+        font-size: 3.75vw;
         width: 88%;
         margin: 1.5em;
-        padding-bottom: 8em;
   }
 }
 
 @media (max-width: 767px) {
     .artisttrack {
-        font-size: 4vw;
+        font-size: 3.75vw;
   }
 }
