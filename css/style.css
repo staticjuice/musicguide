@@ -768,7 +768,7 @@ a:active {
 }
 
 #genres-grid-mobile {
-    margin: 0 2em 2em 2em;
+    margin: 0 1.5em 1.5em 1.5em;
     overflow: hidden;
 }
 
@@ -776,12 +776,12 @@ a:active {
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
     font-weight: 300;
-    font-size: 9vw;
+    font-size: 7.5vw;
     color: #FFF;
     position: absolute;
     text-align: center;
     z-index: 1;
-    height: 17%;
+    height: 11.5%;
 }
 
 .img-row img {
@@ -824,7 +824,7 @@ a:active {
 .genrelist-mobile {
     color: #FFF;
     padding: 1em;
-    font-size: 6.25vw;
+    font-size: 6.2vw;
 }
 
 .genrelist-mobile h1 {
