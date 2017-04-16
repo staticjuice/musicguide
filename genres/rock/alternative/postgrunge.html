@@ -12,50 +12,50 @@
 </head>
   
 <body class="genre postgrunge">
-    <div id="box-alternativerock">
+    <div id="box-alternative">
         <h1>POST-GRUNGE</h1><br>
             
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique id odio vitae malesuada. Vivamus fermentum ultricies vestibulum. Mauris pellentesque accumsan eros id dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet turpis ac erat dignissim tincidunt sit amet nec diam. Proin vel laoreet dui, vehicula venenatis risus. Nulla facilisi. Nullam quis blandit tellus, in vehicula nulla. Praesent gravida et eros et mollis. Curabitur eget nisi at erat aliquet gravida et in velit. Vivamus eget orci eu sem hendrerit condimentum. Vivamus ultrices, sem et sagittis pharetra, sapien nunc lacinia risus, eget venenatis erat nisi in urna. Proin ac sapien sit amet dui varius condimentum. Quisque dapibus eros et sapien semper, tristique commodo ante dapibus. Fusce ac felis sollicitudin, condimentum mi bibendum, fermentum risus. Nullam imperdiet velit et lacus lacinia blandit. Sed sed pulvinar arcu, nec lacinia metus. Donec lorem arcu, iaculis non eros eget, sagittis iaculis enim. Aenean ultricies vulputate ultricies. Nulla blandit semper neque eu accumsan. Pellentesque commodo tellus dapibus, auctor mauris vel, sodales turpis.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternativerock">1</div>
+                <div class="buttons-alternative">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternativerock">2</div>
+                <div class="buttons-alternative">2</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternativerock">3</div>
+                <div class="buttons-alternative">3</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternativerock">4</div>
+                <div class="buttons-alternative">4</div>
             </div>
                 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternativerock">5</div>
+                <div class="buttons-alternative">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternativerock">6</div>
+                <div class="buttons-alternative">6</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternativerock">7</div>
+                <div class="buttons-alternative">7</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternativerock">8</div>
+                <div class="buttons-alternative">8</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternativerock">9</div>
+                <div class="buttons-alternative">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-alternativerock-stop">&#9724;</div>
+                <div class="buttons-alternative-stop">&#9724;</div>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-alternativerock-stop">&#9724;</div>
+            <div class="buttons-alternative-stop">&#9724;</div>
         </div>
     </div>
 
@@ -80,47 +80,47 @@
                 {
                     artist: "Foo Fighters",
                     track: "The Pretender",
-                    path: "../../../samples/rock/alternativerock/postgrunge1.ogg"
+                    path: "../../../samples/rock/alternative/postgrunge1.ogg"
                 },
                 {
                     artist: "Creed",
                     track: "My Sacrifice",
-                    path: "../../../samples/rock/alternativerock/postgrunge2.ogg"
+                    path: "../../../samples/rock/alternative/postgrunge2.ogg"
                 },
                 {
                     artist: "3 Doors Down",
                     track: "Kryptonite",
-                    path: "../../../samples/rock/alternativerock/postgrunge3.ogg"
+                    path: "../../../samples/rock/alternative/postgrunge3.ogg"
                 },
                 {
                     artist: "Green Day",
                     track: "Boulevard Of Broken Dreams",
-                    path: "../../../samples/rock/alternativerock/postgrunge4.ogg"
+                    path: "../../../samples/rock/alternative/postgrunge4.ogg"
                 },
                 {
                     artist: "Nickelback",
                     track: "How You Remind Me",
-                    path: "../../../samples/rock/alternativerock/postgrunge5.ogg"
+                    path: "../../../samples/rock/alternative/postgrunge5.ogg"
                 },
                 {
                     artist: "HIM",
                     track: "Join Me In Death",
-                    path: "../../../samples/rock/alternativerock/postgrunge6.ogg"
+                    path: "../../../samples/rock/alternative/postgrunge6.ogg"
                 },
                 {
                     artist: "Matchbox Twenty",
                     track: "Push",
-                    path: "../../../samples/rock/alternativerock/postgrunge7.ogg"
+                    path: "../../../samples/rock/alternative/postgrunge7.ogg"
                 },
                 {
                     artist: "Staind",
                     track: "It's Been Awhile",
-                    path: "../../../samples/rock/alternativerock/postgrunge8.ogg"
+                    path: "../../../samples/rock/alternative/postgrunge8.ogg"
                 },
                 {
                     artist: "Puddle Of Mudd",
                     track: "She Hates Me",
-                    path: "../../../samples/rock/alternativerock/postgrunge9.ogg"
+                    path: "../../../samples/rock/alternative/postgrunge9.ogg"
                 }
             ]
 
@@ -134,7 +134,7 @@
 
             var audioInstance;
 
-            $(document).find('.buttons-alternativerock').each(function(index, button) {
+            $(document).find('.buttons-alternative').each(function(index, button) {
 
                 buttons.push(button);
                 
@@ -156,7 +156,7 @@
                 });
             });
 
-            $('.buttons-alternativerock-stop').on('click', function() {
+            $('.buttons-alternative-stop').on('click', function() {
 
                 stopAllMusic()
 
@@ -169,7 +169,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-alternativerock"
+                    button => button.className = "buttons-alternative"
                 )
             }
 
