@@ -98,7 +98,7 @@ a:active {
 }
 
 .maintechno .genrelist a:hover {
-    color: #BDBDBD;
+    color: #777777;
 }
 
 .mainhardcore .genrelist a:hover {
@@ -194,7 +194,7 @@ a:active {
 }
 
 .maintechno .genrelist-mobile a:hover {
-    color: #BDBDBD;
+    color: #777777;
 }
 
 .mainhardcore .genrelist-mobile a:hover {
@@ -290,7 +290,7 @@ a:active {
 }
 
 .maintechno .genrelist-tablet a:hover {
-    color: #BDBDBD;
+    color: #777777;
 }
 
 .mainhardcore .genrelist-tablet a:hover {
@@ -833,10 +833,15 @@ a:active {
 
 .genrelist-tablet {
     color: #FFF;
-    padding: 1.5em;
-    font-size: 1.38em;
+    padding-top: 1.05em;
+    padding-left: 1.25em;
+    font-size: 1.3em;
     width: auto;
     overflow: hidden;
+}
+
+.genrelist-tablet h1 {
+    font-size: 2.1em;
 }
 
 #box-subgospel {
@@ -1029,7 +1034,7 @@ a:active {
 #box-subtechno {
     width: 40em;
     height: 100vh;
-    background-color: #757575;
+    background-color: #555555;
     color: #FFF;
     padding: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -1241,7 +1246,7 @@ a:active {
 
 #box-subtechno-mobile {
     width: 100%;
-    background-color: #757575;
+    background-color: #555555;
     color: #FFF;
     padding: 1.5em;
     font-size: 4.2vw;
@@ -1485,7 +1490,7 @@ a:active {
 #box-subtechno-tablet {
     width: 50%;
     height: 100vh;
-    background-color: #757575;
+    background-color: #555555;
     color: #FFF;
     padding: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -1969,7 +1974,7 @@ h1 {
 
 #box-techno {
     width: 40em;
-    background-color: #757575;
+    background-color: #555555;
     color: #FFF;
     padding: 1.5em;
     margin: 4em;
@@ -2235,7 +2240,7 @@ h1 {
 }
 
 .buttons-techno, .buttons-techno-stop {
-    background-color: #9E9E9E;
+    background-color: #666666;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-size: 2.5em;
@@ -2387,7 +2392,7 @@ h1 {
 }
 
 .buttons-techno:hover, .buttons-techno-stop:hover {
-    background-color: #BDBDBD;
+    background-color: #777777;
 }
 
 .buttons-hardcore:hover, .buttons-hardcore-stop:hover {
