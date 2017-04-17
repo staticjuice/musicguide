@@ -1566,7 +1566,6 @@ a:active {
 
 .negrospirituals {background: url("../images/gospel/negrospirituals.jpg") no-repeat center center fixed;}
 .traditionalgospel {background: url("../images/gospel/traditionalgospel.jpg") no-repeat center center fixed;}
-.ragtime {background: url("../images/gospel/ragtime.jpg") no-repeat center center fixed;}
 .moderngospel {background: url("../images/gospel/moderngospel.jpg") no-repeat center center fixed;}
 .praisebreak {background: url("../images/gospel/praisebreak.jpg") no-repeat center center fixed;}
 .contemporarychristian {background: url("../images/gospel/contemporarychristian.jpg") no-repeat center center fixed;}
@@ -1576,18 +1575,20 @@ a:active {
 .boogiewoogie {background: url("../images/blues/boogiewoogie.jpg") no-repeat center center fixed;}
 .texasblues {background: url("../images/blues/texasblues.jpg") no-repeat center center fixed;}
 .jumpblues {background: url("../images/blues/jumpblues.jpg") no-repeat center center fixed;}
-.urbanblues {background: url("../images/blues/urbanblues.jpg") no-repeat center center fixed;}
+.chicagoblues {background: url("../images/blues/chicagoblues.jpg") no-repeat center center fixed;}
 .westcoastblues {background: url("../images/blues/westcoastblues.jpg") no-repeat center center fixed;}
 .swampblues {background: url("../images/blues/swampblues.jpg") no-repeat center center fixed;}
 .soulblues {background: url("../images/blues/soulblues.jpg") no-repeat center center fixed;}
 .texasbluesrock {background: url("../images/blues/texasbluesrock.jpg") no-repeat center center fixed;}
 .hillcountryblues {background: url("../images/blues/hillcountryblues.jpg") no-repeat center center fixed;}
 
+.ragtime {background: url("../images/jazz/ragtime.jpg") no-repeat center center fixed;}
 .dixieland {background: url("../images/jazz/dixieland.jpg") no-repeat center center fixed;}
 .swing {background: url("../images/jazz/swing.jpg") no-repeat center center fixed;}
 .bebop {background: url("../images/jazz/bebop.jpg") no-repeat center center fixed;}
 .cooljazz {background: url("../images/jazz/cooljazz.jpg") no-repeat center center fixed;}
 .hardbop {background: url("../images/jazz/hardbop.jpg") no-repeat center center fixed;}
+.modaljazz {background: url("../images/jazz/modaljazz.jpg") no-repeat center center fixed;}
 .freejazz {background: url("../images/jazz/freejazz.jpg") no-repeat center center fixed;}
 .souljazz {background: url("../images/jazz/souljazz.jpg") no-repeat center center fixed;}
 .jazzfusion {background: url("../images/jazz/jazzfusion.jpg") no-repeat center center fixed;}
@@ -1621,6 +1622,7 @@ a:active {
 .urbansoul {background: url("../images/rhythmandblues/urbansoul.jpg") no-repeat center center fixed;}
 .urbanbreaks {background: url("../images/rhythmandblues/urbanbreaks.jpg") no-repeat center center fixed;}
 
+.skiffle {background: url("../images/pop/skiffle.jpg") no-repeat center center fixed;}
 .brillbuildingsound {background: url("../images/pop/brillbuildingsound.jpg") no-repeat center center fixed;}
 .bubblegumpop {background: url("../images/pop/bubblegumpop.jpg") no-repeat center center fixed;}
 .singersongwriter {background: url("../images/pop/singersongwriter.jpg") no-repeat center center fixed;}
@@ -1629,9 +1631,11 @@ a:active {
 .softrock {background: url("../images/pop/softrock.jpg") no-repeat center center fixed;}
 .synthpop {background: url("../images/pop/synthpop.jpg") no-repeat center center fixed;}
 .hinrg {background: url("../images/pop/hinrg.jpg") no-repeat center center fixed;}
+.spacesynth {background: url("../images/pop/spacesynth.jpg") no-repeat center center fixed;}
 .postdisco {background: url("../images/pop/postdisco.jpg") no-repeat center center fixed;}
 .indiepop {background: url("../images/pop/indiepop.jpg") no-repeat center center fixed;}
 .dancepop {background: url("../images/pop/dancepop.jpg") no-repeat center center fixed;}
+.eurodance {background: url("../images/pop/eurodance.jpg") no-repeat center center fixed;}
 .electropop {background: url("../images/pop/electropop.jpg") no-repeat center center fixed;}
 
 .rockandroll {background: url("../images/rock/rockandroll.jpg") no-repeat center center fixed;}
@@ -1646,7 +1650,6 @@ a:active {
 .rootsrock {background: url("../images/rock/rootsrock.jpg") no-repeat center center fixed;}
 .hardrock {background: url("../images/rock/hardrock.jpg") no-repeat center center fixed;}
 .glamrock {background: url("../images/rock/glamrock.jpg") no-repeat center center fixed;}
-.krautrock {background: url("../images/rock/krautrock.jpg") no-repeat center center fixed;}
 .heartlandrock {background: url("../images/rock/heartlandrock.jpg") no-repeat center center fixed;}
 
 .protopunk {background: url("../images/rock/protopunk.jpg") no-repeat center center fixed;}
@@ -1667,7 +1670,7 @@ a:active {
 .britpop {background: url("../images/rock/britpop.jpg") no-repeat center center fixed;}
 .poppunk {background: url("../images/rock/poppunk.jpg") no-repeat center center fixed;}
 .raprock {background: url("../images/rock/raprock.jpg") no-repeat center center fixed;}
-.mathrock {background: url("../images/rock/mathrock.jpg") no-repeat center center fixed;}
+.baroquepop {background: url("../images/rock/baroquepop.jpg") no-repeat center center fixed;}
 .postrock {background: url("../images/rock/postrock.jpg") no-repeat center center fixed;}
 .postgrunge {background: url("../images/rock/postgrunge.jpg") no-repeat center center fixed;}
 .postbritpop {background: url("../images/rock/postbritpop.jpg") no-repeat center center fixed;}
@@ -1733,9 +1736,12 @@ a:active {
 .acidhouse {background: url("../images/dance/acidhouse.jpg") no-repeat center center fixed;}
 .deephouse {background: url("../images/dance/deephouse.jpg") no-repeat center center fixed;}
 .techhouse {background: url("../images/dance/techhouse.jpg") no-repeat center center fixed;}
-.funkyhouse {background: url("../images/dance/funkyhouse.jpg") no-repeat center center fixed;}
+.ukhardhouse {background: url("../images/dance/ukhardhouse.jpg") no-repeat center center fixed;}
+.frenchhouse {background: url("../images/dance/frenchhouse.jpg") no-repeat center center fixed;}
 .progressivehouse {background: url("../images/dance/progressivehouse.jpg") no-repeat center center fixed;}
 .electrohouse {background: url("../images/dance/electrohouse.jpg") no-repeat center center fixed;}
+.dutchhouse {background: url("../images/dance/dutchhouse.jpg") no-repeat center center fixed;}
+.fidgethouse {background: url("../images/dance/fidgethouse.jpg") no-repeat center center fixed;}
 .bigroom {background: url("../images/dance/bigroom.jpg") no-repeat center center fixed;}
 .futurehouse {background: url("../images/dance/futurehouse.jpg") no-repeat center center fixed;}
 .tropicalhouse {background: url("../images/dance/tropicalhouse.jpg") no-repeat center center fixed;}
@@ -1756,6 +1762,7 @@ a:active {
 .minimaltechno {background: url("../images/dance/minimaltechno.jpg") no-repeat center center fixed;}
 .hardtechno {background: url("../images/dance/hardtechno.jpg") no-repeat center center fixed;}
 .acidtechno {background: url("../images/dance/acidtechno.jpg") no-repeat center center fixed;}
+.futuretechno {background: url("../images/dance/futuretechno.jpg") no-repeat center center fixed;}
 
 .newbeat {background: url("../images/dance/newbeat.jpg") no-repeat center center fixed;}
 .rave {background: url("../images/dance/rave.jpg") no-repeat center center fixed;}
@@ -1770,6 +1777,7 @@ a:active {
 .freestyle {background: url("../images/dance/freestyle.jpg") no-repeat center center fixed;}
 .floridabreaks {background: url("../images/dance/floridabreaks.jpg") no-repeat center center fixed;}
 .bigbeat {background: url("../images/dance/bigbeat.jpg") no-repeat center center fixed;}
+.ambientbreaks {background: url("../images/dance/ambientbreaks.jpg") no-repeat center center fixed;}
 .nuskoolbreaks {background: url("../images/dance/nuskoolbreaks.jpg") no-repeat center center fixed;}
 .progressivebreaks {background: url("../images/dance/progressivebreaks.jpg") no-repeat center center fixed;}
 
@@ -1777,6 +1785,7 @@ a:active {
 .darkstep {background: url("../images/dance/darkstep.jpg") no-repeat center center fixed;}
 .hardstep {background: url("../images/dance/hardstep.jpg") no-repeat center center fixed;}
 .techstep {background: url("../images/dance/techstep.jpg") no-repeat center center fixed;}
+.jumpup {background: url("../images/dance/jumpup.jpg") no-repeat center center fixed;}
 .atmosphericdrumandbass {background: url("../images/dance/atmosphericdrumandbass.jpg") no-repeat center center fixed;}
 .jazzstep {background: url("../images/dance/jazzstep.jpg") no-repeat center center fixed;}
 .neurofunk {background: url("../images/dance/neurofunk.jpg") no-repeat center center fixed;}
@@ -1796,12 +1805,18 @@ a:active {
 .futuregarage {background: url("../images/dance/futuregarage.jpg") no-repeat center center fixed;}
 
 .musiqueconcrete {background: url("../images/downtempo/musiqueconcrete.jpg") no-repeat center center fixed;}
+.lounge {background: url("../images/downtempo/lounge.jpg") no-repeat center center fixed;}
+.krautrock {background: url("../images/downtempo/krautrock.jpg") no-repeat center center fixed;}
 .synth {background: url("../images/downtempo/synth.jpg") no-repeat center center fixed;}
 .ambient {background: url("../images/downtempo/ambient.jpg") no-repeat center center fixed;}
+.darkambient {background: url("../images/downtempo/darkambient.jpg") no-repeat center center fixed;}
 .newage {background: url("../images/downtempo/newage.jpg") no-repeat center center fixed;}
+.chiptune {background: url("../images/downtempo/chiptune.png") no-repeat center center fixed;}
 .idm {background: url("../images/downtempo/idm.jpg") no-repeat center center fixed;}
 .triphop {background: url("../images/downtempo/triphop.jpg") no-repeat center center fixed;}
 .illbient {background: url("../images/downtempo/illbient.jpg") no-repeat center center fixed;}
+.glitch {background: url("../images/downtempo/glitch.jpg") no-repeat center center fixed;}
+.lowercase {background: url("../images/downtempo/lowercase.jpg") no-repeat center center fixed;}
 .synthwave {background: url("../images/downtempo/synthwave.jpg") no-repeat center center fixed;}
 .vaporwave {background: url("../images/downtempo/vaporwave.jpg") no-repeat center center fixed;}
 
