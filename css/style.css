@@ -1629,7 +1629,7 @@ a:active {
 .powerpop {background: url("../images/pop/powerpop.jpg") no-repeat center center fixed;}
 .softrock {background: url("../images/pop/softrock.jpg") no-repeat center center fixed;}
 .synthpop {background: url("../images/pop/synthpop.jpg") no-repeat center center fixed;}
-.hinrg {background: url("../images/pop/hinrg.jpg") no-repeat center center fixed;}
+.eurodisco {background: url("../images/pop/eurodisco.jpg") no-repeat center center fixed;}
 .postdisco {background: url("../images/pop/postdisco.jpg") no-repeat center center fixed;}
 .indiepop {background: url("../images/pop/indiepop.jpg") no-repeat center center fixed;}
 .dancepop {background: url("../images/pop/dancepop.jpg") no-repeat center center fixed;}
@@ -1680,7 +1680,7 @@ a:active {
 .garagerockrevival {background: url("../images/rock/garagerockrevival.jpg") no-repeat center center fixed;}
 .nuprog {background: url("../images/rock/nuprog.jpg") no-repeat center center fixed;}
 .dancepunk {background: url("../images/rock/dancepunk.jpg") no-repeat center center fixed;}
-.digitalelectronicrock {background: url("../images/rock/digitalelectronicrock.jpg") no-repeat center center fixed;}
+.electronicrock {background: url("../images/rock/electronicrock.jpg") no-repeat center center fixed;}
 .indiefolk {background: url("../images/rock/indiefolk.jpg") no-repeat center center fixed;}
 
 .traditionalheavymetal {background: url("../images/metal/traditionalheavymetal.jpg") no-repeat center center fixed;}
@@ -1758,8 +1758,8 @@ a:active {
 
 .detroittechno {background: url("../images/dance/detroittechno.jpg") no-repeat center center fixed;}
 .minimaltechno {background: url("../images/dance/minimaltechno.jpg") no-repeat center center fixed;}
-.hardtechno {background: url("../images/dance/hardtechno.jpg") no-repeat center center fixed;}
 .acidtechno {background: url("../images/dance/acidtechno.jpg") no-repeat center center fixed;}
+.schranz {background: url("../images/dance/schranz.jpg") no-repeat center center fixed;}
 .futuretechno {background: url("../images/dance/futuretechno.jpg") no-repeat center center fixed;}
 
 .newbeat {background: url("../images/dance/newbeat.jpg") no-repeat center center fixed;}
