@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nordic Folk</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre nordicfolk">
+    <div id="box-folk">
+        <h1>NORDIC FOLK</h1><br>
+            
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique id odio vitae malesuada. Vivamus fermentum ultricies vestibulum. Mauris pellentesque accumsan eros id dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet turpis ac erat dignissim tincidunt sit amet nec diam. Proin vel laoreet dui, vehicula venenatis risus. Nulla facilisi. Nullam quis blandit tellus, in vehicula nulla. Praesent gravida et eros et mollis. Curabitur eget nisi at erat aliquet gravida et in velit. Vivamus eget orci eu sem hendrerit condimentum. Vivamus ultrices, sem et sagittis pharetra, sapien nunc lacinia risus, eget venenatis erat nisi in urna. Proin ac sapien sit amet dui varius condimentum. Quisque dapibus eros et sapien semper, tristique commodo ante dapibus. Fusce ac felis sollicitudin, condimentum mi bibendum, fermentum risus. Nullam imperdiet velit et lacus lacinia blandit. Sed sed pulvinar arcu, nec lacinia metus. Donec lorem arcu, iaculis non eros eget, sagittis iaculis enim. Aenean ultricies vulputate ultricies. Nulla blandit semper neque eu accumsan. Pellentesque commodo tellus dapibus, auctor mauris vel, sodales turpis.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-folk">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-folk">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-folk">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-folk">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-folk">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-folk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-folk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-folk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-folk">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-folk-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-folk-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Olov Johansson & Catriana McKay",
+                    track: "Astrids Vals",
+                    path: "../../samples/folk/nordicfolk1.ogg"
+                },
+                {
+                    artist: "Bazar Blå",
+                    track: "Àziza",
+                    path: "../../samples/folk/nordicfolk2.ogg"
+                },
+                {
+                    artist: "Trio Mio",
+                    track: "Fillingspolska",
+                    path: "../../samples/folk/nordicfolk3.ogg"
+                },
+                {
+                    artist: "Anders Norudde, Leo Svensson & Göran Fredriksson",
+                    track: "Kadrilj Efter Birger Törnkvist",
+                    path: "../../samples/folk/nordicfolk4.ogg"
+                },
+                {
+                    artist: "BOOT",
+                    track: "Farfarspolskan",
+                    path: "../../samples/folk/nordicfolk5.ogg"
+                },
+                {
+                    artist: "Asynje",
+                    track: "Hr. Oluf",
+                    path: "../../samples/folk/nordicfolk6.ogg"
+                },
+                {
+                    artist: "Gjermund Larsen Trio",
+                    track: "November",
+                    path: "../../samples/folk/nordicfolk7.ogg"
+                },
+                {
+                    artist: "Esbjörn Hazelius",
+                    track: "Stjärnspegel",
+                    path: "../../samples/folk/nordicfolk8.ogg"
+                },
+                {
+                    artist: "Emilia Amper",
+                    track: "Till Maria",
+                    path: "../../samples/folk/nordicfolk9.ogg"
+                }
+            ]
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-folk').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-folk-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-folk"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

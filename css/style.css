@@ -125,6 +125,14 @@ a:active {
     color: #A18259;
 }
 
+.mainfolk .genrelist a:hover {
+    color: #D8C188;
+}
+
+.mainworld .genrelist a:hover {
+    color: #567E4E;
+}
+
 .maingospel .genrelist-mobile a:hover {
     color: #F1B1B1;
 }
@@ -221,6 +229,14 @@ a:active {
     color: #A18259;
 }
 
+.mainfolk .genrelist-mobile a:hover {
+    color: #D8C188;
+}
+
+.mainworld .genrelist-mobile a:hover {
+    color: #567E4E;
+}
+
 .maingospel .genrelist-tablet a:hover {
     color: #F1B1B1;
 }
@@ -315,6 +331,14 @@ a:active {
 
 .mainclassical .genrelist-tablet a:hover {
     color: #A18259;
+}
+
+.mainfolk .genrelist-tablet a:hover {
+    color: #D8C188;
+}
+
+.mainworld .genrelist-tablet a:hover {
+    color: #567E4E;
 }
 
 .genre {
@@ -708,6 +732,32 @@ a:active {
     right: 0;
     z-index: -1;
     background: url("../images/classicalbig.jpg") no-repeat center center fixed;
+    width: 100vw;
+    height: 100vh;
+    -webkit-filter: brightness(40%);
+    filter: brightness(40%);
+}
+
+.mainfolk:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: url("../images/folkbig.jpg") no-repeat center center fixed;
+    width: 100vw;
+    height: 100vh;
+    -webkit-filter: brightness(40%);
+    filter: brightness(40%);
+}
+
+.mainworld:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: url("../images/worldbig.jpg") no-repeat center center fixed;
     width: 100vw;
     height: 100vh;
     -webkit-filter: brightness(40%);
@@ -1108,6 +1158,28 @@ a:active {
     overflow: auto;
 }
 
+#box-subfolk {
+    width: 40em;
+    height: 100vh;
+    background-color: #C6A44D;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subworld {
+    width: 40em;
+    height: 100vh;
+    background-color: #364F30;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
 #box-subgospel-mobile {
     width: 100%;
     background-color: #E57373;
@@ -1295,6 +1367,22 @@ a:active {
 #box-subclassical-mobile {
     width: 100%;
     background-color: #705A3D;
+    color: #FFF;
+    padding: 1.5em;
+    font-size: 4.2vw;
+}
+
+#box-subfolk-mobile {
+    width: 100%;
+    background-color: #C6A44D;
+    color: #FFF;
+    padding: 1.5em;
+    font-size: 4.2vw;
+}
+
+#box-subworld-mobile {
+    width: 100%;
+    background-color: #364F30;
     color: #FFF;
     padding: 1.5em;
     font-size: 4.2vw;
@@ -1564,6 +1652,28 @@ a:active {
     overflow: auto;
 }
 
+#box-subfolk-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #C6A44D;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
+#box-subworld-tablet {
+    width: 50%;
+    height: 100vh;
+    background-color: #364F30;
+    color: #FFF;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
+}
+
 .negrospirituals {background: url("../images/gospel/negrospirituals.jpg") no-repeat center center fixed;}
 .traditionalgospel {background: url("../images/gospel/traditionalgospel.jpg") no-repeat center center fixed;}
 .moderngospel {background: url("../images/gospel/moderngospel.jpg") no-repeat center center fixed;}
@@ -1822,6 +1932,25 @@ a:active {
 .romantic {background: url("../images/classical/romantic.jpg") no-repeat center center fixed;}
 .filmscore {background: url("../images/classical/filmscore.jpg") no-repeat center center fixed;}
 
+.irishfolk {background: url("../images/folk/irishfolk.jpg") no-repeat center center fixed;}
+.scottishfolk {background: url("../images/folk/scottishfolk.jpg") no-repeat center center fixed;}
+.britishfolk {background: url("../images/folk/britishfolk.jpg") no-repeat center center fixed;}
+.nordicfolk {background: url("../images/folk/nordicfolk.jpg") no-repeat center center fixed;}
+.frenchfolk {background: url("../images/folk/frenchfolk.jpg") no-repeat center center fixed;}
+.italianfolk {background: url("../images/folk/italianfolk.jpg") no-repeat center center fixed;}
+.spanishfolk {background: url("../images/folk/spanishfolk.jpg") no-repeat center center fixed;}
+.czechfolk {background: url("../images/folk/czechfolk.jpg") no-repeat center center fixed;}
+.russianfolk {background: url("../images/folk/russianfolk.jpg") no-repeat center center fixed;}
+
+.african {background: url("../images/world/african.jpg") no-repeat center center fixed;}
+.latin {background: url("../images/world/latin.jpg") no-repeat center center fixed;}
+.chinese {background: url("../images/world/chinese.jpg") no-repeat center center fixed;}
+.japanese {background: url("../images/world/japanese.jpg") no-repeat center center fixed;}
+.indian {background: url("../images/world/indian.jpg") no-repeat center center fixed;}
+.arabic {background: url("../images/world/arabic.jpg") no-repeat center center fixed;}
+.australian {background: url("../images/world/australian.jpg") no-repeat center center fixed;}
+.oceanian {background: url("../images/world/oceanian.jpg") no-repeat center center fixed;}
+
 h1 {
   	font-family: 'Roboto', sans-serif;
   	font-weight: 900;
@@ -2039,6 +2168,24 @@ h1 {
 #box-classical {
     width: 40em;
     background-color: #705A3D;
+    color: #FFF;
+    padding: 1.5em;
+    margin: 4em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#box-folk {
+    width: 40em;
+    background-color: #C6A44D;
+    color: #FFF;
+    padding: 1.5em;
+    margin: 4em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#box-world {
+    width: 40em;
+    background-color: #364F30;
     color: #FFF;
     padding: 1.5em;
     margin: 4em;
@@ -2333,6 +2480,30 @@ h1 {
     cursor: default;
 }
 
+.buttons-folk, .buttons-folk-stop {
+    background-color: #D2B774;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 2.5em;
+    text-align: center;
+    width: 1.03em;
+    line-height: 1.2em;
+    user-select: none;
+    cursor: default;
+}
+
+.buttons-world, .buttons-world-stop {
+    background-color: #4C6F44;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 2.5em;
+    text-align: center;
+    width: 1.03em;
+    line-height: 1.2em;
+    user-select: none;
+    cursor: default;
+}
+
 .buttons-gospel:hover, .buttons-gospel-stop:hover {
     background-color: #F1B1B1;
 }
@@ -2429,6 +2600,14 @@ h1 {
     background-color: #A18259;
 }
 
+.buttons-folk:hover, .buttons-folk-stop:hover {
+    background-color: #D8C188;
+}
+
+.buttons-world:hover, .buttons-world-stop:hover {
+    background-color: #567E4E;
+}
+
 .buttons-gospel.clicked, .buttons-gospel-stop.clicked,
 .buttons-blues.clicked, .buttons-blues-stop.clicked,
 .buttons-jazz.clicked, .buttons-jazz-stop.clicked,
@@ -2451,7 +2630,9 @@ h1 {
 .buttons-drumandbass.clicked, .buttons-drumandbass-stop.clicked,
 .buttons-ukgarage.clicked, .buttons-ukgarage-stop.clicked,
 .buttons-downtempo.clicked, .buttons-downtempo-stop.clicked,
-.buttons-classical.clicked, .buttons-classical-stop.clicked {
+.buttons-classical.clicked, .buttons-classical-stop.clicked,
+.buttons-folk.clicked, .buttons-folk-stop.clicked,
+.buttons-world.clicked, .buttons-world-stop.clicked {
     box-shadow:inset 0em 0em 0em 0.1em #FFF;
 }
 
@@ -2522,10 +2703,11 @@ h1 {
 @media (max-width: 991px) {
     #box-gospel, #box-blues, #box-jazz, #box-country, 
     #box-rhythmandblues, #box-pop, #box-rockandroll, #box-classicrock, 
-    #box-punk, #box-alternativerock, #box-contemporaryrock, #box-metal, 
+    #box-punk, #box-alternative, #box-contemporaryrock, #box-metal, 
     #box-reggae, #box-hiphop, #box-industrial, #box-house, 
     #box-trance, #box-techno, #box-hardcore, #box-breakbeat, 
-    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical {
+    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical,
+    #box-folk, #box-world {
         margin: 2em;
         font-size: 2.27vw;
   }
@@ -2534,10 +2716,11 @@ h1 {
 @media (max-width: 1199px) {
     #box-gospel, #box-blues, #box-jazz, #box-country, 
     #box-rhythmandblues, #box-pop, #box-rockandroll, #box-classicrock, 
-    #box-punk, #box-alternativerock, #box-contemporaryrock, #box-metal, 
+    #box-punk, #box-alternative, #box-contemporaryrock, #box-metal, 
     #box-reggae, #box-hiphop, #box-industrial, #box-house, 
     #box-trance, #box-techno, #box-hardcore, #box-breakbeat, 
-    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical {
+    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical,
+    #box-folk, #box-world {
         margin: 2em;
   }
 }
@@ -2545,11 +2728,13 @@ h1 {
 @media (max-width: 767px) {
     .buttons-gospel, .buttons-blues, .buttons-jazz, .buttons-country,
     .buttons-rhythmandblues, .buttons-pop, .buttons-rockandroll, .buttons-classicrock,
-    .buttons-punk, .buttons-alternativerock, .buttons-contemporaryrock, .buttons-metal,
+    .buttons-punk, .buttons-alternative, .buttons-contemporaryrock, .buttons-metal,
     .buttons-reggae, .buttons-hiphop, .buttons-industrial, .buttons-house,
     .buttons-trance, .buttons-techno, .buttons-hardcore, .buttons-breakbeat,
-    .buttons-drumandbass, .buttons-ukgarage, .buttons-downtempo, .buttons-classical {
+    .buttons-drumandbass, .buttons-ukgarage, .buttons-downtempo, .buttons-classical,
+    .buttons-folk, .buttons-world {
         margin-bottom: 0.4em;
+    }
   }
 }
 
@@ -2569,10 +2754,11 @@ h1 {
 @media (max-width: 767px) {
     #box-gospel, #box-blues, #box-jazz, #box-country, 
     #box-rhythmandblues, #box-pop, #box-rockandroll, #box-classicrock, 
-    #box-punk, #box-alternativerock, #box-contemporaryrock, #box-metal, 
+    #box-punk, #box-alternative, #box-contemporaryrock, #box-metal, 
     #box-reggae, #box-hiphop, #box-industrial, #box-house, 
     #box-trance, #box-techno, #box-hardcore, #box-breakbeat, 
-    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical {
+    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical,
+    #box-folk, #box-world {
         font-size: 3.75vw;
         width: 88%;
         margin: 1.5em;
