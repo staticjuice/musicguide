@@ -124,6 +124,12 @@
                 }
             ]
 
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', loadedAudio, false)
+                audio.src = track.path
+            })
+
             var artistSpan = $(document).find('#artist')[0]
 
             var track = $(document).find('#track')[0]
@@ -135,8 +141,6 @@
             var audioInstance;
 
             $(document).find('.buttons-rockandroll').each(function(index, button) {
-
-                audioInstance.preload ="auto";
 
                 buttons.push(button);
                 
