@@ -149,6 +149,7 @@
                     audioInstance = new Audio(tracks[index].path);
                     audioInstanceArray.push(audioInstance);
                     audioInstance.play();
+                    audioInstance.preload = "auto";
 
                     artistSpan.innerHTML = tracks[index].artist
                     track.innerHTML = tracks[index].track
