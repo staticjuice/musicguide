@@ -130,6 +130,13 @@
                 audio.src = track.path
             })
 
+            function loadedAudio() {
+                loaded++
+                if (loaded == audioFiles.length) {
+                console.log('all have loaded')
+                }
+            }   
+
             var artistSpan = $(document).find('#artist')[0]
 
             var track = $(document).find('#track')[0]
