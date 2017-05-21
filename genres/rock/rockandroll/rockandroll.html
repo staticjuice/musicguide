@@ -126,13 +126,9 @@
 
             tracks.forEach(track => {
                 const audio = new Audio()
-                audio.addEventListener('canplaythrough', loadedAudio, false)
+                audio.addEventListener('canplaythrough', null, false)
                 audio.src = track.path
             })
-
-            function loadedAudio() {
-                console.log('loaded')
-            }
 
             var artistSpan = $(document).find('#artist')[0]
 
