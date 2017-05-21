@@ -2,8 +2,6 @@
 The Music Guide is a website that I've been developing over the last year that aims to provide information and examples for all the genres of music we have today. There are roughly 250 genres spread across 26 supergenres. Each genre contains 9 30-second samples that you can listen to, so you can get a good idea of what a certain genre sounds like. Most of the research I conducted for this guide came from musicmap.info and Ishkur's Guide, so at the moment there's a lot of similarity in terms of song selection, however I will eventually make the examples more unique.
 
 # Current issues
-- The audio would work better if it played and buffered at the same time, eliminating the annoying delay on click. The audio is running through JavaScript so no idea how this would work at this stage.
-
 - The site is currently full of plagiarized text, mostly from musicmap.info but also some from AllMusic and Wikipedia. Writing all the text myself just isn't feasible for one person, and I needed to have text in there. This isn't a permanent thing, and I would like for it to change, so any help rephrasing stuff would be greatly appreciated.
 
 # Disclaimer
