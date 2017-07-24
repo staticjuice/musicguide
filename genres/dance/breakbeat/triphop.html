@@ -7,55 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trip Hop</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
   
 <body class="genre triphop">
-    <div id="box-downtempo">
+    <div id="box-breakbeat">
         <h1>TRIP HOP</h1><br>
             
         Trip Hop started off within Bristol’s multicultural Hip Hop scene where members of Massive Attack tried to bring Rap music to a larger audience. Trip Hop became an interesting and meticulously crafted blend of styles &ndash; part Rock, part Hip Hop, part Ambient, but even more importantly &ndash; Dub. Around the same time in the US, musicians started to experiment with slower forms of Breakbeat while adding out-of-the-box acoustic samples. Although the American and British forms of Trip Hop evolved from different paths, the end result was the same &ndash; Downtempo Breakbeat with minimal instrumentation but often dramatic and/or melancholic. Trip Hop creates a surreal and moody dream world but with just the right amount of “punch” to prevent becoming background music. This makes Trip Hop very popular among marijuana users, but it also allowed a large mainstream breakthrough, especially when vocals are added. It could’ve been just a small and insignificant Breakbeat subgenre, but Trip Hop wouldn’t settle for mediocre popularity. After Massive Attack’s big breakthrough, more artists jumped on the bandwagon with successful results.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">1</div>
+                <div class="buttons-breakbeat">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">2</div>
+                <div class="buttons-breakbeat">2</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">3</div>
+                <div class="buttons-breakbeat">3</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">4</div>
+                <div class="buttons-breakbeat">4</div>
             </div>
                 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">5</div>
+                <div class="buttons-breakbeat">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">6</div>
+                <div class="buttons-breakbeat">6</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">7</div>
+                <div class="buttons-breakbeat">7</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">8</div>
+                <div class="buttons-breakbeat">8</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">9</div>
+                <div class="buttons-breakbeat">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-downtempo-stop">&#9724;</div>
+                <div class="buttons-breakbeat-stop">&#9724;</div>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-downtempo-stop">&#9724;</div>
+            <div class="buttons-breakbeat-stop">&#9724;</div>
         </div>
     </div>
 
@@ -80,47 +80,47 @@
                 {
                     artist: "Massive Attack feat. Elizabeth Fraser",
                     track: "Teardrop",
-                    path: "../../samples/downtempo/triphop1.ogg"
+                    path: "../../../samples/dance/breakbeat/triphop1.ogg"
                 },
                 {
                     artist: "Portishead",
                     track: "Humming",
-                    path: "../../samples/downtempo/triphop2.ogg"
+                    path: "../../../samples/dance/breakbeat/triphop2.ogg"
                 },
                 {
                     artist: "Björk",
                     track: "Army Of Me",
-                    path: "../../samples/downtempo/triphop3.ogg"
+                    path: "../../../samples/dance/breakbeat/triphop3.ogg"
                 },
                 {
                     artist: "Kognitif",
                     track: "Without Her",
-                    path: "../../samples/downtempo/triphop4.ogg"
+                    path: "../../../samples/dance/breakbeat/triphop4.ogg"
                 },
                 {
                     artist: "SomehowArt",
                     track: "A Day At The Office",
-                    path: "../../samples/downtempo/triphop5.ogg"
+                    path: "../../../samples/dance/breakbeat/triphop5.ogg"
                 },
                 {
                     artist: "Kno",
                     track: "Loneliness",
-                    path: "../../samples/downtempo/triphop6.ogg"
+                    path: "../../../samples/dance/breakbeat/triphop6.ogg"
                 },
                 {
                     artist: "Boards Of Canada",
                     track: "Julie And Candy",
-                    path: "../../samples/downtempo/triphop7.ogg"
+                    path: "../../../samples/dance/breakbeat/triphop7.ogg"
                 },
                 {
                     artist: "Sneaker Pimps",
                     track: "6 Underground",
-                    path: "../../samples/downtempo/triphop8.ogg"
+                    path: "../../../samples/dance/breakbeat/triphop8.ogg"
                 },
                 {
                     artist: "Christian Kleine",
                     track: "Bitter Things",
-                    path: "../../samples/downtempo/triphop9.ogg"
+                    path: "../../../samples/dance/breakbeat/triphop9.ogg"
                 }
             ]
 
@@ -140,7 +140,7 @@
 
             var audioInstance;
 
-            $(document).find('.buttons-downtempo').each(function(index, button) {
+            $(document).find('.buttons-breakbeat').each(function(index, button) {
 
                 buttons.push(button);
                 
@@ -162,7 +162,7 @@
                 });
             });
 
-            $('.buttons-downtempo-stop').on('click', function() {
+            $('.buttons-breakbeat-stop').on('click', function() {
 
                 stopAllMusic()
 
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-downtempo"
+                    button => button.className = "buttons-breakbeat"
                 )
             }
 
