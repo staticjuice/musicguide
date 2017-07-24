@@ -12,50 +12,50 @@
 </head>
   
 <body class="genre darkambient">
-    <div id="box-downtempo">
+    <div id="box-industrial">
         <h1>DARK AMBIENT</h1><br>
             
         It’s nigh impossible to separate Dark Ambient from Dark Industrial as they all consist of the same eerie atmosphere; sometimes beautiful but often downright frightening and disturbing. A minimal soundscape of the past resurrected with typical industrial sound effects and techniques, in which haunting and gloomy sounds (often repetitive in nature) form the foreground. In the background one regularly finds a stream of heavily distorted noise. The difference with Early Industrial lies in a less noisy/experimental approach and a more ambient/atmospheric one. Dark Ambient is your typical graveyard ruin by night soundtrack, or the sound of a monochrome forest echoing through a picture from the past. It’s no surprise that this genre is often used in horror films or scary game soundtracks. Out of Dark Ambient an important subgenre in the late eighties arises &ndash; Ethereal Wave. Ethereal Wave becomes a big thing in France, where spooky French hushes or weeping voices are added on top of melodramatic classical music infused with Dark Ambient elements. The result is the ultimate Gothic music and a further strengthening of its relationship with Industrial.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">1</div>
+                <div class="buttons-industrial">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">2</div>
+                <div class="buttons-industrial">2</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">3</div>
+                <div class="buttons-industrial">3</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">4</div>
+                <div class="buttons-industrial">4</div>
             </div>
                 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">5</div>
+                <div class="buttons-industrial">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">6</div>
+                <div class="buttons-industrial">6</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">7</div>
+                <div class="buttons-industrial">7</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">8</div>
+                <div class="buttons-industrial">8</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">9</div>
+                <div class="buttons-industrial">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-downtempo-stop">&#9724;</div>
+                <div class="buttons-industrial-stop">&#9724;</div>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-downtempo-stop">&#9724;</div>
+            <div class="buttons-industrial-stop">&#9724;</div>
         </div>
     </div>
 
@@ -80,47 +80,47 @@
                 {
                     artist: "Robert Rich",
                     track: "Hidden Refuge",
-                    path: "../../samples/downtempo/darkambient1.ogg"
+                    path: "../../samples/industrial/darkambient1.ogg"
                 },
                 {
                     artist: "In Slaughter Natives",
                     track: "113th Scar",
-                    path: "../../samples/downtempo/darkambient2.ogg"
+                    path: "../../samples/industrial/darkambient2.ogg"
                 },
                 {
                     artist: "Boksholm",
                     track: "Spaan",
-                    path: "../../samples/downtempo/darkambient3.ogg"
+                    path: "../../samples/industrial/darkambient3.ogg"
                 },
                 {
                     artist: "Cities Last Broadcast",
                     track: "Glossolalia",
-                    path: "../../samples/downtempo/darkambient4.ogg"
+                    path: "../../samples/industrial/darkambient4.ogg"
                 },
                 {
                     artist: "Tho-So-Aa",
                     track: "Xplrr 1",
-                    path: "../../samples/downtempo/darkambient5.ogg"
+                    path: "../../samples/industrial/darkambient5.ogg"
                 },
                 {
                     artist: "Melek-Tha",
                     track: "Hymn Of The Dead",
-                    path: "../../samples/downtempo/darkambient6.ogg"
+                    path: "../../samples/industrial/darkambient6.ogg"
                 },
                 {
                     artist: "Dahlia's Tear",
                     track: "Toward The Dark Cellar",
-                    path: "../../samples/downtempo/darkambient7.ogg"
+                    path: "../../samples/industrial/darkambient7.ogg"
                 },
                 {
                     artist: "Vestigial",
                     track: "The Void",
-                    path: "../../samples/downtempo/darkambient8.ogg"
+                    path: "../../samples/industrial/darkambient8.ogg"
                 },
                 {
                     artist: "Triangular Ascension",
                     track: "The Future Code",
-                    path: "../../samples/downtempo/darkambient9.ogg"
+                    path: "../../samples/industrial/darkambient9.ogg"
                 }
             ]
 
@@ -140,7 +140,7 @@
 
             var audioInstance;
 
-            $(document).find('.buttons-downtempo').each(function(index, button) {
+            $(document).find('.buttons-industrial').each(function(index, button) {
 
                 buttons.push(button);
                 
@@ -162,7 +162,7 @@
                 });
             });
 
-            $('.buttons-downtempo-stop').on('click', function() {
+            $('.buttons-industrial-stop').on('click', function() {
 
                 stopAllMusic()
 
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-downtempo"
+                    button => button.className = "buttons-industrial"
                 )
             }
 
