@@ -1866,7 +1866,6 @@ a:active {
 .neotrance {background: url("../images/dance/neotrance.jpg") no-repeat center center fixed;}
 
 .detroittechno {background: url("../images/dance/detroittechno.jpg") no-repeat center center fixed;}
-.idm {background: url("../images/dance/idm.jpg") no-repeat center center fixed;}
 .minimaltechno {background: url("../images/dance/minimaltechno.jpg") no-repeat center center fixed;}
 .acidtechno {background: url("../images/dance/acidtechno.jpg") no-repeat center center fixed;}
 .schranz {background: url("../images/dance/schranz.jpg") no-repeat center center fixed;}
@@ -1884,8 +1883,6 @@ a:active {
 .electro {background: url("../images/dance/electro.jpg") no-repeat center center fixed;}
 .freestyle {background: url("../images/dance/freestyle.jpg") no-repeat center center fixed;}
 .floridabreaks {background: url("../images/dance/floridabreaks.jpg") no-repeat center center fixed;}
-.triphop {background: url("../images/dance/triphop.jpg") no-repeat center center fixed;}
-.illbient {background: url("../images/dance/illbient.jpg") no-repeat center center fixed;}
 .bigbeat {background: url("../images/dance/bigbeat.jpg") no-repeat center center fixed;}
 .nuskoolbreaks {background: url("../images/dance/nuskoolbreaks.jpg") no-repeat center center fixed;}
 .progressivebreaks {background: url("../images/dance/progressivebreaks.jpg") no-repeat center center fixed;}
@@ -1918,6 +1915,9 @@ a:active {
 .ambient {background: url("../images/downtempo/ambient.jpg") no-repeat center center fixed;}
 .newage {background: url("../images/downtempo/newage.jpg") no-repeat center center fixed;}
 .chiptune {background: url("../images/downtempo/chiptune.png") no-repeat center center fixed;}
+.idm {background: url("../images/downtempo/idm.jpg") no-repeat center center fixed;}
+.triphop {background: url("../images/downtempo/triphop.jpg") no-repeat center center fixed;}
+.illbient {background: url("../images/downtempo/illbient.jpg") no-repeat center center fixed;}
 .glitch {background: url("../images/downtempo/glitch.jpg") no-repeat center center fixed;}
 .lowercase {background: url("../images/downtempo/lowercase.jpg") no-repeat center center fixed;}
 .synthwave {background: url("../images/downtempo/synthwave.jpg") no-repeat center center fixed;}
