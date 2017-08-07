@@ -1835,7 +1835,6 @@ a:active {
 .gothrock {background: url("../images/industrial/gothrock.jpg") no-repeat center center fixed;}
 .ebm {background: url("../images/industrial/ebm.jpg") no-repeat center center fixed;}
 .noise {background: url("../images/industrial/noise.jpg") no-repeat center center fixed;}
-.darkambient {background: url("../images/industrial/darkambient.jpg") no-repeat center center fixed;}
 .darkwave {background: url("../images/industrial/darkwave.jpg") no-repeat center center fixed;}
 .industrialrock {background: url("../images/industrial/industrialrock.jpg") no-repeat center center fixed;}
 .electroindustrial {background: url("../images/industrial/electroindustrial.jpg") no-repeat center center fixed;}
@@ -1915,6 +1914,7 @@ a:active {
 .ambient {background: url("../images/downtempo/ambient.jpg") no-repeat center center fixed;}
 .newage {background: url("../images/downtempo/newage.jpg") no-repeat center center fixed;}
 .chiptune {background: url("../images/downtempo/chiptune.png") no-repeat center center fixed;}
+.darkambient {background: url("../images/downtempo/darkambient.jpg") no-repeat center center fixed;}
 .idm {background: url("../images/downtempo/idm.jpg") no-repeat center center fixed;}
 .triphop {background: url("../images/downtempo/triphop.jpg") no-repeat center center fixed;}
 .illbient {background: url("../images/downtempo/illbient.jpg") no-repeat center center fixed;}
