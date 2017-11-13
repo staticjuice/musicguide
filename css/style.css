@@ -1747,11 +1747,11 @@ a:active {
 .skiffle {background: url("../images/rock/skiffle.jpg") no-repeat center center fixed;}
 .rockandroll {background: url("../images/rock/rockandroll.jpg") no-repeat center center fixed;}
 .surfrock {background: url("../images/rock/surfrock.jpg") no-repeat center center fixed;}
+.beat {background: url("../images/rock/beat.jpg") no-repeat center center fixed;}
 .garagerock {background: url("../images/rock/garagerock.jpg") no-repeat center center fixed;}
 
-.beat {background: url("../images/rock/beat.jpg") no-repeat center center fixed;}
-.folkrock {background: url("../images/rock/folkrock.jpg") no-repeat center center fixed;}
 .bluesrock {background: url("../images/rock/bluesrock.jpg") no-repeat center center fixed;}
+.folkrock {background: url("../images/rock/folkrock.jpg") no-repeat center center fixed;}
 .psychedelicrock {background: url("../images/rock/psychedelicrock.jpg") no-repeat center center fixed;}
 .progressiverock {background: url("../images/rock/progressiverock.jpg") no-repeat center center fixed;}
 .krautrock {background: url("../images/rock/krautrock.jpg") no-repeat center center fixed;}
