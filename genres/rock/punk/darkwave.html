@@ -7,55 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Darkwave</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
   
 <body class="genre darkwave">
-    <div id="box-industrial">
+    <div id="box-punk">
         <h1>DARKWAVE</h1><br>
             
         After the heydays of the few early Goth Rock pioneers, the Gothic movement took their legacy and started creating darker, more melancholic music with haunting synth melodies, drum machines, and Post-Punk guitar riffs. The introvert lyrics were typically about Gothic (romantic) topics. This darker form of New Wave (usually it was more Post-Punk than New Wave) was called Darkwave. Darkwave emerged in Germany as a second wave of Gothic Rock. It merged with Synthpop, and thus became much more electronic. Another genre emerged from this known as Coldwave. To the American press, Coldwave is very heavy, guitar based Darkwave and a predecessor of Industrial Rock (such as bands Chemlab, Hate Department or 16 Volt). In Europe (especially in France) Coldwave is known as a minimal, Gothic type of Synthpop. Darkwave and Coldwave encompass all Goth music from the late eighties until present. Together with Industrial Rock and Electro-Industrial it would form a musical trinity as the music of choice for the underground but undying Industrial subculture.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">1</div>
+                <div class="buttons-punk">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">2</div>
+                <div class="buttons-punk">2</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">3</div>
+                <div class="buttons-punk">3</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">4</div>
+                <div class="buttons-punk">4</div>
             </div>
                 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">5</div>
+                <div class="buttons-punk">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">6</div>
+                <div class="buttons-punk">6</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">7</div>
+                <div class="buttons-punk">7</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">8</div>
+                <div class="buttons-punk">8</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">9</div>
+                <div class="buttons-punk">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-industrial-stop">&#9724;</div>
+                <div class="buttons-punk-stop">&#9724;</div>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-industrial-stop">&#9724;</div>
+            <div class="buttons-punk-stop">&#9724;</div>
         </div>
     </div>
 
@@ -80,47 +80,47 @@
                 {
                     artist: "Deine Lakaien",
                     track: "The Night Of Love",
-                    path: "../../samples/industrial/darkwave1.ogg"
+                    path: "../../../samples/rock/punk/darkwave1.ogg"
                 },
                 {
                     artist: "Clan Of Xymox",
                     track: "Stranger",
-                    path: "../../samples/industrial/darkwave2.ogg"
+                    path: "../../../samples/rock/punk/darkwave2.ogg"
                 },
                 {
                     artist: "Switchblade Symphony",
                     track: "Dollhouse",
-                    path: "../../samples/industrial/darkwave3.ogg"
+                    path: "../../../samples/rock/punk/darkwave3.ogg"
                 },
                 {
                     artist: "The Crüxshadows",
                     track: "Clerestory",
-                    path: "../../samples/industrial/darkwave4.ogg"
+                    path: "../../../samples/rock/punk/darkwave4.ogg"
                 },
                 {
                     artist: "Fields Of The Nephilim",
                     track: "Moonchild",
-                    path: "../../samples/industrial/darkwave5.ogg"
+                    path: "../../../samples/rock/punk/darkwave5.ogg"
                 },
                 {
                     artist: "Cocteau Twins",
                     track: "Millimillenary",
-                    path: "../../samples/industrial/darkwave6.ogg"
+                    path: "../../../samples/rock/punk/darkwave6.ogg"
                 },
                 {
                     artist: "Beborn Beton",
                     track: "Another World",
-                    path: "../../samples/industrial/darkwave7.ogg"
+                    path: "../../../samples/rock/punk/darkwave7.ogg"
                 },
                 {
                     artist: "Wolfsheim",
                     track: "The Sparrows And The Nightingales",
-                    path: "../../samples/industrial/darkwave8.ogg"
+                    path: "../../../samples/rock/punk/darkwave8.ogg"
                 },
                 {
                     artist: "Cabaret Voltaire",
                     track: "Sensoria",
-                    path: "../../samples/industrial/darkwave9.ogg"
+                    path: "../../../samples/rock/punk/darkwave9.ogg"
                 }
             ]
 
@@ -140,7 +140,7 @@
 
             var audioInstance;
 
-            $(document).find('.buttons-industrial').each(function(index, button) {
+            $(document).find('.buttons-punk').each(function(index, button) {
 
                 buttons.push(button);
                 
@@ -162,7 +162,7 @@
                 });
             });
 
-            $('.buttons-industrial-stop').on('click', function() {
+            $('.buttons-punk-stop').on('click', function() {
 
                 stopAllMusic()
 
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-industrial"
+                    button => button.className = "buttons-punk"
                 )
             }
 
