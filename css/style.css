@@ -50,7 +50,7 @@ a:active {
 }
 
 .mainpop .genrelist a:hover {
-    color: #FFF59D;
+    color: #FFF176;
 }
 
 .mainrockandroll .genrelist a:hover {
@@ -154,7 +154,7 @@ a:active {
 }
 
 .mainpop .genrelist-mobile a:hover {
-    color: #FFF59D;
+    color: #FFF176;
 }
 
 .mainrockandroll .genrelist-mobile a:hover {
@@ -258,7 +258,7 @@ a:active {
 }
 
 .mainpop .genrelist-tablet a:hover {
-    color: #FFF59D;
+    color: #FFF176;
 }
 
 .mainrockandroll .genrelist-tablet a:hover {
@@ -952,7 +952,7 @@ a:active {
 #box-subpop {
     width: 40em;
     height: 100vh;
-    background-color: #FFEB3B;
+    background-color: #FDD835;
     color: #333;
     padding: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -1222,7 +1222,7 @@ a:active {
 
 #box-subpop-mobile {
     width: 100%;
-    background-color: #FFEB3B;
+    background-color: #FDD835;
     color: #333;
     padding: 1.5em;
     font-size: 4.2vw;
@@ -1446,7 +1446,7 @@ a:active {
 #box-subpop-tablet {
     width: 50%;
     height: 100vh;
-    background-color: #FFEB3B;
+    background-color: #FDD835;
     color: #333;
     padding: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -2001,7 +2001,7 @@ h1 {
 
 #box-pop {
     width: 40em;
-    background-color: #FFEB3B;
+    background-color: #FDD835;
     color: #333;
     padding: 1.5em;
     margin: 4em;
@@ -2249,7 +2249,7 @@ h1 {
 }
 
 .buttons-pop, .buttons-pop-stop {
-    background-color: #FFF176;
+    background-color: #FFEB3B;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-size: 2.5em;
@@ -2521,7 +2521,7 @@ h1 {
 }
 
 .buttons-pop:hover, .buttons-pop-stop:hover {
-    background-color: #FFF59D;
+    background-color: #FFF176;
 }
 
 .buttons-rockandroll:hover, .buttons-rockandroll-stop:hover {
