@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nu Prog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre nuprog">
+    <div id="box-alternative">
+        <h1>NU PROG</h1><br>
+            
+        Progressive Rock is a large and durable family of music often divided into several subgenres. One of these for example, is Nu Prog. Over the course of time, Progressive Rock lost that edge over other genres as eclecticism, electronic influences and experimentation in general became more and more basic tools of any Rock band in order to bring something new and exciting to the table. In a way, Nu Prog is like Prog Metal &ndash; a means to classify recent Rock bands that are hard to categorize, but who share a love for original Progressive Rock while staying underground. From the mid-00s onwards, there has been a rise in eclectic bands with a natural talent towards experimentation and high contrast infrequently used in other genres. This Post-Prog wave differs from the original Prog Rock by an affinity for newer, heavier genres. This makes Nu Prog no more eclectic than other Contemporary Rock genres such as Dance Punk or Chillwave, but it places it at the other side of the spectrum &ndash; away from Pop and House. What we have here then is a sort of crisp and clean combination of Post-Rock and Metalcore.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-alternative-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-alternative-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Porcupine Tree",
+                    track: "Anesthetize",
+                    path: "../../../samples/rock/alternative/nuprog1.ogg"
+                },
+                {
+                    artist: "The Mars Volta",
+                    track: "Goliath",
+                    path: "../../../samples/rock/alternative/nuprog2.ogg"
+                },
+                {
+                    artist: "Menomena",
+                    track: "Plumage",
+                    path: "../../../samples/rock/alternative/nuprog3.ogg"
+                },
+                {
+                    artist: "Kayo Dot",
+                    track: "Magnetism",
+                    path: "../../../samples/rock/alternative/nuprog4.ogg"
+                },
+                {
+                    artist: "Mystery Jets",
+                    track: "Telomere",
+                    path: "../../../samples/rock/alternative/nuprog5.ogg"
+                },
+                {
+                    artist: "Closure In Moscow",
+                    track: "Pink Lemonade",
+                    path: "../../../samples/rock/alternative/nuprog6.ogg"
+                },
+                {
+                    artist: "Good Tiger",
+                    track: "Where Are The Birds",
+                    path: "../../../samples/rock/alternative/nuprog7.ogg"
+                },
+                {
+                    artist: "Coheed And Cambria",
+                    track: "In Keeping Secrets Of Silent Earth: 3",
+                    path: "../../../samples/rock/alternative/nuprog8.ogg"
+                },
+                {
+                    artist: "Portugal. The Man",
+                    track: "Sleep Forever",
+                    path: "../../../samples/rock/alternative/nuprog9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-alternative').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-alternative-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-alternative"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NWOAHM</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre nwoahm">
+    <div id="box-metal">
+        <h1>NWOAHM</h1><br>
+            
+        In a desperate attempt to prevent Nu Metal from remaining the last chapter in the history of Metal, the ambiguous term NWOAHM (New Wave of American Heavy Metal) was conceived. This was far from necessary, as Metal is perhaps the only supergenre where all different styles are still being practiced and performed intensively. At first, this wave of American bands seemed only unified in their stance against Nu Metal, but gradually a specific, well-defined genre unfolded, named Metalcore. Instead of mutually aggravating each other towards the extreme like Grindcore, Metalcore is a balanced mix of Hardcore and Death Metal elements, which undoubtedly has led to longer, more complex songs. The song structure and mentality is still Hardcore, but with a slower drum beat and metallic single note guitars. Metalcore is also the least emotional type of Hardcore. Metalcore is a forced marriage between Hardcore Punk and Metal in order to save both genres their legacies, despite mutual differences. Nevertheless, Metalcore’s numerous offspring subgenres prove the healthiness of this marriage in one way or another.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-metal-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-metal-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Killswitch Engage",
+                    track: "My Curse",
+                    path: "../../../samples/rock/metal/nwoahm1.ogg"
+                },
+                {
+                    artist: "Bullet For My Valentine",
+                    track: "Your Betrayal",
+                    path: "../../../samples/rock/metal/nwoahm2.ogg"
+                },
+                {
+                    artist: "Shadows Fall",
+                    track: "In Effigy",
+                    path: "../../../samples/rock/metal/nwoahm3.ogg"
+                },
+                {
+                    artist: "Chimaira",
+                    track: "Resurrection",
+                    path: "../../../samples/rock/metal/nwoahm4.ogg"
+                },
+                {
+                    artist: "Lamb Of God",
+                    track: "Laid To Rest",
+                    path: "../../../samples/rock/metal/nwoahm5.ogg"
+                },
+                {
+                    artist: "Hatebreed",
+                    track: "Destroy Everything",
+                    path: "../../../samples/rock/metal/nwoahm6.ogg"
+                },
+                {
+                    artist: "Avenged Sevenfold",
+                    track: "Nightmare",
+                    path: "../../../samples/rock/metal/nwoahm7.ogg"
+                },
+                {
+                    artist: "Unearth",
+                    track: "My Will Be Done",
+                    path: "../../../samples/rock/metal/nwoahm8.ogg"
+                },
+                {
+                    artist: "All Out War",
+                    track: "Soaked In Torment",
+                    path: "../../../samples/rock/metal/nwoahm9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-metal').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-metal-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-metal"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

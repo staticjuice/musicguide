@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Speed Metal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre speedmetal">
+    <div id="box-metal">
+        <h1>SPEED METAL</h1><br>
+            
+        In the early 80s, Speed Metal became the most popular form of Metal in the American underground. Turning the energy and tempo of Thrash even higher, Speed Metal was extremely fast, abrasive and technically demanding &ndash; the bands played fast, but their attack was precise and clean. In that sense, Speed Metal always remained true to its Metal roots. With the explosion of British and Thrash Metal in the early 80s, some bands realized the extreme potential Metal had to offer. Two similar genres became the product of experiments with Metal outside the regular comfort zone. A small number of these bands created dark, evil, atmospheric Metal (early Black), while others turned the energy and tempo of Thrash even higher, forging Speed Metal. Sometimes the term Speed Metal is reserved for early Thrash Metal, forming a sort of proto-genre, or simply as a synonym for Thrash. In the strictest sense, Speed Metal is faster, and more melodic than Thrash. Lead guitarists display extreme craftsmanship in extensive virtuoso solos, playing ever more rapid than before.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-metal-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-metal-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Helloween",
+                    track: "Metal Invaders",
+                    path: "../../../samples/rock/metal/speedmetal1.ogg"
+                },
+                {
+                    artist: "Flotsam & Jetsam",
+                    track: "Hammerhead",
+                    path: "../../../samples/rock/metal/speedmetal2.ogg"
+                },
+                {
+                    artist: "Celtic Frost",
+                    track: "Inner Sanctum",
+                    path: "../../../samples/rock/metal/speedmetal3.ogg"
+                },
+                {
+                    artist: "Hellhammer",
+                    track: "Messiah",
+                    path: "../../../samples/rock/metal/speedmetal4.ogg"
+                },
+                {
+                    artist: "Exciter",
+                    track: "Violence And Force",
+                    path: "../../../samples/rock/metal/speedmetal5.ogg"
+                },
+                {
+                    artist: "Anvil",
+                    track: "666",
+                    path: "../../../samples/rock/metal/speedmetal6.ogg"
+                },
+                {
+                    artist: "Annihilator",
+                    track: "King Of The Kill",
+                    path: "../../../samples/rock/metal/speedmetal7.ogg"
+                },
+                {
+                    artist: "Accept",
+                    track: "Fast As A Shark",
+                    path: "../../../samples/rock/metal/speedmetal8.ogg"
+                },
+                {
+                    artist: "Rage",
+                    track: "Deceiver",
+                    path: "../../../samples/rock/metal/speedmetal9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-metal').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-metal-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-metal"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
