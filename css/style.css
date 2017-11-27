@@ -1724,15 +1724,13 @@ a:active {
 
 .protopunk {background: url("../images/rock/protopunk.jpg") no-repeat center center fixed;}
 .punkrock {background: url("../images/rock/punkrock.jpg") no-repeat center center fixed;}
-.hardcorepunk {background: url("../images/rock/hardcorepunk.jpg") no-repeat center center fixed;}
-.anarchopunk {background: url("../images/rock/anarchopunk.jpg") no-repeat center center fixed;}
 .skapunk {background: url("../images/rock/skapunk.jpg") no-repeat center center fixed;}
+.postpunk {background: url("../images/rock/postpunk.jpg") no-repeat center center fixed;}
 .newwave {background: url("../images/rock/newwave.jpg") no-repeat center center fixed;}
 .nowave {background: url("../images/rock/nowave.jpg") no-repeat center center fixed;}
-.postpunk {background: url("../images/rock/postpunk.jpg") no-repeat center center fixed;}
-.gothrock {background: url("../images/rock/gothrock.jpg") no-repeat center center fixed;}
-.darkwave {background: url("../images/rock/darkwave.jpg") no-repeat center center fixed;}
 .psychobilly {background: url("../images/rock/psychobilly.jpg") no-repeat center center fixed;}
+.hardcorepunk {background: url("../images/rock/hardcorepunk.jpg") no-repeat center center fixed;}
+.anarchopunk {background: url("../images/rock/anarchopunk.jpg") no-repeat center center fixed;}
 .noiserock {background: url("../images/rock/noiserock.jpg") no-repeat center center fixed;}
 .posthardcore {background: url("../images/rock/posthardcore.jpg") no-repeat center center fixed;}
 .screamo {background: url("../images/rock/screamo.jpg") no-repeat center center fixed;}
@@ -1776,9 +1774,11 @@ a:active {
 .trap {background: url("../images/hiphop/trap.jpg") no-repeat center center fixed;}
 
 .industrial {background: url("../images/industrial/industrial.jpg") no-repeat center center fixed;}
+.gothrock {background: url("../images/industrial/gothrock.jpg") no-repeat center center fixed;}
 .ebm {background: url("../images/industrial/ebm.jpg") no-repeat center center fixed;}
 .noise {background: url("../images/industrial/noise.jpg") no-repeat center center fixed;}
 .darkambient {background: url("../images/industrial/darkambient.jpg") no-repeat center center fixed;}
+.darkwave {background: url("../images/industrial/darkwave.jpg") no-repeat center center fixed;}
 .industrialrock {background: url("../images/industrial/industrialrock.jpg") no-repeat center center fixed;}
 .electroindustrial {background: url("../images/industrial/electroindustrial.jpg") no-repeat center center fixed;}
 .futurepop {background: url("../images/industrial/futurepop.jpg") no-repeat center center fixed;}
@@ -1811,7 +1811,6 @@ a:active {
 .minimaltechno {background: url("../images/dance/minimaltechno.jpg") no-repeat center center fixed;}
 .acidtechno {background: url("../images/dance/acidtechno.jpg") no-repeat center center fixed;}
 .schranz {background: url("../images/dance/schranz.jpg") no-repeat center center fixed;}
-.futuretechno {background: url("../images/dance/futuretechno.jpg") no-repeat center center fixed;}
 
 .newbeat {background: url("../images/dance/newbeat.jpg") no-repeat center center fixed;}
 .rave {background: url("../images/dance/rave.jpg") no-repeat center center fixed;}
