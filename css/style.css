@@ -29,6 +29,10 @@ a:active {
     text-decoration: none;
 }
 
+::selection {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 .maingospel .genrelist a:hover {
     color: #F1B1B1;
 }
@@ -327,6 +331,309 @@ a:active {
 
 .mainworld .genrelist-tablet a:hover {
     color: #567E4E;
+}
+
+.maingospel .genrelist ::selection {
+    background: rgba(229,115,115,0.998) !important;
+}
+
+.mainblues .genrelist ::selection {
+    background: rgba(40,53,147,0.998) !important;
+}
+
+.mainjazz .genrelist ::selection {
+    background: rgba(21,101,192,0.998) !important;
+}
+
+.maincountry .genrelist ::selection {
+    background: rgba(138,154,91,0.998) !important;
+}
+
+.mainrhythmandblues .genrelist ::selection {
+    background: rgba(0,105,92,0.998) !important;
+}
+
+.mainpop .genrelist ::selection {
+    background: rgba(253,216,53,0.998) !important;
+    color: #333 !important;
+}
+
+.mainrockandroll .genrelist ::selection {
+    background: rgba(3,155,229,0.998) !important;
+}
+
+.mainclassicrock .genrelist ::selection {
+    background: rgba(198,40,40,0.998) !important;
+}
+
+.mainmetal .genrelist ::selection {
+    background: rgba(0,0,0,0.998) !important;
+}
+
+.mainpunk .genrelist ::selection {
+    background: rgba(239,108,0,0.998) !important;
+}
+
+.mainalternative .genrelist ::selection {
+    background: rgba(55,71,79,0.998) !important;
+}
+
+.mainreggae .genrelist ::selection {
+    background: rgba(46,125,50,0.998) !important;
+}
+
+.mainhiphop .genrelist ::selection {
+    background: rgba(78,56,82,0.998) !important;
+}
+
+.mainindustrial .genrelist ::selection {
+    background: rgba(78,52,46,0.998) !important;
+}
+
+.mainhouse .genrelist ::selection {
+    background: rgba(0,159,104,0.998) !important;
+}
+
+.maintrance .genrelist ::selection {
+    background: rgba(106,27,154,0.998) !important;
+}
+
+.maintechno .genrelist ::selection {
+    background: rgba(85,85,85,0.998) !important;
+}
+
+.mainhardcore .genrelist ::selection {
+    background: rgba(70,64,57,0.998) !important;
+}
+
+.mainbreakbeat .genrelist ::selection {
+    background: rgba(120,63,93,0.998) !important;
+}
+
+.maindrumandbass .genrelist ::selection {
+    background: rgba(154,24,57,0.998) !important;
+}
+
+.mainukgarage .genrelist ::selection {
+    background: rgba(80,68,79,0.998) !important;
+}
+
+.maindowntempo .genrelist ::selection {
+    background: rgba(194,24,91,0.998) !important;
+}
+
+.mainclassical .genrelist ::selection {
+    background: rgba(112,90,61,0.998) !important;
+}
+
+.mainfolk .genrelist ::selection {
+    background: rgba(198,164,77,0.998) !important;
+}
+
+.mainworld .genrelist ::selection {
+    background: rgba(54,79,48,0.998) !important;
+}
+
+.maingospel .genrelist-mobile ::selection {
+    background: rgba(229,115,115,0.998) !important;
+}
+
+.mainblues .genrelist-mobile ::selection {
+    background: rgba(40,53,147,0.998) !important;
+}
+
+.mainjazz .genrelist-mobile ::selection {
+    background: rgba(21,101,192,0.998) !important;
+}
+
+.maincountry .genrelist-mobile ::selection {
+    background: rgba(138,154,91,0.998) !important;
+}
+
+.mainrhythmandblues .genrelist-mobile ::selection {
+    background: rgba(0,105,92,0.998) !important;
+}
+
+.mainpop .genrelist-mobile ::selection {
+    background: rgba(253,216,53,0.998) !important;
+    color: #333 !important;
+}
+
+.mainrockandroll .genrelist-mobile ::selection {
+    background: rgba(3,155,229,0.998) !important;
+}
+
+.mainclassicrock .genrelist-mobile ::selection {
+    background: rgba(198,40,40,0.998) !important;
+}
+
+.mainmetal .genrelist-mobile ::selection {
+    background: rgba(0,0,0,0.998) !important;
+}
+
+.mainpunk .genrelist-mobile ::selection {
+    background: rgba(239,108,0,0.998) !important;
+}
+
+.mainalternative .genrelist-mobile ::selection {
+    background: rgba(55,71,79,0.998) !important;
+}
+
+.mainreggae .genrelist-mobile ::selection {
+    background: rgba(46,125,50,0.998) !important;
+}
+
+.mainhiphop .genrelist-mobile ::selection {
+    background: rgba(78,56,82,0.998) !important;
+}
+
+.mainindustrial .genrelist-mobile ::selection {
+    background: rgba(78,52,46,0.998) !important;
+}
+
+.mainhouse .genrelist-mobile ::selection {
+    background: rgba(0,159,104,0.998) !important;
+}
+
+.maintrance .genrelist-mobile ::selection {
+    background: rgba(106,27,154,0.998) !important;
+}
+
+.maintechno .genrelist-mobile ::selection {
+    background: rgba(85,85,85,0.998) !important;
+}
+
+.mainhardcore .genrelist-mobile ::selection {
+    background: rgba(70,64,57,0.998) !important;
+}
+
+.mainbreakbeat .genrelist-mobile ::selection {
+    background: rgba(120,63,93,0.998) !important;
+}
+
+.maindrumandbass .genrelist-mobile ::selection {
+    background: rgba(154,24,57,0.998) !important;
+}
+
+.mainukgarage .genrelist-mobile ::selection {
+    background: rgba(80,68,79,0.998) !important;
+}
+
+.maindowntempo .genrelist-mobile ::selection {
+    background: rgba(194,24,91,0.998) !important;
+}
+
+.mainclassical .genrelist-mobile ::selection {
+    background: rgba(112,90,61,0.998) !important;
+}
+
+.mainfolk .genrelist-mobile ::selection {
+    background: rgba(198,164,77,0.998) !important;
+}
+
+.mainworld .genrelist-mobile ::selection {
+    background: rgba(54,79,48,0.998) !important;
+}
+
+.maingospel .genrelist-tablet ::selection {
+    background: rgba(229,115,115,0.998) !important;
+}
+
+.mainblues .genrelist-tablet ::selection {
+    background: rgba(40,53,147,0.998) !important;
+}
+
+.mainjazz .genrelist-tablet ::selection {
+    background: rgba(21,101,192,0.998) !important;
+}
+
+.maincountry .genrelist-tablet ::selection {
+    background: rgba(138,154,91,0.998) !important;
+}
+
+.mainrhythmandblues .genrelist-tablet ::selection {
+    background: rgba(0,105,92,0.998) !important;
+}
+
+.mainpop .genrelist-tablet ::selection {
+    background: rgba(253,216,53,0.998) !important;
+    color: #333 !important;
+}
+
+.mainrockandroll .genrelist-tablet ::selection {
+    background: rgba(3,155,229,0.998) !important;
+}
+
+.mainclassicrock .genrelist-tablet ::selection {
+    background: rgba(198,40,40,0.998) !important;
+}
+
+.mainmetal .genrelist-tablet ::selection {
+    background: rgba(0,0,0,0.998) !important;
+}
+
+.mainpunk .genrelist-tablet ::selection {
+    background: rgba(239,108,0,0.998) !important;
+}
+
+.mainalternative .genrelist-tablet ::selection {
+    background: rgba(55,71,79,0.998) !important;
+}
+
+.mainreggae .genrelist-tablet ::selection {
+    background: rgba(46,125,50,0.998) !important;
+}
+
+.mainhiphop .genrelist-tablet ::selection {
+    background: rgba(78,56,82,0.998) !important;
+}
+
+.mainindustrial .genrelist-tablet ::selection {
+    background: rgba(78,52,46,0.998) !important;
+}
+
+.mainhouse .genrelist-tablet ::selection {
+    background: rgba(0,159,104,0.998) !important;
+}
+
+.maintrance .genrelist-tablet ::selection {
+    background: rgba(106,27,154,0.998) !important;
+}
+
+.maintechno .genrelist-tablet ::selection {
+    background: rgba(85,85,85,0.998) !important;
+}
+
+.mainhardcore .genrelist-tablet ::selection {
+    background: rgba(70,64,57,0.998) !important;
+}
+
+.mainbreakbeat .genrelist-tablet ::selection {
+    background: rgba(120,63,93,0.998) !important;
+}
+
+.maindrumandbass .genrelist-tablet ::selection {
+    background: rgba(154,24,57,0.998) !important;
+}
+
+.mainukgarage .genrelist-tablet ::selection {
+    background: rgba(80,68,79,0.998) !important;
+}
+
+.maindowntempo .genrelist-tablet ::selection {
+    background: rgba(194,24,91,0.998) !important;
+}
+
+.mainclassical .genrelist-tablet ::selection {
+    background: rgba(112,90,61,0.998) !important;
+}
+
+.mainfolk .genrelist-tablet ::selection {
+    background: rgba(198,164,77,0.998) !important;
+}
+
+.mainworld .genrelist-tablet ::selection {
+    background: rgba(54,79,48,0.998) !important;
 }
 
 .genre {
