@@ -12,50 +12,50 @@
 </head>
   
 <body class="genre negrospirituals">
-    <div id="box-gospel">
+    <div id="box-blues">
         <h1>NEGRO SPIRITUALS</h1><br>
             
         An interesting fact about Popular Music is that it emerged out of necessity rather than being a form of art or expression. The earliest genres can be traced back as early as the 19th century, at a time when slavery of African people was still omnipresent in the United States. When African slaves were brought to the United States and Christianized, they began to perceive biblical parallels to their own situation (and were sometimes even encouraged to do so by zealously evangelical whites). Thus, many Spirituals address themes of freedom, earthly suffering and hope for deliverance. They were sung both at worship services and in the fields, and were passed down orally from generation to generation. Given those origins, Negro Spirituals are usually performed very simply and written in repetitive, easily remembered structures (for example, many verses in Negro Spirituals include a one-line refrain that's sung by the entire group and repeated after each new line of the verse). In that sense, Negro Spirituals often bear a resemblance to secular pre-war Blues, a music stemming from a similarly rural lineage.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">1</div>
+                <div class="buttons-blues">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">2</div>
+                <div class="buttons-blues">2</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">3</div>
+                <div class="buttons-blues">3</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">4</div>
+                <div class="buttons-blues">4</div>
             </div>
                 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">5</div>
+                <div class="buttons-blues">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">6</div>
+                <div class="buttons-blues">6</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">7</div>
+                <div class="buttons-blues">7</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">8</div>
+                <div class="buttons-blues">8</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">9</div>
+                <div class="buttons-blues">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-gospel-stop">&#9724;</div>
+                <div class="buttons-blues-stop">&#9724;</div>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-gospel-stop">&#9724;</div>
+            <div class="buttons-blues-stop">&#9724;</div>
         </div>
     </div>
 
@@ -80,47 +80,47 @@
                 {
                     artist: "Ed Young",
                     track: "Jim And John",
-                    path: "../../samples/gospel/negrospirituals1.ogg"
+                    path: "../../samples/blues/negrospirituals1.ogg"
                 },
                 {
                     artist: "Ervin Webb",
                     track: "I'm Going Home",
-                    path: "../../samples/gospel/negrospirituals2.ogg"
+                    path: "../../samples/blues/negrospirituals2.ogg"
                 },
                 {
                     artist: "Ed Lewis",
                     track: "Tom Devil",
-                    path: "../../samples/gospel/negrospirituals3.ogg"
+                    path: "../../samples/blues/negrospirituals3.ogg"
                 },
                 {
                     artist: "Lightning",
                     track: "Long John",
-                    path: "../../samples/gospel/negrospirituals4.ogg"
+                    path: "../../samples/blues/negrospirituals4.ogg"
                 },
                 {
                     artist: "Johnny Lee Moore",
                     track: "Eighteen Hammers",
-                    path: "../../samples/gospel/negrospirituals5.ogg"
+                    path: "../../samples/blues/negrospirituals5.ogg"
                 },
                 {
                     artist: "John Davis",
                     track: "Blow Gabriel",
-                    path: "../../samples/gospel/negrospirituals6.ogg"
+                    path: "../../samples/blues/negrospirituals6.ogg"
                 },
                 {
                     artist: "Jesse Lee Pratcher",
                     track: "Green Sally, Up",
-                    path: "../../samples/gospel/negrospirituals7.ogg"
+                    path: "../../samples/blues/negrospirituals7.ogg"
                 },
                 {
                     artist: "James Carter",
                     track: "Po' Lazarus",
-                    path: "../../samples/gospel/negrospirituals8.ogg"
+                    path: "../../samples/blues/negrospirituals8.ogg"
                 },
                 {
                     artist: "Dock Reed",
                     track: "Troubled Lord I'm Troubled",
-                    path: "../../samples/gospel/negrospirituals9.ogg"
+                    path: "../../samples/blues/negrospirituals9.ogg"
                 }
             ]
 
@@ -140,7 +140,7 @@
 
             var audioInstance;
 
-            $(document).find('.buttons-gospel').each(function(index, button) {
+            $(document).find('.buttons-blues').each(function(index, button) {
 
                 buttons.push(button);
                 
@@ -162,7 +162,7 @@
                 });
             });
 
-            $('.buttons-gospel-stop').on('click', function() {
+            $('.buttons-blues-stop').on('click', function() {
 
                 stopAllMusic()
 
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-gospel"
+                    button => button.className = "buttons-blues"
                 )
             }
 

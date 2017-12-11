@@ -33,10 +33,6 @@ a:active {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.maingospel .genrelist a:hover {
-    color: #F1B1B1;
-}
-
 .mainblues .genrelist a:hover {
     color: #5361D0;
 }
@@ -123,14 +119,6 @@ a:active {
 
 .mainfolk .genrelist a:hover {
     color: #D8C188;
-}
-
-.mainworld .genrelist a:hover {
-    color: #567E4E;
-}
-
-.maingospel .genrelist-mobile a:hover {
-    color: #F1B1B1;
 }
 
 .mainblues .genrelist-mobile a:hover {
@@ -221,14 +209,6 @@ a:active {
     color: #D8C188;
 }
 
-.mainworld .genrelist-mobile a:hover {
-    color: #567E4E;
-}
-
-.maingospel .genrelist-tablet a:hover {
-    color: #F1B1B1;
-}
-
 .mainblues .genrelist-tablet a:hover {
     color: #5361D0;
 }
@@ -315,14 +295,6 @@ a:active {
 
 .mainfolk .genrelist-tablet a:hover {
     color: #D8C188;
-}
-
-.mainworld .genrelist-tablet a:hover {
-    color: #567E4E;
-}
-
-.maingospel .genrelist ::selection {
-    background: rgba(229,115,115,0.998) !important;
 }
 
 .mainblues .genrelist ::selection {
@@ -414,14 +386,6 @@ a:active {
     background: rgba(198,164,77,0.998) !important;
 }
 
-.mainworld .genrelist ::selection {
-    background: rgba(54,79,48,0.998) !important;
-}
-
-.maingospel .genrelist-mobile ::selection {
-    background: rgba(229,115,115,0.998) !important;
-}
-
 .mainblues .genrelist-mobile ::selection {
     background: rgba(40,53,147,0.998) !important;
 }
@@ -509,14 +473,6 @@ a:active {
 
 .mainfolk .genrelist-mobile ::selection {
     background: rgba(198,164,77,0.998) !important;
-}
-
-.mainworld .genrelist-mobile ::selection {
-    background: rgba(54,79,48,0.998) !important;
-}
-
-.maingospel .genrelist-tablet ::selection {
-    background: rgba(229,115,115,0.998) !important;
 }
 
 .mainblues .genrelist-tablet ::selection {
@@ -608,10 +564,6 @@ a:active {
     background: rgba(198,164,77,0.998) !important;
 }
 
-.mainworld .genrelist-tablet ::selection {
-    background: rgba(54,79,48,0.998) !important;
-}
-
 .genre {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -695,19 +647,6 @@ a:active {
 .allgenres {
     background: url("../images/wood.jpg") no-repeat center center fixed;
     background-size: cover;
-}
-
-.maingospel:before {
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    background: url("../images/gospelbig.jpg") no-repeat center center fixed;
-    width: 100vw;
-    height: 100vh;
-    -webkit-filter: brightness(40%);
-    filter: brightness(40%);
 }
 
 .mainblues:before {
@@ -996,19 +935,6 @@ a:active {
     filter: brightness(40%);
 }
 
-.mainworld:before {
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    background: url("../images/worldbig.jpg") no-repeat center center fixed;
-    width: 100vw;
-    height: 100vh;
-    -webkit-filter: brightness(40%);
-    filter: brightness(40%);
-}
-
 #genres-heading {
     margin: 2em 9vw 0 9vw;
     font-family: 'Roboto', sans-serif;
@@ -1121,17 +1047,6 @@ a:active {
 
 .genrelist-tablet h1 {
     font-size: 2.1em;
-}
-
-#box-subgospel {
-    width: 40em;
-    height: 100vh;
-    background-color: #E57373;
-    color: #FFF;
-    padding: 1.5em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    float: right;
-    overflow: auto;
 }
 
 #box-subblues {
@@ -1376,25 +1291,6 @@ a:active {
     overflow: auto;
 }
 
-#box-subworld {
-    width: 40em;
-    height: 100vh;
-    background-color: #364F30;
-    color: #FFF;
-    padding: 1.5em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    float: right;
-    overflow: auto;
-}
-
-#box-subgospel-mobile {
-    width: 100%;
-    background-color: #E57373;
-    color: #FFF;
-    padding: 1.5em;
-    font-size: 4.2vw;
-}
-
 #box-subblues-mobile {
     width: 100%;
     background-color: #283593;
@@ -1569,25 +1465,6 @@ a:active {
     color: #FFF;
     padding: 1.5em;
     font-size: 4.2vw;
-}
-
-#box-subworld-mobile {
-    width: 100%;
-    background-color: #364F30;
-    color: #FFF;
-    padding: 1.5em;
-    font-size: 4.2vw;
-}
-
-#box-subgospel-tablet {
-    width: 50%;
-    height: 100vh;
-    background-color: #E57373;
-    color: #FFF;
-    padding: 1.5em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    float: right;
-    overflow: auto;
 }
 
 #box-subblues-tablet {
@@ -1832,21 +1709,7 @@ a:active {
     overflow: auto;
 }
 
-#box-subworld-tablet {
-    width: 50%;
-    height: 100vh;
-    background-color: #364F30;
-    color: #FFF;
-    padding: 1.5em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    float: right;
-    overflow: auto;
-}
-
-.negrospirituals {background: url("../images/gospel/negrospirituals.jpg") no-repeat center center fixed;}
-.traditionalgospel {background: url("../images/gospel/traditionalgospel.jpg") no-repeat center center fixed;}
-.contemporarygospel {background: url("../images/gospel/contemporarygospel.jpg") no-repeat center center fixed;}
-
+.negrospirituals {background: url("../images/blues/negrospirituals.jpg") no-repeat center center fixed;}
 .deltablues {background: url("../images/blues/deltablues.jpg") no-repeat center center fixed;}
 .classicfemaleblues {background: url("../images/blues/classicfemaleblues.jpg") no-repeat center center fixed;}
 .boogiewoogie {background: url("../images/blues/boogiewoogie.jpg") no-repeat center center fixed;}
@@ -1906,6 +1769,7 @@ a:active {
 .postdisco {background: url("../images/pop/postdisco.jpg") no-repeat center center fixed;}
 .dancepop {background: url("../images/pop/dancepop.jpg") no-repeat center center fixed;}
 .electropop {background: url("../images/pop/electropop.jpg") no-repeat center center fixed;}
+.indiefolk {background: url("../images/pop/indiefolk.jpg") no-repeat center center fixed;}
 
 .rockandroll {background: url("../images/rock/rockandroll.jpg") no-repeat center center fixed;}
 .surfrock {background: url("../images/rock/surfrock.jpg") no-repeat center center fixed;}
@@ -2073,38 +1937,26 @@ a:active {
 .romantic {background: url("../images/classical/romantic.jpg") no-repeat center center fixed;}
 .filmscore {background: url("../images/classical/filmscore.jpg") no-repeat center center fixed;}
 
+.africanfolk {background: url("../images/folk/africanfolk.jpg") no-repeat center center fixed;}
+.latinfolk {background: url("../images/folk/latinfolk.jpg") no-repeat center center fixed;}
+.chinesefolk {background: url("../images/folk/chinesefolk.jpg") no-repeat center center fixed;}
+.japanesefolk {background: url("../images/folk/japanesefolk.jpg") no-repeat center center fixed;}
+.indianfolk {background: url("../images/folk/indianfolk.jpg") no-repeat center center fixed;}
+.arabicfolk {background: url("../images/folk/arabicfolk.jpg") no-repeat center center fixed;}
+.australianfolk {background: url("../images/folk/australianfolk.jpg") no-repeat center center fixed;}
+.polynesianfolk {background: url("../images/folk/polynesianfolk.jpg") no-repeat center center fixed;}
 .irishfolk {background: url("../images/folk/irishfolk.jpg") no-repeat center center fixed;}
 .scottishfolk {background: url("../images/folk/scottishfolk.jpg") no-repeat center center fixed;}
 .nordicfolk {background: url("../images/folk/nordicfolk.jpg") no-repeat center center fixed;}
 .frenchfolk {background: url("../images/folk/frenchfolk.jpg") no-repeat center center fixed;}
 .spanishfolk {background: url("../images/folk/spanishfolk.jpg") no-repeat center center fixed;}
 .russianfolk {background: url("../images/folk/russianfolk.jpg") no-repeat center center fixed;}
-.skiffle {background: url("../images/folk/skiffle.jpg") no-repeat center center fixed;}
-.indiefolk {background: url("../images/folk/indiefolk.jpg") no-repeat center center fixed;}
-
-.african {background: url("../images/world/african.jpg") no-repeat center center fixed;}
-.latin {background: url("../images/world/latin.jpg") no-repeat center center fixed;}
-.chinese {background: url("../images/world/chinese.jpg") no-repeat center center fixed;}
-.japanese {background: url("../images/world/japanese.jpg") no-repeat center center fixed;}
-.indian {background: url("../images/world/indian.jpg") no-repeat center center fixed;}
-.arabic {background: url("../images/world/arabic.jpg") no-repeat center center fixed;}
-.australian {background: url("../images/world/australian.jpg") no-repeat center center fixed;}
-.polynesian {background: url("../images/world/polynesian.jpg") no-repeat center center fixed;}
 
 h1 {
   	font-family: 'Roboto', sans-serif;
   	font-weight: 900;
   	font-size: 2.5em;
   	margin: 0;
-}
-
-#box-gospel {
-    width: 40em;
-    background-color: #E57373;
-    color: #FFF;
-    padding: 1.5em;
-    margin: 4em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #box-blues {
@@ -2303,27 +2155,6 @@ h1 {
     padding: 1.5em;
     margin: 4em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#box-world {
-    width: 40em;
-    background-color: #364F30;
-    color: #FFF;
-    padding: 1.5em;
-    margin: 4em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.buttons-gospel, .buttons-gospel-stop {
-    background-color: #ED9C9C;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-size: 2.5em;
-    text-align: center;
-    width: 1.03em;
-    line-height: 1.2em;
-    user-select: none;
-    cursor: default;
 }
 
 .buttons-blues, .buttons-blues-stop {
@@ -2590,22 +2421,6 @@ h1 {
     cursor: default;
 }
 
-.buttons-world, .buttons-world-stop {
-    background-color: #4C6F44;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-size: 2.5em;
-    text-align: center;
-    width: 1.03em;
-    line-height: 1.2em;
-    user-select: none;
-    cursor: default;
-}
-
-.buttons-gospel:hover, .buttons-gospel-stop:hover {
-    background-color: #F1B1B1;
-}
-
 .buttons-blues:hover, .buttons-blues-stop:hover {
     background-color: #5361D0;
 }
@@ -2694,11 +2509,6 @@ h1 {
     background-color: #D8C188;
 }
 
-.buttons-world:hover, .buttons-world-stop:hover {
-    background-color: #567E4E;
-}
-
-.buttons-gospel.clicked, .buttons-gospel-stop.clicked,
 .buttons-blues.clicked, .buttons-blues-stop.clicked,
 .buttons-jazz.clicked, .buttons-jazz-stop.clicked,
 .buttons-country.clicked, .buttons-country-stop.clicked,
@@ -2719,8 +2529,7 @@ h1 {
 .buttons-ukgarage.clicked, .buttons-ukgarage-stop.clicked,
 .buttons-downtempo.clicked, .buttons-downtempo-stop.clicked,
 .buttons-classical.clicked, .buttons-classical-stop.clicked,
-.buttons-folk.clicked, .buttons-folk-stop.clicked,
-.buttons-world.clicked, .buttons-world-stop.clicked {
+.buttons-folk.clicked, .buttons-folk-stop.clicked {
     box-shadow:inset 0em 0em 0em 0.1em #FFF;
 }
 
@@ -2777,35 +2586,35 @@ h1 {
 }
 
 @media (max-width: 991px) {
-    #box-gospel, #box-blues, #box-jazz, #box-country, 
-    #box-rhythmandblues, #box-pop, #box-classicrock, #box-metal, 
-    #box-punk, #box-alternative, #box-reggae, #box-hiphop, 
-    #box-industrial, #box-house, #box-trance, #box-techno, 
-    #box-hardcore, #box-breakbeat, #box-drumandbass, #box-ukgarage, 
-    #box-downtempo, #box-classical, #box-folk, #box-world {
+    #box-blues, #box-jazz, #box-country, #box-rhythmandblues, 
+    #box-pop, #box-classicrock, #box-metal, #box-punk, 
+    #box-alternative, #box-reggae, #box-hiphop, #box-industrial, 
+    #box-house, #box-trance, #box-techno, #box-hardcore, 
+    #box-breakbeat, #box-drumandbass, #box-ukgarage, #box-downtempo, 
+    #box-classical, #box-folk {
         margin: 2em;
         font-size: 2.27vw;
   }
 }
 
 @media (max-width: 1199px) {
-    #box-gospel, #box-blues, #box-jazz, #box-country, 
-    #box-rhythmandblues, #box-pop, #box-classicrock, #box-metal, 
-    #box-punk, #box-alternative, #box-reggae, #box-hiphop, 
-    #box-industrial, #box-house, #box-trance, #box-techno, 
-    #box-hardcore, #box-breakbeat, #box-drumandbass, #box-ukgarage, 
-    #box-downtempo, #box-classical, #box-folk, #box-world {
+    #box-blues, #box-jazz, #box-country, #box-rhythmandblues, 
+    #box-pop, #box-classicrock, #box-metal, #box-punk, 
+    #box-alternative, #box-reggae, #box-hiphop, #box-industrial, 
+    #box-house, #box-trance, #box-techno, #box-hardcore, 
+    #box-breakbeat, #box-drumandbass, #box-ukgarage, #box-downtempo, 
+    #box-classical, #box-folk {
         margin: 2em;
   }
 }
 
 @media (max-width: 767px) {
-    .buttons-gospel, .buttons-blues, .buttons-jazz, .buttons-country,
-    .buttons-rhythmandblues, .buttons-pop, .buttons-classicrock, .buttons-metal, 
-    .buttons-punk, .buttons-alternative, .buttons-reggae, .buttons-hiphop, 
-    .buttons-industrial, .buttons-house, .buttons-trance, .buttons-techno, 
-    .buttons-hardcore, .buttons-breakbeat, .buttons-drumandbass, .buttons-ukgarage, 
-    .buttons-downtempo, .buttons-classical, .buttons-folk, .buttons-world {
+    .buttons-blues, .buttons-jazz, .buttons-country, .buttons-rhythmandblues, 
+    .buttons-pop, .buttons-classicrock, .buttons-metal, .buttons-punk, 
+    .buttons-alternative, .buttons-reggae, .buttons-hiphop, .buttons-industrial, 
+    .buttons-house, .buttons-trance, .buttons-techno, .buttons-hardcore, 
+    .buttons-breakbeat, .buttons-drumandbass, .buttons-ukgarage, .buttons-downtempo, 
+    .buttons-classical, .buttons-folk {
         margin-bottom: 0.4em;
   }
 }
@@ -2824,12 +2633,12 @@ h1 {
 }
 
 @media (max-width: 767px) {
-    #box-gospel, #box-blues, #box-jazz, #box-country, 
-    #box-rhythmandblues, #box-pop, #box-classicrock, #box-metal, 
-    #box-punk, #box-alternative, #box-reggae, #box-hiphop, 
-    #box-industrial, #box-house, #box-trance, #box-techno, 
-    #box-hardcore, #box-breakbeat, #box-drumandbass, #box-ukgarage, 
-    #box-downtempo, #box-classical, #box-folk, #box-world {
+    #box-blues, #box-jazz, #box-country, #box-rhythmandblues, 
+    #box-pop, #box-classicrock, #box-metal, #box-punk, 
+    #box-alternative, #box-reggae, #box-hiphop, #box-industrial, 
+    #box-house, #box-trance, #box-techno, #box-hardcore, 
+    #box-breakbeat, #box-drumandbass, #box-ukgarage, #box-downtempo, 
+    #box-classical, #box-folk {
         font-size: 3.75vw;
         width: 88%;
         margin: 1.5em;
