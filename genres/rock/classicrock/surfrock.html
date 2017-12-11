@@ -12,50 +12,50 @@
 </head>
   
 <body class="genre surfrock">
-    <div id="box-rockandroll">
+    <div id="box-classicrock">
         <h1>SURF ROCK</h1><br>
             
         The sun, the beach, palm trees and a carefree lifestyle were the perfect atmosphere for surf boys to retreat in the shack to work on their guitar technique. With incredibly fast, rolling guitar riffs put in reverb, they created a washing sound that could easily imitate ocean waves and impress girls in that true Rock &amp; Roll heritage. Almost all Surf Rock is purely instrumental and this draws even more attention towards the proficiency of its guitarists. Non-instrumental genres were often much slower and less technical, such as the music of The Beach Boys, who were by far the most well-known exponent. Surf Rock features standard 4/4 Rock &amp; Roll riffs, yet spiced up by influences from Cuban malagueña songs. This made them so fast, catchy and addictive that everyone wanted to play them. Covering Surf Rock tunes from other bands was so common and tolerated, that eventually nobody knew who actually made the originals anymore. This was non-commercial, DIY, fun music in its purest form, which sadly became almost completely extinct, because almost all bands cared too little for professional distribution or promotion of their music.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">1</div>
+                <div class="buttons-classicrock">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">2</div>
+                <div class="buttons-classicrock">2</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">3</div>
+                <div class="buttons-classicrock">3</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">4</div>
+                <div class="buttons-classicrock">4</div>
             </div>
                 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">5</div>
+                <div class="buttons-classicrock">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">6</div>
+                <div class="buttons-classicrock">6</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">7</div>
+                <div class="buttons-classicrock">7</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">8</div>
+                <div class="buttons-classicrock">8</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">9</div>
+                <div class="buttons-classicrock">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-rockandroll-stop">&#9724;</div>
+                <div class="buttons-classicrock-stop">&#9724;</div>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-rockandroll-stop">&#9724;</div>
+            <div class="buttons-classicrock-stop">&#9724;</div>
         </div>
     </div>
 
@@ -80,47 +80,47 @@
                 {
                     artist: "The Surfaris",
                     track: "Wipe Out",
-                    path: "../../../samples/rock/rockandroll/surfrock1.ogg"
+                    path: "../../../samples/rock/classicrock/surfrock1.ogg"
                 },
                 {
                     artist: "Dick Dale And The Del-Tones",
                     track: "Misirlou",
-                    path: "../../../samples/rock/rockandroll/surfrock2.ogg"
+                    path: "../../../samples/rock/classicrock/surfrock2.ogg"
                 },
                 {
                     artist: "The Beach Boys",
                     track: "Surfin' U.S.A.",
-                    path: "../../../samples/rock/rockandroll/surfrock3.ogg"
+                    path: "../../../samples/rock/classicrock/surfrock3.ogg"
                 },
                 {
                     artist: "The Shadows",
                     track: "Apache",
-                    path: "../../../samples/rock/rockandroll/surfrock4.ogg"
+                    path: "../../../samples/rock/classicrock/surfrock4.ogg"
                 },
                 {
                     artist: "The Ventures",
                     track: "Walk, Don't Run",
-                    path: "../../../samples/rock/rockandroll/surfrock5.ogg"
+                    path: "../../../samples/rock/classicrock/surfrock5.ogg"
                 },
                 {
                     artist: "The Chantays",
                     track: "Pipeline",
-                    path: "../../../samples/rock/rockandroll/surfrock6.ogg"
+                    path: "../../../samples/rock/classicrock/surfrock6.ogg"
                 },
                 {
                     artist: "The Marketts",
                     track: "Out Of Limits",
-                    path: "../../../samples/rock/rockandroll/surfrock7.ogg"
+                    path: "../../../samples/rock/classicrock/surfrock7.ogg"
                 },
                 {
                     artist: "The Champs",
                     track: "Tequila",
-                    path: "../../../samples/rock/rockandroll/surfrock8.ogg"
+                    path: "../../../samples/rock/classicrock/surfrock8.ogg"
                 },
                 {
                     artist: "The Bel-Aires",
                     track: "Mr. Moto",
-                    path: "../../../samples/rock/rockandroll/surfrock9.ogg"
+                    path: "../../../samples/rock/classicrock/surfrock9.ogg"
                 }
             ]
 
@@ -140,7 +140,7 @@
 
             var audioInstance;
 
-            $(document).find('.buttons-rockandroll').each(function(index, button) {
+            $(document).find('.buttons-classicrock').each(function(index, button) {
 
                 buttons.push(button);
                 
@@ -162,7 +162,7 @@
                 });
             });
 
-            $('.buttons-rockandroll-stop').on('click', function() {
+            $('.buttons-classicrock-stop').on('click', function() {
 
                 stopAllMusic()
 
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-rockandroll"
+                    button => button.className = "buttons-classicrock"
                 )
             }
 

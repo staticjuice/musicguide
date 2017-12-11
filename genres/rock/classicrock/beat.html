@@ -12,50 +12,50 @@
 </head>
   
 <body class="genre beat">
-    <div id="box-rockandroll">
+    <div id="box-classicrock">
         <h1>BEAT</h1><br>
 
         Merseybeat (named after the river Mersey in Liverpool) or simply ‘Beat’ was the great second revolution of Rock. Most noteworthy are The Beatles, who won the hearts of every teen in the UK and America, and who started out as a seemingly upright boy band but later revolutionized sound recording. Inspired by their huge success &ndash; a true mania &ndash; many British Merseybeat bands took the journey across the ocean to invade America and become Rock stars, though few actually succeeded. This phenomenon and the genre itself, is since known as the British Invasion (though British Blues Rock was also a part of this invasion). A particular subcultural phenomenon closely related to Merseybeat, is the British Mod scene of the 50s and the 60s. Young rebellious biker boys were united in their stance against conformist Rock and preferred a blend of sped-up Rock &amp; Roll and Motown. This eventually led to Beat music and later to the New Romantics and even Britpop. With their speakers always on max volume and a healthy diet of pep pills, they were the vanguard of a new era of Rock &ndash; a Golden Age of guitars and soundwaves.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">1</div>
+                <div class="buttons-classicrock">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">2</div>
+                <div class="buttons-classicrock">2</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">3</div>
+                <div class="buttons-classicrock">3</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">4</div>
+                <div class="buttons-classicrock">4</div>
             </div>
                 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">5</div>
+                <div class="buttons-classicrock">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">6</div>
+                <div class="buttons-classicrock">6</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">7</div>
+                <div class="buttons-classicrock">7</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">8</div>
+                <div class="buttons-classicrock">8</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">9</div>
+                <div class="buttons-classicrock">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-rockandroll-stop">&#9724;</div>
+                <div class="buttons-classicrock-stop">&#9724;</div>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-rockandroll-stop">&#9724;</div>
+            <div class="buttons-classicrock-stop">&#9724;</div>
         </div>
     </div>
 
@@ -80,47 +80,47 @@
                 {
                     artist: "The Beatles",
                     track: "She Loves You",
-                    path: "../../../samples/rock/rockandroll/beat1.ogg"
+                    path: "../../../samples/rock/classicrock/beat1.ogg"
                 },
                 {
                     artist: "Gerry & The Pacemakers",
                     track: "How Do You Do It?",
-                    path: "../../../samples/rock/rockandroll/beat2.ogg"
+                    path: "../../../samples/rock/classicrock/beat2.ogg"
                 },
                 {
                     artist: "Herman's Hermits",
                     track: "No Milk Today",
-                    path: "../../../samples/rock/rockandroll/beat3.ogg"
+                    path: "../../../samples/rock/classicrock/beat3.ogg"
                 },
                 {
                     artist: "The Swinging Blue Jeans",
                     track: "You're No Good",
-                    path: "../../../samples/rock/rockandroll/beat4.ogg"
+                    path: "../../../samples/rock/classicrock/beat4.ogg"
                 },
                 {
                     artist: "The Searches",
                     track: "Needles And Pins",
-                    path: "../../../samples/rock/rockandroll/beat5.ogg"
+                    path: "../../../samples/rock/classicrock/beat5.ogg"
                 },
                 {
                     artist: "The Kinks",
                     track: "Waterloo Sunset",
-                    path: "../../../samples/rock/rockandroll/beat6.ogg"
+                    path: "../../../samples/rock/classicrock/beat6.ogg"
                 },
                 {
                     artist: "Billy J. Kramer & The Dakotas",
                     track: "Bad To Me",
-                    path: "../../../samples/rock/rockandroll/beat7.ogg"
+                    path: "../../../samples/rock/classicrock/beat7.ogg"
                 },
                 {
                     artist: "Manfred Mann",
                     track: "Do Wah Diddy Diddy",
-                    path: "../../../samples/rock/rockandroll/beat8.ogg"
+                    path: "../../../samples/rock/classicrock/beat8.ogg"
                 },
                 {
                     artist: "The Zombies",
                     track: "She's Not There",
-                    path: "../../../samples/rock/rockandroll/beat9.ogg"
+                    path: "../../../samples/rock/classicrock/beat9.ogg"
                 }
             ]
 
@@ -140,7 +140,7 @@
 
             var audioInstance;
 
-            $(document).find('.buttons-rockandroll').each(function(index, button) {
+            $(document).find('.buttons-classicrock').each(function(index, button) {
 
                 buttons.push(button);
                 
@@ -162,7 +162,7 @@
                 });
             });
 
-            $('.buttons-rockandroll-stop').on('click', function() {
+            $('.buttons-classicrock-stop').on('click', function() {
 
                 stopAllMusic()
 
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-rockandroll"
+                    button => button.className = "buttons-classicrock"
                 )
             }
 
