@@ -1046,22 +1046,6 @@ a:active {
     height: 23%;
 }
 
-#genres-grid-rock {
-    margin: 0 9vw 1.7vw 9vw;
-}
-
-#genres-grid-rock h1 {
-    margin: auto;
-    top: 0; left: 0; bottom: 0; right: 0;
-    font-weight: 300;
-    font-size: 1.8vw;
-    color: #FFF;
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-    height: 21%;
-}
-
 #genres-grid-mobile {
     margin: 0 1.5em 1.5em 1.5em;
     overflow: hidden;
@@ -2782,18 +2766,6 @@ h1 {
     .five-cols .col-sm-1 {
         width: 20%;
         *width: 20%;
-  }
-}
-
-@media (min-width: 768px) {
-    #genres-grid-rock h1 {
-        font-size: 3vw;
-  }
-}
-
-@media (min-width: 992px) {
-    #genres-grid-rock h1 {
-        font-size: 1.8vw;
   }
 }
 
