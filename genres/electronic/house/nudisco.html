@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nu Disco</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre nudisco">
+    <div id="box-house">
+        <h1>NU DISCO</h1><br>
+            
+        Nu Disco focuses specifically on Disco of the late 70s and Eurodisco of the early 80s. This is Disco mixed with a slower form of House, making it more accessible for the modern public. Just like Electroclash brought back Synthpop to an EDM-fatigued audience, Nu Disco reinstalls Disco with similar success. Nu Disco recreates these classic genres by using the latest equipment and technologies. This allows razor-sharp productions and crystal clear sounds. Apart from this updated sound though, the difference with the original era is minimal. Funktronica emerges around the same time, and might be more or less interpreted as an Electro Funk Revival. Because Funktronica is influenced by Italo Disco too, it shares much resemblance with Nu Disco. Both genres signify a magical junction right in the centre between Eurodisco, Chicago House and Electro Funk. After a long era of Electro House, Nu Disco and Funktronica become welcomed with open hands. From the moment the genre appeared on the website Beatport, popularity kept increasing drastically &ndash; a possible omen that R&amp;B’s Golden Age could return with a vengeance.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-house">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-house">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-house">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-house">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-house">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-house">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-house">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-house">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-house">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-house-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-house-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Televisor feat. Richard Judge",
+                    track: "Find That Someone",
+                    path: "../../../samples/electronic/house/nudisco1.ogg"
+                },
+                {
+                    artist: "Madeon feat. Mark Foster",
+                    track: "Nonsense",
+                    path: "../../../samples/electronic/house/nudisco2.ogg"
+                },
+                {
+                    artist: "The Knocks feat. X Ambassadors",
+                    track: "Comfortable (Oliver Nelson Remix)",
+                    path: "../../../samples/electronic/house/nudisco3.ogg"
+                },
+                {
+                    artist: "Tobtok feat. Emil Heró",
+                    track: "Higher",
+                    path: "../../../samples/electronic/house/nudisco4.ogg"
+                },
+                {
+                    artist: "Skogsrå",
+                    track: "Out Of Time",
+                    path: "../../../samples/electronic/house/nudisco5.ogg"
+                },
+                {
+                    artist: "Yeah Boy",
+                    track: "Can't Get Enough (Sam Padrul Remix)",
+                    path: "../../../samples/electronic/house/nudisco6.ogg"
+                },
+                {
+                    artist: "Breakbot feat. Ruckazoid",
+                    track: "Fantasy",
+                    path: "../../../samples/electronic/house/nudisco7.ogg"
+                },
+                {
+                    artist: "Lenno & Benson",
+                    track: "Fever",
+                    path: "../../../samples/electronic/house/nudisco8.ogg"
+                },
+                {
+                    artist: "ZHU",
+                    track: "Generationwhy",
+                    path: "../../../samples/electronic/house/nudisco9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-house').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-house-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-house"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Synthwave</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre synthwave">
+    <div id="box-downtempo">
+        <h1>SYNTHWAVE</h1><br>
+            
+        Synthwave is a revival of earlier Synth music that shies no cliché &ndash; the genre is integrated in an artwork of purple and pink neon, sports cars, Miami palm trees, 80s cartoons, Horror Sci-Fi and Retro-Futurism. Synthwave is a time machine to Miami 1984, with the same synthesizers and melodies from that era, producing the same kind of instrumental Synth music with crystal clear, resonating sounds. The style is mainly instrumental, and often contain 80s cliché elements in the sound such as electronic drums, gated reverb, analog synthesizer bass lines and leads, all to resemble tracks from that time period. However, Synthwave incorporates modern production techniques such as sidechain compression and placing the bassline and kick drum prominently in the mix as heard in modern Dance genres such as Electro House. Aesthetically, Synthwave gives a retrofuturistic perspective, emulating 80s Science Fiction and action, sometimes compared to Cyberpunk. This aesthetic has been incorporated into retro-themed movies such as 'Drive' and video games such as 'Far Cry 3: Blood Dragon'.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-downtempo-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-downtempo-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Kavinsky",
+                    track: "Nightcall",
+                    path: "../../../samples/electronic/downtempo/synthwave1.ogg"
+                },
+                {
+                    artist: "Lazerhawk",
+                    track: "Overdrive",
+                    path: "../../../samples/electronic/downtempo/synthwave2.ogg"
+                },
+                {
+                    artist: "Betamaxx",
+                    track: "Guided By Moonlight",
+                    path: "../../../samples/electronic/downtempo/synthwave3.ogg"
+                },
+                {
+                    artist: "Miami Nights 1984",
+                    track: "Ocean Drive",
+                    path: "../../../samples/electronic/downtempo/synthwave4.ogg"
+                },
+                {
+                    artist: "Dynatron",
+                    track: "Stars Of The Night",
+                    path: "../../../samples/electronic/downtempo/synthwave5.ogg"
+                },
+                {
+                    artist: "FM-84",
+                    track: "Mainframe",
+                    path: "../../../samples/electronic/downtempo/synthwave6.ogg"
+                },
+                {
+                    artist: "Waveshaper",
+                    track: "Stellar Jupiter",
+                    path: "../../../samples/electronic/downtempo/synthwave7.ogg"
+                },
+                {
+                    artist: "VHS Dreams",
+                    track: "Vice Point",
+                    path: "../../../samples/electronic/downtempo/synthwave8.ogg"
+                },
+                {
+                    artist: "Scandroid",
+                    track: "Salvation Code",
+                    path: "../../../samples/electronic/downtempo/synthwave9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-downtempo').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-downtempo-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-downtempo"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

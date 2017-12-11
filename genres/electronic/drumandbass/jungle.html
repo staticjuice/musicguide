@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jungle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre jungle">
+    <div id="box-drumandbass">
+        <h1>JUNGLE</h1><br>
+            
+        The end of the short but intense Rave subculture preluded the beginning of a new one. The famous Amen Break was sped up to 170 bpm, chopped up and glued together to create an accelerated, rolling, syncopated rhythm. In the beginning this brand new music had two distinctive faces, later blending into one &ndash; on one hand there was a softer, ambient, rational approach to the rhythm that used the “rolls” to accompany textured melodies. On the other hand, there was the emotional approach, the voice of a hunted down generation &ndash; paranoid, ruffneck Ravers that were influenced by the matching tempo and fierceness of Jamaican Ragga music. Drum &amp; Bass was part of west side London culture, which was more upper class and “sophisticated”, whereas Jungle was played in the clubs of east side London. Jungle subculture is Hip Hop meets Ragga in a British jacket &ndash; in your face, militant and profane. Jungle rejected Rave culture which had become too much to bear at the start of the 90s. With menacing samples, criminal themes, and a deliberate use of cocaine and marijuana instead of XTC, the war against Rave was on.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-drumandbass-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-drumandbass-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Shy FX & UK Apache",
+                    track: "Original Nuttah",
+                    path: "../../../samples/electronic/drumandbass/jungle1.ogg"
+                },
+                {
+                    artist: "Goldie",
+                    track: "Inner City Life",
+                    path: "../../../samples/electronic/drumandbass/jungle2.ogg"
+                },
+                {
+                    artist: "Bounty Killer & Beenie Man",
+                    track: "Borderline Mobster",
+                    path: "../../../samples/electronic/drumandbass/jungle3.ogg"
+                },
+                {
+                    artist: "Krome & Time",
+                    track: "The License",
+                    path: "../../../samples/electronic/drumandbass/jungle4.ogg"
+                },
+                {
+                    artist: "Freestylers",
+                    track: "Warning",
+                    path: "../../../samples/electronic/drumandbass/jungle5.ogg"
+                },
+                {
+                    artist: "Remark",
+                    track: "Sound Murderer",
+                    path: "../../../samples/electronic/drumandbass/jungle6.ogg"
+                },
+                {
+                    artist: "Omni Trio",
+                    track: "Renegade Snares",
+                    path: "../../../samples/electronic/drumandbass/jungle7.ogg"
+                },
+                {
+                    artist: "Origin Unknown",
+                    track: "Valley Of Shadows",
+                    path: "../../../samples/electronic/drumandbass/jungle8.ogg"
+                },
+                {
+                    artist: "Abstract",
+                    track: "The Message",
+                    path: "../../../samples/electronic/drumandbass/jungle9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-drumandbass').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-drumandbass-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-drumandbass"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

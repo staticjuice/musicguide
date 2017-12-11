@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Illbient</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre illbient">
+    <div id="box-downtempo">
+        <h1>ILLBIENT</h1><br>
+            
+        The powerful idea of slowed down Breakbeat pioneered by Trip Hop, led to more similar experiments &ndash; Ambient Breaks, with Illbient as the most deviant and noteworthy example. The experimental and innovative nature of Breakbeat synergizes with that of Downtempo, resulting in a highly fascinating electronic music genre. Ambient Breaks differs from Trip Hop (albeit sometimes minimally) as it is not Hip Hop music &ndash; it is the work of electronic music producers using various samples instead of a movement bridging remote subcultures into one. When Trip Hop arrived in the US (specifically New York), conceptual artists got inspired by the sound but worked the other way around &ndash; they laid multiple layers of echoing ambient sounds on top of each other (influenced by Dub) and then added a breakbeat. These soundscapes are often eclectic noisescapes &ndash; dark, experimental and drawing from different genres to create some sort of deep mysterious force. Illbient (Ill Ambient, in its slang meaning &ndash; “this beat is ill”) is not drug music as one might suspect, but an artsy, contemplative soundtrack for an unwritten creepy or deeply psychological film.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-downtempo">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-downtempo-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-downtempo-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "DJ Spooky",
+                    track: "Phase Interlude",
+                    path: "../../../samples/electronic/downtempo/illbient1.ogg"
+                },
+                {
+                    artist: "Aravane",
+                    track: "Tokyo Ghost Stories",
+                    path: "../../../samples/electronic/downtempo/illbient2.ogg"
+                },
+                {
+                    artist: "Unkle",
+                    track: "Rabbit In Your Headlights",
+                    path: "../../../samples/electronic/downtempo/illbient3.ogg"
+                },
+                {
+                    artist: "Boards Of Canada",
+                    track: "Roygbiv",
+                    path: "../../../samples/electronic/downtempo/illbient4.ogg"
+                },
+                {
+                    artist: "Neotropic",
+                    track: "Northwest 37th",
+                    path: "../../../samples/electronic/downtempo/illbient5.ogg"
+                },
+                {
+                    artist: "Sofa Surfers",
+                    track: "I Asked For Water (Spectre Remix)",
+                    path: "../../../samples/electronic/downtempo/illbient6.ogg"
+                },
+                {
+                    artist: "Irresistible Force",
+                    track: "Nepalese Bliss (DJ Food Remake)",
+                    path: "../../../samples/electronic/downtempo/illbient7.ogg"
+                },
+                {
+                    artist: "Sixtoo",
+                    track: "Boxcutter Emporium",
+                    path: "../../../samples/electronic/downtempo/illbient8.ogg"
+                },
+                {
+                    artist: "DJ Spooky",
+                    track: "Anansi Abstrakt",
+                    path: "../../../samples/electronic/downtempo/illbient9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-downtempo').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-downtempo-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-downtempo"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

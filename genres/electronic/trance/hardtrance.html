@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hard Trance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre hardtrance">
+    <div id="box-trance">
+        <h1>HARD TRANCE</h1><br>
+            
+        Hoovers, acid sounds and reverb on very hard kick beats are the staples of Hard Trance, which has a very ravy feeling to it. Mega-discotheques start to rise, with heavy laser use, gadgets and stimulating go-go dancers. There is little room for interpretation &ndash; Rave is back, but in disguise. Female or distorted vocal samples with a haunting and sinister but promiscuous touch accumulate to an already dark and melancholic sound &ndash; this is music for the long night, driving from club to club without a sense of time. The British Gatecrasher clubs were particularly responsible for making the genre popular. With an average tempo between 140-180 bpm, Hard Trance is very fast &ndash; its bassline is deep and driving. But leading synth melodies come less to the foreground or are replaced by synth stabs, partially as a response to the commercialism of mainstream Uplifting Trance. The beats become even stronger and Hip Hop elements turn up when Breakbeat Hardcore producers have their way with Hard Trance. As the 2000s progressed, the genre became harder once more, less melodic and progressive, and gradually evolved into Hardstyle.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-trance-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-trance-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Beam vs Cyrus",
+                    track: "Thunder In Paradise (DJ Scot Project Remix)",
+                    path: "../../../samples/electronic/trance/hardtrance1.ogg"
+                },
+                {
+                    artist: "Walt",
+                    track: "Let The Music Play",
+                    path: "../../../samples/electronic/trance/hardtrance2.ogg"
+                },
+                {
+                    artist: "Space Frog feat. The Grim Reaper",
+                    track: "X-Ray (Follow Me)",
+                    path: "../../../samples/electronic/trance/hardtrance3.ogg"
+                },
+                {
+                    artist: "Hennes & Cold",
+                    track: "The Second Trip",
+                    path: "../../../samples/electronic/trance/hardtrance4.ogg"
+                },
+                {
+                    artist: "Iain Cross",
+                    track: "Sexy Beast",
+                    path: "../../../samples/electronic/trance/hardtrance5.ogg"
+                },
+                {
+                    artist: "Alex Kidd",
+                    track: "Kiddstock Theme 2009",
+                    path: "../../../samples/electronic/trance/hardtrance6.ogg"
+                },
+                {
+                    artist: "Yakooza",
+                    track: "Cocaine (Scot Project Remix)",
+                    path: "../../../samples/electronic/trance/hardtrance7.ogg"
+                },
+                {
+                    artist: "Push",
+                    track: "Universal Nation",
+                    path: "../../../samples/electronic/trance/hardtrance8.ogg"
+                },
+                {
+                    artist: "Cosmic Gate",
+                    track: "Fire Wire (DJ Scot Project Remix)",
+                    path: "../../../samples/electronic/trance/hardtrance9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-trance').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-trance-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-trance"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
