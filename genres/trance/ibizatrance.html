@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ibiza Trance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre ibizatrance">
+    <div id="box-trance">
+        <h1>IBIZA TRANCE</h1><br>
+            
+        On the warm and lush Balearic Islands, mainly Ibiza, lots of DJs found an ideal party heaven, far away from dirty cities and oppressing governments. But Ibiza did not become popular in the 90s to party &ndash; the island was a refuge for thousands and thousands of worn-out ravers, tired of a music scene spun out of control and too much drug abuse. Alongside the migration of gays, artists and social outcasts to this asylum, these ravers sought a musical healing treatment for after-Rave symptoms and withdrawals, which would ideally be a Downtempo fusion of soft House and Trance. Another result was similar but slightly more energetic, with less complex melodies and added vocals, like an ambient version of Eurodance. This was called Balearic Beat, which isn't much different than Ibiza Trance. Balearic Beat builds further on the local genre of the eighties &ndash; a summer-infused, ambient type of Eurodisco. Sometimes exotic samples such as Spanish guitars or bandoneons are added, which makes Ibiza even more a sanctuary to forget all troubles &ndash; a concept to which the famous Amnesia club owed its name.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-trance-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-trance-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Chicane",
+                    track: "Offshore",
+                    path: "../../samples/trance/ibizatrance1.ogg"
+                },
+                {
+                    artist: "Miro",
+                    track: "Paradise",
+                    path: "../../samples/trance/ibizatrance2.ogg"
+                },
+                {
+                    artist: "Solar Stone",
+                    track: "Seven Cities",
+                    path: "../../samples/trance/ibizatrance3.ogg"
+                },
+                {
+                    artist: "ATB",
+                    track: "Underwater World",
+                    path: "../../samples/trance/ibizatrance4.ogg"
+                },
+                {
+                    artist: "Nalin & Kane",
+                    track: "Beachball",
+                    path: "../../samples/trance/ibizatrance5.ogg"
+                },
+                {
+                    artist: "Jam & Spoon",
+                    track: "Stella",
+                    path: "../../samples/trance/ibizatrance6.ogg"
+                },
+                {
+                    artist: "Gouryella",
+                    track: "Gouryella",
+                    path: "../../samples/trance/ibizatrance7.ogg"
+                },
+                {
+                    artist: "Global Experience",
+                    track: "Zanzibar",
+                    path: "../../samples/trance/ibizatrance8.ogg"
+                },
+                {
+                    artist: "Energy 52",
+                    track: "Café Del Mar (Three N One Mix)",
+                    path: "../../samples/trance/ibizatrance9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-trance').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-trance-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-trance"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

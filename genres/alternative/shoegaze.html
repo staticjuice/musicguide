@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shoegaze</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre shoegaze">
+    <div id="box-alternative">
+        <h1>SHOEGAZE</h1><br>
+            
+        Mostly interchangeable with Dream Pop but more saturated in reverb, the term "shoegazing" was coined by the British music press to ridicule the stage presence of a wave of groups who stood still during live performances in a detached, introspective, non-confrontational state, often with their heads down, as the heavy use of effects pedals meant the performers were often looking down at their feet during concerts. The sound of the music was overwhelmingly loud, with long, droning riffs, waves of distortion, and cascades of feedback. Vocals and melodies disappeared into the walls of guitars, creating a wash of sound where no instrument was distinguishable from the other. Almost none of the Shoegazers were dynamic performers, which prevented them from breaking through into the crucial US market. In the early 90s &ndash; after the groups had dominated the British music press and indie charts &ndash; the Shoegaze groups were swept aside by the twin tides of American Grunge and Britpop. Some Shoegazers broke up within a few years, while other groups evolved with the times and were able to sustain careers into the late 90s.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-alternative-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-alternative-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "My Bloody Valentine",
+                    track: "Only Shallow",
+                    path: "../../samples/alternative/shoegaze1.ogg"
+                },
+                {
+                    artist: "Ride",
+                    track: "Seagull",
+                    path: "../../samples/alternative/shoegaze2.ogg"
+                },
+                {
+                    artist: "Slowdive",
+                    track: "Alison",
+                    path: "../../samples/alternative/shoegaze3.ogg"
+                },
+                {
+                    artist: "Cocteau Twins",
+                    track: "Pearly-Dewdrops' Drops",
+                    path: "../../samples/alternative/shoegaze4.ogg"
+                },
+                {
+                    artist: "A.R. Kane",
+                    track: "Green Hazed Daze",
+                    path: "../../samples/alternative/shoegaze5.ogg"
+                },
+                {
+                    artist: "The Jesus And Mary Chain",
+                    track: "Just Like Honey",
+                    path: "../../samples/alternative/shoegaze6.ogg"
+                },
+                {
+                    artist: "The Telescopes",
+                    track: "Celeste",
+                    path: "../../samples/alternative/shoegaze7.ogg"
+                },
+                {
+                    artist: "The Stone Roses",
+                    track: "I Wanna Be Adored",
+                    path: "../../samples/alternative/shoegaze8.ogg"
+                },
+                {
+                    artist: "Beach House",
+                    track: "Take Care",
+                    path: "../../samples/alternative/shoegaze9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-alternative').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-alternative-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-alternative"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Psychobilly</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre psychobilly">
+    <div id="box-punk">
+        <h1>PSYCHOBILLY</h1><br>
+            
+        Psychobilly is a weird and unusual fusion genre that never received much attention, although it has a recognizable sound and substantial subculture. In the late 70s, Punk artists were drawn towards Rockabilly. The mixture of these genres processed a remarkable outcome &ndash; creepy Rock &amp; Roll with haunting echos, spooky sound effects and rough chainsaw riffs. It is downright crazy music, like the band had lost their brain and became zombified, hence the word Psychobilly. Vocals are also often sung in a stuttering manner, reminiscent of Rockabilly. Horror Punk is a genre defined by a large amount of nostalgia for 50s imagery, fashion and themes and especially Horror films. Horror Punk shares a great deal of overlapping with Psychobilly as both genres like to indulge in a subculture of B-flicks and cult movies. Horror Punk and Psychobilly are among the few subgenres of Punk that don’t take themselves seriously (on the contrary), which explains a great deal of their popularity. Shortly after its birth, Psychobilly directly leads to the second wave of Garage Rock (a minor revival movement).<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-punk-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-punk-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "The Cramps",
+                    track: "Human Fly",
+                    path: "../../samples/punk/psychobilly1.ogg"
+                },
+                {
+                    artist: "The Reverend Horton Heat",
+                    track: "Let Me Teach You How To Eat",
+                    path: "../../samples/punk/psychobilly2.ogg"
+                },
+                {
+                    artist: "The Meteors",
+                    track: "Psycho For Your Love",
+                    path: "../../samples/punk/psychobilly3.ogg"
+                },
+                {
+                    artist: "Demented Are Go",
+                    track: "Bodies In The Basement",
+                    path: "../../samples/punk/psychobilly4.ogg"
+                },
+                {
+                    artist: "Red Elvises",
+                    track: "Boogie On The Beach",
+                    path: "../../samples/punk/psychobilly5.ogg"
+                },
+                {
+                    artist: "Nekromantix",
+                    track: "Who Killed The Cheerleader",
+                    path: "../../samples/punk/psychobilly6.ogg"
+                },
+                {
+                    artist: "Zombina And The Skeletones",
+                    track: "Zombie Hop",
+                    path: "../../samples/punk/psychobilly7.ogg"
+                },
+                {
+                    artist: "The Brains",
+                    track: "Enjoy The Silence",
+                    path: "../../samples/punk/psychobilly8.ogg"
+                },
+                {
+                    artist: "Koffin Kats",
+                    track: "Maneater",
+                    path: "../../samples/punk/psychobilly9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-punk').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-punk-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-punk"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

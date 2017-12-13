@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Electronic Rock</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre electronicrock">
+    <div id="box-alternative">
+        <h1>ELECTRONIC ROCK</h1><br>
+            
+        In the 2000s, as computer technology became more accessible and music software advanced, it became possible to create high quality music using little more than a single laptop computer. This resulted in a massive increase in the amount of home-produced electronic music available to the general public via the expanding internet and new forms of performance such live coding. These techniques also began to be used by existing bands and by developing genres that mixed Rock with digital techniques and sounds, including Indietronica, Electroclash, Dance Punk and Nu Gaze. Unsurprisingly, this is a fairly broad and flexible genre, which can easily tap into a wide spectrum of related genres. Where Nu Gaze is rather an obscure and rare genre and Indietronica too loosely defined, Chillwave is the genre that comes closest to a certain definition. Chillwave has a very summery mood, full of optimism and dreamy Pop vocals. 80s retro and lots of reverb on different song parts make it seem like Dream Pop is back from the dead. A term frequently associated with these latest Rock genres is Laptronica &ndash; electronic music performed entirely by simply a laptop.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-alternative-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-alternative-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Spiderbait",
+                    track: "Glockenpop",
+                    path: "../../samples/alternative/electronicrock1.ogg"
+                },
+                {
+                    artist: "Ladytron",
+                    track: "Ghosts",
+                    path: "../../samples/alternative/electronicrock2.ogg"
+                },
+                {
+                    artist: "Yeah Yeah Yeahs",
+                    track: "Heads Will Roll",
+                    path: "../../samples/alternative/electronicrock3.ogg"
+                },
+                {
+                    artist: "Tame Impala",
+                    track: "Let It Happen",
+                    path: "../../samples/alternative/electronicrock4.ogg"
+                },
+                {
+                    artist: "Cherub",
+                    track: "Doses & Mimosas",
+                    path: "../../samples/alternative/electronicrock5.ogg"
+                },
+                {
+                    artist: "Röyksopp",
+                    track: "Vision One",
+                    path: "../../samples/alternative/electronicrock6.ogg"
+                },
+                {
+                    artist: "Klaxons",
+                    track: "Golden Skans",
+                    path: "../../samples/alternative/electronicrock7.ogg"
+                },
+                {
+                    artist: "The Notwist",
+                    track: "Chemicals",
+                    path: "../../samples/alternative/electronicrock8.ogg"
+                },
+                {
+                    artist: "Post War Years",
+                    track: "All Eyes",
+                    path: "../../samples/alternative/electronicrock9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-alternative').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-alternative-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-alternative"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

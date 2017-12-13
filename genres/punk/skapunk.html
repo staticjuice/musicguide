@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ska Punk</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre skapunk">
+    <div id="box-punk">
+        <h1>SKA PUNK</h1><br>
+            
+        During the years of Punk rebellion in the UK, an unexpected ally appeared as Rastafarians started protesting alongside Punks, united by their fight against reform and oppression. Punk and Reggae never merged, though Reggae’s influence is certainly noticeable in many New Wave records. Reactionary street Punk known as Oi!-Punk, was the result of UK skinheads looking for new music to dance to and they found it in Ska (not Reggae). Though Oi! is sometimes associated with neofascist, racist and nihilistic subcultures, most of the Oi! skinheads picked up the appearance as a satirical protest against the new right-wing UK National Front Party. The famous British label 2-Tone Records released a new series of British Ska artists, which lead to a large revival and the discovery of Ska in the US and the UK, nearly two decades after the genre was invented. Inspired by Oi! Punk, this second wave of Ska or Ska Revival got mixed up with Punk and by the end of the 80s the formation of Ska Punk was complete. The second wave of Ska changed Punk songs into uptempo, optimistic tracks with brass instruments, though still politically aware.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-punk-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-punk-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "The Specials",
+                    track: "A Message To You Rudy",
+                    path: "../../samples/punk/skapunk1.ogg"
+                },
+                {
+                    artist: "The Beat",
+                    track: "Mirror In The Bathroom",
+                    path: "../../samples/punk/skapunk2.ogg"
+                },
+                {
+                    artist: "Madness",
+                    track: "House Of Fun",
+                    path: "../../samples/punk/skapunk3.ogg"
+                },
+                {
+                    artist: "Fun Boy Three",
+                    track: "The Lunatics (Have Taken Over The Asylum)",
+                    path: "../../samples/punk/skapunk4.ogg"
+                },
+                {
+                    artist: "The Selecter",
+                    track: "On My Radio",
+                    path: "../../samples/punk/skapunk5.ogg"
+                },
+                {
+                    artist: "Bad Manners",
+                    track: "Lip Up Fatty",
+                    path: "../../samples/punk/skapunk6.ogg"
+                },
+                {
+                    artist: "The Mighty Mighty Bosstones",
+                    track: "The Impression That I Get",
+                    path: "../../samples/punk/skapunk7.ogg"
+                },
+                {
+                    artist: "Operation Ivy",
+                    track: "Sound System",
+                    path: "../../samples/punk/skapunk8.ogg"
+                },
+                {
+                    artist: "Rancid",
+                    track: "Time Bomb",
+                    path: "../../samples/punk/skapunk9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-punk').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-punk-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-punk"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

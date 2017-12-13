@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Britpop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre britpop">
+    <div id="box-alternative">
+        <h1>BRITPOP</h1><br>
+            
+        Britpop was the British reaction to Grunge. Enough with all the feeble, depressing sorrow and back to glamorous Rock. This soft but catchy kind of Pop is sometimes credited as the least original genre of the 90s. On an auditory level there is indeed not much shocking &ndash; a clear wink to British Merseybeat but roughened up by the presence of Indie Rock, with sometimes synthesizers and electronic effects to cast a certain glam mood. What makes the genre so well-known, popular and clearly defined is not its sound then, but the Rock &amp; Roll mentality of it &ndash; the cocky attitude of British frontmen determined to conquer the stage, steal the show and awe the masses. There is a reason for such attitude &ndash; many British bands were fed up with the overall dominance of American Rock bands in the British hit charts of the early 90s. As such they created a strong anti-American music genre, with a very narrow range of influences (all British). Of course, the sound, vocals and song structure are all means to this end. Which explains why Britpop is same meat, different gravy, but very attractive all the same.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-alternative">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-alternative-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-alternative-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Oasis",
+                    track: "Wonderwall",
+                    path: "../../samples/alternative/britpop1.ogg"
+                },
+                {
+                    artist: "Blur",
+                    track: "Country House",
+                    path: "../../samples/alternative/britpop2.ogg"
+                },
+                {
+                    artist: "Pulp",
+                    track: "Common People",
+                    path: "../../samples/alternative/britpop3.ogg"
+                },
+                {
+                    artist: "The Verve",
+                    track: "Bitter Sweet Symphony",
+                    path: "../../samples/alternative/britpop4.ogg"
+                },
+                {
+                    artist: "Suede",
+                    track: "Animal Nitrate",
+                    path: "../../samples/alternative/britpop5.ogg"
+                },
+                {
+                    artist: "Supergrass",
+                    track: "Moving",
+                    path: "../../samples/alternative/britpop6.ogg"
+                },
+                {
+                    artist: "Mansun",
+                    track: "Wide Open Space",
+                    path: "../../samples/alternative/britpop7.ogg"
+                },
+                {
+                    artist: "Dodgy",
+                    track: "Good Enough",
+                    path: "../../samples/alternative/britpop8.ogg"
+                },
+                {
+                    artist: "Ocean Colour Scene",
+                    track: "Hundred Mile High City",
+                    path: "../../samples/alternative/britpop9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-alternative').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-alternative-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-alternative"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

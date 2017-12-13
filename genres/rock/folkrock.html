@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Folk Rock</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre folkrock">
+    <div id="box-rock">
+        <h1>FOLK ROCK</h1><br>
+            
+        The British Invasion casted a shockwave throughout music industry and was practically impossible to ignore in the UK. Even the secluded folk communities took an interest in the strong backbeat and catchy guitar hooks. Pioneering band The Byrds initiated this evolution, starting out as a pure Folk band but dragging along many others in a real Folk Rock hype. By signing up with record labels, the messages and reflective stories of Folk Rock artists could reach a much larger audience than before. An appealing thought for artists who believed in the importance of story over sound. This came at the expense of experimentation &ndash; the songs were pretty conventional and simple. On top of that, an idealistic but too naïve worldview didn’t help either to win over a large amount of fans who weren’t keen on this new direction towards Rock. Folk Rock differs from the previous Folk Revivals in the use of electric, 12-string guitars and vocal harmonies in bands. There is a significant amount of overlap with Country Rock, as both genres are crossovers from acoustic guitar genres into electric guitar Rock.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-rock-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-rock-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Bob Dylan",
+                    track: "Like A Rolling Stone",
+                    path: "../../samples/rock/folkrock1.ogg"
+                },
+                {
+                    artist: "The Byrds",
+                    track: "Mr. Tambourine Man",
+                    path: "../../samples/rock/folkrock2.ogg"
+                },
+                {
+                    artist: "The Lovin' Spoonful",
+                    track: "Daydream",
+                    path: "../../samples/rock/folkrock3.ogg"
+                },
+                {
+                    artist: "The Turtles",
+                    track: "Happy Together",
+                    path: "../../samples/rock/folkrock4.ogg"
+                },
+                {
+                    artist: "Donovan",
+                    track: "Sunshine Superman",
+                    path: "../../samples/rock/folkrock5.ogg"
+                },
+                {
+                    artist: "Simon & Garfunkel",
+                    track: "Mrs. Robinson",
+                    path: "../../samples/rock/folkrock6.ogg"
+                },
+                {
+                    artist: "The Mamas & The Papas",
+                    track: "California Dreamin'",
+                    path: "../../samples/rock/folkrock7.ogg"
+                },
+                {
+                    artist: "Crosby, Stills, Nash & Young",
+                    track: "Our House",
+                    path: "../../samples/rock/folkrock8.ogg"
+                },
+                {
+                    artist: "America",
+                    track: "A Horse With No Name",
+                    path: "../../samples/rock/folkrock9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-rock').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-rock-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-rock"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

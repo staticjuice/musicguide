@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Garage Rock</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre garagerock">
+    <div id="box-rock">
+        <h1>GARAGE ROCK</h1><br>
+            
+        After the advent of Rock &amp; Roll, countless ambitious teens (mostly in the UK) got hooked on the sound and started forming their own Rock bands. More often than not, they rehearsed in the garages of their parents. The result was a very raw, amateur, lo-fi sound of Rock &amp; Roll and the first experiments with distorted guitars. Garage Rock is a genre where the “fuzz” distortion effect is used intensively, which fits nicely with Garage Rock’s recurring content of anger and frustration about dealing with heartbreak and other negative love experiences. Because most Garage Rock musicians couldn’t afford decent audio equipment, there was often no budget for voice amplification, resulting in wailing, screaming singers. It wasn’t until the great British Invasion of the mid-60s that Garage Rock truly broke loose, with even more bands and crossovers to Psychedelic Rock as a result. Garage Rock’s big teenage “we-do-what-we-want” attitude and sound inspired Punk Rock itself, as well as contemporary artists who felt a revival was well deserved. After all, Garage Rock is the embodiment of sleaziness, roughness and Rock’s nonchalance in all its galore.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-rock">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-rock-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-rock-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "The Sonics",
+                    track: "Have Love Will Travel",
+                    path: "../../samples/rock/garagerock1.ogg"
+                },
+                {
+                    artist: "The Castaways",
+                    track: "Liar, Liar",
+                    path: "../../samples/rock/garagerock2.ogg"
+                },
+                {
+                    artist: "The Wailers",
+                    track: "Hang Up",
+                    path: "../../samples/rock/garagerock3.ogg"
+                },
+                {
+                    artist: "The Kingsmen",
+                    track: "Louie Louie",
+                    path: "../../samples/rock/garagerock4.ogg"
+                },
+                {
+                    artist: "The Electric Prunes",
+                    track: "Get Me To The World On Time",
+                    path: "../../samples/rock/garagerock5.ogg"
+                },
+                {
+                    artist: "The 13th Floor Elevators",
+                    track: "You're Gonna Miss Me",
+                    path: "../../samples/rock/garagerock6.ogg"
+                },
+                {
+                    artist: "Count Five",
+                    track: "Psychotic Reaction",
+                    path: "../../samples/rock/garagerock7.ogg"
+                },
+                {
+                    artist: "The Seeds",
+                    track: "Pushin' Too Hard",
+                    path: "../../samples/rock/garagerock8.ogg"
+                },
+                {
+                    artist: "Halloween Fright Night",
+                    track: "Gloria (The Shadows Of The Knight)",
+                    path: "../../samples/rock/garagerock9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-rock').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-rock-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-rock"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

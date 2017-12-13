@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traditional Heavy Metal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre traditionalheavymetal">
+    <div id="box-metal">
+        <h1>TRADITIONAL HEAVY METAL</h1><br>
+            
+        Heavy Metal used to be an interchangeable term with Hard Rock in the late 60s. The earliest examples of the genre are often cited as Hard Rock examples and vice versa. As such, Traditional Heavy Metal is a loosely defined genre &ndash; simply “Harder-than-Hard Rock”, mainly by means of more amplification and distortion. The shocking tragedy of four deaths and excessive violence at the Altamont Festival in 1969 marked the end of the flower power age, a temporary exile of The Rolling Stones and most importantly &ndash; a loss of belief in the hippy utopia. Rock couldn’t make the world a better place and everyone had witnessed the dark side of human nature. The first band to be influenced by this event was Led Zeppelin. Described at the time as Rock music being dark, heavy and gloomy, it was almost impossible to listen to. Black Sabbath developed an even slower, tuned-down sound, yet also full of distortion, with thick and heavy riffs. In their later work they also experimented with different tempo and instrumentation. Both bands feature lengthy songs, with elaborate guitar solos, while often referring to Satanic or dark themes.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-metal-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-metal-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Black Sabbath",
+                    track: "Supernaut",
+                    path: "../../samples/metal/traditionalheavymetal1.ogg"
+                },
+                {
+                    artist: "Led Zeppelin",
+                    track: "Whole Lotta Love",
+                    path: "../../samples/metal/traditionalheavymetal2.ogg"
+                },
+                {
+                    artist: "Deep Purple",
+                    track: "Black Night",
+                    path: "../../samples/metal/traditionalheavymetal3.ogg"
+                },
+                {
+                    artist: "Judas Priest",
+                    track: "Breaking The Law",
+                    path: "../../samples/metal/traditionalheavymetal4.ogg"
+                },
+                {
+                    artist: "Budgie",
+                    track: "Breadfan",
+                    path: "../../samples/metal/traditionalheavymetal5.ogg"
+                },
+                {
+                    artist: "Blue Öyster Cult",
+                    track: "(Don't Fear) The Reaper",
+                    path: "../../samples/metal/traditionalheavymetal6.ogg"
+                },
+                {
+                    artist: "UFO",
+                    track: "Silver Bird",
+                    path: "../../samples/metal/traditionalheavymetal7.ogg"
+                },
+                {
+                    artist: "Rush",
+                    track: "Tom Sawyer",
+                    path: "../../samples/metal/traditionalheavymetal8.ogg"
+                },
+                {
+                    artist: "Mountain",
+                    track: "Mississippi Queen",
+                    path: "../../samples/metal/traditionalheavymetal9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-metal').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-metal-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-metal"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
