@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Happy Hardcore</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre happyhardcore">
+    <div id="box-hardcore">
+        <h1>HAPPY HARDCORE</h1><br>
+            
+        In the Dance hit charts of the early 90s, Eurodance and derivative forms reigned supreme. Eventually, even Hardcore became influenced &ndash; the catchy synth melodies were extremely sped up to around 180 bpm (which made them sound rather cheesy), old skool piano sounds were added and accelerated female chorus vocals filled in the remaining parts. Happy Hardcore was a true parody of Gabber, a satire taken to the extreme, with children’s merchandising, colourful teen compilation CDs, and even children’s parties, where Happy Hardcore was played all the time. Without a doubt, Happy Hardcore was despised by many of the “serious” Gabber Hardcore community, for which the genre was not only a commercial sellout, but a threat to their culture. They were right, as in one way or another Happy Hardcore already marked the end of the Gabber culture, though it would still take a couple of years. More often than not, DJs were repelled and intimidated when playing Happy Hardcore. Although in some clubs or parties these genres could be played alongside each other without any fuss, allowing for interesting fusions and crossovers.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hardcore">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hardcore">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hardcore">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hardcore">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hardcore">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hardcore">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hardcore">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hardcore">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hardcore">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-hardcore-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-hardcore-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "2 Brothers On The 4th Floor",
+                    track: "Fairytales",
+                    path: "../../../samples/dance/hardcore/happyhardcore1.ogg"
+                },
+                {
+                    artist: "Nakatomi",
+                    track: "Children Of The Night",
+                    path: "../../../samples/dance/hardcore/happyhardcore2.ogg"
+                },
+                {
+                    artist: "Bang!",
+                    track: "Shooting Star",
+                    path: "../../../samples/dance/hardcore/happyhardcore3.ogg"
+                },
+                {
+                    artist: "Trixxy",
+                    track: "Sunrize",
+                    path: "../../../samples/dance/hardcore/happyhardcore4.ogg"
+                },
+                {
+                    artist: "Scott Brown",
+                    track: "Elysium Plus",
+                    path: "../../../samples/dance/hardcore/happyhardcore5.ogg"
+                },
+                {
+                    artist: "Visa",
+                    track: "Fly Away (DJ Seduction Remix)",
+                    path: "../../../samples/dance/hardcore/happyhardcore6.ogg"
+                },
+                {
+                    artist: "Critical Mass",
+                    track: "Happy Generation",
+                    path: "../../../samples/dance/hardcore/happyhardcore7.ogg"
+                },
+                {
+                    artist: "4 Tune Fairytales",
+                    track: "My Little Fantasy",
+                    path: "../../../samples/dance/hardcore/happyhardcore8.ogg"
+                },
+                {
+                    artist: "Dune",
+                    track: "Rainbow To The Stars",
+                    path: "../../../samples/dance/hardcore/happyhardcore9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-hardcore').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-hardcore-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-hardcore"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

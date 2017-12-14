@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contemporary Rap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre contemporaryrap">
+    <div id="box-hiphop">
+        <h1>CONTEMPORARY RAP</h1><br>
+            
+        Although this stuff is too new to have an official name yet, Contemporary Rap refers to the latest wave of Hip Hop music that is currently dominating music charts around the world. The sound here is essentially a continuation of Trap music, albeit in a much more artistic way, losing the shallow lyrics of traditional Trap in favour of more personal topics. In July 2017, Forbes reported that Hip Hop had recently usurped Rock as the most consumed musical genre, becoming the most popular genre in music for the first time in American history. Many producers of Contemporary Rap often follow an indie approach, creating and producing everything themselves, often with casual releases on SoundCloud leading to the term Cloud Rap. Other styles that have recently become popular include Mumble Rap, where rappers rap in a nonsensical and sometimes unintelligible style. Lo-Fi Rap features lower quality sound design as an aesthetic, and Emo Rap seeks to combine the Emo style of singing with Hip Hop instrumentation. All of this has made Hip Hop into the most relevant style of music today, and there is no doubt that it has a long way to go.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hiphop">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hiphop">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hiphop">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hiphop">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hiphop">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hiphop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hiphop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hiphop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-hiphop">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-hiphop-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-hiphop-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Kanye West",
+                    track: "Father Stretch My Hands Pt. 1",
+                    path: "../../samples/hiphop/contemporaryrap1.ogg"
+                },
+                {
+                    artist: "Childish Gambino",
+                    track: "3005",
+                    path: "../../samples/hiphop/contemporaryrap2.ogg"
+                },
+                {
+                    artist: "Frank Ocean",
+                    track: "Chanel",
+                    path: "../../samples/hiphop/contemporaryrap3.ogg"
+                },
+                {
+                    artist: "Kendrick Lamar",
+                    track: "HUMBLE.",
+                    path: "../../samples/hiphop/contemporaryrap4.ogg"
+                },
+                {
+                    artist: "Drake",
+                    track: "Gyalchester",
+                    path: "../../samples/hiphop/contemporaryrap5.ogg"
+                },
+                {
+                    artist: "J. Cole",
+                    track: "No Role Modelz",
+                    path: "../../samples/hiphop/contemporaryrap6.ogg"
+                },
+                {
+                    artist: "Desiigner",
+                    track: "Panda",
+                    path: "../../samples/hiphop/contemporaryrap7.ogg"
+                },
+                {
+                    artist: "Big Sean",
+                    track: "Bounce Back",
+                    path: "../../samples/hiphop/contemporaryrap8.ogg"
+                },
+                {
+                    artist: "Post Malone feat. Quavo",
+                    track: "Congratulations",
+                    path: "../../samples/hiphop/contemporaryrap9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-hiphop').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-hiphop-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-hiphop"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

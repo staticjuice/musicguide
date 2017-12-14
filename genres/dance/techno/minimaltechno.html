@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minimal Techno</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre minimaltechno">
+    <div id="box-techno">
+        <h1>MINIMAL TECHNO</h1><br>
+            
+        In the early 90s, Techno was being contaminated by the things it defies most &ndash; melody, eclecticism and noise. Minimal Techno was their resort and the genre is exactly what you would expect &ndash; a simple 4/4 electronic kick beat, enhanced by rhythmical electronic sounds with barely anything more. Some authors even claim that Minimal Techno “is defined by what it denies itself”. Minimal Techno focuses more on slow and steady progression, and therefore can have much longer songs than regular Techno. Since all kind of melody is removed, it may be perceived as dark and menacing, a trait that sometimes gets enhanced in its sound manipulation. But because of its purity and simplicity, its appeal and sound is timeless, withstanding any change or revolution in the world of EDM since its birth. And this is exactly why many Techno fans adore Minimal &ndash; due to its purism it is furthest removed from House, Trance and Hardcore &ndash; the paragon of Techno. Two smaller Techno subgenres are closely related to Minimal Techno &ndash; Dub Techno, which features influences from Dub, and Gloomcore, a darker form of Minimal Techno.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-techno">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-techno">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-techno">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-techno">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-techno">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-techno">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-techno">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-techno">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-techno">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-techno-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-techno-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Mike Ink",
+                    track: "Orange",
+                    path: "../../../samples/dance/techno/minimaltechno1.ogg"
+                },
+                {
+                    artist: "Safety Scissors",
+                    track: "Fridgelife",
+                    path: "../../../samples/dance/techno/minimaltechno2.ogg"
+                },
+                {
+                    artist: "Sutekh",
+                    track: "Fire Weather",
+                    path: "../../../samples/dance/techno/minimaltechno3.ogg"
+                },
+                {
+                    artist: "DJ T-1000",
+                    track: "Thesis",
+                    path: "../../../samples/dance/techno/minimaltechno4.ogg"
+                },
+                {
+                    artist: "Basic Channel",
+                    track: "Octaedre",
+                    path: "../../../samples/dance/techno/minimaltechno5.ogg"
+                },
+                {
+                    artist: "Niereich & Hackler & Kuch",
+                    track: "Bombing Lessons",
+                    path: "../../../samples/dance/techno/minimaltechno6.ogg"
+                },
+                {
+                    artist: "Robert Hood",
+                    track: "Bells At Dusk",
+                    path: "../../../samples/dance/techno/minimaltechno7.ogg"
+                },
+                {
+                    artist: "Green Velvet",
+                    track: "Flash",
+                    path: "../../../samples/dance/techno/minimaltechno8.ogg"
+                },
+                {
+                    artist: "Mark Broom & James Ruskin",
+                    track: "Hostage",
+                    path: "../../../samples/dance/techno/minimaltechno9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-techno').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-techno-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-techno"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

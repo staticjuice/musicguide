@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dream Trance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre dreamtrance">
+    <div id="box-trance">
+        <h1>DREAM TRANCE</h1><br>
+            
+        Out of Ibiza Trance came another atmospheric genre fitting for the seaside environment. Not heavy at all, but a dreamlike soundscape with nature sounds or gentle piano melodies mixed onto a continuous Trance bass and beat. The focus of Dream Trance is primarily on the melody rather than the beat, resulting in a Trance-like melody and a House-like beat. Therefore, the style is very similar to House in its general consistence. The creation of Dream Trance was a response to social pressures in Italy during the early 90s &ndash; the growth of Rave culture among young adults, and the ensuing popularity of nightclub attendance, had created a weekly trend of deaths due to car accidents as clubbers drove across the country overnight, falling asleep at the wheel from strenuous dancing as well as alcohol and drug use. "Children" by Robert Miles is one of the pioneering tracks of the genre and was created due to these accidents. The move by DJs such as Robert Miles to play slower, calming music to conclude a night's set, as a means to counteract the fast-paced, repetitive tracks that preceded, was met with approval by authorities.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-trance">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-trance-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-trance-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Robert Miles",
+                    track: "Children",
+                    path: "../../../samples/dance/trance/dreamtrance1.ogg"
+                },
+                {
+                    artist: "DJ Dado",
+                    track: "Dreamscape",
+                    path: "../../../samples/dance/trance/dreamtrance2.ogg"
+                },
+                {
+                    artist: "Zymotix",
+                    track: "Feel My Love",
+                    path: "../../../samples/dance/trance/dreamtrance3.ogg"
+                },
+                {
+                    artist: "DJ Strauss",
+                    track: "Infinity Dream",
+                    path: "../../../samples/dance/trance/dreamtrance4.ogg"
+                },
+                {
+                    artist: "Imperio",
+                    track: "Atlantis",
+                    path: "../../../samples/dance/trance/dreamtrance5.ogg"
+                },
+                {
+                    artist: "Nylon Moon",
+                    track: "Sky Plus",
+                    path: "../../../samples/dance/trance/dreamtrance6.ogg"
+                },
+                {
+                    artist: "Zhi-Vago",
+                    track: "Celebrate (The Love)",
+                    path: "../../../samples/dance/trance/dreamtrance7.ogg"
+                },
+                {
+                    artist: "Roland Brant",
+                    track: "Moon's Waterfalls",
+                    path: "../../../samples/dance/trance/dreamtrance8.ogg"
+                },
+                {
+                    artist: "WP Alex Remark",
+                    track: "Pyramid",
+                    path: "../../../samples/dance/trance/dreamtrance9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-trance').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-trance-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-trance"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

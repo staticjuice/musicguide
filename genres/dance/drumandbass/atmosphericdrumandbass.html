@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atmospheric Drum &amp; Bass</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre atmosphericdrumandbass">
+    <div id="box-drumandbass">
+        <h1>ATMOSPHERIC DRUM &amp; BASS</h1><br>
+            
+        The older styles all focused on the “ravy” side of Drum &amp; Bass and tried to blow the crowd away with subsonic booming basslines and an avalanche of drum rolls. Very soon, a countermovement emerged that tried to recreate the original Drum &amp; Bass sound, before the Darkcore influences. As to be expected, it was neither raw nor heavy, but highly polished, produced and soothing to the ear. With crossovers into other music such as IDM and Jazz, this “intelligent” Drum &amp; Bass took itself very seriously. Major record labels took an interest and started releasing records for the elite audio connaisseurs (with complex, deep, atmospheric melodies) and labeling itself “Artcore”, but many synonyms exist &amp; Ambient, Atmospheric or Intelligent Drum &amp; Bass. Its “artistic”, complex nature makes the genre even more associated with cannabis than other Drum &amp; Bass &ndash; it’s often the preferred soundtrack for any non-clubbing film scene dominated by ganja presence. Atmospheric Drum &amp; Bass (which is by most preferred over the term Intelligent Drum &amp; Bass) made Drum &amp; Bass very popular, even in circles that normally don’t hold Jungle in high esteem.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-drumandbass">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-drumandbass-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-drumandbass-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Netsky feat. Bev Lee Harling",
+                    track: "Let's Leave Tomorrow",
+                    path: "../../../samples/dance/drumandbass/atmosphericdrumandbass1.ogg"
+                },
+                {
+                    artist: "Bachelors Of Science",
+                    track: "The Ice Dance",
+                    path: "../../../samples/dance/drumandbass/atmosphericdrumandbass2.ogg"
+                },
+                {
+                    artist: "Ivy Lab feat. Frank Carter III",
+                    track: "Afterthought",
+                    path: "../../../samples/dance/drumandbass/atmosphericdrumandbass3.ogg"
+                },
+                {
+                    artist: "Lenzman",
+                    track: "String City",
+                    path: "../../../samples/dance/drumandbass/atmosphericdrumandbass4.ogg"
+                },
+                {
+                    artist: "Seba",
+                    track: "Snow",
+                    path: "../../../samples/dance/drumandbass/atmosphericdrumandbass5.ogg"
+                },
+                {
+                    artist: "GLXY feat. Belle Humble",
+                    track: "Lonely",
+                    path: "../../../samples/dance/drumandbass/atmosphericdrumandbass6.ogg"
+                },
+                {
+                    artist: "Seismix & Cahb",
+                    track: "Space",
+                    path: "../../../samples/dance/drumandbass/atmosphericdrumandbass7.ogg"
+                },
+                {
+                    artist: "Hybrid Minds",
+                    track: "That Way",
+                    path: "../../../samples/dance/drumandbass/atmosphericdrumandbass8.ogg"
+                },
+                {
+                    artist: "BCee & S.P.Y.",
+                    track: "Is Anybody Out There?",
+                    path: "../../../samples/dance/drumandbass/atmosphericdrumandbass9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-drumandbass').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-drumandbass-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-drumandbass"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New Wave</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre newwave">
+    <div id="box-punk">
+        <h1>NEW WAVE</h1><br>
+            
+        As one of the most misused genre names, New Wave often stands for any 80s music that sounds somewhere between Rock and Electronic. In the strict sense however, New Wave is only the parallel after Punk reaction, alongside (and quite similar to) Post-Punk, but often with the addition of synthesizers. An important influence from Reggae is also noticeable in the music &ndash; a consequence of the collaboration between Punk and Reggae subcultures during their political protest. The main difference however, is not this growing shift towards electronic Pop, but a clear positive mentality and matching subculture. Herein, the fashion legacy of Punk continues and reaches a new height and hipster look, accompanied by matching graphic design and art. New Wave then, is all about image and looking hip. About embracing the unknown electronic future, instead of reminiscing the glory days of Punk. From the early 80s onwards, a lot of New Wave rapidly changes into Synthpop &ndash; which was truly futuristic and progressive &ndash; though it still bore the melancholic remnants of dark Post-Punk days.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-punk">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-punk-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-punk-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Blondie",
+                    track: "Heart Of Glass",
+                    path: "../../../samples/rock/punk/newwave1.ogg"
+                },
+                {
+                    artist: "Talking Heads",
+                    track: "Slippery People",
+                    path: "../../../samples/rock/punk/newwave2.ogg"
+                },
+                {
+                    artist: "Adam And The Ants",
+                    track: "Stand And Deliver",
+                    path: "../../../samples/rock/punk/newwave3.ogg"
+                },
+                {
+                    artist: "The Stranglers",
+                    track: "Peaches",
+                    path: "../../../samples/rock/punk/newwave4.ogg"
+                },
+                {
+                    artist: "The B-52's",
+                    track: "Mesopotamia",
+                    path: "../../../samples/rock/punk/newwave5.ogg"
+                },
+                {
+                    artist: "Devo",
+                    track: "Mongoloid",
+                    path: "../../../samples/rock/punk/newwave6.ogg"
+                },
+                {
+                    artist: "The Police",
+                    track: "Roxanne",
+                    path: "../../../samples/rock/punk/newwave7.ogg"
+                },
+                {
+                    artist: "Thomas Dolby",
+                    track: "Hyperactive!",
+                    path: "../../../samples/rock/punk/newwave8.ogg"
+                },
+                {
+                    artist: "The Teardrop Explodes",
+                    track: "Reward",
+                    path: "../../../samples/rock/punk/newwave9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-punk').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-punk-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-punk"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traditional Gospel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre traditionalgospel">
+    <div id="box-gospel">
+        <h1>TRADITIONAL GOSPEL</h1><br>
+            
+        At the end of the 19th century, Gospel slowly evolved from small, flickering Spirituals to a bright, popular flame, sung and known by many American people, both black and white, but all fundamentally Christian. Gospel started as emotional church hymns, with a call and response choir. This means that one part of the choir sings a part and the other responds in a different key. This alternating play of chords with unusual intervals would become an important trademark in a lot of popular music. Early or Traditional Gospel (sometimes known as Jubilee) is mostly music performed by Barbershop quartets. But after Ragtime, it received accompaniment by a piano. Because there were almost no instruments, the lyrics were obviously important, talking about nothing but good news, hope and bliss. By the 20s the term “Gospel songs” was first used, and they were practiced in rural, southern America by both black and white people alike. The black form of this “Southern Gospel” evolved by the 30s into what is known as “Black Gospel”. By this time Gospel was a well established music genre, with real artists instead of enthusiasts.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-gospel">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-gospel">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-gospel">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-gospel">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-gospel">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-gospel">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-gospel">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-gospel">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-gospel">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-gospel-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-gospel-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Mahalia Jackson",
+                    track: "Lord Don't Move The Mountain",
+                    path: "../../samples/gospel/traditionalgospel1.ogg"
+                },
+                {
+                    artist: "Thomas A. Dorsey",
+                    track: "Take My Hand, Precious Lord",
+                    path: "../../samples/gospel/traditionalgospel2.ogg"
+                },
+                {
+                    artist: "Fisk Jubilee Singers",
+                    track: "Swing Low, Sweet Chariot",
+                    path: "../../samples/gospel/traditionalgospel3.ogg"
+                },
+                {
+                    artist: "The Golden Gate Quartet",
+                    track: "Golden Gate Gospel Train",
+                    path: "../../samples/gospel/traditionalgospel4.ogg"
+                },
+                {
+                    artist: "The Sallie Martin Singers",
+                    track: "Hold To God's Unchanging Hand",
+                    path: "../../samples/gospel/traditionalgospel5.ogg"
+                },
+                {
+                    artist: "Willie Mae Ford Smith",
+                    track: "I'm Bound For Canaan Land",
+                    path: "../../samples/gospel/traditionalgospel6.ogg"
+                },
+                {
+                    artist: "The Stamps Quartet",
+                    track: "Farther Along",
+                    path: "../../samples/gospel/traditionalgospel7.ogg"
+                },
+                {
+                    artist: "The Blackwood Brothers",
+                    track: "Swing Down, Chariot",
+                    path: "../../samples/gospel/traditionalgospel8.ogg"
+                },
+                {
+                    artist: "Rev. C.L. Franklin",
+                    track: "I'll Go",
+                    path: "../../samples/gospel/traditionalgospel9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-gospel').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-gospel-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-gospel"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
