@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Indian</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre indian">
+    <div id="box-world">
+        <h1>INDIAN</h1><br>
+            
+        The two main traditions of Indian classical music are Carnatic music, which is found predominantly in the peninsular regions, and Hindustani music, which is found in the northern, eastern and central regions. The basic concepts of this music includes shruti (microtones), swaras (notes), alankar (ornamentations), raga (melodies improvised from basic grammars), and tala (rhythmic patterns used in percussion). Its tonal system divides the octave into 22 segments called shrutis, not all equal but each roughly equal to a quarter of a whole tone of Western music. Carnatic music can be traced to the 14th to 15th centuries and thereafter. It is melodic, with improvised variations, but tends to have more fixed compositions. The main emphasis is on the vocals as most compositions are written to be sung. The Hindustani music tradition diverged from Carnatic music around the 13th to 14th centuries. The practice of singing based on notes was popular even from the Vedic times where the hymns in Sama Veda, an ancient religious text, were sung as Samagana and not chanted.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-world-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-world-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "Ashwini Bhide Deshpande",
+                    track: "Raga Bhimpalasi",
+                    path: "../../samples/world/indian1.ogg"
+                },
+                {
+                    artist: "Nikhil Banerjee",
+                    track: "Bhimpalasri Fast Tintal",
+                    path: "../../samples/world/indian2.ogg"
+                },
+                {
+                    artist: "Baluji Shrivastav",
+                    track: "Raag Maru Bihag",
+                    path: "../../samples/world/indian3.ogg"
+                },
+                {
+                    artist: "Girija Devi",
+                    track: "Ras Ke Bhare",
+                    path: "../../samples/world/indian4.ogg"
+                },
+                {
+                    artist: "Pandit Jasraj",
+                    track: "Gayatri Aarati And Chorus",
+                    path: "../../samples/world/indian5.ogg"
+                },
+                {
+                    artist: "Shruti Sadolikar",
+                    track: "Shri Ravankrit Shiv Tandav Stotra",
+                    path: "../../samples/world/indian6.ogg"
+                },
+                {
+                    artist: "Jnan Prakash Ghosh",
+                    track: "Hari Hari Hari Sumiran Karo",
+                    path: "../../samples/world/indian7.ogg"
+                },
+                {
+                    artist: "Sudha Rangunathan",
+                    track: "Shree Mahaganapatim",
+                    path: "../../samples/world/indian8.ogg"
+                },
+                {
+                    artist: "Bhimsen Joshi",
+                    track: "Prabhu Kar Sab Dukh Door Hamare",
+                    path: "../../samples/world/indian9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-world').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-world-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-world"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glam Metal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+
+<body class="genre glammetal">
+    <div id="box-metal">
+        <h1>GLAM METAL</h1><br>
+
+        Glam Metal is a derisive term applied to the slick, pretty and Pop-oriented Heavy Metal and Hard Rock bands of the late 80s. These bands expanded the approach of the loud but safe Heartland Rock bands, only they had a more distinctive visual image because they were living in the post-MTV era. Wearing flashy clothing, heavy makeup and large, teased hair, the bands had an appearance that was more distinctive than their music. Long-haired male bands made commercial Metal songs with Pop-like feelgood tunes, to guarantee themselves some air time. Glam Metal was one of the few music genres that got played a lot during the first years of MTV, which further expanded the fame of these artists. Unfortunately this air time was not used to promote the music but rather the private parts of the band. Initial protest was minimal though, as it was hard to take a band in black leather and excessive make-up seriously, plus it didn’t hurt the ratings either. Almost all famous Glam Metal bands were based in Los Angeles, where a Glam subculture of stardom allures promiscuity and heroin abuse, paving the surface of Sunset Boulevard.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">2</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">3</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">4</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-metal-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-metal-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+
+            var tracks = [
+                {
+                    artist: "Guns N' Roses",
+                    track: "Welcome To The Jungle",
+                    path: "../../../samples/rock/metal/glammetal1.ogg"
+                },
+                {
+                    artist: "KISS",
+                    track: "I Was Made For Lovin' You",
+                    path: "../../../samples/rock/metal/glammetal2.ogg"
+                },
+                {
+                    artist: "Alice Cooper",
+                    track: "Poison",
+                    path: "../../../samples/rock/metal/glammetal3.ogg"
+                },
+                {
+                    artist: "Scorpions",
+                    track: "Rock You Like A Hurricane",
+                    path: "../../../samples/rock/metal/glammetal4.ogg"
+                },
+                {
+                    artist: "Poison",
+                    track: "Look What The Cat Dragged In",
+                    path: "../../../samples/rock/metal/glammetal5.ogg"
+                },
+                {
+                    artist: "W.A.S.P.",
+                    track: "Wild Child",
+                    path: "../../../samples/rock/metal/glammetal6.ogg"
+                },
+                {
+                    artist: "Def Leppard",
+                    track: "Pour Some Sugar On Me",
+                    path: "../../../samples/rock/metal/glammetal7.ogg"
+                },
+                {
+                    artist: "Van Halen",
+                    track: "Jump",
+                    path: "../../../samples/rock/metal/glammetal8.ogg"
+                },
+                {
+                    artist: "Mötley Crüe",
+                    track: "Too Young To Fall In Love",
+                    path: "../../../samples/rock/metal/glammetal9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-metal').each(function(index, button) {
+
+                buttons.push(button);
+
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-metal-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-metal"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

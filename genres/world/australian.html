@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Australian</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+  
+<body class="genre australian">
+    <div id="box-world">
+        <h1>AUSTRALIAN</h1><br>
+            
+        Indigenous Australian music is a part of the unique heritage of a 40,000 &ndash; 60,000 year history which produced the iconic didgeridoo. The didgeridoo is played with continuously vibrating lips to produce the drone while using a special breathing technique called circular breathing. This requires breathing in through the nose whilst simultaneously expelling stored air out of the mouth using the tongue and cheeks. By use of this technique, a skilled player can replenish the air in their lungs, and with practice can sustain a note for as long as desired. Originally, the didgeridoo was primarily played as an accompaniment to ceremonial dancing and singing. However, it was also common for didgeridoos to be played for solo or recreational purposes outside of ceremonial gatherings. For surviving Aboriginal groups of northern Australia, the didgeridoo is still an integral part of ceremonial life, as it accompanies singers and dancers in cultural ceremonies that continue. Today, the majority of didgeridoo playing is for recreational purposes in both Indigenous Australian communities and elsewhere around the world.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">2</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">3</div>
+            </div>
+                  
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">4</div>
+            </div>
+                
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-world">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-world-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-world-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+            
+            var tracks = [
+                {
+                    artist: "David Hudson",
+                    track: "Trekking",
+                    path: "../../samples/world/australian1.ogg"
+                },
+                {
+                    artist: "Denra Durr",
+                    track: "Lizard Eye",
+                    path: "../../samples/world/australian2.ogg"
+                },
+                {
+                    artist: "Inlakesh",
+                    track: "Lair Of Never Never",
+                    path: "../../samples/world/australian3.ogg"
+                },
+                {
+                    artist: "John Dumas",
+                    track: "Dreamtime Journey",
+                    path: "../../samples/world/australian4.ogg"
+                },
+                {
+                    artist: "Stephen Kent",
+                    track: "Yekke",
+                    path: "../../samples/world/australian5.ogg"
+                },
+                {
+                    artist: "Tarshito",
+                    track: "Bhairav Didge",
+                    path: "../../samples/world/australian6.ogg"
+                },
+                {
+                    artist: "Zalem Delarbre",
+                    track: "Prashumna",
+                    path: "../../samples/world/australian7.ogg"
+                },
+                {
+                    artist: "Somogo",
+                    track: "Labeur",
+                    path: "../../samples/world/australian8.ogg"
+                },
+                {
+                    artist: "Woomera",
+                    track: "Coolbaroo Wungghee",
+                    path: "../../samples/world/australian9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-world').each(function(index, button) {
+
+                buttons.push(button);
+                
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+                
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-world-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-world"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

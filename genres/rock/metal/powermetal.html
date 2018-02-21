@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Power Metal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+</head>
+
+<body class="genre powermetal">
+    <div id="box-metal">
+        <h1>POWER METAL</h1><br>
+
+        Power Metal is a lesser known but properly defined kind of Metal that started in the 90s (particularly in Germany) and still has a dedicated fanbase today. As a movement, Power Metal began mostly as a reaction against the harshness and lack of melody in Death Metal and Black Metal. Power Metal is not really heavy &ndash; first and foremost it’s high and fast. The lyrics often tell fictional fantasy tales about warriors, knights and dragons and are almost always sung in a high pitched male voice. Furthermore,  the music is filled with large amounts of melodies and drum rolls, building up and breaking down, like a rollercoaster ride filled with energy and enthusiasm. The difference between the speedy and guitar solo-oriented types of Metal and Power Metal is that the latter seems to constantly maintain its high velocity and even higher frequency, as if it’s being overcharged with electricity. Power Metal is a genre that never really influenced other genres or evolved in another one. As such it remained a long-lasting parallel Metal stream, though easily eclipsed by the bigger Metal genres.<br><br>
+
+        <div class="row icon-list">
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">1</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">2</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">3</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">4</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">5</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons-metal">9</div>
+            </div>
+
+            <div class="visible-xs col-xs-1">
+                <div class="buttons-metal-stop">&#9724;</div>
+            </div>
+        </div>
+
+        <div class="example"><br>
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+        </div>
+
+        <div class="hidden-xs col-sm-1 stop">
+            <div class="buttons-metal-stop">&#9724;</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+
+            var tracks = [
+                {
+                    artist: "Blind Guardian",
+                    track: "Mirror, Mirror",
+                    path: "../../../samples/rock/metal/powermetal1.ogg"
+                },
+                {
+                    artist: "Hammerfall",
+                    track: "Any Means Necessary",
+                    path: "../../../samples/rock/metal/powermetal2.ogg"
+                },
+                {
+                    artist: "Helloween",
+                    track: "I Want Out",
+                    path: "../../../samples/rock/metal/powermetal3.ogg"
+                },
+                {
+                    artist: "Savatage",
+                    track: "Hall Of The Mountain King",
+                    path: "../../../samples/rock/metal/powermetal4.ogg"
+                },
+                {
+                    artist: "Manowar",
+                    track: "Hail And Kill",
+                    path: "../../../samples/rock/metal/powermetal5.ogg"
+                },
+                {
+                    artist: "Gamma Ray",
+                    track: "Wings Of Destiny",
+                    path: "../../../samples/rock/metal/powermetal6.ogg"
+                },
+                {
+                    artist: "DragonForce",
+                    track: "Heroes Of Our Time",
+                    path: "../../../samples/rock/metal/powermetal7.ogg"
+                },
+                {
+                    artist: "Kamelot",
+                    track: "Insomnia",
+                    path: "../../../samples/rock/metal/powermetal8.ogg"
+                },
+                {
+                    artist: "Iced Earth",
+                    track: "Dracula",
+                    path: "../../../samples/rock/metal/powermetal9.ogg"
+                }
+            ]
+
+            tracks.forEach(track => {
+                const audio = new Audio()
+                audio.addEventListener('canplaythrough', null, false)
+                audio.src = track.path
+            })
+
+            var artistSpan = $(document).find('#artist')[0]
+
+            var track = $(document).find('#track')[0]
+
+            var audioInstanceArray = [];
+
+            var buttons = [];
+
+            var audioInstance;
+
+            $(document).find('.buttons-metal').each(function(index, button) {
+
+                buttons.push(button);
+
+                $(this).click(function() {
+
+                    removeAllButtonBorders()
+
+                    $(this).toggleClass('clicked');
+
+                    stopAllMusic()
+
+                    audioInstance = new Audio(tracks[index].path);
+                    audioInstanceArray.push(audioInstance);
+                    audioInstance.play();
+
+                    artistSpan.innerHTML = tracks[index].artist
+                    track.innerHTML = tracks[index].track
+
+                });
+            });
+
+            $('.buttons-metal-stop').on('click', function() {
+
+                stopAllMusic()
+
+                artistSpan.innerHTML = ''
+                track.innerHTML = ''
+
+                removeAllButtonBorders()
+
+            });
+
+            var removeAllButtonBorders = () => {
+                buttons.forEach(
+                    button => button.className = "buttons-metal"
+                )
+            }
+
+            var stopAllMusic = () => {
+                 audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
