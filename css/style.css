@@ -40,6 +40,24 @@ h1 {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFF;
+    border-radius: 8px;
+}
+
+.allgenres::-webkit-scrollbar-track {
+    background: #333;
+}
+
+#box-subpop::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 8px;
+}
+
 /*---------------------------------------------------------------------------*/
 
 .intro:before {
@@ -206,7 +224,6 @@ h1 {
     width: 100%;
     margin: 0 auto;
     background-size: cover;
-    overflow: auto;
 }
 
 .genrelist {
