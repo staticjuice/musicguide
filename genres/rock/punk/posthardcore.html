@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
+
 <body class="genre posthardcore">
     <div id="box-punk">
         <h1>POST-HARDCORE</h1><br>
-            
-        Post-Hardcore can be either a genre on its own or an umbrella term for any “pure” Hardcore-derivative (i.e. without links to Metal). Just like Post-Punk differs from Punk, so does Post-Hardcore differ from Hardcore as a less bursting, less aggressive continuation of the genre (though still more heavy than other Rock genres). Post-Hardcore implements a longer and more complex arrangement, with tempo changes adding a certain alternating dynamic to Hardcore. Besides screaming or grunting, Post-Hardcore also allows “normal” vocals, usually wailing about depressing or introspective thoughts. Post-Hardcore is dividable into three waves. The first one started in the mid-80s and encloses only a number of avant-garde bands. In the second wave, Post-Punk along with its Dub and Fusion influences further molded Post-Hardcore into a versatile adventurer. The third and most important wave was Emocore &ndash; a poetic, emotional genre with quiet, slower passages and more artistic lyrics. Emocore tries to break the ties with Original Hardcore, which was deemed too conservative and uniform.<br><br>
+
+        Post-Hardcore can be either a genre on its own or an umbrella term for any “pure” Hardcore-derivative (i.e. without links to Metal). Just like Post-Punk differs from Punk, so does Post-Hardcore differ from Hardcore as a less bursting, less aggressive continuation of the genre (though still more heavy than other Rock genres). Post-Hardcore implements a longer and more complex arrangement, with tempo changes adding a certain alternating dynamic to Hardcore. Besides screaming or grunting, Post-Hardcore also allows “normal” vocals, usually wailing about depressing or introspective thoughts. Post-Hardcore is dividable into three waves. The first one started in the mid-80s and encloses only a number of avant-garde bands. The second wave and most important wave was Emocore &ndash; a poetic, emotional genre with quiet, slower passages and more artistic lyrics. In the third wave, Screamo became popular and was generally based in the aggressive side of the overarching Emo scene. For many groups, lyrics often boasted violent or bloody imagery alongside subject matter dealing with overwhelming angst and relationships.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
@@ -25,15 +25,15 @@
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-punk">2</div>
             </div>
-                  
+
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-punk">3</div>
             </div>
-                  
+
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-punk">4</div>
             </div>
-                
+
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-punk">5</div>
             </div>
@@ -61,7 +61,7 @@
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
@@ -71,11 +71,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Hüsker Dü",
@@ -88,38 +88,38 @@
                     path: "../../../samples/rock/punk/posthardcore2.ogg"
                 },
                 {
-                    artist: "Fugazi",
-                    track: "Turnover",
-                    path: "../../../samples/rock/punk/posthardcore3.ogg"
-                },
-                {
                     artist: "Rites Of Spring",
                     track: "End On End",
-                    path: "../../../samples/rock/punk/posthardcore4.ogg"
+                    path: "../../../samples/rock/punk/posthardcore3.ogg"
                 },
                 {
                     artist: "Embrace",
                     track: "No More Pain",
+                    path: "../../../samples/rock/punk/posthardcore4.ogg"
+                },
+                {
+                    artist: "Orchid",
+                    track: "Lights Out",
                     path: "../../../samples/rock/punk/posthardcore5.ogg"
                 },
                 {
-                    artist: "Moss Icon",
-                    track: "Guatemala",
+                    artist: "Silverstein",
+                    track: "My Heroine",
                     path: "../../../samples/rock/punk/posthardcore6.ogg"
                 },
                 {
-                    artist: "Jawbox",
-                    track: "Savory",
+                    artist: "Loma Prieta",
+                    track: "Fly By Night",
                     path: "../../../samples/rock/punk/posthardcore7.ogg"
                 },
                 {
-                    artist: "Big Black",
-                    track: "Bad Penny",
+                    artist: "Alexisonfire",
+                    track: "This Could Be Anywhere In The World",
                     path: "../../../samples/rock/punk/posthardcore8.ogg"
                 },
                 {
-                    artist: "Girls Against Boys",
-                    track: "Bullet Proof Cupid",
+                    artist: "Underoath",
+                    track: "Writing On The Walls",
                     path: "../../../samples/rock/punk/posthardcore9.ogg"
                 }
             ]
@@ -143,13 +143,13 @@
             $(document).find('.buttons-punk').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);

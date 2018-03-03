@@ -5,57 +5,57 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Latin</title>
+    <title>Latin Folk</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
   
-<body class="genre latin">
-    <div id="box-world">
-        <h1>LATIN</h1><br>
+<body class="genre latinfolk">
+    <div id="box-folk">
+        <h1>LATIN FOLK</h1><br>
             
         The music of Latin America refers to music originating from Latin America, namely the Romance-speaking countries and territories of the Americas and the Caribbean south of the United States. Latin music also incorporates African music from slaves who were transported to the Americas by European settlers as well as music from the indigenous peoples of the Americas. Due to its highly syncretic nature, Latin music encompasses a wide variety of styles, including Bachata, Bossa Nova, Merengue, Rumba, Salsa, Samba, Son and Tango. Geographically, it usually refers to the Spanish and Portuguese-speaking regions of Latin America, but sometimes includes Francophone countries and territories of the Caribbean and South America as well. It also encompasses Latin American styles that have originated in the United States such as Salsa and Tejano. The origins of Latin music can be traced back to the Spanish and Portuguese conquest of the Americas in the 16th century, when the European settlers brought their music from overseas. Latin music is performed in Spanish, Portuguese, and to a lesser extent, French.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-world">1</div>
+                <div class="buttons-folk">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-world">2</div>
+                <div class="buttons-folk">2</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-world">3</div>
+                <div class="buttons-folk">3</div>
             </div>
                   
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-world">4</div>
+                <div class="buttons-folk">4</div>
             </div>
                 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-world">5</div>
+                <div class="buttons-folk">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-world">6</div>
+                <div class="buttons-folk">6</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-world">7</div>
+                <div class="buttons-folk">7</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-world">8</div>
+                <div class="buttons-folk">8</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-world">9</div>
+                <div class="buttons-folk">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-world-stop">&#9724;</div>
+                <div class="buttons-folk-stop">&#9724;</div>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-world-stop">&#9724;</div>
+            <div class="buttons-folk-stop">&#9724;</div>
         </div>
     </div>
 
@@ -80,47 +80,47 @@
                 {
                     artist: "Frankie Ruiz",
                     track: "Tu Con El",
-                    path: "../../samples/world/latin1.ogg"
+                    path: "../../samples/folk/latinfolk1.ogg"
                 },
                 {
                     artist: "Gilberto Santa Rosa",
                     track: "La Agarro Bajando",
-                    path: "../../samples/world/latin2.ogg"
+                    path: "../../samples/folk/latinfolk2.ogg"
                 },
                 {
                     artist: "Adalberto Álvarez Zayas",
                     track: "Para Bailar Casino",
-                    path: "../../samples/world/latin3.ogg"
+                    path: "../../samples/folk/latinfolk3.ogg"
                 },
                 {
                     artist: "Pichy Valdés & Saoco Son",
                     track: "Poca Importancia",
-                    path: "../../samples/world/latin4.ogg"
+                    path: "../../samples/folk/latinfolk4.ogg"
                 },
                 {
                     artist: "Antonio Tony Graci",
                     track: "Living Carioca",
-                    path: "../../samples/world/latin5.ogg"
+                    path: "../../samples/folk/latinfolk5.ogg"
                 },
                 {
                     artist: "M. Aaron Heick",
                     track: "Carnaval Loco",
-                    path: "../../samples/world/latin6.ogg"
+                    path: "../../samples/folk/latinfolk6.ogg"
                 },
                 {
                     artist: "Carey Haynes",
                     track: "Samba Mamba",
-                    path: "../../samples/world/latin7.ogg"
+                    path: "../../samples/folk/latinfolk7.ogg"
                 },
                 {
                     artist: "Tito Nieves",
                     track: "Fabricando Fantasias",
-                    path: "../../samples/world/latin8.ogg"
+                    path: "../../samples/folk/latinfolk8.ogg"
                 },
                 {
                     artist: "Scott Christian Marzullo",
                     track: "Rio Road To Victory",
-                    path: "../../samples/world/latin9.ogg"
+                    path: "../../samples/folk/latinfolk9.ogg"
                 }
             ]
 
@@ -140,7 +140,7 @@
 
             var audioInstance;
 
-            $(document).find('.buttons-world').each(function(index, button) {
+            $(document).find('.buttons-folk').each(function(index, button) {
 
                 buttons.push(button);
                 
@@ -162,7 +162,7 @@
                 });
             });
 
-            $('.buttons-world-stop').on('click', function() {
+            $('.buttons-folk-stop').on('click', function() {
 
                 stopAllMusic()
 
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-world"
+                    button => button.className = "buttons-folk"
                 )
             }
 

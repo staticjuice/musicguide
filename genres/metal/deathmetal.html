@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Thrash Metal</title>
+    <title>Death Metal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-
-<body class="genre thrashmetal">
+  
+<body class="genre deathmetal">
     <div id="box-metal">
-        <h1>THRASH METAL</h1><br>
-
-        What the NWOBHM did to Traditional Heavy Metal, Thrash Metal did to the NWOBHM. American bands became hugely influenced by their British predecessors and decided to take it up another notch &ndash; the music became even faster and more drum and bass heavy (often involving a drum kit with two bass drums). Glam Metal made Metal too commercial and lighthearted. Thrash Metal was the answer. Aggressive, low-frequency riffs, hyperactive scales, arpeggios and prominent thrashing are the most recognizable features of Thrash Metal. The overall song length also increases compared to NWOBHM, adding more complex song structures to the music. The genre quickly stood out amongst other Metal styles and soon a number of bands rose to international fame, known as the “Big Four of Thrash Metal”. These Bands &ndash; Metallica, Slayer, Megadeth, and Anthrax &ndash; helped spread Metal throughout the globe. With nihilistic lyrics, often about anti-establishment, justice or war, Metal bands use just about anything to enforce a theatrical vocabulary. But like almost all Metal the message is rather cryptic than truly political.<br><br>
+        <h1>DEATH METAL</h1><br>
+            
+        Death Metal can be seen as the leading force in contemporary Metal. In form it is similar to Thrash Metal but heavier, deeper, and with updated distortions and effects. Accompanied by extremely deep growling vocals, it is downright brutal and performed as if the artists are trying to shrug off intense pain. The first wave of Death Metal in the late 80s, was an even faster continuation of Thrash Metal. Because guitar velocity had become so high, Metal drummers developed a special hyper fast drum technique, called “blast beats”. This wave was very rough, unpolished and with little melody &ndash; almost a feral form of Metal, which later strongly influenced Grindcore during its development. The second wave of Death Metal happened in the 90s and particularly in Sweden. The second wave is a lot more melodic than the first one, with more synth influences and different (sometimes instrumental) passages throughout the music. Apart from these two large waves, Death Metal has numerous subgenres, indicating the versatility and popularity of the genre.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
@@ -25,15 +25,15 @@
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-metal">2</div>
             </div>
-
+                  
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-metal">3</div>
             </div>
-
+                  
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-metal">4</div>
             </div>
-
+                
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-metal">5</div>
             </div>
@@ -61,7 +61,7 @@
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
@@ -71,56 +71,56 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    
     <script>
         $(document).ready(function() {
 
-
+            
             var tracks = [
                 {
-                    artist: "Metallica",
-                    track: "Master Of Puppets",
-                    path: "../../../samples/rock/metal/thrashmetal1.ogg"
+                    artist: "Death",
+                    track: "Leprosy",
+                    path: "../../samples/metal/deathmetal1.ogg"
                 },
                 {
-                    artist: "Megadeth",
-                    track: "Skin O' My Teeth",
-                    path: "../../../samples/rock/metal/thrashmetal2.ogg"
+                    artist: "Deicide",
+                    track: "Deicide",
+                    path: "../../samples/metal/deathmetal2.ogg"
                 },
                 {
-                    artist: "Exodus",
-                    track: "The Toxic Waltz",
-                    path: "../../../samples/rock/metal/thrashmetal3.ogg"
+                    artist: "Morbid Angel",
+                    track: "Rapture",
+                    path: "../../samples/metal/deathmetal3.ogg"
                 },
                 {
-                    artist: "Sodom",
-                    track: "M-16",
-                    path: "../../../samples/rock/metal/thrashmetal4.ogg"
+                    artist: "Cannibal Corpse",
+                    track: "Hammer Smashed Face",
+                    path: "../../samples/metal/deathmetal4.ogg"
                 },
                 {
-                    artist: "Kreator",
-                    track: "Enemy Of God",
-                    path: "../../../samples/rock/metal/thrashmetal5.ogg"
+                    artist: "Possessed",
+                    track: "Death Metal",
+                    path: "../../samples/metal/deathmetal5.ogg"
                 },
                 {
-                    artist: "Destruction",
-                    track: "Nailed To The Cross",
-                    path: "../../../samples/rock/metal/thrashmetal6.ogg"
+                    artist: "Dark Tranquility",
+                    track: "Monochromatic Stains",
+                    path: "../../samples/metal/deathmetal6.ogg"
                 },
                 {
-                    artist: "Testament",
-                    track: "Native Blood",
-                    path: "../../../samples/rock/metal/thrashmetal7.ogg"
+                    artist: "In Flames",
+                    track: "Swim",
+                    path: "../../samples/metal/deathmetal7.ogg"
                 },
                 {
-                    artist: "Pantera",
-                    track: "Cowboys From Hell",
-                    path: "../../../samples/rock/metal/thrashmetal8.ogg"
+                    artist: "At The Gates",
+                    track: "Slaughter Of The Soul",
+                    path: "../../samples/metal/deathmetal8.ogg"
                 },
                 {
-                    artist: "Machine Head",
-                    track: "Aesthetics Of Hate",
-                    path: "../../../samples/rock/metal/thrashmetal9.ogg"
+                    artist: "Arch Enemy",
+                    track: "Nemesis",
+                    path: "../../samples/metal/deathmetal9.ogg"
                 }
             ]
 
@@ -143,13 +143,13 @@
             $(document).find('.buttons-metal').each(function(index, button) {
 
                 buttons.push(button);
-
+                
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-
+                
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);

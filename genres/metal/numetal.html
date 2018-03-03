@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Power Metal</title>
+    <title>Nu Metal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-
-<body class="genre powermetal">
+  
+<body class="genre numetal">
     <div id="box-metal">
-        <h1>POWER METAL</h1><br>
-
-        Power Metal is a lesser known but properly defined kind of Metal that started in the 90s (particularly in Germany) and still has a dedicated fanbase today. As a movement, Power Metal began mostly as a reaction against the harshness and lack of melody in Death Metal and Black Metal. Power Metal is not really heavy &ndash; first and foremost it’s high and fast. The lyrics often tell fictional fantasy tales about warriors, knights and dragons and are almost always sung in a high pitched male voice. Furthermore,  the music is filled with large amounts of melodies and drum rolls, building up and breaking down, like a rollercoaster ride filled with energy and enthusiasm. The difference between the speedy and guitar solo-oriented types of Metal and Power Metal is that the latter seems to constantly maintain its high velocity and even higher frequency, as if it’s being overcharged with electricity. Power Metal is a genre that never really influenced other genres or evolved in another one. As such it remained a long-lasting parallel Metal stream, though easily eclipsed by the bigger Metal genres.<br><br>
+        <h1>NU METAL</h1><br>
+            
+        When Nu Metal formed, the heaviest Metal genres of the time were all thrown into an eclectic mix, but mostly Groove Metal and Rap Rock formed the basis for Nu Metal. These genres were only a small step away from fusing Hip Hop or Breakbeat elements into Metal. The outcome was a recipe that could not fail because it was Rap, Rock and Metal all-in-one. Indeed, Nu Metal had many Rap and few Metal elements &ndash; downtuned riffs, breakbeats, scratching, emphasis on kick drums and most noticeably no guitar solos, though the genre lacked no heavy bass or aggressiveness. Nu Metal is often linked to Emo, as piercing lyrics about frustration and depression (self-mutilation, suicide and abuse) find its way into the heart of adolescents through melancholic choruses &ndash; a very distinctive rupture with previous Metal genres. Fashion is another topic where Nu Metal breaks the rules, with a bizarre mix of Emo and Metal styles and some marginal extravaganza. All these elements contribute to a living paradigm of disturbance &ndash; psychosis in sound and flesh.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
@@ -25,15 +25,15 @@
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-metal">2</div>
             </div>
-
+                  
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-metal">3</div>
             </div>
-
+                  
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-metal">4</div>
             </div>
-
+                
             <div class="col-sm-1 col-xs-1">
                 <div class="buttons-metal">5</div>
             </div>
@@ -61,7 +61,7 @@
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
+            <p class="artisttrack">Track: <span id="track"></span></p> 
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
@@ -71,56 +71,56 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    
     <script>
         $(document).ready(function() {
 
-
+            
             var tracks = [
                 {
-                    artist: "Blind Guardian",
-                    track: "Mirror, Mirror",
-                    path: "../../../samples/rock/metal/powermetal1.ogg"
+                    artist: "Limp Bizkit",
+                    track: "Nookie",
+                    path: "../../samples/metal/numetal1.ogg"
                 },
                 {
-                    artist: "Hammerfall",
-                    track: "Any Means Necessary",
-                    path: "../../../samples/rock/metal/powermetal2.ogg"
+                    artist: "Korn",
+                    track: "Falling Away From Me",
+                    path: "../../samples/metal/numetal2.ogg"
                 },
                 {
-                    artist: "Helloween",
-                    track: "I Want Out",
-                    path: "../../../samples/rock/metal/powermetal3.ogg"
+                    artist: "Slipknot",
+                    track: "Wait And Bleed",
+                    path: "../../samples/metal/numetal3.ogg"
                 },
                 {
-                    artist: "Savatage",
-                    track: "Hall Of The Mountain King",
-                    path: "../../../samples/rock/metal/powermetal4.ogg"
+                    artist: "System Of A Down",
+                    track: "Chop Suey!",
+                    path: "../../samples/metal/numetal4.ogg"
                 },
                 {
-                    artist: "Manowar",
-                    track: "Hail And Kill",
-                    path: "../../../samples/rock/metal/powermetal5.ogg"
+                    artist: "Linkin Park",
+                    track: "In The End",
+                    path: "../../samples/metal/numetal5.ogg"
                 },
                 {
-                    artist: "Gamma Ray",
-                    track: "Wings Of Destiny",
-                    path: "../../../samples/rock/metal/powermetal6.ogg"
+                    artist: "Papa Roach",
+                    track: "Last Resort",
+                    path: "../../samples/metal/numetal6.ogg"
                 },
                 {
-                    artist: "DragonForce",
-                    track: "Heroes Of Our Time",
-                    path: "../../../samples/rock/metal/powermetal7.ogg"
+                    artist: "Mudvayne",
+                    track: "Forget To Remember",
+                    path: "../../samples/metal/numetal7.ogg"
                 },
                 {
-                    artist: "Kamelot",
-                    track: "Insomnia",
-                    path: "../../../samples/rock/metal/powermetal8.ogg"
+                    artist: "Coal Chamber",
+                    track: "Loco",
+                    path: "../../samples/metal/numetal8.ogg"
                 },
                 {
-                    artist: "Iced Earth",
-                    track: "Dracula",
-                    path: "../../../samples/rock/metal/powermetal9.ogg"
+                    artist: "Disturbed",
+                    track: "Down With The Sickness",
+                    path: "../../samples/metal/numetal9.ogg"
                 }
             ]
 
@@ -143,13 +143,13 @@
             $(document).find('.buttons-metal').each(function(index, button) {
 
                 buttons.push(button);
-
+                
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-
+                
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
