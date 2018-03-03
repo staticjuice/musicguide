@@ -658,7 +658,7 @@ h1 {
 }
 
 .mainukgarage .genrelist a:hover {
-    color: #796777;
+    color: #D1C4E9;
 }
 
 .maindowntempo .genrelist a:hover {
@@ -756,7 +756,7 @@ h1 {
 }
 
 .mainukgarage .genrelist-mobile a:hover {
-    color: #796777;
+    color: #D1C4E9;
 }
 
 .maindowntempo .genrelist-mobile a:hover {
@@ -854,7 +854,7 @@ h1 {
 }
 
 .mainukgarage .genrelist-tablet a:hover {
-    color: #796777;
+    color: #D1C4E9;
 }
 
 .maindowntempo .genrelist-tablet a:hover {
@@ -953,7 +953,7 @@ h1 {
 }
 
 .mainukgarage .genrelist ::selection {
-    background: rgba(80,68,79,0.998) !important;
+    background: rgba(149,117,205,0.998) !important;
 }
 
 .maindowntempo .genrelist ::selection {
@@ -1052,7 +1052,7 @@ h1 {
 }
 
 .mainukgarage .genrelist-mobile ::selection {
-    background: rgba(80,68,79,0.998) !important;
+    background: rgba(149,117,205,0.998) !important;
 }
 
 .maindowntempo .genrelist-mobile ::selection {
@@ -1151,7 +1151,7 @@ h1 {
 }
 
 .mainukgarage .genrelist-tablet ::selection {
-    background: rgba(80,68,79,0.998) !important;
+    background: rgba(149,117,205,0.998) !important;
 }
 
 .maindowntempo .genrelist-tablet ::selection {
@@ -1391,7 +1391,7 @@ h1 {
 #box-subukgarage {
     width: 40em;
     height: 100vh;
-    background-color: #50444F;
+    background-color: #9575CD;
     color: #FFF;
     padding: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -1596,7 +1596,7 @@ h1 {
 
 #box-subukgarage-mobile {
     width: 100%;
-    background-color: #50444F;
+    background-color: #9575CD;
     color: #FFF;
     padding: 1.5em;
     font-size: 4.2vw;
@@ -1851,7 +1851,7 @@ h1 {
 #box-subukgarage-tablet {
     width: 50%;
     height: 100vh;
-    background-color: #50444F;
+    background-color: #9575CD;
     color: #FFF;
     padding: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -2330,7 +2330,7 @@ h1 {
 
 #box-ukgarage {
     width: 40em;
-    background-color: #50444F;
+    background-color: #9575CD;
     color: #FFF;
     padding: 1.5em;
     margin: 4em;
@@ -2607,7 +2607,7 @@ h1 {
 }
 
 .buttons-ukgarage, .buttons-ukgarage-stop {
-    background-color: #6B5B69;
+    background-color: #B39DDB;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-size: 2.5em;
@@ -2737,7 +2737,7 @@ h1 {
 }
 
 .buttons-ukgarage:hover, .buttons-ukgarage-stop:hover {
-    background-color: #796777;
+    background-color: #D1C4E9;
 }
 
 .buttons-downtempo:hover, .buttons-downtempo-stop:hover {
