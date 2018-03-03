@@ -1962,10 +1962,10 @@ h1 {
 .rockandroll {background: url("../images/rock/rockandroll.jpg") no-repeat center center fixed;}
 .surfrock {background: url("../images/rock/surfrock.jpg") no-repeat center center fixed;}
 .garagerock {background: url("../images/rock/garagerock.jpg") no-repeat center center fixed;}
-
 .beat {background: url("../images/rock/beat.jpg") no-repeat center center fixed;}
-.folkrock {background: url("../images/rock/folkrock.jpg") no-repeat center center fixed;}
+
 .bluesrock {background: url("../images/rock/bluesrock.jpg") no-repeat center center fixed;}
+.folkrock {background: url("../images/rock/folkrock.jpg") no-repeat center center fixed;}
 .psychedelicrock {background: url("../images/rock/psychedelicrock.jpg") no-repeat center center fixed;}
 .progressiverock {background: url("../images/rock/progressiverock.jpg") no-repeat center center fixed;}
 .krautrock {background: url("../images/rock/krautrock.jpg") no-repeat center center fixed;}
@@ -2851,11 +2851,10 @@ h1 {
 @media (max-width: 991px) {
     #box-gospel, #box-blues, #box-jazz, #box-country,
     #box-rhythmandblues, #box-pop, #box-rockandroll, #box-classicrock,
-    #box-punk, #box-alternative, #box-metal,
-    #box-reggae, #box-hiphop, #box-industrial, #box-house,
-    #box-trance, #box-techno, #box-hardcore, #box-breakbeat,
-    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical,
-    #box-folk {
+    #box-punk, #box-alternative, #box-metal, #box-reggae,
+    #box-hiphop, #box-industrial, #box-house, #box-trance,
+    #box-techno, #box-hardcore, #box-breakbeat, #box-drumandbass,
+    #box-ukgarage, #box-downtempo, #box-classical, #box-folk {
         margin: 2em;
         font-size: 2.27vw;
   }
@@ -2864,11 +2863,10 @@ h1 {
 @media (max-width: 1199px) {
     #box-gospel, #box-blues, #box-jazz, #box-country,
     #box-rhythmandblues, #box-pop, #box-rockandroll, #box-classicrock,
-    #box-punk, #box-alternative, #box-metal,
-    #box-reggae, #box-hiphop, #box-industrial, #box-house,
-    #box-trance, #box-techno, #box-hardcore, #box-breakbeat,
-    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical,
-    #box-folk {
+    #box-punk, #box-alternative, #box-metal, #box-reggae,
+    #box-hiphop, #box-industrial, #box-house, #box-trance,
+    #box-techno, #box-hardcore, #box-breakbeat, #box-drumandbass,
+    #box-ukgarage, #box-downtempo, #box-classical, #box-folk {
         margin: 2em;
   }
 }
@@ -2876,11 +2874,10 @@ h1 {
 @media (max-width: 767px) {
     .buttons-gospel, .buttons-blues, .buttons-jazz, .buttons-country,
     .buttons-rhythmandblues, .buttons-pop, .buttons-rockandroll, .buttons-classicrock,
-    .buttons-punk, .buttons-alternative, .buttons-metal,
-    .buttons-reggae, .buttons-hiphop, .buttons-industrial, .buttons-house,
-    .buttons-trance, .buttons-techno, .buttons-hardcore, .buttons-breakbeat,
-    .buttons-drumandbass, .buttons-ukgarage, .buttons-downtempo, .buttons-classical,
-    .buttons-folk {
+    .buttons-punk, .buttons-alternative, .buttons-metal, .buttons-reggae,
+    .buttons-hiphop, .buttons-industrial, .buttons-house, .buttons-trance,
+    .buttons-techno, .buttons-hardcore, .buttons-breakbeat, .buttons-drumandbass,
+    .buttons-ukgarage, .buttons-downtempo, .buttons-classical, .buttons-folk {
         margin-bottom: 0.4em;
   }
 }
@@ -2901,11 +2898,10 @@ h1 {
 @media (max-width: 767px) {
     #box-gospel, #box-blues, #box-jazz, #box-country,
     #box-rhythmandblues, #box-pop, #box-rockandroll, #box-classicrock,
-    #box-punk, #box-alternative, #box-metal,
-    #box-reggae, #box-hiphop, #box-industrial, #box-house,
-    #box-trance, #box-techno, #box-hardcore, #box-breakbeat,
-    #box-drumandbass, #box-ukgarage, #box-downtempo, #box-classical,
-    #box-folk {
+    #box-punk, #box-alternative, #box-metal, #box-reggae,
+    #box-hiphop, #box-industrial, #box-house, #box-trance,
+    #box-techno, #box-hardcore, #box-breakbeat, #box-drumandbass,
+    #box-ukgarage, #box-downtempo, #box-classical, #box-folk {
         font-size: 3.75vw;
         width: 88%;
         margin: 1.5em;
