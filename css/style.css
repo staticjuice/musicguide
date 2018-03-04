@@ -207,12 +207,11 @@ h1 {
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
     font-weight: 300;
-    font-size: 1.8vw;
     color: #FFF;
     position: absolute;
     text-align: center;
     z-index: 1;
-    height: 21%;
+    height: 23%;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -2816,20 +2815,6 @@ h1 {
 /*---------------------------------------------------------------------------*/
 
 @media (min-width: 768px) {
-    .five-cols .col-sm-1 {
-        width: 33.333333333%;
-        *width: 33.333333333%;
-  }
-}
-
-@media (min-width: 992px) {
-    .five-cols .col-sm-1 {
-        width: 20%;
-        *width: 20%;
-  }
-}
-
-@media (min-width: 768px) {
     #genres-grid-rock h1 {
         font-size: 3vw;
   }
@@ -2837,7 +2822,7 @@ h1 {
 
 @media (min-width: 992px) {
     #genres-grid-rock h1 {
-        font-size: 1.8vw;
+        font-size: 2.6vw;
   }
 }
 
