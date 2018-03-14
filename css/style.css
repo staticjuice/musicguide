@@ -172,11 +172,6 @@ p {
 
 /*---------------------------------------------------------------------------*/
 
-.genre {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.7em;
-}
-
 .genrelist {
     color: #FFF;
     padding: 1.5em;
@@ -242,30 +237,30 @@ p {
 
 /*---------------------------------------------------------------------------*/
 
-.maingospel .genrelist a:hover { color: #F1B1B1; }
-.mainblues .genrelist a:hover { color: #5361D0; }
-.mainjazz .genrelist a:hover { color: #5199EC; }
-.maincountry .genrelist a:hover { color: #B8C299; }
-.mainrhythmandblues .genrelist a:hover { color: #26A69A; }
-.mainpop .genrelist a:hover { color: #FFF176; }
-.mainrockandroll .genrelist a:hover { color: #4FC3F7; }
-.mainclassicrock .genrelist a:hover { color: #EF5350; }
-.mainpunk .genrelist a:hover { color: #FFA726; }
-.mainalternative .genrelist a:hover { color: #78909C; }
-.mainmetal .genrelist a:hover { color: #424242; }
-.mainreggae .genrelist a:hover { color: #66BB6A; }
-.mainhiphop .genrelist a:hover { color: #79577F; }
-.mainindustrial .genrelist a:hover { color: #8D6E63; }
-.mainhouse .genrelist a:hover { color: #00DE95; }
-.maintrance .genrelist a:hover { color: #9426D9; }
-.maintechno .genrelist a:hover { color: #777777; }
-.mainhardcore .genrelist a:hover { color: #70675C; }
-.mainbreakbeat .genrelist a:hover { color: #A95B83; }
-.maindrumandbass .genrelist a:hover { color: #DD2251; }
-.mainukgarage .genrelist a:hover { color: #D1C4E9; }
-.maindowntempo .genrelist a:hover { color: #EC407A; }
-.mainclassical .genrelist a:hover { color: #A18259; }
-.mainfolk .genrelist a:hover { color: #D8C188; }
+.maingospel .genrelist a:hover, .maingospel .genrelist-mobile a:hover { color: #F1B1B1; }
+.mainblues .genrelist a:hover, .mainblues .genrelist-mobile a:hover { color: #5361D0; }
+.mainjazz .genrelist a:hover, .mainjazz .genrelist-mobile a:hover { color: #5199EC; }
+.maincountry .genrelist a:hover, .maincountry .genrelist-mobile a:hover { color: #B8C299; }
+.mainrhythmandblues .genrelist a:hover, .mainrhythmandblues .genrelist-mobile a:hover { color: #26A69A; }
+.mainpop .genrelist a:hover, .mainpop .genrelist-mobile a:hover { color: #FFF176; }
+.mainrockandroll .genrelist a:hover, .mainrockandroll .genrelist-mobile a:hover { color: #4FC3F7; }
+.mainclassicrock .genrelist a:hover, .mainclassicrock .genrelist-mobile a:hover { color: #EF5350; }
+.mainpunk .genrelist a:hover, .mainpunk .genrelist-mobile a:hover { color: #FFA726; }
+.mainalternative .genrelist a:hover, .mainalternative .genrelist-mobile a:hover { color: #78909C; }
+.mainmetal .genrelist a:hover, .mainmetal .genrelist-mobile a:hover { color: #424242; }
+.mainreggae .genrelist a:hover, .mainreggae .genrelist-mobile a:hover { color: #66BB6A; }
+.mainhiphop .genrelist a:hover, .mainhiphop .genrelist-mobile a:hover { color: #79577F; }
+.mainindustrial .genrelist a:hover, .mainindustrial .genrelist-mobile a:hover { color: #8D6E63; }
+.mainhouse .genrelist a:hover, .mainhouse .genrelist-mobile a:hover { color: #00DE95; }
+.maintrance .genrelist a:hover, .maintrance .genrelist-mobile a:hover { color: #9426D9; }
+.maintechno .genrelist a:hover, .maintechno .genrelist-mobile a:hover { color: #777777; }
+.mainhardcore .genrelist a:hover, .mainhardcore .genrelist-mobile a:hover { color: #70675C; }
+.mainbreakbeat .genrelist a:hover, .mainbreakbeat .genrelist-mobile a:hover { color: #A95B83; }
+.maindrumandbass .genrelist a:hover, .maindrumandbass .genrelist-mobile a:hover { color: #DD2251; }
+.mainukgarage .genrelist a:hover, .mainukgarage .genrelist-mobile a:hover { color: #D1C4E9; }
+.maindowntempo .genrelist a:hover, .maindowntempo .genrelist-mobile a:hover { color: #EC407A; }
+.mainclassical .genrelist a:hover, .mainclassical .genrelist-mobile a:hover { color: #A18259; }
+.mainfolk .genrelist a:hover, .mainfolk .genrelist-mobile a:hover { color: #D8C188; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -310,6 +305,11 @@ p {
     width: 100%;
     padding: 1.5em;
     font-size: 4.2vw;
+}
+
+.genre {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12.5pt;
 }
 
 .box {
@@ -609,6 +609,7 @@ p {
     line-height: 1.2em;
     user-select: none;
     cursor: default;
+    margin: 0.3em 0 0.6em 0;
 }
 
 .buttons-gospel, .buttons-gospel-stop { background-color: #ED9C9C; }
@@ -719,8 +720,8 @@ p {
 
 .stop {
     float: right;
-    margin-top: -3em;
-    margin-right: 0.25em;
+    margin-top: -3.75em;
+    margin-right: 0.5em;
 }
 
 /*---------------------------------------------------------------------------*/
