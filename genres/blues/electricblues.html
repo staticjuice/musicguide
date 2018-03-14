@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Electric Blues</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Electric Blues</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="electricblues">
+        <div class="box blues">
+            <h1>ELECTRIC BLUES</h1>
 
-<body class="genre" id="electricblues">
-    <div class="box blues">
-        <h1>ELECTRIC BLUES</h1><br>
+            <p>Electric Blues is one of the most important types of Blues. Like so many other genres, Blues evolved from a strictly acoustic style to an electric one. The addition of electric guitars wouldn’t happen until the late 40s, but this changed it into something else &ndash; proto-Blues Rock. Blues suddenly sounded a lot more edgy, emotional and rough &ndash; something that made up the core of Blues, but which it had lost along the way (with all the hyperactive, jazzy types of Blues in existence). Because this modern approach ironically put Blues back in touch with its roots, electric guitars were suddenly found in all types of Blues. Strictly speaking, Electric Blues is therefore an umbrella term, but a very real and important one. Electric Blues is characterized by exuberant showmanship &ndash; its musicians like to impress the audience with energetic solos and assertive performance. Typical for this genre is loud, wailing guitars with sustained high notes, a great emphasis on guitar solos, like cries from the ghetto, and a wilder-than-thou sound. Electric Blues was of great influence to more modern Blues genres and the primary exponent of the Country style of Blues.</p>
 
-        Electric Blues is one of the most important types of Blues. Like so many other genres, Blues evolved from a strictly acoustic style to an electric one. The addition of electric guitars wouldn’t happen until the late 40s, but this changed it into something else &ndash; proto-Blues Rock. Blues suddenly sounded a lot more edgy, emotional and rough &ndash; something that made up the core of Blues, but which it had lost along the way (with all the hyperactive, jazzy types of Blues in existence). Because this modern approach ironically put Blues back in touch with its roots, electric guitars were suddenly found in all types of Blues. Strictly speaking, Electric Blues is therefore an umbrella term, but a very real and important one. Electric Blues is characterized by exuberant showmanship &ndash; its musicians like to impress the audience with energetic solos and assertive performance. Typical for this genre is loud, wailing guitars with sustained high notes, a great emphasis on guitar solos, like cries from the ghetto, and a wilder-than-thou sound. Electric Blues was of great influence to more modern Blues genres and the primary exponent of the Country style of Blues.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-blues-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-blues-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-blues-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-blues-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Freddie King",
+                        track: "Big Legged Woman",
+                        path: "../../samples/blues/electricblues1.ogg"
+                    },
+                    {
+                        artist: "Johnny Copeland",
+                        track: "Blues Ain't Nothin'",
+                        path: "../../samples/blues/electricblues2.ogg"
+                    },
+                    {
+                        artist: "Albert Collins",
+                        track: "Lights Are On But Nobody's Home",
+                        path: "../../samples/blues/electricblues3.ogg"
+                    },
+                    {
+                        artist: "Roy Buchanan",
+                        track: "Sweet Dreams",
+                        path: "../../samples/blues/electricblues4.ogg"
+                    },
+                    {
+                        artist: "Robben Ford",
+                        track: "Talk To Your Daughter",
+                        path: "../../samples/blues/electricblues5.ogg"
+                    },
+                    {
+                        artist: "Robert Cray",
+                        track: "Smoking Gun",
+                        path: "../../samples/blues/electricblues6.ogg"
+                    },
+                    {
+                        artist: "The Fabulous Thunderbirds",
+                        track: "Tuff Enuff",
+                        path: "../../samples/blues/electricblues7.ogg"
+                    },
+                    {
+                        artist: "Joe Louis Walker",
+                        track: "I Won't Do That",
+                        path: "../../samples/blues/electricblues8.ogg"
+                    },
+                    {
+                        artist: "The Barr Brothers",
+                        track: "Half Crazy",
+                        path: "../../samples/blues/electricblues9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Freddie King",
-                    track: "Big Legged Woman",
-                    path: "../../samples/blues/electricblues1.ogg"
-                },
-                {
-                    artist: "Johnny Copeland",
-                    track: "Blues Ain't Nothin'",
-                    path: "../../samples/blues/electricblues2.ogg"
-                },
-                {
-                    artist: "Albert Collins",
-                    track: "Lights Are On But Nobody's Home",
-                    path: "../../samples/blues/electricblues3.ogg"
-                },
-                {
-                    artist: "Roy Buchanan",
-                    track: "Sweet Dreams",
-                    path: "../../samples/blues/electricblues4.ogg"
-                },
-                {
-                    artist: "Robben Ford",
-                    track: "Talk To Your Daughter",
-                    path: "../../samples/blues/electricblues5.ogg"
-                },
-                {
-                    artist: "Robert Cray",
-                    track: "Smoking Gun",
-                    path: "../../samples/blues/electricblues6.ogg"
-                },
-                {
-                    artist: "The Fabulous Thunderbirds",
-                    track: "Tuff Enuff",
-                    path: "../../samples/blues/electricblues7.ogg"
-                },
-                {
-                    artist: "Joe Louis Walker",
-                    track: "I Won't Do That",
-                    path: "../../samples/blues/electricblues8.ogg"
-                },
-                {
-                    artist: "The Barr Brothers",
-                    track: "Half Crazy",
-                    path: "../../samples/blues/electricblues9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-blues').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-blues').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-blues-stop').on('click', function() {
+                $('.buttons-blues-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-blues"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-blues"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

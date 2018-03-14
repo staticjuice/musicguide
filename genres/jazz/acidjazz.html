@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Acid Jazz</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Acid Jazz</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="acidjazz">
+        <div class="box jazz">
+            <h1>ACID JAZZ</h1>
 
-<body class="genre" id="acidjazz">
-    <div class="box jazz">
-        <h1>ACID JAZZ</h1><br>
+            <p>Acid Jazz is a crossover genre gone too far &ndash; there is barely any Jazz left in it. There’s actually almost zero ‘acid’ about it as well, except a slight psychedelic sound, placing it high on the chart for poorly chosen genre names. In fact it’s more of the deepest funky Jazz Fusion combined with Hip Hop, so Fusion Hip Hop would be more appropriate. The leading record label &ndash; also named Acid Jazz &ndash; was determined to compensate Acid House with what they regarded as “quality music”, heavily influenced by Rare Groove records. A steady Hip Hop breakbeat, lots of percussion, Jazz harmonies and funky basslines (often with the aid of a synthesizer) are the key flavours of Acid Jazz. These elements blend perfectly until the roots of the genre are no longer traceable. It was a short but popular craze, right before EDM conquered the music scene. Due to its highly danceable nature, a new type of dance, Jazzdance, was invented along with it (which became more or less a synonym of the music itself). It can be hard to separate Acid Jazz from Soul Jazz with heavy breaks, if it wasn’t for the (abundant) use of vocals.</p>
 
-        Acid Jazz is a crossover genre gone too far &ndash; there is barely any Jazz left in it. There’s actually almost zero ‘acid’ about it as well, except a slight psychedelic sound, placing it high on the chart for poorly chosen genre names. In fact it’s more of the deepest funky Jazz Fusion combined with Hip Hop, so Fusion Hip Hop would be more appropriate. The leading record label &ndash; also named Acid Jazz &ndash; was determined to compensate Acid House with what they regarded as “quality music”, heavily influenced by Rare Groove records. A steady Hip Hop breakbeat, lots of percussion, Jazz harmonies and funky basslines (often with the aid of a synthesizer) are the key flavours of Acid Jazz. These elements blend perfectly until the roots of the genre are no longer traceable. It was a short but popular craze, right before EDM conquered the music scene. Due to its highly danceable nature, a new type of dance, Jazzdance, was invented along with it (which became more or less a synonym of the music itself). It can be hard to separate Acid Jazz from Soul Jazz with heavy breaks, if it wasn’t for the (abundant) use of vocals.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-jazz-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-jazz-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-jazz-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-jazz-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Raw Instinct",
+                        track: "De La Bass",
+                        path: "../../samples/jazz/acidjazz1.ogg"
+                    },
+                    {
+                        artist: "Mateo & Matos",
+                        track: "Taste Of Funk",
+                        path: "../../samples/jazz/acidjazz2.ogg"
+                    },
+                    {
+                        artist: "Ronny Jordan",
+                        track: "After Hours",
+                        path: "../../samples/jazz/acidjazz3.ogg"
+                    },
+                    {
+                        artist: "Galliano",
+                        track: "So Much Confusion",
+                        path: "../../samples/jazz/acidjazz4.ogg"
+                    },
+                    {
+                        artist: "Nightmares On Wax",
+                        track: "Les Nuits",
+                        path: "../../samples/jazz/acidjazz5.ogg"
+                    },
+                    {
+                        artist: "Arnica Montana",
+                        track: "Eau De Malte",
+                        path: "../../samples/jazz/acidjazz6.ogg"
+                    },
+                    {
+                        artist: "Us3",
+                        track: "Cantaloop",
+                        path: "../../samples/jazz/acidjazz7.ogg"
+                    },
+                    {
+                        artist: "Sofa Surfers",
+                        track: "Sofa Rockers (Richard Dorfmeister Remix)",
+                        path: "../../samples/jazz/acidjazz8.ogg"
+                    },
+                    {
+                        artist: "Silent Poets",
+                        track: "Break In The Circle",
+                        path: "../../samples/jazz/acidjazz9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Raw Instinct",
-                    track: "De La Bass",
-                    path: "../../samples/jazz/acidjazz1.ogg"
-                },
-                {
-                    artist: "Mateo & Matos",
-                    track: "Taste Of Funk",
-                    path: "../../samples/jazz/acidjazz2.ogg"
-                },
-                {
-                    artist: "Ronny Jordan",
-                    track: "After Hours",
-                    path: "../../samples/jazz/acidjazz3.ogg"
-                },
-                {
-                    artist: "Galliano",
-                    track: "So Much Confusion",
-                    path: "../../samples/jazz/acidjazz4.ogg"
-                },
-                {
-                    artist: "Nightmares On Wax",
-                    track: "Les Nuits",
-                    path: "../../samples/jazz/acidjazz5.ogg"
-                },
-                {
-                    artist: "Arnica Montana",
-                    track: "Eau De Malte",
-                    path: "../../samples/jazz/acidjazz6.ogg"
-                },
-                {
-                    artist: "Us3",
-                    track: "Cantaloop",
-                    path: "../../samples/jazz/acidjazz7.ogg"
-                },
-                {
-                    artist: "Sofa Surfers",
-                    track: "Sofa Rockers (Richard Dorfmeister Remix)",
-                    path: "../../samples/jazz/acidjazz8.ogg"
-                },
-                {
-                    artist: "Silent Poets",
-                    track: "Break In The Circle",
-                    path: "../../samples/jazz/acidjazz9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-jazz').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-jazz').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-jazz-stop').on('click', function() {
+                $('.buttons-jazz-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-jazz"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-jazz"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Bebop</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bebop</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="bebop">
+        <div class="box jazz">
+            <h1>BEBOP</h1>
 
-<body class="genre" id="bebop">
-    <div class="box jazz">
-        <h1>BEBOP</h1><br>
+            <p>As more and more white people were copying Jazz music, a number of black Jazz musicians felt a need to redefine the music. Bebop developed gradually in the early 40s and exploded in 1945. The main difference between Bebop and Swing is that the soloists engaged in chordal (rather than melodic) improvisation, often discarding the melody altogether after the first chorus and using the chords as the basis for the solo. Ensembles tended to be unisons, most Jazz groups were under seven pieces, and the soloist was free to get as adventurous as possible as long as the overall improvisation fit into the chord structure. Since the virtuoso musicians were getting away from using the melodies as the basis for their solos (leading some listeners to ask "where's the melody?") and some of the tempos were very fast, Bebop divorced itself from popular music and a dancing audience, uplifting Jazz to an art form but cutting deeply into its potential commercial success. Ironically the once-radical Bebop style has become the foundation for all of the innovations that followed and now can be almost thought of as establishment music.</p>
 
-        As more and more white people were copying Jazz music, a number of black Jazz musicians felt a need to redefine the music. Bebop developed gradually in the early 40s and exploded in 1945. The main difference between Bebop and Swing is that the soloists engaged in chordal (rather than melodic) improvisation, often discarding the melody altogether after the first chorus and using the chords as the basis for the solo. Ensembles tended to be unisons, most Jazz groups were under seven pieces, and the soloist was free to get as adventurous as possible as long as the overall improvisation fit into the chord structure. Since the virtuoso musicians were getting away from using the melodies as the basis for their solos (leading some listeners to ask "where's the melody?") and some of the tempos were very fast, Bebop divorced itself from popular music and a dancing audience, uplifting Jazz to an art form but cutting deeply into its potential commercial success. Ironically the once-radical Bebop style has become the foundation for all of the innovations that followed and now can be almost thought of as establishment music.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-jazz">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-jazz-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-jazz">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-jazz-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-jazz-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-jazz-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Dizzy Gillespie",
+                        track: "Anthropology",
+                        path: "../../samples/jazz/bebop1.ogg"
+                    },
+                    {
+                        artist: "Charlie Parker",
+                        track: "Koko",
+                        path: "../../samples/jazz/bebop2.ogg"
+                    },
+                    {
+                        artist: "Bud Powell",
+                        track: "Tempus Fugit",
+                        path: "../../samples/jazz/bebop3.ogg"
+                    },
+                    {
+                        artist: "Dexter Gordon",
+                        track: "Lady Bird",
+                        path: "../../samples/jazz/bebop4.ogg"
+                    },
+                    {
+                        artist: "Fats Navarro",
+                        track: "Ko Ko",
+                        path: "../../samples/jazz/bebop5.ogg"
+                    },
+                    {
+                        artist: "Bud Powell",
+                        track: "Cherokee",
+                        path: "../../samples/jazz/bebop6.ogg"
+                    },
+                    {
+                        artist: "Roy Haynes, Phineas Newborn & Paul Chambers",
+                        track: "Reflection",
+                        path: "../../samples/jazz/bebop7.ogg"
+                    },
+                    {
+                        artist: "Babs Gonzales",
+                        track: "Professor Bop",
+                        path: "../../samples/jazz/bebop8.ogg"
+                    },
+                    {
+                        artist: "Charlie Parker Quintet",
+                        track: "Donna Lee",
+                        path: "../../samples/jazz/bebop9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Dizzy Gillespie",
-                    track: "Anthropology",
-                    path: "../../samples/jazz/bebop1.ogg"
-                },
-                {
-                    artist: "Charlie Parker",
-                    track: "Koko",
-                    path: "../../samples/jazz/bebop2.ogg"
-                },
-                {
-                    artist: "Bud Powell",
-                    track: "Tempus Fugit",
-                    path: "../../samples/jazz/bebop3.ogg"
-                },
-                {
-                    artist: "Dexter Gordon",
-                    track: "Lady Bird",
-                    path: "../../samples/jazz/bebop4.ogg"
-                },
-                {
-                    artist: "Fats Navarro",
-                    track: "Ko Ko",
-                    path: "../../samples/jazz/bebop5.ogg"
-                },
-                {
-                    artist: "Bud Powell",
-                    track: "Cherokee",
-                    path: "../../samples/jazz/bebop6.ogg"
-                },
-                {
-                    artist: "Roy Haynes, Phineas Newborn & Paul Chambers",
-                    track: "Reflection",
-                    path: "../../samples/jazz/bebop7.ogg"
-                },
-                {
-                    artist: "Babs Gonzales",
-                    track: "Professor Bop",
-                    path: "../../samples/jazz/bebop8.ogg"
-                },
-                {
-                    artist: "Charlie Parker Quintet",
-                    track: "Donna Lee",
-                    path: "../../samples/jazz/bebop9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-jazz').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-jazz').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-jazz-stop').on('click', function() {
+                $('.buttons-jazz-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-jazz"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-jazz"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Swamp Blues</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Swamp Blues</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="swampblues">
+        <div class="box blues">
+            <h1>SWAMP BLUES</h1>
 
-<body class="genre" id="swampblues">
-    <div class="box blues">
-        <h1>SWAMP BLUES</h1><br>
+            <p>Deep in the swamps of Louisiana, not only Country but also Blues was made. As one could expect, this was slow, plain, Country-like Blues. Unlike the heavy backbeat of the more popular urban styles, its rhythm can be best described as laid-back, making even its most uptempo offerings share the same mood and ambience of the most desultory of slow Blues. In this isolated and humid wilderness, Creole Folk music already existed long before Blues. One of the first types, Cajun, was mixed with R&amp;B into Zydeco, a French type of proto-Blues. Both Cajun and Zydeco are known for their driving beat, dotted with harsher or unusual sounds like washboards. After some time, Zydeco evolved into Swamp Blues, particularly in Baton Rouge, capital of Louisiana. The music became the soundtrack of the environment, which from that moment on would naturally be associated with rural, southern swamps &ndash; haunting echos and plenty reverb, cricket-like sounds, and slow, trembling guitars. The “swamp sound” was mostly dominated by accordion and harmonica, further enriching a stereotypical atmosphere associated with the music.</p>
 
-        Deep in the swamps of Louisiana, not only Country but also Blues was made. As one could expect, this was slow, plain, Country-like Blues. Unlike the heavy backbeat of the more popular urban styles, its rhythm can be best described as laid-back, making even its most uptempo offerings share the same mood and ambience of the most desultory of slow Blues. In this isolated and humid wilderness, Creole Folk music already existed long before Blues. One of the first types, Cajun, was mixed with R&amp;B into Zydeco, a French type of proto-Blues. Both Cajun and Zydeco are known for their driving beat, dotted with harsher or unusual sounds like washboards. After some time, Zydeco evolved into Swamp Blues, particularly in Baton Rouge, capital of Louisiana. The music became the soundtrack of the environment, which from that moment on would naturally be associated with rural, southern swamps &ndash; haunting echos and plenty reverb, cricket-like sounds, and slow, trembling guitars. The “swamp sound” was mostly dominated by accordion and harmonica, further enriching a stereotypical atmosphere associated with the music.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-blues-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-blues">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-blues-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-blues-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-blues-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Lightnin' Slim",
+                        track: "That's Alright",
+                        path: "../../samples/blues/swampblues1.ogg"
+                    },
+                    {
+                        artist: "Slim Harpo",
+                        track: "Baby Scratch My Back",
+                        path: "../../samples/blues/swampblues2.ogg"
+                    },
+                    {
+                        artist: "Lazy Lester",
+                        track: "Ponderosa Shuffle",
+                        path: "../../samples/blues/swampblues3.ogg"
+                    },
+                    {
+                        artist: "Silas Hogan",
+                        track: "Dark Clouds Rollin'",
+                        path: "../../samples/blues/swampblues4.ogg"
+                    },
+                    {
+                        artist: "Raful Neal",
+                        track: "Down And Out",
+                        path: "../../samples/blues/swampblues5.ogg"
+                    },
+                    {
+                        artist: "Snooks Eaglin",
+                        track: "That's All Right",
+                        path: "../../samples/blues/swampblues6.ogg"
+                    },
+                    {
+                        artist: "Lonesome Sundown",
+                        track: "They Call Me Sundown",
+                        path: "../../samples/blues/swampblues7.ogg"
+                    },
+                    {
+                        artist: "Rockin' Sidney",
+                        track: "Harlem Shuffle",
+                        path: "../../samples/blues/swampblues8.ogg"
+                    },
+                    {
+                        artist: "Robert Pete Williams",
+                        track: "A Thousand Miles From Nowhere",
+                        path: "../../samples/blues/swampblues9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Lightnin' Slim",
-                    track: "That's Alright",
-                    path: "../../samples/blues/swampblues1.ogg"
-                },
-                {
-                    artist: "Slim Harpo",
-                    track: "Baby Scratch My Back",
-                    path: "../../samples/blues/swampblues2.ogg"
-                },
-                {
-                    artist: "Lazy Lester",
-                    track: "Ponderosa Shuffle",
-                    path: "../../samples/blues/swampblues3.ogg"
-                },
-                {
-                    artist: "Silas Hogan",
-                    track: "Dark Clouds Rollin'",
-                    path: "../../samples/blues/swampblues4.ogg"
-                },
-                {
-                    artist: "Raful Neal",
-                    track: "Down And Out",
-                    path: "../../samples/blues/swampblues5.ogg"
-                },
-                {
-                    artist: "Snooks Eaglin",
-                    track: "That's All Right",
-                    path: "../../samples/blues/swampblues6.ogg"
-                },
-                {
-                    artist: "Lonesome Sundown",
-                    track: "They Call Me Sundown",
-                    path: "../../samples/blues/swampblues7.ogg"
-                },
-                {
-                    artist: "Rockin' Sidney",
-                    track: "Harlem Shuffle",
-                    path: "../../samples/blues/swampblues8.ogg"
-                },
-                {
-                    artist: "Robert Pete Williams",
-                    track: "A Thousand Miles From Nowhere",
-                    path: "../../samples/blues/swampblues9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-blues').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-blues').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-blues-stop').on('click', function() {
+                $('.buttons-blues-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-blues"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-blues"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

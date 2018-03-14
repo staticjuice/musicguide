@@ -97,46 +97,30 @@
                 })
 
                 var artistSpan = $(document).find('#artist')[0]
-
                 var track = $(document).find('#track')[0]
-
                 var audioInstanceArray = [];
-
                 var buttons = [];
-
                 var audioInstance;
 
                 $(document).find('.buttons-gospel').each(function(index, button) {
-
                     buttons.push(button);
-
                     $(this).click(function() {
-
                         removeAllButtonBorders()
-
                         $(this).toggleClass('clicked');
-
                         stopAllMusic()
-
                         audioInstance = new Audio(tracks[index].path);
                         audioInstanceArray.push(audioInstance);
                         audioInstance.play();
-
                         artistSpan.innerHTML = tracks[index].artist
                         track.innerHTML = tracks[index].track
-
                     });
                 });
 
                 $('.buttons-gospel-stop').on('click', function() {
-
                     stopAllMusic()
-
                     artistSpan.innerHTML = ''
                     track.innerHTML = ''
-
                     removeAllButtonBorders()
-
                 });
 
                 var removeAllButtonBorders = () => {
@@ -152,7 +136,6 @@
                         audioInstanceArray.pop();
                     });
                 }
-
             });
         </script>
     </body>
