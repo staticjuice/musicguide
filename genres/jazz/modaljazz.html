@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre modaljazz">
-    <div id="box-jazz">
+
+<body class="genre" id="modaljazz">
+    <div class="box jazz">
         <h1>MODAL JAZZ</h1><br>
-            
+
         Modal Jazz is not so much a style of Jazz as it is a structure. Before the advent of modal music in the 50s, solo improvisations were based around the specific key of a piece &ndash; that is, its tonal centre, the starting point to which its melodies and chord progressions would return for a feeling of resolution or completeness. Modal improvisations, on the other hand, were based on modes or scales &ndash; but not just the typical major and minor scales familiar to nearly all musicians. The most commonly used modes did relate to major scales, though &ndash; each note in the scale was also the first note of a new mode, which would incorporate all of the notes in the original major scale, but sounded different because the new starting point rearranged the order of distances between notes. Thus, if a musician were improvising over, say, a D chord, he could essentially choose any key centre whose corresponding scale included the note D (unless the composer dictated specific modes to be used in the solos). The new order of distances between notes could produce very different moods.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">1</div>
+                <div class="buttons buttons-jazz">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">5</div>
+                <div class="buttons buttons-jazz">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">6</div>
+                <div class="buttons buttons-jazz">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">7</div>
+                <div class="buttons buttons-jazz">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">8</div>
+                <div class="buttons buttons-jazz">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">9</div>
+                <div class="buttons buttons-jazz">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-jazz-stop">&#9724;</div>
+                <div class="buttons buttons-jazz-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-jazz-stop">&#9724;</div>
+            <div class="buttons buttons-jazz-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Miles Davis",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-jazz').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-jazz"
+                    button => button.className = "buttons buttons-jazz"
                 )
             }
 

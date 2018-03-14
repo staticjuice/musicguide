@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre folkrock">
-    <div id="box-classicrock">
+
+<body class="genre" id="folkrock">
+    <div class="box classicrock">
         <h1>FOLK ROCK</h1><br>
-            
+
         The British Invasion casted a shockwave throughout music industry and was practically impossible to ignore in the UK. Even the secluded folk communities took an interest in the strong backbeat and catchy guitar hooks. Pioneering band The Byrds initiated this evolution, starting out as a pure Folk band but dragging along many others in a real Folk Rock hype. By signing up with record labels, the messages and reflective stories of Folk Rock artists could reach a much larger audience than before. An appealing thought for artists who believed in the importance of story over sound. This came at the expense of experimentation &ndash; the songs were pretty conventional and simple. On top of that, an idealistic but too naïve worldview didn’t help either to win over a large amount of fans who weren’t keen on this new direction towards Rock. Folk Rock differs from the previous Folk Revivals in the use of electric, 12-string guitars and vocal harmonies in bands. There is a significant amount of overlap with Country Rock, as both genres are crossovers from acoustic guitar genres into electric guitar Rock.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">1</div>
+                <div class="buttons buttons-classicrock">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">5</div>
+                <div class="buttons buttons-classicrock">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">6</div>
+                <div class="buttons buttons-classicrock">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">7</div>
+                <div class="buttons buttons-classicrock">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">8</div>
+                <div class="buttons buttons-classicrock">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">9</div>
+                <div class="buttons buttons-classicrock">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-classicrock-stop">&#9724;</div>
+                <div class="buttons buttons-classicrock-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-classicrock-stop">&#9724;</div>
+            <div class="buttons buttons-classicrock-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Bob Dylan",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-classicrock').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-classicrock"
+                    button => button.className = "buttons buttons-classicrock"
                 )
             }
 

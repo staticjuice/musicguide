@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre contemporaryrap">
-    <div id="box-hiphop">
+
+<body class="genre" id="contemporaryrap">
+    <div class="box hiphop">
         <h1>CONTEMPORARY RAP</h1><br>
-            
+
         Although this stuff is too new to have an official name yet, Contemporary Rap refers to the latest wave of Hip Hop music that is currently dominating music charts around the world. The sound here is essentially a continuation of Trap music, albeit in a much more artistic way, losing the shallow lyrics of traditional Trap in favour of more personal topics. In July 2017, Forbes reported that Hip Hop had recently usurped Rock as the most consumed musical genre, becoming the most popular genre in music for the first time in American history. Many producers of Contemporary Rap often follow an indie approach, creating and producing everything themselves, often with casual releases on SoundCloud leading to the term Cloud Rap. Other styles that have recently become popular include Mumble Rap, where rappers rap in a nonsensical and sometimes unintelligible style. Lo-Fi Rap features lower quality sound design as an aesthetic, and Emo Rap seeks to combine the Emo style of singing with Hip Hop instrumentation. All of this has made Hip Hop into the most relevant style of music today, and there is no doubt that it has a long way to go.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">1</div>
+                <div class="buttons buttons-hiphop">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">5</div>
+                <div class="buttons buttons-hiphop">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">6</div>
+                <div class="buttons buttons-hiphop">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">7</div>
+                <div class="buttons buttons-hiphop">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">8</div>
+                <div class="buttons buttons-hiphop">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">9</div>
+                <div class="buttons buttons-hiphop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-hiphop-stop">&#9724;</div>
+                <div class="buttons buttons-hiphop-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-hiphop-stop">&#9724;</div>
+            <div class="buttons buttons-hiphop-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Kanye West",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-hiphop').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-hiphop"
+                    button => button.className = "buttons buttons-hiphop"
                 )
             }
 

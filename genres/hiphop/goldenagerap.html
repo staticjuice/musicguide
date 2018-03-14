@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre goldenagerap">
-    <div id="box-hiphop">
+
+<body class="genre" id="goldenagerap">
+    <div class="box hiphop">
         <h1>GOLDEN AGE RAP</h1><br>
-            
+
         It took a decade before Rap got out of the ghetto and onto records, conquering the globe. What started in New York, spreaded throughout the whole US East coast, with different Rap groups selling gold or platinum albums. This period (mid- late-80s) were the heydays of Hip Hop, when there was massive appeal combined with little negative publicity as Rap wasn’t affiliated with either criminality or commercial selling-out yet. There are several reasons for this large appeal. Hip Hop gets more appreciated by middle class and white audiences, because they can relate to the music. Rappers start rapping about responsibility, political messages, anti-drugs, anti-capitalism and Hip Hop is no longer a secluded subculture with “weird’ customs. But perhaps the most important aspect of this genre is a different approach in making the music; MCs no longer rap over existing records, but the beat and the rhyme become one. The beat gets made from scratch, sometimes specifically for a made rhyme, and MCs evolve in their rhyming skills, resulting in more professional and eloquent flows than Old Skool Rap.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">1</div>
+                <div class="buttons buttons-hiphop">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">5</div>
+                <div class="buttons buttons-hiphop">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">6</div>
+                <div class="buttons buttons-hiphop">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">7</div>
+                <div class="buttons buttons-hiphop">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">8</div>
+                <div class="buttons buttons-hiphop">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">9</div>
+                <div class="buttons buttons-hiphop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-hiphop-stop">&#9724;</div>
+                <div class="buttons buttons-hiphop-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-hiphop-stop">&#9724;</div>
+            <div class="buttons buttons-hiphop-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Slick Rick",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-hiphop').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-hiphop"
+                    button => button.className = "buttons buttons-hiphop"
                 )
             }
 

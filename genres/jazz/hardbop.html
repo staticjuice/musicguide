@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre hardbop">
-    <div id="box-jazz">
+
+<body class="genre" id="hardbop">
+    <div class="box jazz">
         <h1>HARD BOP</h1><br>
-            
+
         Hard Bop is a more modern evolution of Bebop, but not particularly “harder”, despite the term. The music is smoothened out and more emphasis is being put on the rhythm. The “Cool School” of the West Coast had also provoked a certain disdain by Bebop players, with its exaggerated rationalism and lack of pathos. Hard Bop formed the emotional answer but it in a very basic and gentle manner and not chaotic at all. Alongside these influences, the arrival of longplay records (at 33 rpm) allowed for longer songs and longer solos. Numerous alternating solos and chords (of different instruments, sometimes even bass and drums) are being played in a call and response manner. Hard Bop is played by small ensembles and is often described as having a more “bodied” or “textured” sound. Since its inception, Hard Bop has been the dominant genre in Jazz. When Jazz is performed in Jazz bars or performances, it is highly likely to be Hard Bop. There are two Hard Bop subgenres &ndash; one with a simple, and often bluesy sound, and more mainstream Hard Bop, being more complex and closely related to Bebop.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">1</div>
+                <div class="buttons buttons-jazz">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">5</div>
+                <div class="buttons buttons-jazz">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">6</div>
+                <div class="buttons buttons-jazz">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">7</div>
+                <div class="buttons buttons-jazz">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">8</div>
+                <div class="buttons buttons-jazz">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">9</div>
+                <div class="buttons buttons-jazz">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-jazz-stop">&#9724;</div>
+                <div class="buttons buttons-jazz-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-jazz-stop">&#9724;</div>
+            <div class="buttons buttons-jazz-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Horace Silver",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-jazz').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-jazz"
+                    button => button.className = "buttons buttons-jazz"
                 )
             }
 

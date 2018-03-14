@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre trancecore">
-    <div id="box-hardcore">
+
+<body class="genre" id="trancecore">
+    <div class="box hardcore">
         <h1>TRANCECORE</h1><br>
-            
+
         At the end of the 90s, the “happy” sound of Happy Hardcore had gone stale and predictable. In the UK, Happy Hardcore traded its happiness and formal structure for something rougher and free. Trancecore or “UK Hardcore” is essentially the survival outcome of Happy Hardcore &ndash; stronger, faster, harder and less happy. The type of music went really well with Trance, merging into a new type of music. Just like Trance, different channels of melodies, sound effects, and basslines are part of the music, and all of the songs are instrumental. Because Trancecore fuses Hardcore with Trance it is very similar to the fusions of either Acid Trance or Psychedelic Trance with Hardcore, respectively known as Freeform or Acidcore. The connection between these two subgenres is unsurprisingly the heavy use of the TB-303, which becomes explored (or even abused) in every possible way, and is no stranger in the world of Trancecore either. Therefore, all these genres are one big bowl of acid and spacy speedy Hardcore, as if Rave never died. This current sound similarly has also found followers from all corners of the globe.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">1</div>
+                <div class="buttons buttons-hardcore">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">5</div>
+                <div class="buttons buttons-hardcore">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">6</div>
+                <div class="buttons buttons-hardcore">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">7</div>
+                <div class="buttons buttons-hardcore">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">8</div>
+                <div class="buttons buttons-hardcore">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">9</div>
+                <div class="buttons buttons-hardcore">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hardcore">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hardcore">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hardcore">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-hardcore-stop">&#9724;</div>
+                <div class="buttons buttons-hardcore-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-hardcore-stop">&#9724;</div>
+            <div class="buttons buttons-hardcore-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Dougal & Gammer",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-hardcore').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-hardcore"
+                    button => button.className = "buttons buttons-hardcore"
                 )
             }
 

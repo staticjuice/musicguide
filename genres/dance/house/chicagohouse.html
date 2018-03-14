@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre chicagohouse">
-    <div id="box-house">
+
+<body class="genre" id="chicagohouse">
+    <div class="box house">
         <h1>CHICAGO HOUSE</h1><br>
-            
+
         The gay discotheques of Chicago already had a history of long, decadent, hypersexual parties before 1984. But suddenly the scene changed into something even more intense &ndash; the Disco four-to-the-floor beat got more pronounced, most of the lyrics disappeared, and offbeat hi-hats, synth basslines and pianos took their place. King of Chicago House was the TR-909 drum computer, endlessly pounding even harder kick drums than before at the popular rate of 122-125 bpm. The combination of a rather slow EDM tempo, a deep and rich R&amp;B bass, diva vocals and tickling piano melodies culminated in a tingling, all-night-long dance sensation, intensified by XTC. Although ecstasy already existed during the 60s and the flower power age, it wasn’t until the coming of music that was hard enough that it became popular. Although House seemed like a sudden revolution, it really wasn’t. It was just another step in the ongoing evolution of Disco-debauchery, with Italo Disco and Hi-NRG being the intermediate steps. The main difference with Disco however, was that House was here to stay.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">1</div>
+                <div class="buttons buttons-house">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">5</div>
+                <div class="buttons buttons-house">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">6</div>
+                <div class="buttons buttons-house">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">7</div>
+                <div class="buttons buttons-house">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">8</div>
+                <div class="buttons buttons-house">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">9</div>
+                <div class="buttons buttons-house">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-house-stop">&#9724;</div>
+                <div class="buttons buttons-house-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-house-stop">&#9724;</div>
+            <div class="buttons buttons-house-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Mr. Fingers",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-house').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-house"
+                    button => button.className = "buttons buttons-house"
                 )
             }
 

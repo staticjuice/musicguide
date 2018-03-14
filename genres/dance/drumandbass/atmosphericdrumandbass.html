@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre atmosphericdrumandbass">
-    <div id="box-drumandbass">
+
+<body class="genre" id="atmosphericdrumandbass">
+    <div class="box drumandbass">
         <h1>ATMOSPHERIC DRUM &amp; BASS</h1><br>
-            
+
         The older styles all focused on the “ravy” side of Drum &amp; Bass and tried to blow the crowd away with subsonic booming basslines and an avalanche of drum rolls. Very soon, a countermovement emerged that tried to recreate the original Drum &amp; Bass sound, before the Darkcore influences. As to be expected, it was neither raw nor heavy, but highly polished, produced and soothing to the ear. With crossovers into other music such as IDM and Jazz, this “intelligent” Drum &amp; Bass took itself very seriously. Major record labels took an interest and started releasing records for the elite audio connaisseurs (with complex, deep, atmospheric melodies) and labeling itself “Artcore”, but many synonyms exist &amp; Ambient, Atmospheric or Intelligent Drum &amp; Bass. Its “artistic”, complex nature makes the genre even more associated with cannabis than other Drum &amp; Bass &ndash; it’s often the preferred soundtrack for any non-clubbing film scene dominated by ganja presence. Atmospheric Drum &amp; Bass (which is by most preferred over the term Intelligent Drum &amp; Bass) made Drum &amp; Bass very popular, even in circles that normally don’t hold Jungle in high esteem.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">1</div>
+                <div class="buttons buttons-drumandbass">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">5</div>
+                <div class="buttons buttons-drumandbass">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">6</div>
+                <div class="buttons buttons-drumandbass">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">7</div>
+                <div class="buttons buttons-drumandbass">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">8</div>
+                <div class="buttons buttons-drumandbass">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">9</div>
+                <div class="buttons buttons-drumandbass">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-drumandbass-stop">&#9724;</div>
+                <div class="buttons buttons-drumandbass-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-drumandbass-stop">&#9724;</div>
+            <div class="buttons buttons-drumandbass-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Netsky feat. Bev Lee Harling",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-drumandbass').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-drumandbass"
+                    button => button.className = "buttons buttons-drumandbass"
                 )
             }
 

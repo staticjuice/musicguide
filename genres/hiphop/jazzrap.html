@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre jazzrap">
-    <div id="box-hiphop">
+
+<body class="genre" id="jazzrap">
+    <div class="box hiphop">
         <h1>JAZZ RAP</h1><br>
-            
+
         Jazz Rap was an attempt to fuse African-American music of the past with a newly dominant form of the present, paying tribute to and reinvigorating the former while expanding the horizons of the latter. While the rhythms of Jazz Rap came entirely from Hip Hop, the samples and sonic textures were drawn mainly from Jazz. It was cooler and more cerebral than other styles of Hip Hop, and many of its artists displayed an Afrocentric political consciousness, complementing the style's historical awareness. Given its more intellectual bent, it's not surprising that Jazz Rap never really caught on as a street favourite, but then again it wasn't meant to. Jazz Rap styled itself as a more positive alternative to the Gangsta Rap movement taking over Hip Hop's mainstream at the dawn of the 90s and concerned itself with spreading Hip Hop to listeners unable to embrace or identify with the music's increasing inner-city aggression. As such, Jazz Rap found its main audiences in places like college campuses, and was also embraced by a number of critics and white Alternative Rock fans.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">1</div>
+                <div class="buttons buttons-hiphop">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">5</div>
+                <div class="buttons buttons-hiphop">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">6</div>
+                <div class="buttons buttons-hiphop">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">7</div>
+                <div class="buttons buttons-hiphop">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">8</div>
+                <div class="buttons buttons-hiphop">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">9</div>
+                <div class="buttons buttons-hiphop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-hiphop-stop">&#9724;</div>
+                <div class="buttons buttons-hiphop-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-hiphop-stop">&#9724;</div>
+            <div class="buttons buttons-hiphop-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "A Tribe Called Quest",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-hiphop').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-hiphop"
+                    button => button.className = "buttons buttons-hiphop"
                 )
             }
 

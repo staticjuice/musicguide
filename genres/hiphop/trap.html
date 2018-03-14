@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre trap">
-    <div id="box-hiphop">
+
+<body class="genre" id="trap">
+    <div class="box hiphop">
         <h1>TRAP</h1><br>
-            
+
         Slowly a new style of Rap music bubbled up in the shadows of the Southern US underground &ndash; Trap. This particular type of Rap differs from other styles by adding lots of synth and often being completely digitally made instead of using samples. Trap also drops the beat on an offbeat, giving a more dramatic, slow-motion build-and-drop feel. Pronounced snares, doubled crisp hi-hats, heavy TR-808 use and sometimes even brass instruments all add perfectly to Trap’s aggressive, bleak lyrical content. It is no coincidence that the word “Trap” is Hip Hop slang for a drug trade location, adding a sense of paranoia to the music. After 2010, Ghettotech influences certain Trap producers and the subgenre Drill is born &ndash; even darker and grittier than Trap, but with less pronounced breaks and clearly obsessed with drugs. After all, Trap and Drill’s sound are heavily influenced by the habit of syrup sipping &ndash; a new type of drug behaviour where codeine or promethazine cough syrup is mixed with soda or liquor. Combined with the effects of marijuana, a slow motion sound with strong hooks, unexpected interrupts and slurry, intoxicated lyrics is the outcome.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">1</div>
+                <div class="buttons buttons-hiphop">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">5</div>
+                <div class="buttons buttons-hiphop">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">6</div>
+                <div class="buttons buttons-hiphop">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">7</div>
+                <div class="buttons buttons-hiphop">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">8</div>
+                <div class="buttons buttons-hiphop">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">9</div>
+                <div class="buttons buttons-hiphop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-hiphop-stop">&#9724;</div>
+                <div class="buttons buttons-hiphop-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-hiphop-stop">&#9724;</div>
+            <div class="buttons buttons-hiphop-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "T.I.",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-hiphop').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-hiphop"
+                    button => button.className = "buttons buttons-hiphop"
                 )
             }
 

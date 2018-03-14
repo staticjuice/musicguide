@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre raprock">
-    <div id="box-alternative">
+
+<body class="genre" id="raprock">
+    <div class="box alternative">
         <h1>RAP ROCK</h1><br>
-            
+
         The combination of Rock and Rap found its origin in the 80s, with the desire of Run DMC’s producers to reach a bigger audience. But at the start of the 90s, a real genre emerges &ndash; called either Rap Rock, Rapcore or Funk Rock. Strictly speaking, these are all different genres but so closely related, it’s pointless to separate them. In short, they are heavier, faster types of Alternative Rock, with strong influences from the Golden Age of Rap music, sharing the same ferocity and anti-commercial mindset. One must not forget after all, that Hip Hop was still “fresh” in the 90s, even though it had already been around for quite some time. As a result, artists were eager to infuse Hip Hop in contrasting genres such as Alternative Rock. The lyrics are fast, in a Rap-like way (or even true raps), and the music is more rhythmical than other types of Rock. Both Rock and Hip Hop artists crossed over to each other’s side, but unfortunately the genre didn’t break through in mainstream charts. The genre gradually became harder, more experimental and mixed with Metal, eventually evolving into Nu Metal.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">1</div>
+                <div class="buttons buttons-alternative">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">5</div>
+                <div class="buttons buttons-alternative">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">6</div>
+                <div class="buttons buttons-alternative">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">7</div>
+                <div class="buttons buttons-alternative">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">8</div>
+                <div class="buttons buttons-alternative">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">9</div>
+                <div class="buttons buttons-alternative">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-alternative">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-alternative">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-alternative">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-alternative-stop">&#9724;</div>
+                <div class="buttons buttons-alternative-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-alternative-stop">&#9724;</div>
+            <div class="buttons buttons-alternative-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Kid Rock",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-alternative').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-alternative"
+                    button => button.className = "buttons buttons-alternative"
                 )
             }
 

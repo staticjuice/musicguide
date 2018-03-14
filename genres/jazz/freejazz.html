@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre freejazz">
-    <div id="box-jazz">
+
+<body class="genre" id="freejazz">
+    <div class="box jazz">
         <h1>FREE JAZZ</h1><br>
-            
+
         Free Jazz was a radical departure from past styles, for typically after playing a quick theme, the soloist does not have to follow any progression or structure and can go in any unpredictable direction. When Ornette Coleman largely introduced Free Jazz to New York audiences (although Cecil Taylor had preceded him with less publicity), many Bebop musicians and fans debated about whether what was being played would even qualify as music &ndash; the radicals had become conservatives in less than 15 years. Free Jazz, which overlaps with the Avant-Garde (the latter can use arrangements and sometimes fairly tight frameworks), remains a controversial and mostly underground style, influencing the modern mainstream while often being ignored. Having dispensed with many of the rules as far as pitch, rhythm and development are concerned (although it need not be atonal or lack a steady pulse to be Free Jazz), the success of a Free Jazz performance can be measured by the musicianship and imagination of the performers, how colourful the music is and whether it seems logical or merely random.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">1</div>
+                <div class="buttons buttons-jazz">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">5</div>
+                <div class="buttons buttons-jazz">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">6</div>
+                <div class="buttons buttons-jazz">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">7</div>
+                <div class="buttons buttons-jazz">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">8</div>
+                <div class="buttons buttons-jazz">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">9</div>
+                <div class="buttons buttons-jazz">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-jazz-stop">&#9724;</div>
+                <div class="buttons buttons-jazz-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-jazz-stop">&#9724;</div>
+            <div class="buttons buttons-jazz-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Ornette Coleman",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-jazz').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-jazz"
+                    button => button.className = "buttons buttons-jazz"
                 )
             }
 

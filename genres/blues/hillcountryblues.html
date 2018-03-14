@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre hillcountryblues">
-    <div id="box-blues">
+
+<body class="genre" id="hillcountryblues">
+    <div class="box blues">
         <h1>HILL COUNTRY BLUES</h1><br>
-            
+
         “Hill Country” refers to a specific region in Northeast Mississippi where a more radical style of Delta Blues was being developed, almost as old as Blues itself. The genre is characterized by a strong emphasis on rhythm and percussion, steady guitar riffs, few chord changes, unconventional song structures, and heavy emphasis on the groove. This style has no 12 bar rhythms, and is more riff and percussion based than other Blues styles. It can be a very pure, almost stripped type of Blues with classic instruments, sometimes only an acoustic guitar. This makes it reminiscent of Delta Blues but with a faster, highly rhythmic, repetitive tempo intensified by the punctuated, shivering sound of guitar or harmonica, guaranteed to entrance the listener or give one goosebumps. The hypnotic quality of Hill Country Blues was further extended in the 90s, due to experimental use of techniques atypical of Blues such as sampling, mixing or digital elements. With the use of repetitive breakbeats or cut-and-paste sound loops, a continuous and eclectic style emerges that surprises the average Blues fan with a modernized sound.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">1</div>
+                <div class="buttons buttons-blues">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">5</div>
+                <div class="buttons buttons-blues">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">6</div>
+                <div class="buttons buttons-blues">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">7</div>
+                <div class="buttons buttons-blues">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">8</div>
+                <div class="buttons buttons-blues">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">9</div>
+                <div class="buttons buttons-blues">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-blues-stop">&#9724;</div>
+                <div class="buttons buttons-blues-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-blues-stop">&#9724;</div>
+            <div class="buttons buttons-blues-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Mississippi Fred McDowell",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-blues').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-blues"
+                    button => button.className = "buttons buttons-blues"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre disco">
-    <div id="box-rhythmandblues">
+
+<body class="genre" id="disco">
+    <div class="box rhythmandblues">
         <h1>DISCO</h1><br>
-            
+
         Disco marked the dawn of the modern era of Dance-based popular music. Growing out of the increasingly groove-oriented sound of early 70s and Funk, Disco emphasized the beat above anything else, even the singer and the song. Disco was named after discotheques, clubs that played nothing but music for dancing. Most of the discotheques were gay clubs in New York, and the DJs in these clubs specifically picked Soul and Funk records that had a strong, heavy groove. Along from that, the singles were often issued on 12-inch records, which allowed for extended remixes. DJs could mix these tracks together, matching the beats on each song since they were marked with how fast they were in terms of beats per minute. As one of the biggest mainstream hypes in the history of music, it is no surprise that Disco declined almost as fast as it peaked and that it sparked a wave of revulsion (symbolized by the infamous “Disco Sucks” tag). Although not without leaving a legacy of various Post-Disco genres and eventually what became known as “Disco’s Revenge” &ndash; House music.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">1</div>
+                <div class="buttons buttons-rhythmandblues">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">5</div>
+                <div class="buttons buttons-rhythmandblues">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">6</div>
+                <div class="buttons buttons-rhythmandblues">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">7</div>
+                <div class="buttons buttons-rhythmandblues">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">8</div>
+                <div class="buttons buttons-rhythmandblues">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">9</div>
+                <div class="buttons buttons-rhythmandblues">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-rhythmandblues-stop">&#9724;</div>
+                <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-rhythmandblues-stop">&#9724;</div>
+            <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Lipps Inc.",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-rhythmandblues').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-rhythmandblues"
+                    button => button.className = "buttons buttons-rhythmandblues"
                 )
             }
 

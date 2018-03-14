@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre newwave">
-    <div id="box-punk">
+
+<body class="genre" id="newwave">
+    <div class="box punk">
         <h1>NEW WAVE</h1><br>
-            
+
         As one of the most misused genre names, New Wave often stands for any 80s music that sounds somewhere between Rock and Electronic. In the strict sense however, New Wave is only the parallel after Punk reaction, alongside (and quite similar to) Post-Punk, but often with the addition of synthesizers. An important influence from Reggae is also noticeable in the music &ndash; a consequence of the collaboration between Punk and Reggae subcultures during their political protest. The main difference however, is not this growing shift towards electronic Pop, but a clear positive mentality and matching subculture. Herein, the fashion legacy of Punk continues and reaches a new height and hipster look, accompanied by matching graphic design and art. New Wave then, is all about image and looking hip. About embracing the unknown electronic future, instead of reminiscing the glory days of Punk. From the early 80s onwards, a lot of New Wave rapidly changes into Synthpop &ndash; which was truly futuristic and progressive &ndash; though it still bore the melancholic remnants of dark Post-Punk days.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">1</div>
+                <div class="buttons buttons-punk">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">5</div>
+                <div class="buttons buttons-punk">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">6</div>
+                <div class="buttons buttons-punk">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">7</div>
+                <div class="buttons buttons-punk">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">8</div>
+                <div class="buttons buttons-punk">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">9</div>
+                <div class="buttons buttons-punk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-punk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-punk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-punk">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-punk-stop">&#9724;</div>
+                <div class="buttons buttons-punk-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-punk-stop">&#9724;</div>
+            <div class="buttons buttons-punk-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Blondie",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-punk').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-punk"
+                    button => button.className = "buttons buttons-punk"
                 )
             }
 

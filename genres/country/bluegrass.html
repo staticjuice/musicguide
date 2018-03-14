@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre bluegrass">
-    <div id="box-country">
+
+<body class="genre" id="bluegrass">
+    <div class="box country">
         <h1>BLUEGRASS</h1><br>
-            
+
         Bluegrass music grew out of traditional string band music that formed the roots of Country music. A lot of focus was put on the strings, which were fiercely fiddled, to create another type of Country, called Bluegrass. Bluegrass took its name from one of the first practicing bands &ndash; Bill Monroe and the Bluegrass Boys, who in their turn were named after the state Kentucky, often referred to as “the Bluegrass country”. Bluegrass is that typical, atmospheric, hi-pitched, hyperactive Country most people know. Violins are very common, alongside mandolin, guitar and banjo. Although Bluegrass sounds like it’s not taking itself seriously, it is actually very reactionary and serious music, rising up against authority. Bluegrass is more zealous than other Country genres, spreading forth revolution and highly religious messages, like a musical crusade. A bit like political Folk music one could say, but with a certain supercharged overdrive. Bluegrass swears off electric instruments and is always completely acoustic, like Folk. Improvisation or freewheeling is also a key Bluegrass element.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">1</div>
+                <div class="buttons buttons-country">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">5</div>
+                <div class="buttons buttons-country">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">6</div>
+                <div class="buttons buttons-country">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">7</div>
+                <div class="buttons buttons-country">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">8</div>
+                <div class="buttons buttons-country">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">9</div>
+                <div class="buttons buttons-country">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-country-stop">&#9724;</div>
+                <div class="buttons buttons-country-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-country-stop">&#9724;</div>
+            <div class="buttons buttons-country-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Bill Monroe & His Blue Grass Boys",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-country').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-country"
+                    button => button.className = "buttons buttons-country"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre electrohouse">
-    <div id="box-house">
+
+<body class="genre" id="electrohouse">
+    <div class="box house">
         <h1>ELECTRO HOUSE</h1><br>
-            
+
         In the first half of the new millennium, House was almost on life-support. The global conquest of Trance and Rock’s reclaim as the dominant popular music genre banished it into the shadows. Yet in the darkest of times, House turned the tables by redrafting its own definition. It became what is more commonly known as “Electro”, by merging Electroclash with Tech House and shaking off its characteristic warm, R&amp;B based groove. Indeed, Electro House is harsh and cold in comparison, due to dirty, distorted but basic sawtooth synth melodies and a large focus on an incoherent climax. Said climax consists of a heavy bassline, that is intensified by postponing with a tiny bit of silence. This is known as a “drop”, a musical technique which got transferred in many other types of music, especially Trapstep and Brostep. Electro House is also defined by minimal use of percussion and an average tempo of 130 bpm. Towards the early 2010s, the term Complextro comes into use as Electro House becomes more snappy and glitchy. However, Electro House can be used as an umbrella term as well for all House genres that are directly influenced by it.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">1</div>
+                <div class="buttons buttons-house">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">5</div>
+                <div class="buttons buttons-house">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">6</div>
+                <div class="buttons buttons-house">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">7</div>
+                <div class="buttons buttons-house">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">8</div>
+                <div class="buttons buttons-house">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">9</div>
+                <div class="buttons buttons-house">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-house-stop">&#9724;</div>
+                <div class="buttons buttons-house-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-house-stop">&#9724;</div>
+            <div class="buttons buttons-house-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Savant",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-house').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-house"
+                    button => button.className = "buttons buttons-house"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre dreamtrance">
-    <div id="box-trance">
+
+<body class="genre" id="dreamtrance">
+    <div class="box trance">
         <h1>DREAM TRANCE</h1><br>
-            
+
         Out of Ibiza Trance came another atmospheric genre fitting for the seaside environment. Not heavy at all, but a dreamlike soundscape with nature sounds or gentle piano melodies mixed onto a continuous Trance bass and beat. The focus of Dream Trance is primarily on the melody rather than the beat, resulting in a Trance-like melody and a House-like beat. Therefore, the style is very similar to House in its general consistence. The creation of Dream Trance was a response to social pressures in Italy during the early 90s &ndash; the growth of Rave culture among young adults, and the ensuing popularity of nightclub attendance, had created a weekly trend of deaths due to car accidents as clubbers drove across the country overnight, falling asleep at the wheel from strenuous dancing as well as alcohol and drug use. "Children" by Robert Miles is one of the pioneering tracks of the genre and was created due to these accidents. The move by DJs such as Robert Miles to play slower, calming music to conclude a night's set, as a means to counteract the fast-paced, repetitive tracks that preceded, was met with approval by authorities.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">1</div>
+                <div class="buttons buttons-trance">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">5</div>
+                <div class="buttons buttons-trance">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">6</div>
+                <div class="buttons buttons-trance">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">7</div>
+                <div class="buttons buttons-trance">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">8</div>
+                <div class="buttons buttons-trance">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">9</div>
+                <div class="buttons buttons-trance">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-trance">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-trance">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-trance">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-trance-stop">&#9724;</div>
+                <div class="buttons buttons-trance-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-trance-stop">&#9724;</div>
+            <div class="buttons buttons-trance-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Robert Miles",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-trance').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-trance"
+                    button => button.className = "buttons buttons-trance"
                 )
             }
 

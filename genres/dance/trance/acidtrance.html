@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre acidtrance">
-    <div id="box-trance">
+
+<body class="genre" id="acidtrance">
+    <div class="box trance">
         <h1>ACID TRANCE</h1><br>
-            
+
         In the centre of the great electronic Dance storm of the late 80s and early 90s, House music started to take on many forms. As both Techno and Ambient music had their influence on Eurodance, a whirlwind of subgenres confused many music enthusiasts. It is within this surge of styles that the earliest evolutions of Trance can also be found. Like House and Techno, Trance features a strong four-to-the-floor kick beat and a similar bassline but unlike both of them, synthesizer melodies absolutely dominate any other part of the music. Usually there is more than one melody, strongly intertwined with the synth bassline, hereby creating a layered structure. To facilitate the hypnotic, entrancing effect of the music, the beat and rhythm are highly repetitive, with as little variation as possible. The earliest forms of Trance started in Germany, where House/Techno DJs created the plainest, purest Trance style. Classic Trance is a highly varied genre and difficult to outline, but its identity lies in sheer simplicity, serenity and harmony &ndash; Classic Trance searches for an enlightened state of consciousness without forcing itself onto the listener.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">1</div>
+                <div class="buttons buttons-trance">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">5</div>
+                <div class="buttons buttons-trance">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">6</div>
+                <div class="buttons buttons-trance">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">7</div>
+                <div class="buttons buttons-trance">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">8</div>
+                <div class="buttons buttons-trance">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">9</div>
+                <div class="buttons buttons-trance">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-trance">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-trance">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-trance">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-trance-stop">&#9724;</div>
+                <div class="buttons buttons-trance-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-trance-stop">&#9724;</div>
+            <div class="buttons buttons-trance-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Age Of Love",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-trance').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-trance"
+                    button => button.className = "buttons buttons-trance"
                 )
             }
 

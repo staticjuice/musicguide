@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre powermetal">
-    <div id="box-metal">
+
+<body class="genre" id="powermetal">
+    <div class="box metal">
         <h1>POWER METAL</h1><br>
-            
+
         Power Metal is a lesser known but properly defined kind of Metal that started in the 90s (particularly in Germany) and still has a dedicated fanbase today. As a movement, Power Metal began mostly as a reaction against the harshness and lack of melody in Death Metal and Black Metal. Power Metal is not really heavy &ndash; first and foremost it’s high and fast. The lyrics often tell fictional fantasy tales about warriors, knights and dragons and are almost always sung in a high pitched male voice. Furthermore,  the music is filled with large amounts of melodies and drum rolls, building up and breaking down, like a rollercoaster ride filled with energy and enthusiasm. The difference between the speedy and guitar solo-oriented types of Metal and Power Metal is that the latter seems to constantly maintain its high velocity and even higher frequency, as if it’s being overcharged with electricity. Power Metal is a genre that never really influenced other genres or evolved in another one. As such it remained a long-lasting parallel Metal stream, though easily eclipsed by the bigger Metal genres.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">1</div>
+                <div class="buttons buttons-metal">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">5</div>
+                <div class="buttons buttons-metal">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">6</div>
+                <div class="buttons buttons-metal">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">7</div>
+                <div class="buttons buttons-metal">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">8</div>
+                <div class="buttons buttons-metal">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">9</div>
+                <div class="buttons buttons-metal">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-metal-stop">&#9724;</div>
+                <div class="buttons buttons-metal-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-metal-stop">&#9724;</div>
+            <div class="buttons buttons-metal-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Blind Guardian",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-metal').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-metal"
+                    button => button.className = "buttons buttons-metal"
                 )
             }
 

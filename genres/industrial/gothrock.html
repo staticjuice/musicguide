@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre gothrock">
-    <div id="box-industrial">
+
+<body class="genre" id="gothrock">
+    <div class="box industrial">
         <h1>GOTH ROCK</h1><br>
-            
+
         The realization that Punk Rock didn’t change the world and never would, pushed a small number of Post-Punk groups towards a more depressing, nihilistic sound. It was a bad trip of edgy Rock &amp; Roll one could call Dark Acid Punk Rock, with a touch of Industrial. While Gothic Rock pioneers simply tried to create a unique Rock sound fitting for the age of despair and economic crisis, the music inspired a well-known, broader subculture &ndash; Goth. Strongly tied to dark art, melancholic poetry or literature, nocturnal themes and the colour black, Goth is as unhappy and despairing as possible. Especially dark romantic tales from the 19th century such as the works of Edgar Allan Poe, were a big influence on Gothic Rock. The subculture of Goth evolving out of the music would influence new Gothic artists into becoming more electronic and sinister, leading to Darkwave. The London Post-Punk scene developed around the same time a very similar genre, but with more themes from death and the macabre &ndash; Deathrock. The Bat Cave club in London was the primary operating base for these new artists, awakening in the night as Punk vampires.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">1</div>
+                <div class="buttons buttons-industrial">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">5</div>
+                <div class="buttons buttons-industrial">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">6</div>
+                <div class="buttons buttons-industrial">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">7</div>
+                <div class="buttons buttons-industrial">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">8</div>
+                <div class="buttons buttons-industrial">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">9</div>
+                <div class="buttons buttons-industrial">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-industrial">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-industrial">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-industrial">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-industrial-stop">&#9724;</div>
+                <div class="buttons buttons-industrial-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-industrial-stop">&#9724;</div>
+            <div class="buttons buttons-industrial-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "The Sisters Of Mercy",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-industrial').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-industrial"
+                    button => button.className = "buttons buttons-industrial"
                 )
             }
 

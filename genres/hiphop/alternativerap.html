@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre alternativerap">
-    <div id="box-hiphop">
+
+<body class="genre" id="alternativerap">
+    <div class="box hiphop">
         <h1>ALTERNATIVE RAP</h1><br>
-            
+
         Out of Jazz Rap, a strong and endless Hip Hop movement emerged. Next to the aggressiveness of Gangsta Rap and vulgarity of Miami Bass, the Nu Skool offered a third alternative for Rap fans who wanted more than these transparent provocateurs. As a parallel underground stream, the Nu Skool experimented more with techniques and creating own sounds, earning the name Progressive or Alternative Rap. Instead of nicely matching the rhyme to a predetermined pattern, Nu Skool rappers became lyrical wordsmiths, striking their verbal avalanches at any unguarded point of the beat. Alternative Rap is sometimes divided into three subgenres, based on their lyrical content &ndash; Conscious Rap, Experimental Rap and Political Rap. Even more than Jazz Rap, Conscious Rap stresses the native roots of Africa, often identifying with radical African tribes or militant black Muslims. Experimental Rap focuses on special techniques and unexpected rhythms where content is less important than form. Political Rap on the other hand involves a sharp and relentless critique on government and corporate society.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">1</div>
+                <div class="buttons buttons-hiphop">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">5</div>
+                <div class="buttons buttons-hiphop">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">6</div>
+                <div class="buttons buttons-hiphop">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">7</div>
+                <div class="buttons buttons-hiphop">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">8</div>
+                <div class="buttons buttons-hiphop">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hiphop">9</div>
+                <div class="buttons buttons-hiphop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hiphop">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-hiphop-stop">&#9724;</div>
+                <div class="buttons buttons-hiphop-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-hiphop-stop">&#9724;</div>
+            <div class="buttons buttons-hiphop-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "The Black Eyed Peas",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-hiphop').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-hiphop"
+                    button => button.className = "buttons buttons-hiphop"
                 )
             }
 

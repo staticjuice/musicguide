@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre blackmetal">
-    <div id="box-metal">
+
+<body class="genre" id="blackmetal">
+    <div class="box metal">
         <h1>BLACK METAL</h1><br>
-            
+
         The genre outlined here is actually the second wave of Black Metal. The first wave was very obscure and rapidly vanished. Norway, a country of cold, harsh and unforgiving landscapes, became the perfect breeding ground for Black Metal &ndash; arguably the most extreme and least accessible form of Metal. Although Black Metal is a less percussion and bass oriented than its contemporary counterparts, its chaotic, screaming avalanche of macabre noise sounds like it was made by the devil himself. Hi-pitched vocals, symphonic/Gothic elements, and shrill, hyperfast guitar riffs make such a statement almost believable. Black Metal has always been more about the content than the music itself, trying to be as Satanic and anti-Christian as possible. Black Metal bands are recognizable by their bombastic music, Satanic names and elaborate artwork. Themes of torture, pain, blood and sacrifice occur more than in other Metal genres. Some Black Metal bands became frontpage news by committing acts of murder, violence and desecration, leading to a large amount of in-depth Black Metal documentaries about this most evil of music genres.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">1</div>
+                <div class="buttons buttons-metal">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">5</div>
+                <div class="buttons buttons-metal">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">6</div>
+                <div class="buttons buttons-metal">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">7</div>
+                <div class="buttons buttons-metal">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">8</div>
+                <div class="buttons buttons-metal">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">9</div>
+                <div class="buttons buttons-metal">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-metal-stop">&#9724;</div>
+                <div class="buttons buttons-metal-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-metal-stop">&#9724;</div>
+            <div class="buttons buttons-metal-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Gorgoroth",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-metal').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-metal"
+                    button => button.className = "buttons buttons-metal"
                 )
             }
 

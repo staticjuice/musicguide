@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre acidjazz">
-    <div id="box-jazz">
+
+<body class="genre" id="acidjazz">
+    <div class="box jazz">
         <h1>ACID JAZZ</h1><br>
-            
+
         Acid Jazz is a crossover genre gone too far &ndash; there is barely any Jazz left in it. There’s actually almost zero ‘acid’ about it as well, except a slight psychedelic sound, placing it high on the chart for poorly chosen genre names. In fact it’s more of the deepest funky Jazz Fusion combined with Hip Hop, so Fusion Hip Hop would be more appropriate. The leading record label &ndash; also named Acid Jazz &ndash; was determined to compensate Acid House with what they regarded as “quality music”, heavily influenced by Rare Groove records. A steady Hip Hop breakbeat, lots of percussion, Jazz harmonies and funky basslines (often with the aid of a synthesizer) are the key flavours of Acid Jazz. These elements blend perfectly until the roots of the genre are no longer traceable. It was a short but popular craze, right before EDM conquered the music scene. Due to its highly danceable nature, a new type of dance, Jazzdance, was invented along with it (which became more or less a synonym of the music itself). It can be hard to separate Acid Jazz from Soul Jazz with heavy breaks, if it wasn’t for the (abundant) use of vocals.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">1</div>
+                <div class="buttons buttons-jazz">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">5</div>
+                <div class="buttons buttons-jazz">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">6</div>
+                <div class="buttons buttons-jazz">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">7</div>
+                <div class="buttons buttons-jazz">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">8</div>
+                <div class="buttons buttons-jazz">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">9</div>
+                <div class="buttons buttons-jazz">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-jazz-stop">&#9724;</div>
+                <div class="buttons buttons-jazz-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-jazz-stop">&#9724;</div>
+            <div class="buttons buttons-jazz-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Raw Instinct",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-jazz').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-jazz"
+                    button => button.className = "buttons buttons-jazz"
                 )
             }
 

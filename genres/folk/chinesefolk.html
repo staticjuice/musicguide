@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre chinesefolk">
-    <div id="box-folk">
+
+<body class="genre" id="chinesefolk">
+    <div class="box folk">
         <h1>CHINESE FOLK</h1><br>
-            
+
         Chinese music may refer to the music of the Han Chinese as well as other ethnic minorities within mainland China. It also includes music produced by people of Chinese origin in some territories outside mainland China using traditional Chinese instruments or in the Chinese language. Different types of music have been recorded in historical Chinese documents from the early periods of Chinese civilization which, together with archaeological artifacts discovered, provided evidence of a well-developed musical culture as early as the Zhou Dynasty (1122 BC &ndash; 256 BC). These further developed into various forms of music through succeeding dynasties, producing the rich heritage of music that is part of the Chinese cultural landscape today. Chinese music continues to evolve in the modern times, and more contemporary forms have also emerged. According to legends, the founder of music in Chinese mythology was Ling Lun who, at the request of the Yellow Emperor to create a system of music, made bamboo pipes tuned to the sounds of birds including the phoenix.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">1</div>
+                <div class="buttons buttons-folk">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">5</div>
+                <div class="buttons buttons-folk">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">6</div>
+                <div class="buttons buttons-folk">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">7</div>
+                <div class="buttons buttons-folk">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">8</div>
+                <div class="buttons buttons-folk">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">9</div>
+                <div class="buttons buttons-folk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-folk-stop">&#9724;</div>
+                <div class="buttons buttons-folk-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-folk-stop">&#9724;</div>
+            <div class="buttons buttons-folk-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Xu Jiangde",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-folk').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-folk"
+                    button => button.className = "buttons buttons-folk"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre contemporaryrhythmandblues">
-    <div id="box-rhythmandblues">
+
+<body class="genre" id="contemporaryrhythmandblues">
+    <div class="box rhythmandblues">
         <h1>CONTEMPORARY R&amp;B</h1><br>
-            
+
         What is referred to as Contemporary R&amp;B is so omnipresent that it’s often identified with the general term R&amp;B, ignoring five decades of musical evolution. Here we have a soft and smooth type of Hip Hop/R&amp;B music with big hooks and later with strong, loud and heavily autotuned choruses alternated by rap verses. The music genre became immensely popular, but not just for its catchy sound. Major record labels and clever producers marketed this sound to the youth and simply labeled it “R&amp;B”, leading to a great deal of ignorance about the term to this day. It is often considered the most commercial genre of all time, and therefore also one of the most despised, especially by true Hip Hop and R&amp;B artists who feel their genres have been violated. But Contemporary R&amp;B is also adored, especially by a young female crowd, to which the slow but hooky breakbeat rhythm is addictive and encourages sexual dancing, which in turn attracts a large male audience. Although the genre might be considered formulaic Pop music and be partly despised for it, this simply proves that it succeeds in finding that perfect formula with Hip Hop, Pop, and R&amp;B ingredients.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">1</div>
+                <div class="buttons buttons-rhythmandblues">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">5</div>
+                <div class="buttons buttons-rhythmandblues">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">6</div>
+                <div class="buttons buttons-rhythmandblues">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">7</div>
+                <div class="buttons buttons-rhythmandblues">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">8</div>
+                <div class="buttons buttons-rhythmandblues">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">9</div>
+                <div class="buttons buttons-rhythmandblues">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-rhythmandblues-stop">&#9724;</div>
+                <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-rhythmandblues-stop">&#9724;</div>
+            <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Jennifer Lopez",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-rhythmandblues').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-rhythmandblues"
+                    button => button.className = "buttons buttons-rhythmandblues"
                 )
             }
 

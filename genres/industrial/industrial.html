@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre industrial">
-    <div id="box-industrial">
+
+<body class="genre" id="industrial">
+    <div class="box industrial">
         <h1>INDUSTRIAL</h1><br>
-            
+
         A conceptual artist scene taken to the extreme, where eager Avant-Gardists tried to be as provocative as possible &ndash; totalitarian iconography/cover art, disturbing imagery and lyrics, and using every trick in the guitar and synth book to create a repetitive but incoherent collage of factory sounds with distorted and false mumbling and minimalistic melodies. This is a genre that would sound no different than unbearable, psychotic noise for the vast majority of people &ndash; music as torture. The overwhelming majority of Industrial music comes from Germany &ndash; an unfathomable legacy of and a powerful testament to the grand experiment of Krautrock. Early Industrial draws heavily on influences from Modernism and Dadaïsm, believing in tearing down society and building it up again. Industrial likes to refer to recurring themes of constructivism, machinery, industrialization, and world order &ndash; we are all gears in the clockwork of society. More than any other music genre, Industrial seeks out the bigger philosophical issues, yet does not deliver answers &ndash; only a shock treatment the likes of which have never been heard.<br><br>
-        
+
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">1</div>
+                <div class="buttons buttons-industrial">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">5</div>
+                <div class="buttons buttons-industrial">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">6</div>
+                <div class="buttons buttons-industrial">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">7</div>
+                <div class="buttons buttons-industrial">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">8</div>
+                <div class="buttons buttons-industrial">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-industrial">9</div>
+                <div class="buttons buttons-industrial">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-industrial">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-industrial">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-industrial">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-industrial-stop">&#9724;</div>
+                <div class="buttons buttons-industrial-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-industrial-stop">&#9724;</div>
+            <div class="buttons buttons-industrial-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Throbbing Gristle",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-industrial').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-industrial"
+                    button => button.className = "buttons buttons-industrial"
                 )
             }
 

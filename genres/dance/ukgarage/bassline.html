@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre bassline">
-    <div id="box-ukgarage">
+
+<body class="genre" id="bassline">
+    <div class="box ukgarage">
         <h1>BASSLINE</h1><br>
-            
+
         The UK Grime scene had always been a violent, criminal, ghetto scene reminding a lot of Gangsta Rap, but with the rising advent of Dubstep the adjectives “dark”, “slow” and “weird” could be added to its personality. This detracted too many girls from coming to the clubs and UK Garage had to reapply its very reason of existence to itself. History became repeated and Speed Garage was used to alter Grime in such a way that the female crowd was well represented. Naturally, Dubstep had some influence as well and a more continuous bass sound led to the name of this new genre &ndash; Bassline. Sheffield was the breeding ground for the UK Grime and Bassline scene &ndash; especially the club Niche, which had to close down after incidents of violence, drug use and gang criminality. Because Bassline was even faster than Speed Garage and still quite aggressive, UK Funky had to make sure the trick to even out gender ratio could not fail and used Deep House as well as Dub to create an exotic, percussion-heavy type of UK Garage. One could almost say this was “Tribal Garage” with House-like tempo and synths.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">1</div>
+                <div class="buttons buttons-ukgarage">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">5</div>
+                <div class="buttons buttons-ukgarage">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">6</div>
+                <div class="buttons buttons-ukgarage">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">7</div>
+                <div class="buttons buttons-ukgarage">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">8</div>
+                <div class="buttons buttons-ukgarage">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">9</div>
+                <div class="buttons buttons-ukgarage">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-ukgarage-stop">&#9724;</div>
+                <div class="buttons buttons-ukgarage-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-ukgarage-stop">&#9724;</div>
+            <div class="buttons buttons-ukgarage-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "TS7",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-ukgarage').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-ukgarage"
+                    button => button.className = "buttons buttons-ukgarage"
                 )
             }
 

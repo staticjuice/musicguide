@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre contemporarygospel">
-    <div id="box-gospel">
+
+<body class="genre" id="contemporarygospel">
+    <div class="box gospel">
         <h1>CONTEMPORARY GOSPEL</h1><br>
-            
+
         After World War II, Gospel changes dramatically, which is why it’s being marked as a different genre, though in many music genealogies, this is not the case. Record labels, radio stations, and promoters get interested in the music, as religiously themed music is commercially a more than viable path. This modern style of Gospel differs from Traditional Gospel in a clear and present influence from Blues and especially R&amp;B, in both its Soul and Funk styles. Although instrumentation was originally scarce, in Contemporary Gospel a strong beat surfaces through full chords or hand claps. Sometimes a floor mounted pedal steel guitar is being used, giving name to the subgenre “Sacred Steel”. But Contemporary Gospel is not about the instruments, but about the voice and message of God. Sung by strong diva mezzo-sopranos, the number of dominantly black Gospel artists (especially women) rose exponentially in the 50s and large Gospel concerts start to take hold. This gives a nationwide sense of black awareness &ndash; Contemporary Gospel becomes the herald of Soul music &ndash; a feat beyond comparison.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">1</div>
+                <div class="buttons buttons-gospel">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">5</div>
+                <div class="buttons buttons-gospel">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">6</div>
+                <div class="buttons buttons-gospel">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">7</div>
+                <div class="buttons buttons-gospel">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">8</div>
+                <div class="buttons buttons-gospel">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">9</div>
+                <div class="buttons buttons-gospel">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-gospel">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-gospel">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-gospel">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-gospel-stop">&#9724;</div>
+                <div class="buttons buttons-gospel-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-gospel-stop">&#9724;</div>
+            <div class="buttons buttons-gospel-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Edwin Hawkins",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-gospel').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-gospel"
+                    button => button.className = "buttons buttons-gospel"
                 )
             }
 

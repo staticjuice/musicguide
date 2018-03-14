@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre freestyle">
-    <div id="box-breakbeat">
+
+<body class="genre" id="freestyle">
+    <div class="box breakbeat">
         <h1>FREESTYLE</h1><br>
-            
+
         Breakdancing is a fundamental element of Hip Hop culture, as old as Hip Hop itself. As a music genre however it doesn’t really exist. It’s a collection/mix of anything one can breakdance to. When the drum sampler was invented, music specifically made for breakdancing popped up. On one hand, there is a much heavier, faster, bass-driven type of Electro called Freestyle, with less subtle and catchier synthesizer melodies accompanied by powerful raps. On the other hand, new heavy and melodic instrumental Funk records with lots of breaks and drum samples were being released for all the “b-boys” and “fly girls” to dance to. This Breakdance is quite different from Freestyle, but both are strongly tied together in the same subculture. The difference between Breakdance and Deep Funk can be marginal, but Breakdance is true Breakbeat &ndash; it uses more pronounced breaks and more percussion while implementing Hip Hop elements such as scratching, sampling and electronic sounds. However, Freestyle also has a different meaning when it is used to describe Electro-influenced Disco, like Joyce Sims’ “Lifetime Love” for example.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">1</div>
+                <div class="buttons buttons-breakbeat">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">5</div>
+                <div class="buttons buttons-breakbeat">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">6</div>
+                <div class="buttons buttons-breakbeat">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">7</div>
+                <div class="buttons buttons-breakbeat">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">8</div>
+                <div class="buttons buttons-breakbeat">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">9</div>
+                <div class="buttons buttons-breakbeat">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-breakbeat">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-breakbeat">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-breakbeat">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-breakbeat-stop">&#9724;</div>
+                <div class="buttons buttons-breakbeat-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-breakbeat-stop">&#9724;</div>
+            <div class="buttons buttons-breakbeat-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Bomfunk MC's",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-breakbeat').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-breakbeat"
+                    button => button.className = "buttons buttons-breakbeat"
                 )
             }
 

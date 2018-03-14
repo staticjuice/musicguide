@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre soul">
-    <div id="box-rhythmandblues">
+
+<body class="genre" id="soul">
+    <div class="box rhythmandblues">
         <h1>SOUL</h1><br>
-            
+
         A lot of things had changed since the ascent of R&amp;B. In the southern and middle states of the US, black R&amp;B musicians threw R&amp;B, Gospel, Blues and a bit of Country into a big melting pot. They were cooking something that was quite slow but also raw and emotional at the same time. This type of music became well known under the leading record company’s name &ndash; Stax, granting the name Stax Soul. Musicians wrote their own music straight from the heart instead of producers or songwriters. The lyrics were often based on their experiences during the so called “Soul Circuit” &ndash; a trail in the southern US almost all Soul artists followed. Soul tracks are recognizable by their low tempo, the use of clipped guitar and a lo-fi production. The genre rose greatly alongside national black awareness in the 60s, thanks to the civil rights movement and Martin Luther King Jr. Soul was the voice of black pride, but it wasn’t reactionary nor intimidating. Soul does not try to combat whom it opposes, instead it tries to disarm. The music is hopeful, warm and portrays intense stories about love and heartbreak that still sound sincere after all these decades.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">1</div>
+                <div class="buttons buttons-rhythmandblues">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">5</div>
+                <div class="buttons buttons-rhythmandblues">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">6</div>
+                <div class="buttons buttons-rhythmandblues">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">7</div>
+                <div class="buttons buttons-rhythmandblues">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">8</div>
+                <div class="buttons buttons-rhythmandblues">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">9</div>
+                <div class="buttons buttons-rhythmandblues">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-rhythmandblues-stop">&#9724;</div>
+                <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-rhythmandblues-stop">&#9724;</div>
+            <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Sam Cooke",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-rhythmandblues').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-rhythmandblues"
+                    button => button.className = "buttons buttons-rhythmandblues"
                 )
             }
 

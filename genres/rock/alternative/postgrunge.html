@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre postgrunge">
-    <div id="box-alternative">
+
+<body class="genre" id="postgrunge">
+    <div class="box alternative">
         <h1>POST-GRUNGE</h1><br>
-            
+
         Post-Grunge refers to the wave of bands who appeared shortly after Seattle grunge hit the mainstream. The major difference is that while the Seattle bands were firmly rooted in underground Alternative Rock of the 80s, Post-Grunge was influenced by what Grunge became &ndash; a wildly popular form of inward-looking, serious-minded Hard Rock. Many new Rock bands filled the hole that Grunge left and were especially influenced by its tragic, introspective, sentimental lyrics. Post-Grunge elaborated further on this theme but also took a step away from Grunge’s heavy distortion, chaos and roughness. The result was a slicker, more polished sound with a clear song structure that turned out to be a commercial success. Post-Grunge became so popular that it stayed in the mainstream much longer than other Alt Rock styles. Many people claimed that Post-Grunge was merely a commercial imitation of something genius and that it should be clearly separated from the original (leading to its name). On the other hand, the fans saw it as the culmination of Rock where finally a perfect balance of roughness versus slickness was found.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">1</div>
+                <div class="buttons buttons-alternative">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">5</div>
+                <div class="buttons buttons-alternative">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">6</div>
+                <div class="buttons buttons-alternative">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">7</div>
+                <div class="buttons buttons-alternative">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">8</div>
+                <div class="buttons buttons-alternative">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">9</div>
+                <div class="buttons buttons-alternative">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-alternative">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-alternative">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-alternative">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-alternative-stop">&#9724;</div>
+                <div class="buttons buttons-alternative-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-alternative-stop">&#9724;</div>
+            <div class="buttons buttons-alternative-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Foo Fighters",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-alternative').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-alternative"
+                    button => button.className = "buttons buttons-alternative"
                 )
             }
 

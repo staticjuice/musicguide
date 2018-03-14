@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre krautrock">
-    <div id="box-classicrock">
+
+<body class="genre" id="krautrock">
+    <div class="box classicrock">
         <h1>KRAUTROCK</h1><br>
-            
+
         Krautrock refers to the legions of German bands of the early 70s that expanded the sonic possibilities of art and Progressive Rock. Instead of following in the direction of their British and American counterparts, who were moving toward Jazz and Classical-based compositions and concept albums, the German bands became more mechanical and electronic. Working with early synthesizers and splicing together seemingly unconnected reels of tape, bands like Faust, Can, and Neu! created a droning, pulsating sound that owed more to the Avant-Garde than to Rock &amp; Roll. Although the bands didn't make much of an impact while they were active in the 70s, their music anticipated much Post-Punk of the early 80s, particularly Industrial Rock. One band however, chose a far more radical path than others by abandoning all Rock influences. Kraftwerk made the first completely electronic music that had recognizable structure, melody and bass. With Kraftwerk as arguably the most revolutionary popular music artist of all time, Krautrock is one of the most influential genres, bridging the gap between Rock and Electronic.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">1</div>
+                <div class="buttons buttons-classicrock">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">5</div>
+                <div class="buttons buttons-classicrock">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">6</div>
+                <div class="buttons buttons-classicrock">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">7</div>
+                <div class="buttons buttons-classicrock">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">8</div>
+                <div class="buttons buttons-classicrock">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">9</div>
+                <div class="buttons buttons-classicrock">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-classicrock-stop">&#9724;</div>
+                <div class="buttons buttons-classicrock-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-classicrock-stop">&#9724;</div>
+            <div class="buttons buttons-classicrock-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Kraftwerk",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-classicrock').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-classicrock"
+                    button => button.className = "buttons buttons-classicrock"
                 )
             }
 

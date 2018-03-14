@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre nuskoolbreaks">
-    <div id="box-breakbeat">
+
+<body class="genre" id="nuskoolbreaks">
+    <div class="box breakbeat">
         <h1>NU SKOOL BREAKS</h1><br>
-            
+
         Like almost all Dance supergenres, Breakbeat has a back-and-forth polarity of purism versus eclecticism, old skool versus nu skool, back to the roots versus further crossing over. Nu Skool Breaks is a misleading term however, as it attempts to keep the old skool spirit alive after the Big Beat explosion. The style is usually characterized by more abstract, more technical sounds, sometimes incorporated from other genres of Electronic Dance Music, including UK Garage, Electro House and Drum &amp; Bass. Typically, tracks range between 125-140 bpm, often featuring a dominant bassline. In contrast with Big Beat, the sound consisted less of Hip Hop samples and acid-type sounds, instead emphasizing dance-friendliness and a new sound produced by modern production techniques using synthesizers, effects processors and computers. Some Nu Skool Breaks tracks might seem a lot like a sort of slowed-down Jungle (as they both originated in London), being equally dark and menacing, but many also go the complete opposite direction. Elements of Techno and Electro might be traceable as well.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">1</div>
+                <div class="buttons buttons-breakbeat">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">5</div>
+                <div class="buttons buttons-breakbeat">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">6</div>
+                <div class="buttons buttons-breakbeat">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">7</div>
+                <div class="buttons buttons-breakbeat">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">8</div>
+                <div class="buttons buttons-breakbeat">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-breakbeat">9</div>
+                <div class="buttons buttons-breakbeat">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-breakbeat">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-breakbeat">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-breakbeat">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-breakbeat-stop">&#9724;</div>
+                <div class="buttons buttons-breakbeat-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-breakbeat-stop">&#9724;</div>
+            <div class="buttons buttons-breakbeat-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Tipper",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-breakbeat').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-breakbeat"
+                    button => button.className = "buttons buttons-breakbeat"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre neurofunk">
-    <div id="box-drumandbass">
+
+<body class="genre" id="neurofunk">
+    <div class="box drumandbass">
         <h1>NEUROFUNK</h1><br>
-            
+
         The name Neurofunk suggests a soft, ambient genre, but it’s still very much alive and kicking. Techstep’s popular “destroy-‘em-all”-attitude formed a powerful mainstream sound in the world of Jungle. This stream evolved into something new &ndash;  something more clinical and less melodic with ambient drone sounds and blips of noise, but still aggressive and Ravelike. “Neuro” &ndash; as it is called &ndash; sounds like the natural soundtrack of the brain &ndash; neurological chemicals flowing and rushing, creating both deeply obscure and delicate emotions. As the name suggests, Neurofunk borrowed some influence from Funk (and Jazz) to make this happen, but in a barely noticeable manner. The difference between Techstep and Neurofunk can be challenging. Important is that Neurofunk incorporates acid sounds and features few or moderate builds and breakdowns. Neurofunk is a continuous stream of washes and waves emitting a strong atmosphere that sparks the imagination. Neurofunk likes to reel you in a Sci-Fi fantasy world with its hyper-clean production, yet remains as hard and dark as Drum &amp; Bass can be.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">1</div>
+                <div class="buttons buttons-drumandbass">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">5</div>
+                <div class="buttons buttons-drumandbass">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">6</div>
+                <div class="buttons buttons-drumandbass">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">7</div>
+                <div class="buttons buttons-drumandbass">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">8</div>
+                <div class="buttons buttons-drumandbass">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">9</div>
+                <div class="buttons buttons-drumandbass">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-drumandbass-stop">&#9724;</div>
+                <div class="buttons buttons-drumandbass-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-drumandbass-stop">&#9724;</div>
+            <div class="buttons buttons-drumandbass-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Emperor",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-drumandbass').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-drumandbass"
+                    button => button.className = "buttons buttons-drumandbass"
                 )
             }
 

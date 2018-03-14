@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre chicagoblues">
-    <div id="box-blues">
+
+<body class="genre" id="chicagoblues">
+    <div class="box blues">
         <h1>CHICAGO BLUES</h1><br>
-            
+
         Chicago Blues has been around since the Great Depression. Slowly the genre developed during the 30s and 40s, albeit in a much different way than what is usually referred to as Chicago Blues. What is now referred to as the classic Chicago Blues style was developed in the late 40s and early 50s, taking Delta Blues, fully amplifying it and putting it into a small-band context. Adding drums, bass, piano and sometimes saxophones to the basic string band and harmonica aggregation, the style created the now standard Blues band lineup. The form was flexible to accommodate singers, guitarists, pianists and harmonica players as the featured performer in front of the standard instrumentation. Later permutations of the style took place in the late 50s and early 60s, with new blood taking their cue from the lead guitar work of B.B. King and T-Bone Walker, creating the popular west side subgenre (which usually featured a horn section appended to the basic rhythm section). Although the form has also embraced Rock beats, it has generally stayed within the guidelines developed in the 50s and early 60s.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">1</div>
+                <div class="buttons buttons-blues">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">5</div>
+                <div class="buttons buttons-blues">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">6</div>
+                <div class="buttons buttons-blues">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">7</div>
+                <div class="buttons buttons-blues">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">8</div>
+                <div class="buttons buttons-blues">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">9</div>
+                <div class="buttons buttons-blues">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-blues-stop">&#9724;</div>
+                <div class="buttons buttons-blues-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-blues-stop">&#9724;</div>
+            <div class="buttons buttons-blues-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Howlin' Wolf",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-blues').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-blues"
+                    button => button.className = "buttons buttons-blues"
                 )
             }
 

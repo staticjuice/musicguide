@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre postpunk">
-    <div id="box-punk">
+
+<body class="genre" id="postpunk">
+    <div class="box punk">
         <h1>POST-PUNK</h1><br>
-            
+
         The Punk movement died around the same time Disco reached her peak. The fall of Punk juxtaposed to the rise of Disco casted a gloomy shadow of both fear and hate among Rock artists. This can be witnessed in the many genres interwoven in the same sociocultural framework as Post-Punk &ndash; Early Industrial and Noise genres, Goth Rock and the No Wave movement. But the immediate aftermath of Punk was Post-Punk &ndash; Punk Rock without its edges, but also without some of its amateurism and naïvety. In this genre, a dark, arty struggle is noticeable &ndash; a difficult coping with what society had become and the impotence of music to change it. Post-Punk songs became longer, less aggressive but more complex and challenging. Searching for new structures, Post-Punk explored less conventional techniques such as those found in Funk and Dub. Different Post-Punk songs can sound entirely different and a cohesive definition of the genre is lacking. The experimental nature of Post-Punk prevented a true countermovement as there was no unified sound, merely an endless quest. Only New Wave was capable of shedding a light at the end of the tunnel.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">1</div>
+                <div class="buttons buttons-punk">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">5</div>
+                <div class="buttons buttons-punk">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">6</div>
+                <div class="buttons buttons-punk">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">7</div>
+                <div class="buttons buttons-punk">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">8</div>
+                <div class="buttons buttons-punk">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-punk">9</div>
+                <div class="buttons buttons-punk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-punk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-punk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-punk">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-punk-stop">&#9724;</div>
+                <div class="buttons buttons-punk-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-punk-stop">&#9724;</div>
+            <div class="buttons buttons-punk-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Joy Division",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-punk').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-punk"
+                    button => button.className = "buttons buttons-punk"
                 )
             }
 

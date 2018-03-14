@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre electropop">
-    <div id="box-pop">
+
+<body class="genre" id="electropop">
+    <div class="box pop">
         <h1>ELECTROPOP</h1><br>
-            
+
         Electropop can be used as a comprehensive term encompassing all forms of electronic or synthesizer-based Pop. In its narrow definition, it is the latest development of dominant mainstream and Dance-oriented Pop music. If Dance Pop is the Disco-influenced mainstream music of the 90s, then Electropop is the Electro-influenced mainstream music of the early 2010s. Electro House changed the focus in Pop from a warm R&amp;B-type groove beat to a crisper sound with higher dynamic range. This has made the music somewhat less infectious compared to Dance Pop, but more eclectic and flexible. Where Dance Pop was heavily steered out of a record label or producer’s perspective, Electropop artists take great pride in their own personality. Remarkable is the fact that almost all Electropop artists are female vocalists. Despite the fact that they are pushed forward nowadays by record companies due to a loyal idolizing female fanbase and a seductive image of sex to attract a male fanbase, they are all self-aware entrepreneurs &ndash; an interesting discrepancy with the historical dominance of male crooners in Pop's beginnings.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">1</div>
+                <div class="buttons buttons-pop">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">5</div>
+                <div class="buttons buttons-pop">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">6</div>
+                <div class="buttons buttons-pop">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">7</div>
+                <div class="buttons buttons-pop">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">8</div>
+                <div class="buttons buttons-pop">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">9</div>
+                <div class="buttons buttons-pop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-pop-stop">&#9724;</div>
+                <div class="buttons buttons-pop-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-pop-stop">&#9724;</div>
+            <div class="buttons buttons-pop-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Lady Gaga",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-pop').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-pop"
+                    button => button.className = "buttons buttons-pop"
                 )
             }
 

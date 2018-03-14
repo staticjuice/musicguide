@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre honkytonk">
-    <div id="box-country">
+
+<body class="genre" id="honkytonk">
+    <div class="box country">
         <h1>HONKY TONK</h1><br>
-            
+
         Country before the 40s had a bit of a multiple personality disorder. While one part of it evolved as a crazy, fun barn dance music, the other part went the opposite way. It evolved as an introvert, back-to-the-roots music that wasn’t happy at all and often involved tragic ballads, known as Honky Tonk. Most Honky Tonk songs deal about relationship problems, alcohol abuse, financial worries or other misfortune. Instead of large barns, this music was played in the more intimate bars of the southern US, which were called “honky-tonks”. However, honky tonks were still large enough to force the artist to implement electric instrumentation in order to top the crowd volume-wise. Honky Tonk also introduced a steady 4/4 beat to Country music, which diverted the genre from Folk. Honky Tonk artists often sang with a thick, southern tongue and in a nasal tone. Combined with cowboy hat, boots and costume, the caricature of the traditional Country singer was complete. Honky Tonk remains an important separate stream in Country’s history, and is sometimes synonymous with so called “Hardcore Country”.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">1</div>
+                <div class="buttons buttons-country">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">5</div>
+                <div class="buttons buttons-country">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">6</div>
+                <div class="buttons buttons-country">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">7</div>
+                <div class="buttons buttons-country">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">8</div>
+                <div class="buttons buttons-country">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">9</div>
+                <div class="buttons buttons-country">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-country-stop">&#9724;</div>
+                <div class="buttons buttons-country-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-country-stop">&#9724;</div>
+            <div class="buttons buttons-country-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Hank Williams",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-country').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-country"
+                    button => button.className = "buttons buttons-country"
                 )
             }
 

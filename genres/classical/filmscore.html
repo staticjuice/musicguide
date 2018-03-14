@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre filmscore">
-    <div id="box-classical">
+
+<body class="genre" id="filmscore">
+    <div class="box classical">
         <h1>FILM SCORE</h1><br>
-            
+
         While not strictly a form of Classical music, Film Score is the background music that is written specifically to accompany a film, often being orchestral in nature much like Classical music was. Although the overall style of most film scores are orchestral works rooted in Western Classical music, it is also common for many scores to take their influences from Jazz, Rock, Pop, Blues, New Age and Ambient too. Electronic sounds and instruments are also found quite frequently in modern film scores too, with many well-revered composers ditching the orchestra and switching to this method of composition instead. Also important to note is that a movie's score is different from its soundtrack. A soundtrack release will contain a compilation of songs used in the film, often by famous bands, whereas the score music release will instead feature only the cinematic music instead. Film Score as a genre is considered by many to be one of the most emotional forms of music, being able to make you cry, make you scared or make you happy. For this reason, you can see why this style of music goes well with film, as the music is part of the story itself.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">1</div>
+                <div class="buttons buttons-classical">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">5</div>
+                <div class="buttons buttons-classical">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">6</div>
+                <div class="buttons buttons-classical">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">7</div>
+                <div class="buttons buttons-classical">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">8</div>
+                <div class="buttons buttons-classical">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">9</div>
+                <div class="buttons buttons-classical">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classical">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classical">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classical">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-classical-stop">&#9724;</div>
+                <div class="buttons buttons-classical-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-classical-stop">&#9724;</div>
+            <div class="buttons buttons-classical-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "John Williams",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-classical').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-classical"
+                    button => button.className = "buttons buttons-classical"
                 )
             }
 

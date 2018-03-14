@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre smoothjazz">
-    <div id="box-jazz">
+
+<body class="genre" id="smoothjazz">
+    <div class="box jazz">
         <h1>SMOOTH JAZZ</h1><br>
-            
+
         The Jazz era after Fusion &ndash; also known as Post-Fusion, Post-Jazz or Freebop &ndash; had to deal with the growing popularity and commercial approach of R&amp;B, particularly Disco. As such, an offshoot of Jazz Fusion known as Smooth Jazz became the favourite puppet of Jazz-related record companies, more profit-fixated than before. Experimentality became replaced by radio friendly, Easy-Listening music. Smooth Jazz is supposed to sell with a slick, heavily produced and of course smooth sound. Of all different Jazz genres, it’s one of the plainest, with only one or two instruments playing melodies. Often there’s a saxophone, which is characteristic for Smooth Jazz’s (unintentional) erotic connotation &ndash; the music genre was a staple in erotic films or scenes during the late 70s and early 80s. Derogatory genre names like “Fuzak” and “Hot Tub Jazz” reassert their opinions, while also holding a certain ground. After all, Smooth Jazz is often catered as background music for bars or restaurants or just to relax at home. Be that as it may, its overall popularity is still significant, because it delivers exactly what it promises &ndash; Easy-Listening.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">1</div>
+                <div class="buttons buttons-jazz">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">5</div>
+                <div class="buttons buttons-jazz">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">6</div>
+                <div class="buttons buttons-jazz">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">7</div>
+                <div class="buttons buttons-jazz">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">8</div>
+                <div class="buttons buttons-jazz">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-jazz">9</div>
+                <div class="buttons buttons-jazz">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-jazz">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-jazz-stop">&#9724;</div>
+                <div class="buttons buttons-jazz-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-jazz-stop">&#9724;</div>
+            <div class="buttons buttons-jazz-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Kenny G",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-jazz').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-jazz"
+                    button => button.className = "buttons buttons-jazz"
                 )
             }
 

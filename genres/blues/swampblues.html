@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre swampblues">
-    <div id="box-blues">
+
+<body class="genre" id="swampblues">
+    <div class="box blues">
         <h1>SWAMP BLUES</h1><br>
-            
+
         Deep in the swamps of Louisiana, not only Country but also Blues was made. As one could expect, this was slow, plain, Country-like Blues. Unlike the heavy backbeat of the more popular urban styles, its rhythm can be best described as laid-back, making even its most uptempo offerings share the same mood and ambience of the most desultory of slow Blues. In this isolated and humid wilderness, Creole Folk music already existed long before Blues. One of the first types, Cajun, was mixed with R&amp;B into Zydeco, a French type of proto-Blues. Both Cajun and Zydeco are known for their driving beat, dotted with harsher or unusual sounds like washboards. After some time, Zydeco evolved into Swamp Blues, particularly in Baton Rouge, capital of Louisiana. The music became the soundtrack of the environment, which from that moment on would naturally be associated with rural, southern swamps &ndash; haunting echos and plenty reverb, cricket-like sounds, and slow, trembling guitars. The “swamp sound” was mostly dominated by accordion and harmonica, further enriching a stereotypical atmosphere associated with the music.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">1</div>
+                <div class="buttons buttons-blues">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">5</div>
+                <div class="buttons buttons-blues">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">6</div>
+                <div class="buttons buttons-blues">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">7</div>
+                <div class="buttons buttons-blues">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">8</div>
+                <div class="buttons buttons-blues">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">9</div>
+                <div class="buttons buttons-blues">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-blues-stop">&#9724;</div>
+                <div class="buttons buttons-blues-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-blues-stop">&#9724;</div>
+            <div class="buttons buttons-blues-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Lightnin' Slim",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-blues').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-blues"
+                    button => button.className = "buttons buttons-blues"
                 )
             }
 

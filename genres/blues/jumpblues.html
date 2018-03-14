@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre jumpblues">
-    <div id="box-blues">
+
+<body class="genre" id="jumpblues">
+    <div class="box blues">
         <h1>JUMP BLUES</h1><br>
-            
+
         Jump Blues refers to an uptempo, Jazz-tinged style of Blues that first came to prominence in the mid- to late 40s. The appeal of grand parties with a big band found its way to Blues at the end of the 30s. More instruments were added to Blues, especially brass (including saxophone) but also rhythm guitars. The result was a much larger band than usual with less focus on the singer &ndash; a combination of Jazz and Blues. Singers were forced to use as much volume as possible or combine their voices to drown out the band, which led to the concept of “shouters”. The audience reinforced the rhythm with abundant clapping accompanied by the piano. Jump Blues intensifies Boogie Woogie’s backbeat further to make a sort of “Dance Blues” or “Beat Blues”. Shouting, clapping, backbeat and big bands &ndash; Jump Blues is unmistakably the most swinging, optimistic and humourous type of Blues, a large contrast with some other Blues genres. Jump Blues is proto Rhythm &amp; Blues and therefore proto Rock &amp; Roll, which implies that it was simply too popular and catchy to be constrained within the family line of Blues.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">1</div>
+                <div class="buttons buttons-blues">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">5</div>
+                <div class="buttons buttons-blues">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">6</div>
+                <div class="buttons buttons-blues">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">7</div>
+                <div class="buttons buttons-blues">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">8</div>
+                <div class="buttons buttons-blues">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">9</div>
+                <div class="buttons buttons-blues">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-blues-stop">&#9724;</div>
+                <div class="buttons buttons-blues-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-blues-stop">&#9724;</div>
+            <div class="buttons buttons-blues-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Louis Jordan",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-blues').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-blues"
+                    button => button.className = "buttons buttons-blues"
                 )
             }
 

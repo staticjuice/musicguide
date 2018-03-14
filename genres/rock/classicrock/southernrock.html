@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre southernrock">
-    <div id="box-classicrock">
+
+<body class="genre" id="southernrock">
+    <div class="box classicrock">
         <h1>SOUTHERN ROCK</h1><br>
-            
+
         When a nation loses a war, often a deep urge arises to reestablish its pride and express its identity. Southern Rock is another example of many styles typical for the southern states of the US and arguably the one that stresses most the will of pride, glory and freedom. This fusion genre is patriotic to the bone &ndash; southern American Blues meets southern American Country meets American Rock. After a period of experimenting and Psychedelic Rock, the time for back-to-the-roots Rock music was at hand. Southern Rock is distinguishable by being raw and loud. It is the celebration and adoration of electric guitars by having multiple lead guitars playing (often improvised) solos whenever they’re not used for some heavy boogie jamming. In conclusion &ndash; Southern Rock is either a gentle Country ballad with a touch of Blues Rock or a freight train rollercoaster looping and spinning off its tracks until the shaking boogie rhythm puts it back on again for another ride. In the 21st century, a new wave of Southern Rock artists comes on the scene such as the Kings of Leon and the Black Crowes.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">1</div>
+                <div class="buttons buttons-classicrock">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">5</div>
+                <div class="buttons buttons-classicrock">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">6</div>
+                <div class="buttons buttons-classicrock">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">7</div>
+                <div class="buttons buttons-classicrock">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">8</div>
+                <div class="buttons buttons-classicrock">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">9</div>
+                <div class="buttons buttons-classicrock">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-classicrock-stop">&#9724;</div>
+                <div class="buttons buttons-classicrock-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-classicrock-stop">&#9724;</div>
+            <div class="buttons buttons-classicrock-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Lynyrd Skynyrd",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-classicrock').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-classicrock"
+                    button => button.className = "buttons buttons-classicrock"
                 )
             }
 

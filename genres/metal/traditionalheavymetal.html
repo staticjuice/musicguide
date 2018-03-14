@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre traditionalheavymetal">
-    <div id="box-metal">
+
+<body class="genre" id="traditionalheavymetal">
+    <div class="box metal">
         <h1>TRADITIONAL HEAVY METAL</h1><br>
-            
+
         Heavy Metal used to be an interchangeable term with Hard Rock in the late 60s. The earliest examples of the genre are often cited as Hard Rock examples and vice versa. As such, Traditional Heavy Metal is a loosely defined genre &ndash; simply “Harder-than-Hard Rock”, mainly by means of more amplification and distortion. The shocking tragedy of four deaths and excessive violence at the Altamont Festival in 1969 marked the end of the flower power age, a temporary exile of The Rolling Stones and most importantly &ndash; a loss of belief in the hippy utopia. Rock couldn’t make the world a better place and everyone had witnessed the dark side of human nature. The first band to be influenced by this event was Led Zeppelin. Described at the time as Rock music being dark, heavy and gloomy, it was almost impossible to listen to. Black Sabbath developed an even slower, tuned-down sound, yet also full of distortion, with thick and heavy riffs. In their later work they also experimented with different tempo and instrumentation. Both bands feature lengthy songs, with elaborate guitar solos, while often referring to Satanic or dark themes.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">1</div>
+                <div class="buttons buttons-metal">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">5</div>
+                <div class="buttons buttons-metal">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">6</div>
+                <div class="buttons buttons-metal">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">7</div>
+                <div class="buttons buttons-metal">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">8</div>
+                <div class="buttons buttons-metal">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">9</div>
+                <div class="buttons buttons-metal">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-metal-stop">&#9724;</div>
+                <div class="buttons buttons-metal-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-metal-stop">&#9724;</div>
+            <div class="buttons buttons-metal-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Black Sabbath",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-metal').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-metal"
+                    button => button.className = "buttons buttons-metal"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre boogiewoogie">
-    <div id="box-blues">
+
+<body class="genre" id="boogiewoogie">
+    <div class="box blues">
         <h1>BOOGIE WOOGIE</h1><br>
-            
+
         Boogie Woogie, or "barrelhouse" is a Blues-based piano style in which the right hand plays an accompaniment figure that resembles a strummed rhythm. Inspired by Ragtime music, Blues got introduced to the piano by the end of the 20s, forming Piano Blues but better known as Boogie Woogie. Similar to Ragtime, left hand provided a steady bass and the right hand provided the treble counterpoint. The result was a very rhythmic, syncopated Blues, much more uptempo and happy than usual. The piano also made it possible to add a 4/4 beat, with accent on 2nd and 4th beat. Hence, Boogie Woogie introduced the backbeat into the world of music &ndash; a milestone of great significance. Boogie Woogie’s backbeat is called a shuffle, and it made people’s feet move everywhere. Boogie Woogie formed the ideal relief after the Great Depression and epitomized music removed of inhibition following the end of prohibition. As a post-depression natural muscle stimulant, Boogie Woogie rapidly became the drug of choice in the 30s, and it wouldn’t take long before “doing the boogie” was a common phrase for dancing to this hyperactive type of Blues.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">1</div>
+                <div class="buttons buttons-blues">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">5</div>
+                <div class="buttons buttons-blues">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">6</div>
+                <div class="buttons buttons-blues">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">7</div>
+                <div class="buttons buttons-blues">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">8</div>
+                <div class="buttons buttons-blues">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-blues">9</div>
+                <div class="buttons buttons-blues">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-blues">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-blues-stop">&#9724;</div>
+                <div class="buttons buttons-blues-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-blues-stop">&#9724;</div>
+            <div class="buttons buttons-blues-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: 'Cow Cow Davenport',
@@ -143,13 +143,13 @@
             $(document).find('.buttons-blues').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-blues"
+                    button => button.className = "buttons buttons-blues"
                 )
             }
 

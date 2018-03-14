@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre progressivehouse">
-    <div id="box-house">
+
+<body class="genre" id="progressivehouse">
+    <div class="box house">
         <h1>PROGRESSIVE HOUSE</h1><br>
-            
+
         There are actually two waves of Progressive House. The first wave arrives in the mid-90s &ndash; long, slightly psychedelic tracks also with lots of hyper-rhythmic percussion and primarily UK based. Highly confusing, this new genre was sometimes called “Trance” at the time, as Trance hadn’t established itself as a supergenre yet. The second wave of Progressive House takes hold during the 2000s. Percussion and bass becomes heavier, but not more complex. Dynamic range also gets toned down, with all the sound frequencies lying closer together. Songs become even longer and are more often the work of relatively unknown DJs instead of album-oriented bands, aimed at long, progressing DJ sets. This second wave was mainly the reaction on another House subgenre &ndash; Handbag House, which is a soft, female oriented, lightweight type of Eurodance in the mid nineties. Clearly the opposite in sound, Progressive House tries to please its target audience with its never-ending easy-to-mix pumping sound. And it worked due to a certain notion of sophistication and technology, though its name discloses rather an air of condescension.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">1</div>
+                <div class="buttons buttons-house">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">5</div>
+                <div class="buttons buttons-house">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">6</div>
+                <div class="buttons buttons-house">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">7</div>
+                <div class="buttons buttons-house">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">8</div>
+                <div class="buttons buttons-house">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">9</div>
+                <div class="buttons buttons-house">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-house-stop">&#9724;</div>
+                <div class="buttons buttons-house-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-house-stop">&#9724;</div>
+            <div class="buttons buttons-house-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Eric Prydz",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-house').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-house"
+                    button => button.className = "buttons buttons-house"
                 )
             }
 

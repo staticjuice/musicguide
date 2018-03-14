@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre spanishfolk">
-    <div id="box-folk">
+
+<body class="genre" id="spanishfolk">
+    <div class="box folk">
         <h1>SPANISH FOLK</h1><br>
-            
+
         The music of Spain has a long history and has played an important role in the development of Western music and has greatly influenced Latin American music. Spanish music is often associated with traditional styles such as Flamenco and classical guitar. While these forms of music are common, there are many different traditional musical and dance styles across the regions. For example, music from the north-west regions is heavily reliant on bagpipes, the jota is widespread in the centre and north of the country, and Flamenco originated in the south. Spanish music played a notable part in the early developments of western Classical music, from the 15th through the early 17th century. The breadth of musical innovation can be seen in composers like Tomás Luis de Victoria, styles like the zarzuela of Spanish opera, the ballet of Manuel de Falla, and the classical guitar music of Francisco Tárrega. There is also a movement of singer-songwriters with politically-active lyrics, paralleling similar developments in Latin America and Portugal. Nowadays commercial Pop music dominates the region.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">1</div>
+                <div class="buttons buttons-folk">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">5</div>
+                <div class="buttons buttons-folk">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">6</div>
+                <div class="buttons buttons-folk">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">7</div>
+                <div class="buttons buttons-folk">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">8</div>
+                <div class="buttons buttons-folk">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">9</div>
+                <div class="buttons buttons-folk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-folk-stop">&#9724;</div>
+                <div class="buttons buttons-folk-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-folk-stop">&#9724;</div>
+            <div class="buttons buttons-folk-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Jota Aragonesa",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-folk').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-folk"
+                    button => button.className = "buttons buttons-folk"
                 )
             }
 

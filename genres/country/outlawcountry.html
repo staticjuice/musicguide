@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre outlawcountry">
-    <div id="box-country">
+
+<body class="genre" id="outlawcountry">
+    <div class="box country">
         <h1>OUTLAW COUNTRY</h1><br>
-            
+
         Outlaw Country was one of the more significant trends in Country music in the 70s. During that decade, many of the most popular Honky Tonk singers of the 60s softened their sound slightly, moving away from their Honky Tonk roots. While the outlaws weren't strictly Honky Tonk &ndash; they were as much storytellers in the tradition of Folk songwriters as they were Honky Tonk vocalists &ndash; they kept that spirit alive. Outlaws didn't play by Nashville's rules. They didn't change their music to fit the heavily produced, Pop-oriented Nashville Sound, nor did they go out of their way to fit into the accepted conventions of Country music. Instead, they created an edgy form of Honky Tonk that was influenced by Rock &amp; Roll, Folk and Blues. At the end of the 70s, the urban cowboy movement easily eclipsed the Outlaw movement in terms of commercial appeal, but the Outlaws had a lasting influence. During the 80s, certain Neo-Traditionalists owed a bit of their sound to the Outlaws, while a whole breed of songwriters, led by Steve Earle, demonstrated a massive debt to the outlaws and their fusion of Country, Folk and Rock.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">1</div>
+                <div class="buttons buttons-country">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">5</div>
+                <div class="buttons buttons-country">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">6</div>
+                <div class="buttons buttons-country">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">7</div>
+                <div class="buttons buttons-country">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">8</div>
+                <div class="buttons buttons-country">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">9</div>
+                <div class="buttons buttons-country">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-country-stop">&#9724;</div>
+                <div class="buttons buttons-country-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-country-stop">&#9724;</div>
+            <div class="buttons buttons-country-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Waylon Jennings",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-country').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-country"
+                    button => button.className = "buttons buttons-country"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre ska">
-    <div id="box-reggae">
+
+<body class="genre" id="ska">
+    <div class="box reggae">
         <h1>SKA</h1><br>
-            
+
         Ska really put the Jamaican music scene on the map. The nearest American city, New Orleans, brought its own version of R&amp;B to the island where the sound was drastically changed. The R&amp;B rhythm of Bluebeat became accompanied by a marching beat, an influence from Rock &amp; Roll. Although there are African vocals, Ska (like a lot of Jamaican music) is more about the sound and feeling &ndash; optimistic, serene and peaceful. Blissful jazzy riffs, horns and staccato guitars are the main tools to achieve this. Ska is also known for its large brass orchestras (10-20 people) dominating the music, whereas bass is rather simplistic with accent on the offbeat. When Philly Soul started to eclipse earlier Soul and Blues, Ska experienced a sharp rise, as the Jamaican public &ndash; fond of the Crescent City’s music &ndash; was forced to take matters in their own hands. This happens simultaneously with the independence of Jamaica in 1962, providing a tremendous opportunity to create a unique and national sound for a new country. Ska becomes a huge success, accompanied by its own jagged, hyperactive type of dancing.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">1</div>
+                <div class="buttons buttons-reggae">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">5</div>
+                <div class="buttons buttons-reggae">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">6</div>
+                <div class="buttons buttons-reggae">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">7</div>
+                <div class="buttons buttons-reggae">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">8</div>
+                <div class="buttons buttons-reggae">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">9</div>
+                <div class="buttons buttons-reggae">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-reggae">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-reggae">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-reggae">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-reggae-stop">&#9724;</div>
+                <div class="buttons buttons-reggae-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-reggae-stop">&#9724;</div>
+            <div class="buttons buttons-reggae-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Desmond Dekker",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-reggae').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-reggae"
+                    button => button.className = "buttons buttons-reggae"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre hardstep">
-    <div id="box-drumandbass">
+
+<body class="genre" id="hardstep">
+    <div class="box drumandbass">
         <h1>HARDSTEP</h1><br>
-            
+
         By the mid-90s, Rave was completely dead. A new subculture had learned from its mistakes. No more huge pop-up parties, but a pirate radio network broadcasting revolting Drum &amp; Bass instead. This hardcore Drum &amp; Bass (Hardstep) was simple, purist music but with a very heavy sub-bassline, fast, 2-step drum patterns and lots of influences from and references to Hip Hop, Ragga and Dub. This is the mid-90s precursor to Techstep, when the familiar 2-step drum pattern (boom cha, boom-cha) started infiltrating all areas of the genre, which coincided with the replacing of the word Jungle with Drum &amp; Bass. Hardstep is essentially a harder style of Old Skool Drum &amp; Bass which uses gritty basslines and heavy yet simple electronic melodies. It had more or less the same mentality as Conscious Rap &amp; an underground army with back to the roots (black culture) music. Hardstep’s history however, was rather small and short-lived. It had speed and percussion, but lacked melody and atmosphere. Notable pioneers of the genre include Dillinja, DJ Krust, Mampi Swift, Dieselboy, Current Value, Tre Technics and MachineCode.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">1</div>
+                <div class="buttons buttons-drumandbass">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">5</div>
+                <div class="buttons buttons-drumandbass">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">6</div>
+                <div class="buttons buttons-drumandbass">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">7</div>
+                <div class="buttons buttons-drumandbass">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">8</div>
+                <div class="buttons buttons-drumandbass">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">9</div>
+                <div class="buttons buttons-drumandbass">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-drumandbass-stop">&#9724;</div>
+                <div class="buttons buttons-drumandbass-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-drumandbass-stop">&#9724;</div>
+            <div class="buttons buttons-drumandbass-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Audio",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-drumandbass').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-drumandbass"
+                    button => button.className = "buttons buttons-drumandbass"
                 )
             }
 

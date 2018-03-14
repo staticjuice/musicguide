@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre upliftingtrance">
-    <div id="box-trance">
+
+<body class="genre" id="upliftingtrance">
+    <div class="box trance">
         <h1>UPLIFTING TRANCE</h1><br>
-            
+
         Uplifting Trance (also referred to as Epic Trance) finds its origin in the mid and late 90s out of Progressive Trance. In Germany a number of songs become even longer and slightly faster than usual (136-144 bpm). Chord progression increases and especially breakdown sections become incredibly long to build up to a postponed climax. Gradually, more and more elements get thrown into the mix to enhance the joyful, euphoric feeling Uplifting Trance is all about. This is not uncontrolled ecstasy tearing down the house like many previous Dance genres &ndash; Uplifting Trance is a new kind of sensation &ndash; euphoric bliss symbolized by a mass of waving hands, daytime venues and lasers. Uplifting Trance has much longer songs than Eurotrance, meant for festivals or Dance events, whereas the latter genre is more aimed at record sales and radio broadcasting. Because of its large focus on the most characteristic Trance elements and its brief moment of international fame, Uplifting Trance is also known as “Pure Trance”. A noun firmly resented by the opposite side of Classic and underground Trance lovers.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">1</div>
+                <div class="buttons buttons-trance">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">5</div>
+                <div class="buttons buttons-trance">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">6</div>
+                <div class="buttons buttons-trance">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">7</div>
+                <div class="buttons buttons-trance">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">8</div>
+                <div class="buttons buttons-trance">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-trance">9</div>
+                <div class="buttons buttons-trance">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-trance">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-trance">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-trance">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-trance-stop">&#9724;</div>
+                <div class="buttons buttons-trance-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-trance-stop">&#9724;</div>
+            <div class="buttons buttons-trance-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Alex M.O.R.P.H.",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-trance').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-trance"
+                    button => button.className = "buttons buttons-trance"
                 )
             }
 

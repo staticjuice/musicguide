@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre renaissance">
-    <div id="box-classical">
+
+<body class="genre" id="renaissance">
+    <div class="box classical">
         <h1>RENAISSANCE</h1><br>
-            
+
         Renaissance music is vocal and instrumental music written and performed in Europe during the Renaissance era. Consensus among music historians has been to start the era around 1400, with the end of the Medieval era, and to close it around 1600, with the beginning of the Baroque period, therefore commencing the musical Renaissance about a hundred years after the beginning of the Renaissance as it is understood in other disciplines. As in the other arts, the music of the period was significantly influenced by the developments which define the Early Modern period &ndash; the rise of humanistic thought; the recovery of the literary and artistic heritage of Ancient Greece and Ancient Rome; increased innovation and discovery; the growth of commercial enterprises; the rise of a bourgeois class; and the Protestant Reformation. From this changing society emerged a common, unifying musical language, in particular the polyphonic style (this means music with multiple, independent melody lines performed simultaneously) of the Franco-Flemish school, whose greatest master was Josquin des Prez.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">1</div>
+                <div class="buttons buttons-classical">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">5</div>
+                <div class="buttons buttons-classical">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">6</div>
+                <div class="buttons buttons-classical">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">7</div>
+                <div class="buttons buttons-classical">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">8</div>
+                <div class="buttons buttons-classical">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">9</div>
+                <div class="buttons buttons-classical">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classical">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classical">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classical">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-classical-stop">&#9724;</div>
+                <div class="buttons buttons-classical-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-classical-stop">&#9724;</div>
+            <div class="buttons buttons-classical-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Giorgio Mainerio",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-classical').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-classical"
+                    button => button.className = "buttons buttons-classical"
                 )
             }
 

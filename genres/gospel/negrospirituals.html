@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre negrospirituals">
-    <div id="box-gospel">
+
+<body class="genre" id="negrospirituals">
+    <div class="box gospel">
         <h1>NEGRO SPIRITUALS</h1><br>
-            
+
         An interesting fact about Popular Music is that it emerged out of necessity rather than being a form of art or expression. The earliest genres can be traced back as early as the 19th century, at a time when slavery of African people was still omnipresent in the United States. When African slaves were brought to the United States and Christianized, they began to perceive biblical parallels to their own situation (and were sometimes even encouraged to do so by zealously Evangelical whites). Thus, many spirituals address themes of freedom, earthly suffering and hope for deliverance. They were sung both at worship services and in the fields, and were passed down orally from generation to generation. Given those origins, spirituals are usually performed very simply and written in repetitive, easily remembered structures (for example, many verses in spirituals include a one-line refrain that's sung by the entire group and repeated after each new line of the verse). In that sense, Negro Spirituals often bear a resemblance to secular pre-war Blues, a music stemming from a similarly rural lineage.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">1</div>
+                <div class="buttons buttons-gospel">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">5</div>
+                <div class="buttons buttons-gospel">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">6</div>
+                <div class="buttons buttons-gospel">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">7</div>
+                <div class="buttons buttons-gospel">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">8</div>
+                <div class="buttons buttons-gospel">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-gospel">9</div>
+                <div class="buttons buttons-gospel">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-gospel">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-gospel">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-gospel">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-gospel-stop">&#9724;</div>
+                <div class="buttons buttons-gospel-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-gospel-stop">&#9724;</div>
+            <div class="buttons buttons-gospel-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Ed Young",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-gospel').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-gospel"
+                    button => button.className = "buttons buttons-gospel"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre acidhouse">
-    <div id="box-house">
+
+<body class="genre" id="acidhouse">
+    <div class="box house">
         <h1>ACID HOUSE</h1><br>
-            
+
         Originally, Acid House was strongly tied with other Classic House. In fact it was not much more than Chicago House with the added distorted sound of the infamous TB-303 bass synthesizer. By looping a certain note and then distorting the resulting wave (by cutoff, resonance or envelope), the characteristic and psychedelic “acid sound” was created, which could be used for basslines, melodies or synth stabs. It was called “acid” for its resemblance to the distorting sound of auditory hallucinations on the drug LSD, also called “acid”. This sound became so popular in the entire world of Dance music, that Acid House soon was a well-established genre on its own. But the paramount trademark of Acid House is a severance with House’s Disco influences and the corresponding gay and hipster subcultures. In Acid House, there is no longer a warm groove, no R&amp;B feel, but harsh and distorted sounds onto a loud four-to-the-floor beat. All of a sudden, House becomes something even white British Post-Punk artists can relate to, being rough and revolutionary. Though these evolutions were incidental, the consequences were unimaginable.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">1</div>
+                <div class="buttons buttons-house">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">5</div>
+                <div class="buttons buttons-house">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">6</div>
+                <div class="buttons buttons-house">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">7</div>
+                <div class="buttons buttons-house">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">8</div>
+                <div class="buttons buttons-house">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">9</div>
+                <div class="buttons buttons-house">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-house-stop">&#9724;</div>
+                <div class="buttons buttons-house-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-house-stop">&#9724;</div>
+            <div class="buttons buttons-house-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Phuture",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-house').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-house"
+                    button => button.className = "buttons buttons-house"
                 )
             }
 

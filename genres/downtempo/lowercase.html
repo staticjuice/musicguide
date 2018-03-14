@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre lowercase">
-    <div id="box-downtempo">
+
+<body class="genre" id="lowercase">
+    <div class="box downtempo">
         <h1>LOWERCASE</h1><br>
-            
+
         One of the final chapters in the history of Downtempo music marks a return to heavy experimentation, after an era of more or less popular Ambient Dance. The radical concept this time was to create silence instead of music (without actually creating silence, which wouldn’t present any challenge). Long passages of silences are being highlighted by very quiet sounds, not to break formality, but to enhance the contrast by heavily manipulated sounds that would leap out and catch the listener unaware. These can be ambient sounds, like Steve Roden’s experiments with folding paper, or something uncanny like holding a sound microscope to an insect breathing. The combination of Lowercase’s song names with their track lengths exposes its radical concept. What we have here then, is without a doubt the least prominent of all music genres, and fittingly coined “Lowercase”. Many Lowercase artists also create Glitch music and like to switch between styles to stay fresh and unexpected. Lowercase is music that is there and isn’t there &ndash; it exists momentarily, illustrating the almost century-long struggle of electronic composers to make music a living thing.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">1</div>
+                <div class="buttons buttons-downtempo">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">5</div>
+                <div class="buttons buttons-downtempo">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">6</div>
+                <div class="buttons buttons-downtempo">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">7</div>
+                <div class="buttons buttons-downtempo">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">8</div>
+                <div class="buttons buttons-downtempo">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-downtempo">9</div>
+                <div class="buttons buttons-downtempo">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-downtempo">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-downtempo">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-downtempo">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-downtempo-stop">&#9724;</div>
+                <div class="buttons buttons-downtempo-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-downtempo-stop">&#9724;</div>
+            <div class="buttons buttons-downtempo-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Steve Roden",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-downtempo').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-downtempo"
+                    button => button.className = "buttons buttons-downtempo"
                 )
             }
 

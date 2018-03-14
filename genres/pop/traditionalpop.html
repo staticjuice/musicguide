@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre traditionalpop">
-    <div id="box-pop">
+
+<body class="genre" id="traditionalpop">
+    <div class="box pop">
         <h1>TRADITIONAL POP</h1><br>
-            
+
         Traditional Pop music consists of Western popular music that generally predates the advent of Rock &amp; Roll in the mid-50s. The most popular and enduring songs from this style of music are known as Pop Standards or American Standards. The works of these songwriters and composers are usually considered part of the canon known as the "Great American Songbook". More generally, the term "standard" can be applied to any popular song that has become very widely known within mainstream culture. Traditional Pop music is generally regarded as having existed between the mid-40s and mid-50s. Two notable innovations were the addition of string sections and orchestral arrangements and more emphasis on the vocal performance. The addition of lush strings can be heard in much of the popular music throughout the 40s and 50s. In the early 50s as the dominance of Swing gave way to the Traditional Pop music era, many of the vocalists associated with Swing bands became even more popular, and were central figures in popular music. Notable artists include Frank Sinatra, Bing Crosby and Nat King Cole.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">1</div>
+                <div class="buttons buttons-pop">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">5</div>
+                <div class="buttons buttons-pop">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">6</div>
+                <div class="buttons buttons-pop">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">7</div>
+                <div class="buttons buttons-pop">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">8</div>
+                <div class="buttons buttons-pop">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">9</div>
+                <div class="buttons buttons-pop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-pop-stop">&#9724;</div>
+                <div class="buttons buttons-pop-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-pop-stop">&#9724;</div>
+            <div class="buttons buttons-pop-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Bing Crosby",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-pop').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-pop"
+                    button => button.className = "buttons buttons-pop"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre adultcontemporary">
-    <div id="box-pop">
+
+<body class="genre" id="adultcontemporary">
+    <div class="box pop">
         <h1>ADULT CONTEMPORARY</h1><br>
-            
+
         Some Heartland Rock bands took a lighter approach (no guitar solos and less bass) and created Adult Contemporary. What started as an alternative countermovement became so commercial that eventually it was pure Pop music. The outcome and legacy of Heartland Rock was a large and soft genre, yet not targeted at teens (compared to other Pop), but specifically for adults &ndash; hence the synonym Adult Contemporary. The name Adult Contemporary did not start out as a genre but as a billboard category for music, officially installed at the end of the 70s. Adult Contemporary replaced the Easy-Listening category, and as such it is rather lightweight music for more mature people who like their music relaxing and politically correct. Unsurprisingly, there is quite some overlapping with similar genres such as Country Pop and Smooth Jazz. In the 80s, an offshoot emerged, which uses more synth than usual, though subdivision within the genre is a bit hair splitting. Adult Contemporary is still being broadcasted on specialized radio channels throughout the world, as these golden classics seem to have a timeless appeal.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">1</div>
+                <div class="buttons buttons-pop">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">5</div>
+                <div class="buttons buttons-pop">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">6</div>
+                <div class="buttons buttons-pop">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">7</div>
+                <div class="buttons buttons-pop">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">8</div>
+                <div class="buttons buttons-pop">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">9</div>
+                <div class="buttons buttons-pop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-pop-stop">&#9724;</div>
+                <div class="buttons buttons-pop-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-pop-stop">&#9724;</div>
+            <div class="buttons buttons-pop-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Phil Collins",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-pop').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-pop"
+                    button => button.className = "buttons buttons-pop"
                 )
             }
 

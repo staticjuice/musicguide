@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre glamrock">
-    <div id="box-classicrock">
+
+<body class="genre" id="glamrock">
+    <div class="box classicrock">
         <h1>GLAM ROCK</h1><br>
-            
+
         The implosion of the flower power age led to a shift of focus towards individualism and with some artists to a cult of personality. One important contributor to this change is the introduction of popular music onto television. At first with broadcasted performances, music programs and in the 80s even with specialized music channels and video clips. This was strongly felt in the world of Rock where Hard Rock became less about auditory and more about the visual. Certain Rock artists grasped the opportunity of TV to stand out and get noticed. Either by shocking audiences with sexual or provocative acts or by conceiving eccentric alter egos through makeup and fashion. Glam Rock’s style could range from Singer-Songwriter to Prog Rock or even Hard Rock, but often with piano melodies. Glam Rock is about fame. Androgynous singers and electronic influences frightened traditional Rock enthusiasts who started forming a large countermovement in “Roots Rock”. Glam Rock overlaps with its successor, Proto-Punk, which would transfer the glam universe of excess and eccentricity to Punk Rock.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">1</div>
+                <div class="buttons buttons-classicrock">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">5</div>
+                <div class="buttons buttons-classicrock">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">6</div>
+                <div class="buttons buttons-classicrock">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">7</div>
+                <div class="buttons buttons-classicrock">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">8</div>
+                <div class="buttons buttons-classicrock">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">9</div>
+                <div class="buttons buttons-classicrock">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-classicrock-stop">&#9724;</div>
+                <div class="buttons buttons-classicrock-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-classicrock-stop">&#9724;</div>
+            <div class="buttons buttons-classicrock-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "David Bowie",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-classicrock').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-classicrock"
+                    button => button.className = "buttons buttons-classicrock"
                 )
             }
 

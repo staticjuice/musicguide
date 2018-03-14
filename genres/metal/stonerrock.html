@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre stonerrock">
-    <div id="box-metal">
+
+<body class="genre" id="stonerrock">
+    <div class="box metal">
         <h1>STONER ROCK</h1><br>
-            
+
         When Space Rock encountered the slow, marching and almost hypnotizing rhythm of Doom Metal, a match was made in heaven &ndash; Stoner Rock. Stoner Rock (or Metal) received large appeal from sedative and hallucinogenic drug users, which explains its name. Influenced by psychedelic drugs, this kind of Heavy Metal featured heavy sluggish riffs and a lot of distortion and spacy sound effects. Stoner songs are longer than usual with repetitive melodic outros. In the mid-80s, Stoner blends with more energetic and louder genres, such as Hardcore Punk and Grunge. The result is a very thick and psychedelic but also fast and technical sound &ndash; a sludge of heavy guitar music, which kept gaining popularity to this day &ndash; Sludge Metal. Both Stoner and Sludge Metal’s characteristics make these genres the most Rock-like types of Metal, which is why they’re also called “Rock” or simply Sludge and Stoner to avoid any conflict. Many Stoner or Sludge Metal songs are also recognizable by their slow-motion soundwall of interwoven distorted guitar riffs, sounding as if the apocalyptic revelation of an evil god is near.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">1</div>
+                <div class="buttons buttons-metal">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">5</div>
+                <div class="buttons buttons-metal">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">6</div>
+                <div class="buttons buttons-metal">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">7</div>
+                <div class="buttons buttons-metal">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">8</div>
+                <div class="buttons buttons-metal">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">9</div>
+                <div class="buttons buttons-metal">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-metal-stop">&#9724;</div>
+                <div class="buttons buttons-metal-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-metal-stop">&#9724;</div>
+            <div class="buttons buttons-metal-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Monster Magnet",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-metal').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-metal"
+                    button => button.className = "buttons buttons-metal"
                 )
             }
 

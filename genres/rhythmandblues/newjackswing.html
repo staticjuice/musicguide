@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre newjackswing">
-    <div id="box-rhythmandblues">
+
+<body class="genre" id="newjackswing">
+    <div class="box rhythmandblues">
         <h1>NEW JACK SWING</h1><br>
-            
+
         New Jack Swing evolved in the late 80s, when R&amp;B artists began incorporating Hip Hop rhythms, samples and production techniques into their sound. Some songs simply had Hip Hop beats, others had rapped sections and sung choruses, but the overall result was an edgier, more street-oriented sound that seamlessly blended both the melodic qualities of Soul and the funky rhythms of Hip Hop. Although many New Jack Swing artists seemed like young, innocent casanovas, they often had hidden gangster habits, precluding an era of Golden Age Rap. New Jack Swing is exactly the way it sounds &ndash; extremely catchy and funky with strong emphasis on beat. The TV series “The Fresh Prince of Bel-Air” knew how to bring New Jack Swing to a larger audience, featuring some of its songs alongside that particular late 80s New Jack Swing fashion &ndash; loose Hip Hop wear with flashy colours, round sunglasses, female dreads or male hightop haircuts. But what makes this genre of particular gravity is the marriage of R&amp;B and Hip Hop into Urban, a strong bond that has never fallen apart since.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">1</div>
+                <div class="buttons buttons-rhythmandblues">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">5</div>
+                <div class="buttons buttons-rhythmandblues">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">6</div>
+                <div class="buttons buttons-rhythmandblues">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">7</div>
+                <div class="buttons buttons-rhythmandblues">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">8</div>
+                <div class="buttons buttons-rhythmandblues">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rhythmandblues">9</div>
+                <div class="buttons buttons-rhythmandblues">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rhythmandblues">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-rhythmandblues-stop">&#9724;</div>
+                <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-rhythmandblues-stop">&#9724;</div>
+            <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Bell Biv DeVoe",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-rhythmandblues').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-rhythmandblues"
+                    button => button.className = "buttons buttons-rhythmandblues"
                 )
             }
 

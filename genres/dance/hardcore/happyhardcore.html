@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre happyhardcore">
-    <div id="box-hardcore">
+
+<body class="genre" id="happyhardcore">
+    <div class="box hardcore">
         <h1>HAPPY HARDCORE</h1><br>
-            
+
         In the Dance hit charts of the early 90s, Eurodance and derivative forms reigned supreme. Eventually, even Hardcore became influenced &ndash; the catchy synth melodies were extremely sped up to around 180 bpm (which made them sound rather cheesy), old skool piano sounds were added and accelerated female chorus vocals filled in the remaining parts. Happy Hardcore was a true parody of Gabber, a satire taken to the extreme, with children’s merchandising, colourful teen compilation CDs, and even children’s parties, where Happy Hardcore was played all the time. Without a doubt, Happy Hardcore was despised by many of the “serious” Gabber Hardcore community, for which the genre was not only a commercial sellout, but a threat to their culture. They were right, as in one way or another Happy Hardcore already marked the end of the Gabber culture, though it would still take a couple of years. More often than not, DJs were repelled and intimidated when playing Happy Hardcore. Although in some clubs or parties these genres could be played alongside each other without any fuss, allowing for interesting fusions and crossovers.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">1</div>
+                <div class="buttons buttons-hardcore">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">5</div>
+                <div class="buttons buttons-hardcore">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">6</div>
+                <div class="buttons buttons-hardcore">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">7</div>
+                <div class="buttons buttons-hardcore">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">8</div>
+                <div class="buttons buttons-hardcore">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">9</div>
+                <div class="buttons buttons-hardcore">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hardcore">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hardcore">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hardcore">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-hardcore-stop">&#9724;</div>
+                <div class="buttons buttons-hardcore-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-hardcore-stop">&#9724;</div>
+            <div class="buttons buttons-hardcore-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "2 Brothers On The 4th Floor",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-hardcore').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-hardcore"
+                    button => button.className = "buttons buttons-hardcore"
                 )
             }
 

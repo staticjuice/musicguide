@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre futurehouse">
-    <div id="box-house">
+
+<body class="genre" id="futurehouse">
+    <div class="box house">
         <h1>FUTURE HOUSE</h1><br>
-            
+
         Emerging in the 2010s, some musicians took the musical characteristics of Deep House (especially regarding its chromatic chords and use of 7ths, 9ths and 13ths) and applied them to the heavy and upbeat sounds of "EDM" such as Big Room which was popular at the time. The rise of Future House is generally credited to Oliver Heldens with his international chart successes of "Gecko (Overdrive)" and "Last All Night (Koala)" which brought the genre to wider mainstream recognition in 2014. Following the success of Oliver Heldens' tracks, other artists such as Don Diablo, Kerri Chandler, Martin Solveig, Mesto and Swanky Tunes have since incorporated the sound into their work, leading some commentators to observe and criticize the commercialisation of the style, just like what happened with Big Room House. Stylistically, songs within the genre are normally characterized by a muted melody with a metallic, elastic sounding drop and frequency modulated basslines. Although the genre didn't receive any crossovers into Pop music, the genre still remains one of the top-selling genres of Beatport and is frequently featured at EDM festivals.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">1</div>
+                <div class="buttons buttons-house">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">5</div>
+                <div class="buttons buttons-house">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">6</div>
+                <div class="buttons buttons-house">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">7</div>
+                <div class="buttons buttons-house">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">8</div>
+                <div class="buttons buttons-house">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-house">9</div>
+                <div class="buttons buttons-house">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-house">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-house-stop">&#9724;</div>
+                <div class="buttons buttons-house-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-house-stop">&#9724;</div>
+            <div class="buttons buttons-house-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Curbi",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-house').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-house"
+                    button => button.className = "buttons buttons-house"
                 )
             }
 

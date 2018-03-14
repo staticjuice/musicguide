@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre numetal">
-    <div id="box-metal">
+
+<body class="genre" id="numetal">
+    <div class="box metal">
         <h1>NU METAL</h1><br>
-            
+
         When Nu Metal formed, the heaviest Metal genres of the time were all thrown into an eclectic mix, but mostly Groove Metal and Rap Rock formed the basis for Nu Metal. These genres were only a small step away from fusing Hip Hop or Breakbeat elements into Metal. The outcome was a recipe that could not fail because it was Rap, Rock and Metal all-in-one. Indeed, Nu Metal had many Rap and few Metal elements &ndash; downtuned riffs, breakbeats, scratching, emphasis on kick drums and most noticeably no guitar solos, though the genre lacked no heavy bass or aggressiveness. Nu Metal is often linked to Emo, as piercing lyrics about frustration and depression (self-mutilation, suicide and abuse) find its way into the heart of adolescents through melancholic choruses &ndash; a very distinctive rupture with previous Metal genres. Fashion is another topic where Nu Metal breaks the rules, with a bizarre mix of Emo and Metal styles and some marginal extravaganza. All these elements contribute to a living paradigm of disturbance &ndash; psychosis in sound and flesh.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">1</div>
+                <div class="buttons buttons-metal">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">5</div>
+                <div class="buttons buttons-metal">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">6</div>
+                <div class="buttons buttons-metal">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">7</div>
+                <div class="buttons buttons-metal">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">8</div>
+                <div class="buttons buttons-metal">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-metal">9</div>
+                <div class="buttons buttons-metal">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-metal">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-metal-stop">&#9724;</div>
+                <div class="buttons buttons-metal-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-metal-stop">&#9724;</div>
+            <div class="buttons buttons-metal-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Limp Bizkit",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-metal').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-metal"
+                    button => button.className = "buttons buttons-metal"
                 )
             }
 

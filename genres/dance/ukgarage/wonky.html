@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre wonky">
-    <div id="box-ukgarage">
+
+<body class="genre" id="wonky">
+    <div class="box ukgarage">
         <h1>WONKY</h1><br>
-            
+
         At the beginning of the 2010s, Glitch Hop merged with a number of genres into a much larger style that can be described as a sort of off-kilter and low-slung form of Hip Hop. Apart from Dubstep-influenced beats, the main characteristic of Wonky are its heavily distorted mid-frequency synthlines (both bass and melody) that seem to be broken (a typical Glitch thing) by their unstable or “wonky” sound. The "wet and unstable" sound of Wonky is achieved by producing mid-range basses using pitch bending, LFOs on lowpassing and highpassing as well as phasing and delaying. The resonance parameters of the synth's LFOs are often high, giving the synth and bass unique "wonky" sounds. Wonky can be regarded as the “IDM” of Hip Hop &ndash; experimenting with unexpected sounds, interrupts and unconventional techniques. Many Wonky artists also reside at Warp Records, the principal IDM label. Wonky has some overlapping with Post-Dubstep and forms therefore another bridge between Hip Hop and UK Garage or Drum &amp; Bass, next to Trapstep. Lately these supergenres have become more intertwined leading to some interesting results.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">1</div>
+                <div class="buttons buttons-ukgarage">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">5</div>
+                <div class="buttons buttons-ukgarage">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">6</div>
+                <div class="buttons buttons-ukgarage">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">7</div>
+                <div class="buttons buttons-ukgarage">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">8</div>
+                <div class="buttons buttons-ukgarage">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">9</div>
+                <div class="buttons buttons-ukgarage">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-ukgarage-stop">&#9724;</div>
+                <div class="buttons buttons-ukgarage-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-ukgarage-stop">&#9724;</div>
+            <div class="buttons buttons-ukgarage-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Flume",
@@ -83,7 +83,7 @@
                     path: "../../../samples/dance/ukgarage/wonky1.ogg"
                 },
                 {
-                    artist: "Dillon Francis feat. Totally Enormous Extinct Dinosaurs",
+                    artist: "Dillon Francis feat. TEED",
                     track: "Without You (Hayden James Remix)",
                     path: "../../../samples/dance/ukgarage/wonky2.ogg"
                 },
@@ -143,13 +143,13 @@
             $(document).find('.buttons-ukgarage').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-ukgarage"
+                    button => button.className = "buttons buttons-ukgarage"
                 )
             }
 

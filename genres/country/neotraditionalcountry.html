@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre neotraditionalcountry">
-    <div id="box-country">
+
+<body class="genre" id="neotraditionalcountry">
+    <div class="box country">
         <h1>NEOTRADITIONAL COUNTRY</h1><br>
-            
+
         Ironically what is called “Contemporary Country” is actually a revival of traditional, Honky Tonk. Young Country artists felt a close relationship to Honky Tonk, Bluegrass and Western Swing. With a slight influence from Rock music they revived this type of minimal, pure Country in an updated version with different types of songs &ndash; sometimes emotional ballads, otherwise Soft Rock tunes, or even faster and catchy Rock &amp; Roll hit singles. Neo-Traditionalism is characterized by an aversion against Country Pop and a deterrence from any Jazz, Blues or Pop influences. But these contemporary artists don’t condemn eclectic Country &ndash; they are simply providing a purist counterweight embroidered with vitality and spirit to show newer generations the sound of Country. Regretfully, Neotraditional Country was not a real countermovement &ndash; its artists practiced very different styles and there was other, more progressive Country in the 80s coming out as well. Nevertheless, the name stuck and helped people find and identify spicy Country music that wasn’t watered down to what they regarded as tasteless Pop-soup.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">1</div>
+                <div class="buttons buttons-country">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">5</div>
+                <div class="buttons buttons-country">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">6</div>
+                <div class="buttons buttons-country">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">7</div>
+                <div class="buttons buttons-country">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">8</div>
+                <div class="buttons buttons-country">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">9</div>
+                <div class="buttons buttons-country">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-country-stop">&#9724;</div>
+                <div class="buttons buttons-country-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-country-stop">&#9724;</div>
+            <div class="buttons buttons-country-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Randy Travis",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-country').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-country"
+                    button => button.className = "buttons buttons-country"
                 )
             }
 

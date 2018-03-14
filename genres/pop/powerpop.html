@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre powerpop">
-    <div id="box-pop">
+
+<body class="genre" id="powerpop">
+    <div class="box pop">
         <h1>POWER POP</h1><br>
-            
+
         The earliest forms of Power Pop were in fact a revival of Beat, a second British Invasion so to speak. However, you can hear an important difference &ndash; the riffs are played with short, energetic strokes, enhanced by fast, repetitive drum beats. The emergence of Power Pop must be seen as compensation for the darker, more serious types of Rock popping up in the early 70s. To steer the people as far away from these ‘bad’ types of Rock, the sound of Power Pop went in the opposite direction &ndash; happy, melodic and light. At the end of the 70s, Power Pop experienced a second wave, and in the 90s a third one. The success of Disco and derivatives trumped Power Pop’s second wave and strongly suppressed the genre in the 80s. The original fusion of Hard Rock and Beat became tainted by other genres during these succeeding waves, leading eventually to dissolution into other genres, though a number of Power Pop artists are still active. Original Power Pop served as a blueprint for many later Power Pop artists, which were drawn to the bare simplicity of Classic Rock without psychedelic influences or extensive post-production.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">1</div>
+                <div class="buttons buttons-pop">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">5</div>
+                <div class="buttons buttons-pop">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">6</div>
+                <div class="buttons buttons-pop">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">7</div>
+                <div class="buttons buttons-pop">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">8</div>
+                <div class="buttons buttons-pop">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">9</div>
+                <div class="buttons buttons-pop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-pop-stop">&#9724;</div>
+                <div class="buttons buttons-pop-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-pop-stop">&#9724;</div>
+            <div class="buttons buttons-pop-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "The Knack",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-pop').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-pop"
+                    button => button.className = "buttons buttons-pop"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre indianfolk">
-    <div id="box-folk">
+
+<body class="genre" id="indianfolk">
+    <div class="box folk">
         <h1>INDIAN FOLK</h1><br>
-            
+
         The two main traditions of Indian classical music are Carnatic music, which is found predominantly in the peninsular regions, and Hindustani music, which is found in the northern, eastern and central regions. The basic concepts of this music includes shruti (microtones), swaras (notes), alankar (ornamentations), raga (melodies improvised from basic grammars), and tala (rhythmic patterns used in percussion). Its tonal system divides the octave into 22 segments called shrutis, not all equal but each roughly equal to a quarter of a whole tone of Western music. Carnatic music can be traced to the 14th to 15th centuries and thereafter. It is melodic, with improvised variations, but tends to have more fixed compositions. The main emphasis is on the vocals as most compositions are written to be sung. The Hindustani music tradition diverged from Carnatic music around the 13th to 14th centuries. The practice of singing based on notes was popular even from the Vedic times where the hymns in Sama Veda, an ancient religious text, were sung as Samagana and not chanted.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">1</div>
+                <div class="buttons buttons-folk">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">5</div>
+                <div class="buttons buttons-folk">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">6</div>
+                <div class="buttons buttons-folk">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">7</div>
+                <div class="buttons buttons-folk">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">8</div>
+                <div class="buttons buttons-folk">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">9</div>
+                <div class="buttons buttons-folk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-folk-stop">&#9724;</div>
+                <div class="buttons buttons-folk-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-folk-stop">&#9724;</div>
+            <div class="buttons buttons-folk-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Ashwini Bhide Deshpande",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-folk').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-folk"
+                    button => button.className = "buttons buttons-folk"
                 )
             }
 

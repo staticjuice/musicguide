@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre dub">
-    <div id="box-reggae">
+
+<body class="genre" id="dub">
+    <div class="box reggae">
         <h1>DUB</h1><br>
-            
+
         The early Reggae composers probably never thought that Dub was going to be such an important and influential genre. Dub started out as instrumental B-sides or copy records of Reggae or Rocksteady records. Hence the word “dub” was derived from the name of a copy record &ndash; a dubplate. The original music is completely stripped down of all instruments and then rebuilt in the same way but entirely electronically and much, much slower. Dub features lots of sound effects, especially reverb and incredibly heavy subsonic bass designed to be played on typical Jamaican sound systems. One of the main characteristics of Dub manipulation is delay, which is used on many different parts of the song and often in an extensive, panoramic manner. This gives Dub its typical “wah-wah” feeling where sounds seem to bounce back from the walls and never die. All these sound effects synergize well with cannabis, which strongly influenced Dub music. Because of its pioneering technology yet dreamy and surreal sound, Dub was an important inspiration for all kinds of music and remains a living stream in the contemporary world of popular music.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">1</div>
+                <div class="buttons buttons-reggae">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">5</div>
+                <div class="buttons buttons-reggae">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">6</div>
+                <div class="buttons buttons-reggae">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">7</div>
+                <div class="buttons buttons-reggae">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">8</div>
+                <div class="buttons buttons-reggae">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-reggae">9</div>
+                <div class="buttons buttons-reggae">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-reggae">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-reggae">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-reggae">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-reggae-stop">&#9724;</div>
+                <div class="buttons buttons-reggae-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-reggae-stop">&#9724;</div>
+            <div class="buttons buttons-reggae-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Joe Gibbs & The Professionals",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-reggae').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-reggae"
+                    button => button.className = "buttons buttons-reggae"
                 )
             }
 

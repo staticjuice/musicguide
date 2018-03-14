@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre janglepop">
-    <div id="box-alternative">
+
+<body class="genre" id="janglepop">
+    <div class="box alternative">
         <h1>JANGLE POP</h1><br>
-            
+
         By the end of the 80s, the power of Hard Rock or the spirit of Punk Rock seemed nowhere to be found. The majority of Rock had become electronic and commercialized. Many Generation X rock artists tried to stay away from the big record companies to prevent their music from succumbing to the same fate and turned to smaller, independent labels instead, where they had the freedom to make what they liked &ndash; serious, downbeat rock with heavy, distorted guitar riffs, often dealing about emotional troubles or tragic thoughts. The music consciously partakes in the debate about music industry, with a strong stance against MTV. To strengthen and justify its own point of view, Alternative Rock often uses objectified lyrics instead of a personal perspective. Early Alternative music was primarily college radio music with jangly guitars and a minimal attention to rhythm. Therefore it became known as “Jangle Pop”. Closely related and heavily overlapping with college Jangle Pop was the Paisley Underground movement &ndash; a revival of 60s Psychedelic Rock in L.A. with a variety of Rock and Folk influences.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">1</div>
+                <div class="buttons buttons-alternative">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">5</div>
+                <div class="buttons buttons-alternative">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">6</div>
+                <div class="buttons buttons-alternative">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">7</div>
+                <div class="buttons buttons-alternative">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">8</div>
+                <div class="buttons buttons-alternative">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-alternative">9</div>
+                <div class="buttons buttons-alternative">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-alternative">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-alternative">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-alternative">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-alternative-stop">&#9724;</div>
+                <div class="buttons buttons-alternative-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-alternative-stop">&#9724;</div>
+            <div class="buttons buttons-alternative-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "The Smiths",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-alternative').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-alternative"
+                    button => button.className = "buttons buttons-alternative"
                 )
             }
 

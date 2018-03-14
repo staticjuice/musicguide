@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre postdisco">
-    <div id="box-pop">
+
+<body class="genre" id="postdisco">
+    <div class="box pop">
         <h1>POST-DISCO</h1><br>
-            
+
         In the aftermath of the great Disco supernova implosion, a supermassive, eclectic post-genre opened up, attracting a bit of everything that was hot at the time (but mostly Synthpop and a touch of instant recognizable glammy metallic guitar solos). The result is Post-Disco &ndash; a collection of all Disco-based Pop music that is almost synonymous with “the sound of the 80s”. This was music for the age of superficiality &ndash; a thin layer of neon, fast vehicles, palm trees and white powder. But there was more than synthesizer bands stuck in an escapist wave of Disco nostalgia. Post-Disco is mainly the embodiment of artists with an R&amp;B background who got influenced by its successor Disco, but never really made pure Disco. Instead they released Pop crossovers and became international superstars, selling more records than anyone before. By combining the most catchy elements of Rock, Synth and R&amp;B, while also implementing less conventional chords and song structures, professional Pop producers donated their artists immaculately crafted superhits eternalized in music’s collective memory.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">1</div>
+                <div class="buttons buttons-pop">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">5</div>
+                <div class="buttons buttons-pop">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">6</div>
+                <div class="buttons buttons-pop">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">7</div>
+                <div class="buttons buttons-pop">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">8</div>
+                <div class="buttons buttons-pop">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-pop">9</div>
+                <div class="buttons buttons-pop">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-pop">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-pop-stop">&#9724;</div>
+                <div class="buttons buttons-pop-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-pop-stop">&#9724;</div>
+            <div class="buttons buttons-pop-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Michael Jackson",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-pop').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-pop"
+                    button => button.className = "buttons buttons-pop"
                 )
             }
 

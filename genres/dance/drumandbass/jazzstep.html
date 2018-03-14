@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre jazzstep">
-    <div id="box-drumandbass">
+
+<body class="genre" id="jazzstep">
+    <div class="box drumandbass">
         <h1>JAZZSTEP</h1><br>
-            
+
         Jazzstep is essentially the same as Atmospheric Drum &amp; Bass in terms of its overall vibe, but the difference this time is that the focus is on incorporating jazzy elements instead of having general atmospheric soundscapes. Jazzstep mostly evolved at the same time as its Atmospheric counterpart, as both were reactions against the heavy, pounding chaos of their Drum &amp; Bass predecessors. This helped attract a broader audience of listeners to the D&amp;B genre, including many people who wouldn't normally listen to the genre. Notable Jazzstep artists include Roni Size &amp; Reprazent, Goldie, Utah Jazz, Morgan Sullyvan, Makoto, Alex Reece and DJ Dextrous. Soon after, Jazzstep evolved to incorporate Disco and House elements, ultimately leading to a style known as Liquid Funk. This was especially important as it was the genre that ultimately lead to the second wave of Liquid Drum &amp; Bass that became immensely popular from 2009 onwards. However, Jazzstep still continues to be produced to this day, with various record labels dedicated to the sound of nothing more than relaxing, jazzy summer vibes.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">1</div>
+                <div class="buttons buttons-drumandbass">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">5</div>
+                <div class="buttons buttons-drumandbass">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">6</div>
+                <div class="buttons buttons-drumandbass">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">7</div>
+                <div class="buttons buttons-drumandbass">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">8</div>
+                <div class="buttons buttons-drumandbass">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">9</div>
+                <div class="buttons buttons-drumandbass">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-drumandbass-stop">&#9724;</div>
+                <div class="buttons buttons-drumandbass-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-drumandbass-stop">&#9724;</div>
+            <div class="buttons buttons-drumandbass-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "London Elektricity",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-drumandbass').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-drumandbass"
+                    button => button.className = "buttons buttons-drumandbass"
                 )
             }
 

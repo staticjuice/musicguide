@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre newbeat">
-    <div id="box-hardcore">
+
+<body class="genre" id="newbeat">
+    <div class="box hardcore">
         <h1>NEW BEAT</h1><br>
-            
+
         Once upon a time, there was a club in a strange country where they decided to take some brand new and exciting Acid House records, and play them at the lower 33 rpm instead of their intentional 45 rpm. The club was the famous Boccaccio and the country was Belgium &ndash; home to the gloomy and avant-garde EBM. The atmosphere and sounds of EBM matched perfectly the lower tempo of this “New Acid House Beat”, forming a gateway between Industrial and Dance and leading eventually to a whole new group of genres &ndash; Hardcore. The genre was not dark or depressing though. The sounds were heavy and sluggish, like a crushing giant, but the lyrics were a mix of fun and nonsense. With its rather slow 110 bpm, New Beat formed a comfortable prologue for House/Techno, as the European public wasn’t ready yet for American 130 bpm House or Techno. Eventually New Beat became too ridiculous (with opportunistic bands cashing in on a template of mystery and sex), which forced the original composers to flee the scene. But the foundations were already laid for a whole new supergenre that was not born to please the majority &ndash; Hardcore.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">1</div>
+                <div class="buttons buttons-hardcore">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">5</div>
+                <div class="buttons buttons-hardcore">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">6</div>
+                <div class="buttons buttons-hardcore">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">7</div>
+                <div class="buttons buttons-hardcore">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">8</div>
+                <div class="buttons buttons-hardcore">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-hardcore">9</div>
+                <div class="buttons buttons-hardcore">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hardcore">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hardcore">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-hardcore">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-hardcore-stop">&#9724;</div>
+                <div class="buttons buttons-hardcore-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-hardcore-stop">&#9724;</div>
+            <div class="buttons buttons-hardcore-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Lords Of Acid",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-hardcore').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-hardcore"
+                    button => button.className = "buttons buttons-hardcore"
                 )
             }
 

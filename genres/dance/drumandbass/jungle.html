@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre jungle">
-    <div id="box-drumandbass">
+
+<body class="genre" id="jungle">
+    <div class="box drumandbass">
         <h1>JUNGLE</h1><br>
-            
+
         The end of the short but intense Rave subculture preluded the beginning of a new one. The famous Amen Break was sped up to 170 bpm, chopped up and glued together to create an accelerated, rolling, syncopated rhythm. In the beginning this brand new music had two distinctive faces, later blending into one &ndash; on one hand there was a softer, ambient, rational approach to the rhythm that used the “rolls” to accompany textured melodies. On the other hand, there was the emotional approach, the voice of a hunted down generation &ndash; paranoid, ruffneck Ravers that were influenced by the matching tempo and fierceness of Jamaican Ragga music. Drum &amp; Bass was part of west side London culture, which was more upper class and “sophisticated”, whereas Jungle was played in the clubs of east side London. Jungle subculture is Hip Hop meets Ragga in a British jacket &ndash; in your face, militant and profane. Jungle rejected Rave culture which had become too much to bear at the start of the 90s. With menacing samples, criminal themes, and a deliberate use of cocaine and marijuana instead of XTC, the war against Rave was on.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">1</div>
+                <div class="buttons buttons-drumandbass">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">5</div>
+                <div class="buttons buttons-drumandbass">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">6</div>
+                <div class="buttons buttons-drumandbass">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">7</div>
+                <div class="buttons buttons-drumandbass">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">8</div>
+                <div class="buttons buttons-drumandbass">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-drumandbass">9</div>
+                <div class="buttons buttons-drumandbass">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-drumandbass">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-drumandbass-stop">&#9724;</div>
+                <div class="buttons buttons-drumandbass-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-drumandbass-stop">&#9724;</div>
+            <div class="buttons buttons-drumandbass-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Shy FX & UK Apache",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-drumandbass').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-drumandbass"
+                    button => button.className = "buttons buttons-drumandbass"
                 )
             }
 

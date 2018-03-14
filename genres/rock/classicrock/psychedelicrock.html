@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre psychedelicrock">
-    <div id="box-classicrock">
+
+<body class="genre" id="psychedelicrock">
+    <div class="box classicrock">
         <h1>PSYCHEDELIC ROCK</h1><br>
-            
+
         The 60s marked a new age of hope, reconstruction, love and peace after the aftershocks of World War II. A huge spiritual hippie subculture flourished in many places, especially those with a large student population. The principal among them was the famous Haight Ashbury district in San Francisco, where young hippies were inspired by eastern cultures and countless psychedelic drugs to create freeform, exotic Rock music with psychedelic sound effects. The stereotypical warm and fuzzy sound of Hammond organs is no stranger to Psychedelic Rock as well. Because of its highly experimental nature and drug-and-peace-friendly appeal, many subgenres saw the light and were conjoined under the tag “Psychedelia”. The power of the countercultural movement and Psychedelic Rock was strongly felt in a large social gathering in 1967, known as the “Summer of Love”, but the height came in the form of Woodstock in 1969 &ndash; one of the largest festivals of all time and a symbol of connection in mind and spirit between all attendees, but also a turning point for Rock music in general. The hippie tidal wave became too big, and finally broke.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">1</div>
+                <div class="buttons buttons-classicrock">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">5</div>
+                <div class="buttons buttons-classicrock">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">6</div>
+                <div class="buttons buttons-classicrock">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">7</div>
+                <div class="buttons buttons-classicrock">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">8</div>
+                <div class="buttons buttons-classicrock">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classicrock">9</div>
+                <div class="buttons buttons-classicrock">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classicrock">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-classicrock-stop">&#9724;</div>
+                <div class="buttons buttons-classicrock-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-classicrock-stop">&#9724;</div>
+            <div class="buttons buttons-classicrock-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Jefferson Airplane",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-classicrock').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-classicrock"
+                    button => button.className = "buttons buttons-classicrock"
                 )
             }
 

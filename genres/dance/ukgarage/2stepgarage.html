@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre twostepgarage">
-    <div id="box-ukgarage">
+
+<body class="genre" id="twostepgarage">
+    <div class="box ukgarage">
         <h1>2-STEP GARAGE</h1><br>
-            
+
         Drum &amp; Bass was hip because it was underground and brand new. The problem was that it sounded too heavy and hardcore for the masses and that it detracted too many women from going to the clubs. By merging Garage House with Jungle and adding sampled Soul vocals, a smooth, textured music was being created that had little in common with regular Drum &amp; Bass. This was fancy Breakbeat. Fast, but gentle, bass-driven but with a subtle timbre. The first form of UK Garage was a rapid type of syncopated Garage House, known as Speed Garage. Speed Garage’s abundant percussion and heavy bass made the influences from Garage House barely noticeable and thus was still not good enough to attract a large female crowd. Speed Garage became influenced by Ragga and Drum &amp; Bass which altered its time signature in two beats per bar instead of four, which is known as “2-Step”. Despite these influences, 2-Step Garage abandoned bass in favour of sharp but soft treble and returned the sound of Garage House with a touch of R&amp;B. Ultimately this marked the start of a large music family that led to Dubstep and UK Bass.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">1</div>
+                <div class="buttons buttons-ukgarage">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">5</div>
+                <div class="buttons buttons-ukgarage">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">6</div>
+                <div class="buttons buttons-ukgarage">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">7</div>
+                <div class="buttons buttons-ukgarage">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">8</div>
+                <div class="buttons buttons-ukgarage">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">9</div>
+                <div class="buttons buttons-ukgarage">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-ukgarage-stop">&#9724;</div>
+                <div class="buttons buttons-ukgarage-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-ukgarage-stop">&#9724;</div>
+            <div class="buttons buttons-ukgarage-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Artful Dodger feat. Craig David",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-ukgarage').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-ukgarage"
+                    button => button.className = "buttons buttons-ukgarage"
                 )
             }
 

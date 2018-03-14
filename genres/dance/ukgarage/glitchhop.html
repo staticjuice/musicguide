@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre glitchhop">
-    <div id="box-ukgarage">
+
+<body class="genre" id="glitchhop">
+    <div class="box ukgarage">
         <h1>GLITCH HOP</h1><br>
-            
+
         The definition of Glitch Hop has changed throughout the years. Though Glitch Hop has its roots in Hip Hop and Glitch music from the early 2000s, it was thrust into the spotlight during the early 2010s with close ties to Dubstep. Where it was once based on heavily twisted, sliced and distorted glitchy Hip Hop beats, modern Glitch Hop has become a more defined standalone genre, quite detached from its Hip Hop origins. Glitch Hop sits between 80-115 bpm. Apart from it's relatively slow speed, the defining characteristic of Glitch Hop is the rhythm of its drum sequencing, often giving an extremely groovy swing feel. More recently, the sounds used can be far more aggressive than their earlier counterparts, taking influence from Dubstep and the Drum &amp; Bass subgenre Neurofunk (hence Neurohop). Aside from heavy bass sounds however, Glitch Hop that is being produced today can sometimes include influences from other genres, such as Jazz, Funk and Future Synth. Some Glitch Hop tracks even go back to their original Hip Hop roots, featuring rapping on top of various R&amp;B-type instruments.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">1</div>
+                <div class="buttons buttons-ukgarage">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">5</div>
+                <div class="buttons buttons-ukgarage">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">6</div>
+                <div class="buttons buttons-ukgarage">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">7</div>
+                <div class="buttons buttons-ukgarage">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">8</div>
+                <div class="buttons buttons-ukgarage">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">9</div>
+                <div class="buttons buttons-ukgarage">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-ukgarage-stop">&#9724;</div>
+                <div class="buttons buttons-ukgarage-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-ukgarage-stop">&#9724;</div>
+            <div class="buttons buttons-ukgarage-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Skrillex & Kill The Noise",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-ukgarage').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-ukgarage"
+                    button => button.className = "buttons buttons-ukgarage"
                 )
             }
 

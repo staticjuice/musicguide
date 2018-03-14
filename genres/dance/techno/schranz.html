@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre schranz">
-    <div id="box-techno">
+
+<body class="genre" id="schranz">
+    <div class="box techno">
         <h1>SCHRANZ</h1><br>
-            
+
         A constant and furious attack of hacking and rushing Techno beats at an incredible rate (150 bpm or more), like a psychopathic wind-up toy wielding a sledge hammer &ndash; this is Schranz. The genre slowly evolved out of early Hardcore and Minimal Techno, but is clearly distinguishable from other hard EDM genres. The beats all sound very similar due to the minimalist nature of the genre and the recognizable rush distortions. Variation is added by sounds, samples and subtle melodies, which alternate each other and thereby enhance the rhythm and tempo. Typical Schranz kick drums are heavily distorted in such a way that they seem muted instead of punctuated like other hard EDM genres &ndash; it’s like a filter of white noise is put on top of the rhythm. Schranz has grown stronger and stronger, combining the love for purism with a hard edge mentality and a discipline to refrain from ravy or explicit sounds. The downside is that all songs sound incredibly alike, almost in a satirical manner. Most Techno festivals have their own Schranz stage, and large club parties usually have a separate Schranz room as well, which is not very difficult to identify.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-techno">1</div>
+                <div class="buttons buttons-techno">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-techno">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-techno">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-techno">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-techno">5</div>
+                <div class="buttons buttons-techno">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-techno">6</div>
+                <div class="buttons buttons-techno">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-techno">7</div>
+                <div class="buttons buttons-techno">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-techno">8</div>
+                <div class="buttons buttons-techno">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-techno">9</div>
+                <div class="buttons buttons-techno">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-techno">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-techno">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-techno">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-techno-stop">&#9724;</div>
+                <div class="buttons buttons-techno-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-techno-stop">&#9724;</div>
+            <div class="buttons buttons-techno-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Greg Notill",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-techno').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-techno"
+                    button => button.className = "buttons buttons-techno"
                 )
             }
 

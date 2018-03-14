@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre dubstep">
-    <div id="box-ukgarage">
+
+<body class="genre" id="dubstep">
+    <div class="box ukgarage">
         <h1>DUBSTEP</h1><br>
-            
+
         Dubstep can be described as the only true innovative Dance genre since 2000 (alongside Grime), and is sometimes even labeled as a supergenre on its own. After all, it’s hard to categorize, being a mixture of Breakbeat, Drum &amp; Bass and Jamaican Dub music. Just like Dub, Dubstep started out as instrumental B-sides, only Grime ones instead of Reggae. Early or True Dubstep is recognizable by an eerie, ambient soundscape, heavily influenced by Dub, which it lost over the years in subsequent subgenres. To fully appreciate Dubstep, a decent subwoofer or club sound system is vital, as frequencies tend to drop even below Drum &amp; Bass. These LFO-subsonic basslines are often re-oscillated, creating the stereotypical Dubstep “wobbly bass”, which got transferred to other music genres afterwards. Dubstep has a steady drum rhythm (kick-snare-kick-snare) stretched far apart, and thus leaving lots of listening room, while also making Dubstep appear slower than its actual tempo (140 bpm). Dubstep eventually led to an abundance of crossovers, subgenres and a more commercial approach &ndash; enter Post-Dubstep.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">1</div>
+                <div class="buttons buttons-ukgarage">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">5</div>
+                <div class="buttons buttons-ukgarage">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">6</div>
+                <div class="buttons buttons-ukgarage">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">7</div>
+                <div class="buttons buttons-ukgarage">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">8</div>
+                <div class="buttons buttons-ukgarage">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-ukgarage">9</div>
+                <div class="buttons buttons-ukgarage">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-ukgarage">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-ukgarage-stop">&#9724;</div>
+                <div class="buttons buttons-ukgarage-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-ukgarage-stop">&#9724;</div>
+            <div class="buttons buttons-ukgarage-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Icicle",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-ukgarage').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-ukgarage"
+                    button => button.className = "buttons buttons-ukgarage"
                 )
             }
 

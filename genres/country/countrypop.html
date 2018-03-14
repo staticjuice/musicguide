@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre countrypop">
-    <div id="box-country">
+
+<body class="genre" id="countrypop">
+    <div class="box country">
         <h1>COUNTRY POP</h1><br>
-            
+
         Prior to the rise of Rock &amp; Roll, Country music was rarely heard outside of its intended market, effectively isolating it from any concerns about wide accessibility. When Rockabilly took off, Country musicians were forced to consider whether their true affinities lay with traditional Country or with this popular new style, which allowed artists to reach crossover audiences for the first time. This flirtation with the mainstream marked the beginnings of Country Pop, which grew out of the realization that Country-influenced music could be hybridized and smoothed out for mass consumption. RCA Records producer Chet Atkins was the most important figure in the initial cross-breeding of Country and Pop, creating a sound that was dubbed "Countrypolitan" for its blend of rural sensibility and urban sophistication. Because the melodies and song structures of Country music were usually very simple and catchy, they worked well when placed in a Pop-oriented format &ndash; Atkins' productions often placed the songs in orchestral arrangements heavy on the strings, which sometimes blended with Country instrumentation and sometimes stood alone.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">1</div>
+                <div class="buttons buttons-country">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">5</div>
+                <div class="buttons buttons-country">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">6</div>
+                <div class="buttons buttons-country">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">7</div>
+                <div class="buttons buttons-country">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">8</div>
+                <div class="buttons buttons-country">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-country">9</div>
+                <div class="buttons buttons-country">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-country">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-country-stop">&#9724;</div>
+                <div class="buttons buttons-country-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-country-stop">&#9724;</div>
+            <div class="buttons buttons-country-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Dolly Parton",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-country').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-country"
+                    button => button.className = "buttons buttons-country"
                 )
             }
 

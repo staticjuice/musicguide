@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre russianfolk">
-    <div id="box-folk">
+
+<body class="genre" id="russianfolk">
+    <div class="box folk">
         <h1>RUSSIAN FOLK</h1><br>
-            
+
         The performance and promulgation of ethnic music in Russia has a long tradition. Initially it was intertwined with various forms of art music, however, in the late 19th century it began to take on a life of its own with the rise in popularity of folkloric ensembles, such as the Folk choir movement. In Soviet Russia, Folk music was categorized as being democratic (of the people) or proletarian (of the working class) as opposed to art music, which was often regarded as being bourgeois. After the revolution, along with Proletarian "mass music" it received significant support from the state. In Post World War II Russia, Proletarian mass music however lost its appeal, whereas folkloric music continued to have a widespread support among the population, inside and outside of the Soviet Union. However the authentic nature of Folk music was severely distorted by the drive to professionalise performers, regardless of the genre they worked in &ndash; thus all folk singers were obliged to both learn Western-style classical notation, and to learn to perform classical repertoire &ndash; or else risk losing their right to perform as professionals.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">1</div>
+                <div class="buttons buttons-folk">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">5</div>
+                <div class="buttons buttons-folk">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">6</div>
+                <div class="buttons buttons-folk">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">7</div>
+                <div class="buttons buttons-folk">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">8</div>
+                <div class="buttons buttons-folk">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">9</div>
+                <div class="buttons buttons-folk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-folk-stop">&#9724;</div>
+                <div class="buttons buttons-folk-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-folk-stop">&#9724;</div>
+            <div class="buttons buttons-folk-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Moscow Nights",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-folk').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-folk"
+                    button => button.className = "buttons buttons-folk"
                 )
             }
 

@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre africanfolk">
-    <div id="box-folk">
+
+<body class="genre" id="africanfolk">
+    <div class="box folk">
         <h1>AFRICAN FOLK</h1><br>
-            
+
         The traditional music of Africa, given the vastness of the continent, is historically ancient, rich and diverse, with different regions and nations of Africa having many distinct musical traditions. Music in Africa is very important when it comes to religion. Songs and music are used in rituals and religious ceremonies, to pass down stories from generation too generation, as well as to sing and dance to. Traditional music in most of the continent is passed down orally (or aurally) and is not written. In Sub-Saharan African music traditions, it frequently relies on percussion instruments of every variety, including xylophones, djembes, drums, and tone-producing instruments such as the mbira or "thumb piano." The music and dance of the African diaspora, formed to varying degrees on African musical traditions, include American music and many Caribbean genres, such as Soca, Calypso and Zouk. Latin American music genres such as the Rumba, Conga, Bomba, Cumbia and Samba were also founded on the music of enslaved Africans, and have in turn influenced African popular music.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">1</div>
+                <div class="buttons buttons-folk">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">5</div>
+                <div class="buttons buttons-folk">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">6</div>
+                <div class="buttons buttons-folk">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">7</div>
+                <div class="buttons buttons-folk">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">8</div>
+                <div class="buttons buttons-folk">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-folk">9</div>
+                <div class="buttons buttons-folk">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-folk">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-folk-stop">&#9724;</div>
+                <div class="buttons buttons-folk-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-folk-stop">&#9724;</div>
+            <div class="buttons buttons-folk-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Black Bear Moon Rhythm Ensemble",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-folk').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-folk"
+                    button => button.className = "buttons buttons-folk"
                 )
             }
 

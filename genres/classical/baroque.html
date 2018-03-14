@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre baroque">
-    <div id="box-classical">
+
+<body class="genre" id="baroque">
+    <div class="box classical">
         <h1>BAROQUE</h1><br>
-            
+
         Baroque music is a style of Western art music composed from approximately 1600 to 1750. This era followed the Renaissance music era, and was followed in turn by the Classical era. Baroque music forms a major portion of the "Classical music" canon, being widely studied, performed, and listened to. The Baroque period saw the creation of tonality, an approach to writing music in which a song or piece is written in a particular key (tonality continues to be used in almost all Western popular music). During the Baroque era, professional musicians were expected to be accomplished improvisers of both solo melodic lines and accompaniment parts. Baroque concerts were typically accompanied by a basso continuo group which consisted of chord-playing instrumentalists such as harpsichordists and lute players improvising chords from a figured bass part while a group of bass instruments (viola, cello and double bass) played the bassline. A characteristic Baroque form was the dance suite. While the pieces in a dance suite were inspired by actual dance music, dance suites were designed for listening, not for accompanying dancers.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">1</div>
+                <div class="buttons buttons-classical">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">5</div>
+                <div class="buttons buttons-classical">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">6</div>
+                <div class="buttons buttons-classical">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">7</div>
+                <div class="buttons buttons-classical">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">8</div>
+                <div class="buttons buttons-classical">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-classical">9</div>
+                <div class="buttons buttons-classical">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classical">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classical">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-classical">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-classical-stop">&#9724;</div>
+                <div class="buttons buttons-classical-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-classical-stop">&#9724;</div>
+            <div class="buttons buttons-classical-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "Johann Sebastian Bach",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-classical').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-classical"
+                    button => button.className = "buttons buttons-classical"
                 )
             }
 

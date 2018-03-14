@@ -10,72 +10,72 @@
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
 </head>
-  
-<body class="genre garagerock">
-    <div id="box-rockandroll">
+
+<body class="genre" id="garagerock">
+    <div class="box rockandroll">
         <h1>GARAGE ROCK</h1><br>
-            
+
         After the advent of Rock &amp; Roll, countless ambitious teens (mostly in the UK) got hooked on the sound and started forming their own Rock bands. More often than not, they rehearsed in the garages of their parents. The result was a very raw, amateur, lo-fi sound of Rock &amp; Roll and the first experiments with distorted guitars. Garage Rock is a genre where the “fuzz” distortion effect is used intensively, which fits nicely with Garage Rock’s recurring content of anger and frustration about dealing with heartbreak and other negative love experiences. Because most Garage Rock musicians couldn’t afford decent audio equipment, there was often no budget for voice amplification, resulting in wailing, screaming singers. It wasn’t until the great British Invasion of the mid-60s that Garage Rock truly broke loose, with even more bands and crossovers to Psychedelic Rock as a result. Garage Rock’s big teenage “we-do-what-we-want” attitude and sound inspired Punk Rock itself, as well as contemporary artists who felt a revival was well deserved. After all, Garage Rock is the embodiment of sleaziness, roughness and Rock’s nonchalance in all its galore.<br><br>
 
         <div class="row icon-list">
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">1</div>
+                <div class="buttons buttons-rockandroll">1</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">2</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">3</div>
-            </div>
-                  
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">4</div>
-            </div>
-                
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">5</div>
+                <div class="buttons buttons-rockandroll">2</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">6</div>
+                <div class="buttons buttons-rockandroll">3</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">7</div>
+                <div class="buttons buttons-rockandroll">4</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">8</div>
+                <div class="buttons buttons-rockandroll">5</div>
             </div>
 
             <div class="col-sm-1 col-xs-1">
-                <div class="buttons-rockandroll">9</div>
+                <div class="buttons buttons-rockandroll">6</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rockandroll">7</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rockandroll">8</div>
+            </div>
+
+            <div class="col-sm-1 col-xs-1">
+                <div class="buttons buttons-rockandroll">9</div>
             </div>
 
             <div class="visible-xs col-xs-1">
-                <div class="buttons-rockandroll-stop">&#9724;</div>
+                <div class="buttons buttons-rockandroll-stop">&#9724;</div>
             </div>
         </div>
 
         <div class="example"><br>
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p> 
+            <p class="artisttrack">Track: <span id="track"></span></p>
         </div>
 
         <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons-rockandroll-stop">&#9724;</div>
+            <div class="buttons buttons-rockandroll-stop">&#9724;</div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
 
-            
+
             var tracks = [
                 {
                     artist: "The Sonics",
@@ -143,13 +143,13 @@
             $(document).find('.buttons-rockandroll').each(function(index, button) {
 
                 buttons.push(button);
-                
+
                 $(this).click(function() {
 
                     removeAllButtonBorders()
 
                     $(this).toggleClass('clicked');
-                
+
                     stopAllMusic()
 
                     audioInstance = new Audio(tracks[index].path);
@@ -175,7 +175,7 @@
 
             var removeAllButtonBorders = () => {
                 buttons.forEach(
-                    button => button.className = "buttons-rockandroll"
+                    button => button.className = "buttons buttons-rockandroll"
                 )
             }
 
