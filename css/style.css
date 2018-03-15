@@ -88,14 +88,13 @@ p {
 /*---------------------------------------------------------------------------*/
 
 #genres-heading {
-    margin: 2vw 9vw 0 9vw;
+    margin: 2vw 9vw;
     font-size: 1.5em;
     color: #FFF;
-    margin-bottom: 1em;
 }
 
 #genres-grid {
-    margin: 0 9vw 1vw 9vw;
+    margin: 0 9vw 1vw;
 }
 
 #genres-grid h1 {
@@ -131,7 +130,7 @@ p {
 }
 
 #genres-grid-mobile {
-    margin: 0 1.5em 1.5em 1.5em;
+    margin: 0 1.5em 1.5em;
 }
 
 #genres-grid-mobile h1 {
@@ -193,7 +192,7 @@ p {
 
 .genrelist-mobile h1 {
     font-size: 1.7em;
-    margin-bottom: 0.5em;
+    margin: 0.25em 0 0.5em;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -611,7 +610,7 @@ p {
     line-height: 1.2em;
     user-select: none;
     cursor: default;
-    margin: 0.3em 0 0.6em 0;
+    margin: 0.3em 0 0.6em;
 }
 
 .buttons-gospel, .buttons-gospel-stop { background-color: #ED9C9C; }
@@ -734,7 +733,7 @@ p {
         background-image: none;
     }
 
-    .dance {
+    #dance {
         overflow: auto;
     }
 
