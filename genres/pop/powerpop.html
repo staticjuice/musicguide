@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Power Pop</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Power Pop</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="powerpop">
+        <div class="box pop">
+            <h1>POWER POP</h1>
 
-<body class="genre" id="powerpop">
-    <div class="box pop">
-        <h1>POWER POP</h1><br>
+            <p>The earliest forms of Power Pop were in fact a revival of Beat, a second British Invasion so to speak. However, you can hear an important difference &ndash; the riffs are played with short, energetic strokes, enhanced by fast, repetitive drum beats. The emergence of Power Pop must be seen as compensation for the darker, more serious types of Rock popping up in the early 70s. To steer the people as far away from these <q>bad</q> types of Rock, the sound of Power Pop went in the opposite direction &ndash; happy, melodic and light. At the end of the 70s, Power Pop experienced a second wave, and in the 90s a third one. The success of Disco and derivatives trumped Power Pop’s second wave and strongly suppressed the genre in the 80s. The original fusion of Hard Rock and Beat became tainted by other genres during these succeeding waves, leading eventually to dissolution into other genres, though a number of Power Pop artists are still active. Original Power Pop served as a blueprint for many later Power Pop artists, which were drawn to the bare simplicity of Classic Rock without psychedelic influences or extensive post-production.</p>
 
-        The earliest forms of Power Pop were in fact a revival of Beat, a second British Invasion so to speak. However, you can hear an important difference &ndash; the riffs are played with short, energetic strokes, enhanced by fast, repetitive drum beats. The emergence of Power Pop must be seen as compensation for the darker, more serious types of Rock popping up in the early 70s. To steer the people as far away from these ‘bad’ types of Rock, the sound of Power Pop went in the opposite direction &ndash; happy, melodic and light. At the end of the 70s, Power Pop experienced a second wave, and in the 90s a third one. The success of Disco and derivatives trumped Power Pop’s second wave and strongly suppressed the genre in the 80s. The original fusion of Hard Rock and Beat became tainted by other genres during these succeeding waves, leading eventually to dissolution into other genres, though a number of Power Pop artists are still active. Original Power Pop served as a blueprint for many later Power Pop artists, which were drawn to the bare simplicity of Classic Rock without psychedelic influences or extensive post-production.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-pop-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-pop-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-pop-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-pop-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "The Knack",
+                        track: "My Sharona",
+                        path: "../../samples/pop/powerpop1.ogg"
+                    },
+                    {
+                        artist: "The Romantics",
+                        track: "Talking In Your Sleep",
+                        path: "../../samples/pop/powerpop2.ogg"
+                    },
+                    {
+                        artist: "Big Star",
+                        track: "September Gurls",
+                        path: "../../samples/pop/powerpop3.ogg"
+                    },
+                    {
+                        artist: "Cheap Trick",
+                        track: "I Want You To Want Me",
+                        path: "../../samples/pop/powerpop4.ogg"
+                    },
+                    {
+                        artist: "Badfinger",
+                        track: "No Matter What",
+                        path: "../../samples/pop/powerpop5.ogg"
+                    },
+                    {
+                        artist: "The Raspberries",
+                        track: "I Wanna Be With You",
+                        path: "../../samples/pop/powerpop6.ogg"
+                    },
+                    {
+                        artist: "Matthew Sweet",
+                        track: "Girlfriend",
+                        path: "../../samples/pop/powerpop7.ogg"
+                    },
+                    {
+                        artist: "The New Pornographers",
+                        track: "Challengers",
+                        path: "../../samples/pop/powerpop8.ogg"
+                    },
+                    {
+                        artist: "Liquido",
+                        track: "Narcotic",
+                        path: "../../samples/pop/powerpop9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "The Knack",
-                    track: "My Sharona",
-                    path: "../../samples/pop/powerpop1.ogg"
-                },
-                {
-                    artist: "The Romantics",
-                    track: "Talking In Your Sleep",
-                    path: "../../samples/pop/powerpop2.ogg"
-                },
-                {
-                    artist: "Big Star",
-                    track: "September Gurls",
-                    path: "../../samples/pop/powerpop3.ogg"
-                },
-                {
-                    artist: "Cheap Trick",
-                    track: "I Want You To Want Me",
-                    path: "../../samples/pop/powerpop4.ogg"
-                },
-                {
-                    artist: "Badfinger",
-                    track: "No Matter What",
-                    path: "../../samples/pop/powerpop5.ogg"
-                },
-                {
-                    artist: "The Raspberries",
-                    track: "I Wanna Be With You",
-                    path: "../../samples/pop/powerpop6.ogg"
-                },
-                {
-                    artist: "Matthew Sweet",
-                    track: "Girlfriend",
-                    path: "../../samples/pop/powerpop7.ogg"
-                },
-                {
-                    artist: "The New Pornographers",
-                    track: "Challengers",
-                    path: "../../samples/pop/powerpop8.ogg"
-                },
-                {
-                    artist: "Liquido",
-                    track: "Narcotic",
-                    path: "../../samples/pop/powerpop9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-pop').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-pop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-pop-stop').on('click', function() {
+                $('.buttons-pop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-pop"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-pop"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

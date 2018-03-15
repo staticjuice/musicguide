@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Traditional Pop</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Traditional Pop</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="traditionalpop">
+        <div class="box pop">
+            <h1>TRADITIONAL POP</h1>
 
-<body class="genre" id="traditionalpop">
-    <div class="box pop">
-        <h1>TRADITIONAL POP</h1><br>
+            <p>Traditional Pop music consists of Western popular music that generally predates the advent of Rock &amp; Roll in the mid-50s. The most popular and enduring songs from this style of music are known as Pop Standards or American Standards. The works of these songwriters and composers are usually considered part of the canon known as the <q>Great American Songbook</q>. More generally, the term <q>standard</q> can be applied to any popular song that has become very widely known within mainstream culture. Traditional Pop music is generally regarded as having existed between the mid-40s and mid-50s. Two notable innovations were the addition of string sections and orchestral arrangements and more emphasis on the vocal performance. The addition of lush strings can be heard in much of the popular music throughout the 40s and 50s. In the early 50s as the dominance of Swing gave way to the Traditional Pop music era, many of the vocalists associated with Swing bands became even more popular, and were central figures in popular music. Notable artists include Frank Sinatra, Bing Crosby and Nat King Cole.</p>
 
-        Traditional Pop music consists of Western popular music that generally predates the advent of Rock &amp; Roll in the mid-50s. The most popular and enduring songs from this style of music are known as Pop Standards or American Standards. The works of these songwriters and composers are usually considered part of the canon known as the "Great American Songbook". More generally, the term "standard" can be applied to any popular song that has become very widely known within mainstream culture. Traditional Pop music is generally regarded as having existed between the mid-40s and mid-50s. Two notable innovations were the addition of string sections and orchestral arrangements and more emphasis on the vocal performance. The addition of lush strings can be heard in much of the popular music throughout the 40s and 50s. In the early 50s as the dominance of Swing gave way to the Traditional Pop music era, many of the vocalists associated with Swing bands became even more popular, and were central figures in popular music. Notable artists include Frank Sinatra, Bing Crosby and Nat King Cole.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-pop-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-pop-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-pop-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-pop-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Bing Crosby",
+                        track: "White Christmas",
+                        path: "../../samples/pop/traditionalpop1.ogg"
+                    },
+                    {
+                        artist: "Frank Sinatra",
+                        track: "The Way You Look Tonight",
+                        path: "../../samples/pop/traditionalpop2.ogg"
+                    },
+                    {
+                        artist: "Perry Como",
+                        track: "Fly Me To The Moon",
+                        path: "../../samples/pop/traditionalpop3.ogg"
+                    },
+                    {
+                        artist: "Rosemary Clooney",
+                        track: "Tenderly",
+                        path: "../../samples/pop/traditionalpop4.ogg"
+                    },
+                    {
+                        artist: "Dean Martin",
+                        track: "Ain't That A Kick In The Head",
+                        path: "../../samples/pop/traditionalpop5.ogg"
+                    },
+                    {
+                        artist: "Ella Fitzgerald & Louis Armstrong",
+                        track: "Summertime",
+                        path: "../../samples/pop/traditionalpop6.ogg"
+                    },
+                    {
+                        artist: "Nat King Cole",
+                        track: "L-O-V-E",
+                        path: "../../samples/pop/traditionalpop7.ogg"
+                    },
+                    {
+                        artist: "Johnny Mathis",
+                        track: "Misty",
+                        path: "../../samples/pop/traditionalpop8.ogg"
+                    },
+                    {
+                        artist: "Tony Bennett",
+                        track: "I Left My Heart In San Francisco",
+                        path: "../../samples/pop/traditionalpop9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Bing Crosby",
-                    track: "White Christmas",
-                    path: "../../samples/pop/traditionalpop1.ogg"
-                },
-                {
-                    artist: "Frank Sinatra",
-                    track: "The Way You Look Tonight",
-                    path: "../../samples/pop/traditionalpop2.ogg"
-                },
-                {
-                    artist: "Perry Como",
-                    track: "Fly Me To The Moon",
-                    path: "../../samples/pop/traditionalpop3.ogg"
-                },
-                {
-                    artist: "Rosemary Clooney",
-                    track: "Tenderly",
-                    path: "../../samples/pop/traditionalpop4.ogg"
-                },
-                {
-                    artist: "Dean Martin",
-                    track: "Ain't That A Kick In The Head",
-                    path: "../../samples/pop/traditionalpop5.ogg"
-                },
-                {
-                    artist: "Ella Fitzgerald & Louis Armstrong",
-                    track: "Summertime",
-                    path: "../../samples/pop/traditionalpop6.ogg"
-                },
-                {
-                    artist: "Nat King Cole",
-                    track: "L-O-V-E",
-                    path: "../../samples/pop/traditionalpop7.ogg"
-                },
-                {
-                    artist: "Johnny Mathis",
-                    track: "Misty",
-                    path: "../../samples/pop/traditionalpop8.ogg"
-                },
-                {
-                    artist: "Tony Bennett",
-                    track: "I Left My Heart In San Francisco",
-                    path: "../../samples/pop/traditionalpop9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-pop').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-pop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-pop-stop').on('click', function() {
+                $('.buttons-pop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-pop"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-pop"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Dance Pop</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dance Pop</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="dancepop">
+        <div class="box pop">
+            <h1>DANCE POP</h1>
 
-<body class="genre" id="dancepop">
-    <div class="box pop">
-        <h1>DANCE POP</h1><br>
+            <p>In the 80s, Pop music changed from a pure trade commodity (records to sell to teens) to a much bigger enterprise &ndash; a party and concert industry, where vast wealth was possible to obtain. The Live Aid concert in 1984 for example is a pivotal moment. After Post-Disco, major record labels turned their eye towards Dance music, as Eurodance had proven to be very profitable. Thus, Dance Pop is the fusion of Dance (mostly House) with Pop and is not the same as Post-Disco, though a large amount of overlapping is fairly common in the eclectic world of Pop music, where sell-value presides over genre integrity. Most Dance Pop artists are boy bands or girl bands, the epitome of capitalistic Pop. Choreographed ensembles of young girls or boys create an illusion of identification by having a different stereotypical personality, but all aimed at one thing &ndash; selling sex. More than ever before, Dance Pop marketed itself to young teens (both male and female) with the sex-appeal of barely older artists. In Dance Pop, the music is far more important than the lyrics, which only serves as catchy sing-along phrases.</p>
 
-        In the 80s, Pop music changed from a pure trade commodity (records to sell to teens) to a much bigger enterprise &ndash; a party and concert industry, where vast wealth was possible to obtain. The Live Aid concert in 1984 for example is a pivotal moment. After Post-Disco, major record labels turned their eye towards Dance music, as Eurodance had proven to be very profitable. Thus, Dance Pop is the fusion of Dance (mostly House) with Pop and is not the same as Post-Disco, though a large amount of overlapping is fairly common in the eclectic world of Pop music, where sell-value presides over genre integrity. Most Dance Pop artists are boy bands or girl bands, the epitome of capitalistic Pop. Choreographed ensembles of young girls or boys create an illusion of identification by having a different stereotypical personality, but all aimed at one thing &ndash; selling sex. More than ever before, Dance Pop marketed itself to young teens (both male and female) with the sex-appeal of barely older artists. In Dance Pop, the music is far more important than the lyrics, which only serves as catchy sing-along phrases.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-pop-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-pop-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-pop-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-pop-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Backstreet Boys",
+                        track: "Everybody (Backstreet's Back)",
+                        path: "../../samples/pop/dancepop1.ogg"
+                    },
+                    {
+                        artist: "*NSYNC",
+                        track: "It's Gonna Be Me",
+                        path: "../../samples/pop/dancepop2.ogg"
+                    },
+                    {
+                        artist: "Britney Spears",
+                        track: "Oops!...I Did It Again",
+                        path: "../../samples/pop/dancepop3.ogg"
+                    },
+                    {
+                        artist: "Aqua",
+                        track: "Barbie Girl",
+                        path: "../../samples/pop/dancepop4.ogg"
+                    },
+                    {
+                        artist: "Spice Girls",
+                        track: "Stop",
+                        path: "../../samples/pop/dancepop5.ogg"
+                    },
+                    {
+                        artist: "Boyzone",
+                        track: "So Good",
+                        path: "../../samples/pop/dancepop6.ogg"
+                    },
+                    {
+                        artist: "Vengaboys",
+                        track: "Boom, Boom, Boom, Boom",
+                        path: "../../samples/pop/dancepop7.ogg"
+                    },
+                    {
+                        artist: "Five",
+                        track: "Keep On Movin'",
+                        path: "../../samples/pop/dancepop8.ogg"
+                    },
+                    {
+                        artist: "S Club 7",
+                        track: "Don't Stop Movin'",
+                        path: "../../samples/pop/dancepop9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Backstreet Boys",
-                    track: "Everybody (Backstreet's Back)",
-                    path: "../../samples/pop/dancepop1.ogg"
-                },
-                {
-                    artist: "*NSYNC",
-                    track: "It's Gonna Be Me",
-                    path: "../../samples/pop/dancepop2.ogg"
-                },
-                {
-                    artist: "Britney Spears",
-                    track: "Oops!...I Did It Again",
-                    path: "../../samples/pop/dancepop3.ogg"
-                },
-                {
-                    artist: "Aqua",
-                    track: "Barbie Girl",
-                    path: "../../samples/pop/dancepop4.ogg"
-                },
-                {
-                    artist: "Spice Girls",
-                    track: "Stop",
-                    path: "../../samples/pop/dancepop5.ogg"
-                },
-                {
-                    artist: "Boyzone",
-                    track: "So Good",
-                    path: "../../samples/pop/dancepop6.ogg"
-                },
-                {
-                    artist: "Vengaboys",
-                    track: "Boom, Boom, Boom, Boom",
-                    path: "../../samples/pop/dancepop7.ogg"
-                },
-                {
-                    artist: "Five",
-                    track: "Keep On Movin'",
-                    path: "../../samples/pop/dancepop8.ogg"
-                },
-                {
-                    artist: "S Club 7",
-                    track: "Don't Stop Movin'",
-                    path: "../../samples/pop/dancepop9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-pop').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-pop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-pop-stop').on('click', function() {
+                $('.buttons-pop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-pop"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-pop"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

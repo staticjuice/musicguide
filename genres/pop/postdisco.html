@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Post-Disco</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Post-Disco</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="postdisco">
+        <div class="box pop">
+            <h1>POST-DISCO</h1>
 
-<body class="genre" id="postdisco">
-    <div class="box pop">
-        <h1>POST-DISCO</h1><br>
+            <p>In the aftermath of the great Disco supernova implosion, a supermassive, eclectic post-genre opened up, attracting a bit of everything that was hot at the time (but mostly Synthpop and a touch of instant recognizable glammy metallic guitar solos). The result is Post-Disco &ndash; a collection of all Disco-based Pop music that is almost synonymous with <q>the sound of the 80s</q>. This was music for the age of superficiality &ndash; a thin layer of neon, fast vehicles, palm trees and white powder. But there was more than synthesizer bands stuck in an escapist wave of Disco nostalgia. Post-Disco is mainly the embodiment of artists with an R&amp;B background who got influenced by its successor Disco, but never really made pure Disco. Instead they released Pop crossovers and became international superstars, selling more records than anyone before. By combining the most catchy elements of Rock, Synth and R&amp;B, while also implementing less conventional chords and song structures, professional Pop producers donated their artists immaculately crafted superhits eternalized in music’s collective memory.</p>
 
-        In the aftermath of the great Disco supernova implosion, a supermassive, eclectic post-genre opened up, attracting a bit of everything that was hot at the time (but mostly Synthpop and a touch of instant recognizable glammy metallic guitar solos). The result is Post-Disco &ndash; a collection of all Disco-based Pop music that is almost synonymous with “the sound of the 80s”. This was music for the age of superficiality &ndash; a thin layer of neon, fast vehicles, palm trees and white powder. But there was more than synthesizer bands stuck in an escapist wave of Disco nostalgia. Post-Disco is mainly the embodiment of artists with an R&amp;B background who got influenced by its successor Disco, but never really made pure Disco. Instead they released Pop crossovers and became international superstars, selling more records than anyone before. By combining the most catchy elements of Rock, Synth and R&amp;B, while also implementing less conventional chords and song structures, professional Pop producers donated their artists immaculately crafted superhits eternalized in music’s collective memory.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-pop">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-pop-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-pop">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-pop-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-pop-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-pop-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Michael Jackson",
+                        track: "Billie Jean",
+                        path: "../../samples/pop/postdisco1.ogg"
+                    },
+                    {
+                        artist: "Madonna",
+                        track: "Papa Don't Preach",
+                        path: "../../samples/pop/postdisco2.ogg"
+                    },
+                    {
+                        artist: "Whitney Houston",
+                        track: "So Emotional",
+                        path: "../../samples/pop/postdisco3.ogg"
+                    },
+                    {
+                        artist: "Sabrina",
+                        track: "Boys (Summertime Love)",
+                        path: "../../samples/pop/postdisco4.ogg"
+                    },
+                    {
+                        artist: "Laura Branigan",
+                        track: "Self Control",
+                        path: "../../samples/pop/postdisco5.ogg"
+                    },
+                    {
+                        artist: "Siedah Garrett",
+                        track: "Do You Want It Right Now",
+                        path: "../../samples/pop/postdisco6.ogg"
+                    },
+                    {
+                        artist: "Samantha Fox",
+                        track: "Touch Me (I Want Your Body)",
+                        path: "../../samples/pop/postdisco7.ogg"
+                    },
+                    {
+                        artist: "A-ha",
+                        track: "Take On Me",
+                        path: "../../samples/pop/postdisco8.ogg"
+                    },
+                    {
+                        artist: "Yazoo",
+                        track: "Don't Go",
+                        path: "../../samples/pop/postdisco9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Michael Jackson",
-                    track: "Billie Jean",
-                    path: "../../samples/pop/postdisco1.ogg"
-                },
-                {
-                    artist: "Madonna",
-                    track: "Papa Don't Preach",
-                    path: "../../samples/pop/postdisco2.ogg"
-                },
-                {
-                    artist: "Whitney Houston",
-                    track: "So Emotional",
-                    path: "../../samples/pop/postdisco3.ogg"
-                },
-                {
-                    artist: "Sabrina",
-                    track: "Boys (Summertime Love)",
-                    path: "../../samples/pop/postdisco4.ogg"
-                },
-                {
-                    artist: "Laura Branigan",
-                    track: "Self Control",
-                    path: "../../samples/pop/postdisco5.ogg"
-                },
-                {
-                    artist: "Siedah Garrett",
-                    track: "Do You Want It Right Now",
-                    path: "../../samples/pop/postdisco6.ogg"
-                },
-                {
-                    artist: "Samantha Fox",
-                    track: "Touch Me (I Want Your Body)",
-                    path: "../../samples/pop/postdisco7.ogg"
-                },
-                {
-                    artist: "A-ha",
-                    track: "Take On Me",
-                    path: "../../samples/pop/postdisco8.ogg"
-                },
-                {
-                    artist: "Yazoo",
-                    track: "Don't Go",
-                    path: "../../samples/pop/postdisco9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-pop').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-pop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-pop-stop').on('click', function() {
+                $('.buttons-pop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-pop"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-pop"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>
