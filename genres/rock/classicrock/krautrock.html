@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Krautrock</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Krautrock</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="krautrock">
+        <div class="box classicrock">
+            <h1>KRAUTROCK</h1>
 
-<body class="genre" id="krautrock">
-    <div class="box classicrock">
-        <h1>KRAUTROCK</h1><br>
+            <p>Krautrock refers to the legions of German bands of the early 70s that expanded the sonic possibilities of art and Progressive Rock. Instead of following in the direction of their British and American counterparts, who were moving toward Jazz and Classical-based compositions and concept albums, the German bands became more mechanical and electronic. Working with early synthesizers and splicing together seemingly unconnected reels of tape, bands like Faust, Can, and Neu! created a droning, pulsating sound that owed more to the Avant-Garde than to Rock &amp; Roll. Although the bands didn't make much of an impact while they were active in the 70s, their music anticipated much Post-Punk of the early 80s, particularly Industrial Rock. One band however, chose a far more radical path than others by abandoning all Rock influences. Kraftwerk made the first completely electronic music that had recognizable structure, melody and bass. With Kraftwerk as arguably the most revolutionary popular music artist of all time, Krautrock is one of the most influential genres, bridging the gap between Rock and Electronic.</p>
 
-        Krautrock refers to the legions of German bands of the early 70s that expanded the sonic possibilities of art and Progressive Rock. Instead of following in the direction of their British and American counterparts, who were moving toward Jazz and Classical-based compositions and concept albums, the German bands became more mechanical and electronic. Working with early synthesizers and splicing together seemingly unconnected reels of tape, bands like Faust, Can, and Neu! created a droning, pulsating sound that owed more to the Avant-Garde than to Rock &amp; Roll. Although the bands didn't make much of an impact while they were active in the 70s, their music anticipated much Post-Punk of the early 80s, particularly Industrial Rock. One band however, chose a far more radical path than others by abandoning all Rock influences. Kraftwerk made the first completely electronic music that had recognizable structure, melody and bass. With Kraftwerk as arguably the most revolutionary popular music artist of all time, Krautrock is one of the most influential genres, bridging the gap between Rock and Electronic.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-classicrock-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-classicrock-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-classicrock-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-classicrock-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Kraftwerk",
+                        track: "Trans-Europe Express",
+                        path: "../../../samples/rock/classicrock/krautrock1.ogg"
+                    },
+                    {
+                        artist: "Neu!",
+                        track: "Hallogallo",
+                        path: "../../../samples/rock/classicrock/krautrock2.ogg"
+                    },
+                    {
+                        artist: "Can",
+                        track: "Vitamin C",
+                        path: "../../../samples/rock/classicrock/krautrock3.ogg"
+                    },
+                    {
+                        artist: "Faust",
+                        track: "So Far",
+                        path: "../../../samples/rock/classicrock/krautrock4.ogg"
+                    },
+                    {
+                        artist: "Amon Düül II",
+                        track: "Surrounded By The Stars",
+                        path: "../../../samples/rock/classicrock/krautrock5.ogg"
+                    },
+                    {
+                        artist: "Ash Ra Tempel",
+                        track: "Amboss",
+                        path: "../../../samples/rock/classicrock/krautrock6.ogg"
+                    },
+                    {
+                        artist: "Guru Guru",
+                        track: "Der Elektrolurch",
+                        path: "../../../samples/rock/classicrock/krautrock7.ogg"
+                    },
+                    {
+                        artist: "Cosmic Jokers",
+                        track: "Galactic Joke",
+                        path: "../../../samples/rock/classicrock/krautrock8.ogg"
+                    },
+                    {
+                        artist: "Sperrmüll",
+                        track: "No Freak Out",
+                        path: "../../../samples/rock/classicrock/krautrock9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Kraftwerk",
-                    track: "Trans-Europe Express",
-                    path: "../../../samples/rock/classicrock/krautrock1.ogg"
-                },
-                {
-                    artist: "Neu!",
-                    track: "Hallogallo",
-                    path: "../../../samples/rock/classicrock/krautrock2.ogg"
-                },
-                {
-                    artist: "Can",
-                    track: "Vitamin C",
-                    path: "../../../samples/rock/classicrock/krautrock3.ogg"
-                },
-                {
-                    artist: "Faust",
-                    track: "So Far",
-                    path: "../../../samples/rock/classicrock/krautrock4.ogg"
-                },
-                {
-                    artist: "Amon Düül II",
-                    track: "Surrounded By The Stars",
-                    path: "../../../samples/rock/classicrock/krautrock5.ogg"
-                },
-                {
-                    artist: "Ash Ra Tempel",
-                    track: "Amboss",
-                    path: "../../../samples/rock/classicrock/krautrock6.ogg"
-                },
-                {
-                    artist: "Guru Guru",
-                    track: "Der Elektrolurch",
-                    path: "../../../samples/rock/classicrock/krautrock7.ogg"
-                },
-                {
-                    artist: "Cosmic Jokers",
-                    track: "Galactic Joke",
-                    path: "../../../samples/rock/classicrock/krautrock8.ogg"
-                },
-                {
-                    artist: "Sperrmüll",
-                    track: "No Freak Out",
-                    path: "../../../samples/rock/classicrock/krautrock9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-classicrock').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-classicrock').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-classicrock-stop').on('click', function() {
+                $('.buttons-classicrock-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-classicrock"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-classicrock"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

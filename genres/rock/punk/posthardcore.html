@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Post-Hardcore</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Post-Hardcore</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="posthardcore">
+        <div class="box punk">
+            <h1>POST-HARDCORE</h1>
 
-<body class="genre" id="posthardcore">
-    <div class="box punk">
-        <h1>POST-HARDCORE</h1><br>
+            <p>Post-Hardcore can be either a genre on its own or an umbrella term for any <q>pure</q> Hardcore-derivative (i.e. without links to Metal). Just like Post-Punk differs from Punk, so does Post-Hardcore differ from Hardcore as a less bursting, less aggressive continuation of the genre (though still more heavy than other Rock genres). Post-Hardcore implements a longer and more complex arrangement, with tempo changes adding a certain alternating dynamic to Hardcore. Besides screaming or grunting, Post-Hardcore also allows <q>normal</q> vocals, usually wailing about depressing or introspective thoughts. Post-Hardcore is dividable into three waves. The first one started in the mid-80s and encloses only a number of avant-garde bands. The second wave and most important wave was Emocore &ndash; a poetic, emotional genre with quiet, slower passages and more artistic lyrics. In the third wave, Screamo became popular and was generally based in the aggressive side of the overarching Emo scene. For many groups, lyrics often boasted violent or bloody imagery alongside subject matter dealing with overwhelming angst and relationships.</p>
 
-        Post-Hardcore can be either a genre on its own or an umbrella term for any “pure” Hardcore-derivative (i.e. without links to Metal). Just like Post-Punk differs from Punk, so does Post-Hardcore differ from Hardcore as a less bursting, less aggressive continuation of the genre (though still more heavy than other Rock genres). Post-Hardcore implements a longer and more complex arrangement, with tempo changes adding a certain alternating dynamic to Hardcore. Besides screaming or grunting, Post-Hardcore also allows “normal” vocals, usually wailing about depressing or introspective thoughts. Post-Hardcore is dividable into three waves. The first one started in the mid-80s and encloses only a number of avant-garde bands. The second wave and most important wave was Emocore &ndash; a poetic, emotional genre with quiet, slower passages and more artistic lyrics. In the third wave, Screamo became popular and was generally based in the aggressive side of the overarching Emo scene. For many groups, lyrics often boasted violent or bloody imagery alongside subject matter dealing with overwhelming angst and relationships.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-punk">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-punk">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-punk">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-punk">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-punk">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-punk">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-punk">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-punk">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-punk">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-punk">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-punk-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-punk">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-punk">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-punk">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-punk">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-punk">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-punk">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-punk">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-punk">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-punk-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-punk-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-punk-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Hüsker Dü",
+                        track: "Diane",
+                        path: "../../../samples/rock/punk/posthardcore1.ogg"
+                    },
+                    {
+                        artist: "Soulside",
+                        track: "Trigger",
+                        path: "../../../samples/rock/punk/posthardcore2.ogg"
+                    },
+                    {
+                        artist: "Rites Of Spring",
+                        track: "End On End",
+                        path: "../../../samples/rock/punk/posthardcore3.ogg"
+                    },
+                    {
+                        artist: "Embrace",
+                        track: "No More Pain",
+                        path: "../../../samples/rock/punk/posthardcore4.ogg"
+                    },
+                    {
+                        artist: "Orchid",
+                        track: "Lights Out",
+                        path: "../../../samples/rock/punk/posthardcore5.ogg"
+                    },
+                    {
+                        artist: "Silverstein",
+                        track: "My Heroine",
+                        path: "../../../samples/rock/punk/posthardcore6.ogg"
+                    },
+                    {
+                        artist: "Loma Prieta",
+                        track: "Fly By Night",
+                        path: "../../../samples/rock/punk/posthardcore7.ogg"
+                    },
+                    {
+                        artist: "Alexisonfire",
+                        track: "This Could Be Anywhere In The World",
+                        path: "../../../samples/rock/punk/posthardcore8.ogg"
+                    },
+                    {
+                        artist: "Underoath",
+                        track: "Writing On The Walls",
+                        path: "../../../samples/rock/punk/posthardcore9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Hüsker Dü",
-                    track: "Diane",
-                    path: "../../../samples/rock/punk/posthardcore1.ogg"
-                },
-                {
-                    artist: "Soulside",
-                    track: "Trigger",
-                    path: "../../../samples/rock/punk/posthardcore2.ogg"
-                },
-                {
-                    artist: "Rites Of Spring",
-                    track: "End On End",
-                    path: "../../../samples/rock/punk/posthardcore3.ogg"
-                },
-                {
-                    artist: "Embrace",
-                    track: "No More Pain",
-                    path: "../../../samples/rock/punk/posthardcore4.ogg"
-                },
-                {
-                    artist: "Orchid",
-                    track: "Lights Out",
-                    path: "../../../samples/rock/punk/posthardcore5.ogg"
-                },
-                {
-                    artist: "Silverstein",
-                    track: "My Heroine",
-                    path: "../../../samples/rock/punk/posthardcore6.ogg"
-                },
-                {
-                    artist: "Loma Prieta",
-                    track: "Fly By Night",
-                    path: "../../../samples/rock/punk/posthardcore7.ogg"
-                },
-                {
-                    artist: "Alexisonfire",
-                    track: "This Could Be Anywhere In The World",
-                    path: "../../../samples/rock/punk/posthardcore8.ogg"
-                },
-                {
-                    artist: "Underoath",
-                    track: "Writing On The Walls",
-                    path: "../../../samples/rock/punk/posthardcore9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-punk').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-punk').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-punk-stop').on('click', function() {
+                $('.buttons-punk-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-punk"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-punk"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

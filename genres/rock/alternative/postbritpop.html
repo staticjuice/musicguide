@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Post-Britpop</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Post-Britpop</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="postbritpop">
+        <div class="box alternative">
+            <h1>POST-BRITPOP</h1>
 
-<body class="genre" id="postbritpop">
-    <div class="box alternative">
-        <h1>POST-BRITPOP</h1><br>
+            <p>Despite the aversion of relevant bands to the label <q>Post-Britpop</q> and claims that genre fragmentation within Britpop is pointless, this style is a lot more defined than what you would expect. Britpop’s patriotism got in the way of experimentation and American or Indie influences. Yet a second wave of British artists in the late 90s valued these merits higher than cultural preservation. A clear distinction with their predecessors is the rejection of guitar as the dominant instrument, in favour of a more electronically oriented sound. Another key alteration is the absence of Britpop’s cocky attitude, which got replaced by highly sensitive, fragile lyrics. Post-Britpop is symbolized by a loss of ego. The popularity of Post-Britpop bands quickly outgrew traditional Britpop, making Post-Britpop a sort of Arena Rock of the 00s. With success comes envy and Post-Britpop songs eventually became accused of sounding too uniform, sterile and predictable. Coupled with whiter-than-white sound production and high-pitched male vocals, the way was paved for a countering return to sleazy, lo-fi Garage Rock.</p>
 
-        Despite the aversion of relevant bands to the label “Post-Britpop” and claims that genre fragmentation within Britpop is pointless, this style is a lot more defined than what you would expect. Britpop’s patriotism got in the way of experimentation and American or Indie influences. Yet a second wave of British artists in the late 90s valued these merits higher than cultural preservation. A clear distinction with their predecessors is the rejection of guitar as the dominant instrument, in favour of a more electronically oriented sound. Another key alteration is the absence of Britpop’s cocky attitude, which got replaced by highly sensitive, fragile lyrics. Post-Britpop is symbolized by a loss of ego. The popularity of Post-Britpop bands quickly outgrew traditional Britpop, making Post-Britpop a sort of Arena Rock of the 00s. With success comes envy and Post-Britpop songs eventually became accused of sounding too uniform, sterile and predictable. Coupled with whiter-than-white sound production and high-pitched male vocals, the way was paved for a countering return to sleazy, lo-fi Garage Rock.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-alternative-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-alternative-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-alternative-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-alternative-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Coldplay",
+                        track: "Clocks",
+                        path: "../../../samples/rock/alternative/postbritpop1.ogg"
+                    },
+                    {
+                        artist: "Travis",
+                        track: "Sing",
+                        path: "../../../samples/rock/alternative/postbritpop2.ogg"
+                    },
+                    {
+                        artist: "Muse",
+                        track: "Bliss",
+                        path: "../../../samples/rock/alternative/postbritpop3.ogg"
+                    },
+                    {
+                        artist: "Stereophonics",
+                        track: "Dakota",
+                        path: "../../../samples/rock/alternative/postbritpop4.ogg"
+                    },
+                    {
+                        artist: "Feeder",
+                        track: "Feeling A Moment",
+                        path: "../../../samples/rock/alternative/postbritpop5.ogg"
+                    },
+                    {
+                        artist: "Doves",
+                        track: "Kingdom Of Rust",
+                        path: "../../../samples/rock/alternative/postbritpop6.ogg"
+                    },
+                    {
+                        artist: "Snow Patrol",
+                        track: "Chasing Cars",
+                        path: "../../../samples/rock/alternative/postbritpop7.ogg"
+                    },
+                    {
+                        artist: "Keane",
+                        track: "Everybody's Changing",
+                        path: "../../../samples/rock/alternative/postbritpop8.ogg"
+                    },
+                    {
+                        artist: "Bloc Party",
+                        track: "Banquet",
+                        path: "../../../samples/rock/alternative/postbritpop9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Coldplay",
-                    track: "Clocks",
-                    path: "../../../samples/rock/alternative/postbritpop1.ogg"
-                },
-                {
-                    artist: "Travis",
-                    track: "Sing",
-                    path: "../../../samples/rock/alternative/postbritpop2.ogg"
-                },
-                {
-                    artist: "Muse",
-                    track: "Bliss",
-                    path: "../../../samples/rock/alternative/postbritpop3.ogg"
-                },
-                {
-                    artist: "Stereophonics",
-                    track: "Dakota",
-                    path: "../../../samples/rock/alternative/postbritpop4.ogg"
-                },
-                {
-                    artist: "Feeder",
-                    track: "Feeling A Moment",
-                    path: "../../../samples/rock/alternative/postbritpop5.ogg"
-                },
-                {
-                    artist: "Doves",
-                    track: "Kingdom Of Rust",
-                    path: "../../../samples/rock/alternative/postbritpop6.ogg"
-                },
-                {
-                    artist: "Snow Patrol",
-                    track: "Chasing Cars",
-                    path: "../../../samples/rock/alternative/postbritpop7.ogg"
-                },
-                {
-                    artist: "Keane",
-                    track: "Everybody's Changing",
-                    path: "../../../samples/rock/alternative/postbritpop8.ogg"
-                },
-                {
-                    artist: "Bloc Party",
-                    track: "Banquet",
-                    path: "../../../samples/rock/alternative/postbritpop9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-alternative').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-alternative').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-alternative-stop').on('click', function() {
+                $('.buttons-alternative-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-alternative"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-alternative"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

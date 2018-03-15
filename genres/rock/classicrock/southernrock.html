@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Southern Rock</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Southern Rock</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="southernrock">
+        <div class="box classicrock">
+            <h1>SOUTHERN ROCK</h1>
 
-<body class="genre" id="southernrock">
-    <div class="box classicrock">
-        <h1>SOUTHERN ROCK</h1><br>
+            <p>When a nation loses a war, often a deep urge arises to reestablish its pride and express its identity. Southern Rock is another example of many styles typical for the southern states of the US and arguably the one that stresses most the will of pride, glory and freedom. This fusion genre is patriotic to the bone &ndash; southern American Blues meets southern American Country meets American Rock. After a period of experimentation and Psychedelic Rock, the time for back-to-the-roots Rock music was at hand. Southern Rock is distinguishable by being raw and loud. It is the celebration and adoration of electric guitars by having multiple lead guitars playing (often improvised) solos whenever they’re not used for some heavy boogie jamming. In conclusion &ndash; Southern Rock is either a gentle Country ballad with a touch of Blues Rock or a freight train rollercoaster looping and spinning off its tracks until the shaking boogie rhythm puts it back on again for another ride. In the 21st century, a new wave of Southern Rock artists comes on the scene such as the Kings of Leon and the Black Crowes.</p>
 
-        When a nation loses a war, often a deep urge arises to reestablish its pride and express its identity. Southern Rock is another example of many styles typical for the southern states of the US and arguably the one that stresses most the will of pride, glory and freedom. This fusion genre is patriotic to the bone &ndash; southern American Blues meets southern American Country meets American Rock. After a period of experimenting and Psychedelic Rock, the time for back-to-the-roots Rock music was at hand. Southern Rock is distinguishable by being raw and loud. It is the celebration and adoration of electric guitars by having multiple lead guitars playing (often improvised) solos whenever they’re not used for some heavy boogie jamming. In conclusion &ndash; Southern Rock is either a gentle Country ballad with a touch of Blues Rock or a freight train rollercoaster looping and spinning off its tracks until the shaking boogie rhythm puts it back on again for another ride. In the 21st century, a new wave of Southern Rock artists comes on the scene such as the Kings of Leon and the Black Crowes.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classicrock">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-classicrock-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classicrock">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-classicrock-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-classicrock-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-classicrock-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Lynyrd Skynyrd",
+                        track: "Sweet Home Alabama",
+                        path: "../../../samples/rock/classicrock/southernrock1.ogg"
+                    },
+                    {
+                        artist: "The Allman Brothers Band",
+                        track: "Midnight Rider",
+                        path: "../../../samples/rock/classicrock/southernrock2.ogg"
+                    },
+                    {
+                        artist: "Creedence Clearwater Revival",
+                        track: "Run Through The Jungle",
+                        path: "../../../samples/rock/classicrock/southernrock3.ogg"
+                    },
+                    {
+                        artist: "ZZ Top",
+                        track: "Sharp Dressed Man",
+                        path: "../../../samples/rock/classicrock/southernrock4.ogg"
+                    },
+                    {
+                        artist: "Black Oak Arkansas",
+                        track: "Lord Have Mercy On My Soul",
+                        path: "../../../samples/rock/classicrock/southernrock5.ogg"
+                    },
+                    {
+                        artist: "Blackfoot",
+                        track: "Train, Train",
+                        path: "../../../samples/rock/classicrock/southernrock6.ogg"
+                    },
+                    {
+                        artist: "Kings Of Leon",
+                        track: "Red Morning Light",
+                        path: "../../../samples/rock/classicrock/southernrock7.ogg"
+                    },
+                    {
+                        artist: "The Black Crowes",
+                        track: "Remedy",
+                        path: "../../../samples/rock/classicrock/southernrock8.ogg"
+                    },
+                    {
+                        artist: "The Georgia Satellites",
+                        track: "Keep Your Hands To Yourself",
+                        path: "../../../samples/rock/classicrock/southernrock9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Lynyrd Skynyrd",
-                    track: "Sweet Home Alabama",
-                    path: "../../../samples/rock/classicrock/southernrock1.ogg"
-                },
-                {
-                    artist: "The Allman Brothers Band",
-                    track: "Midnight Rider",
-                    path: "../../../samples/rock/classicrock/southernrock2.ogg"
-                },
-                {
-                    artist: "Creedence Clearwater Revival",
-                    track: "Run Through The Jungle",
-                    path: "../../../samples/rock/classicrock/southernrock3.ogg"
-                },
-                {
-                    artist: "ZZ Top",
-                    track: "Sharp Dressed Man",
-                    path: "../../../samples/rock/classicrock/southernrock4.ogg"
-                },
-                {
-                    artist: "Black Oak Arkansas",
-                    track: "Lord Have Mercy On My Soul",
-                    path: "../../../samples/rock/classicrock/southernrock5.ogg"
-                },
-                {
-                    artist: "Blackfoot",
-                    track: "Train, Train",
-                    path: "../../../samples/rock/classicrock/southernrock6.ogg"
-                },
-                {
-                    artist: "Kings Of Leon",
-                    track: "Red Morning Light",
-                    path: "../../../samples/rock/classicrock/southernrock7.ogg"
-                },
-                {
-                    artist: "The Black Crowes",
-                    track: "Remedy",
-                    path: "../../../samples/rock/classicrock/southernrock8.ogg"
-                },
-                {
-                    artist: "The Georgia Satellites",
-                    track: "Keep Your Hands To Yourself",
-                    path: "../../../samples/rock/classicrock/southernrock9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-classicrock').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-classicrock').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-classicrock-stop').on('click', function() {
+                $('.buttons-classicrock-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-classicrock"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-classicrock"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

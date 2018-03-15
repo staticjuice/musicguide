@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Pop Punk</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pop Punk</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="poppunk">
+        <div class="box alternative">
+            <h1>POP PUNK</h1>
 
-<body class="genre" id="poppunk">
-    <div class="box alternative">
-        <h1>POP PUNK</h1><br>
+            <p>Pop Punk and Skate Punk deliver the bursting, loud mouthing energy of Punk, neatly tucked into a flashy jacket of Pop. Where the latter genre consists of independent artists strongly linked to skater subculture, the former is the product of a marketing hype towards teens, with a strong lack of integrity in their lyrics (like 25-year olds pretending to still be in high school). Both genres are strongly teen/adolescent oriented, with lyrics that attempt to make sense in their daily lives (Pop Punk bands were purely designed for this like a <q>bad</q> boy band). Topics of heartbreak, drugs, friendship and anti-establishment, often in a rebellious way, are perfect for the reactionary teenager but not too explicit to sell in large volumes. But Pop Punk can go much deeper and become highly political, such as the reactionary <q>Rock Against Bush</q> movement. Both genres qualify as Punk Rock revivals, albeit with Grunge influences. Pop Punk and Skate Punk are Punk because they are aggressive with mainly short and explosive songs. On the other hand they are also Pop, with their melodic sing-along tunes or even anthems.</p>
 
-        Pop Punk and Skate Punk deliver the bursting, loud mouthing energy of Punk, neatly tucked into a flashy jacket of Pop. Where the latter genre consists of independent artists strongly linked to skater subculture, the former is the product of a marketing hype towards teens, with a strong lack of integrity in their lyrics (like 25-year olds pretending to still be in high school). Both genres are strongly teen/adolescent oriented, with lyrics that attempt to make sense in their daily lives (Pop Punk bands were purely designed for this like a “bad” boy band). Topics of heartbreak, drugs, friendship and anti-establishment, often in a rebellious way, are perfect for the reactionary teenager but not too explicit to sell in large volumes. But Pop Punk can go much deeper and become highly political, such as the reactionary “Rock Against Bush” movement. Both genres qualify as Punk Rock revivals, albeit with Grunge influences. Pop Punk and Skate Punk are Punk because they are aggressive with mainly short and explosive songs. On the other hand they are also Pop, with their melodic sing-along tunes or even anthems.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-alternative">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-alternative-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-alternative">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-alternative-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-alternative-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-alternative-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "NOFX",
+                        track: "Don't Call Me White",
+                        path: "../../../samples/rock/alternative/poppunk1.ogg"
+                    },
+                    {
+                        artist: "Sum 41",
+                        track: "In Too Deep",
+                        path: "../../../samples/rock/alternative/poppunk2.ogg"
+                    },
+                    {
+                        artist: "Good Charlotte",
+                        track: "The Anthem",
+                        path: "../../../samples/rock/alternative/poppunk3.ogg"
+                    },
+                    {
+                        artist: "New Found Glory",
+                        track: "My Friends Over You",
+                        path: "../../../samples/rock/alternative/poppunk4.ogg"
+                    },
+                    {
+                        artist: "Blink-182",
+                        track: "All The Small Things",
+                        path: "../../../samples/rock/alternative/poppunk5.ogg"
+                    },
+                    {
+                        artist: "Goldfinger",
+                        track: "Spokesman",
+                        path: "../../../samples/rock/alternative/poppunk6.ogg"
+                    },
+                    {
+                        artist: "Millencolin",
+                        track: "No Cigar",
+                        path: "../../../samples/rock/alternative/poppunk7.ogg"
+                    },
+                    {
+                        artist: "Lit",
+                        track: "My Own Worst Enemy",
+                        path: "../../../samples/rock/alternative/poppunk8.ogg"
+                    },
+                    {
+                        artist: "Panic! At The Disco",
+                        track: "I Write Sins Not Tragedies",
+                        path: "../../../samples/rock/alternative/poppunk9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "NOFX",
-                    track: "Don't Call Me White",
-                    path: "../../../samples/rock/alternative/poppunk1.ogg"
-                },
-                {
-                    artist: "Sum 41",
-                    track: "In Too Deep",
-                    path: "../../../samples/rock/alternative/poppunk2.ogg"
-                },
-                {
-                    artist: "Good Charlotte",
-                    track: "The Anthem",
-                    path: "../../../samples/rock/alternative/poppunk3.ogg"
-                },
-                {
-                    artist: "New Found Glory",
-                    track: "My Friends Over You",
-                    path: "../../../samples/rock/alternative/poppunk4.ogg"
-                },
-                {
-                    artist: "Blink-182",
-                    track: "All The Small Things",
-                    path: "../../../samples/rock/alternative/poppunk5.ogg"
-                },
-                {
-                    artist: "Goldfinger",
-                    track: "Spokesman",
-                    path: "../../../samples/rock/alternative/poppunk6.ogg"
-                },
-                {
-                    artist: "Millencolin",
-                    track: "No Cigar",
-                    path: "../../../samples/rock/alternative/poppunk7.ogg"
-                },
-                {
-                    artist: "Lit",
-                    track: "My Own Worst Enemy",
-                    path: "../../../samples/rock/alternative/poppunk8.ogg"
-                },
-                {
-                    artist: "Panic! At The Disco",
-                    track: "I Write Sins Not Tragedies",
-                    path: "../../../samples/rock/alternative/poppunk9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-alternative').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-alternative').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-alternative-stop').on('click', function() {
+                $('.buttons-alternative-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-alternative"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-alternative"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>
