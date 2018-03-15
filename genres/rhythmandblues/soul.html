@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Soul</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Soul</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="soul">
+        <div class="box rhythmandblues">
+            <h1>SOUL</h1>
 
-<body class="genre" id="soul">
-    <div class="box rhythmandblues">
-        <h1>SOUL</h1><br>
+            <p>A lot of things had changed since the ascent of R&amp;B. In the southern and middle states of the US, black R&amp;B musicians threw R&amp;B, Gospel, Blues and a bit of Country into a big melting pot. They were cooking something that was quite slow but also raw and emotional at the same time. This type of music became well known under the leading record company’s name &ndash; Stax, granting the name Stax Soul. Musicians wrote their own music straight from the heart instead of producers or songwriters. The lyrics were often based on their experiences during the so called <q>Soul Circuit</q> &ndash; a trail in the southern US almost all Soul artists followed. Soul tracks are recognizable by their low tempo, the use of clipped guitar and a lo-fi production. The genre rose greatly alongside national black awareness in the 60s, thanks to the Civil Rights Movement and Martin Luther King Jr. Soul was the voice of black pride, but it wasn’t reactionary nor intimidating. Soul does not try to combat whom it opposes, instead it tries to disarm. The music is hopeful, warm and portrays intense stories about love and heartbreak that still sound sincere after all these decades.</p>
 
-        A lot of things had changed since the ascent of R&amp;B. In the southern and middle states of the US, black R&amp;B musicians threw R&amp;B, Gospel, Blues and a bit of Country into a big melting pot. They were cooking something that was quite slow but also raw and emotional at the same time. This type of music became well known under the leading record company’s name &ndash; Stax, granting the name Stax Soul. Musicians wrote their own music straight from the heart instead of producers or songwriters. The lyrics were often based on their experiences during the so called “Soul Circuit” &ndash; a trail in the southern US almost all Soul artists followed. Soul tracks are recognizable by their low tempo, the use of clipped guitar and a lo-fi production. The genre rose greatly alongside national black awareness in the 60s, thanks to the civil rights movement and Martin Luther King Jr. Soul was the voice of black pride, but it wasn’t reactionary nor intimidating. Soul does not try to combat whom it opposes, instead it tries to disarm. The music is hopeful, warm and portrays intense stories about love and heartbreak that still sound sincere after all these decades.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-rhythmandblues-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Sam Cooke",
+                        track: "Bring It On Home To Me",
+                        path: "../../samples/rhythmandblues/soul1.ogg"
+                    },
+                    {
+                        artist: "Otis Redding",
+                        track: "Stand By Me",
+                        path: "../../samples/rhythmandblues/soul2.ogg"
+                    },
+                    {
+                        artist: "Irma Thomas",
+                        track: "Wish Someone Would Care",
+                        path: "../../samples/rhythmandblues/soul3.ogg"
+                    },
+                    {
+                        artist: "Percy Sledge",
+                        track: "When A Man Loves A Woman",
+                        path: "../../samples/rhythmandblues/soul4.ogg"
+                    },
+                    {
+                        artist: "Betty Harris",
+                        track: "What'd I Do Wrong",
+                        path: "../../samples/rhythmandblues/soul5.ogg"
+                    },
+                    {
+                        artist: "Sam & Dave",
+                        track: "Soul Man",
+                        path: "../../samples/rhythmandblues/soul6.ogg"
+                    },
+                    {
+                        artist: "The Staple Singers",
+                        track: "Respect Yourself",
+                        path: "../../samples/rhythmandblues/soul7.ogg"
+                    },
+                    {
+                        artist: "William Bell",
+                        track: "I Forgot To Be Your Lover",
+                        path: "../../samples/rhythmandblues/soul8.ogg"
+                    },
+                    {
+                        artist: "The Soul Children",
+                        track: "Don't Take My Kindness For Weakness",
+                        path: "../../samples/rhythmandblues/soul9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Sam Cooke",
-                    track: "Bring It On Home To Me",
-                    path: "../../samples/rhythmandblues/soul1.ogg"
-                },
-                {
-                    artist: "Otis Redding",
-                    track: "Stand By Me",
-                    path: "../../samples/rhythmandblues/soul2.ogg"
-                },
-                {
-                    artist: "Irma Thomas",
-                    track: "Wish Someone Would Care",
-                    path: "../../samples/rhythmandblues/soul3.ogg"
-                },
-                {
-                    artist: "Percy Sledge",
-                    track: "When A Man Loves A Woman",
-                    path: "../../samples/rhythmandblues/soul4.ogg"
-                },
-                {
-                    artist: "Betty Harris",
-                    track: "What'd I Do Wrong",
-                    path: "../../samples/rhythmandblues/soul5.ogg"
-                },
-                {
-                    artist: "Sam & Dave",
-                    track: "Soul Man",
-                    path: "../../samples/rhythmandblues/soul6.ogg"
-                },
-                {
-                    artist: "The Staple Singers",
-                    track: "Respect Yourself",
-                    path: "../../samples/rhythmandblues/soul7.ogg"
-                },
-                {
-                    artist: "William Bell",
-                    track: "I Forgot To Be Your Lover",
-                    path: "../../samples/rhythmandblues/soul8.ogg"
-                },
-                {
-                    artist: "The Soul Children",
-                    track: "Don't Take My Kindness For Weakness",
-                    path: "../../samples/rhythmandblues/soul9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-rhythmandblues').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-rhythmandblues').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-rhythmandblues-stop').on('click', function() {
+                $('.buttons-rhythmandblues-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-rhythmandblues"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-rhythmandblues"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Deep Funk</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Deep Funk</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="deepfunk">
+        <div class="box rhythmandblues">
+            <h1>DEEP FUNK</h1>
 
-<body class="genre" id="deepfunk">
-    <div class="box rhythmandblues">
-        <h1>DEEP FUNK</h1><br>
+            <p>Some may say that Funk is just Funk, but there is a difference between well-known vocal Funk aimed at performing and the heavier, instrumental Funk focused on recording, known as Deep Funk. Although this genre already existed in the early 70s, the popularity of Disco pushed a number of artists underground during the 80s. Bass got stronger and breaks became more pronounced. The focus laid slightly less on fast drums and rolls but more on a slower tempo groove, pushing the music forward. Production was very raw and gritty like Soul. Lots and lots of barely known artists brought out their own, more modern approach of their favourite genre, almost always on vinyl (particularly 45 rpm singles). Although these records did get pressed, the number of editions were usually meager. These hard-to-find records (hence the term Rare Groove) were being hunted by Hip Hop, Acid Jazz and Breakbeat DJs everywhere (and still are). Rare Groove’s characteristics (heavy beats, instrumental, recording-focused and obscurity) make the genre ideal for sampling and extremely popular with Hip Hop and Breakbeat artists.</p>
 
-        Some may say that Funk is just Funk, but there is a difference between well known vocal Funk aimed at performing and the heavier, instrumental Funk focused on recording, known as Deep Funk. Although this genre already existed in the early 70s, the popularity of Disco pushed a number of artists underground during the 80s. Bass got stronger and breaks became more pronounced. The focus laid slightly less on fast drums and rolls but more on a slower tempo groove, pushing the music forward. Production was very raw and gritty like Soul. Lots and lots of barely known artists brought out their own, more modern approach of their favourite genre, almost always on vinyl (particularly 45 rpm singles). Although these records did get pressed, the number of editions were usually meager. These hard-to-find records (hence the term Rare Groove) were being hunted by Hip Hop, Acid Jazz, and Breakbeat DJs everywhere (and still are). Rare Groove’s characteristics (heavy beats, instrumental, recording-focused and obscurity) make the genre ideal for sampling and extremely popular with Hip Hop and Breakbeat artists.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-rhythmandblues-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Incredible Bongo Band",
+                        track: "Apache",
+                        path: "../../samples/rhythmandblues/deepfunk1.ogg"
+                    },
+                    {
+                        artist: "Fred Wesley & The J.B.'s",
+                        track: "Blow Your Head",
+                        path: "../../samples/rhythmandblues/deepfunk2.ogg"
+                    },
+                    {
+                        artist: "The Mohawks",
+                        track: "The Champ",
+                        path: "../../samples/rhythmandblues/deepfunk3.ogg"
+                    },
+                    {
+                        artist: "Rhythm Heritage",
+                        track: "Theme From S.W.A.T.",
+                        path: "../../samples/rhythmandblues/deepfunk4.ogg"
+                    },
+                    {
+                        artist: "Marsha Hunt",
+                        track: "(Oh No! Not) The Beast Day",
+                        path: "../../samples/rhythmandblues/deepfunk5.ogg"
+                    },
+                    {
+                        artist: "Sir Joe Quarterman & Free Soul",
+                        track: "(I Got) So Much Trouble In My Mind",
+                        path: "../../samples/rhythmandblues/deepfunk6.ogg"
+                    },
+                    {
+                        artist: "The Bamboos",
+                        track: "The Bamboos Theme",
+                        path: "../../samples/rhythmandblues/deepfunk7.ogg"
+                    },
+                    {
+                        artist: "Fort Knox Five",
+                        track: "Blowing Up The Barrio",
+                        path: "../../samples/rhythmandblues/deepfunk8.ogg"
+                    },
+                    {
+                        artist: "Brownout",
+                        track: "Flaximus (Renegades Of Jazz Bboy Edit)",
+                        path: "../../samples/rhythmandblues/deepfunk9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Incredible Bongo Band",
-                    track: "Apache",
-                    path: "../../samples/rhythmandblues/deepfunk1.ogg"
-                },
-                {
-                    artist: "Fred Wesley & The J.B.'s",
-                    track: "Blow Your Head",
-                    path: "../../samples/rhythmandblues/deepfunk2.ogg"
-                },
-                {
-                    artist: "The Mohawks",
-                    track: "The Champ",
-                    path: "../../samples/rhythmandblues/deepfunk3.ogg"
-                },
-                {
-                    artist: "Rhythm Heritage",
-                    track: "Theme From S.W.A.T.",
-                    path: "../../samples/rhythmandblues/deepfunk4.ogg"
-                },
-                {
-                    artist: "Marsha Hunt",
-                    track: "(Oh No! Not) The Beast Day",
-                    path: "../../samples/rhythmandblues/deepfunk5.ogg"
-                },
-                {
-                    artist: "Sir Joe Quarterman & Free Soul",
-                    track: "(I Got) So Much Trouble In My Mind",
-                    path: "../../samples/rhythmandblues/deepfunk6.ogg"
-                },
-                {
-                    artist: "The Bamboos",
-                    track: "The Bamboos Theme",
-                    path: "../../samples/rhythmandblues/deepfunk7.ogg"
-                },
-                {
-                    artist: "Fort Knox Five",
-                    track: "Blowing Up The Barrio",
-                    path: "../../samples/rhythmandblues/deepfunk8.ogg"
-                },
-                {
-                    artist: "Brownout",
-                    track: "Flaximus (Renegades Of Jazz Bboy Edit)",
-                    path: "../../samples/rhythmandblues/deepfunk9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-rhythmandblues').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-rhythmandblues').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-rhythmandblues-stop').on('click', function() {
+                $('.buttons-rhythmandblues-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-rhythmandblues"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-rhythmandblues"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

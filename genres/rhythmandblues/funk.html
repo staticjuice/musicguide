@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Funk</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Funk</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="funk">
+        <div class="box rhythmandblues">
+            <h1>FUNK</h1>
 
-<body class="genre" id="funk">
-    <div class="box rhythmandblues">
-        <h1>FUNK</h1><br>
+            <p>Soul was very popular and melodic, but it wasn't really daring or danceable. After a while, artists started looking at Rock and Jazz for new elements. They preferred the psychedelic, rebellious nature of Psychedelic Rock alongside the deep, dynamic part of Soul Jazz as flavours of choice for the revolutionary fusion that was Funk. James Brown, nicknamed <q>the hardest working man in show business</q>, spearheaded the evolution from Soul to what became known as Funk Soul and eventually Funk. Funk places strong emphasis on the first beat of each bar while the rest of the rhythm constantly changes, like an early form of Breakbeat. This is known as <q>The Rhythm of the One</q> (the one beat, instead of four or two). All instruments work together to enhance this feeling. Percussion becomes accentuated by short, monotone riffs, slapping bass, brass instruments, and accents on synth/piano to create what is known as <q>the groove</q> &ndash; the pulsing force behind each Funk song. Yet Funk does not try to blend all instruments into a carefully assembled and produced whole (like Soul) but it maintains their individuality to create a more organic sound.</p>
 
-        Soul was very popular and melodic, but it wasn't really daring or danceable. After a while, artists started looking at Rock and Jazz for new elements. They preferred the psychedelic, rebellious nature of Psychedelic Rock alongside the deep, dynamic part of Soul Jazz as flavours of choice for the revolutionary fusion that was Funk. James Brown, nicknamed “the hardest working man in show business”, spearheaded the evolution from Soul to what became known as Funk Soul and eventually Funk. Funk places strong emphasis on the first beat of each bar while the rest of the rhythm constantly changes, like an early form of Breakbeat. This is known as “The Rhythm of the One” (the one beat, instead of four or two). All instruments work together to enhance this feeling. Percussion becomes accentuated by short, monotone riffs, slapping bass, brass instruments, and accents on synth/piano to create what is known as “the groove” &ndash; the pulsing force behind each Funk song. Yet Funk does not try to blend all instruments into a carefully assembled and produced whole (like Soul) but it maintains their individuality to create a more organic sound.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-rhythmandblues-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-rhythmandblues">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-rhythmandblues-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-rhythmandblues-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "James Brown",
+                        track: "Papa's Got A Brand New Bag",
+                        path: "../../samples/rhythmandblues/funk1.ogg"
+                    },
+                    {
+                        artist: "Parliament",
+                        track: "P-Funk (Wants To Get Funked Up)",
+                        path: "../../samples/rhythmandblues/funk2.ogg"
+                    },
+                    {
+                        artist: "Tower Of Power",
+                        track: "What Is Hip?",
+                        path: "../../samples/rhythmandblues/funk3.ogg"
+                    },
+                    {
+                        artist: "Funkadelic",
+                        track: "I Got A Thing, You Got A Thing, Everybody’s Got A...",
+                        path: "../../samples/rhythmandblues/funk4.ogg"
+                    },
+                    {
+                        artist: "Charles Wright & The Watts 103rd Street Rhythm...",
+                        track: "Express Yourself",
+                        path: "../../samples/rhythmandblues/funk5.ogg"
+                    },
+                    {
+                        artist: "Sly & The Family Stone",
+                        track: "Underdog",
+                        path: "../../samples/rhythmandblues/funk6.ogg"
+                    },
+                    {
+                        artist: "Average White Band",
+                        track: "Pick Up The Pieces",
+                        path: "../../samples/rhythmandblues/funk7.ogg"
+                    },
+                    {
+                        artist: "Curtis Mayfield",
+                        track: "Superfly",
+                        path: "../../samples/rhythmandblues/funk8.ogg"
+                    },
+                    {
+                        artist: "Maceo",
+                        track: "Soul Power '74",
+                        path: "../../samples/rhythmandblues/funk9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "James Brown",
-                    track: "Papa's Got A Brand New Bag",
-                    path: "../../samples/rhythmandblues/funk1.ogg"
-                },
-                {
-                    artist: "Parliament",
-                    track: "P-Funk (Wants To Get Funked Up)",
-                    path: "../../samples/rhythmandblues/funk2.ogg"
-                },
-                {
-                    artist: "Tower Of Power",
-                    track: "What Is Hip?",
-                    path: "../../samples/rhythmandblues/funk3.ogg"
-                },
-                {
-                    artist: "Funkadelic",
-                    track: "I Got A Thing, You Got A Thing, Everybody’s Got A...",
-                    path: "../../samples/rhythmandblues/funk4.ogg"
-                },
-                {
-                    artist: "Charles Wright & The Watts 103rd Street Rhythm...",
-                    track: "Express Yourself",
-                    path: "../../samples/rhythmandblues/funk5.ogg"
-                },
-                {
-                    artist: "Sly & The Family Stone",
-                    track: "Underdog",
-                    path: "../../samples/rhythmandblues/funk6.ogg"
-                },
-                {
-                    artist: "Average White Band",
-                    track: "Pick Up The Pieces",
-                    path: "../../samples/rhythmandblues/funk7.ogg"
-                },
-                {
-                    artist: "Curtis Mayfield",
-                    track: "Superfly",
-                    path: "../../samples/rhythmandblues/funk8.ogg"
-                },
-                {
-                    artist: "Maceo",
-                    track: "Soul Power '74",
-                    path: "../../samples/rhythmandblues/funk9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-rhythmandblues').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-rhythmandblues').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-rhythmandblues-stop').on('click', function() {
+                $('.buttons-rhythmandblues-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-rhythmandblues"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-rhythmandblues"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>
