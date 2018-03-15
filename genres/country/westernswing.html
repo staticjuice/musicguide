@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Western Swing</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Western Swing</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="westernswing">
+        <div class="box country">
+            <h1>WESTERN SWING</h1>
 
-<body class="genre" id="westernswing">
-    <div class="box country">
-        <h1>WESTERN SWING</h1><br>
+            <p>The big craze that was Swing swiftly got a hold on Country, because entertaining music for large venues where people could dance was a concept that could just as easily be done with Hillbilly music. Except this wasn’t done in fancy ballrooms or concert halls (like Swing), but good ol’ fashion barns. Especially in Texas and Oklahoma the genre proved very successful. Bob Wills and Milton Brown popularized the genre in the 30s, and Wills became known as the father of the genre, since he remained popular for several decades, during which he had a remarkable string of hit singles. When the new technology of amplified guitars was fitted into the Hillbilly instrument ensemble, the eclectic genre Western Swing was born. Western Swing borrowed influences from just about any other popular music genre that was already invented (which was a rather scarce collection at the time). Swing rhythms, Jazz solos and many different instruments merged into an unrestricted and original genre. It was also one of the very first music genres to be broadcasted to a large audience by radio. But as radio made Western Swing great, the invention of television killed it.</p>
 
-        The big craze that was Swing swiftly got a hold on Country, because entertaining music for large venues where people could dance was a concept that could just as easily be done with Hillbilly music. Except this wasn’t done in fancy ballrooms or concert halls (like Swing), but good ol’ fashion barns. Especially in Texas and Oklahoma the genre proved very successful. Bob Wills and Milton Brown popularized the genre in the 30s, and Wills became known as the father of the genre, since he remained popular for several decades, during which he had a remarkable string of hit singles. When the new technology of amplified guitars was fitted into the Hillbilly instrument ensemble, the eclectic genre Western Swing was born. Western Swing borrowed influences from just about any other popular music genre that was already invented (which was a rather scarce collection at the time). Swing rhythms, Jazz solos and many different instruments merged into an unrestricted and original genre. It was also one of the very first music genres to be broadcasted to a large audience by radio. But as radio made Western Swing great, the invention of television killed it.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-country">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-country">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-country">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-country">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-country">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-country">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-country">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-country">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-country">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-country">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-country-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-country">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-country">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-country">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-country">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-country">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-country">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-country">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-country">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-country-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-country-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-country-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Light Crust Doughboys",
+                        track: "Tom Cat Rag",
+                        path: "../../samples/country/westernswing1.ogg"
+                    },
+                    {
+                        artist: "Bob Wills & His Texas Playboys",
+                        track: "San Antonio Rose",
+                        path: "../../samples/country/westernswing2.ogg"
+                    },
+                    {
+                        artist: "Hank Thompson",
+                        track: "The King Of Western Swing",
+                        path: "../../samples/country/westernswing3.ogg"
+                    },
+                    {
+                        artist: "Spade Cooley",
+                        track: "Miss Molly",
+                        path: "../../samples/country/westernswing4.ogg"
+                    },
+                    {
+                        artist: "Milton Brown",
+                        track: "Garbage Man Blues",
+                        path: "../../samples/country/westernswing5.ogg"
+                    },
+                    {
+                        artist: "Asleep At The Wheel",
+                        track: "Cotton Eyed Joe",
+                        path: "../../samples/country/westernswing6.ogg"
+                    },
+                    {
+                        artist: "Merle Haggard",
+                        track: "Cherokee Maiden",
+                        path: "../../samples/country/westernswing7.ogg"
+                    },
+                    {
+                        artist: "The Hot Club Of Cowtown",
+                        track: "I Had Someone Else",
+                        path: "../../samples/country/westernswing8.ogg"
+                    },
+                    {
+                        artist: "Riders In The Sky",
+                        track: "Woody's Roundup",
+                        path: "../../samples/country/westernswing9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Light Crust Doughboys",
-                    track: "Tom Cat Rag",
-                    path: "../../samples/country/westernswing1.ogg"
-                },
-                {
-                    artist: "Bob Wills & His Texas Playboys",
-                    track: "San Antonio Rose",
-                    path: "../../samples/country/westernswing2.ogg"
-                },
-                {
-                    artist: "Hank Thompson",
-                    track: "The King Of Western Swing",
-                    path: "../../samples/country/westernswing3.ogg"
-                },
-                {
-                    artist: "Spade Cooley",
-                    track: "Miss Molly",
-                    path: "../../samples/country/westernswing4.ogg"
-                },
-                {
-                    artist: "Milton Brown",
-                    track: "Garbage Man Blues",
-                    path: "../../samples/country/westernswing5.ogg"
-                },
-                {
-                    artist: "Asleep At The Wheel",
-                    track: "Cotton Eyed Joe",
-                    path: "../../samples/country/westernswing6.ogg"
-                },
-                {
-                    artist: "Merle Haggard",
-                    track: "Cherokee Maiden",
-                    path: "../../samples/country/westernswing7.ogg"
-                },
-                {
-                    artist: "The Hot Club Of Cowtown",
-                    track: "I Had Someone Else",
-                    path: "../../samples/country/westernswing8.ogg"
-                },
-                {
-                    artist: "Riders In The Sky",
-                    track: "Woody's Roundup",
-                    path: "../../samples/country/westernswing9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-country').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-country').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-country-stop').on('click', function() {
+                $('.buttons-country-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-country"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-country"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>
