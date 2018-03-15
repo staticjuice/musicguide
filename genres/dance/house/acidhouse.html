@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Acid House</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Acid House</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="acidhouse">
+        <div class="box house">
+            <h1>ACID HOUSE</h1>
 
-<body class="genre" id="acidhouse">
-    <div class="box house">
-        <h1>ACID HOUSE</h1><br>
+            <p>Originally, Acid House was strongly tied with other Classic House. In fact it was not much more than Chicago House with the added distorted sound of the infamous TB-303 bass synthesizer. By looping a certain note and then distorting the resulting wave (by cutoff, resonance or envelope), the characteristic and psychedelic <q>acid sound</q> was created, which could be used for basslines, melodies or synth stabs. It was called <q>acid</q> for its resemblance to the distorting sound of auditory hallucinations on the drug LSD, also called <q>acid</q>. This sound became so popular in the entire world of Dance music, that Acid House soon was a well-established genre on its own. But the paramount trademark of Acid House is a severance with House’s Disco influences and the corresponding gay and hipster subcultures. In Acid House, there is no longer a warm groove, no R&amp;B feel, but harsh and distorted sounds onto a loud four-to-the-floor beat. All of a sudden, House becomes something even white British Post-Punk artists can relate to, being rough and revolutionary. Though these evolutions were incidental, the consequences were unimaginable.</p>
 
-        Originally, Acid House was strongly tied with other Classic House. In fact it was not much more than Chicago House with the added distorted sound of the infamous TB-303 bass synthesizer. By looping a certain note and then distorting the resulting wave (by cutoff, resonance or envelope), the characteristic and psychedelic “acid sound” was created, which could be used for basslines, melodies or synth stabs. It was called “acid” for its resemblance to the distorting sound of auditory hallucinations on the drug LSD, also called “acid”. This sound became so popular in the entire world of Dance music, that Acid House soon was a well-established genre on its own. But the paramount trademark of Acid House is a severance with House’s Disco influences and the corresponding gay and hipster subcultures. In Acid House, there is no longer a warm groove, no R&amp;B feel, but harsh and distorted sounds onto a loud four-to-the-floor beat. All of a sudden, House becomes something even white British Post-Punk artists can relate to, being rough and revolutionary. Though these evolutions were incidental, the consequences were unimaginable.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-house-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-house-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-house-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-house-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Phuture",
+                        track: "Acid Tracks",
+                        path: "../../../samples/dance/house/acidhouse1.ogg"
+                    },
+                    {
+                        artist: "D-Mob",
+                        track: "We Call It Acieed",
+                        path: "../../../samples/dance/house/acidhouse2.ogg"
+                    },
+                    {
+                        artist: "Fast Eddie",
+                        track: "Acid Thunder",
+                        path: "../../../samples/dance/house/acidhouse3.ogg"
+                    },
+                    {
+                        artist: "Bam Bam",
+                        track: "Where's Your Child?",
+                        path: "../../../samples/dance/house/acidhouse4.ogg"
+                    },
+                    {
+                        artist: "Joey Beltram",
+                        track: "Energy Flash",
+                        path: "../../../samples/dance/house/acidhouse5.ogg"
+                    },
+                    {
+                        artist: "Mr Lee",
+                        track: "Art Of Acid",
+                        path: "../../../samples/dance/house/acidhouse6.ogg"
+                    },
+                    {
+                        artist: "Liddell Townsell",
+                        track: "As Acid Turns",
+                        path: "../../../samples/dance/house/acidhouse7.ogg"
+                    },
+                    {
+                        artist: "Michael Oliver",
+                        track: "Pump Up The Acid",
+                        path: "../../../samples/dance/house/acidhouse8.ogg"
+                    },
+                    {
+                        artist: "Phortune",
+                        track: "Jiggerwatts",
+                        path: "../../../samples/dance/house/acidhouse9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Phuture",
-                    track: "Acid Tracks",
-                    path: "../../../samples/dance/house/acidhouse1.ogg"
-                },
-                {
-                    artist: "D-Mob",
-                    track: "We Call It Acieed",
-                    path: "../../../samples/dance/house/acidhouse2.ogg"
-                },
-                {
-                    artist: "Fast Eddie",
-                    track: "Acid Thunder",
-                    path: "../../../samples/dance/house/acidhouse3.ogg"
-                },
-                {
-                    artist: "Bam Bam",
-                    track: "Where's Your Child?",
-                    path: "../../../samples/dance/house/acidhouse4.ogg"
-                },
-                {
-                    artist: "Joey Beltram",
-                    track: "Energy Flash",
-                    path: "../../../samples/dance/house/acidhouse5.ogg"
-                },
-                {
-                    artist: "Mr Lee",
-                    track: "Art Of Acid",
-                    path: "../../../samples/dance/house/acidhouse6.ogg"
-                },
-                {
-                    artist: "Liddell Townsell",
-                    track: "As Acid Turns",
-                    path: "../../../samples/dance/house/acidhouse7.ogg"
-                },
-                {
-                    artist: "Michael Oliver",
-                    track: "Pump Up The Acid",
-                    path: "../../../samples/dance/house/acidhouse8.ogg"
-                },
-                {
-                    artist: "Phortune",
-                    track: "Jiggerwatts",
-                    path: "../../../samples/dance/house/acidhouse9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-house').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-house').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-house-stop').on('click', function() {
+                $('.buttons-house-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-house"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-house"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

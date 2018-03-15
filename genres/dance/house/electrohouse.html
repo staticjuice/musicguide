@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Electro House</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Electro House</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="electrohouse">
+        <div class="box house">
+            <h1>ELECTRO HOUSE</h1>
 
-<body class="genre" id="electrohouse">
-    <div class="box house">
-        <h1>ELECTRO HOUSE</h1><br>
+            <p>In the first half of the new millennium, House was almost on life-support. The global conquest of Trance and Rock’s reclaim as the dominant popular music genre banished it into the shadows. Yet in the darkest of times, House turned the tables by redrafting its own definition. It became what is more commonly known as <q>Electro</q>, by merging Electroclash with Tech House and shaking off its characteristic warm, R&amp;B based groove. Indeed, Electro House is harsh and cold in comparison, due to dirty, distorted but basic sawtooth synth melodies and a large focus on an incoherent climax. Said climax consists of a heavy bassline, that is intensified by postponing with a tiny bit of silence. This is known as a <q>drop</q>, a musical technique which got transferred in many other types of music, especially Dubstep and EDM Trap. Electro House is also defined by minimal use of percussion and an average tempo of 130 bpm. Towards the early 2010s, the term Complextro comes into use as Electro House becomes more snappy and glitchy. However, Electro House can also be used as an umbrella term for all House genres that are directly influenced by it.</p>
 
-        In the first half of the new millennium, House was almost on life-support. The global conquest of Trance and Rock’s reclaim as the dominant popular music genre banished it into the shadows. Yet in the darkest of times, House turned the tables by redrafting its own definition. It became what is more commonly known as “Electro”, by merging Electroclash with Tech House and shaking off its characteristic warm, R&amp;B based groove. Indeed, Electro House is harsh and cold in comparison, due to dirty, distorted but basic sawtooth synth melodies and a large focus on an incoherent climax. Said climax consists of a heavy bassline, that is intensified by postponing with a tiny bit of silence. This is known as a “drop”, a musical technique which got transferred in many other types of music, especially Trapstep and Brostep. Electro House is also defined by minimal use of percussion and an average tempo of 130 bpm. Towards the early 2010s, the term Complextro comes into use as Electro House becomes more snappy and glitchy. However, Electro House can be used as an umbrella term as well for all House genres that are directly influenced by it.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-house">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-house-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-house">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-house-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-house-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-house-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Savant",
+                        track: "Bananonymous",
+                        path: "../../../samples/dance/house/electrohouse1.ogg"
+                    },
+                    {
+                        artist: "Mord Fustang",
+                        track: "Windwaker",
+                        path: "../../../samples/dance/house/electrohouse2.ogg"
+                    },
+                    {
+                        artist: "Wolfgang Gartner",
+                        track: "Illmerica",
+                        path: "../../../samples/dance/house/electrohouse3.ogg"
+                    },
+                    {
+                        artist: "Joe Garston",
+                        track: "Sunset Cruiser",
+                        path: "../../../samples/dance/house/electrohouse4.ogg"
+                    },
+                    {
+                        artist: "Astronaut",
+                        track: "Quantum",
+                        path: "../../../samples/dance/house/electrohouse5.ogg"
+                    },
+                    {
+                        artist: "Porter Robinson",
+                        track: "Language",
+                        path: "../../../samples/dance/house/electrohouse6.ogg"
+                    },
+                    {
+                        artist: "SirensCeol",
+                        track: "Atrium",
+                        path: "../../../samples/dance/house/electrohouse7.ogg"
+                    },
+                    {
+                        artist: "Electrixx",
+                        track: "Some Beats",
+                        path: "../../../samples/dance/house/electrohouse8.ogg"
+                    },
+                    {
+                        artist: "Felguk",
+                        track: "This Life",
+                        path: "../../../samples/dance/house/electrohouse9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Savant",
-                    track: "Bananonymous",
-                    path: "../../../samples/dance/house/electrohouse1.ogg"
-                },
-                {
-                    artist: "Mord Fustang",
-                    track: "Windwaker",
-                    path: "../../../samples/dance/house/electrohouse2.ogg"
-                },
-                {
-                    artist: "Wolfgang Gartner",
-                    track: "Illmerica",
-                    path: "../../../samples/dance/house/electrohouse3.ogg"
-                },
-                {
-                    artist: "Joe Garston",
-                    track: "Sunset Cruiser",
-                    path: "../../../samples/dance/house/electrohouse4.ogg"
-                },
-                {
-                    artist: "Astronaut",
-                    track: "Quantum",
-                    path: "../../../samples/dance/house/electrohouse5.ogg"
-                },
-                {
-                    artist: "Porter Robinson",
-                    track: "Language",
-                    path: "../../../samples/dance/house/electrohouse6.ogg"
-                },
-                {
-                    artist: "SirensCeol",
-                    track: "Atrium",
-                    path: "../../../samples/dance/house/electrohouse7.ogg"
-                },
-                {
-                    artist: "Electrixx",
-                    track: "Some Beats",
-                    path: "../../../samples/dance/house/electrohouse8.ogg"
-                },
-                {
-                    artist: "Felguk",
-                    track: "This Life",
-                    path: "../../../samples/dance/house/electrohouse9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-house').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-house').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-house-stop').on('click', function() {
+                $('.buttons-house-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-house"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-house"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

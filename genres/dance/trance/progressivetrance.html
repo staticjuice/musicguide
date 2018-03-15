@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Progressive Trance</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Progressive Trance</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="progressivetrance">
+        <div class="box trance">
+            <h1>PROGRESSIVE TRANCE</h1>
 
-<body class="genre" id="progressivetrance">
-    <div class="box trance">
-        <h1>PROGRESSIVE TRANCE</h1><br>
+            <p>One of the most complicated stories in popular music history is the tangle between Progressive House and Progressive Trance. The House version is very, very Trance-like and the Trance version is strongly influenced by House. The word <q>Progressive</q> in Progressive House and Trance points to a progress of chords within the music &ndash; the song gradually evolves over the course of time. Progressive Trance appears after and is influenced by (the second wave of) Progressive House. Between mainstream, radio-edited Ibiza Trance and underground, uncompromising Psytrance, there was need for a flexible middle ground. Inspired by the success and formula of Deep House, Trance evolves into much longer songs (thus easier to mix) with extended build-ups, chords and breakdowns. With an average tempo lower than most Trance (around 130 bpm) and heavy use of reverb, delay and washing sounds, Progressive Trance aims at a serious sound. Slightly heavy and gloomy and more subtle in its approach of melody (usually in a minor key), the genre is perhaps one of the most effective Trance genres to well up images from another reality.</p>
 
-        One of the most complicated stories in popular music history is the tangle between Progressive House and Progressive Trance. The House version is very, very Trance-like and the Trance version is strongly influenced by House. The word “Progressive” in Progressive House and Trance points to a progress of chords within the music &ndash; the song gradually evolves over the course of time. Progressive Trance appears after and is influenced by (the second wave of) Progressive House. Between mainstream, radio-edited Ibiza Trance and underground, uncompromising Psytrance, there was need for a flexible middle ground. Inspired by the success and formula of Deep House, Trance evolves into much longer songs (thus easier to mix) with extended build-ups, chords and breakdowns. With an average tempo lower than most Trance (around 130 bpm) and heavy use of reverb, delay and washing sounds, Progressive Trance aims at a serious sound. Slightly heavy and gloomy and more subtle in its approach of melody (usually in a minor key), the genre is perhaps one of the most effective Trance genres to well up images from another reality.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-trance">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-trance">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-trance">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-trance">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-trance">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-trance">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-trance">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-trance">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-trance">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-trance">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-trance-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-trance">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-trance">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-trance">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-trance">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-trance">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-trance">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-trance">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-trance">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-trance-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-trance-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-trance-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Markus Schulz feat. Ana Criado",
+                        track: "Surreal (Omnia Remix)",
+                        path: "../../../samples/dance/trance/progressivetrance1.ogg"
+                    },
+                    {
+                        artist: "Andy Moor vs M.I.K.E.",
+                        track: "Spirit's Pulse (Omnia Remix)",
+                        path: "../../../samples/dance/trance/progressivetrance2.ogg"
+                    },
+                    {
+                        artist: "Sneijder",
+                        track: "Away From Here (Arty Remix)",
+                        path: "../../../samples/dance/trance/progressivetrance3.ogg"
+                    },
+                    {
+                        artist: "Markus Schulz feat. Delacey",
+                        track: "Destiny",
+                        path: "../../../samples/dance/trance/progressivetrance4.ogg"
+                    },
+                    {
+                        artist: "Arnej",
+                        track: "For The People",
+                        path: "../../../samples/dance/trance/progressivetrance5.ogg"
+                    },
+                    {
+                        artist: "Andain",
+                        track: "Promises (Myon & Shane 54 Summer Of Love Mix)",
+                        path: "../../../samples/dance/trance/progressivetrance6.ogg"
+                    },
+                    {
+                        artist: "Juventa",
+                        track: "405",
+                        path: "../../../samples/dance/trance/progressivetrance7.ogg"
+                    },
+                    {
+                        artist: "Heatbeat",
+                        track: "Chow Mein",
+                        path: "../../../samples/dance/trance/progressivetrance8.ogg"
+                    },
+                    {
+                        artist: "Tritonal & Kaeno",
+                        track: "Azuca",
+                        path: "../../../samples/dance/trance/progressivetrance9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Markus Schulz feat. Ana Criado",
-                    track: "Surreal (Omnia Remix)",
-                    path: "../../../samples/dance/trance/progressivetrance1.ogg"
-                },
-                {
-                    artist: "Andy Moor vs M.I.K.E.",
-                    track: "Spirit's Pulse (Omnia Remix)",
-                    path: "../../../samples/dance/trance/progressivetrance2.ogg"
-                },
-                {
-                    artist: "Sneijder",
-                    track: "Away From Here (Arty Remix)",
-                    path: "../../../samples/dance/trance/progressivetrance3.ogg"
-                },
-                {
-                    artist: "Markus Schulz feat. Delacey",
-                    track: "Destiny",
-                    path: "../../../samples/dance/trance/progressivetrance4.ogg"
-                },
-                {
-                    artist: "Arnej",
-                    track: "For The People",
-                    path: "../../../samples/dance/trance/progressivetrance5.ogg"
-                },
-                {
-                    artist: "Andain",
-                    track: "Promises (Myon & Shane 54 Summer Of Love Mix)",
-                    path: "../../../samples/dance/trance/progressivetrance6.ogg"
-                },
-                {
-                    artist: "Juventa",
-                    track: "405",
-                    path: "../../../samples/dance/trance/progressivetrance7.ogg"
-                },
-                {
-                    artist: "Heatbeat",
-                    track: "Chow Mein",
-                    path: "../../../samples/dance/trance/progressivetrance8.ogg"
-                },
-                {
-                    artist: "Tritonal & Kaeno",
-                    track: "Azuca",
-                    path: "../../../samples/dance/trance/progressivetrance9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-trance').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-trance').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-trance-stop').on('click', function() {
+                $('.buttons-trance-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-trance"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-trance"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

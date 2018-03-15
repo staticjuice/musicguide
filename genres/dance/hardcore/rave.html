@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Rave</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rave</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="rave">
+        <div class="box hardcore">
+            <h1>RAVE</h1>
 
-<body class="genre" id="rave">
-    <div class="box hardcore">
-        <h1>RAVE</h1><br>
+            <p>What Punk was to Rock, Rave was to Dance. The all-changing, undeniable shock-revolution, shaking things up that otherwise might have gone stale. In Germany and Belgium, young, militant DJs discovered the infamous <q>hoover</q> sound &ndash; an accelerated, distorted sound of an alien vacuum cleaner being turned on. In the beginning this dark and brutal European underground Techno was purely instrumental and barely melodic, but gradually the tempo increased and the hoover sounds were used to establish an anthem like, bombastic melody. This led to a sort of Dance music unheard of &ndash; dark, hard, ecstatic and overwhelming. Rave became a party phenomenon &ndash; massive illegal and secret pop-up parties (called <q>Raves</q>) with excessive drug abuse were soon the target of a nationwide police hunt. This was even reflected in the music &ndash; alarm bells, sirens and other paranoia-inducing effects all added to the theatrical overstimulation that is Rave. The most important aspect of Rave is undoubtedly XTC. What was already a small shock during New Beat and Acid House completely erupted when the perfect XTC soundtrack was finally conceived.</p>
 
-        What Punk was to Rock, Rave was to Dance. The all-changing, undeniable shock-revolution, shaking things up that otherwise might have gone stale. In Germany and Belgium, young, militant DJs discovered the infamous “hoover” sound &ndash; an accelerated, distorted sound of an alien vacuum cleaner being turned on. In the beginning this dark and brutal European underground Techno was purely instrumental and barely melodic, but gradually the tempo increased and the hoover sounds were used to establish an anthem like, bombastic melody. This led to a sort of Dance music unheard of &ndash; dark, hard, ecstatic and overwhelming. Rave became a party phenomenon &ndash; massive illegal and secret pop-up parties (called “Raves”) with excessive drug abuse were soon the target of a nationwide police hunt. This was even reflected in the music &ndash; alarm bells, sirens and other paranoia-inducing effects all added to the theatrical overstimulation that is Rave. The most important aspect of Rave is undoubtedly XTC. What was already a small shock during New Beat and Acid House, completely erupted when the perfect XTC soundtrack was finally conceived.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hardcore">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hardcore">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hardcore">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hardcore">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hardcore">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hardcore">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hardcore">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hardcore">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hardcore">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hardcore">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-hardcore-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hardcore">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hardcore">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hardcore">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hardcore">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hardcore">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hardcore">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hardcore">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hardcore">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-hardcore-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-hardcore-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-hardcore-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Channel X",
+                        track: "Rave The Rhythm",
+                        path: "../../../samples/dance/hardcore/rave1.ogg"
+                    },
+                    {
+                        artist: "Second Phase",
+                        track: "Mentasm",
+                        path: "../../../samples/dance/hardcore/rave2.ogg"
+                    },
+                    {
+                        artist: "L.A. Style",
+                        track: "James Brown Is Dead",
+                        path: "../../../samples/dance/hardcore/rave3.ogg"
+                    },
+                    {
+                        artist: "Altern-8",
+                        track: "Activ 8",
+                        path: "../../../samples/dance/hardcore/rave4.ogg"
+                    },
+                    {
+                        artist: "Human Resource",
+                        track: "Dominator",
+                        path: "../../../samples/dance/hardcore/rave5.ogg"
+                    },
+                    {
+                        artist: "Ace The Space",
+                        track: "9 Is A Classic",
+                        path: "../../../samples/dance/hardcore/rave6.ogg"
+                    },
+                    {
+                        artist: "T99",
+                        track: "Anasthasia",
+                        path: "../../../samples/dance/hardcore/rave7.ogg"
+                    },
+                    {
+                        artist: "The Hypnotist",
+                        track: "Hardcore U Know The Score",
+                        path: "../../../samples/dance/hardcore/rave8.ogg"
+                    },
+                    {
+                        artist: "U96",
+                        track: "Das Boot",
+                        path: "../../../samples/dance/hardcore/rave9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Channel X",
-                    track: "Rave The Rhythm",
-                    path: "../../../samples/dance/hardcore/rave1.ogg"
-                },
-                {
-                    artist: "Second Phase",
-                    track: "Mentasm",
-                    path: "../../../samples/dance/hardcore/rave2.ogg"
-                },
-                {
-                    artist: "L.A. Style",
-                    track: "James Brown Is Dead",
-                    path: "../../../samples/dance/hardcore/rave3.ogg"
-                },
-                {
-                    artist: "Altern-8",
-                    track: "Activ 8",
-                    path: "../../../samples/dance/hardcore/rave4.ogg"
-                },
-                {
-                    artist: "Human Resource",
-                    track: "Dominator",
-                    path: "../../../samples/dance/hardcore/rave5.ogg"
-                },
-                {
-                    artist: "Ace The Space",
-                    track: "9 Is A Classic",
-                    path: "../../../samples/dance/hardcore/rave6.ogg"
-                },
-                {
-                    artist: "T99",
-                    track: "Anasthasia",
-                    path: "../../../samples/dance/hardcore/rave7.ogg"
-                },
-                {
-                    artist: "The Hypnotist",
-                    track: "Hardcore U Know The Score",
-                    path: "../../../samples/dance/hardcore/rave8.ogg"
-                },
-                {
-                    artist: "U96",
-                    track: "Das Boot",
-                    path: "../../../samples/dance/hardcore/rave9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-hardcore').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-hardcore').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-hardcore-stop').on('click', function() {
+                $('.buttons-hardcore-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hardcore"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-hardcore"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

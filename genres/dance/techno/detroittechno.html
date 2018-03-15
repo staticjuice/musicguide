@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Detroit Techno</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Detroit Techno</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="detroittechno">
+        <div class="box techno">
+            <h1>DETROIT TECHNO</h1>
 
-<body class="genre" id="detroittechno">
-    <div class="box techno">
-        <h1>DETROIT TECHNO</h1><br>
+            <p>Although officially originated from House, Techno already had a slumbering pre-existence before that. In the depressing, cold <q>motor city</q> of Detroit, where high unemployment rates gave little reason to celebrate, a select few composers were working with analog sequencers on another type of Dance music. Something not meant for upper class euphoric celebration, but as a soundtrack for the lower class of this city of abandoned factories and machine-like rhythm. Based on the blueprint of Funk-influenced Electro, Techno evolved, borrowing the pounding beat from Chicago House into a fast rhythm. Detroit Techno was first and foremost the brainchild of the three legendary Godfathers of Techno, known as the Belleville Three &ndash; Juan Atkins (the <q>Originator</q>), Kevin Saunderson (the <q>Elevator</q>) and Derrick May (the <q>Innovator</q>). The Belleville Three were already experimenting with electronic music in 1982, building further on the Electro legacy of Detroit. It wasn’t after the explosion of Chicago House though, that Techno truly took form as the genre we know.</p>
 
-        Although officially originated from House, Techno already had a slumbering pre-existence before that. In the depressing, cold “motor city” of Detroit, where high unemployment rates gave little reason to celebrate, a select few composers were working with analog sequencers on another type of Dance music. Something not meant for upper class euphoric celebration, but as a soundtrack for the lower class of this city of abandoned factories and machine-like rhythm. Based on the blueprint of Funk-influenced Electro, Techno evolved, borrowing the pounding beat from Chicago House into a fast rhythm. Detroit Techno was first and foremost the brainchild of the three legendary Godfathers of Techno, known as the Belleville Three &ndash; Juan Atkins (the “Originator”), Kevin Saunderson (the “Elevator”) and Derrick May (the “Innovator”). The Belleville Three were already experimenting with electronic music in 1982, building further on the Electro legacy of Detroit. It wasn’t after the explosion of Chicago House though, that Techno truly took form as the genre we know.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-techno">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-techno">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-techno">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-techno">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-techno">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-techno">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-techno">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-techno">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-techno">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-techno">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-techno-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-techno">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-techno">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-techno">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-techno">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-techno">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-techno">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-techno">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-techno">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-techno-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-techno-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-techno-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Cybotron",
+                        track: "Clear",
+                        path: "../../../samples/dance/techno/detroittechno1.ogg"
+                    },
+                    {
+                        artist: "Model 500",
+                        track: "Technicolor",
+                        path: "../../../samples/dance/techno/detroittechno2.ogg"
+                    },
+                    {
+                        artist: "Dopplereffekt",
+                        track: "Superior Race",
+                        path: "../../../samples/dance/techno/detroittechno3.ogg"
+                    },
+                    {
+                        artist: "Kenny Larkin",
+                        track: "Harmonics",
+                        path: "../../../samples/dance/techno/detroittechno4.ogg"
+                    },
+                    {
+                        artist: "Carl Craig",
+                        track: "Dreamland",
+                        path: "../../../samples/dance/techno/detroittechno5.ogg"
+                    },
+                    {
+                        artist: "Rhythim Is Rhythim",
+                        track: "Strings Of Life",
+                        path: "../../../samples/dance/techno/detroittechno6.ogg"
+                    },
+                    {
+                        artist: "Juan Atkins",
+                        track: "Techno Music",
+                        path: "../../../samples/dance/techno/detroittechno7.ogg"
+                    },
+                    {
+                        artist: "Octave One",
+                        track: "Black Water",
+                        path: "../../../samples/dance/techno/detroittechno8.ogg"
+                    },
+                    {
+                        artist: "Inner City",
+                        track: "Big Fun",
+                        path: "../../../samples/dance/techno/detroittechno9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Cybotron",
-                    track: "Clear",
-                    path: "../../../samples/dance/techno/detroittechno1.ogg"
-                },
-                {
-                    artist: "Model 500",
-                    track: "Technicolor",
-                    path: "../../../samples/dance/techno/detroittechno2.ogg"
-                },
-                {
-                    artist: "Dopplereffekt",
-                    track: "Superior Race",
-                    path: "../../../samples/dance/techno/detroittechno3.ogg"
-                },
-                {
-                    artist: "Kenny Larkin",
-                    track: "Harmonics",
-                    path: "../../../samples/dance/techno/detroittechno4.ogg"
-                },
-                {
-                    artist: "Carl Craig",
-                    track: "Dreamland",
-                    path: "../../../samples/dance/techno/detroittechno5.ogg"
-                },
-                {
-                    artist: "Rhythim Is Rhythim",
-                    track: "Strings Of Life",
-                    path: "../../../samples/dance/techno/detroittechno6.ogg"
-                },
-                {
-                    artist: "Juan Atkins",
-                    track: "Techno Music",
-                    path: "../../../samples/dance/techno/detroittechno7.ogg"
-                },
-                {
-                    artist: "Octave One",
-                    track: "Black Water",
-                    path: "../../../samples/dance/techno/detroittechno8.ogg"
-                },
-                {
-                    artist: "Inner City",
-                    track: "Big Fun",
-                    path: "../../../samples/dance/techno/detroittechno9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-techno').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-techno').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-techno-stop').on('click', function() {
+                $('.buttons-techno-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-techno"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-techno"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>
