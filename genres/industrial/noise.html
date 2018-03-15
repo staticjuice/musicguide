@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Noise</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Noise</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="noise">
+        <div class="box industrial">
+            <h1>NOISE</h1>
 
-<body class="genre" id="noise">
-    <div class="box industrial">
-        <h1>NOISE</h1><br>
+            <p>Noise music can be an incredibly broad genre name, incorporating any kind of music that harbours some sort of noise. Here it is only used as the so called <q>Noise Music Scene</q> which is a separate school of Industrial music emerging in the early 80s. At this point the Industrial scene was taking a more Dance-oriented approach, with both EBM and Electro-Industrial emerging as either more repetitive or melodic evolutions. The opposite direction &ndash; strictly noise, by any means possible &ndash; brought forth a Post-Industrial wave of Noise-related subgenres lasting until the present. The amount of subgenres, barely discernable for the untrained listener, is stupefying &ndash; Power Electronics, Death Industrial, Power Noise, Japanoise and more. Japanoise started as a vague umbrella term for anything noise-related from Japan but gradually formed into a defined genre with its own subculture. Noisecore employs extremely sharp and harsh sounds, instead of the deeper and the more subtle tones of German Industrial. It is this quest for music that no-one might like, as a nemesis of mainstream, that gives testimony to the saturation of possible music genres.</p>
 
-        Noise Music can be an incredibly broad genre name, incorporating any kind of music that harbours some sort of noise. Here it is only used as the so called “Noise Music Scene” which is a separate school of Industrial music emerging in the early 80s. At this point the Industrial scene was taking a more Dance-oriented approach, with both EBM and Electro-Industrial emerging as either more repetitive or melodic evolutions. The opposite direction &ndash; strictly noise, by any means possible &ndash; brought forth a Post-Industrial wave of Noise-related subgenres lasting until the present. The amount of subgenres, barely discernable for the untrained listener, is stupefying &ndash; Power Electronics, Death Industrial, Power Noise, Japanoise and more. Japanoise started as a vague umbrella term for anything noise related from Japan but gradually formed into a defined genre with its own subculture. Noisecore employs extremely sharp and harsh sounds, instead of the deeper and the more subtle tones of German Industrial. It is this quest for music that no-one might like, as a nemesis of mainstream, that gives testimony to the saturation of possible music genres.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-industrial-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-industrial-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-industrial-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-industrial-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Brighter Death Now",
+                        track: "There Is Nothing Left In This World",
+                        path: "../../samples/industrial/noise1.ogg"
+                    },
+                    {
+                        artist: "The New Blockaders",
+                        track: "Manifesto",
+                        path: "../../samples/industrial/noise2.ogg"
+                    },
+                    {
+                        artist: "Winterkälte",
+                        track: "Incinerator",
+                        path: "../../samples/industrial/noise3.ogg"
+                    },
+                    {
+                        artist: "Pain Jerk",
+                        track: "Aufheben",
+                        path: "../../samples/industrial/noise4.ogg"
+                    },
+                    {
+                        artist: "Msbr",
+                        track: "Zyklon B Zombie",
+                        path: "../../samples/industrial/noise5.ogg"
+                    },
+                    {
+                        artist: "Merzbow",
+                        track: "Requiem",
+                        path: "../../samples/industrial/noise6.ogg"
+                    },
+                    {
+                        artist: "Pharmakon",
+                        track: "Transmission",
+                        path: "../../samples/industrial/noise7.ogg"
+                    },
+                    {
+                        artist: "River Magic",
+                        track: "I Just Couldn't Get Thin",
+                        path: "../../samples/industrial/noise8.ogg"
+                    },
+                    {
+                        artist: "Navicon Torture Technologies",
+                        track: "Knowing No Mercy, They Rage Against Mankind",
+                        path: "../../samples/industrial/noise9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Brighter Death Now",
-                    track: "There Is Nothing Left In This World",
-                    path: "../../samples/industrial/noise1.ogg"
-                },
-                {
-                    artist: "The New Blockaders",
-                    track: "Manifesto",
-                    path: "../../samples/industrial/noise2.ogg"
-                },
-                {
-                    artist: "Winterkälte",
-                    track: "Incinerator",
-                    path: "../../samples/industrial/noise3.ogg"
-                },
-                {
-                    artist: "Pain Jerk",
-                    track: "Aufheben",
-                    path: "../../samples/industrial/noise4.ogg"
-                },
-                {
-                    artist: "Msbr",
-                    track: "Zyklon B Zombie",
-                    path: "../../samples/industrial/noise5.ogg"
-                },
-                {
-                    artist: "Merzbow",
-                    track: "Requiem",
-                    path: "../../samples/industrial/noise6.ogg"
-                },
-                {
-                    artist: "Pharmakon",
-                    track: "Transmission",
-                    path: "../../samples/industrial/noise7.ogg"
-                },
-                {
-                    artist: "River Magic",
-                    track: "I Just Couldn't Get Thin",
-                    path: "../../samples/industrial/noise8.ogg"
-                },
-                {
-                    artist: "Navicon Torture Technologies",
-                    track: "Knowing No Mercy, They Rage Against Mankind",
-                    path: "../../samples/industrial/noise9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-industrial').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-industrial').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-industrial-stop').on('click', function() {
+                $('.buttons-industrial-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-industrial"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-industrial"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

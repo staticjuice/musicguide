@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Darkwave</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Darkwave</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="darkwave">
+        <div class="box industrial">
+            <h1>DARKWAVE</h1>
 
-<body class="genre" id="darkwave">
-    <div class="box industrial">
-        <h1>DARKWAVE</h1><br>
+            <p>After the heydays of the few early Goth Rock pioneers, the Gothic movement took their legacy and started creating darker, more melancholic music with haunting synth melodies, drum machines, and Post-Punk guitar riffs. The introvert lyrics were typically about Gothic (romantic) topics. This darker form of New Wave (usually it was more Post-Punk than New Wave) was called Darkwave. Darkwave emerged in Germany as a second wave of Gothic Rock. It merged with Synthpop, and thus became much more electronic. Another genre emerged from this known as Coldwave. To the American press, Coldwave is very heavy, guitar based Darkwave and a predecessor of Industrial Rock (such as bands Chemlab, Hate Department or 16 Volt). In Europe (especially in France) Coldwave is known as a minimal, Gothic type of Synthpop. Darkwave and Coldwave encompass all Goth music from the late 80s until present. Together with Industrial Rock and Electro-Industrial it would form a musical trinity as the music of choice for the underground but undying Industrial subculture.</p>
 
-        After the heydays of the few early Goth Rock pioneers, the Gothic movement took their legacy and started creating darker, more melancholic music with haunting synth melodies, drum machines, and Post-Punk guitar riffs. The introvert lyrics were typically about Gothic (romantic) topics. This darker form of New Wave (usually it was more Post-Punk than New Wave) was called Darkwave. Darkwave emerged in Germany as a second wave of Gothic Rock. It merged with Synthpop, and thus became much more electronic. Another genre emerged from this known as Coldwave. To the American press, Coldwave is very heavy, guitar based Darkwave and a predecessor of Industrial Rock (such as bands Chemlab, Hate Department or 16 Volt). In Europe (especially in France) Coldwave is known as a minimal, Gothic type of Synthpop. Darkwave and Coldwave encompass all Goth music from the late eighties until present. Together with Industrial Rock and Electro-Industrial it would form a musical trinity as the music of choice for the underground but undying Industrial subculture.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-industrial-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-industrial-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-industrial-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-industrial-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Deine Lakaien",
+                        track: "The Night Of Love",
+                        path: "../../samples/industrial/darkwave1.ogg"
+                    },
+                    {
+                        artist: "Clan Of Xymox",
+                        track: "Stranger",
+                        path: "../../samples/industrial/darkwave2.ogg"
+                    },
+                    {
+                        artist: "Switchblade Symphony",
+                        track: "Dollhouse",
+                        path: "../../samples/industrial/darkwave3.ogg"
+                    },
+                    {
+                        artist: "The Crüxshadows",
+                        track: "Clerestory",
+                        path: "../../samples/industrial/darkwave4.ogg"
+                    },
+                    {
+                        artist: "Fields Of The Nephilim",
+                        track: "Moonchild",
+                        path: "../../samples/industrial/darkwave5.ogg"
+                    },
+                    {
+                        artist: "Cocteau Twins",
+                        track: "Millimillenary",
+                        path: "../../samples/industrial/darkwave6.ogg"
+                    },
+                    {
+                        artist: "Beborn Beton",
+                        track: "Another World",
+                        path: "../../samples/industrial/darkwave7.ogg"
+                    },
+                    {
+                        artist: "Wolfsheim",
+                        track: "The Sparrows And The Nightingales",
+                        path: "../../samples/industrial/darkwave8.ogg"
+                    },
+                    {
+                        artist: "Cabaret Voltaire",
+                        track: "Sensoria",
+                        path: "../../samples/industrial/darkwave9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Deine Lakaien",
-                    track: "The Night Of Love",
-                    path: "../../samples/industrial/darkwave1.ogg"
-                },
-                {
-                    artist: "Clan Of Xymox",
-                    track: "Stranger",
-                    path: "../../samples/industrial/darkwave2.ogg"
-                },
-                {
-                    artist: "Switchblade Symphony",
-                    track: "Dollhouse",
-                    path: "../../samples/industrial/darkwave3.ogg"
-                },
-                {
-                    artist: "The Crüxshadows",
-                    track: "Clerestory",
-                    path: "../../samples/industrial/darkwave4.ogg"
-                },
-                {
-                    artist: "Fields Of The Nephilim",
-                    track: "Moonchild",
-                    path: "../../samples/industrial/darkwave5.ogg"
-                },
-                {
-                    artist: "Cocteau Twins",
-                    track: "Millimillenary",
-                    path: "../../samples/industrial/darkwave6.ogg"
-                },
-                {
-                    artist: "Beborn Beton",
-                    track: "Another World",
-                    path: "../../samples/industrial/darkwave7.ogg"
-                },
-                {
-                    artist: "Wolfsheim",
-                    track: "The Sparrows And The Nightingales",
-                    path: "../../samples/industrial/darkwave8.ogg"
-                },
-                {
-                    artist: "Cabaret Voltaire",
-                    track: "Sensoria",
-                    path: "../../samples/industrial/darkwave9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-industrial').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-industrial').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-industrial-stop').on('click', function() {
+                $('.buttons-industrial-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-industrial"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-industrial"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

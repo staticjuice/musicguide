@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Industrial</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Industrial</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="industrial">
+        <div class="box industrial">
+            <h1>INDUSTRIAL</h1>
 
-<body class="genre" id="industrial">
-    <div class="box industrial">
-        <h1>INDUSTRIAL</h1><br>
+            <p>A conceptual artist scene taken to the extreme, where eager avant-gardists tried to be as provocative as possible &ndash; totalitarian iconography/cover art, disturbing imagery and lyrics, and using every trick in the guitar and synth book to create a repetitive but incoherent collage of factory sounds with distorted and false mumbling and minimalistic melodies. This is a genre that would sound no different than unbearable, psychotic noise for the vast majority of people &ndash; music as torture. The overwhelming majority of Industrial music comes from Germany &ndash; an unfathomable legacy of and a powerful testament to the grand experiment of Krautrock. Early Industrial draws heavily on influences from Modernism and Dadaïsm, believing in tearing down society and building it up again. Industrial likes to refer to recurring themes of constructivism, machinery, industrialization and world order &ndash; we are all gears in the clockwork of society. More than any other music genre, Industrial seeks out the bigger philosophical issues, yet does not deliver answers &ndash; only a shock treatment the likes of which have never been heard.</p>
 
-        A conceptual artist scene taken to the extreme, where eager Avant-Gardists tried to be as provocative as possible &ndash; totalitarian iconography/cover art, disturbing imagery and lyrics, and using every trick in the guitar and synth book to create a repetitive but incoherent collage of factory sounds with distorted and false mumbling and minimalistic melodies. This is a genre that would sound no different than unbearable, psychotic noise for the vast majority of people &ndash; music as torture. The overwhelming majority of Industrial music comes from Germany &ndash; an unfathomable legacy of and a powerful testament to the grand experiment of Krautrock. Early Industrial draws heavily on influences from Modernism and Dadaïsm, believing in tearing down society and building it up again. Industrial likes to refer to recurring themes of constructivism, machinery, industrialization, and world order &ndash; we are all gears in the clockwork of society. More than any other music genre, Industrial seeks out the bigger philosophical issues, yet does not deliver answers &ndash; only a shock treatment the likes of which have never been heard.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-industrial">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-industrial-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-industrial">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-industrial-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-industrial-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-industrial-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Throbbing Gristle",
+                        track: "Discipline",
+                        path: "../../samples/industrial/industrial1.ogg"
+                    },
+                    {
+                        artist: "Einstürzende Neubauten",
+                        track: "Zentrifuge",
+                        path: "../../samples/industrial/industrial2.ogg"
+                    },
+                    {
+                        artist: "SPK",
+                        track: "Twilight Of The Idols",
+                        path: "../../samples/industrial/industrial3.ogg"
+                    },
+                    {
+                        artist: "Laibach",
+                        track: "Vier Personen",
+                        path: "../../samples/industrial/industrial4.ogg"
+                    },
+                    {
+                        artist: "23 Skidoo",
+                        track: "Gregouka",
+                        path: "../../samples/industrial/industrial5.ogg"
+                    },
+                    {
+                        artist: "Test Dept",
+                        track: "Total State Machine",
+                        path: "../../samples/industrial/industrial6.ogg"
+                    },
+                    {
+                        artist: "Le Syndicat",
+                        track: "Masse-D",
+                        path: "../../samples/industrial/industrial7.ogg"
+                    },
+                    {
+                        artist: "Esplendor Geometrico",
+                        track: "Belew",
+                        path: "../../samples/industrial/industrial8.ogg"
+                    },
+                    {
+                        artist: "Meg Lee Chin",
+                        track: "Scarecrow",
+                        path: "../../samples/industrial/industrial9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Throbbing Gristle",
-                    track: "Discipline",
-                    path: "../../samples/industrial/industrial1.ogg"
-                },
-                {
-                    artist: "Einstürzende Neubauten",
-                    track: "Zentrifuge",
-                    path: "../../samples/industrial/industrial2.ogg"
-                },
-                {
-                    artist: "SPK",
-                    track: "Twilight Of The Idols",
-                    path: "../../samples/industrial/industrial3.ogg"
-                },
-                {
-                    artist: "Laibach",
-                    track: "Vier Personen",
-                    path: "../../samples/industrial/industrial4.ogg"
-                },
-                {
-                    artist: "23 Skidoo",
-                    track: "Gregouka",
-                    path: "../../samples/industrial/industrial5.ogg"
-                },
-                {
-                    artist: "Test Dept",
-                    track: "Total State Machine",
-                    path: "../../samples/industrial/industrial6.ogg"
-                },
-                {
-                    artist: "Le Syndicat",
-                    track: "Masse-D",
-                    path: "../../samples/industrial/industrial7.ogg"
-                },
-                {
-                    artist: "Esplendor Geometrico",
-                    track: "Belew",
-                    path: "../../samples/industrial/industrial8.ogg"
-                },
-                {
-                    artist: "Meg Lee Chin",
-                    track: "Scarecrow",
-                    path: "../../samples/industrial/industrial9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-industrial').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-industrial').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-industrial-stop').on('click', function() {
+                $('.buttons-industrial-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-industrial"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-industrial"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>
