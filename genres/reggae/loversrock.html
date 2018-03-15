@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Lovers Rock</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lovers Rock</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="loversrock">
+        <div class="box reggae">
+            <h1>LOVERS ROCK</h1>
 
-<body class="genre" id="loversrock">
-    <div class="box reggae">
-        <h1>LOVERS ROCK</h1><br>
+            <p>In the UK, commercial producers quickly saw the huge potential Reggae had to offer. Reggae had lost all its political and geo-sociological context once transferred to Britain and was regarded as a happy, worry-free type of music. Ironically, this was quite the opposite to how it was originally conceived. By blending Reggae with Soul, a lightweight, Pop-like music was created that succeeded in becoming a successful hit chart genre &ndash; Lovers Rock, which is also the name of one of the pioneering record labels of the sound. It was ultimately called Lovers Rock because almost all the songs were predictable love songs. But not all UK Reggae is sentimental, sugar smooth Lovers Rock. Most of it is simply the interpretation of British artists on Jamaican music, without the religious and cultural elements. Lovers Rock and UK Reggae also found their way back to Jamaica and influenced a number of artists there. In the 80s and 90s, this white Pop-inspired version of Reggae gets more and more influenced by forms of Hip Hop and electronic music, leading eventually to Reggae Fusion.</p>
 
-        In the UK, commercial producers quickly saw the huge potential Reggae had to offer. Reggae had lost all its political and geo-sociological context once transferred to Britain and was regarded as a happy, worry-free type of music. Ironically, this was quite the opposite to how it was originally conceived. By blending Reggae with Soul, a lightweight, Pop-like music was created that succeeded in becoming a successful hit chart genre &ndash; Lovers Rock, which is also the name of one of the pioneering record labels of the sound. It was ultimately called Lovers Rock because almost all the songs were predictable love songs. But not all UK Reggae is sentimental, sugar smooth Lovers Rock. Most of it is simply the interpretation of British artists on Jamaican music, without the religious and cultural elements. Lovers Rock and UK Reggae also found their way back to Jamaica and influenced a number of artists there. In the 80s and 90s, this white Pop-isnpired version of Reggae gets more and more influenced by forms of Hip Hop and electronic music, leading eventually to Reggae Fusion.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-reggae">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-reggae">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-reggae">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-reggae">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-reggae">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-reggae">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-reggae">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-reggae">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-reggae">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-reggae">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-reggae-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-reggae">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-reggae">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-reggae">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-reggae">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-reggae">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-reggae">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-reggae">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-reggae">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-reggae-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-reggae-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-reggae-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Janet Kay",
+                        track: "Silly Games",
+                        path: "../../samples/reggae/loversrock1.ogg"
+                    },
+                    {
+                        artist: "UB40",
+                        track: "Red Red Wine",
+                        path: "../../samples/reggae/loversrock2.ogg"
+                    },
+                    {
+                        artist: "Maxi Priest",
+                        track: "Wild World",
+                        path: "../../samples/reggae/loversrock3.ogg"
+                    },
+                    {
+                        artist: "Dawn Penn",
+                        track: "You Don't Love Me (No, No, No)",
+                        path: "../../samples/reggae/loversrock4.ogg"
+                    },
+                    {
+                        artist: "10cc",
+                        track: "Dreadlock Holiday",
+                        path: "../../samples/reggae/loversrock5.ogg"
+                    },
+                    {
+                        artist: "Musical Youth",
+                        track: "Pass The Dutchie",
+                        path: "../../samples/reggae/loversrock6.ogg"
+                    },
+                    {
+                        artist: "Althea & Donna",
+                        track: "Uptown Top Ranking",
+                        path: "../../samples/reggae/loversrock7.ogg"
+                    },
+                    {
+                        artist: "Sophia George",
+                        track: "Girlie Girlie",
+                        path: "../../samples/reggae/loversrock8.ogg"
+                    },
+                    {
+                        artist: "Jimmy Cliff",
+                        track: "I Can See Clearly Now",
+                        path: "../../samples/reggae/loversrock9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Janet Kay",
-                    track: "Silly Games",
-                    path: "../../samples/reggae/loversrock1.ogg"
-                },
-                {
-                    artist: "UB40",
-                    track: "Red Red Wine",
-                    path: "../../samples/reggae/loversrock2.ogg"
-                },
-                {
-                    artist: "Maxi Priest",
-                    track: "Wild World",
-                    path: "../../samples/reggae/loversrock3.ogg"
-                },
-                {
-                    artist: "Dawn Penn",
-                    track: "You Don't Love Me (No, No, No)",
-                    path: "../../samples/reggae/loversrock4.ogg"
-                },
-                {
-                    artist: "10cc",
-                    track: "Dreadlock Holiday",
-                    path: "../../samples/reggae/loversrock5.ogg"
-                },
-                {
-                    artist: "Musical Youth",
-                    track: "Pass The Dutchie",
-                    path: "../../samples/reggae/loversrock6.ogg"
-                },
-                {
-                    artist: "Althea & Donna",
-                    track: "Uptown Top Ranking",
-                    path: "../../samples/reggae/loversrock7.ogg"
-                },
-                {
-                    artist: "Sophia George",
-                    track: "Girlie Girlie",
-                    path: "../../samples/reggae/loversrock8.ogg"
-                },
-                {
-                    artist: "Jimmy Cliff",
-                    track: "I Can See Clearly Now",
-                    path: "../../samples/reggae/loversrock9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-reggae').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-reggae').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-reggae-stop').on('click', function() {
+                $('.buttons-reggae-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-reggae"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-reggae"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

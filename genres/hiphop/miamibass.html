@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Miami Bass</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Miami Bass</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="miamibass">
+        <div class="box hiphop">
+            <h1>MIAMI BASS</h1>
 
-<body class="genre" id="miamibass">
-    <div class="box hiphop">
-        <h1>MIAMI BASS</h1><br>
+            <p>Musically speaking, Miami used to be one of the most important cities in the 80s. After the arrival of sequencers and the TR-808 drum machine, local producer Amos Larkins used these tools intensively to create a new type of Electro Rap. The bass of Hip Hop beats was enhanced as hard as possible, creating a really fat, greasy bass &ndash; ideal for shaking big booties to. In a very straightforward way Miami Bass was redubbed <q>Booty Bass</q>. However, the genre probably wouldn’t have grown into a fully mature genre if it wasn’t for Miami’s <q>stereo wars</q>, where people showed off and called out each other to see who had the best, most bass-heavy stereo sound system. Images of palm trees, 80s stereo cassette boomboxes, and slick pink or leopard-print convertibles immediately spring to mind when listening to this music, which is firmly rooted within that idiosyncratic subcultural context. Miami Bass is pure summer music, with lots of fresh Electro effects and no political or serious lyrics whatsoever. It only dealt about sex and booming sounds in the most explicit way possible, like an Americanized form of Ragga.</p>
 
-        Musically speaking, Miami used to be one of the most important cities in the 80s. After the arrival of sequencers and the TR-808 drum machine, local producer Amos Larkins used these tools intensively to create a new type of Electro Rap. The bass of Rap beats was enhanced as hard as possible, creating a really fat, greasy bass &ndash; ideal for shaking big booties to. In a very straightforward way Miami Bass was redubbed “Booty Bass”. However, the genre probably wouldn’t have grown into a fully mature genre if it wasn’t for Miami’s “stereo wars”, where people showed off and called out each other to see who had the best, most bass-heavy stereo sound system. Images of palm trees, 80s stereo cassette boomboxes, and slick pink or leopard-print convertibles immediately spring to mind when listening to this music, which is firmly rooted within that idiosyncratic subcultural context. Miami Bass is pure summer music, with lots of fresh Electro effects and no political or serious lyrics whatsoever. It only dealt about sex and booming sounds in the most explicit way possible, like an Americanized form of Ragga.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-hiphop-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-hiphop-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-hiphop-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-hiphop-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "DJ Magic Mike",
+                        track: "You Want Bass",
+                        path: "../../samples/hiphop/miamibass1.ogg"
+                    },
+                    {
+                        artist: "69 Boyz",
+                        track: "Tootsee Roll",
+                        path: "../../samples/hiphop/miamibass2.ogg"
+                    },
+                    {
+                        artist: "Quad City DJs",
+                        track: "Space Jam",
+                        path: "../../samples/hiphop/miamibass3.ogg"
+                    },
+                    {
+                        artist: "Tag Team",
+                        track: "Whoomp! There It Is",
+                        path: "../../samples/hiphop/miamibass4.ogg"
+                    },
+                    {
+                        artist: "95 South",
+                        track: "Rodeo",
+                        path: "../../samples/hiphop/miamibass5.ogg"
+                    },
+                    {
+                        artist: "Uncle Al",
+                        track: "Slip 'N' Slide",
+                        path: "../../samples/hiphop/miamibass6.ogg"
+                    },
+                    {
+                        artist: "L'Trimm",
+                        track: "Cars With The Boom",
+                        path: "../../samples/hiphop/miamibass7.ogg"
+                    },
+                    {
+                        artist: "MC Luscious",
+                        track: "Boom! I Got Your Boyfriend",
+                        path: "../../samples/hiphop/miamibass8.ogg"
+                    },
+                    {
+                        artist: "Baha Men",
+                        track: "Who Let The Dogs Out",
+                        path: "../../samples/hiphop/miamibass9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "DJ Magic Mike",
-                    track: "You Want Bass",
-                    path: "../../samples/hiphop/miamibass1.ogg"
-                },
-                {
-                    artist: "69 Boyz",
-                    track: "Tootsee Roll",
-                    path: "../../samples/hiphop/miamibass2.ogg"
-                },
-                {
-                    artist: "Quad City DJs",
-                    track: "Space Jam",
-                    path: "../../samples/hiphop/miamibass3.ogg"
-                },
-                {
-                    artist: "Tag Team",
-                    track: "Whoomp! There It Is",
-                    path: "../../samples/hiphop/miamibass4.ogg"
-                },
-                {
-                    artist: "95 South",
-                    track: "Rodeo",
-                    path: "../../samples/hiphop/miamibass5.ogg"
-                },
-                {
-                    artist: "Uncle Al",
-                    track: "Slip 'N' Slide",
-                    path: "../../samples/hiphop/miamibass6.ogg"
-                },
-                {
-                    artist: "L'Trimm",
-                    track: "Cars With The Boom",
-                    path: "../../samples/hiphop/miamibass7.ogg"
-                },
-                {
-                    artist: "MC Luscious",
-                    track: "Boom! I Got Your Boyfriend",
-                    path: "../../samples/hiphop/miamibass8.ogg"
-                },
-                {
-                    artist: "Baha Men",
-                    track: "Who Let The Dogs Out",
-                    path: "../../samples/hiphop/miamibass9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-hiphop').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-hiphop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-hiphop-stop').on('click', function() {
+                $('.buttons-hiphop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hiphop"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-hiphop"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

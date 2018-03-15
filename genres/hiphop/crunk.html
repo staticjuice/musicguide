@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Crunk</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Crunk</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="crunk">
+        <div class="box hiphop">
+            <h1>CRUNK</h1>
 
-<body class="genre" id="crunk">
-    <div class="box hiphop">
-        <h1>CRUNK</h1><br>
+            <p>During the 2000s, a more uptempo, twerk-friendly, dance-oriented genre named Crunk arrives with its overlapping subgenre Snap. Crunk gets its name from shouts to the crowd, known as <q>crunks</q>. The combination of synthbass-heavy Crunk with slow-motion, criminal Hip Hop is only a small step away from Trap. Heavy use of synthesized instruments and sparse, truncated 808 drums are staples of the Crunk sound. Looped, stripped-down drum machine rhythms are usually used, with the Roland TR-808 and TR-909 being among the most popular. The tempo of the music is somewhat slower than Hip Hop, around the speed of Reggaeton. The focal point of Crunk is more often the beats and music than the lyrics therein. Crunk rappers, however, often shout and scream their lyrics, creating a heavy, aggressive style of Hip Hop. These lyrics can often be isolated to simple chants. While other subgenres of Hip Hop address sociopolitical or personal concerns, Crunk is almost exclusively party music, favouring call and response slogans in lieu of more substantive approaches.</p>
 
-        During the 2000s, a more uptempo, twerk-friendly, dance-oriented genre named Crunk arrives with its overlapping subgenre Snap. Crunk gets its name from shouts to the crowd, known as “crunks”. The combination of synthbass-heavy Crunk with slow-motion, criminal Hip Hop is only a small step away from Trap. Heavy use of synthesized instruments and sparse, truncated 808 drums are staples of the Crunk sound. Looped, stripped-down drum machine rhythms are usually used, with the Roland TR-808 and TR-909 being among the most popular. The tempo of the music is somewhat slower than Hip Hop, around the speed of Reggaeton. The focal point of Crunk is more often the beats and music than the lyrics therein. Crunk rappers, however, often shout and scream their lyrics, creating a heavy, aggressive style of Hip Hop. These lyrics can often be isolated to simple chants. While other subgenres of Hip Hop address sociopolitical or personal concerns, Crunk is almost exclusively party music, favouring call and response slogans in lieu of more substantive approaches.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-hiphop-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-hiphop">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-hiphop-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-hiphop-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-hiphop-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Lil Jon & The East Side Boyz feat. Lil Scrappy",
+                        track: "What U Gon' Do",
+                        path: "../../samples/hiphop/crunk1.ogg"
+                    },
+                    {
+                        artist: "Lil Jon & The East Side Boyz feat. Ying Yang Twins",
+                        track: "Get Low",
+                        path: "../../samples/hiphop/crunk2.ogg"
+                    },
+                    {
+                        artist: "Ludacris feat. Mystikal",
+                        track: "Move Bitch",
+                        path: "../../samples/hiphop/crunk3.ogg"
+                    },
+                    {
+                        artist: "Mystikal feat. Method Man",
+                        track: "I Get It Started",
+                        path: "../../samples/hiphop/crunk4.ogg"
+                    },
+                    {
+                        artist: "Three 6 Mafia feat. Lil Flip",
+                        track: "Ridin' Spinners",
+                        path: "../../samples/hiphop/crunk5.ogg"
+                    },
+                    {
+                        artist: "Usher feat. Lil Jon",
+                        track: "Yeah",
+                        path: "../../samples/hiphop/crunk6.ogg"
+                    },
+                    {
+                        artist: "Lil Scrappy feat. Lil Jon",
+                        track: "Head Bussa",
+                        path: "../../samples/hiphop/crunk7.ogg"
+                    },
+                    {
+                        artist: "DJ Laz",
+                        track: "Move Shake Drop",
+                        path: "../../samples/hiphop/crunk8.ogg"
+                    },
+                    {
+                        artist: "Jay-Z & Kanye West",
+                        track: "Niggas In Paris",
+                        path: "../../samples/hiphop/crunk9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Lil Jon & The East Side Boyz feat. Lil Scrappy",
-                    track: "What U Gon' Do",
-                    path: "../../samples/hiphop/crunk1.ogg"
-                },
-                {
-                    artist: "Lil Jon & The East Side Boyz feat. Ying Yang Twins",
-                    track: "Get Low",
-                    path: "../../samples/hiphop/crunk2.ogg"
-                },
-                {
-                    artist: "Ludacris feat. Mystikal",
-                    track: "Move Bitch",
-                    path: "../../samples/hiphop/crunk3.ogg"
-                },
-                {
-                    artist: "Mystikal feat. Method Man",
-                    track: "I Get It Started",
-                    path: "../../samples/hiphop/crunk4.ogg"
-                },
-                {
-                    artist: "Three 6 Mafia feat. Lil Flip",
-                    track: "Ridin' Spinners",
-                    path: "../../samples/hiphop/crunk5.ogg"
-                },
-                {
-                    artist: "Usher feat. Lil Jon",
-                    track: "Yeah",
-                    path: "../../samples/hiphop/crunk6.ogg"
-                },
-                {
-                    artist: "Lil Scrappy feat. Lil Jon",
-                    track: "Head Bussa",
-                    path: "../../samples/hiphop/crunk7.ogg"
-                },
-                {
-                    artist: "DJ Laz",
-                    track: "Move Shake Drop",
-                    path: "../../samples/hiphop/crunk8.ogg"
-                },
-                {
-                    artist: "Jay-Z & Kanye West",
-                    track: "Niggas In Paris",
-                    path: "../../samples/hiphop/crunk9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-hiphop').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-hiphop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-hiphop-stop').on('click', function() {
+                $('.buttons-hiphop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hiphop"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-hiphop"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

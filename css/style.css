@@ -39,7 +39,7 @@ p {
     background: #333;
 }
 
-#box-subpop::-webkit-scrollbar-thumb {
+.sidebar.pop::-webkit-scrollbar-thumb {
     background: #333;
     border-radius: 8px;
 }
@@ -271,7 +271,7 @@ p {
 .mainjazz .genrelist ::selection, .mainjazz .genrelist-mobile ::selection { background: rgba(21,101,192,0.998); }
 .maincountry .genrelist ::selection, .maincountry .genrelist-mobile ::selection { background: rgba(138,154,91,0.998); }
 .mainrhythmandblues .genrelist ::selection, .mainrhythmandblues .genrelist-mobile ::selection { background: rgba(0,105,92,0.998); }
-.mainpop .genrelist ::selection, .mainpop .genrelist-mobile ::selection { background: rgba(253,216,53,0.998) color: #333; }
+.mainpop .genrelist ::selection, .mainpop .genrelist-mobile ::selection { background: rgba(253,216,53,0.998); color: #333; }
 .mainrockandroll .genrelist ::selection, .mainrockandroll .genrelist-mobile ::selection { background: rgba(3,155,229,0.998); }
 .mainclassicrock .genrelist ::selection, .mainclassicrock .genrelist-mobile ::selection { background: rgba(198,40,40,0.998); }
 .mainpunk .genrelist ::selection, .mainpunk .genrelist-mobile ::selection { background: rgba(239,108,0,0.998); }
