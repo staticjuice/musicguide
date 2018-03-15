@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>African Folk</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>African Folk</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="africanfolk">
+        <div class="box folk">
+            <h1>AFRICAN FOLK</h1>
 
-<body class="genre" id="africanfolk">
-    <div class="box folk">
-        <h1>AFRICAN FOLK</h1><br>
+            <p>The traditional music of Africa, given the vastness of the continent, is historically ancient, rich and diverse, with different regions and nations of Africa having many distinct musical traditions. Music in Africa is very important when it comes to religion. Songs and music are used in rituals and religious ceremonies, to pass down stories from generation to generation, as well as to sing and dance to. Traditional music in most of the continent is passed down orally (or aurally) and is not written. In Sub-Saharan African music traditions, it frequently relies on percussion instruments of every variety, including xylophones, djembes, drums and tone-producing instruments such as the mbira or <q>thumb piano</q>. The music and dance of the African diaspora, formed to varying degrees on African musical traditions, include American music and many Caribbean genres, such as Soca, Calypso and Zouk. Latin American music genres such as the Rumba, Conga, Bomba, Cumbia and Samba were also founded on the music of enslaved Africans, and have in turn influenced African popular music.</p>
 
-        The traditional music of Africa, given the vastness of the continent, is historically ancient, rich and diverse, with different regions and nations of Africa having many distinct musical traditions. Music in Africa is very important when it comes to religion. Songs and music are used in rituals and religious ceremonies, to pass down stories from generation too generation, as well as to sing and dance to. Traditional music in most of the continent is passed down orally (or aurally) and is not written. In Sub-Saharan African music traditions, it frequently relies on percussion instruments of every variety, including xylophones, djembes, drums, and tone-producing instruments such as the mbira or "thumb piano." The music and dance of the African diaspora, formed to varying degrees on African musical traditions, include American music and many Caribbean genres, such as Soca, Calypso and Zouk. Latin American music genres such as the Rumba, Conga, Bomba, Cumbia and Samba were also founded on the music of enslaved Africans, and have in turn influenced African popular music.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-folk-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-folk-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-folk-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-folk-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Black Bear Moon Rhythm Ensemble",
+                        track: "Sofa",
+                        path: "../../samples/folk/africanfolk1.ogg"
+                    },
+                    {
+                        artist: "Universal African Dance & Drum Ensemble",
+                        track: "Forest Dance",
+                        path: "../../samples/folk/africanfolk2.ogg"
+                    },
+                    {
+                        artist: "Farafina",
+                        track: "Mogoman Wouelé",
+                        path: "../../samples/folk/africanfolk3.ogg"
+                    },
+                    {
+                        artist: "Tony Vacca",
+                        track: "Baoule Dance Song",
+                        path: "../../samples/folk/africanfolk4.ogg"
+                    },
+                    {
+                        artist: "Babatunde Olatunji",
+                        track: "Jin-Go-Lo-Ba (Jin-Go-Low-Bah)",
+                        path: "../../samples/folk/africanfolk5.ogg"
+                    },
+                    {
+                        artist: "Fore-Fote",
+                        track: "Guine Fare",
+                        path: "../../samples/folk/africanfolk6.ogg"
+                    },
+                    {
+                        artist: "The Drummers Of Burundi",
+                        track: "Extract",
+                        path: "../../samples/folk/africanfolk7.ogg"
+                    },
+                    {
+                        artist: "Sokan",
+                        track: "Aīwa Bobo",
+                        path: "../../samples/folk/africanfolk8.ogg"
+                    },
+                    {
+                        artist: "Les Ballets Africains",
+                        track: "Ballade Of Bolons",
+                        path: "../../samples/folk/africanfolk9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Black Bear Moon Rhythm Ensemble",
-                    track: "Sofa",
-                    path: "../../samples/folk/africanfolk1.ogg"
-                },
-                {
-                    artist: "Universal African Dance & Drum Ensemble",
-                    track: "Forest Dance",
-                    path: "../../samples/folk/africanfolk2.ogg"
-                },
-                {
-                    artist: "Farafina",
-                    track: "Mogoman Wouelé",
-                    path: "../../samples/folk/africanfolk3.ogg"
-                },
-                {
-                    artist: "Tony Vacca",
-                    track: "Baoule Dance Song",
-                    path: "../../samples/folk/africanfolk4.ogg"
-                },
-                {
-                    artist: "Babatunde Olatunji",
-                    track: "Jin-Go-Lo-Ba (Jin-Go-Low-Bah)",
-                    path: "../../samples/folk/africanfolk5.ogg"
-                },
-                {
-                    artist: "Fore-Fote",
-                    track: "Guine Fare",
-                    path: "../../samples/folk/africanfolk6.ogg"
-                },
-                {
-                    artist: "The Drummers Of Burundi",
-                    track: "Extract",
-                    path: "../../samples/folk/africanfolk7.ogg"
-                },
-                {
-                    artist: "Sokan",
-                    track: "Aīwa Bobo",
-                    path: "../../samples/folk/africanfolk8.ogg"
-                },
-                {
-                    artist: "Les Ballets Africains",
-                    track: "Ballade Of Bolons",
-                    path: "../../samples/folk/africanfolk9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-folk').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-folk').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-folk-stop').on('click', function() {
+                $('.buttons-folk-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-folk"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-folk"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

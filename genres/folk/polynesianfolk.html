@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Polynesian Folk</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Polynesian Folk</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="polynesianfolk">
+        <div class="box folk">
+            <h1>POLYNESIAN FOLK</h1>
 
-<body class="genre" id="polynesianfolk">
-    <div class="box folk">
-        <h1>POLYNESIAN FOLK</h1><br>
+            <p>Internationally, Polynesian music is mostly associated with twinkling guitars, grass skirts and beautiful relaxing sounds, Hawaiian hula and other tourist-friendly forms of music. While these elements are justifiably a part of Polynesian history and Polynesian culture, there is actually a wide variety of music made in the far-flung reaches of Polynesia. Traditional Hawaiian music and dance was used to express praise, communicate genealogy and mythology and accompany games, festivals and other secular events. Hawaiian music is simple in melody and rhythm, but is complex and rich in the poetry, hula and subtleties of vocal styles. Traditional Samoan musical instruments included a fala, which is a rolled-up mat beaten with sticks, often accompanied by choral singing. Amusement for small groups and individuals in private was afforded by a jaw harp, a raft panpipe and a nose-blown flute. Tongan music on the other hand, can be either very emotional and somewhat modern with instrumental makeup, including modern brass instruments or &ndash; conversely &ndash; can be very primitive and consist of only drums and vocals.</p>
 
-        Internationally, Polynesian music is mostly associated with twinkling guitars, grass skirts and beautiful relaxing sounds, Hawaiian hula and other tourist-friendly forms of music. While these elements are justifiably a part of Polynesian history and Polynesian culture, there is actually a wide variety of music made in the far-flung reaches of Polynesia. Traditional Hawaiian music and dance was used to express praise, communicate genealogy and mythology, and accompany games, festivals and other secular events. Hawaiian music is simple in melody and rhythm, but is complex and rich in the poetry, hula and subtleties of vocal styles. Traditional Samoan musical instruments included a fala, which is a rolled-up mat beaten with sticks, often accompanied by choral singing. Amusement for small groups and individuals in private was afforded by a jaw harp, a raft panpipe, and a nose-blown flute. Tongan music on the other hand, can be either very emotional and somewhat modern with instrumental makeup including modern brass instruments, or conversely can be very primitive and consist of only drums and voices.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-folk">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-folk-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-folk">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-folk-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-folk-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-folk-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Nonosina",
+                        track: "Te Tama Ma'ohi",
+                        path: "../../samples/folk/polynesianfolk1.ogg"
+                    },
+                    {
+                        artist: "Myrtle K. Hilo",
+                        track: "Kaimuki Hula",
+                        path: "../../samples/folk/polynesianfolk2.ogg"
+                    },
+                    {
+                        artist: "Pandanus Club",
+                        track: "E Ku'u Sweetie",
+                        path: "../../samples/folk/polynesianfolk3.ogg"
+                    },
+                    {
+                        artist: "Keale",
+                        track: "Nani O Kaala",
+                        path: "../../samples/folk/polynesianfolk4.ogg"
+                    },
+                    {
+                        artist: "Funga Veimumuni Group",
+                        track: "Kapuana",
+                        path: "../../samples/folk/polynesianfolk5.ogg"
+                    },
+                    {
+                        artist: "Mohe Taha Band",
+                        track: "Si'i Matangi Kuo Ma'ilinoa",
+                        path: "../../samples/folk/polynesianfolk6.ogg"
+                    },
+                    {
+                        artist: "Kátinia 'O Mahina Fekite",
+                        track: "Matiu 5:1-9",
+                        path: "../../samples/folk/polynesianfolk7.ogg"
+                    },
+                    {
+                        artist: "Lin-Manuel Miranda & Opetaia Foa'i",
+                        track: "We Know The Way",
+                        path: "../../samples/folk/polynesianfolk8.ogg"
+                    },
+                    {
+                        artist: "Patea Maori Club",
+                        track: "Poi E",
+                        path: "../../samples/folk/polynesianfolk9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Nonosina",
-                    track: "Te Tama Ma'ohi",
-                    path: "../../samples/folk/polynesianfolk1.ogg"
-                },
-                {
-                    artist: "Myrtle K. Hilo",
-                    track: "Kaimuki Hula",
-                    path: "../../samples/folk/polynesianfolk2.ogg"
-                },
-                {
-                    artist: "Pandanus Club",
-                    track: "E Ku'u Sweetie",
-                    path: "../../samples/folk/polynesianfolk3.ogg"
-                },
-                {
-                    artist: "Keale",
-                    track: "Nani O Kaala",
-                    path: "../../samples/folk/polynesianfolk4.ogg"
-                },
-                {
-                    artist: "Funga Veimumuni Group",
-                    track: "Kapuana",
-                    path: "../../samples/folk/polynesianfolk5.ogg"
-                },
-                {
-                    artist: "Mohe Taha Band",
-                    track: "Si'i Matangi Kuo Ma'ilinoa",
-                    path: "../../samples/folk/polynesianfolk6.ogg"
-                },
-                {
-                    artist: "Kátinia 'O Mahina Fekite",
-                    track: "Matiu 5:1-9",
-                    path: "../../samples/folk/polynesianfolk7.ogg"
-                },
-                {
-                    artist: "Lin-Manuel Miranda & Opetaia Foa'i",
-                    track: "We Know The Way",
-                    path: "../../samples/folk/polynesianfolk8.ogg"
-                },
-                {
-                    artist: "Patea Maori Club",
-                    track: "Poi E",
-                    path: "../../samples/folk/polynesianfolk9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-folk').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-folk').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-folk-stop').on('click', function() {
+                $('.buttons-folk-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-folk"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-folk"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

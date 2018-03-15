@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Renaissance</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Renaissance</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="renaissance">
+        <div class="box classical">
+            <h1>RENAISSANCE</h1>
 
-<body class="genre" id="renaissance">
-    <div class="box classical">
-        <h1>RENAISSANCE</h1><br>
+            <p>Renaissance music is vocal and instrumental music written and performed in Europe during the Renaissance era. Consensus among music historians has been to start the era around 1400, with the end of the Medieval era and to close it around 1600, with the beginning of the Baroque period, therefore commencing the musical Renaissance about a hundred years after the beginning of the Renaissance as it is understood in other disciplines. As in the other arts, the music of the period was significantly influenced by the developments which define the Early Modern period &ndash; the rise of humanistic thought &ndash; the recovery of the literary and artistic heritage of Ancient Greece and Ancient Rome &ndash; increased innovation and discovery &ndash; the growth of commercial enterprises &ndash; the rise of a bourgeois class &ndash; and the Protestant Reformation. From this changing society emerged a common, unifying musical language, in particular the polyphonic style (this means music with multiple, independent melody lines performed simultaneously) of the Franco-Flemish school, whose greatest master was Josquin des Prez.</p>
 
-        Renaissance music is vocal and instrumental music written and performed in Europe during the Renaissance era. Consensus among music historians has been to start the era around 1400, with the end of the Medieval era, and to close it around 1600, with the beginning of the Baroque period, therefore commencing the musical Renaissance about a hundred years after the beginning of the Renaissance as it is understood in other disciplines. As in the other arts, the music of the period was significantly influenced by the developments which define the Early Modern period &ndash; the rise of humanistic thought; the recovery of the literary and artistic heritage of Ancient Greece and Ancient Rome; increased innovation and discovery; the growth of commercial enterprises; the rise of a bourgeois class; and the Protestant Reformation. From this changing society emerged a common, unifying musical language, in particular the polyphonic style (this means music with multiple, independent melody lines performed simultaneously) of the Franco-Flemish school, whose greatest master was Josquin des Prez.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classical">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classical">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classical">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classical">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classical">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classical">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classical">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classical">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classical">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-classical">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-classical-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classical">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classical">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classical">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classical">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classical">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classical">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classical">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-classical">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-classical-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-classical-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-classical-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Giorgio Mainerio",
+                        track: "Schiarazula Marazula",
+                        path: "../../samples/classical/renaissance1.ogg"
+                    },
+                    {
+                        artist: "Giovanni Gabrieli",
+                        track: "Canzona Seconda",
+                        path: "../../samples/classical/renaissance2.ogg"
+                    },
+                    {
+                        artist: "Vincenzo Galilei",
+                        track: "Contrapunto Secondo",
+                        path: "../../samples/classical/renaissance3.ogg"
+                    },
+                    {
+                        artist: "Giovanni Giacomo Gastoldi",
+                        track: "Il Tedesco",
+                        path: "../../samples/classical/renaissance4.ogg"
+                    },
+                    {
+                        artist: "Alessandro Orologio",
+                        track: "Intrada XXI",
+                        path: "../../samples/classical/renaissance5.ogg"
+                    },
+                    {
+                        artist: "Francesco Bendusi",
+                        track: "Pass'e Mezo Ditto Il Romano",
+                        path: "../../samples/classical/renaissance6.ogg"
+                    },
+                    {
+                        artist: "Vincenzo Ruffo",
+                        track: "La Gamba",
+                        path: "../../samples/classical/renaissance7.ogg"
+                    },
+                    {
+                        artist: "Alfonso X El Sabio",
+                        track: "Rosa Das Rosas",
+                        path: "../../samples/classical/renaissance8.ogg"
+                    },
+                    {
+                        artist: "The Renaissance Music Players",
+                        track: "Branle De Bourgogne",
+                        path: "../../samples/classical/renaissance9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Giorgio Mainerio",
-                    track: "Schiarazula Marazula",
-                    path: "../../samples/classical/renaissance1.ogg"
-                },
-                {
-                    artist: "Giovanni Gabrieli",
-                    track: "Canzona Seconda",
-                    path: "../../samples/classical/renaissance2.ogg"
-                },
-                {
-                    artist: "Vincenzo Galilei",
-                    track: "Contrapunto Secondo",
-                    path: "../../samples/classical/renaissance3.ogg"
-                },
-                {
-                    artist: "Giovanni Giacomo Gastoldi",
-                    track: "Il Tedesco",
-                    path: "../../samples/classical/renaissance4.ogg"
-                },
-                {
-                    artist: "Alessandro Orologio",
-                    track: "Intrada XXI",
-                    path: "../../samples/classical/renaissance5.ogg"
-                },
-                {
-                    artist: "Francesco Bendusi",
-                    track: "Pass'e Mezo Ditto Il Romano",
-                    path: "../../samples/classical/renaissance6.ogg"
-                },
-                {
-                    artist: "Vincenzo Ruffo",
-                    track: "La Gamba",
-                    path: "../../samples/classical/renaissance7.ogg"
-                },
-                {
-                    artist: "Alfonso X El Sabio",
-                    track: "Rosa Das Rosas",
-                    path: "../../samples/classical/renaissance8.ogg"
-                },
-                {
-                    artist: "The Renaissance Music Players",
-                    track: "Branle De Bourgogne",
-                    path: "../../samples/classical/renaissance9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-classical').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-classical').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-classical-stop').on('click', function() {
+                $('.buttons-classical-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-classical"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-classical"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>
