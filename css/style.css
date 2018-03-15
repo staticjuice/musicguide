@@ -728,11 +728,6 @@ p {
 /*---------------------------------------------------------------------------*/
 
 @media (max-width: 767px) {
-    .allgenres {
-        background-color: #212121;
-        background-image: none;
-    }
-
     #dance {
         overflow: auto;
     }
