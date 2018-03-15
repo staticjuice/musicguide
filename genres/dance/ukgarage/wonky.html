@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Wonky</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wonky</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="wonky">
+        <div class="box ukgarage">
+            <h1>WONKY</h1>
 
-<body class="genre" id="wonky">
-    <div class="box ukgarage">
-        <h1>WONKY</h1><br>
+            <p>At the beginning of the 2010s, Glitch Hop merged with a number of genres into a much larger style that can be described as a sort of off-kilter and low-slung form of Hip Hop. Apart from Dubstep-influenced beats, the main characteristic of Wonky are its heavily distorted mid-frequency synthlines (both bass and melody) that seem to be broken (a typical Glitch thing) by their unstable or <q>wonky</q> sound. The <q>wet and unstable</q> sound of Wonky is achieved by producing mid-range basses using pitch bending, LFOs on lowpassing and highpassing as well as phasing and delaying. The resonance parameters of the synth's LFOs are often high, giving the synth and bass unique <q>wonky</q> sounds. Wonky can be regarded as the <q>IDM</q> of Hip Hop &ndash; experimenting with unexpected sounds, interrupts and unconventional techniques. Many Wonky artists also reside at Warp Records, the principal IDM label. Wonky has some overlapping with Post-Dubstep and forms therefore another bridge between Hip Hop and UK Garage or Drum &amp; Bass, next to EDM Trap. Lately these supergenres have become more intertwined leading to some interesting results.</p>
 
-        At the beginning of the 2010s, Glitch Hop merged with a number of genres into a much larger style that can be described as a sort of off-kilter and low-slung form of Hip Hop. Apart from Dubstep-influenced beats, the main characteristic of Wonky are its heavily distorted mid-frequency synthlines (both bass and melody) that seem to be broken (a typical Glitch thing) by their unstable or “wonky” sound. The "wet and unstable" sound of Wonky is achieved by producing mid-range basses using pitch bending, LFOs on lowpassing and highpassing as well as phasing and delaying. The resonance parameters of the synth's LFOs are often high, giving the synth and bass unique "wonky" sounds. Wonky can be regarded as the “IDM” of Hip Hop &ndash; experimenting with unexpected sounds, interrupts and unconventional techniques. Many Wonky artists also reside at Warp Records, the principal IDM label. Wonky has some overlapping with Post-Dubstep and forms therefore another bridge between Hip Hop and UK Garage or Drum &amp; Bass, next to Trapstep. Lately these supergenres have become more intertwined leading to some interesting results.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-ukgarage">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-ukgarage">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-ukgarage">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-ukgarage">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-ukgarage">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-ukgarage">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-ukgarage">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-ukgarage">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-ukgarage">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-ukgarage">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-ukgarage-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-ukgarage">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-ukgarage">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-ukgarage">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-ukgarage">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-ukgarage">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-ukgarage">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-ukgarage">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-ukgarage">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-ukgarage-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-ukgarage-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-ukgarage-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Flume",
+                        track: "Sintra",
+                        path: "../../../samples/dance/ukgarage/wonky1.ogg"
+                    },
+                    {
+                        artist: "Dillon Francis feat. TEED",
+                        track: "Without You (Hayden James Remix)",
+                        path: "../../../samples/dance/ukgarage/wonky2.ogg"
+                    },
+                    {
+                        artist: "Grynpyret",
+                        track: "A Song About Naps",
+                        path: "../../../samples/dance/ukgarage/wonky3.ogg"
+                    },
+                    {
+                        artist: "Eskmo",
+                        track: "Cloudlight",
+                        path: "../../../samples/dance/ukgarage/wonky4.ogg"
+                    },
+                    {
+                        artist: "Baths",
+                        track: "Apologetic Shoulder Blades",
+                        path: "../../../samples/dance/ukgarage/wonky5.ogg"
+                    },
+                    {
+                        artist: "Electric Mantis",
+                        track: "Daybreak",
+                        path: "../../../samples/dance/ukgarage/wonky6.ogg"
+                    },
+                    {
+                        artist: "Lapalux",
+                        track: "Don't Mean A Thing",
+                        path: "../../../samples/dance/ukgarage/wonky7.ogg"
+                    },
+                    {
+                        artist: "Samiyam",
+                        track: "Catch Me Riding Dirty",
+                        path: "../../../samples/dance/ukgarage/wonky8.ogg"
+                    },
+                    {
+                        artist: "Shigeto",
+                        track: "Soul Searching",
+                        path: "../../../samples/dance/ukgarage/wonky9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Flume",
-                    track: "Sintra",
-                    path: "../../../samples/dance/ukgarage/wonky1.ogg"
-                },
-                {
-                    artist: "Dillon Francis feat. TEED",
-                    track: "Without You (Hayden James Remix)",
-                    path: "../../../samples/dance/ukgarage/wonky2.ogg"
-                },
-                {
-                    artist: "Grynpyret",
-                    track: "A Song About Naps",
-                    path: "../../../samples/dance/ukgarage/wonky3.ogg"
-                },
-                {
-                    artist: "Eskmo",
-                    track: "Cloudlight",
-                    path: "../../../samples/dance/ukgarage/wonky4.ogg"
-                },
-                {
-                    artist: "Baths",
-                    track: "Apologetic Shoulder Blades",
-                    path: "../../../samples/dance/ukgarage/wonky5.ogg"
-                },
-                {
-                    artist: "Electric Mantis",
-                    track: "Daybreak",
-                    path: "../../../samples/dance/ukgarage/wonky6.ogg"
-                },
-                {
-                    artist: "Lapalux",
-                    track: "Don't Mean A Thing",
-                    path: "../../../samples/dance/ukgarage/wonky7.ogg"
-                },
-                {
-                    artist: "Samiyam",
-                    track: "Catch Me Riding Dirty",
-                    path: "../../../samples/dance/ukgarage/wonky8.ogg"
-                },
-                {
-                    artist: "Shigeto",
-                    track: "Soul Searching",
-                    path: "../../../samples/dance/ukgarage/wonky9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-ukgarage').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-ukgarage').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-ukgarage-stop').on('click', function() {
+                $('.buttons-ukgarage-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-ukgarage"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-ukgarage"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>

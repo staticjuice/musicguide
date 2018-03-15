@@ -1,195 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Lowercase</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lowercase</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
-</head>
+    <body class="genre" id="lowercase">
+        <div class="box downtempo">
+            <h1>LOWERCASE</h1>
 
-<body class="genre" id="lowercase">
-    <div class="box downtempo">
-        <h1>LOWERCASE</h1><br>
+            <p>One of the final chapters in the history of Downtempo music marks a return to heavy experimentation, after an era of more or less popular Ambient Dance. The radical concept this time was to create silence instead of music (without actually creating silence, which wouldn’t present any challenge). Long passages of silences are being highlighted by very quiet sounds, not to break formality, but to enhance the contrast by heavily manipulated sounds that would leap out and catch the listener unaware. These can be ambient sounds, like Steve Roden’s experiments with folding paper, or something uncanny like holding a sound microscope to an insect breathing. The combination of Lowercase’s song names with their track lengths exposes its radical concept. What we have here then, is without a doubt the least prominent of all music genres, and fittingly coined <q>Lowercase</q>. Many Lowercase artists also create Glitch music and like to switch between styles to stay fresh and unexpected. Lowercase is music that is there and isn’t there &ndash; it exists momentarily, illustrating the almost century-long struggle of electronic composers to make music a living thing.</p>
 
-        One of the final chapters in the history of Downtempo music marks a return to heavy experimentation, after an era of more or less popular Ambient Dance. The radical concept this time was to create silence instead of music (without actually creating silence, which wouldn’t present any challenge). Long passages of silences are being highlighted by very quiet sounds, not to break formality, but to enhance the contrast by heavily manipulated sounds that would leap out and catch the listener unaware. These can be ambient sounds, like Steve Roden’s experiments with folding paper, or something uncanny like holding a sound microscope to an insect breathing. The combination of Lowercase’s song names with their track lengths exposes its radical concept. What we have here then, is without a doubt the least prominent of all music genres, and fittingly coined “Lowercase”. Many Lowercase artists also create Glitch music and like to switch between styles to stay fresh and unexpected. Lowercase is music that is there and isn’t there &ndash; it exists momentarily, illustrating the almost century-long struggle of electronic composers to make music a living thing.<br><br>
-
-        <div class="row icon-list">
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-downtempo">1</div>
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-downtempo">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-downtempo">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-downtempo">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-downtempo">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-downtempo">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-downtempo">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-downtempo">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-downtempo">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-downtempo">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-downtempo-stop">&#9724;</div></div>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-downtempo">2</div>
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
             </div>
 
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-downtempo">3</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-downtempo">4</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-downtempo">5</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-downtempo">6</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-downtempo">7</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-downtempo">8</div>
-            </div>
-
-            <div class="col-sm-1 col-xs-1">
-                <div class="buttons buttons-downtempo">9</div>
-            </div>
-
-            <div class="visible-xs col-xs-1">
-                <div class="buttons buttons-downtempo-stop">&#9724;</div>
-            </div>
+            <div class="d-none d-md-block col-md-1 stop"><div class="buttons buttons-downtempo-stop">&#9724;</div></div>
         </div>
 
-        <div class="example"><br>
-            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-            <p class="artisttrack">Track: <span id="track"></span></p>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div class="hidden-xs col-sm-1 stop">
-            <div class="buttons buttons-downtempo-stop">&#9724;</div>
-        </div>
-    </div>
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Steve Roden",
+                        track: "7:12",
+                        path: "../../samples/downtempo/lowercase1.ogg"
+                    },
+                    {
+                        artist: "Kim Cascone",
+                        track: "Rotational Beacon",
+                        path: "../../samples/downtempo/lowercase2.ogg"
+                    },
+                    {
+                        artist: "Richard Chartier",
+                        track: "Silver",
+                        path: "../../samples/downtempo/lowercase3.ogg"
+                    },
+                    {
+                        artist: "Daniel Menche",
+                        track: "Untitled-3",
+                        path: "../../samples/downtempo/lowercase4.ogg"
+                    },
+                    {
+                        artist: "Vladislav Delay",
+                        track: "Pietola",
+                        path: "../../samples/downtempo/lowercase5.ogg"
+                    },
+                    {
+                        artist: "Microstoria",
+                        track: "16:9",
+                        path: "../../samples/downtempo/lowercase6.ogg"
+                    },
+                    {
+                        artist: "Taylor Deupree",
+                        track: "Shoals",
+                        path: "../../samples/downtempo/lowercase7.ogg"
+                    },
+                    {
+                        artist: "Pjusk",
+                        track: "Valldal",
+                        path: "../../samples/downtempo/lowercase8.ogg"
+                    },
+                    {
+                        artist: "SND",
+                        track: "000009 a.1",
+                        path: "../../samples/downtempo/lowercase9.ogg"
+                    }
+                ]
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
 
-    <script>
-        $(document).ready(function() {
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
 
-
-            var tracks = [
-                {
-                    artist: "Steve Roden",
-                    track: "7:12",
-                    path: "../../samples/downtempo/lowercase1.ogg"
-                },
-                {
-                    artist: "Kim Cascone",
-                    track: "Rotational Beacon",
-                    path: "../../samples/downtempo/lowercase2.ogg"
-                },
-                {
-                    artist: "Richard Chartier",
-                    track: "Silver",
-                    path: "../../samples/downtempo/lowercase3.ogg"
-                },
-                {
-                    artist: "Daniel Menche",
-                    track: "Untitled-3",
-                    path: "../../samples/downtempo/lowercase4.ogg"
-                },
-                {
-                    artist: "Vladislav Delay",
-                    track: "Pietola",
-                    path: "../../samples/downtempo/lowercase5.ogg"
-                },
-                {
-                    artist: "Microstoria",
-                    track: "16:9",
-                    path: "../../samples/downtempo/lowercase6.ogg"
-                },
-                {
-                    artist: "Taylor Deupree",
-                    track: "Shoals",
-                    path: "../../samples/downtempo/lowercase7.ogg"
-                },
-                {
-                    artist: "Pjusk",
-                    track: "Valldal",
-                    path: "../../samples/downtempo/lowercase8.ogg"
-                },
-                {
-                    artist: "SND",
-                    track: "000009 a.1",
-                    path: "../../samples/downtempo/lowercase9.ogg"
-                }
-            ]
-
-            tracks.forEach(track => {
-                const audio = new Audio()
-                audio.addEventListener('canplaythrough', null, false)
-                audio.src = track.path
-            })
-
-            var artistSpan = $(document).find('#artist')[0]
-
-            var track = $(document).find('#track')[0]
-
-            var audioInstanceArray = [];
-
-            var buttons = [];
-
-            var audioInstance;
-
-            $(document).find('.buttons-downtempo').each(function(index, button) {
-
-                buttons.push(button);
-
-                $(this).click(function() {
-
-                    removeAllButtonBorders()
-
-                    $(this).toggleClass('clicked');
-
-                    stopAllMusic()
-
-                    audioInstance = new Audio(tracks[index].path);
-                    audioInstanceArray.push(audioInstance);
-                    audioInstance.play();
-
-                    artistSpan.innerHTML = tracks[index].artist
-                    track.innerHTML = tracks[index].track
-
+                $(document).find('.buttons-downtempo').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
                 });
-            });
 
-            $('.buttons-downtempo-stop').on('click', function() {
+                $('.buttons-downtempo-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
 
-                stopAllMusic()
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-downtempo"
+                    )
+                }
 
-                artistSpan.innerHTML = ''
-                track.innerHTML = ''
-
-                removeAllButtonBorders()
-
-            });
-
-            var removeAllButtonBorders = () => {
-                buttons.forEach(
-                    button => button.className = "buttons buttons-downtempo"
-                )
-            }
-
-            var stopAllMusic = () => {
-                 audioInstanceArray.forEach(function(audioInstance, index) {
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
                         audioInstance.pause();
                         audioInstance.currentTime = 0;
                         audioInstanceArray.pop();
                     });
-            }
-
-        });
-
-    </script>
-
-</body>
+                }
+            });
+        </script>
+    </body>
 </html>
