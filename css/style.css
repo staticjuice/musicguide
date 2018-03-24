@@ -215,11 +215,11 @@ p {
 .mainblues:before { background: url("../images/bluesbig.jpg") no-repeat center center fixed; }
 .mainjazz:before { background: url("../images/jazzbig.jpg") no-repeat center center fixed; }
 .maincountry:before { background: url("../images/countrybig.jpg") no-repeat center center fixed; }
-.mainrhythmandblues:before { background: url("../images/rhythmandbluesbig.jpg") no-repeat center center fixed; }
+.mainrhythmandblues:before { background: url("../images/rhythmandblues/motown.jpg") no-repeat center center fixed; }
 .mainpop:before { background: url("../images/popbig.jpg") no-repeat center center fixed; }
-.mainrockandroll:before { background: url("../images/rockandrollbig.jpg") no-repeat center center fixed; }
+.mainrockandroll:before { background: url("../images/rock/rockandroll.jpg") no-repeat center center fixed; }
 .mainclassicrock:before { background: url("../images/classicrockbig.jpg") no-repeat center center fixed; }
-.mainpunk:before { background: url("../images/punkbig.jpg") no-repeat center center fixed; }
+.mainpunk:before { background: url("../images/rock/punkrock.jpg") no-repeat center center fixed; }
 .mainalternative:before { background: url("../images/alternativebig.jpg") no-repeat center center fixed; }
 .mainmetal:before { background: url("../images/metalbig.jpg") no-repeat center center fixed; }
 .mainreggae:before { background: url("../images/reggaebig.jpg") no-repeat center center fixed; }
