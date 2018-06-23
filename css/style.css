@@ -437,7 +437,6 @@ p {
 #posthardcore {background: url("../images/rock/posthardcore.jpg") no-repeat center center fixed;}
 
 #janglepop {background: url("../images/rock/janglepop.jpg") no-repeat center center fixed;}
-#noiserock {background: url("../images/rock/noiserock.jpg") no-repeat center center fixed;}
 #shoegaze {background: url("../images/rock/shoegaze.jpg") no-repeat center center fixed;}
 #grunge {background: url("../images/rock/grunge.jpg") no-repeat center center fixed;}
 #britpop {background: url("../images/rock/britpop.jpg") no-repeat center center fixed;}
@@ -466,7 +465,6 @@ p {
 #numetal {background: url("../images/metal/numetal.jpg") no-repeat center center fixed;}
 #nwoahm {background: url("../images/metal/nwoahm.jpg") no-repeat center center fixed;}
 
-#mento {background: url("../images/reggae/mento.jpg") no-repeat center center fixed;}
 #ska {background: url("../images/reggae/ska.jpg") no-repeat center center fixed;}
 #rocksteady {background: url("../images/reggae/rocksteady.jpg") no-repeat center center fixed;}
 #reggae {background: url("../images/reggae/reggae.jpg") no-repeat center center fixed;}
@@ -485,7 +483,6 @@ p {
 #southernrap {background: url("../images/hiphop/southernrap.jpg") no-repeat center center fixed;}
 #crunk {background: url("../images/hiphop/crunk.jpg") no-repeat center center fixed;}
 #trap {background: url("../images/hiphop/trap.jpg") no-repeat center center fixed;}
-#contemporaryrap {background: url("../images/hiphop/contemporaryrap.jpg") no-repeat center center fixed;}
 
 #industrial {background: url("../images/industrial/industrial.jpg") no-repeat center center fixed;}
 #gothrock {background: url("../images/industrial/gothrock.jpg") no-repeat center center fixed;}
@@ -506,9 +503,8 @@ p {
 #electrohouse {background: url("../images/dance/electrohouse.jpg") no-repeat center center fixed;}
 #bigroomhouse {background: url("../images/dance/bigroomhouse.jpg") no-repeat center center fixed;}
 #electroswing {background: url("../images/dance/electroswing.jpg") no-repeat center center fixed;}
-#nudisco {background: url("../images/dance/nudisco.jpg") no-repeat center center fixed;}
 #tropicalhouse {background: url("../images/dance/tropicalhouse.jpg") no-repeat center center fixed;}
-#futurehouse {background: url("../images/dance/futurehouse.jpg") no-repeat center center fixed;}
+#nudisco {background: url("../images/dance/nudisco.jpg") no-repeat center center fixed;}
 
 #acidtrance {background: url("../images/dance/acidtrance.jpg") no-repeat center center fixed;}
 #ibizatrance {background: url("../images/dance/ibizatrance.jpg") no-repeat center center fixed;}
@@ -531,12 +527,10 @@ p {
 #gabber {background: url("../images/dance/gabber.jpg") no-repeat center center fixed;}
 #happyhardcore {background: url("../images/dance/happyhardcore.jpg") no-repeat center center fixed;}
 #speedcore {background: url("../images/dance/speedcore.jpg") no-repeat center center fixed;}
-#breakcore {background: url("../images/dance/breakcore.jpg") no-repeat center center fixed;}
 #trancecore {background: url("../images/dance/trancecore.jpg") no-repeat center center fixed;}
 #hardstyle {background: url("../images/dance/hardstyle.jpg") no-repeat center center fixed;}
 
 #electro {background: url("../images/dance/electro.jpg") no-repeat center center fixed;}
-#freestyle {background: url("../images/dance/freestyle.jpg") no-repeat center center fixed;}
 #floridabreaks {background: url("../images/dance/floridabreaks.jpg") no-repeat center center fixed;}
 #bigbeat {background: url("../images/dance/bigbeat.jpg") no-repeat center center fixed;}
 #nuskoolbreaks {background: url("../images/dance/nuskoolbreaks.jpg") no-repeat center center fixed;}
@@ -567,11 +561,9 @@ p {
 #ambient {background: url("../images/downtempo/ambient.jpg") no-repeat center center fixed;}
 #newage {background: url("../images/downtempo/newage.jpg") no-repeat center center fixed;}
 #chiptune {background: url("../images/downtempo/chiptune.png") no-repeat center center fixed;}
-#idm {background: url("../images/downtempo/idm.jpg") no-repeat center center fixed;}
 #triphop {background: url("../images/downtempo/triphop.jpg") no-repeat center center fixed;}
 #illbient {background: url("../images/downtempo/illbient.jpg") no-repeat center center fixed;}
 #glitch {background: url("../images/downtempo/glitch.jpg") no-repeat center center fixed;}
-#lowercase {background: url("../images/downtempo/lowercase.jpg") no-repeat center center fixed;}
 #synthwave {background: url("../images/downtempo/synthwave.jpg") no-repeat center center fixed;}
 #vaporwave {background: url("../images/downtempo/vaporwave.jpg") no-repeat center center fixed;}
 
