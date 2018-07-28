@@ -89,7 +89,7 @@ p {
 
 #genres-heading {
     margin: 2vw 9vw;
-    font-size: 1.5em;
+    font-size: 1.5vw;
     color: #FFF;
 }
 
@@ -713,7 +713,7 @@ p {
 
 /*---------------------------------------------------------------------------*/
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
     a {
         transition: none;
     }
