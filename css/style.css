@@ -258,7 +258,7 @@ p {
 .mainhardcore .genrelist a:hover, .mainhardcore .genrelist-mobile a:hover { color: #70675C; }
 .mainbreakbeat .genrelist a:hover, .mainbreakbeat .genrelist-mobile a:hover { color: #A95B83; }
 .maindrumandbass .genrelist a:hover, .maindrumandbass .genrelist-mobile a:hover { color: #DD2251; }
-.mainukgarage .genrelist a:hover, .mainukgarage .genrelist-mobile a:hover { color: #D1C4E9; }
+.mainukgarage .genrelist a:hover, .mainukgarage .genrelist-mobile a:hover { color: #B59DDB; }
 .maindowntempo .genrelist a:hover, .maindowntempo .genrelist-mobile a:hover { color: #EC407A; }
 .mainclassical .genrelist a:hover, .mainclassical .genrelist-mobile a:hover { color: #A18259; }
 .mainfolk .genrelist a:hover, .mainfolk .genrelist-mobile a:hover { color: #D8C188; }
@@ -285,7 +285,7 @@ p {
 .mainhardcore .genrelist ::selection, .mainhardcore .genrelist-mobile ::selection { background: rgba(70,64,57,0.998); }
 .mainbreakbeat .genrelist ::selection, .mainbreakbeat .genrelist-mobile ::selection { background: rgba(120,63,93,0.998); }
 .maindrumandbass .genrelist ::selection, .maindrumandbass .genrelist-mobile ::selection { background: rgba(154,24,57,0.998); }
-.mainukgarage .genrelist ::selection, .mainukgarage .genrelist-mobile ::selection { background: rgba(149,117,205,0.998); }
+.mainukgarage .genrelist ::selection, .mainukgarage .genrelist-mobile ::selection { background: rgba(143,124,173,0.998); }
 .maindowntempo .genrelist ::selection, .maindowntempo .genrelist-mobile ::selection { background: rgba(194,24,91,0.998); }
 .mainclassical .genrelist ::selection, .mainclassical .genrelist-mobile ::selection { background: rgba(112,90,61,0.998); }
 .mainfolk .genrelist ::selection, .mainfolk .genrelist-mobile ::selection { background: rgba(198,164,77,0.998); }
@@ -340,7 +340,7 @@ p {
 .hardcore { background-color: #464039; color: #FFF; }
 .breakbeat { background-color: #783F5D; color: #FFF; }
 .drumandbass { background-color: #9A1839; color: #FFF; }
-.ukgarage { background-color: #9575CD; color: #FFF; }
+.ukgarage { background-color: #8F7CAD; color: #FFF; }
 .downtempo { background-color: #C2185B; color: #FFF; }
 .classical { background-color: #705A3D; color: #FFF; }
 .folk { background-color: #C6A44D; color: #FFF; }
@@ -619,7 +619,7 @@ p {
 .buttons-hardcore, .buttons-hardcore-stop { background-color: #625A50; }
 .buttons-breakbeat, .buttons-breakbeat-stop { background-color: #9A5177; }
 .buttons-drumandbass, .buttons-drumandbass-stop { background-color: #C71F49; }
-.buttons-ukgarage, .buttons-ukgarage-stop { background-color: #B39DDB; }
+.buttons-ukgarage, .buttons-ukgarage-stop { background-color: #A892CC; }
 .buttons-downtempo, .buttons-downtempo-stop { background-color: #E91E63; }
 .buttons-classical, .buttons-classical-stop { background-color: #917550; }
 .buttons-folk, .buttons-folk-stop { background-color: #D2B774; }
@@ -646,7 +646,7 @@ p {
 .buttons-hardcore:hover, .buttons-hardcore-stop:hover { background-color: #70675C; }
 .buttons-breakbeat:hover, .buttons-breakbeat-stop:hover { background-color: #A95B83; }
 .buttons-drumandbass:hover, .buttons-drumandbass-stop:hover { background-color: #DD2251; }
-.buttons-ukgarage:hover, .buttons-ukgarage-stop:hover { background-color: #D1C4E9; }
+.buttons-ukgarage:hover, .buttons-ukgarage-stop:hover { background-color: #B59DDB; }
 .buttons-downtempo:hover, .buttons-downtempo-stop:hover { background-color: #EC407A; }
 .buttons-classical:hover, .buttons-classical-stop:hover { background-color: #A18259; }
 .buttons-folk:hover, .buttons-folk-stop:hover { background-color: #D8C188; }
