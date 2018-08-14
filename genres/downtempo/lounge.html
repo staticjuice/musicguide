@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Lounge</title>
+    </head>
+
+    <body class="genre" id="lounge">
+        <div class="box downtempo">
+            <h1>LOUNGE</h1>
+
+            <p>Lounge is the term for background music in the 50s and 60s at bars, social places, and of course hotel lounges. It’s music to make people comfortable and relaxed without drawing too much attention to itself. The first wave of Lounge is a loose collection of related subgenres, often based on the template of Swing &ndash; Space Age Pop (named after the Space Age and with many Latin Jazz influences) and Exotica (similar, but with more Hawaiian or Caribbean influences). All these genres are connected by their warm, exotic and cozy feel, stirring up a picture of another place &ndash; an exotic retro dreamworld to take the listener on holiday while relaxing. In the 60s, Lounge gets annihilated by the success of Rock and it would take three decades to get back on its feet. A revival of acoustic Lounge occurred in the 90s, but its success was little compared to another wave of Lounge taking place at the same time. In this wave, Jazz was replaced by soft, slow, electronic sounds and the word 'Lounge' got a new meaning. The abundant Lounge compilation albums available feature a variety of these genres, and often include songs that cross over to one of the other genres.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">9</div></div>
+                <div class="d-block d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-downtempo-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
+            </div>
+
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-downtempo-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Esquivel!",
+                        track: "Surfboard",
+                        path: "../../samples/downtempo/lounge1.ogg"
+                    },
+                    {
+                        artist: "Martin Denny",
+                        track: "The Enchanted Sea",
+                        path: "../../samples/downtempo/lounge2.ogg"
+                    },
+                    {
+                        artist: "Percy Faith",
+                        track: "Theme From A Summer Place",
+                        path: "../../samples/downtempo/lounge3.ogg"
+                    },
+                    {
+                        artist: "Les Baxter",
+                        track: "Tropicando",
+                        path: "../../samples/downtempo/lounge4.ogg"
+                    },
+                    {
+                        artist: "Henry Mancini",
+                        track: "Lujon",
+                        path: "../../samples/downtempo/lounge5.ogg"
+                    },
+                    {
+                        artist: "Arthur Lymon",
+                        track: "Yellow Bird",
+                        path: "../../samples/downtempo/lounge6.ogg"
+                    },
+                    {
+                        artist: "Combustible Edison",
+                        track: "The Millionaire's Holiday",
+                        path: "../../samples/downtempo/lounge7.ogg"
+                    },
+                    {
+                        artist: "Eden Ahbez",
+                        track: "Tradewind",
+                        path: "../../samples/downtempo/lounge8.ogg"
+                    },
+                    {
+                        artist: "Jackie Davis",
+                        track: "Glow Worm Cha Cha Cha",
+                        path: "../../samples/downtempo/lounge9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-downtempo').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-downtempo-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-downtempo"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
