@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Singer-Songwriter</title>
+    </head>
+
+    <body class="genre" id="singersongwriter">
+        <div class="box pop">
+            <h1>SINGER-SONGWRITER</h1>
+
+            <p>Although many vocalists sang their own songs, the term Singer-Songwriter refers to the legions of performers that followed Bob Dylan in the late 60s and early 70s. Most of the original Singer-Songwriters performed alone with an acoustic guitar or a piano but some had small groups for backing. Their lyrics were personal, although they were often veiled by layers of metaphors and obscure imagery. The main concern for any Singer-Songwriter was the song itself, not necessarily the performance. However, most Singer-Songwriter records have a similar sound, which is usually deep and reflective, which places the emphasis on the song itself. Singer-Songwriters were at the height of their popularity in the early 70s, and although they faded away from the Pop chart, they never disappeared. In the late 70s, artists like Rickie Lee Jones and Joan Armatrading crossed over into the Pop charts, as did Suzanne Vega and Tracy Chapman in the late 80s. This resurgence of the style in the late 80s led to a new popularity and exposure for a new crop of contemporary Singer-Songwriters.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-pop">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-pop">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-pop">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-pop">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-pop">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-pop">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-pop">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-pop">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-pop">9</div></div>
+                <div class="d-block d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-pop-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
+            </div>
+
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-pop-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Tim Buckley",
+                        track: "Gypsy Woman",
+                        path: "../../samples/pop/singersongwriter1.ogg"
+                    },
+                    {
+                        artist: "Leonard Cohen",
+                        track: "Everybody Knows",
+                        path: "../../samples/pop/singersongwriter2.ogg"
+                    },
+                    {
+                        artist: "James Taylor",
+                        track: "Carolina In My Mind",
+                        path: "../../samples/pop/singersongwriter3.ogg"
+                    },
+                    {
+                        artist: "Neil Diamond",
+                        track: "I Am...I Said",
+                        path: "../../samples/pop/singersongwriter4.ogg"
+                    },
+                    {
+                        artist: "Tom Waits",
+                        track: "Hold On",
+                        path: "../../samples/pop/singersongwriter5.ogg"
+                    },
+                    {
+                        artist: "Neil Young",
+                        track: "Heart Of Gold",
+                        path: "../../samples/pop/singersongwriter6.ogg"
+                    },
+                    {
+                        artist: "Joni Mitchell",
+                        track: "A Case Of You",
+                        path: "../../samples/pop/singersongwriter7.ogg"
+                    },
+                    {
+                        artist: "Roy Orbison",
+                        track: "Only The Lonely",
+                        path: "../../samples/pop/singersongwriter8.ogg"
+                    },
+                    {
+                        artist: "Carly Simon",
+                        track: "You're So Vain",
+                        path: "../../samples/pop/singersongwriter9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-pop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-pop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-pop"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

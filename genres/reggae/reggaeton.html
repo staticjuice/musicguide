@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Reggaeton</title>
+    </head>
+
+    <body class="genre" id="reggaeton">
+        <div class="box reggae">
+            <h1>REGGAETON</h1>
+
+            <p>Reggaeton, a mixture of Hip Hop and Latin music, proved to be a successful cocktail. The mix of exotic breakbeat rhythms (filled with brass, congas or Latin instruments) and Spanish rap lyrics created an almost unrivaled tropical atmosphere and attitude of 'coolness'. Reggaeton was far from slow and laidback but rather spicy and furious, meant to be played at max volume while cruising through the favelas and Hispanic ghettos. Instead of adding Latin elements to Hip Hop music (what happened in the US), artists in Puerto Rico added Hip Hop to their native music (mainly heavy Bomba and a bit of Plena) creating a whole new genre &ndash; Reggaeton (which has nothing to do with Reggae, but did get influenced by Dancehall). The result was similar to Latin Rap, but the rhythm was entirely based on Bomba with no R&amp;B samples whatsoever, and the lyrics were even more explicit than Latin Rap. Reggaeton is based on the Ragga Dembow riddim, which uses the snare of a drum machine. The genre eventually made a surprising transfer to the world of Electro House, leading to Moombahton.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-reggae">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-reggae">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-reggae">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-reggae">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-reggae">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-reggae">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-reggae">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-reggae">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-reggae">9</div></div>
+                <div class="d-block d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-reggae-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
+            </div>
+
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-reggae-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Tego Calderón",
+                        track: "Guasa Guasa",
+                        path: "../../samples/reggae/reggaeton1.ogg"
+                    },
+                    {
+                        artist: "Daddy Yankee",
+                        track: "Gasolina",
+                        path: "../../samples/reggae/reggaeton2.ogg"
+                    },
+                    {
+                        artist: "Don Omar",
+                        track: "Dile",
+                        path: "../../samples/reggae/reggaeton3.ogg"
+                    },
+                    {
+                        artist: "Calle 13 feat. Orishas",
+                        track: "Pa'l Norte",
+                        path: "../../samples/reggae/reggaeton4.ogg"
+                    },
+                    {
+                        artist: "Yandel",
+                        track: "Encantadora",
+                        path: "../../samples/reggae/reggaeton5.ogg"
+                    },
+                    {
+                        artist: "Wisin",
+                        track: "Corazón Acelerao",
+                        path: "../../samples/reggae/reggaeton6.ogg"
+                    },
+                    {
+                        artist: "Héctor & Tito feat. Glory & Don Omar",
+                        track: "Baila Morena",
+                        path: "../../samples/reggae/reggaeton7.ogg"
+                    },
+                    {
+                        artist: "Plan B",
+                        track: "Candy",
+                        path: "../../samples/reggae/reggaeton8.ogg"
+                    },
+                    {
+                        artist: "Chingo Bling",
+                        track: "Menudo Menudo",
+                        path: "../../samples/reggae/reggaeton9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-reggae').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-reggae-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-reggae"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
