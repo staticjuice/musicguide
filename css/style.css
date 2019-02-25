@@ -215,11 +215,11 @@ p {
 .mainblues:before { background: url("../images/bluesbig.jpg") no-repeat center fixed; }
 .mainjazz:before { background: url("../images/jazzbig.jpg") no-repeat center fixed; }
 .maincountry:before { background: url("../images/countrybig.jpg") no-repeat center fixed; }
-.mainrhythmandblues:before { background: url("../images/rhythmandblues/motown.jpg") no-repeat center fixed; }
+.mainrhythmandblues:before { background: url("../images/rhythmandbluesbig.jpg") no-repeat center fixed; }
 .mainpop:before { background: url("../images/popbig.jpg") no-repeat center fixed; }
 .mainrockandroll:before { background: url("../images/rock/rockandroll.jpg") no-repeat center fixed; }
 .mainclassicrock:before { background: url("../images/classicrockbig.jpg") no-repeat center fixed; }
-.mainpunk:before { background: url("../images/rock/punkrock.jpg") no-repeat center fixed; }
+.mainpunk:before { background: url("../images/punkrockbig.jpg") no-repeat center fixed; }
 .mainalternative:before { background: url("../images/alternativebig.jpg") no-repeat center fixed; }
 .mainmetal:before { background: url("../images/metalbig.jpg") no-repeat center fixed; }
 .mainreggae:before { background: url("../images/reggaebig.jpg") no-repeat center fixed; }
@@ -352,7 +352,7 @@ p {
 #contemporarygospel {background: url("../images/gospel/contemporarygospel.jpg") no-repeat center fixed;}
 
 #deltablues {background: url("../images/blues/deltablues.jpg") no-repeat center fixed;}
-#classicfemaleblues {background: url("../images/blues/classicfemaleblues.jpg") no-repeat center fixed;}
+#vaudevilleblues {background: url("../images/blues/vaudevilleblues.jpg") no-repeat center fixed;}
 #boogiewoogie {background: url("../images/blues/boogiewoogie.jpg") no-repeat center fixed;}
 #jumpblues {background: url("../images/blues/jumpblues.jpg") no-repeat center fixed;}
 #chicagoblues {background: url("../images/blues/chicagoblues.jpg") no-repeat center fixed;}
@@ -546,7 +546,7 @@ p {
 #atmosphericdrumandbass {background: url("../images/dance/atmosphericdrumandbass.jpg") no-repeat center fixed;}
 #jazzstep {background: url("../images/dance/jazzstep.jpg") no-repeat center fixed;}
 #neurofunk {background: url("../images/dance/neurofunk.jpg") no-repeat center fixed;}
-#liquidfunk {background: url("../images/dance/liquidfunk.png") no-repeat center fixed;}
+#liquidfunk {background: url("../images/dance/liquidfunk.jpg") no-repeat center fixed;}
 
 #twostepgarage {background: url("../images/dance/2stepgarage.jpg") no-repeat center fixed;}
 #grime {background: url("../images/dance/grime.jpg") no-repeat center fixed;}
