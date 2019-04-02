@@ -217,7 +217,7 @@ p {
 .maincountry:before { background: url("../images/countrybig.jpg") no-repeat center fixed; }
 .mainrhythmandblues:before { background: url("../images/rhythmandbluesbig.jpg") no-repeat center fixed; }
 .mainpop:before { background: url("../images/popbig.jpg") no-repeat center fixed; }
-.mainrockandroll:before { background: url("../images/rock/rockandroll.jpg") no-repeat center fixed; }
+.mainrockandroll:before { background: url("../images/rockandrollbig.jpg") no-repeat center fixed; }
 .mainclassicrock:before { background: url("../images/classicrockbig.jpg") no-repeat center fixed; }
 .mainpunk:before { background: url("../images/punkrockbig.jpg") no-repeat center fixed; }
 .mainalternative:before { background: url("../images/alternativebig.jpg") no-repeat center fixed; }
@@ -491,7 +491,6 @@ p {
 #darkwave {background: url("../images/industrial/darkwave.jpg") no-repeat center fixed;}
 #ebm {background: url("../images/industrial/ebm.jpg") no-repeat center fixed;}
 #noise {background: url("../images/industrial/noise.jpg") no-repeat center fixed;}
-#darkambient {background: url("../images/industrial/darkambient.jpg") no-repeat center fixed;}
 #industrialrock {background: url("../images/industrial/industrialrock.jpg") no-repeat center fixed;}
 #electroindustrial {background: url("../images/industrial/electroindustrial.jpg") no-repeat center fixed;}
 #futurepop {background: url("../images/industrial/futurepop.jpg") no-repeat center fixed;}
@@ -563,6 +562,7 @@ p {
 #ambient {background: url("../images/downtempo/ambient.jpg") no-repeat center fixed;}
 #newage {background: url("../images/downtempo/newage.jpg") no-repeat center fixed;}
 #chiptune {background: url("../images/downtempo/chiptune.png") no-repeat center fixed;}
+#darkambient {background: url("../images/downtempo/darkambient.jpg") no-repeat center fixed;}
 #triphop {background: url("../images/downtempo/triphop.jpg") no-repeat center fixed;}
 #illbient {background: url("../images/downtempo/illbient.jpg") no-repeat center fixed;}
 #glitch {background: url("../images/downtempo/glitch.jpg") no-repeat center fixed;}
