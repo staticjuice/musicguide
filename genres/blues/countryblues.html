@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Country Blues</title>
+    </head>
+
+    <body class="genre" id="countryblues">
+        <div class="box blues">
+            <h1>COUNTRY BLUES</h1>
+
+            <p>Almost automatically, Blues becomes the antithesis of Gospel. Wandering black singers who lost their faith due to misfortune slowly but steadily developed their personal, secular type of Gospel or more accurately &ndash; "badspel", as there was little positive news for them to tell. Country Blues style comes from a region in the southern part of Mississippi, a place romantically referred to as "the land where the Blues were born." In its earliest form, the style became the first black guitar-dominated music to make it onto phonograph records back in the late 20s. Although many original Country Blues performers worked in a string-band context for live appearances, very few of them recorded in this manner. Consequently, the recordings from the late 20s through mid-30s consist primarily of performers working in a solo, self-accompanied context. The form is dominated by fiery slide guitar and passionate vocalizing, with the deepest of feelings being applied directly to the music. The form continues to the present time with new performers working in the older solo artist traditions and style.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-blues-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
+            </div>
+
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-blues-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Blind Lemon Jefferson",
+                        track: "Match Box Blues",
+                        path: "../../samples/blues/countryblues1.ogg"
+                    },
+                    {
+                        artist: "Papa Charlie Jackson",
+                        track: "Shake That Thing",
+                        path: "../../samples/blues/countryblues2.ogg"
+                    },
+                    {
+                        artist: "Lead Belly",
+                        track: "Take A Whiff On Me",
+                        path: "../../samples/blues/countryblues3.ogg"
+                    },
+                    {
+                        artist: "Mississippi John Hurt",
+                        track: "Nobody's Dirty Business",
+                        path: "../../samples/blues/countryblues4.ogg"
+                    },
+                    {
+                        artist: "Charley Patton",
+                        track: "Shake It And Break It (But Don't Let It Fall Mama)",
+                        path: "../../samples/blues/countryblues5.ogg"
+                    },
+                    {
+                        artist: "Blind Willie Johnson",
+                        track: "It's Nobody's Fault But Mine",
+                        path: "../../samples/blues/countryblues6.ogg"
+                    },
+                    {
+                        artist: "Lonnie Johnson",
+                        track: "Blues In G",
+                        path: "../../samples/blues/countryblues7.ogg"
+                    },
+                    {
+                        artist: "Son House",
+                        track: "Death Letter Blues",
+                        path: "../../samples/blues/countryblues8.ogg"
+                    },
+                    {
+                        artist: "Robert Johnson",
+                        track: "Hellhound On My Trail",
+                        path: "../../samples/blues/countryblues9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-blues').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-blues-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-blues"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

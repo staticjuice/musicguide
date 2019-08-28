@@ -1,21 +1,15 @@
-html {
-    line-height: 1.4em;
-}
-
 a {
     transition: all .2s ease;
 }
 
-a:link { color: #FFF; text-decoration: none; }
-a:visited { color: #FFF; text-decoration: none; }
-a:hover { color: #FFF; text-decoration: none; }
-a:active { color: #FFF; text-decoration: none; }
+a:link, a:visited, a:hover, a:active {
+    color: #FFF; text-decoration: none;
+}
 
 h1 {
-  	font-family: 'Roboto', sans-serif;
+  	font-family: 'Roboto';
   	font-weight: 900;
   	font-size: 2.5em;
-    margin: 0;
 }
 
 p {
@@ -36,23 +30,18 @@ p {
 }
 
 .allgenres::-webkit-scrollbar-track {
-    background: #333;
+    background: #080808;
 }
 
 .sidebar.pop::-webkit-scrollbar-thumb {
-    background: #333;
+    background: #222;
     border-radius: 8px;
 }
 
 /*---------------------------------------------------------------------------*/
 
-.intro {
-    left: 0;
-    right: 0;
-}
-
 #introbox {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     color: #FFF;
     font-size: 3.75vw;
     position: absolute;
@@ -66,7 +55,7 @@ p {
     font-size: 1.7em;
     color: #FFF;
     padding: 0.25em;
-    border: 0.07em solid #FFF;
+    border: 0.065em solid #FFF;
 }
 
 #introbutton:hover {
@@ -74,21 +63,10 @@ p {
     border-color: #FF6D00;
 }
 
-#introbox-mobile {
-    font-family: 'Roboto', sans-serif;
-    color: #FFF;
-    font-size: 2em;
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 /*---------------------------------------------------------------------------*/
 
 #genres-heading {
-    margin: 2vw 9vw;
+    margin: 1.5vw 9vw;
     font-size: 1.5vw;
     color: #FFF;
 }
@@ -98,62 +76,33 @@ p {
 }
 
 #genres-grid h1 {
-    margin: auto;
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 41.25%; left: 0; bottom: 0; right: 0;
     font-weight: 300;
-    font-size: 2.85vw;
-    color: #FFF;
+    font-size: 2.9vw;
     position: absolute;
     text-align: center;
     z-index: 1;
-    height: 18%;
 }
 
 .img-row img {
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-filter: brightness(40%);
     filter: brightness(40%);
 }
 
 #genres-heading-mobile {
-    padding: 1em 2em 0 2em;
-    font-family: 'Roboto', sans-serif;
+    padding: 1.5em;
+    font-family: 'Roboto';
     font-weight: 300;
     font-size: 4.25vw;
     color: #FFF;
     text-align: center;
 }
 
-#genres-heading-mobile h1 {
-    font-size: 2.5em;
-}
-
-#genres-grid-mobile {
-    margin: 0 1.5em 1.5em;
-}
-
-#genres-grid-mobile h1 {
-    margin: auto;
-    top: 0; left: 0; bottom: 0; right: 0;
-    font-weight: 300;
-    font-size: 7.5vw;
-    color: #FFF;
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-    height: 11.5%;
-}
-
-.img-row-mobile {
-    padding-bottom: 0;
-}
-
 .img-row-mobile img {
     width: 100%;
-    margin-top: 5vw;
+    margin-top: 4vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-filter: brightness(40%);
     filter: brightness(40%);
 }
 
@@ -163,24 +112,19 @@ p {
 }
 
 #rock h1 {
-    font-size: 2.6vw;
-}
-
-#dance {
-    overflow: hidden;
+    font-size: 2.7vw;
 }
 
 /*---------------------------------------------------------------------------*/
 
 .genrelist {
     color: #FFF;
-    padding: 1.3em 1.6em;
-    font-size: 1.7vw;
-    overflow: hidden;
+    padding: 1.2em 1.5em;
+    font-size: 2.1em;
 }
 
 .genrelist h1 {
-    font-size: 2.25em;
+    font-size: 2.1em;
     margin-bottom: 0.5em;
 }
 
@@ -200,12 +144,9 @@ p {
 .supergenre:before {
     content: "";
     position: fixed;
-    left: 0;
-    right: 0;
     z-index: -1;
     width: 100vw;
     height: 100vh;
-    -webkit-filter: brightness(40%);
     filter: brightness(40%);
 }
 
@@ -270,7 +211,7 @@ p {
 .mainjazz .genrelist ::selection, .mainjazz .genrelist-mobile ::selection { background: rgba(21,101,192,0.998); }
 .maincountry .genrelist ::selection, .maincountry .genrelist-mobile ::selection { background: rgba(138,154,91,0.998); }
 .mainrhythmandblues .genrelist ::selection, .mainrhythmandblues .genrelist-mobile ::selection { background: rgba(0,105,92,0.998); }
-.mainpop .genrelist ::selection, .mainpop .genrelist-mobile ::selection { background: rgba(253,216,53,0.998); color: #333; }
+.mainpop .genrelist ::selection, .mainpop .genrelist-mobile ::selection { background: rgba(253,216,53,0.998); color: #222; }
 .mainrockandroll .genrelist ::selection, .mainrockandroll .genrelist-mobile ::selection { background: rgba(3,155,229,0.998); }
 .mainclassicrock .genrelist ::selection, .mainclassicrock .genrelist-mobile ::selection { background: rgba(198,40,40,0.998); }
 .mainpunk .genrelist ::selection, .mainpunk .genrelist-mobile ::selection { background: rgba(239,108,0,0.998); }
@@ -293,30 +234,30 @@ p {
 /*---------------------------------------------------------------------------*/
 
 .sidebar {
-    width: 35.5vw;
+    width: 40em;
     height: 100vh;
-    padding: 1.25em 1.5em;
+    padding: 1.25em 1.5em 0.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: right;
     overflow: auto;
-    font-size: 0.9vw;
+    font-size: 1.1em;
 }
 
 .sidebar-mobile {
     width: 100%;
     padding: 1.5em;
-    font-size: 4.2vw;
+    font-size: 4vw;
 }
 
 .genre {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     font-size: 1.544vh;
 }
 
 .box {
     width: 40em;
     padding: 1.5em;
-    margin: 4em;
+    margin: 3.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -325,7 +266,7 @@ p {
 .jazz { background-color: #1565C0; color: #FFF; }
 .country { background-color: #8A9A5B; color: #FFF; }
 .rhythmandblues { background-color: #00695C; color: #FFF; }
-.pop { background-color: #FDD835; color: #333; }
+.pop { background-color: #FDD835; color: #222; }
 .rockandroll { background-color: #039BE5; color: #FFF; }
 .classicrock { background-color: #C62828; color: #FFF; }
 .punk { background-color: #EF6C00; color: #FFF; }
@@ -351,13 +292,13 @@ p {
 #traditionalgospel {background: url("../images/gospel/traditionalgospel.jpg") no-repeat center fixed;}
 #contemporarygospel {background: url("../images/gospel/contemporarygospel.jpg") no-repeat center fixed;}
 
-#deltablues {background: url("../images/blues/deltablues.jpg") no-repeat center fixed;}
-#vaudevilleblues {background: url("../images/blues/vaudevilleblues.jpg") no-repeat center fixed;}
+#countryblues {background: url("../images/blues/countryblues.jpg") no-repeat center fixed;}
+#classicfemaleblues {background: url("../images/blues/classicfemaleblues.jpg") no-repeat center fixed;}
 #boogiewoogie {background: url("../images/blues/boogiewoogie.jpg") no-repeat center fixed;}
 #jumpblues {background: url("../images/blues/jumpblues.jpg") no-repeat center fixed;}
+#urbanblues {background: url("../images/blues/urbanblues.jpg") no-repeat center fixed;}
 #westcoastblues {background: url("../images/blues/westcoastblues.jpg") no-repeat center fixed;}
-#chicagoblues {background: url("../images/blues/chicagoblues.jpg") no-repeat center fixed;}
-#swampblues {background: url("../images/blues/swampblues.jpg") no-repeat center fixed;}
+#louisianablues {background: url("../images/blues/louisianablues.jpg") no-repeat center fixed;}
 #hillcountryblues {background: url("../images/blues/hillcountryblues.jpg") no-repeat center fixed;}
 #soulblues {background: url("../images/blues/soulblues.jpg") no-repeat center fixed;}
 #electricblues {background: url("../images/blues/electricblues.jpg") no-repeat center fixed;}
@@ -405,7 +346,6 @@ p {
 #singersongwriter {background: url("../images/pop/singersongwriter.jpg") no-repeat center fixed;}
 #adultcontemporary {background: url("../images/pop/adultcontemporary.jpg") no-repeat center fixed;}
 #synthpop {background: url("../images/pop/synthpop.jpg") no-repeat center fixed;}
-#postdisco {background: url("../images/pop/postdisco.jpg") no-repeat center fixed;}
 #dancepop {background: url("../images/pop/dancepop.jpg") no-repeat center fixed;}
 #electropop {background: url("../images/pop/electropop.jpg") no-repeat center fixed;}
 
@@ -426,19 +366,18 @@ p {
 
 #protopunk {background: url("../images/rock/protopunk.jpg") no-repeat center fixed;}
 #punkrock {background: url("../images/rock/punkrock.jpg") no-repeat center fixed;}
-#newwave {background: url("../images/rock/newwave.jpg") no-repeat center fixed;}
-#postpunk {background: url("../images/rock/postpunk.jpg") no-repeat center fixed;}
-#nowave {background: url("../images/rock/nowave.jpg") no-repeat center fixed;}
 #skapunk {background: url("../images/rock/skapunk.jpg") no-repeat center fixed;}
-#hardcorepunk {background: url("../images/rock/hardcorepunk.jpg") no-repeat center fixed;}
-#anarchopunk {background: url("../images/rock/anarchopunk.jpg") no-repeat center fixed;}
+#postpunk {background: url("../images/rock/postpunk.jpg") no-repeat center fixed;}
+#newwave {background: url("../images/rock/newwave.jpg") no-repeat center fixed;}
+#nowave {background: url("../images/rock/nowave.jpg") no-repeat center fixed;}
 #psychobilly {background: url("../images/rock/psychobilly.jpg") no-repeat center fixed;}
+#hardcorepunk {background: url("../images/rock/hardcorepunk.jpg") no-repeat center fixed;}
 #posthardcore {background: url("../images/rock/posthardcore.jpg") no-repeat center fixed;}
 
 #janglepop {background: url("../images/rock/janglepop.jpg") no-repeat center fixed;}
-#grunge {background: url("../images/rock/grunge.jpg") no-repeat center fixed;}
 #shoegaze {background: url("../images/rock/shoegaze.jpg") no-repeat center fixed;}
 #raprock {background: url("../images/rock/raprock.jpg") no-repeat center fixed;}
+#grunge {background: url("../images/rock/grunge.jpg") no-repeat center fixed;}
 #britpop {background: url("../images/rock/britpop.jpg") no-repeat center fixed;}
 #poppunk {background: url("../images/rock/poppunk.jpg") no-repeat center fixed;}
 #postrock {background: url("../images/rock/postrock.jpg") no-repeat center fixed;}
@@ -449,7 +388,7 @@ p {
 #electronicrock {background: url("../images/rock/electronicrock.jpg") no-repeat center fixed;}
 #indiefolk {background: url("../images/rock/indiefolk.jpg") no-repeat center fixed;}
 
-#traditionalheavymetal {background: url("../images/metal/traditionalheavymetal.jpg") no-repeat center fixed;}
+#heavymetal {background: url("../images/metal/heavymetal.jpg") no-repeat center fixed;}
 #nwobhm {background: url("../images/metal/nwobhm.jpg") no-repeat center fixed;}
 #glammetal {background: url("../images/metal/glammetal.jpg") no-repeat center fixed;}
 #thrashmetal {background: url("../images/metal/thrashmetal.jpg") no-repeat center fixed;}
@@ -475,19 +414,19 @@ p {
 #reggaefusion {background: url("../images/reggae/reggaefusion.jpg") no-repeat center fixed;}
 #reggaeton {background: url("../images/reggae/reggaeton.jpg") no-repeat center fixed;}
 
-#oldskoolrap {background: url("../images/hiphop/oldskoolrap.jpg") no-repeat center fixed;}
-#goldenagerap {background: url("../images/hiphop/goldenagerap.jpg") no-repeat center fixed;}
+#oldschoolhiphop {background: url("../images/hiphop/oldschoolhiphop.jpg") no-repeat center fixed;}
+#goldenagehiphop {background: url("../images/hiphop/goldenagehiphop.jpg") no-repeat center fixed;}
 #miamibass {background: url("../images/hiphop/miamibass.jpg") no-repeat center fixed;}
 #gangstarap {background: url("../images/hiphop/gangstarap.jpg") no-repeat center fixed;}
 #jazzrap {background: url("../images/hiphop/jazzrap.jpg") no-repeat center fixed;}
-#alternativerap {background: url("../images/hiphop/alternativerap.jpg") no-repeat center fixed;}
+#alternativehiphop {background: url("../images/hiphop/alternativehiphop.jpg") no-repeat center fixed;}
 #instrumentalhiphop {background: url("../images/hiphop/instrumentalhiphop.jpg") no-repeat center fixed;}
-#dirtysouthrap {background: url("../images/hiphop/dirtysouthrap.jpg") no-repeat center fixed;}
+#southernhiphop {background: url("../images/hiphop/southernhiphop.jpg") no-repeat center fixed;}
 #crunk {background: url("../images/hiphop/crunk.jpg") no-repeat center fixed;}
 #trap {background: url("../images/hiphop/trap.jpg") no-repeat center fixed;}
 
 #industrial {background: url("../images/industrial/industrial.jpg") no-repeat center fixed;}
-#gothrock {background: url("../images/industrial/gothrock.jpg") no-repeat center fixed;}
+#gothicrock {background: url("../images/industrial/gothicrock.jpg") no-repeat center fixed;}
 #noise {background: url("../images/industrial/noise.jpg") no-repeat center fixed;}
 #darkwave {background: url("../images/industrial/darkwave.jpg") no-repeat center fixed;}
 #ebm {background: url("../images/industrial/ebm.jpg") no-repeat center fixed;}
@@ -509,7 +448,7 @@ p {
 #futurehouse {background: url("../images/dance/futurehouse.jpg") no-repeat center fixed;}
 
 #acidtrance {background: url("../images/dance/acidtrance.jpg") no-repeat center fixed;}
-#ibizatrance {background: url("../images/dance/ibizatrance.jpg") no-repeat center fixed;}
+#balearictrance {background: url("../images/dance/balearictrance.jpg") no-repeat center fixed;}
 #psychedelictrance {background: url("../images/dance/psychedelictrance.jpg") no-repeat center fixed;}
 #dreamtrance {background: url("../images/dance/dreamtrance.jpg") no-repeat center fixed;}
 #progressivetrance {background: url("../images/dance/progressivetrance.jpg") no-repeat center fixed;}
@@ -541,20 +480,19 @@ p {
 #darkstep {background: url("../images/dance/darkstep.jpg") no-repeat center fixed;}
 #hardstep {background: url("../images/dance/hardstep.jpg") no-repeat center fixed;}
 #techstep {background: url("../images/dance/techstep.jpg") no-repeat center fixed;}
+#jumpup {background: url("../images/dance/jumpup.jpg") no-repeat center fixed;}
 #atmosphericdrumandbass {background: url("../images/dance/atmosphericdrumandbass.jpg") no-repeat center fixed;}
 #jazzstep {background: url("../images/dance/jazzstep.jpg") no-repeat center fixed;}
-#jumpup {background: url("../images/dance/jumpup.jpg") no-repeat center fixed;}
 #neurofunk {background: url("../images/dance/neurofunk.jpg") no-repeat center fixed;}
 #liquidfunk {background: url("../images/dance/liquidfunk.jpg") no-repeat center fixed;}
 
 #twostepgarage {background: url("../images/dance/2stepgarage.jpg") no-repeat center fixed;}
 #grime {background: url("../images/dance/grime.jpg") no-repeat center fixed;}
-#dubstep {background: url("../images/dance/dubstep.jpg") no-repeat center fixed;}
 #bassline {background: url("../images/dance/bassline.jpg") no-repeat center fixed;}
-#wonky {background: url("../images/dance/wonky.jpg") no-repeat center fixed;}
-#futuregarage {background: url("../images/dance/futuregarage.jpg") no-repeat center fixed;}
+#dubstep {background: url("../images/dance/dubstep.jpg") no-repeat center fixed;}
 #liquiddubstep {background: url("../images/dance/liquiddubstep.jpg") no-repeat center fixed;}
 #glitchhop {background: url("../images/dance/glitchhop.jpg") no-repeat center fixed;}
+#futuregarage {background: url("../images/dance/futuregarage.jpg") no-repeat center fixed;}
 #edmtrap {background: url("../images/dance/edmtrap.jpg") no-repeat center fixed;}
 #futurebass {background: url("../images/dance/futurebass.jpg") no-repeat center fixed;}
 
@@ -590,14 +528,13 @@ p {
 /*---------------------------------------------------------------------------*/
 
 .buttons {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     font-weight: 900;
     font-size: 2.5em;
     text-align: center;
-    width: 1.03em;
+    width: 1.025em;
     line-height: 1.2em;
     user-select: none;
-    cursor: default;
     margin: 0.3em 0 0.6em;
 }
 
@@ -682,28 +619,24 @@ p {
 }
 
 .buttons-pop.clicked, .buttons-pop-stop.clicked {
-    box-shadow:inset 0em 0em 0em 0.1em #333;
+    box-shadow:inset 0em 0em 0em 0.1em #222;
 }
 
 /*---------------------------------------------------------------------------*/
 
 .example {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
   	font-weight: 300;
   	font-size: 1.3em;
 }
 
 .artisttrack {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
   	font-weight: 900;
   	display: inline;
 }
 
-#artist {
-    font-weight: 300;
-}
-
-#track {
+#artist, #track {
     font-weight: 300;
 }
 
@@ -716,8 +649,8 @@ p {
 /*---------------------------------------------------------------------------*/
 
 @media (max-width: 991px) {
-    a {
-        transition: none;
+    #introbox {
+        font-size: 2em;
     }
 
     .allgenres {
@@ -725,37 +658,29 @@ p {
         background-image: none;
     }
 
-    #dance {
-        overflow: auto;
+    #genres-grid {
+        margin: -1.5em 1.5em 1.5em;
+    }
+
+    #genres-grid h1 {
+        font-size: 8vw;
     }
 
     .box {
-        font-size: 3.5vw;
-        width: 88%;
-        margin: 1.5em;
+        font-size: 3.25vw;
+        width: 86.5%;
+        margin: 2em;
+    }
+
+    .buttons {
+        font-size: 2em;
     }
 
     .col-xs-1 {
-        width: 20%;
+        width: 10%;
     }
 
     .artisttrack {
-        font-size: 3.75vw;
-    }
-
-    #artist {
-        display: inline-block;
-        text-indent: 3.125em hanging;
-        width: 100%;
-    }
-
-    #track {
-        display: inline-block;
-        text-indent: 3.125em hanging;
-        width: 100%;
-    }
-
-    .example br:first-child {
-        content: ' ';
+        font-size: 3.5vw;
     }
 }

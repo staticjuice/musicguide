@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Southern Hip Hop</title>
+    </head>
+
+    <body class="genre" id="southernhiphop">
+        <div class="box hiphop">
+            <h1>SOUTHERN HIP HOP</h1>
+
+            <p>Southern Hip Hop popped up in the latter half of the 90s after Gangsta Rap became the standard currency of Hip Hop. Southern Hip Hop drew from The Chronic and 2 Live Crew's filthy traditions in equal measure, arriving at a stoned, violent, sex-obsessed and naturally profane brand of modern Hip Hop. Typical about these genres is generally a slower tempo than usual, combined with increased emphasis on bass. The music is supposed to feel "thick" and "hot", displaying the same atmosphere as its environment. Catchy choruses and sexual-themed lyrics (hence the name "Dirty South") are a staple among the more happy styles of Southern Hip Hop, in which funny or everyday stories can also appear. On the other hand, raw, gritty rhymes focused on drug trade form the blueprint of other styles. What they all have in common, however, is a strong tendency towards partying and clubbing, either happy and nonsensical or dark and heavy. Thanks to a rather eclectic nature and a certain basic shielding from commercial mainstream, Southern Hip Hop has survived as one of the fittest Hip Hop genres, leading Hip Hop into the new millennium.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
+            </div>
+
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "2 Live Crew",
+                        track: "Pop That Pussy",
+                        path: "../../samples/hiphop/southernhiphop1.ogg"
+                    },
+                    {
+                        artist: "Sir Mix-A-Lot",
+                        track: "Baby Got Back",
+                        path: "../../samples/hiphop/southernhiphop2.ogg"
+                    },
+                    {
+                        artist: "Freak Nasty",
+                        track: "Da Dip",
+                        path: "../../samples/hiphop/southernhiphop3.ogg"
+                    },
+                    {
+                        artist: "Splack Pack",
+                        track: "Shake That Ass Bitch",
+                        path: "../../samples/hiphop/southernhiphop4.ogg"
+                    },
+                    {
+                        artist: "Too $hort feat. Trick Daddy, Scarface & Daz",
+                        track: "I Luv",
+                        path: "../../samples/hiphop/southernhiphop5.ogg"
+                    },
+                    {
+                        artist: "Wreckx-N-Effect",
+                        track: "Rumpshaker",
+                        path: "../../samples/hiphop/southernhiphop6.ogg"
+                    },
+                    {
+                        artist: "OutKast feat. Sleepy Brown",
+                        track: "The Way You Move",
+                        path: "../../samples/hiphop/southernhiphop7.ogg"
+                    },
+                    {
+                        artist: "Gucci Crew",
+                        track: "Sally That Girl",
+                        path: "../../samples/hiphop/southernhiphop8.ogg"
+                    },
+                    {
+                        artist: "N.E.R.D. feat. Lee Harvey & Vita",
+                        track: "Lapdance",
+                        path: "../../samples/hiphop/southernhiphop9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hiphop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hiphop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hiphop"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

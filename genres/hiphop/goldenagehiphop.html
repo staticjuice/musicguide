@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Golden Age Hip Hop</title>
+    </head>
+
+    <body class="genre" id="goldenagehiphop">
+        <div class="box hiphop">
+            <h1>GOLDEN AGE HIP HOP</h1>
+
+            <p>It took a decade before Hip Hop got out of the ghetto and onto records, conquering the globe. What started in New York, spread throughout the whole US East Coast, with different Hip Hop groups selling gold or platinum albums. This period (mid-late-80s) were the heydays of Hip Hop, when there was massive appeal combined with little negative publicity as Hip Hop wasn't affiliated with either criminality or commercial selling-out yet. There are several reasons for this large appeal. Hip Hop gets more appreciated by middle class and white audiences because they can relate to the music. Rappers start rapping about responsibility, political messages, anti-drugs, anti-capitalism and Hip Hop is no longer a secluded subculture with "weird" customs. But perhaps the most important aspect of this genre is a different approach in making the music &ndash; MCs no longer rap over existing records, but the beat and the rhyme become one. The beat gets made from scratch, sometimes specifically made for a rhyme, and MCs evolve in their rhyming skills, resulting in more professional and eloquent flows than Old-School Hip Hop.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <div class="example">
+                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+                <p class="artisttrack">Track: <span id="track"></span></p>
+            </div>
+
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Slick Rick",
+                        track: "Mona Lisa",
+                        path: "../../samples/hiphop/goldenagehiphop1.ogg"
+                    },
+                    {
+                        artist: "LL Cool J",
+                        track: "Mama Said Knock You Out",
+                        path: "../../samples/hiphop/goldenagehiphop2.ogg"
+                    },
+                    {
+                        artist: "Beastie Boys",
+                        track: "No Sleep Till Brooklyn",
+                        path: "../../samples/hiphop/goldenagehiphop3.ogg"
+                    },
+                    {
+                        artist: "DJ Jazzy Jeff & The Fresh Prince",
+                        track: "The Fresh Prince Of Bel-Air",
+                        path: "../../samples/hiphop/goldenagehiphop4.ogg"
+                    },
+                    {
+                        artist: "Young MC",
+                        track: "Bust A Move",
+                        path: "../../samples/hiphop/goldenagehiphop5.ogg"
+                    },
+                    {
+                        artist: "Run–D.M.C.",
+                        track: "Black Box",
+                        path: "../../samples/hiphop/goldenagehiphop6.ogg"
+                    },
+                    {
+                        artist: "Eric B. & Rakim",
+                        track: "I Know You Got Soul",
+                        path: "../../samples/hiphop/goldenagehiphop7.ogg"
+                    },
+                    {
+                        artist: "Ultramagnetic MCs",
+                        track: "Give The Drummer Some",
+                        path: "../../samples/hiphop/goldenagehiphop8.ogg"
+                    },
+                    {
+                        artist: "Public Enemy",
+                        track: "Black Steel In The Hour Of Chaos",
+                        path: "../../samples/hiphop/goldenagehiphop9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hiphop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hiphop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hiphop"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
