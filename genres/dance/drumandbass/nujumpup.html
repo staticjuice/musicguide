@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Nu Jump Up</title>
+    </head>
+
+    <body class="genre" id="nujumpup">
+        <div class="box drumandbass">
+            <h1>NU JUMP UP</h1>
+
+            <p>By the mid-00s, Rave was completely dead. A new subculture had learned from its mistakes. No more huge pop-up parties, and Drum &amp; Bass began to look towards other genres for inspiration. This hardcore Drum &amp; Bass (Nu Jump Up) was simple, purist music with 2-step drum patterns and mid-range drum frequencies. This is the mid-00s precursor to Drumstep when the familiar 2-step drum pattern (boom cha, boom-cha) started infiltrating all areas of the genre, which coincided with the replacing of the word Jungle with Drum &amp; Bass. Nu Jump Up is essentially a harder style of Old Skool Drum &amp; Bass which makes ample use of electric guitars and heavy yet simple electronic melodies. It had more or less the same mentality as Nu Metal &amp; this is Rock &amp; Bass, Drum &amp; Metal, whatever you want to call it. It's Rage Against the Machine joining forces with Aphrodite to produce Dnbtron, the gestalt robot that junglists regard as both their saviour and their curse. Eventually, Nu Jump producers got influcenced by the new Dubstep craze that was emerging at the time and started making a half-time version that goes by the term "Drumstep".</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-drumandbass-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Pendulum",
+                        track: "Crush",
+                        path: "../../../samples/drumandbass/nujumpup1.ogg"
+                    },
+                    {
+                        artist: "Matrix & Futurebound",
+                        track: "Universal Truth",
+                        path: "../../../samples/drumandbass/nujumpup2.ogg"
+                    },
+                    {
+                        artist: "Inhaler feat. Christian Burns",
+                        track: "Something About You (J Majik & Wickaman Remix)",
+                        path: "../../../samples/drumandbass/nujumpup3.ogg"
+                    },
+                    {
+                        artist: "Nero",
+                        track: "Me & You (Dirtyphonics Remix)",
+                        path: "../../../samples/drumandbass/nujumpup4.ogg"
+                    },
+                    {
+                        artist: "Mattix & Futile",
+                        track: "Burnout",
+                        path: "../../../samples/drumandbass/nujumpup5.ogg"
+                    },
+                    {
+                        artist: "Rollz",
+                        track: "Triple A",
+                        path: "../../../samples/drumandbass/nujumpup6.ogg"
+                    },
+                    {
+                        artist: "Metrik feat. Reija Lee",
+                        track: "Freefall",
+                        path: "../../../samples/drumandbass/nujumpup7.ogg"
+                    },
+                    {
+                        artist: "The Prototypes feat. Ayah Marar",
+                        track: "Kill The Silence",
+                        path: "../../../samples/drumandbass/nujumpup8.ogg"
+                    },
+                    {
+                        artist: "Koven & Memtrix",
+                        track: "Pessimist",
+                        path: "../../../samples/drumandbass/nujumpup9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-drumandbass').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-drumandbass-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-drumandbass"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

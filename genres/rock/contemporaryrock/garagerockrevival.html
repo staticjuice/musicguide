@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Garage Rock Revival</title>
+    </head>
+
+    <body class="genre" id="garagerockrevival">
+        <div class="box contemporaryrock">
+            <h1>GARAGE ROCK REVIVAL</h1>
+
+            <p>The start of the new millennium purveyed an ominous future for Rock music. Alternative Rock was far past its peak and all that remained was Post-Rock and Post-Britpop. Although these genres certainly have their merit, they marked a clear step away from the traditional definition of Rock music &ndash; too polished, overproduced and too eclectic. Saturation of music genres became visible in the new millennium, dubbed "the age of eclecticism and recycling". Whether it was fear for Rock's future or an aversion for Post-genres, eclecticism was not an option for certain bands. Thus they chose to recycle and in an unusual way. Both Garage Rock and Post-Punk were held in high esteem as pure and rough Rock genres, leading to Garage and Post-Punk revivals. The choice of reviving said old genres worked better than expected and now Garage Rock Revival can be seen as the genre that revitalised Rock in the new millennium. Its moment of fame was short-lived, however, except for a small number of bands with continuous popularity who rose to great fame. Shortly afterwards, the pendulum swung the other way and Garage Rock Revival evolved into Dance Punk.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-contemporaryrock-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "The White Stripes",
+                        track: "Seven Nation Army",
+                        path: "../../../samples/contemporaryrock/garagerockrevival1.ogg"
+                    },
+                    {
+                        artist: "The Strokes",
+                        track: "Juicebox",
+                        path: "../../../samples/contemporaryrock/garagerockrevival2.ogg"
+                    },
+                    {
+                        artist: "The Black Keys",
+                        track: "Lonely Boy",
+                        path: "../../../samples/contemporaryrock/garagerockrevival3.ogg"
+                    },
+                    {
+                        artist: "The Hives",
+                        track: "Tick Tick Boom",
+                        path: "../../../samples/contemporaryrock/garagerockrevival4.ogg"
+                    },
+                    {
+                        artist: "The Vines",
+                        track: "Ride",
+                        path: "../../../samples/contemporaryrock/garagerockrevival5.ogg"
+                    },
+                    {
+                        artist: "The Libertines",
+                        track: "Can't Stand Me Now",
+                        path: "../../../samples/contemporaryrock/garagerockrevival6.ogg"
+                    },
+                    {
+                        artist: "Arctic Monkeys",
+                        track: "Don't Sit Down 'Cause I've Moved Your Chair",
+                        path: "../../../samples/contemporaryrock/garagerockrevival7.ogg"
+                    },
+                    {
+                        artist: "Spring King",
+                        track: "City",
+                        path: "../../../samples/contemporaryrock/garagerockrevival8.ogg"
+                    },
+                    {
+                        artist: "Interpol",
+                        track: "Obstacle 1",
+                        path: "../../../samples/contemporaryrock/garagerockrevival9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-contemporaryrock').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-contemporaryrock-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-contemporaryrock"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

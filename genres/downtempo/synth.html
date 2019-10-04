@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Synth</title>
+    </head>
+
+    <body class="genre" id="synth">
+        <div class="box downtempo">
+            <h1>SYNTH</h1>
+
+            <p>At the end of the 60s, a single affordable electronic music instrument was suddenly released on the market that was able to do anything! Melody, rhythm, beats, all-in-one &ndash; it was all possible with the use of the synthesizer. The possibilities of the first synthesizers were not endless however, and some presets were more liked than others. This fact combined with the eagerness of unknown DIY-composers resulted in an avalanche of similar electronic tunes &ndash; strong, catchy melodies (often four simple chords), alternated by spacy sound effects and accompanied by synth strings or moody bass chords, either without beat or with the echoing thunder of built-in drum machines. In the 80s, this so called Synth music saw a small revival as the bass-driven and hollow sounding soundtrack for all neon-filled sci-fi films. Most of Synth was part of the so-called subgenre "Spacesynth" &ndash; music for science-fiction films or filled with space-like sounds. Synth became the favorite music for almost any late 70s and early 80s television and film theme, as it was a fairly new and unexpected sound that presented a challenge to be used for anything else.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-downtempo-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-downtempo-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Hot Butter",
+                        track: "Popcorn",
+                        path: "../../samples/downtempo/synth1.ogg"
+                    },
+                    {
+                        artist: "Bruce Haack",
+                        track: "Mean Old Devil",
+                        path: "../../samples/downtempo/synth2.ogg"
+                    },
+                    {
+                        artist: "Perrey And Kingsley",
+                        track: "The Savers",
+                        path: "../../samples/downtempo/synth3.ogg"
+                    },
+                    {
+                        artist: "Kraftwerk",
+                        track: "Autobahn",
+                        path: "../../samples/downtempo/synth4.ogg"
+                    },
+                    {
+                        artist: "Dave Richmond",
+                        track: "Movin' Along",
+                        path: "../../samples/downtempo/synth5.ogg"
+                    },
+                    {
+                        artist: "Vangelis",
+                        track: "Chariots Of Fire",
+                        path: "../../samples/downtempo/synth6.ogg"
+                    },
+                    {
+                        artist: "Harold Faltermeyer",
+                        track: "Axel F",
+                        path: "../../samples/downtempo/synth7.ogg"
+                    },
+                    {
+                        artist: "Heinz Funk",
+                        track: "Menuett",
+                        path: "../../samples/downtempo/synth8.ogg"
+                    },
+                    {
+                        artist: "Ted Atking & Alain Feanch",
+                        track: "Children's Carnival",
+                        path: "../../samples/downtempo/synth9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-downtempo').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-downtempo-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-downtempo"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

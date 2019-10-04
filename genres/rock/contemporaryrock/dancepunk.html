@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Dance Punk</title>
+    </head>
+
+    <body class="genre" id="dancepunk">
+        <div class="box contemporaryrock">
+            <h1>DANCE PUNK</h1>
+
+            <p>After Post-Punk, a number of New Wave bands experimented with the idea of electronic pulsating rhythms, just like many Synthpop artists back in the day attempted to do, but more EDM than Pop. Especially in Manchester, UK, cross-pollination was at an all-time high &ndash; Acid House was welcomed by the British with open arms, leading to an unusual subgenre called Madchester, the bridging between Alternative Rock and Acid House. However, the renewed interest in pre-Alternative Rock music by Garage Rock Revival bands also shifted the ground where Indie Dance was buried, resulting in what is now understood as "Dance Punk" &ndash; modern New Wave meets House. The music is so infectious that even the middle-aged, middle-class white man starts to dance. And finally, there is the short-lived Nu Rave movement, which blends Dance Punk with Alternative Rock. Fast, danceable Rock music created by artists with only their laptop &ndash; DIY entrepreneurship like Free Tekno and Rave and a grasp of their old school euphoria in a Rock ensemble. Nu Rave is Madchester in the age of social media and hipsterism.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-contemporaryrock-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "LCD Soundsystem",
+                        track: "Get Innocuous!",
+                        path: "../../../samples/contemporaryrock/dancepunk1.ogg"
+                    },
+                    {
+                        artist: "Soulwax",
+                        track: "NY Excuse",
+                        path: "../../../samples/contemporaryrock/dancepunk2.ogg"
+                    },
+                    {
+                        artist: "Yeah Yeah Yeahs",
+                        track: "Heads Will Roll",
+                        path: "../../../samples/contemporaryrock/dancepunk3.ogg"
+                    },
+                    {
+                        artist: "!!!",
+                        track: "Heart Of Hearts",
+                        path: "../../../samples/contemporaryrock/dancepunk4.ogg"
+                    },
+                    {
+                        artist: "The Rapture",
+                        track: "Echoes",
+                        path: "../../../samples/contemporaryrock/dancepunk5.ogg"
+                    },
+                    {
+                        artist: "Infadels",
+                        track: "Can't Get Enough",
+                        path: "../../../samples/contemporaryrock/dancepunk6.ogg"
+                    },
+                    {
+                        artist: "Klaxons",
+                        track: "Golden Skans",
+                        path: "../../../samples/contemporaryrock/dancepunk7.ogg"
+                    },
+                    {
+                        artist: "New Young Pony Club",
+                        track: "Ice Cream",
+                        path: "../../../samples/contemporaryrock/dancepunk8.ogg"
+                    },
+                    {
+                        artist: "Datarock",
+                        track: "Fa-Fa-Fa",
+                        path: "../../../samples/contemporaryrock/dancepunk9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-contemporaryrock').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-contemporaryrock-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-contemporaryrock"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

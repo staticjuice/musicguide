@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Turntablism</title>
+    </head>
+
+    <body class="genre" id="turntablism">
+        <div class="box hiphop">
+            <h1>TURNTABLISM</h1>
+
+            <p>Turntablism is Hip Hop music without vocals. Hip Hop as a general rule consists of two elements &ndash; an instrumental track (the "beat") and a vocal track (the "rap"). The artist who crafts the beat is the producer and the one who crafts the rap is the MC. In this format, the rap is almost always the primary focus of the song, providing most of the complexity and variation over a fairly repetitive beat. Turntablism does not feature any MC rapping, thus giving the producer the flexibility to create more complex, richly detailed and varied instrumentals. Songs of this genre may wander off in different musical directions and explore various subgenres because the instruments do not have to supply a steady beat for an MC. Although producers have made and released Hip Hop beats without MCs since Hip Hop's inception, those records rarely became well-known. Due to the current state of copyright law, most Turntablism tracks are released on small, independent labels. Producers often have difficulty obtaining clearance for the many samples found throughout their work, and labels are often fraught with legal problems.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Terminator X feat. DJ Kool Herc",
+                        track: "Make Room For Thunder",
+                        path: "../../samples/hiphop/turntablism1.ogg"
+                    },
+                    {
+                        artist: "The X-Ecutioners",
+                        track: "One Man Band",
+                        path: "../../samples/hiphop/turntablism2.ogg"
+                    },
+                    {
+                        artist: "DJ Q-Bert",
+                        track: "Razorblade Alcohol Slide",
+                        path: "../../samples/hiphop/turntablism3.ogg"
+                    },
+                    {
+                        artist: "Kid Koala",
+                        track: "Fender Bender",
+                        path: "../../samples/hiphop/turntablism4.ogg"
+                    },
+                    {
+                        artist: "Harmonic 33",
+                        track: "Doo The Zoo",
+                        path: "../../samples/hiphop/turntablism5.ogg"
+                    },
+                    {
+                        artist: "DJ Vadim",
+                        track: "Theme From Conquest Of The Irrational",
+                        path: "../../samples/hiphop/turntablism6.ogg"
+                    },
+                    {
+                        artist: "DJ Q-Bert",
+                        track: "Turntable TV (Re-Vizion)",
+                        path: "../../samples/hiphop/turntablism7.ogg"
+                    },
+                    {
+                        artist: "Mix Master Mike",
+                        track: "Supa Wyde Laces",
+                        path: "../../samples/hiphop/turntablism8.ogg"
+                    },
+                    {
+                        artist: "Cut Chemist",
+                        track: "The Periodic Table",
+                        path: "../../samples/hiphop/turntablism9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hiphop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hiphop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hiphop"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

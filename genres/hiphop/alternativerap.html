@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Alternative Rap</title>
+    </head>
+
+    <body class="genre" id="alternativerap">
+        <div class="box hiphop">
+            <h1>ALTERNATIVE RAP</h1>
+
+            <p>Out of Jazz Rap, a strong and endless Hip Hop movement emerged. Next to the aggressiveness of Gangsta Rap and vulgarity of Miami Bass, the Nu Skool offered a third alternative for Hip Hop fans who wanted more than these transparent provocateurs. As a parallel underground stream, the Nu Skool experimented more with techniques and creating own sounds, earning the name Progressive or Alternative hip Hop. Instead of nicely matching the rhyme to a predetermined pattern, Nu Skool rappers became lyrical wordsmiths, striking their verbal avalanches at any unguarded point of the beat. Alternative Rap is sometimes divided into three subgenres, based on their lyrical content &ndash; Conscious Hip Hop, Turntablism and Political Hip Hop. Even more than Jazz Rap, Conscious Hip Hop stresses the native roots of Africa, often identifying with radical African tribes or militant black Muslims. Turntablism focuses on special techniques and unexpected rhythms where content is less important than form. Political Hip Hop, on the other hand, involves a sharp and relentless critique on government and corporate society.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "The Black Eyed Peas",
+                        track: "Empire Strikes Back",
+                        path: "../../samples/hiphop/alternativerap1.ogg"
+                    },
+                    {
+                        artist: "Swollen Members",
+                        track: "Deep End",
+                        path: "../../samples/hiphop/alternativerap2.ogg"
+                    },
+                    {
+                        artist: "Del The Funky Homosapien",
+                        track: "Phoney Phranchise",
+                        path: "../../samples/hiphop/alternativerap3.ogg"
+                    },
+                    {
+                        artist: "Disposable Heroes Of Hiphoprisy",
+                        track: "Television, The Drug Of The Nation",
+                        path: "../../samples/hiphop/alternativerap4.ogg"
+                    },
+                    {
+                        artist: "Mos Def",
+                        track: "Mathematics",
+                        path: "../../samples/hiphop/alternativerap5.ogg"
+                    },
+                    {
+                        artist: "Cannibal Ox",
+                        track: "Raspberry Fields",
+                        path: "../../samples/hiphop/alternativerap6.ogg"
+                    },
+                    {
+                        artist: "Tyler, The Creator & A$AP Rocky",
+                        track: "Potato Salad",
+                        path: "../../samples/hiphop/alternativerap7.ogg"
+                    },
+                    {
+                        artist: "MF Doom",
+                        track: "Hoe Cakes",
+                        path: "../../samples/hiphop/alternativerap8.ogg"
+                    },
+                    {
+                        artist: "Danger Mouse & Jemini The Gifted One",
+                        track: "Bush Boys",
+                        path: "../../samples/hiphop/alternativerap9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hiphop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hiphop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hiphop"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

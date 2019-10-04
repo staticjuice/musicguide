@@ -1,15 +1,14 @@
-a {
-    transition: all .2s ease;
-}
+@font-face { font-family: 'RobotoBlack'; src: url(../fonts/RobotoBlack.ttf); }
+@font-face { font-family: 'ProductSansRegular'; src: url(../fonts/ProductSansRegular.ttf); }
+@font-face { font-family: 'ProductSansBold'; src: url(../fonts/ProductSansBold.ttf); }
 
 a:link, a:visited, a:hover, a:active {
     color: #FFF; text-decoration: none;
 }
 
 h1 {
-  	font-family: 'Roboto';
-  	font-weight: 900;
-  	font-size: 2.5em;
+    font-family: 'RobotoBlack';
+    font-size: 2.5em;
 }
 
 p {
@@ -33,7 +32,8 @@ p {
     background: #080808;
 }
 
-.sidebar.pop::-webkit-scrollbar-thumb {
+.sidebar.pop::-webkit-scrollbar-thumb,
+.sidebar.mymusic::-webkit-scrollbar-thumb {
     background: #222;
     border-radius: 8px;
 }
@@ -41,7 +41,7 @@ p {
 /*---------------------------------------------------------------------------*/
 
 #introbox {
-    font-family: 'Roboto';
+    font-family: 'ProductSansRegular';
     color: #FFF;
     font-size: 3.75vw;
     position: absolute;
@@ -55,7 +55,8 @@ p {
     font-size: 1.7em;
     color: #FFF;
     padding: 0.25em;
-    border: 0.065em solid #FFF;
+    border-radius: 0.1em;
+    border: 0.1em solid #FFF;
 }
 
 #introbutton:hover {
@@ -76,6 +77,7 @@ p {
 }
 
 #genres-grid h1 {
+    font-family: 'ProductSansRegular';
     top: 41.25%; left: 0; bottom: 0; right: 0;
     font-weight: 300;
     font-size: 2.9vw;
@@ -86,14 +88,13 @@ p {
 
 .img-row img {
     width: 100%;
+    border-radius: 0.7em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     filter: brightness(40%);
 }
 
 #genres-heading-mobile {
     padding: 1.5em;
-    font-family: 'Roboto';
-    font-weight: 300;
     font-size: 4.25vw;
     color: #FFF;
     text-align: center;
@@ -102,6 +103,7 @@ p {
 .img-row-mobile img {
     width: 100%;
     margin-top: 4vw;
+    border-radius: 0.7em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     filter: brightness(40%);
 }
@@ -112,7 +114,7 @@ p {
 }
 
 #rock h1 {
-    font-size: 2.7vw;
+    font-size: 2.25em;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -162,6 +164,7 @@ p {
 .mainclassicrock:before { background: url("../images/classicrockbig.jpg") no-repeat center fixed; }
 .mainpunk:before { background: url("../images/punkrockbig.jpg") no-repeat center fixed; }
 .mainalternative:before { background: url("../images/alternativebig.jpg") no-repeat center fixed; }
+.maincontemporaryrock:before { background: url("../images/contemporaryrockbig.jpg") no-repeat center fixed; }
 .mainmetal:before { background: url("../images/metalbig.jpg") no-repeat center fixed; }
 .mainreggae:before { background: url("../images/reggaebig.jpg") no-repeat center fixed; }
 .mainhiphop:before { background: url("../images/hiphopbig.jpg") no-repeat center fixed; }
@@ -174,8 +177,10 @@ p {
 .maindrumandbass:before { background: url("../images/drumandbassbig.jpg") no-repeat center fixed; }
 .mainukgarage:before { background: url("../images/ukgaragebig.jpg") no-repeat center fixed; }
 .maindowntempo:before { background: url("../images/downtempobig.jpg") no-repeat center fixed; }
+.mainaesthetic:before { background: url("../images/aestheticbig.jpg") no-repeat center fixed; }
 .mainclassical:before { background: url("../images/classicalbig.jpg") no-repeat center fixed; }
 .mainfolk:before { background: url("../images/folkbig.jpg") no-repeat center fixed; }
+.mainmymusic:before { background: url("../images/mymusicbig.jpg") no-repeat center fixed; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -189,6 +194,7 @@ p {
 .mainclassicrock .genrelist a:hover, .mainclassicrock .genrelist-mobile a:hover { color: #EF5350; }
 .mainpunk .genrelist a:hover, .mainpunk .genrelist-mobile a:hover { color: #FFA726; }
 .mainalternative .genrelist a:hover, .mainalternative .genrelist-mobile a:hover { color: #78909C; }
+.maincontemporaryrock .genrelist a:hover, .maincontemporaryrock .genrelist-mobile a:hover { color: #D8BFA2; }
 .mainmetal .genrelist a:hover, .mainmetal .genrelist-mobile a:hover { color: #424242; }
 .mainreggae .genrelist a:hover, .mainreggae .genrelist-mobile a:hover { color: #66BB6A; }
 .mainhiphop .genrelist a:hover, .mainhiphop .genrelist-mobile a:hover { color: #79577F; }
@@ -201,8 +207,10 @@ p {
 .maindrumandbass .genrelist a:hover, .maindrumandbass .genrelist-mobile a:hover { color: #DD2251; }
 .mainukgarage .genrelist a:hover, .mainukgarage .genrelist-mobile a:hover { color: #B59DDB; }
 .maindowntempo .genrelist a:hover, .maindowntempo .genrelist-mobile a:hover { color: #EC407A; }
+.mainaesthetic .genrelist a:hover, .mainaesthetic .genrelist-mobile a:hover { color: #2FEDED; }
 .mainclassical .genrelist a:hover, .mainclassical .genrelist-mobile a:hover { color: #A18259; }
 .mainfolk .genrelist a:hover, .mainfolk .genrelist-mobile a:hover { color: #D8C188; }
+.mainmymusic .genrelist a:hover, .mainmymusic .genrelist-mobile a:hover { color: #BDBDBD; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -216,7 +224,8 @@ p {
 .mainclassicrock .genrelist ::selection, .mainclassicrock .genrelist-mobile ::selection { background: rgba(198,40,40,0.998); }
 .mainpunk .genrelist ::selection, .mainpunk .genrelist-mobile ::selection { background: rgba(239,108,0,0.998); }
 .mainalternative .genrelist ::selection, .mainalternative .genrelist-mobile ::selection { background: rgba(55,71,79,0.998); }
-.mainmetal .genrelist ::selection, .mainmetal .genrelist-mobile ::selection { background: rgba(0,0,0,0.998); }
+.maincontemporaryrock .genrelist ::selection, .maincontemporaryrock .genrelist-mobile ::selection { background: rgba(193,154,107,0.998); }
+.mainmetal .genrelist ::selection, .mainmetal .genrelist-mobile ::selection { background: rgba(8,8,8,0.998); }
 .mainreggae .genrelist ::selection, .mainreggae .genrelist-mobile ::selection { background: rgba(46,125,50,0.998); }
 .mainhiphop .genrelist ::selection, .mainhiphop .genrelist-mobile ::selection { background: rgba(78,56,82,0.998); }
 .mainindustrial .genrelist ::selection, .mainindustrial .genrelist-mobile ::selection { background: rgba(78,52,46,0.998); }
@@ -228,12 +237,15 @@ p {
 .maindrumandbass .genrelist ::selection, .maindrumandbass .genrelist-mobile ::selection { background: rgba(154,24,57,0.998); }
 .mainukgarage .genrelist ::selection, .mainukgarage .genrelist-mobile ::selection { background: rgba(143,124,173,0.998); }
 .maindowntempo .genrelist ::selection, .maindowntempo .genrelist-mobile ::selection { background: rgba(194,24,91,0.998); }
+.mainaesthetic .genrelist ::selection, .mainaesthetic .genrelist-mobile ::selection { background: rgba(41,204,204,0.998); }
 .mainclassical .genrelist ::selection, .mainclassical .genrelist-mobile ::selection { background: rgba(112,90,61,0.998); }
 .mainfolk .genrelist ::selection, .mainfolk .genrelist-mobile ::selection { background: rgba(198,164,77,0.998); }
+.mainmymusic .genrelist ::selection, .mainmymusic .genrelist-mobile ::selection { background: rgba(237,237,237,0.998); color: #222; }
 
 /*---------------------------------------------------------------------------*/
 
 .sidebar {
+    font-family: 'ProductSansRegular';
     width: 40em;
     height: 100vh;
     padding: 1.25em 1.5em 0.5em;
@@ -244,20 +256,23 @@ p {
 }
 
 .sidebar-mobile {
+    font-family: 'ProductSansRegular';
     width: 100%;
     padding: 1.5em;
     font-size: 4vw;
 }
 
 .genre {
-    font-family: 'Roboto';
+    font-family: 'ProductSansRegular';
     font-size: 1.544vh;
 }
 
 .box {
+    font-family: 'ProductSansRegular';
     width: 40em;
     padding: 1.5em;
     margin: 3.5em;
+    border-radius: 0.7em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -271,7 +286,8 @@ p {
 .classicrock { background-color: #C62828; color: #FFF; }
 .punk { background-color: #EF6C00; color: #FFF; }
 .alternative { background-color: #37474F; color: #FFF; }
-.metal { background-color: #000000; color: #FFF; }
+.contemporaryrock { background-color: #C19A6B; color: #FFF; }
+.metal { background-color: #080808; color: #FFF; }
 .reggae { background-color: #2E7D32; color: #FFF; }
 .hiphop { background-color: #4E3852; color: #FFF; }
 .industrial { background-color: #4E342E; color: #FFF; }
@@ -283,17 +299,20 @@ p {
 .drumandbass { background-color: #9A1839; color: #FFF; }
 .ukgarage { background-color: #8F7CAD; color: #FFF; }
 .downtempo { background-color: #C2185B; color: #FFF; }
+.aesthetic { background-color: #29CCCC; color: #FFF; }
 .classical { background-color: #705A3D; color: #FFF; }
 .folk { background-color: #C6A44D; color: #FFF; }
+.mymusic { background-color: #EDEDED; color: #222; }
 
 /*---------------------------------------------------------------------------*/
 
-#negrospirituals {background: url("../images/gospel/negrospirituals.jpg") no-repeat center fixed;}
+#spirituals {background: url("../images/gospel/spirituals.jpg") no-repeat center fixed;}
 #traditionalgospel {background: url("../images/gospel/traditionalgospel.jpg") no-repeat center fixed;}
 #contemporarygospel {background: url("../images/gospel/contemporarygospel.jpg") no-repeat center fixed;}
+#contemporarychristian {background: url("../images/gospel/contemporarychristian.jpg") no-repeat center fixed;}
 
 #countryblues {background: url("../images/blues/countryblues.jpg") no-repeat center fixed;}
-#classicfemaleblues {background: url("../images/blues/classicfemaleblues.jpg") no-repeat center fixed;}
+#vaudevilleblues {background: url("../images/blues/vaudevilleblues.jpg") no-repeat center fixed;}
 #boogiewoogie {background: url("../images/blues/boogiewoogie.jpg") no-repeat center fixed;}
 #jumpblues {background: url("../images/blues/jumpblues.jpg") no-repeat center fixed;}
 #urbanblues {background: url("../images/blues/urbanblues.jpg") no-repeat center fixed;}
@@ -338,7 +357,7 @@ p {
 #electrofunk {background: url("../images/rhythmandblues/electrofunk.jpg") no-repeat center fixed;}
 #newjackswing {background: url("../images/rhythmandblues/newjackswing.jpg") no-repeat center fixed;}
 #neosoul {background: url("../images/rhythmandblues/neosoul.jpg") no-repeat center fixed;}
-#contemporaryrhythmandblues {background: url("../images/rhythmandblues/contemporaryrhythmandblues.jpg") no-repeat center fixed;}
+#urbancontemporary {background: url("../images/rhythmandblues/urbancontemporary.jpg") no-repeat center fixed;}
 
 #traditionalpop {background: url("../images/pop/traditionalpop.jpg") no-repeat center fixed;}
 #brillbuildingsound {background: url("../images/pop/brillbuildingsound.jpg") no-repeat center fixed;}
@@ -349,44 +368,50 @@ p {
 #dancepop {background: url("../images/pop/dancepop.jpg") no-repeat center fixed;}
 #electropop {background: url("../images/pop/electropop.jpg") no-repeat center fixed;}
 
-#rockandroll {background: url("../images/rock/rockandroll.jpg") no-repeat center fixed;}
-#surfrock {background: url("../images/rock/surfrock.jpg") no-repeat center fixed;}
-#garagerock {background: url("../images/rock/garagerock.jpg") no-repeat center fixed;}
-#beat {background: url("../images/rock/beat.jpg") no-repeat center fixed;}
+#rockandroll {background: url("../images/rockandroll/rockandroll.jpg") no-repeat center fixed;}
+#surfrock {background: url("../images/rockandroll/surfrock.jpg") no-repeat center fixed;}
+#garagerock {background: url("../images/rockandroll/garagerock.jpg") no-repeat center fixed;}
+#beat {background: url("../images/rockandroll/beat.jpg") no-repeat center fixed;}
 
-#bluesrock {background: url("../images/rock/bluesrock.jpg") no-repeat center fixed;}
-#folkrock {background: url("../images/rock/folkrock.jpg") no-repeat center fixed;}
-#psychedelicrock {background: url("../images/rock/psychedelicrock.jpg") no-repeat center fixed;}
-#hardrock {background: url("../images/rock/hardrock.jpg") no-repeat center fixed;}
-#progressiverock {background: url("../images/rock/progressiverock.jpg") no-repeat center fixed;}
-#krautrock {background: url("../images/rock/krautrock.jpg") no-repeat center fixed;}
-#southernrock {background: url("../images/rock/southernrock.jpg") no-repeat center fixed;}
-#glamrock {background: url("../images/rock/glamrock.jpg") no-repeat center fixed;}
-#heartlandrock {background: url("../images/rock/heartlandrock.jpg") no-repeat center fixed;}
+#bluesrock {background: url("../images/classicrock/bluesrock.jpg") no-repeat center fixed;}
+#folkrock {background: url("../images/classicrock/folkrock.jpg") no-repeat center fixed;}
+#psychedelicrock {background: url("../images/classicrock/psychedelicrock.jpg") no-repeat center fixed;}
+#hardrock {background: url("../images/classicrock/hardrock.jpg") no-repeat center fixed;}
+#progressiverock {background: url("../images/classicrock/progressiverock.jpg") no-repeat center fixed;}
+#krautrock {background: url("../images/classicrock/krautrock.jpg") no-repeat center fixed;}
+#southernrock {background: url("../images/classicrock/southernrock.jpg") no-repeat center fixed;}
+#glamrock {background: url("../images/classicrock/glamrock.jpg") no-repeat center fixed;}
+#heartlandrock {background: url("../images/classicrock/heartlandrock.jpg") no-repeat center fixed;}
 
-#protopunk {background: url("../images/rock/protopunk.jpg") no-repeat center fixed;}
-#punkrock {background: url("../images/rock/punkrock.jpg") no-repeat center fixed;}
-#skapunk {background: url("../images/rock/skapunk.jpg") no-repeat center fixed;}
-#postpunk {background: url("../images/rock/postpunk.jpg") no-repeat center fixed;}
-#newwave {background: url("../images/rock/newwave.jpg") no-repeat center fixed;}
-#nowave {background: url("../images/rock/nowave.jpg") no-repeat center fixed;}
-#psychobilly {background: url("../images/rock/psychobilly.jpg") no-repeat center fixed;}
-#hardcorepunk {background: url("../images/rock/hardcorepunk.jpg") no-repeat center fixed;}
-#posthardcore {background: url("../images/rock/posthardcore.jpg") no-repeat center fixed;}
+#protopunk {background: url("../images/punk/protopunk.jpg") no-repeat center fixed;}
+#punkrock {background: url("../images/punk/punkrock.jpg") no-repeat center fixed;}
+#skapunk {background: url("../images/punk/skapunk.jpg") no-repeat center fixed;}
+#postpunk {background: url("../images/punk/postpunk.jpg") no-repeat center fixed;}
+#newwave {background: url("../images/punk/newwave.jpg") no-repeat center fixed;}
+#nowave {background: url("../images/punk/nowave.jpg") no-repeat center fixed;}
+#psychobilly {background: url("../images/punk/psychobilly.jpg") no-repeat center fixed;}
+#hardcorepunk {background: url("../images/punk/hardcorepunk.jpg") no-repeat center fixed;}
+#posthardcore {background: url("../images/punk/posthardcore.jpg") no-repeat center fixed;}
 
-#janglepop {background: url("../images/rock/janglepop.jpg") no-repeat center fixed;}
-#shoegaze {background: url("../images/rock/shoegaze.jpg") no-repeat center fixed;}
-#raprock {background: url("../images/rock/raprock.jpg") no-repeat center fixed;}
-#grunge {background: url("../images/rock/grunge.jpg") no-repeat center fixed;}
-#britpop {background: url("../images/rock/britpop.jpg") no-repeat center fixed;}
-#poppunk {background: url("../images/rock/poppunk.jpg") no-repeat center fixed;}
-#postrock {background: url("../images/rock/postrock.jpg") no-repeat center fixed;}
-#postgrunge {background: url("../images/rock/postgrunge.jpg") no-repeat center fixed;}
-#postbritpop {background: url("../images/rock/postbritpop.jpg") no-repeat center fixed;}
-#emo {background: url("../images/rock/emo.jpg") no-repeat center fixed;}
-#garagerockrevival {background: url("../images/rock/garagerockrevival.jpg") no-repeat center fixed;}
-#electronicrock {background: url("../images/rock/electronicrock.jpg") no-repeat center fixed;}
-#indiefolk {background: url("../images/rock/indiefolk.jpg") no-repeat center fixed;}
+#janglepop {background: url("../images/alternative/janglepop.jpg") no-repeat center fixed;}
+#noiserock {background: url("../images/alternative/noiserock.jpg") no-repeat center fixed;}
+#shoegaze {background: url("../images/alternative/shoegaze.jpg") no-repeat center fixed;}
+#raprock {background: url("../images/alternative/raprock.jpg") no-repeat center fixed;}
+#grunge {background: url("../images/alternative/grunge.jpg") no-repeat center fixed;}
+#britpop {background: url("../images/alternative/britpop.jpg") no-repeat center fixed;}
+#poppunk {background: url("../images/alternative/poppunk.jpg") no-repeat center fixed;}
+#postrock {background: url("../images/alternative/postrock.jpg") no-repeat center fixed;}
+#postgrunge {background: url("../images/alternative/postgrunge.jpg") no-repeat center fixed;}
+#postbritpop {background: url("../images/alternative/postbritpop.jpg") no-repeat center fixed;}
+
+#emo {background: url("../images/contemporaryrock/emo.jpg") no-repeat center fixed;}
+#screamo {background: url("../images/contemporaryrock/screamo.jpg") no-repeat center fixed;}
+#garagerockrevival {background: url("../images/contemporaryrock/garagerockrevival.jpg") no-repeat center fixed;}
+#nuprog {background: url("../images/contemporaryrock/nuprog.jpg") no-repeat center fixed;}
+#dancepunk {background: url("../images/contemporaryrock/dancepunk.jpg") no-repeat center fixed;}
+#electroclash {background: url("../images/contemporaryrock/electroclash.jpg") no-repeat center fixed;}
+#indietronica {background: url("../images/contemporaryrock/indietronica.jpg") no-repeat center fixed;}
+#indiefolk {background: url("../images/contemporaryrock/indiefolk.jpg") no-repeat center fixed;}
 
 #heavymetal {background: url("../images/metal/heavymetal.jpg") no-repeat center fixed;}
 #nwobhm {background: url("../images/metal/nwobhm.jpg") no-repeat center fixed;}
@@ -414,19 +439,18 @@ p {
 #reggaefusion {background: url("../images/reggae/reggaefusion.jpg") no-repeat center fixed;}
 #reggaeton {background: url("../images/reggae/reggaeton.jpg") no-repeat center fixed;}
 
-#oldschoolhiphop {background: url("../images/hiphop/oldschoolhiphop.jpg") no-repeat center fixed;}
-#goldenagehiphop {background: url("../images/hiphop/goldenagehiphop.jpg") no-repeat center fixed;}
+#oldschoolrap {background: url("../images/hiphop/oldschoolrap.jpg") no-repeat center fixed;}
+#turntablism {background: url("../images/hiphop/turntablism.jpg") no-repeat center fixed;}
 #miamibass {background: url("../images/hiphop/miamibass.jpg") no-repeat center fixed;}
-#gangstarap {background: url("../images/hiphop/gangstarap.jpg") no-repeat center fixed;}
+#eastcoastrap {background: url("../images/hiphop/eastcoastrap.jpg") no-repeat center fixed;}
+#westcoastrap {background: url("../images/hiphop/westcoastrap.jpg") no-repeat center fixed;}
 #jazzrap {background: url("../images/hiphop/jazzrap.jpg") no-repeat center fixed;}
-#alternativehiphop {background: url("../images/hiphop/alternativehiphop.jpg") no-repeat center fixed;}
-#instrumentalhiphop {background: url("../images/hiphop/instrumentalhiphop.jpg") no-repeat center fixed;}
-#southernhiphop {background: url("../images/hiphop/southernhiphop.jpg") no-repeat center fixed;}
+#alternativerap {background: url("../images/hiphop/alternativerap.jpg") no-repeat center fixed;}
 #crunk {background: url("../images/hiphop/crunk.jpg") no-repeat center fixed;}
 #trap {background: url("../images/hiphop/trap.jpg") no-repeat center fixed;}
 
 #industrial {background: url("../images/industrial/industrial.jpg") no-repeat center fixed;}
-#gothicrock {background: url("../images/industrial/gothicrock.jpg") no-repeat center fixed;}
+#gothrock {background: url("../images/industrial/gothrock.jpg") no-repeat center fixed;}
 #noise {background: url("../images/industrial/noise.jpg") no-repeat center fixed;}
 #darkwave {background: url("../images/industrial/darkwave.jpg") no-repeat center fixed;}
 #ebm {background: url("../images/industrial/ebm.jpg") no-repeat center fixed;}
@@ -434,69 +458,77 @@ p {
 #electroindustrial {background: url("../images/industrial/electroindustrial.jpg") no-repeat center fixed;}
 #futurepop {background: url("../images/industrial/futurepop.jpg") no-repeat center fixed;}
 
-#chicagohouse {background: url("../images/dance/chicagohouse.jpg") no-repeat center fixed;}
-#acidhouse {background: url("../images/dance/acidhouse.jpg") no-repeat center fixed;}
-#deephouse {background: url("../images/dance/deephouse.jpg") no-repeat center fixed;}
-#progressivehouse {background: url("../images/dance/progressivehouse.jpg") no-repeat center fixed;}
-#techhouse {background: url("../images/dance/techhouse.jpg") no-repeat center fixed;}
-#frenchhouse {background: url("../images/dance/frenchhouse.jpg") no-repeat center fixed;}
-#electrohouse {background: url("../images/dance/electrohouse.jpg") no-repeat center fixed;}
-#electroswing {background: url("../images/dance/electroswing.jpg") no-repeat center fixed;}
-#bigroom {background: url("../images/dance/bigroom.jpg") no-repeat center fixed;}
-#nudisco {background: url("../images/dance/nudisco.jpg") no-repeat center fixed;}
-#tropicalhouse {background: url("../images/dance/tropicalhouse.jpg") no-repeat center fixed;}
-#futurehouse {background: url("../images/dance/futurehouse.jpg") no-repeat center fixed;}
+#chicagohouse {background: url("../images/house/chicagohouse.jpg") no-repeat center fixed;}
+#acidhouse {background: url("../images/house/acidhouse.jpg") no-repeat center fixed;}
+#deephouse {background: url("../images/house/deephouse.jpg") no-repeat center fixed;}
+#progressivehouse {background: url("../images/house/progressivehouse.jpg") no-repeat center fixed;}
+#techhouse {background: url("../images/house/techhouse.jpg") no-repeat center fixed;}
+#discohouse {background: url("../images/house/discohouse.jpg") no-repeat center fixed;}
+#frenchhouse {background: url("../images/house/frenchhouse.jpg") no-repeat center fixed;}
+#electrohouse {background: url("../images/house/electrohouse.jpg") no-repeat center fixed;}
+#anthemhouse {background: url("../images/house/anthemhouse.jpg") no-repeat center fixed;}
+#electroswing {background: url("../images/house/electroswing.jpg") no-repeat center fixed;}
+#nudisco {background: url("../images/house/nudisco.jpg") no-repeat center fixed;}
+#tropicalhouse {background: url("../images/house/tropicalhouse.jpg") no-repeat center fixed;}
+#futurehouse {background: url("../images/house/futurehouse.jpg") no-repeat center fixed;}
 
-#acidtrance {background: url("../images/dance/acidtrance.jpg") no-repeat center fixed;}
-#balearictrance {background: url("../images/dance/balearictrance.jpg") no-repeat center fixed;}
-#psychedelictrance {background: url("../images/dance/psychedelictrance.jpg") no-repeat center fixed;}
-#dreamtrance {background: url("../images/dance/dreamtrance.jpg") no-repeat center fixed;}
-#progressivetrance {background: url("../images/dance/progressivetrance.jpg") no-repeat center fixed;}
-#eurotrance {background: url("../images/dance/eurotrance.jpg") no-repeat center fixed;}
-#techtrance {background: url("../images/dance/techtrance.jpg") no-repeat center fixed;}
-#hardtrance {background: url("../images/dance/hardtrance.jpg") no-repeat center fixed;}
-#upliftingtrance {background: url("../images/dance/upliftingtrance.jpg") no-repeat center fixed;}
+#acidtrance {background: url("../images/trance/acidtrance.jpg") no-repeat center fixed;}
+#psychedelictrance {background: url("../images/trance/psychedelictrance.jpg") no-repeat center fixed;}
+#balearictrance {background: url("../images/trance/balearictrance.jpg") no-repeat center fixed;}
+#dreamtrance {background: url("../images/trance/dreamtrance.jpg") no-repeat center fixed;}
+#progressivetrance {background: url("../images/trance/progressivetrance.jpg") no-repeat center fixed;}
+#eurotrance {background: url("../images/trance/eurotrance.jpg") no-repeat center fixed;}
+#techtrance {background: url("../images/trance/techtrance.jpg") no-repeat center fixed;}
+#hardtrance {background: url("../images/trance/hardtrance.jpg") no-repeat center fixed;}
+#upliftingtrance {background: url("../images/trance/upliftingtrance.jpg") no-repeat center fixed;}
+#neotrance {background: url("../images/trance/neotrance.jpg") no-repeat center fixed;}
 
-#detroittechno {background: url("../images/dance/detroittechno.jpg") no-repeat center fixed;}
-#acidtechno {background: url("../images/dance/acidtechno.jpg") no-repeat center fixed;}
-#minimaltechno {background: url("../images/dance/minimaltechno.jpg") no-repeat center fixed;}
-#schranz {background: url("../images/dance/schranz.jpg") no-repeat center fixed;}
+#detroittechno {background: url("../images/techno/detroittechno.jpg") no-repeat center fixed;}
+#acidtechno {background: url("../images/techno/acidtechno.jpg") no-repeat center fixed;}
+#minimaltechno {background: url("../images/techno/minimaltechno.jpg") no-repeat center fixed;}
+#schranz {background: url("../images/techno/schranz.jpg") no-repeat center fixed;}
 
-#newbeat {background: url("../images/dance/newbeat.jpg") no-repeat center fixed;}
-#rave {background: url("../images/dance/rave.jpg") no-repeat center fixed;}
-#gabber {background: url("../images/dance/gabber.jpg") no-repeat center fixed;}
-#happyhardcore {background: url("../images/dance/happyhardcore.jpg") no-repeat center fixed;}
-#speedcore {background: url("../images/dance/speedcore.jpg") no-repeat center fixed;}
-#trancecore {background: url("../images/dance/trancecore.jpg") no-repeat center fixed;}
-#hardstyle {background: url("../images/dance/hardstyle.jpg") no-repeat center fixed;}
+#newbeat {background: url("../images/hardcore/newbeat.jpg") no-repeat center fixed;}
+#rave {background: url("../images/hardcore/rave.jpg") no-repeat center fixed;}
+#breakbeathardcore {background: url("../images/hardcore/breakbeathardcore.jpg") no-repeat center fixed;}
+#gabber {background: url("../images/hardcore/gabber.jpg") no-repeat center fixed;}
+#happyhardcore {background: url("../images/hardcore/happyhardcore.jpg") no-repeat center fixed;}
+#speedcore {background: url("../images/hardcore/speedcore.jpg") no-repeat center fixed;}
+#trancecore {background: url("../images/hardcore/trancecore.jpg") no-repeat center fixed;}
+#hardstyle {background: url("../images/hardcore/hardstyle.jpg") no-repeat center fixed;}
 
-#electro {background: url("../images/dance/electro.jpg") no-repeat center fixed;}
-#floridabreaks {background: url("../images/dance/floridabreaks.jpg") no-repeat center fixed;}
-#bigbeat {background: url("../images/dance/bigbeat.jpg") no-repeat center fixed;}
-#nuskoolbreaks {background: url("../images/dance/nuskoolbreaks.jpg") no-repeat center fixed;}
-#progressivebreaks {background: url("../images/dance/progressivebreaks.jpg") no-repeat center fixed;}
+#electro {background: url("../images/breakbeat/electro.jpg") no-repeat center fixed;}
+#floridabreaks {background: url("../images/breakbeat/floridabreaks.jpg") no-repeat center fixed;}
+#chemicalbreaks {background: url("../images/breakbeat/chemicalbreaks.jpg") no-repeat center fixed;}
+#bigbeat {background: url("../images/breakbeat/bigbeat.jpg") no-repeat center fixed;}
+#nuskoolbreaks {background: url("../images/breakbeat/nuskoolbreaks.jpg") no-repeat center fixed;}
+#progressivebreaks {background: url("../images/breakbeat/progressivebreaks.jpg") no-repeat center fixed;}
 
-#jungle {background: url("../images/dance/jungle.jpg") no-repeat center fixed;}
-#darkstep {background: url("../images/dance/darkstep.jpg") no-repeat center fixed;}
-#hardstep {background: url("../images/dance/hardstep.jpg") no-repeat center fixed;}
-#techstep {background: url("../images/dance/techstep.jpg") no-repeat center fixed;}
-#jumpup {background: url("../images/dance/jumpup.jpg") no-repeat center fixed;}
-#atmosphericdrumandbass {background: url("../images/dance/atmosphericdrumandbass.jpg") no-repeat center fixed;}
-#jazzstep {background: url("../images/dance/jazzstep.jpg") no-repeat center fixed;}
-#neurofunk {background: url("../images/dance/neurofunk.jpg") no-repeat center fixed;}
-#liquidfunk {background: url("../images/dance/liquidfunk.jpg") no-repeat center fixed;}
+#jungle {background: url("../images/drumandbass/jungle.jpg") no-repeat center fixed;}
+#darkstep {background: url("../images/drumandbass/darkstep.jpg") no-repeat center fixed;}
+#atmosphericjungle {background: url("../images/drumandbass/atmosphericjungle.jpg") no-repeat center fixed;}
+#jazzstep {background: url("../images/drumandbass/jazzstep.jpg") no-repeat center fixed;}
+#jumpup {background: url("../images/drumandbass/jumpup.jpg") no-repeat center fixed;}
+#techstep {background: url("../images/drumandbass/techstep.jpg") no-repeat center fixed;}
+#neurofunk {background: url("../images/drumandbass/neurofunk.jpg") no-repeat center fixed;}
+#microfunk {background: url("../images/drumandbass/microfunk.jpg") no-repeat center fixed;}
+#liquidfunk {background: url("../images/drumandbass/liquidfunk.jpg") no-repeat center fixed;}
+#nujumpup {background: url("../images/drumandbass/nujumpup.jpg") no-repeat center fixed;}
+#drumstep {background: url("../images/drumandbass/drumstep.jpg") no-repeat center fixed;}
 
-#twostepgarage {background: url("../images/dance/2stepgarage.jpg") no-repeat center fixed;}
-#grime {background: url("../images/dance/grime.jpg") no-repeat center fixed;}
-#bassline {background: url("../images/dance/bassline.jpg") no-repeat center fixed;}
-#dubstep {background: url("../images/dance/dubstep.jpg") no-repeat center fixed;}
-#liquiddubstep {background: url("../images/dance/liquiddubstep.jpg") no-repeat center fixed;}
-#glitchhop {background: url("../images/dance/glitchhop.jpg") no-repeat center fixed;}
-#futuregarage {background: url("../images/dance/futuregarage.jpg") no-repeat center fixed;}
-#edmtrap {background: url("../images/dance/edmtrap.jpg") no-repeat center fixed;}
-#futurebass {background: url("../images/dance/futurebass.jpg") no-repeat center fixed;}
+#twostepgarage {background: url("../images/ukgarage/2stepgarage.jpg") no-repeat center fixed;}
+#bassline {background: url("../images/ukgarage/bassline.jpg") no-repeat center fixed;}
+#grime {background: url("../images/ukgarage/grime.jpg") no-repeat center fixed;}
+#dubstep {background: url("../images/ukgarage/dubstep.jpg") no-repeat center fixed;}
+#brostep {background: url("../images/ukgarage/brostep.jpg") no-repeat center fixed;}
+#liquiddubstep {background: url("../images/ukgarage/liquiddubstep.jpg") no-repeat center fixed;}
+#glitchhop {background: url("../images/ukgarage/glitchhop.jpg") no-repeat center fixed;}
+#futuregarage {background: url("../images/ukgarage/futuregarage.jpg") no-repeat center fixed;}
+#edmtrap {background: url("../images/ukgarage/edmtrap.jpg") no-repeat center fixed;}
+#futurebass {background: url("../images/ukgarage/futurebass.jpg") no-repeat center fixed;}
 
 #musiqueconcrete {background: url("../images/downtempo/musiqueconcrete.jpg") no-repeat center fixed;}
+#synth {background: url("../images/downtempo/synth.jpg") no-repeat center fixed;}
 #ambient {background: url("../images/downtempo/ambient.jpg") no-repeat center fixed;}
 #newage {background: url("../images/downtempo/newage.jpg") no-repeat center fixed;}
 #chiptune {background: url("../images/downtempo/chiptune.png") no-repeat center fixed;}
@@ -504,8 +536,7 @@ p {
 #triphop {background: url("../images/downtempo/triphop.jpg") no-repeat center fixed;}
 #illbient {background: url("../images/downtempo/illbient.jpg") no-repeat center fixed;}
 #glitch {background: url("../images/downtempo/glitch.jpg") no-repeat center fixed;}
-#synthwave {background: url("../images/downtempo/synthwave.jpg") no-repeat center fixed;}
-#vaporwave {background: url("../images/downtempo/vaporwave.jpg") no-repeat center fixed;}
+#lowercase {background: url("../images/downtempo/lowercase.jpg") no-repeat center fixed;}
 
 #medieval {background: url("../images/classical/medieval.jpg") no-repeat center fixed;}
 #renaissance {background: url("../images/classical/renaissance.jpg") no-repeat center fixed;}
@@ -525,16 +556,27 @@ p {
 #nordicfolk {background: url("../images/folk/nordicfolk.jpg") no-repeat center fixed;}
 #russianfolk {background: url("../images/folk/russianfolk.jpg") no-repeat center fixed;}
 
+#chillwave {background: url("../images/aesthetic/chillwave.jpg") no-repeat center fixed;}
+#vaporwave {background: url("../images/aesthetic/vaporwave.jpg") no-repeat center fixed;}
+#futurefunk {background: url("../images/aesthetic/futurefunk.jpg") no-repeat center fixed;}
+#mallsoft {background: url("../images/aesthetic/mallsoft.jpg") no-repeat center fixed;}
+#witchhouse {background: url("../images/aesthetic/witchhouse.jpg") no-repeat center fixed;}
+#seapunk {background: url("../images/aesthetic/seapunk.jpg") no-repeat center fixed;}
+#lofi {background: url("../images/aesthetic/lofi.jpg") no-repeat center fixed;}
+#synthwave {background: url("../images/aesthetic/synthwave.jpg") no-repeat center fixed;}
+
+#mymusic {background: url("../images/mymusicbig.jpg") no-repeat center fixed;}
+
 /*---------------------------------------------------------------------------*/
 
 .buttons {
-    font-family: 'Roboto';
-    font-weight: 900;
+    font-family: 'ProductSansBold';
     font-size: 2.5em;
     text-align: center;
-    width: 1.025em;
+    width: 1em;
     line-height: 1.2em;
     user-select: none;
+    border-radius: 0.1em;
     margin: 0.3em 0 0.6em;
 }
 
@@ -548,6 +590,7 @@ p {
 .buttons-classicrock, .buttons-classicrock-stop { background-color: #F44336; }
 .buttons-punk, .buttons-punk-stop { background-color: #FF9800; }
 .buttons-alternative, .buttons-alternative-stop { background-color: #56707B; }
+.buttons-contemporaryrock, .buttons-contemporaryrock-stop { background-color: #D0B390; }
 .buttons-metal, .buttons-metal-stop { background-color: #212121; }
 .buttons-reggae, .buttons-reggae-stop { background-color: #4CAF50; }
 .buttons-hiphop, .buttons-hiphop-stop { background-color: #6A4C70; }
@@ -560,8 +603,10 @@ p {
 .buttons-drumandbass, .buttons-drumandbass-stop { background-color: #C71F49; }
 .buttons-ukgarage, .buttons-ukgarage-stop { background-color: #A892CC; }
 .buttons-downtempo, .buttons-downtempo-stop { background-color: #E91E63; }
+.buttons-aesthetic, .buttons-aesthetic-stop { background-color: #2CDEDE; }
 .buttons-classical, .buttons-classical-stop { background-color: #917550; }
 .buttons-folk, .buttons-folk-stop { background-color: #D2B774; }
+.buttons-mymusic, .buttons-mymusic-stop { background-color: #F5F5F5; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -575,6 +620,7 @@ p {
 .buttons-classicrock:hover, .buttons-classicrock-stop:hover { background-color: #EF5350; }
 .buttons-punk:hover, .buttons-punk-stop:hover { background-color: #FFA726; }
 .buttons-alternative:hover, .buttons-alternative-stop:hover { background-color: #78909C; }
+.buttons-contemporaryrock:hover, .buttons-contemporaryrock-stop:hover { background-color: #D8BFA2; }
 .buttons-metal:hover, .buttons-metal-stop:hover { background-color: #424242; }
 .buttons-reggae:hover, .buttons-reggae-stop:hover { background-color: #66BB6A; }
 .buttons-hiphop:hover, .buttons-hiphop-stop:hover { background-color: #79577F; }
@@ -587,8 +633,10 @@ p {
 .buttons-drumandbass:hover, .buttons-drumandbass-stop:hover { background-color: #DD2251; }
 .buttons-ukgarage:hover, .buttons-ukgarage-stop:hover { background-color: #B59DDB; }
 .buttons-downtempo:hover, .buttons-downtempo-stop:hover { background-color: #EC407A; }
+.buttons-aesthetic:hover, .buttons-aesthetic-stop:hover { background-color: #2FEDED; }
 .buttons-classical:hover, .buttons-classical-stop:hover { background-color: #A18259; }
 .buttons-folk:hover, .buttons-folk-stop:hover { background-color: #D8C188; }
+.buttons-mymusic:hover, .buttons-mymusic-stop:hover { background-color: #FFFFFF; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -601,6 +649,7 @@ p {
 .buttons-classicrock.clicked, .buttons-classicrock-stop.clicked,
 .buttons-punk.clicked, .buttons-punk-stop.clicked,
 .buttons-alternative.clicked, .buttons-alternative-stop.clicked,
+.buttons-contemporaryrock.clicked, .buttons-contemporaryrock-stop.clicked,
 .buttons-metal.clicked, .buttons-metal-stop.clicked,
 .buttons-reggae.clicked, .buttons-reggae-stop.clicked,
 .buttons-hiphop.clicked, .buttons-hiphop-stop.clicked,
@@ -613,43 +662,39 @@ p {
 .buttons-drumandbass.clicked, .buttons-drumandbass-stop.clicked,
 .buttons-ukgarage.clicked, .buttons-ukgarage-stop.clicked,
 .buttons-downtempo.clicked, .buttons-downtempo-stop.clicked,
+.buttons-aesthetic.clicked, .buttons-aesthetic-stop.clicked,
 .buttons-classical.clicked, .buttons-classical-stop.clicked,
 .buttons-folk.clicked, .buttons-folk-stop.clicked {
     box-shadow:inset 0em 0em 0em 0.1em #FFF;
 }
 
-.buttons-pop.clicked, .buttons-pop-stop.clicked {
+.buttons-pop.clicked, .buttons-pop-stop.clicked,
+.buttons-mymusic.clicked, .buttons-downtempo-stop.clicked {
     box-shadow:inset 0em 0em 0em 0.1em #222;
 }
 
 /*---------------------------------------------------------------------------*/
 
-.example {
-    font-family: 'Roboto';
-  	font-weight: 300;
-  	font-size: 1.3em;
-}
-
 .artisttrack {
-    font-family: 'Roboto';
-  	font-weight: 900;
+    font-size: 1.3em;
+    font-family: 'RobotoBlack';
   	display: inline;
 }
 
 #artist, #track {
-    font-weight: 300;
+    font-family: 'ProductSansRegular';
 }
 
 .stop {
     float: right;
-    margin-top: -3.75em;
+    margin-top: -2.2em;
     margin-right: 0.5em;
 }
 
 /*---------------------------------------------------------------------------*/
 
 @media (max-width: 991px) {
-    #introbox {
+    #introbox, .buttons {
         font-size: 2em;
     }
 
@@ -670,10 +715,6 @@ p {
         font-size: 3.25vw;
         width: 86.5%;
         margin: 2em;
-    }
-
-    .buttons {
-        font-size: 2em;
     }
 
     .col-xs-1 {

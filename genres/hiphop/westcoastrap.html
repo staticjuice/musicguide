@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>West Coast Rap</title>
+    </head>
+
+    <body class="genre" id="westcoastrap">
+        <div class="box hiphop">
+            <h1>WEST COAST RAP</h1>
+
+            <p>The latter side of Hip Hop's bipolar disorder (playful and fun versus reactionary and profane) grew more and more fierce. The essence of this was fueled by the frustrations and anger of everyday ghetto life, where the problems of discrimination and poverty forced many into criminality. Ghetto criminals or "gangstas" used Hip Hop to ventilate about this situation explicitly and aggressively. West Coast Rap evolved at the West Coast of the US, mainly in the neighbourhoods of Los Angeles. The situation spiralled out of control, with never-ending "turf wars" about which gang was allowed to control which neighbourhood. Not the least of causes for this urban warfare was crack cocaine, which emerged in the mid-80s and proved to be highly more addictive and destructive than regular cocaine. Eventually, the spiral hit rock bottom, culminating in the historical LA riots of 92. Although in content it's a lot more hardcore than other Hip Hop, West Coast Rap's sound is often light and funky. The music is filled with stereotypical sound effects &ndash; chimes or ringing bells, high-pitched nasal synth tunes and deep, greasy Moog basslines.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "N.W.A",
+                        track: "Straight Outta Compton",
+                        path: "../../samples/hiphop/westcoastrap1.ogg"
+                    },
+                    {
+                        artist: "Digital Underground",
+                        track: "The Humpty Dance",
+                        path: "../../samples/hiphop/westcoastrap2.ogg"
+                    },
+                    {
+                        artist: "Dr. Dre",
+                        track: "Fuck Wit Dre Day (And Everybody's Celebratin')",
+                        path: "../../samples/hiphop/westcoastrap3.ogg"
+                    },
+                    {
+                        artist: "Ice Cube",
+                        track: "When Will They Shoot?",
+                        path: "../../samples/hiphop/westcoastrap4.ogg"
+                    },
+                    {
+                        artist: "Above The Law",
+                        track: "Black Superman",
+                        path: "../../samples/hiphop/westcoastrap5.ogg"
+                    },
+                    {
+                        artist: "2Pac",
+                        track: "Ambitionz Az A Ridah",
+                        path: "../../samples/hiphop/westcoastrap6.ogg"
+                    },
+                    {
+                        artist: "Eminem",
+                        track: "The Real Slim Shady",
+                        path: "../../samples/hiphop/westcoastrap7.ogg"
+                    },
+                    {
+                        artist: "Cypress Hill",
+                        track: "Insane In The Brain",
+                        path: "../../samples/hiphop/westcoastrap8.ogg"
+                    },
+                    {
+                        artist: "Snoop Doggy Dogg",
+                        track: "Who Am I? (What's My Name?)",
+                        path: "../../samples/hiphop/westcoastrap9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hiphop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hiphop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hiphop"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

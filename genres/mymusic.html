@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Static Juice</title>
+    </head>
+
+    <body class="genre" id="mymusic">
+        <div class="box mymusic">
+            <h1>MY MUSIC</h1>
+
+            <p>The idea of producing my own music was born in 2009, shortly after discovering the world of electronic music. This type of music was fascinating to me as we could generate any soundwave possible according to the laws of physics. The possibilites were literally endless, and I thought to myself "How do people make this stuff? I wanna make this stuff too!" and thus the Static Juice project came into existence. What does the name Static Juice even mean and where did it come from? Well, one day while I was riding the bus home from school, my friend and I started talking about possible producer names. I came up with the Static part, he came up with the Juice bit, and I've stuck with the name ever since. It doesn't really mean anything, they were just two words I thought sounded cool together. The initial learning curve was pretty steep and it wasn't until the end of 2011 that I finally released my first track. In September 2014, the album which we know of today began &ndash; The Adventure Album. I don't really know why I called it that. But when I finally finished my album in February 2018, I realized that making the album was the real adventure all along :P</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-mymusic">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-mymusic">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-mymusic">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-mymusic">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-mymusic">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-mymusic">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-mymusic">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-mymusic">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-mymusic">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-mymusic-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-mymusic-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Static Juice",
+                        track: "The Adventure Begins",
+                        path: "../samples/mymusic/mymusic1.ogg"
+                    },
+                    {
+                        artist: "Static Juice",
+                        track: "Maelstrom",
+                        path: "../samples/mymusic/mymusic2.ogg"
+                    },
+                    {
+                        artist: "Static Juice",
+                        track: "Danger Zone",
+                        path: "../samples/mymusic/mymusic3.ogg"
+                    },
+                    {
+                        artist: "Static Juice",
+                        track: "Trip To Wonderland",
+                        path: "../samples/mymusic/mymusic4.ogg"
+                    },
+                    {
+                        artist: "Static Juice",
+                        track: "Hot Air Balloon",
+                        path: "../samples/mymusic/mymusic5.ogg"
+                    },
+                    {
+                        artist: "Static Juice",
+                        track: "Flower Power",
+                        path: "../samples/mymusic/mymusic6.ogg"
+                    },
+                    {
+                        artist: "Static Juice",
+                        track: "Ready Set Go",
+                        path: "../samples/mymusic/mymusic7.ogg"
+                    },
+                    {
+                        artist: "Static Juice",
+                        track: "Universal",
+                        path: "../samples/mymusic/mymusic8.ogg"
+                    },
+                    {
+                        artist: "Static Juice",
+                        track: "Something Real",
+                        path: "../samples/mymusic/mymusic9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-mymusic').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-mymusic-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-mymusic"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Old School Rap</title>
+    </head>
+
+    <body class="genre" id="oldschoolrap">
+        <div class="box hiphop">
+            <h1>OLD SCHOOL RAP</h1>
+
+            <p>The early stages of Hip Hop were very small and brittle. There were only a select number of revolutionary pioneering artists, originating from South Bronx, New York. It was quite an experimental scene, with large influences from both Funk and Disco. Hip Hop did not originate from nightclubs, however, but at spontaneous outdoors neighbourhood parties. Friendly breakdance battles, fought between different dance crews and pioneering Hip Hop groups, contributed to a vibe of joy and exuberance at these sound system parties &ndash; a scene of something grand stirring on the horizon. Pioneering rappers take existing Disco or Funk records, use instrumental parts, and nicely rap on top of the beat, without deviating from metre or tempo. The criticism that Hip Hop lacks originality due to its excessive use of sampling can hardly be justified when one looks at the absurd fusion of completely unrelated techniques and genres in Old School Rap &ndash; mixing and scratching (a completely new technique) of the most rare Funk records one can find, toasting over it, while eventually even being influenced by the most innovative electronic music of all time.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "The Sugarhill Gang",
+                        track: "Rapper's Delight",
+                        path: "../../samples/hiphop/oldschoolrap1.ogg"
+                    },
+                    {
+                        artist: "Grandmaster Flash & The Furious Five",
+                        track: "The Message",
+                        path: "../../samples/hiphop/oldschoolrap2.ogg"
+                    },
+                    {
+                        artist: "Spoonie Gee",
+                        track: "Spoonie Is Back",
+                        path: "../../samples/hiphop/oldschoolrap3.ogg"
+                    },
+                    {
+                        artist: "The Younger Generation",
+                        track: "We Rap More Mellow",
+                        path: "../../samples/hiphop/oldschoolrap4.ogg"
+                    },
+                    {
+                        artist: "Kurtis Blow",
+                        track: "The Breaks",
+                        path: "../../samples/hiphop/oldschoolrap5.ogg"
+                    },
+                    {
+                        artist: "Funky 4+1",
+                        track: "That's The Joint",
+                        path: "../../samples/hiphop/oldschoolrap6.ogg"
+                    },
+                    {
+                        artist: "Cold Crush Brothers",
+                        track: "Cold Crush",
+                        path: "../../samples/hiphop/oldschoolrap7.ogg"
+                    },
+                    {
+                        artist: "Fab 5 Freddy",
+                        track: "Change The Beat",
+                        path: "../../samples/hiphop/oldschoolrap8.ogg"
+                    },
+                    {
+                        artist: "Young MC",
+                        track: "Bust A Move",
+                        path: "../../samples/hiphop/oldschoolrap9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hiphop').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hiphop-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hiphop"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

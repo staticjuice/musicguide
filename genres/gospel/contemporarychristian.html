@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Contemporary Christian</title>
+    </head>
+
+    <body class="genre" id="contemporarychristian">
+        <div class="box gospel">
+            <h1>CONTEMPORARY CHRISTIAN</h1>
+
+            <p>Contemporary Christian Music (CCM) is Pop Rock music with inspirational and religious lyrics. Musically, much CCM is indistinguishable from mainstream Pop Rock, featuring the same melodic and production techniques. CCM developed in the 70s and 80s as Gospel artists found a new, more contemporary way to market their music. Using electric guitars and other instruments from the popular music of the time, the religious music industry created a viable new form of Gospel music that sounded like Pop music &ndash; with their slick, professional productions, many CCM records could fit comfortably on Adult Contemporary radio stations. When Disco, Rap and Metal became popular, Gospel took a surprising interest in these genres too, trying to reach as many people as possible with the message of God. Contempoary Christian became a wide and diverse collection of uplifting musical styles, too diverse to define. Indeed, genre was subordinate to the content. Therefore, these various subgenres are not bound by a technical common ground, and rarely listed in music genealogies.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-gospel-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-gospel-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Amy Grant",
+                        track: "Lead Me On",
+                        path: "../../samples/gospel/contemporarychristian1.ogg"
+                    },
+                    {
+                        artist: "Steven Curtis Chapman",
+                        track: "Cinderella",
+                        path: "../../samples/gospel/contemporarychristian2.ogg"
+                    },
+                    {
+                        artist: "Newsboys",
+                        track: "We Believe",
+                        path: "../../samples/gospel/contemporarychristian3.ogg"
+                    },
+                    {
+                        artist: "Big Daddy Weave",
+                        track: "My Story",
+                        path: "../../samples/gospel/contemporarychristian4.ogg"
+                    },
+                    {
+                        artist: "Chris Tomlin",
+                        track: "How Great Is Our God",
+                        path: "../../samples/gospel/contemporarychristian5.ogg"
+                    },
+                    {
+                        artist: "David Crowder Band",
+                        track: "After All (Holy)",
+                        path: "../../samples/gospel/contemporarychristian6.ogg"
+                    },
+                    {
+                        artist: "Matt Redman",
+                        track: "10,000 Reasons (Bless The Lord)",
+                        path: "../../samples/gospel/contemporarychristian7.ogg"
+                    },
+                    {
+                        artist: "Passion",
+                        track: "Worthy Of Your Name",
+                        path: "../../samples/gospel/contemporarychristian8.ogg"
+                    },
+                    {
+                        artist: "Hillsong United",
+                        track: "Oceans (Where Feet May Fail)",
+                        path: "../../samples/gospel/contemporarychristian9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-gospel').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-gospel-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-gospel"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Indie Folk</title>
+    </head>
+
+    <body class="genre" id="indiefolk">
+        <div class="box contemporaryrock">
+            <h1>INDIE FOLK</h1>
+
+            <p>Although this genre is obviously a form of Folk music, a large and welcoming familiarity within Rock and Pop circles combined with a heavy influence from popular music justifies its presence in Contemporary Rock. Indie Folk emerged during the late 2000s when songwriters from the Indie Rock community began taking cues from Folk music. As the 2000s progressed and more Indie Folk artists appeared, the genre grew to encompass a wide range of music, from the Neo-Celtic Folk of The Decemberists to the Appalachian harmonies of Fleet Foxes. Other groups, including Iron &amp; Wine, embraced such variety in their music, jumping from lo-fi acoustic ballads to lush electric rockers without ever truly exiting within the Indie Folk camp. Despite their ties to the Folk community, however, most of these bands frequented traditional Rock venues instead of coffeehouses, a characteristic that distinguished them from contemporary Folk groups. The latest forms of Indie Folk (which have become highly popular among the youth, for example, Mumford &amp; Sons) are also known as Nu Folk or go by the term "New Weird America."</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-contemporaryrock-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-contemporaryrock-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Mumford & Sons",
+                        track: "Little Lion Man",
+                        path: "../../../samples/contemporaryrock/indiefolk1.ogg"
+                    },
+                    {
+                        artist: "Fleet Foxes",
+                        track: "Mykonos",
+                        path: "../../../samples/contemporaryrock/indiefolk2.ogg"
+                    },
+                    {
+                        artist: "Sufjan Stevens",
+                        track: "Casimir Pulaski Day",
+                        path: "../../../samples/contemporaryrock/indiefolk3.ogg"
+                    },
+                    {
+                        artist: "Bon Iver",
+                        track: "Holocene",
+                        path: "../../../samples/contemporaryrock/indiefolk4.ogg"
+                    },
+                    {
+                        artist: "Dustin Tebbutt",
+                        track: "The Breach",
+                        path: "../../../samples/contemporaryrock/indiefolk5.ogg"
+                    },
+                    {
+                        artist: "Avalanche City",
+                        track: "The Streets",
+                        path: "../../../samples/contemporaryrock/indiefolk6.ogg"
+                    },
+                    {
+                        artist: "Of Monsters And Men",
+                        track: "Mountain Sound",
+                        path: "../../../samples/contemporaryrock/indiefolk7.ogg"
+                    },
+                    {
+                        artist: "Vance Joy",
+                        track: "Riptide",
+                        path: "../../../samples/contemporaryrock/indiefolk8.ogg"
+                    },
+                    {
+                        artist: "Radical Face",
+                        track: "Welcome Home, Son",
+                        path: "../../../samples/contemporaryrock/indiefolk9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-contemporaryrock').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-contemporaryrock-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-contemporaryrock"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

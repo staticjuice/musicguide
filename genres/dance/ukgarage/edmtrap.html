@@ -3,8 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,900">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
         <link rel="stylesheet" href="../../../css/style.css">
         <title>EDM Trap</title>
     </head>
@@ -28,65 +27,60 @@
                 <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-ukgarage-stop">&FilledSmallSquare;</div></div>
             </div>
 
-            <div class="example">
-                <p class="artisttrack">Artist: <span id="artist"><span></p><br>
-                <p class="artisttrack">Track: <span id="track"></span></p>
-            </div>
-
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
             <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-ukgarage-stop">&FilledSmallSquare;</div></div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
         <script>
             $(document).ready(function() {
                 var tracks = [
                     {
+                        artist: "Baauer",
+                        track: "Harlem Shake",
+                        path: "../../../samples/ukgarage/edmtrap1.ogg"
+                    },
+                    {
                         artist: "Aero Chord",
                         track: "Surface",
-                        path: "../../../samples/dance/ukgarage/edmtrap1.ogg"
+                        path: "../../../samples/ukgarage/edmtrap2.ogg"
                     },
                     {
                         artist: "Gent & Jawns",
                         track: "Turn Up",
-                        path: "../../../samples/dance/ukgarage/edmtrap2.ogg"
+                        path: "../../../samples/ukgarage/edmtrap3.ogg"
                     },
                     {
                         artist: "Diskord",
                         track: "Freak",
-                        path: "../../../samples/dance/ukgarage/edmtrap3.ogg"
+                        path: "../../../samples/ukgarage/edmtrap4.ogg"
                     },
                     {
                         artist: "Buku",
                         track: "Fullagold",
-                        path: "../../../samples/dance/ukgarage/edmtrap4.ogg"
+                        path: "../../../samples/ukgarage/edmtrap5.ogg"
                     },
                     {
                         artist: "Keys N Krates",
                         track: "Dum Dee Dum",
-                        path: "../../../samples/dance/ukgarage/edmtrap5.ogg"
+                        path: "../../../samples/ukgarage/edmtrap6.ogg"
                     },
                     {
                         artist: "Boombox Cartel",
                         track: "Phoenix (Candyland Remix)",
-                        path: "../../../samples/dance/ukgarage/edmtrap6.ogg"
+                        path: "../../../samples/ukgarage/edmtrap7.ogg"
                     },
                     {
                         artist: "NGHTMRE",
                         track: "Street",
-                        path: "../../../samples/dance/ukgarage/edmtrap7.ogg"
+                        path: "../../../samples/ukgarage/edmtrap8.ogg"
                     },
                     {
                         artist: "TroyBoi",
                         track: "Do You?",
-                        path: "../../../samples/dance/ukgarage/edmtrap8.ogg"
-                    },
-                    {
-                        artist: "QUIX & Vincent feat. David Shane",
-                        track: "Hero",
-                        path: "../../../samples/dance/ukgarage/edmtrap9.ogg"
+                        path: "../../../samples/ukgarage/edmtrap9.ogg"
                     }
                 ]
 
