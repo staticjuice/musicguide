@@ -177,10 +177,9 @@ p {
 .maindrumandbass:before { background: url("../images/drumandbassbig.jpg") no-repeat center fixed; }
 .mainukgarage:before { background: url("../images/ukgaragebig.jpg") no-repeat center fixed; }
 .maindowntempo:before { background: url("../images/downtempobig.jpg") no-repeat center fixed; }
-.mainaesthetic:before { background: url("../images/aestheticbig.jpg") no-repeat center fixed; }
 .mainclassical:before { background: url("../images/classicalbig.jpg") no-repeat center fixed; }
 .mainfolk:before { background: url("../images/folkbig.jpg") no-repeat center fixed; }
-.mainmymusic:before { background: url("../images/mymusicbig.jpg") no-repeat center fixed; }
+.mainaesthetic:before { background: url("../images/aestheticbig.jpg") no-repeat center fixed; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -207,10 +206,9 @@ p {
 .maindrumandbass .genrelist a:hover, .maindrumandbass .genrelist-mobile a:hover { color: #DD2251; }
 .mainukgarage .genrelist a:hover, .mainukgarage .genrelist-mobile a:hover { color: #B59DDB; }
 .maindowntempo .genrelist a:hover, .maindowntempo .genrelist-mobile a:hover { color: #EC407A; }
-.mainaesthetic .genrelist a:hover, .mainaesthetic .genrelist-mobile a:hover { color: #2FEDED; }
 .mainclassical .genrelist a:hover, .mainclassical .genrelist-mobile a:hover { color: #A18259; }
 .mainfolk .genrelist a:hover, .mainfolk .genrelist-mobile a:hover { color: #D8C188; }
-.mainmymusic .genrelist a:hover, .mainmymusic .genrelist-mobile a:hover { color: #BDBDBD; }
+.mainaesthetic .genrelist a:hover, .mainaesthetic .genrelist-mobile a:hover { color: #2FEDED; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -237,10 +235,9 @@ p {
 .maindrumandbass .genrelist ::selection, .maindrumandbass .genrelist-mobile ::selection { background: rgba(154,24,57,0.998); }
 .mainukgarage .genrelist ::selection, .mainukgarage .genrelist-mobile ::selection { background: rgba(143,124,173,0.998); }
 .maindowntempo .genrelist ::selection, .maindowntempo .genrelist-mobile ::selection { background: rgba(194,24,91,0.998); }
-.mainaesthetic .genrelist ::selection, .mainaesthetic .genrelist-mobile ::selection { background: rgba(41,204,204,0.998); }
 .mainclassical .genrelist ::selection, .mainclassical .genrelist-mobile ::selection { background: rgba(112,90,61,0.998); }
 .mainfolk .genrelist ::selection, .mainfolk .genrelist-mobile ::selection { background: rgba(198,164,77,0.998); }
-.mainmymusic .genrelist ::selection, .mainmymusic .genrelist-mobile ::selection { background: rgba(237,237,237,0.998); color: #222; }
+.mainaesthetic .genrelist ::selection, .mainaesthetic .genrelist-mobile ::selection { background: rgba(41,204,204,0.998); }
 
 /*---------------------------------------------------------------------------*/
 
@@ -299,10 +296,9 @@ p {
 .drumandbass { background-color: #9A1839; color: #FFF; }
 .ukgarage { background-color: #8F7CAD; color: #FFF; }
 .downtempo { background-color: #C2185B; color: #FFF; }
-.aesthetic { background-color: #29CCCC; color: #FFF; }
 .classical { background-color: #705A3D; color: #FFF; }
 .folk { background-color: #C6A44D; color: #FFF; }
-.mymusic { background-color: #EDEDED; color: #222; }
+.aesthetic { background-color: #29CCCC; color: #FFF; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -565,8 +561,6 @@ p {
 #lofi {background: url("../images/aesthetic/lofi.jpg") no-repeat center fixed;}
 #synthwave {background: url("../images/aesthetic/synthwave.jpg") no-repeat center fixed;}
 
-#mymusic {background: url("../images/mymusicbig.jpg") no-repeat center fixed;}
-
 /*---------------------------------------------------------------------------*/
 
 .buttons {
@@ -603,10 +597,9 @@ p {
 .buttons-drumandbass, .buttons-drumandbass-stop { background-color: #C71F49; }
 .buttons-ukgarage, .buttons-ukgarage-stop { background-color: #A892CC; }
 .buttons-downtempo, .buttons-downtempo-stop { background-color: #E91E63; }
-.buttons-aesthetic, .buttons-aesthetic-stop { background-color: #2CDEDE; }
 .buttons-classical, .buttons-classical-stop { background-color: #917550; }
 .buttons-folk, .buttons-folk-stop { background-color: #D2B774; }
-.buttons-mymusic, .buttons-mymusic-stop { background-color: #F5F5F5; }
+.buttons-aesthetic, .buttons-aesthetic-stop { background-color: #2CDEDE; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -633,10 +626,9 @@ p {
 .buttons-drumandbass:hover, .buttons-drumandbass-stop:hover { background-color: #DD2251; }
 .buttons-ukgarage:hover, .buttons-ukgarage-stop:hover { background-color: #B59DDB; }
 .buttons-downtempo:hover, .buttons-downtempo-stop:hover { background-color: #EC407A; }
-.buttons-aesthetic:hover, .buttons-aesthetic-stop:hover { background-color: #2FEDED; }
 .buttons-classical:hover, .buttons-classical-stop:hover { background-color: #A18259; }
 .buttons-folk:hover, .buttons-folk-stop:hover { background-color: #D8C188; }
-.buttons-mymusic:hover, .buttons-mymusic-stop:hover { background-color: #FFFFFF; }
+.buttons-aesthetic:hover, .buttons-aesthetic-stop:hover { background-color: #2FEDED; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -662,14 +654,13 @@ p {
 .buttons-drumandbass.clicked, .buttons-drumandbass-stop.clicked,
 .buttons-ukgarage.clicked, .buttons-ukgarage-stop.clicked,
 .buttons-downtempo.clicked, .buttons-downtempo-stop.clicked,
-.buttons-aesthetic.clicked, .buttons-aesthetic-stop.clicked,
 .buttons-classical.clicked, .buttons-classical-stop.clicked,
-.buttons-folk.clicked, .buttons-folk-stop.clicked {
+.buttons-folk.clicked, .buttons-folk-stop.clicked,
+.buttons-aesthetic.clicked, .buttons-aesthetic-stop.clicked {
     box-shadow:inset 0em 0em 0em 0.1em #FFF;
 }
 
-.buttons-pop.clicked, .buttons-pop-stop.clicked,
-.buttons-mymusic.clicked, .buttons-downtempo-stop.clicked {
+.buttons-pop.clicked, .buttons-pop-stop.clicked {
     box-shadow:inset 0em 0em 0em 0.1em #222;
 }
 
