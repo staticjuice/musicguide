@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Alternative R&amp;B</title>
+    </head>
+
+    <body class="genre" id="alternativerhythmandblues">
+        <div class="box rhythmandblues">
+            <h1>ALTERNATIVE R&amp;B</h1>
+
+            <p>Alternative R&amp;B is a term used by music journalists to describe a stylistic alternative to Urban Contemporary that came to prominence in the early to mid 2010s. This unconventional style has been described as an "exchange between EDM, Rock, Hip Hop and R&amp;B's commercial avant-garde". Brandon Neasman of The Grio observes a "changing of the guard in R&amp;B, from the smooth, cool heartthrobs to these vulnerable, off-kilter personalities" amid the prevalence of social media in society. A lot of the production is echo-laden and lofty, often using a lot of synthesizers and filtered drums &ndash; sonically giving a nod to Prince's vintage 80s sound. Additionally, for the most part, it doesn't feel as if these artists are selling sex as their main entrée. Granted, they still sing about the topic, and in explicit detail, but it's in equal proportion to drugs, spirituality and personal philosophies. You don't get that same diversity in subject matter from the majority of modern R&B singers. Gerrick D. Kennedy of the Los Angeles Times feels that "the new movement feels like the most significant stylistic change in R&amp;B since Neo Soul rolled around in the 90s."</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-rhythmandblues">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-rhythmandblues">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-rhythmandblues">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-rhythmandblues">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-rhythmandblues">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-rhythmandblues">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-rhythmandblues">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-rhythmandblues">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-rhythmandblues">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-rhythmandblues-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-rhythmandblues-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "FKA Twigs",
+                        track: "Two Weeks",
+                        path: "../../samples/rhythmandblues/alternativerhythmandblues1.ogg"
+                    },
+                    {
+                        artist: "Frank Ocean",
+                        track: "Thinkin Bout You",
+                        path: "../../samples/rhythmandblues/alternativerhythmandblues2.ogg"
+                    },
+                    {
+                        artist: "The Weeknd feat. Daft Punk",
+                        track: "Starboy",
+                        path: "../../samples/rhythmandblues/alternativerhythmandblues3.ogg"
+                    },
+                    {
+                        artist: "Drake",
+                        track: "Shot For Me",
+                        path: "../../samples/rhythmandblues/alternativerhythmandblues4.ogg"
+                    },
+                    {
+                        artist: "Miguel",
+                        track: "Pineapple Skies",
+                        path: "../../samples/rhythmandblues/alternativerhythmandblues5.ogg"
+                    },
+                    {
+                        artist: "Kelela",
+                        track: "Rewind",
+                        path: "../../samples/rhythmandblues/alternativerhythmandblues6.ogg"
+                    },
+                    {
+                        artist: "Cautious Clay",
+                        track: "Cold War",
+                        path: "../../samples/rhythmandblues/alternativerhythmandblues7.ogg"
+                    },
+                    {
+                        artist: "Phony Ppl",
+                        track: "Why iii Love The Moon.",
+                        path: "../../samples/rhythmandblues/alternativerhythmandblues8.ogg"
+                    },
+                    {
+                        artist: "Raury",
+                        track: "God's Whisper",
+                        path: "../../samples/rhythmandblues/alternativerhythmandblues9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-rhythmandblues').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-rhythmandblues-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-rhythmandblues"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
