@@ -400,6 +400,7 @@ p {
 #raprock {background: url("../images/alternative/raprock.jpg") no-repeat center fixed;}
 #britpop {background: url("../images/alternative/britpop.jpg") no-repeat center fixed;}
 #poppunk {background: url("../images/alternative/poppunk.jpg") no-repeat center fixed;}
+#indierock {background: url("../images/alternative/indierock.jpg") no-repeat center fixed;}
 #postrock {background: url("../images/alternative/postrock.jpg") no-repeat center fixed;}
 #postgrunge {background: url("../images/alternative/postgrunge.jpg") no-repeat center fixed;}
 #postbritpop {background: url("../images/alternative/postbritpop.jpg") no-repeat center fixed;}
@@ -543,6 +544,8 @@ p {
 #baroque {background: url("../images/classical/baroque.jpg") no-repeat center fixed;}
 #classical {background: url("../images/classical/classical.jpg") no-repeat center fixed;}
 #romantic {background: url("../images/classical/romantic.jpg") no-repeat center fixed;}
+#modern {background: url("../images/classical/modern.jpg") no-repeat center fixed;}
+#opera {background: url("../images/classical/opera.jpg") no-repeat center fixed;}
 #filmscore {background: url("../images/classical/filmscore.jpg") no-repeat center fixed;}
 
 #africanfolk {background: url("../images/folk/africanfolk.jpg") no-repeat center fixed;}

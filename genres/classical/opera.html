@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Opera</title>
+    </head>
+
+    <body class="genre" id="opera">
+        <div class="box classical">
+            <h1>OPERA</h1>
+
+            <p>Opera is a form of theatre in which music has a leading role and the parts are taken by singers, but is distinct from musical theatre. Such a work is typically a collaboration between a composer and a librettist and incorporates a number of the performing arts, such as acting, scenery, costume and sometimes dance or ballet. The performance is typically given in an Opera House, accompanied by an orchestra or smaller musical ensemble. Opera is a key part of the Western classical music tradition. Originally understood as an entirely sung piece, in contrast to a play with songs, Opera has come to include numerous genres, including some that include spoken dialogue such as musical theatre, Singspiel and Opéra comique. In traditional number opera, singers employ two styles of singing &ndash; recitative, a speech-inflected style, and self-contained arias. The 19th century saw the rise of the continuous music drama. Opera originated in Italy at the end of the 16th century and soon spread through the rest of Europe. The most renowned figure of late 18th-century opera is Wolfgang Amadeus Mozart, who is most famous for his Italian comic operas.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-classical-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-classical-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Georges Bizet",
+                        track: "Carmen - Act 1: L'amour Est Un Oiseau Rebelle",
+                        path: "../../samples/classical/opera1.ogg"
+                    },
+                    {
+                        artist: "Giuseppe Verdi",
+                        track: "La Traviata - Act 1: Libiamo Ne'lieti Calici",
+                        path: "../../samples/classical/opera2.ogg"
+                    },
+                    {
+                        artist: "Richard Wagner",
+                        track: "Tannhäuser - Act 3: O Du, Mein Holder Abendstern",
+                        path: "../../samples/classical/opera3.ogg"
+                    },
+                    {
+                        artist: "Johann Strauss II",
+                        track: "Die Fledermaus - Act 1: So Muss Allein Ich Bleiben",
+                        path: "../../samples/classical/opera4.ogg"
+                    },
+                    {
+                        artist: "Giovanni Battista Pergolesi",
+                        track: "La Serva Padrona - Intermezzo 1: Aria",
+                        path: "../../samples/classical/opera5.ogg"
+                    },
+                    {
+                        artist: "George Frideric Handel",
+                        track: "Serse - Act 1 Scene 1 No. 2: Ombra Mai Fu",
+                        path: "../../samples/classical/opera6.ogg"
+                    },
+                    {
+                        artist: "Giacomo Puccini",
+                        track: "Turandot - Act 3: Nessun Dorma!",
+                        path: "../../samples/classical/opera7.ogg"
+                    },
+                    {
+                        artist: "Wolfgang Amadeus Mozart",
+                        track: "Die Zauberflöte - Act 2: Der Hölle Rache",
+                        path: "../../samples/classical/opera8.ogg"
+                    },
+                    {
+                        artist: "Richard Strauss",
+                        track: "Salome - Scene 4: Ah! Ich Habe Deinen",
+                        path: "../../samples/classical/opera9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-classical').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-classical-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-classical"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

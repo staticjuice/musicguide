@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Indie Rock</title>
+    </head>
+
+    <body class="genre" id="indierock">
+        <div class="box alternative">
+            <h1>INDIE ROCK</h1>
+
+            <p>After the big Grunge revolution, Indie Rock experienced a metamorphosis and splintered in many subgenres, which were all a response to Grunge, both positive and negative. Many Indie Rock artists changed the genre into a darker, heavier version of itself, with more desperate tragedy and angry frustration in its lyrics. It also lost some of its Hardcore and DIY influences, with songs becoming longer, more complex and better produced. The second wave of Alternative Rock was no longer truly alternative, and their artists less and less a part of independent record labels. Some Alternative Rock bands even became bestselling stars, filling Rock festivals for decades to come. However, some musicians believed there was too much stardom and too much focus from majors on Grunge and Alternative Rock. Two underground subgenres emerged &ndash; the heavily under-produced Lo-Fi, Sadcore, Math Rock and Baroque Pop. Lo-Fi is primarily defined by its low-fidelity sound, Sadcore is gentle and slow, placid and filled with tender, fragile sounds. Math Rock focussed on complicated rhythms and Baroque Pop adds orchestral elements to its songs.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Beck",
+                        track: "E-Pro",
+                        path: "../../../samples/alternative/indierock1.ogg"
+                    },
+                    {
+                        artist: "Sebadoh",
+                        track: "Flame",
+                        path: "../../../samples/alternative/indierock2.ogg"
+                    },
+                    {
+                        artist: "Pavement",
+                        track: "Cut Your Hair",
+                        path: "../../../samples/alternative/indierock3.ogg"
+                    },
+                    {
+                        artist: "Quickspace",
+                        track: "Take Away",
+                        path: "../../../samples/alternative/indierock4.ogg"
+                    },
+                    {
+                        artist: "Don Caballero",
+                        track: "Railroad Cancellation",
+                        path: "../../../samples/alternative/indierock5.ogg"
+                    },
+                    {
+                        artist: "Radiohead",
+                        track: "No Surprises",
+                        path: "../../../samples/alternative/indierock6.ogg"
+                    },
+                    {
+                        artist: "American Music Club",
+                        track: "Goodbye To Love",
+                        path: "../../../samples/alternative/indierock7.ogg"
+                    },
+                    {
+                        artist: "Red House Painters",
+                        track: "Mistress",
+                        path: "../../../samples/alternative/indierock8.ogg"
+                    },
+                    {
+                        artist: "Arcade Fire",
+                        track: "Rebellion (Lies)",
+                        path: "../../../samples/alternative/indierock9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-alternative').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-alternative-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-alternative"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

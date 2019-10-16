@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Modern</title>
+    </head>
+
+    <body class="genre" id="modern">
+        <div class="box classical">
+            <h1>MODERN</h1>
+
+            <p>Encompassing a wide variety of post-Romantic styles, Modernist classical music includes late Romantic, Impressionist, Expressionist and Neoclassical styles of composition. Modernism marked an era when many composers rejected certain values of the common practice period, such as traditional tonality, melody, instrumentation and structure. The High Modern era saw the emergence of Neoclassical and serial music. Modernism in music is a philosophical and aesthetic stance underlying the period of change and development in musical language that occurred from 1890 to 1930. Two musical movements that were dominant during this time were the Impressionists beginning around 1890 and the Expressionists that started around 1908. It was a period of diverse reactions in challenging and reinterpreting older categories of music, innovations that lead to new ways of organizing and approaching harmonic, melodic, sonic and rhythmic aspects of music, and changes in aesthetic worldviews in close relation to the larger identifiable period of Modernism in the arts of the time.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classical">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-classical-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-classical-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Arnold Schoenberg",
+                        track: "Presto In C Major",
+                        path: "../../samples/classical/modern1.ogg"
+                    },
+                    {
+                        artist: "Anton Webern",
+                        track: "String Quartet",
+                        path: "../../samples/classical/modern2.ogg"
+                    },
+                    {
+                        artist: "Igor Stravinsky",
+                        track: "The Rite Of Spring",
+                        path: "../../samples/classical/modern3.ogg"
+                    },
+                    {
+                        artist: "Maurice Ravel",
+                        track: "Gaspard De La Nuit",
+                        path: "../../samples/classical/modern4.ogg"
+                    },
+                    {
+                        artist: "Bohuslav Martinů",
+                        track: "Concerto For Piano Trio And String Orchestra",
+                        path: "../../samples/classical/modern5.ogg"
+                    },
+                    {
+                        artist: "Paul Hindemith",
+                        track: "Kammermusick No. 6",
+                        path: "../../samples/classical/modern6.ogg"
+                    },
+                    {
+                        artist: "Charles Ives",
+                        track: "Sonata For Violin And Piano",
+                        path: "../../samples/classical/modern7.ogg"
+                    },
+                    {
+                        artist: "Claude Debussy",
+                        track: "La Mer No. 1",
+                        path: "../../samples/classical/modern8.ogg"
+                    },
+                    {
+                        artist: "George Gershwin",
+                        track: "Rhapsody In Blue",
+                        path: "../../samples/classical/modern9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-classical').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-classical-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-classical"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
