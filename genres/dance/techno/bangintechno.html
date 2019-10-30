@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Bangin Techno</title>
+    </head>
+
+    <body class="genre" id="bangintechno">
+        <div class="box techno">
+            <h1>BANGIN TECHNO</h1>
+
+            <p>Bangin Techno is more of a descriptive catch-all than a genre, but it is the most accessible and the most interesting, and for that reason it is as sleek and shiny as Techno is willing to get. Bangin Techno started out as a paragon of repetitive, percolating progression of perfunctory percussion that perfectly parallels shoes, keys, belts, coins, bunched up socks and a baseball all stuck in a laundry dryer. It is Detroit Techno at its most machinelike essence, catalyzed raw efficiency to such an extent that after awhile people were wondering why the two were separated in the first place. Bangin Techno also serves as a collection of regional Detroit-sounding genres and there are a lot of them that emerged in the mid to late 90s, all with subtle local flavouring. The biggest are Swedish Techno and German Techno. Detroit Techno has always been more of a DJ's genre. The records are released as repetitive loops, like half-finished songs with no melody or vocals (sometimes), often as battle tools or beats and breaks samplers with plenty of space between them on the vinyl to aid the DJ in his quick cuts and mixes.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-techno">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-techno">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-techno">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-techno">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-techno">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-techno">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-techno">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-techno">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-techno">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-techno-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-techno-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Jeff Mills",
+                        track: "The Bells",
+                        path: "../../../samples/techno/bangintechno1.ogg"
+                    },
+                    {
+                        artist: "Damon Wild",
+                        track: "Aqua",
+                        path: "../../../samples/techno/bangintechno2.ogg"
+                    },
+                    {
+                        artist: "Frankie Bones",
+                        track: "Get This Str-8",
+                        path: "../../../samples/techno/bangintechno3.ogg"
+                    },
+                    {
+                        artist: "CJ Bolland",
+                        track: "The Tingler",
+                        path: "../../../samples/techno/bangintechno4.ogg"
+                    },
+                    {
+                        artist: "Andreas Krämer & Thomas Pogadl",
+                        track: "Der Rächer",
+                        path: "../../../samples/techno/bangintechno5.ogg"
+                    },
+                    {
+                        artist: "Joel Mull",
+                        track: "Code Red 10 (The Advent Remake)",
+                        path: "../../../samples/techno/bangintechno6.ogg"
+                    },
+                    {
+                        artist: "Adam Beyer & Henrik B",
+                        track: "Perfect Match",
+                        path: "../../../samples/techno/bangintechno7.ogg"
+                    },
+                    {
+                        artist: "Fumiya Tanaka",
+                        track: "Phase",
+                        path: "../../../samples/techno/bangintechno8.ogg"
+                    },
+                    {
+                        artist: "Danilo Vigorito",
+                        track: "Phlex",
+                        path: "../../../samples/techno/bangintechno9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-techno').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-techno-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-techno"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
