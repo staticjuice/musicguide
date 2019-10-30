@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Indie Pop</title>
+    </head>
+
+    <body class="genre" id="indiepop">
+        <div class="box alternative">
+            <h1>INDIE POP</h1>
+
+            <p>College communities in the US had a sustained culture of amateur Singer-Songwriter during the 70s and 80s. At the end of the 70s, a third lesser known wave of Folk Rock called College Pop emerged, which was more poppy, lo-fi and increasingly amateuristic in sound. During the early 80s, the formation of College Pop into so called "Lo-Fi Pop" is complete. In the same communities, there was an interest in Punk Rock's DIY approach too as well as the brand new Jangle Pop style too. This led to a softer version of the latter, with more focus on melody and less of an abrasive sound harnessing positive, sentimental emotions instead of Indie Rock's negative angst-filled ones. These artists never achieved the same fame as their Rock companions, but were influential as a whole. Witnessing an unsophisticated, almost rudimentary sound by such an overwhelming amount of artists instilled a great deal of confidence in many Rock and Pop bands to come. Because even though Twee Pop is mostly associated with the late 80s, the genre is still a significant music style, harbouring a vast number of Alternative artists.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Primal Scream",
+                        track: "Loaded",
+                        path: "../../../samples/alternative/indiepop1.ogg"
+                    },
+                    {
+                        artist: "The Pastels",
+                        track: "Nothing To Be Done",
+                        path: "../../../samples/alternative/indiepop2.ogg"
+                    },
+                    {
+                        artist: "Beat Happening",
+                        track: "Godsend",
+                        path: "../../../samples/alternative/indiepop3.ogg"
+                    },
+                    {
+                        artist: "The Wedding Present",
+                        track: "Kennedy",
+                        path: "../../../samples/alternative/indiepop4.ogg"
+                    },
+                    {
+                        artist: "The Magnetic Fields",
+                        track: "God Wants Us To Wait",
+                        path: "../../../samples/alternative/indiepop5.ogg"
+                    },
+                    {
+                        artist: "Belle & Sebastian",
+                        track: "Another Sunny Day",
+                        path: "../../../samples/alternative/indiepop6.ogg"
+                    },
+                    {
+                        artist: "Tiger Trap",
+                        track: "Puzzle Pieces",
+                        path: "../../../samples/alternative/indiepop7.ogg"
+                    },
+                    {
+                        artist: "The Field Mice",
+                        track: "Emma's House",
+                        path: "../../../samples/alternative/indiepop8.ogg"
+                    },
+                    {
+                        artist: "The Shop Assistants",
+                        track: "I Don't Wanna Be Friends With You",
+                        path: "../../../samples/alternative/indiepop9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-alternative').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-alternative-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-alternative"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

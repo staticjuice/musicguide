@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Ragtime</title>
+    </head>
+
+    <body class="genre" id="ragtime">
+        <div class="box blues">
+            <h1>RAGTIME</h1>
+
+            <p>At the end of the 19th century came an important pioneer of Jazz music, known as Ragtime. Inspired by European brass bands, French contredanse and banjo dance music, emerging in any saloon, bar or bordello in the United States that harboured a piano &ndash; and frequently used as background music for old silent films. Ironically, Ragtime is the complete opposite of the stereotypical far-west or southern US brothel image &ndash; disciplined, structured and calm. Only one person and a piano form this genre. The song structure varies a lot, but is completely written out with no room for improvisation. One hand plays the melody, while the other plays the (also changing) bassline, which creates a certain tension between melody and bass. The name is derived from the earliest examples of these "broken" rhythmic songs, known as "rags". Remarkably, a revival of Ragtime appeared almost a century later in the 70s. In the early 20s, Ragtime evolves into Stride which allows for more improvisation and showmanship. Ragtime and Stride own a lot of their popularity to Foxtrot &ndash; a popular dance that emerged in the 1910s.</p>
+
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-blues">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-blues-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-blues-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Scott Joplin",
+                        track: "The Entertainer",
+                        path: "../../samples/blues/ragtime1.ogg"
+                    },
+                    {
+                        artist: "Tom Turpin",
+                        track: "Harlem Rag",
+                        path: "../../samples/blues/ragtime2.ogg"
+                    },
+                    {
+                        artist: "Eubie Blake",
+                        track: "Charleston Rag",
+                        path: "../../samples/blues/ragtime3.ogg"
+                    },
+                    {
+                        artist: "James Scott",
+                        track: "Frog Legs Rag",
+                        path: "../../samples/blues/ragtime4.ogg"
+                    },
+                    {
+                        artist: "Joseph Lamb",
+                        track: "Champagne Rag",
+                        path: "../../samples/blues/ragtime5.ogg"
+                    },
+                    {
+                        artist: 'Willie "The Lion" Smith',
+                        track: "Finger Buster",
+                        path: "../../samples/blues/ragtime6.ogg"
+                    },
+                    {
+                        artist: "James P. Johnson",
+                        track: "Carolina Shout",
+                        path: "../../samples/blues/ragtime7.ogg"
+                    },
+                    {
+                        artist: "Dave Tucker",
+                        track: "12th Street Rag Medley",
+                        path: "../../samples/blues/ragtime8.ogg"
+                    },
+                    {
+                        artist: "Jon Brosseau",
+                        track: "Grizzly Bear Rag",
+                        path: "../../samples/blues/ragtime9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-blues').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-blues-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-blues"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
