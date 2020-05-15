@@ -152,34 +152,34 @@ p {
     filter: brightness(40%);
 }
 
-.intro:before { background: url("../images/intro.jpg") no-repeat center fixed; }
-.allgenres { background: url("../images/wood.jpg") no-repeat center fixed; }
-.maingospel:before { background: url("../images/gospelbig.jpg") no-repeat center fixed; }
-.mainblues:before { background: url("../images/bluesbig.jpg") no-repeat center fixed; }
-.mainjazz:before { background: url("../images/jazzbig.jpg") no-repeat center fixed; }
-.maincountry:before { background: url("../images/countrybig.jpg") no-repeat center fixed; }
-.mainrhythmandblues:before { background: url("../images/rhythmandbluesbig.jpg") no-repeat center fixed; }
-.mainpop:before { background: url("../images/popbig.jpg") no-repeat center fixed; }
-.mainrockandroll:before { background: url("../images/rockandrollbig.jpg") no-repeat center fixed; }
-.mainclassicrock:before { background: url("../images/classicrockbig.jpg") no-repeat center fixed; }
-.mainpunk:before { background: url("../images/punkrockbig.jpg") no-repeat center fixed; }
-.mainalternative:before { background: url("../images/alternativebig.jpg") no-repeat center fixed; }
-.maincontemporaryrock:before { background: url("../images/contemporaryrockbig.jpg") no-repeat center fixed; }
-.mainmetal:before { background: url("../images/metalbig.jpg") no-repeat center fixed; }
-.mainreggae:before { background: url("../images/reggaebig.jpg") no-repeat center fixed; }
-.mainhiphop:before { background: url("../images/hiphopbig.jpg") no-repeat center fixed; }
-.mainindustrial:before { background: url("../images/industrialbig.jpg") no-repeat center fixed; }
-.mainhouse:before { background: url("../images/housebig.jpg") no-repeat center fixed; }
-.maintrance:before { background: url("../images/trancebig.jpg") no-repeat center fixed; }
-.maintechno:before { background: url("../images/technobig.jpg") no-repeat center fixed; }
-.mainhardcore:before { background: url("../images/hardcorebig.jpg") no-repeat center fixed; }
-.mainbreakbeat:before { background: url("../images/breakbeatbig.jpg") no-repeat center fixed; }
-.maindrumandbass:before { background: url("../images/drumandbassbig.jpg") no-repeat center fixed; }
-.mainukgarage:before { background: url("../images/ukgaragebig.jpg") no-repeat center fixed; }
-.maindowntempo:before { background: url("../images/downtempobig.jpg") no-repeat center fixed; }
-.mainclassical:before { background: url("../images/classicalbig.jpg") no-repeat center fixed; }
-.mainfolk:before { background: url("../images/folkbig.jpg") no-repeat center fixed; }
-.mainaesthetic:before { background: url("../images/aestheticbig.jpg") no-repeat center fixed; }
+.intro:before { background: url("../images/intro.jpg"); background-size: cover; }
+.allgenres { background: url("../images/wood.jpg"); background-size: cover; }
+.maingospel:before { background: url("../images/gospelbig.jpg"); background-size: cover; }
+.mainblues:before { background: url("../images/bluesbig.jpg"); background-size: cover; }
+.mainjazz:before { background: url("../images/jazzbig.jpg"); background-size: cover; }
+.maincountry:before { background: url("../images/countrybig.jpg"); background-size: cover; }
+.mainrhythmandblues:before { background: url("../images/rhythmandbluesbig.jpg"); background-size: cover; }
+.mainpop:before { background: url("../images/popbig.jpg"); background-size: cover; }
+.mainrockandroll:before { background: url("../images/rockandrollbig.jpg"); background-size: cover; }
+.mainclassicrock:before { background: url("../images/classicrockbig.jpg"); background-size: cover; }
+.mainpunk:before { background: url("../images/punkrockbig.jpg"); background-size: cover; }
+.mainalternative:before { background: url("../images/alternativebig.jpg"); background-size: cover; }
+.maincontemporaryrock:before { background: url("../images/contemporaryrockbig.jpg"); background-size: cover; }
+.mainmetal:before { background: url("../images/metalbig.jpg"); background-size: cover; }
+.mainreggae:before { background: url("../images/reggaebig.jpg"); background-size: cover; }
+.mainhiphop:before { background: url("../images/hiphopbig.jpg"); background-size: cover; }
+.mainindustrial:before { background: url("../images/industrialbig.jpg"); background-size: cover; }
+.mainhouse:before { background: url("../images/housebig.jpg"); background-size: cover; }
+.maintrance:before { background: url("../images/trancebig.jpg"); background-size: cover; }
+.maintechno:before { background: url("../images/technobig.jpg"); background-size: cover; }
+.mainhardcore:before { background: url("../images/hardcorebig.jpg"); background-size: cover; }
+.mainbreakbeat:before { background: url("../images/breakbeatbig.jpg"); background-size: cover; }
+.maindrumandbass:before { background: url("../images/drumandbassbig.jpg"); background-size: cover; }
+.mainukgarage:before { background: url("../images/ukgaragebig.jpg"); background-size: cover; }
+.maindowntempo:before { background: url("../images/downtempobig.jpg"); background-size: cover; }
+.mainclassical:before { background: url("../images/classicalbig.jpg"); background-size: cover; }
+.mainfolk:before { background: url("../images/folkbig.jpg"); background-size: cover; }
+.mainaesthetic:before { background: url("../images/aestheticbig.jpg"); background-size: cover; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -302,281 +302,281 @@ p {
 
 /*---------------------------------------------------------------------------*/
 
-#spirituals {background: url("../images/gospel/spirituals.jpg") no-repeat center fixed;}
-#traditionalgospel {background: url("../images/gospel/traditionalgospel.jpg") no-repeat center fixed;}
-#contemporarygospel {background: url("../images/gospel/contemporarygospel.jpg") no-repeat center fixed;}
-#contemporarychristian {background: url("../images/gospel/contemporarychristian.jpg") no-repeat center fixed;}
+#spirituals {background: url("../images/gospel/spirituals.jpg"); background-size: cover;}
+#traditionalgospel {background: url("../images/gospel/traditionalgospel.jpg"); background-size: cover;}
+#contemporarygospel {background: url("../images/gospel/contemporarygospel.jpg"); background-size: cover;}
+#contemporarychristian {background: url("../images/gospel/contemporarychristian.jpg"); background-size: cover;}
 
-#ragtime {background: url("../images/blues/ragtime.jpg") no-repeat center fixed;}
-#countryblues {background: url("../images/blues/countryblues.jpg") no-repeat center fixed;}
-#vaudevilleblues {background: url("../images/blues/vaudevilleblues.jpg") no-repeat center fixed;}
-#boogiewoogie {background: url("../images/blues/boogiewoogie.jpg") no-repeat center fixed;}
-#jumpblues {background: url("../images/blues/jumpblues.jpg") no-repeat center fixed;}
-#westcoastblues {background: url("../images/blues/westcoastblues.jpg") no-repeat center fixed;}
-#urbanblues {background: url("../images/blues/urbanblues.jpg") no-repeat center fixed;}
-#louisianablues {background: url("../images/blues/louisianablues.jpg") no-repeat center fixed;}
-#hillcountryblues {background: url("../images/blues/hillcountryblues.jpg") no-repeat center fixed;}
-#soulblues {background: url("../images/blues/soulblues.jpg") no-repeat center fixed;}
-#electricblues {background: url("../images/blues/electricblues.jpg") no-repeat center fixed;}
+#ragtime {background: url("../images/blues/ragtime.jpg"); background-size: cover;}
+#countryblues {background: url("../images/blues/countryblues.jpg"); background-size: cover;}
+#vaudevilleblues {background: url("../images/blues/vaudevilleblues.jpg"); background-size: cover;}
+#boogiewoogie {background: url("../images/blues/boogiewoogie.jpg"); background-size: cover;}
+#jumpblues {background: url("../images/blues/jumpblues.jpg"); background-size: cover;}
+#westcoastblues {background: url("../images/blues/westcoastblues.jpg"); background-size: cover;}
+#urbanblues {background: url("../images/blues/urbanblues.jpg"); background-size: cover;}
+#louisianablues {background: url("../images/blues/louisianablues.jpg"); background-size: cover;}
+#hillcountryblues {background: url("../images/blues/hillcountryblues.jpg"); background-size: cover;}
+#soulblues {background: url("../images/blues/soulblues.jpg"); background-size: cover;}
+#electricblues {background: url("../images/blues/electricblues.jpg"); background-size: cover;}
 
-#dixieland {background: url("../images/jazz/dixieland.jpg") no-repeat center fixed;}
-#swing {background: url("../images/jazz/swing.jpg") no-repeat center fixed;}
-#bebop {background: url("../images/jazz/bebop.jpg") no-repeat center fixed;}
-#cooljazz {background: url("../images/jazz/cooljazz.jpg") no-repeat center fixed;}
-#hardbop {background: url("../images/jazz/hardbop.jpg") no-repeat center fixed;}
-#modaljazz {background: url("../images/jazz/modaljazz.jpg") no-repeat center fixed;}
-#souljazz {background: url("../images/jazz/souljazz.jpg") no-repeat center fixed;}
-#freejazz {background: url("../images/jazz/freejazz.jpg") no-repeat center fixed;}
-#jazzfusion {background: url("../images/jazz/jazzfusion.jpg") no-repeat center fixed;}
-#smoothjazz {background: url("../images/jazz/smoothjazz.jpg") no-repeat center fixed;}
-#acidjazz {background: url("../images/jazz/acidjazz.jpg") no-repeat center fixed;}
-#nujazz {background: url("../images/jazz/nujazz.jpg") no-repeat center fixed;}
+#dixieland {background: url("../images/jazz/dixieland.jpg"); background-size: cover;}
+#swing {background: url("../images/jazz/swing.jpg"); background-size: cover;}
+#bebop {background: url("../images/jazz/bebop.jpg"); background-size: cover;}
+#cooljazz {background: url("../images/jazz/cooljazz.jpg"); background-size: cover;}
+#hardbop {background: url("../images/jazz/hardbop.jpg"); background-size: cover;}
+#modaljazz {background: url("../images/jazz/modaljazz.jpg"); background-size: cover;}
+#souljazz {background: url("../images/jazz/souljazz.jpg"); background-size: cover;}
+#freejazz {background: url("../images/jazz/freejazz.jpg"); background-size: cover;}
+#jazzfusion {background: url("../images/jazz/jazzfusion.jpg"); background-size: cover;}
+#smoothjazz {background: url("../images/jazz/smoothjazz.jpg"); background-size: cover;}
+#acidjazz {background: url("../images/jazz/acidjazz.jpg"); background-size: cover;}
+#nujazz {background: url("../images/jazz/nujazz.jpg"); background-size: cover;}
 
-#hillbilly {background: url("../images/country/hillbilly.jpg") no-repeat center fixed;}
-#westernswing {background: url("../images/country/westernswing.jpg") no-repeat center fixed;}
-#honkytonk {background: url("../images/country/honkytonk.jpg") no-repeat center fixed;}
-#bluegrass {background: url("../images/country/bluegrass.jpg") no-repeat center fixed;}
-#nashvillesound {background: url("../images/country/nashvillesound.jpg") no-repeat center fixed;}
-#bakersfieldsound {background: url("../images/country/bakersfieldsound.jpg") no-repeat center fixed;}
-#countrypop {background: url("../images/country/countrypop.jpg") no-repeat center fixed;}
-#outlawcountry {background: url("../images/country/outlawcountry.jpg") no-repeat center fixed;}
-#neotraditionalcountry {background: url("../images/country/neotraditionalcountry.jpg") no-repeat center fixed;}
-#alternativecountry {background: url("../images/country/alternativecountry.jpg") no-repeat center fixed;}
+#hillbilly {background: url("../images/country/hillbilly.jpg"); background-size: cover;}
+#westernswing {background: url("../images/country/westernswing.jpg"); background-size: cover;}
+#honkytonk {background: url("../images/country/honkytonk.jpg"); background-size: cover;}
+#bluegrass {background: url("../images/country/bluegrass.jpg"); background-size: cover;}
+#nashvillesound {background: url("../images/country/nashvillesound.jpg"); background-size: cover;}
+#bakersfieldsound {background: url("../images/country/bakersfieldsound.jpg"); background-size: cover;}
+#countrypop {background: url("../images/country/countrypop.jpg"); background-size: cover;}
+#outlawcountry {background: url("../images/country/outlawcountry.jpg"); background-size: cover;}
+#neotraditionalcountry {background: url("../images/country/neotraditionalcountry.jpg"); background-size: cover;}
+#alternativecountry {background: url("../images/country/alternativecountry.jpg"); background-size: cover;}
 
-#rhythmandblues {background: url("../images/rhythmandblues/rhythmandblues.jpg") no-repeat center fixed;}
-#doowop {background: url("../images/rhythmandblues/doowop.jpg") no-repeat center fixed;}
-#soul {background: url("../images/rhythmandblues/soul.jpg") no-repeat center fixed;}
-#motown {background: url("../images/rhythmandblues/motown.jpg") no-repeat center fixed;}
-#funk {background: url("../images/rhythmandblues/funk.jpg") no-repeat center fixed;}
-#philadelphiasoul {background: url("../images/rhythmandblues/philadelphiasoul.jpg") no-repeat center fixed;}
-#disco {background: url("../images/rhythmandblues/disco.jpg") no-repeat center fixed;}
-#raregroove {background: url("../images/rhythmandblues/raregroove.jpg") no-repeat center fixed;}
-#electrofunk {background: url("../images/rhythmandblues/electrofunk.jpg") no-repeat center fixed;}
-#newjackswing {background: url("../images/rhythmandblues/newjackswing.jpg") no-repeat center fixed;}
-#neosoul {background: url("../images/rhythmandblues/neosoul.jpg") no-repeat center fixed;}
-#urbancontemporary {background: url("../images/rhythmandblues/urbancontemporary.jpg") no-repeat center fixed;}
-#alternativerhythmandblues {background: url("../images/rhythmandblues/alternativerhythmandblues.jpg") no-repeat center fixed;}
+#rhythmandblues {background: url("../images/rhythmandblues/rhythmandblues.jpg"); background-size: cover;}
+#doowop {background: url("../images/rhythmandblues/doowop.jpg"); background-size: cover;}
+#soul {background: url("../images/rhythmandblues/soul.jpg"); background-size: cover;}
+#motown {background: url("../images/rhythmandblues/motown.jpg"); background-size: cover;}
+#funk {background: url("../images/rhythmandblues/funk.jpg"); background-size: cover;}
+#philadelphiasoul {background: url("../images/rhythmandblues/philadelphiasoul.jpg"); background-size: cover;}
+#disco {background: url("../images/rhythmandblues/disco.jpg"); background-size: cover;}
+#raregroove {background: url("../images/rhythmandblues/raregroove.jpg"); background-size: cover;}
+#electrofunk {background: url("../images/rhythmandblues/electrofunk.jpg"); background-size: cover;}
+#newjackswing {background: url("../images/rhythmandblues/newjackswing.jpg"); background-size: cover;}
+#neosoul {background: url("../images/rhythmandblues/neosoul.jpg"); background-size: cover;}
+#urbancontemporary {background: url("../images/rhythmandblues/urbancontemporary.jpg"); background-size: cover;}
+#alternativerhythmandblues {background: url("../images/rhythmandblues/alternativerhythmandblues.jpg"); background-size: cover;}
 
-#traditionalpop {background: url("../images/pop/traditionalpop.jpg") no-repeat center fixed;}
-#brillbuildingsound {background: url("../images/pop/brillbuildingsound.jpg") no-repeat center fixed;}
-#bubblegumpop {background: url("../images/pop/bubblegumpop.jpg") no-repeat center fixed;}
-#sunshinepop {background: url("../images/pop/sunshinepop.jpg") no-repeat center fixed;}
-#singersongwriter {background: url("../images/pop/singersongwriter.jpg") no-repeat center fixed;}
-#adultcontemporary {background: url("../images/pop/adultcontemporary.jpg") no-repeat center fixed;}
-#eurodisco {background: url("../images/pop/eurodisco.jpg") no-repeat center fixed;}
-#synthpop {background: url("../images/pop/synthpop.jpg") no-repeat center fixed;}
-#dancepop {background: url("../images/pop/dancepop.jpg") no-repeat center fixed;}
-#electropop {background: url("../images/pop/electropop.jpg") no-repeat center fixed;}
+#traditionalpop {background: url("../images/pop/traditionalpop.jpg"); background-size: cover;}
+#brillbuildingsound {background: url("../images/pop/brillbuildingsound.jpg"); background-size: cover;}
+#bubblegumpop {background: url("../images/pop/bubblegumpop.jpg"); background-size: cover;}
+#sunshinepop {background: url("../images/pop/sunshinepop.jpg"); background-size: cover;}
+#singersongwriter {background: url("../images/pop/singersongwriter.jpg"); background-size: cover;}
+#adultcontemporary {background: url("../images/pop/adultcontemporary.jpg"); background-size: cover;}
+#eurodisco {background: url("../images/pop/eurodisco.jpg"); background-size: cover;}
+#synthpop {background: url("../images/pop/synthpop.jpg"); background-size: cover;}
+#dancepop {background: url("../images/pop/dancepop.jpg"); background-size: cover;}
+#electropop {background: url("../images/pop/electropop.jpg"); background-size: cover;}
 
-#rockandroll {background: url("../images/rockandroll/rockandroll.jpg") no-repeat center fixed;}
-#surfrock {background: url("../images/rockandroll/surfrock.jpg") no-repeat center fixed;}
-#garagerock {background: url("../images/rockandroll/garagerock.jpg") no-repeat center fixed;}
-#beat {background: url("../images/rockandroll/beat.jpg") no-repeat center fixed;}
+#rockandroll {background: url("../images/rockandroll/rockandroll.jpg"); background-size: cover;}
+#surfrock {background: url("../images/rockandroll/surfrock.jpg"); background-size: cover;}
+#garagerock {background: url("../images/rockandroll/garagerock.jpg"); background-size: cover;}
+#beat {background: url("../images/rockandroll/beat.jpg"); background-size: cover;}
 
-#bluesrock {background: url("../images/classicrock/bluesrock.jpg") no-repeat center fixed;}
-#folkrock {background: url("../images/classicrock/folkrock.jpg") no-repeat center fixed;}
-#psychedelicrock {background: url("../images/classicrock/psychedelicrock.jpg") no-repeat center fixed;}
-#hardrock {background: url("../images/classicrock/hardrock.jpg") no-repeat center fixed;}
-#progressiverock {background: url("../images/classicrock/progressiverock.jpg") no-repeat center fixed;}
-#krautrock {background: url("../images/classicrock/krautrock.jpg") no-repeat center fixed;}
-#southernrock {background: url("../images/classicrock/southernrock.jpg") no-repeat center fixed;}
-#glamrock {background: url("../images/classicrock/glamrock.jpg") no-repeat center fixed;}
-#heartlandrock {background: url("../images/classicrock/heartlandrock.jpg") no-repeat center fixed;}
+#bluesrock {background: url("../images/classicrock/bluesrock.jpg"); background-size: cover;}
+#folkrock {background: url("../images/classicrock/folkrock.jpg"); background-size: cover;}
+#psychedelicrock {background: url("../images/classicrock/psychedelicrock.jpg"); background-size: cover;}
+#hardrock {background: url("../images/classicrock/hardrock.jpg"); background-size: cover;}
+#progressiverock {background: url("../images/classicrock/progressiverock.jpg"); background-size: cover;}
+#krautrock {background: url("../images/classicrock/krautrock.jpg"); background-size: cover;}
+#southernrock {background: url("../images/classicrock/southernrock.jpg"); background-size: cover;}
+#glamrock {background: url("../images/classicrock/glamrock.jpg"); background-size: cover;}
+#heartlandrock {background: url("../images/classicrock/heartlandrock.jpg"); background-size: cover;}
 
-#protopunk {background: url("../images/punk/protopunk.jpg") no-repeat center fixed;}
-#punkrock {background: url("../images/punk/punkrock.jpg") no-repeat center fixed;}
-#skapunk {background: url("../images/punk/skapunk.jpg") no-repeat center fixed;}
-#postpunk {background: url("../images/punk/postpunk.jpg") no-repeat center fixed;}
-#newwave {background: url("../images/punk/newwave.jpg") no-repeat center fixed;}
-#nowave {background: url("../images/punk/nowave.jpg") no-repeat center fixed;}
-#oi {background: url("../images/punk/oi.jpg") no-repeat center fixed;}
-#hardcorepunk {background: url("../images/punk/hardcorepunk.jpg") no-repeat center fixed;}
-#anarchopunk {background: url("../images/punk/anarchopunk.jpg") no-repeat center fixed;}
-#psychobilly {background: url("../images/punk/psychobilly.jpg") no-repeat center fixed;}
-#posthardcore {background: url("../images/punk/posthardcore.jpg") no-repeat center fixed;}
-#riotgrrrl {background: url("../images/punk/riotgrrrl.jpg") no-repeat center fixed;}
+#protopunk {background: url("../images/punk/protopunk.jpg"); background-size: cover;}
+#punkrock {background: url("../images/punk/punkrock.jpg"); background-size: cover;}
+#skapunk {background: url("../images/punk/skapunk.jpg"); background-size: cover;}
+#postpunk {background: url("../images/punk/postpunk.jpg"); background-size: cover;}
+#newwave {background: url("../images/punk/newwave.jpg"); background-size: cover;}
+#nowave {background: url("../images/punk/nowave.jpg"); background-size: cover;}
+#oi {background: url("../images/punk/oi.jpg"); background-size: cover;}
+#hardcorepunk {background: url("../images/punk/hardcorepunk.jpg"); background-size: cover;}
+#anarchopunk {background: url("../images/punk/anarchopunk.jpg"); background-size: cover;}
+#psychobilly {background: url("../images/punk/psychobilly.jpg"); background-size: cover;}
+#posthardcore {background: url("../images/punk/posthardcore.jpg"); background-size: cover;}
+#riotgrrrl {background: url("../images/punk/riotgrrrl.jpg"); background-size: cover;}
 
-#janglepop {background: url("../images/alternative/janglepop.jpg") no-repeat center fixed;}
-#noiserock {background: url("../images/alternative/noiserock.jpg") no-repeat center fixed;}
-#grunge {background: url("../images/alternative/grunge.jpg") no-repeat center fixed;}
-#shoegaze {background: url("../images/alternative/shoegaze.jpg") no-repeat center fixed;}
-#raprock {background: url("../images/alternative/raprock.jpg") no-repeat center fixed;}
-#britpop {background: url("../images/alternative/britpop.jpg") no-repeat center fixed;}
-#poppunk {background: url("../images/alternative/poppunk.jpg") no-repeat center fixed;}
-#indierock {background: url("../images/alternative/indierock.jpg") no-repeat center fixed;}
-#indiepop {background: url("../images/alternative/indiepop.jpg") no-repeat center fixed;}
-#postrock {background: url("../images/alternative/postrock.jpg") no-repeat center fixed;}
-#postgrunge {background: url("../images/alternative/postgrunge.jpg") no-repeat center fixed;}
-#postbritpop {background: url("../images/alternative/postbritpop.jpg") no-repeat center fixed;}
+#janglepop {background: url("../images/alternative/janglepop.jpg"); background-size: cover;}
+#noiserock {background: url("../images/alternative/noiserock.jpg"); background-size: cover;}
+#grunge {background: url("../images/alternative/grunge.jpg"); background-size: cover;}
+#shoegaze {background: url("../images/alternative/shoegaze.jpg"); background-size: cover;}
+#raprock {background: url("../images/alternative/raprock.jpg"); background-size: cover;}
+#britpop {background: url("../images/alternative/britpop.jpg"); background-size: cover;}
+#poppunk {background: url("../images/alternative/poppunk.jpg"); background-size: cover;}
+#indierock {background: url("../images/alternative/indierock.jpg"); background-size: cover;}
+#indiepop {background: url("../images/alternative/indiepop.jpg"); background-size: cover;}
+#postrock {background: url("../images/alternative/postrock.jpg"); background-size: cover;}
+#postgrunge {background: url("../images/alternative/postgrunge.jpg"); background-size: cover;}
+#postbritpop {background: url("../images/alternative/postbritpop.jpg"); background-size: cover;}
 
-#emo {background: url("../images/contemporaryrock/emo.jpg") no-repeat center fixed;}
-#screamo {background: url("../images/contemporaryrock/screamo.jpg") no-repeat center fixed;}
-#garagerockrevival {background: url("../images/contemporaryrock/garagerockrevival.jpg") no-repeat center fixed;}
-#nuprog {background: url("../images/contemporaryrock/nuprog.jpg") no-repeat center fixed;}
-#dancepunk {background: url("../images/contemporaryrock/dancepunk.jpg") no-repeat center fixed;}
-#electroclash {background: url("../images/contemporaryrock/electroclash.jpg") no-repeat center fixed;}
-#indietronica {background: url("../images/contemporaryrock/indietronica.jpg") no-repeat center fixed;}
-#indiefolk {background: url("../images/contemporaryrock/indiefolk.jpg") no-repeat center fixed;}
+#emo {background: url("../images/contemporaryrock/emo.jpg"); background-size: cover;}
+#screamo {background: url("../images/contemporaryrock/screamo.jpg"); background-size: cover;}
+#garagerockrevival {background: url("../images/contemporaryrock/garagerockrevival.jpg"); background-size: cover;}
+#nuprog {background: url("../images/contemporaryrock/nuprog.jpg"); background-size: cover;}
+#dancepunk {background: url("../images/contemporaryrock/dancepunk.jpg"); background-size: cover;}
+#electroclash {background: url("../images/contemporaryrock/electroclash.jpg"); background-size: cover;}
+#indietronica {background: url("../images/contemporaryrock/indietronica.jpg"); background-size: cover;}
+#indiefolk {background: url("../images/contemporaryrock/indiefolk.jpg"); background-size: cover;}
 
-#heavymetal {background: url("../images/metal/heavymetal.jpg") no-repeat center fixed;}
-#nwobhm {background: url("../images/metal/nwobhm.jpg") no-repeat center fixed;}
-#glammetal {background: url("../images/metal/glammetal.jpg") no-repeat center fixed;}
-#thrashmetal {background: url("../images/metal/thrashmetal.jpg") no-repeat center fixed;}
-#doommetal {background: url("../images/metal/doommetal.jpg") no-repeat center fixed;}
-#progressivemetal {background: url("../images/metal/progressivemetal.jpg") no-repeat center fixed;}
-#powermetal {background: url("../images/metal/powermetal.jpg") no-repeat center fixed;}
-#deathmetal {background: url("../images/metal/deathmetal.jpg") no-repeat center fixed;}
-#grindcore {background: url("../images/metal/grindcore.jpg") no-repeat center fixed;}
-#blackmetal {background: url("../images/metal/blackmetal.jpg") no-repeat center fixed;}
-#stonerrock {background: url("../images/metal/stonerrock.jpg") no-repeat center fixed;}
-#gothicmetal {background: url("../images/metal/gothicmetal.jpg") no-repeat center fixed;}
-#numetal {background: url("../images/metal/numetal.jpg") no-repeat center fixed;}
-#metalcore {background: url("../images/metal/metalcore.jpg") no-repeat center fixed;}
+#heavymetal {background: url("../images/metal/heavymetal.jpg"); background-size: cover;}
+#nwobhm {background: url("../images/metal/nwobhm.jpg"); background-size: cover;}
+#glammetal {background: url("../images/metal/glammetal.jpg"); background-size: cover;}
+#thrashmetal {background: url("../images/metal/thrashmetal.jpg"); background-size: cover;}
+#doommetal {background: url("../images/metal/doommetal.jpg"); background-size: cover;}
+#progressivemetal {background: url("../images/metal/progressivemetal.jpg"); background-size: cover;}
+#powermetal {background: url("../images/metal/powermetal.jpg"); background-size: cover;}
+#deathmetal {background: url("../images/metal/deathmetal.jpg"); background-size: cover;}
+#grindcore {background: url("../images/metal/grindcore.jpg"); background-size: cover;}
+#blackmetal {background: url("../images/metal/blackmetal.jpg"); background-size: cover;}
+#stonerrock {background: url("../images/metal/stonerrock.jpg"); background-size: cover;}
+#gothicmetal {background: url("../images/metal/gothicmetal.jpg"); background-size: cover;}
+#numetal {background: url("../images/metal/numetal.jpg"); background-size: cover;}
+#metalcore {background: url("../images/metal/metalcore.jpg"); background-size: cover;}
 
-#mento {background: url("../images/reggae/mento.jpg") no-repeat center fixed;}
-#ska {background: url("../images/reggae/ska.jpg") no-repeat center fixed;}
-#rocksteady {background: url("../images/reggae/rocksteady.jpg") no-repeat center fixed;}
-#reggae {background: url("../images/reggae/reggae.jpg") no-repeat center fixed;}
-#dub {background: url("../images/reggae/dub.jpg") no-repeat center fixed;}
-#loversrock {background: url("../images/reggae/loversrock.jpg") no-repeat center fixed;}
-#dancehall {background: url("../images/reggae/dancehall.jpg") no-repeat center fixed;}
-#ragga {background: url("../images/reggae/ragga.jpg") no-repeat center fixed;}
-#reggaefusion {background: url("../images/reggae/reggaefusion.jpg") no-repeat center fixed;}
-#reggaeton {background: url("../images/reggae/reggaeton.jpg") no-repeat center fixed;}
+#mento {background: url("../images/reggae/mento.jpg"); background-size: cover;}
+#ska {background: url("../images/reggae/ska.jpg"); background-size: cover;}
+#rocksteady {background: url("../images/reggae/rocksteady.jpg"); background-size: cover;}
+#reggae {background: url("../images/reggae/reggae.jpg"); background-size: cover;}
+#dub {background: url("../images/reggae/dub.jpg"); background-size: cover;}
+#loversrock {background: url("../images/reggae/loversrock.jpg"); background-size: cover;}
+#dancehall {background: url("../images/reggae/dancehall.jpg"); background-size: cover;}
+#ragga {background: url("../images/reggae/ragga.jpg"); background-size: cover;}
+#reggaefusion {background: url("../images/reggae/reggaefusion.jpg"); background-size: cover;}
+#reggaeton {background: url("../images/reggae/reggaeton.jpg"); background-size: cover;}
 
-#oldschoolrap {background: url("../images/hiphop/oldschoolrap.jpg") no-repeat center fixed;}
-#turntablism {background: url("../images/hiphop/turntablism.jpg") no-repeat center fixed;}
-#miamibass {background: url("../images/hiphop/miamibass.jpg") no-repeat center fixed;}
-#eastcoastrap {background: url("../images/hiphop/eastcoastrap.jpg") no-repeat center fixed;}
-#westcoastrap {background: url("../images/hiphop/westcoastrap.jpg") no-repeat center fixed;}
-#jazzrap {background: url("../images/hiphop/jazzrap.jpg") no-repeat center fixed;}
-#alternativerap {background: url("../images/hiphop/alternativerap.jpg") no-repeat center fixed;}
-#crunk {background: url("../images/hiphop/crunk.jpg") no-repeat center fixed;}
-#trap {background: url("../images/hiphop/trap.jpg") no-repeat center fixed;}
+#oldschoolrap {background: url("../images/hiphop/oldschoolrap.jpg"); background-size: cover;}
+#turntablism {background: url("../images/hiphop/turntablism.jpg"); background-size: cover;}
+#miamibass {background: url("../images/hiphop/miamibass.jpg"); background-size: cover;}
+#eastcoastrap {background: url("../images/hiphop/eastcoastrap.jpg"); background-size: cover;}
+#westcoastrap {background: url("../images/hiphop/westcoastrap.jpg"); background-size: cover;}
+#jazzrap {background: url("../images/hiphop/jazzrap.jpg"); background-size: cover;}
+#alternativerap {background: url("../images/hiphop/alternativerap.jpg"); background-size: cover;}
+#crunk {background: url("../images/hiphop/crunk.jpg"); background-size: cover;}
+#trap {background: url("../images/hiphop/trap.jpg"); background-size: cover;}
 
-#industrial {background: url("../images/industrial/industrial.jpg") no-repeat center fixed;}
-#gothrock {background: url("../images/industrial/gothrock.jpg") no-repeat center fixed;}
-#darkwave {background: url("../images/industrial/darkwave.jpg") no-repeat center fixed;}
-#ebm {background: url("../images/industrial/ebm.jpg") no-repeat center fixed;}
-#noise {background: url("../images/industrial/noise.jpg") no-repeat center fixed;}
-#industrialrock {background: url("../images/industrial/industrialrock.jpg") no-repeat center fixed;}
-#aggrotech {background: url("../images/industrial/aggrotech.jpg") no-repeat center fixed;}
-#futurepop {background: url("../images/industrial/futurepop.jpg") no-repeat center fixed;}
+#industrial {background: url("../images/industrial/industrial.jpg"); background-size: cover;}
+#gothrock {background: url("../images/industrial/gothrock.jpg"); background-size: cover;}
+#darkwave {background: url("../images/industrial/darkwave.jpg"); background-size: cover;}
+#ebm {background: url("../images/industrial/ebm.jpg"); background-size: cover;}
+#noise {background: url("../images/industrial/noise.jpg"); background-size: cover;}
+#industrialrock {background: url("../images/industrial/industrialrock.jpg"); background-size: cover;}
+#aggrotech {background: url("../images/industrial/aggrotech.jpg"); background-size: cover;}
+#futurepop {background: url("../images/industrial/futurepop.jpg"); background-size: cover;}
 
-#chicagohouse {background: url("../images/house/chicagohouse.jpg") no-repeat center fixed;}
-#acidhouse {background: url("../images/house/acidhouse.jpg") no-repeat center fixed;}
-#deephouse {background: url("../images/house/deephouse.jpg") no-repeat center fixed;}
-#progressivehouse {background: url("../images/house/progressivehouse.jpg") no-repeat center fixed;}
-#techhouse {background: url("../images/house/techhouse.jpg") no-repeat center fixed;}
-#discohouse {background: url("../images/house/discohouse.jpg") no-repeat center fixed;}
-#frenchhouse {background: url("../images/house/frenchhouse.jpg") no-repeat center fixed;}
-#electrohouse {background: url("../images/house/electrohouse.jpg") no-repeat center fixed;}
-#anthemhouse {background: url("../images/house/anthemhouse.jpg") no-repeat center fixed;}
-#electroswing {background: url("../images/house/electroswing.jpg") no-repeat center fixed;}
-#nudisco {background: url("../images/house/nudisco.jpg") no-repeat center fixed;}
-#tropicalhouse {background: url("../images/house/tropicalhouse.jpg") no-repeat center fixed;}
-#futurehouse {background: url("../images/house/futurehouse.jpg") no-repeat center fixed;}
+#chicagohouse {background: url("../images/house/chicagohouse.jpg"); background-size: cover;}
+#acidhouse {background: url("../images/house/acidhouse.jpg"); background-size: cover;}
+#deephouse {background: url("../images/house/deephouse.jpg"); background-size: cover;}
+#progressivehouse {background: url("../images/house/progressivehouse.jpg"); background-size: cover;}
+#techhouse {background: url("../images/house/techhouse.jpg"); background-size: cover;}
+#discohouse {background: url("../images/house/discohouse.jpg"); background-size: cover;}
+#frenchhouse {background: url("../images/house/frenchhouse.jpg"); background-size: cover;}
+#electrohouse {background: url("../images/house/electrohouse.jpg"); background-size: cover;}
+#anthemhouse {background: url("../images/house/anthemhouse.jpg"); background-size: cover;}
+#electroswing {background: url("../images/house/electroswing.jpg"); background-size: cover;}
+#nudisco {background: url("../images/house/nudisco.jpg"); background-size: cover;}
+#tropicalhouse {background: url("../images/house/tropicalhouse.jpg"); background-size: cover;}
+#futurehouse {background: url("../images/house/futurehouse.jpg"); background-size: cover;}
 
-#acidtrance {background: url("../images/trance/acidtrance.jpg") no-repeat center fixed;}
-#psychedelictrance {background: url("../images/trance/psychedelictrance.jpg") no-repeat center fixed;}
-#balearictrance {background: url("../images/trance/balearictrance.jpg") no-repeat center fixed;}
-#dreamtrance {background: url("../images/trance/dreamtrance.jpg") no-repeat center fixed;}
-#progressivetrance {background: url("../images/trance/progressivetrance.jpg") no-repeat center fixed;}
-#eurotrance {background: url("../images/trance/eurotrance.jpg") no-repeat center fixed;}
-#techtrance {background: url("../images/trance/techtrance.jpg") no-repeat center fixed;}
-#hardtrance {background: url("../images/trance/hardtrance.jpg") no-repeat center fixed;}
-#upliftingtrance {background: url("../images/trance/upliftingtrance.jpg") no-repeat center fixed;}
-#neotrance {background: url("../images/trance/neotrance.jpg") no-repeat center fixed;}
+#acidtrance {background: url("../images/trance/acidtrance.jpg"); background-size: cover;}
+#psychedelictrance {background: url("../images/trance/psychedelictrance.jpg"); background-size: cover;}
+#balearictrance {background: url("../images/trance/balearictrance.jpg"); background-size: cover;}
+#dreamtrance {background: url("../images/trance/dreamtrance.jpg"); background-size: cover;}
+#progressivetrance {background: url("../images/trance/progressivetrance.jpg"); background-size: cover;}
+#eurotrance {background: url("../images/trance/eurotrance.jpg"); background-size: cover;}
+#techtrance {background: url("../images/trance/techtrance.jpg"); background-size: cover;}
+#hardtrance {background: url("../images/trance/hardtrance.jpg"); background-size: cover;}
+#upliftingtrance {background: url("../images/trance/upliftingtrance.jpg"); background-size: cover;}
+#neotrance {background: url("../images/trance/neotrance.jpg"); background-size: cover;}
 
-#detroittechno {background: url("../images/techno/detroittechno.jpg") no-repeat center fixed;}
-#acidtechno {background: url("../images/techno/acidtechno.jpg") no-repeat center fixed;}
-#minimaltechno {background: url("../images/techno/minimaltechno.jpg") no-repeat center fixed;}
-#bangintechno {background: url("../images/techno/bangintechno.jpg") no-repeat center fixed;}
-#schranz {background: url("../images/techno/schranz.jpg") no-repeat center fixed;}
+#detroittechno {background: url("../images/techno/detroittechno.jpg"); background-size: cover;}
+#acidtechno {background: url("../images/techno/acidtechno.jpg"); background-size: cover;}
+#minimaltechno {background: url("../images/techno/minimaltechno.jpg"); background-size: cover;}
+#bangintechno {background: url("../images/techno/bangintechno.jpg"); background-size: cover;}
+#schranz {background: url("../images/techno/schranz.jpg"); background-size: cover;}
 
-#newbeat {background: url("../images/hardcore/newbeat.jpg") no-repeat center fixed;}
-#rave {background: url("../images/hardcore/rave.jpg") no-repeat center fixed;}
-#breakbeathardcore {background: url("../images/hardcore/breakbeathardcore.jpg") no-repeat center fixed;}
-#gabber {background: url("../images/hardcore/gabber.jpg") no-repeat center fixed;}
-#happyhardcore {background: url("../images/hardcore/happyhardcore.jpg") no-repeat center fixed;}
-#speedcore {background: url("../images/hardcore/speedcore.jpg") no-repeat center fixed;}
-#breakcore {background: url("../images/hardcore/breakcore.jpg") no-repeat center fixed;}
-#trancecore {background: url("../images/hardcore/trancecore.jpg") no-repeat center fixed;}
-#hardstyle {background: url("../images/hardcore/hardstyle.jpg") no-repeat center fixed;}
+#newbeat {background: url("../images/hardcore/newbeat.jpg"); background-size: cover;}
+#rave {background: url("../images/hardcore/rave.jpg"); background-size: cover;}
+#breakbeathardcore {background: url("../images/hardcore/breakbeathardcore.jpg"); background-size: cover;}
+#gabber {background: url("../images/hardcore/gabber.jpg"); background-size: cover;}
+#happyhardcore {background: url("../images/hardcore/happyhardcore.jpg"); background-size: cover;}
+#speedcore {background: url("../images/hardcore/speedcore.jpg"); background-size: cover;}
+#breakcore {background: url("../images/hardcore/breakcore.jpg"); background-size: cover;}
+#trancecore {background: url("../images/hardcore/trancecore.jpg"); background-size: cover;}
+#hardstyle {background: url("../images/hardcore/hardstyle.jpg"); background-size: cover;}
 
-#electro {background: url("../images/breakbeat/electro.jpg") no-repeat center fixed;}
-#freestyle {background: url("../images/breakbeat/freestyle.jpg") no-repeat center fixed;}
-#floridabreaks {background: url("../images/breakbeat/floridabreaks.jpg") no-repeat center fixed;}
-#chemicalbreaks {background: url("../images/breakbeat/chemicalbreaks.jpg") no-repeat center fixed;}
-#bigbeat {background: url("../images/breakbeat/bigbeat.jpg") no-repeat center fixed;}
-#progressivebreaks {background: url("../images/breakbeat/progressivebreaks.jpg") no-repeat center fixed;}
-#nuskoolbreaks {background: url("../images/breakbeat/nuskoolbreaks.jpg") no-repeat center fixed;}
+#electro {background: url("../images/breakbeat/electro.jpg"); background-size: cover;}
+#freestyle {background: url("../images/breakbeat/freestyle.jpg"); background-size: cover;}
+#floridabreaks {background: url("../images/breakbeat/floridabreaks.jpg"); background-size: cover;}
+#chemicalbreaks {background: url("../images/breakbeat/chemicalbreaks.jpg"); background-size: cover;}
+#bigbeat {background: url("../images/breakbeat/bigbeat.jpg"); background-size: cover;}
+#progressivebreaks {background: url("../images/breakbeat/progressivebreaks.jpg"); background-size: cover;}
+#nuskoolbreaks {background: url("../images/breakbeat/nuskoolbreaks.jpg"); background-size: cover;}
 
-#jungle {background: url("../images/drumandbass/jungle.jpg") no-repeat center fixed;}
-#darkstep {background: url("../images/drumandbass/darkstep.jpg") no-repeat center fixed;}
-#atmosphericjungle {background: url("../images/drumandbass/atmosphericjungle.jpg") no-repeat center fixed;}
-#jazzstep {background: url("../images/drumandbass/jazzstep.jpg") no-repeat center fixed;}
-#jumpup {background: url("../images/drumandbass/jumpup.jpg") no-repeat center fixed;}
-#techstep {background: url("../images/drumandbass/techstep.jpg") no-repeat center fixed;}
-#neurofunk {background: url("../images/drumandbass/neurofunk.jpg") no-repeat center fixed;}
-#liquidfunk {background: url("../images/drumandbass/liquidfunk.jpg") no-repeat center fixed;}
-#nujumpup {background: url("../images/drumandbass/nujumpup.jpg") no-repeat center fixed;}
-#microfunk {background: url("../images/drumandbass/microfunk.jpg") no-repeat center fixed;}
-#drumstep {background: url("../images/drumandbass/drumstep.jpg") no-repeat center fixed;}
+#jungle {background: url("../images/drumandbass/jungle.jpg"); background-size: cover;}
+#darkstep {background: url("../images/drumandbass/darkstep.jpg"); background-size: cover;}
+#atmosphericjungle {background: url("../images/drumandbass/atmosphericjungle.jpg"); background-size: cover;}
+#jazzstep {background: url("../images/drumandbass/jazzstep.jpg"); background-size: cover;}
+#jumpup {background: url("../images/drumandbass/jumpup.jpg"); background-size: cover;}
+#techstep {background: url("../images/drumandbass/techstep.jpg"); background-size: cover;}
+#neurofunk {background: url("../images/drumandbass/neurofunk.jpg"); background-size: cover;}
+#liquidfunk {background: url("../images/drumandbass/liquidfunk.jpg"); background-size: cover;}
+#nujumpup {background: url("../images/drumandbass/nujumpup.jpg"); background-size: cover;}
+#microfunk {background: url("../images/drumandbass/microfunk.jpg"); background-size: cover;}
+#drumstep {background: url("../images/drumandbass/drumstep.jpg"); background-size: cover;}
 
-#twostepgarage {background: url("../images/ukgarage/2stepgarage.jpg") no-repeat center fixed;}
-#grime {background: url("../images/ukgarage/grime.jpg") no-repeat center fixed;}
-#bassline {background: url("../images/ukgarage/bassline.jpg") no-repeat center fixed;}
-#dubstep {background: url("../images/ukgarage/dubstep.jpg") no-repeat center fixed;}
-#brostep {background: url("../images/ukgarage/brostep.jpg") no-repeat center fixed;}
-#liquiddubstep {background: url("../images/ukgarage/liquiddubstep.jpg") no-repeat center fixed;}
-#chillstep {background: url("../images/ukgarage/chillstep.jpg") no-repeat center fixed;}
-#futuregarage {background: url("../images/ukgarage/futuregarage.jpg") no-repeat center fixed;}
-#glitchhop {background: url("../images/ukgarage/glitchhop.jpg") no-repeat center fixed;}
-#wonky {background: url("../images/ukgarage/wonky.jpg") no-repeat center fixed;}
-#edmtrap {background: url("../images/ukgarage/edmtrap.jpg") no-repeat center fixed;}
-#futurebass {background: url("../images/ukgarage/futurebass.jpg") no-repeat center fixed;}
+#twostepgarage {background: url("../images/ukgarage/2stepgarage.jpg"); background-size: cover;}
+#grime {background: url("../images/ukgarage/grime.jpg"); background-size: cover;}
+#bassline {background: url("../images/ukgarage/bassline.jpg"); background-size: cover;}
+#dubstep {background: url("../images/ukgarage/dubstep.jpg"); background-size: cover;}
+#brostep {background: url("../images/ukgarage/brostep.jpg"); background-size: cover;}
+#liquiddubstep {background: url("../images/ukgarage/liquiddubstep.jpg"); background-size: cover;}
+#chillstep {background: url("../images/ukgarage/chillstep.jpg"); background-size: cover;}
+#futuregarage {background: url("../images/ukgarage/futuregarage.jpg"); background-size: cover;}
+#glitchhop {background: url("../images/ukgarage/glitchhop.jpg"); background-size: cover;}
+#wonky {background: url("../images/ukgarage/wonky.jpg"); background-size: cover;}
+#edmtrap {background: url("../images/ukgarage/edmtrap.jpg"); background-size: cover;}
+#futurebass {background: url("../images/ukgarage/futurebass.jpg"); background-size: cover;}
 
-#musiqueconcrete {background: url("../images/downtempo/musiqueconcrete.jpg") no-repeat center fixed;}
-#synth {background: url("../images/downtempo/synth.jpg") no-repeat center fixed;}
-#newage {background: url("../images/downtempo/newage.jpg") no-repeat center fixed;}
-#ambient {background: url("../images/downtempo/ambient.jpg") no-repeat center fixed;}
-#chiptune {background: url("../images/downtempo/chiptune.png") no-repeat center fixed;}
-#darkambient {background: url("../images/downtempo/darkambient.jpg") no-repeat center fixed;}
-#idm {background: url("../images/downtempo/idm.jpg") no-repeat center fixed;}
-#triphop {background: url("../images/downtempo/triphop.jpg") no-repeat center fixed;}
-#illbient {background: url("../images/downtempo/illbient.jpg") no-repeat center fixed;}
-#glitch {background: url("../images/downtempo/glitch.jpg") no-repeat center fixed;}
-#lowercase {background: url("../images/downtempo/lowercase.jpg") no-repeat center fixed;}
+#musiqueconcrete {background: url("../images/downtempo/musiqueconcrete.jpg"); background-size: cover;}
+#synth {background: url("../images/downtempo/synth.jpg"); background-size: cover;}
+#newage {background: url("../images/downtempo/newage.jpg"); background-size: cover;}
+#ambient {background: url("../images/downtempo/ambient.jpg"); background-size: cover;}
+#chiptune {background: url("../images/downtempo/chiptune.png"); background-size: cover;}
+#darkambient {background: url("../images/downtempo/darkambient.jpg"); background-size: cover;}
+#idm {background: url("../images/downtempo/idm.jpg"); background-size: cover;}
+#triphop {background: url("../images/downtempo/triphop.jpg"); background-size: cover;}
+#illbient {background: url("../images/downtempo/illbient.jpg"); background-size: cover;}
+#glitch {background: url("../images/downtempo/glitch.jpg"); background-size: cover;}
+#lowercase {background: url("../images/downtempo/lowercase.jpg"); background-size: cover;}
 
-#medieval {background: url("../images/classical/medieval.jpg") no-repeat center fixed;}
-#renaissance {background: url("../images/classical/renaissance.jpg") no-repeat center fixed;}
-#baroque {background: url("../images/classical/baroque.jpg") no-repeat center fixed;}
-#classical {background: url("../images/classical/classical.jpg") no-repeat center fixed;}
-#romantic {background: url("../images/classical/romantic.jpg") no-repeat center fixed;}
-#modern {background: url("../images/classical/modern.jpg") no-repeat center fixed;}
-#opera {background: url("../images/classical/opera.jpg") no-repeat center fixed;}
-#filmscore {background: url("../images/classical/filmscore.jpg") no-repeat center fixed;}
+#medieval {background: url("../images/classical/medieval.jpg"); background-size: cover;}
+#renaissance {background: url("../images/classical/renaissance.jpg"); background-size: cover;}
+#baroque {background: url("../images/classical/baroque.jpg"); background-size: cover;}
+#classical {background: url("../images/classical/classical.jpg"); background-size: cover;}
+#romantic {background: url("../images/classical/romantic.jpg"); background-size: cover;}
+#modern {background: url("../images/classical/modern.jpg"); background-size: cover;}
+#opera {background: url("../images/classical/opera.jpg"); background-size: cover;}
+#filmscore {background: url("../images/classical/filmscore.jpg"); background-size: cover;}
 
-#africanfolk {background: url("../images/folk/africanfolk.jpg") no-repeat center fixed;}
-#australianfolk {background: url("../images/folk/australianfolk.jpg") no-repeat center fixed;}
-#chinesefolk {background: url("../images/folk/chinesefolk.jpg") no-repeat center fixed;}
-#indianfolk {background: url("../images/folk/indianfolk.jpg") no-repeat center fixed;}
-#frenchfolk {background: url("../images/folk/frenchfolk.jpg") no-repeat center fixed;}
-#latinfolk {background: url("../images/folk/latinfolk.jpg") no-repeat center fixed;}
-#irishfolk {background: url("../images/folk/irishfolk.jpg") no-repeat center fixed;}
-#scottishfolk {background: url("../images/folk/scottishfolk.jpg") no-repeat center fixed;}
-#nordicfolk {background: url("../images/folk/nordicfolk.jpg") no-repeat center fixed;}
-#russianfolk {background: url("../images/folk/russianfolk.jpg") no-repeat center fixed;}
+#africanfolk {background: url("../images/folk/africanfolk.jpg"); background-size: cover;}
+#australianfolk {background: url("../images/folk/australianfolk.jpg"); background-size: cover;}
+#chinesefolk {background: url("../images/folk/chinesefolk.jpg"); background-size: cover;}
+#indianfolk {background: url("../images/folk/indianfolk.jpg"); background-size: cover;}
+#frenchfolk {background: url("../images/folk/frenchfolk.jpg"); background-size: cover;}
+#latinfolk {background: url("../images/folk/latinfolk.jpg"); background-size: cover;}
+#irishfolk {background: url("../images/folk/irishfolk.jpg"); background-size: cover;}
+#scottishfolk {background: url("../images/folk/scottishfolk.jpg"); background-size: cover;}
+#nordicfolk {background: url("../images/folk/nordicfolk.jpg"); background-size: cover;}
+#russianfolk {background: url("../images/folk/russianfolk.jpg"); background-size: cover;}
 
-#chillwave {background: url("../images/aesthetic/chillwave.jpg") no-repeat center fixed;}
-#synthwave {background: url("../images/aesthetic/synthwave.jpg") no-repeat center fixed;}
-#vaporwave {background: url("../images/aesthetic/vaporwave.jpg") no-repeat center fixed;}
-#witchhouse {background: url("../images/aesthetic/witchhouse.jpg") no-repeat center fixed;}
-#seapunk {background: url("../images/aesthetic/seapunk.jpg") no-repeat center fixed;}
-#futurefunk {background: url("../images/aesthetic/futurefunk.jpg") no-repeat center fixed;}
-#mallsoft {background: url("../images/aesthetic/mallsoft.jpg") no-repeat center fixed;}
-#lofi {background: url("../images/aesthetic/lofi.jpg") no-repeat center fixed;}
+#chillwave {background: url("../images/aesthetic/chillwave.jpg"); background-size: cover;}
+#synthwave {background: url("../images/aesthetic/synthwave.jpg"); background-size: cover;}
+#vaporwave {background: url("../images/aesthetic/vaporwave.jpg"); background-size: cover;}
+#witchhouse {background: url("../images/aesthetic/witchhouse.jpg"); background-size: cover;}
+#seapunk {background: url("../images/aesthetic/seapunk.jpg"); background-size: cover;}
+#futurefunk {background: url("../images/aesthetic/futurefunk.jpg"); background-size: cover;}
+#mallsoft {background: url("../images/aesthetic/mallsoft.jpg"); background-size: cover;}
+#lofi {background: url("../images/aesthetic/lofi.jpg"); background-size: cover;}
 
 /*---------------------------------------------------------------------------*/
 
