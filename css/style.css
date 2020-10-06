@@ -248,6 +248,7 @@ p {
     padding: 1.25em 1.5em 0.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: right;
+    text-align: justify;
     overflow: auto;
     font-size: 1.1em;
 }
@@ -257,6 +258,7 @@ p {
     width: 100%;
     padding: 1.5em;
     font-size: 4vw;
+    text-align: justify;
 }
 
 .genre {
@@ -269,6 +271,7 @@ p {
     width: 40em;
     padding: 1.5em;
     margin: 3.5em;
+    text-align: justify;
     border-radius: 0.7em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
