@@ -154,7 +154,7 @@ p {
 
 .intro:before { background: url("../images/intro.jpg"); background-size: cover; }
 .allgenres { background: url("../images/wood.jpg"); background-size: cover; }
-.maingospel:before { background: url("../images/gospelbig.jpg"); background-size: cover; }
+.mainclassical:before { background: url("../images/classicalbig.jpg"); background-size: cover; }
 .mainblues:before { background: url("../images/bluesbig.jpg"); background-size: cover; }
 .mainjazz:before { background: url("../images/jazzbig.jpg"); background-size: cover; }
 .maincountry:before { background: url("../images/countrybig.jpg"); background-size: cover; }
@@ -177,13 +177,12 @@ p {
 .maindrumandbass:before { background: url("../images/drumandbassbig.jpg"); background-size: cover; }
 .mainukgarage:before { background: url("../images/ukgaragebig.jpg"); background-size: cover; }
 .maindowntempo:before { background: url("../images/downtempobig.jpg"); background-size: cover; }
-.mainclassical:before { background: url("../images/classicalbig.jpg"); background-size: cover; }
 .mainfolk:before { background: url("../images/folkbig.jpg"); background-size: cover; }
 .mainaesthetic:before { background: url("../images/aestheticbig.jpg"); background-size: cover; }
 
 /*---------------------------------------------------------------------------*/
 
-.maingospel .genrelist a:hover, .maingospel .genrelist-mobile a:hover { color: #F1B1B1; }
+.mainclassical .genrelist a:hover, .mainclassical .genrelist-mobile a:hover { color: #A18259; }
 .mainblues .genrelist a:hover, .mainblues .genrelist-mobile a:hover { color: #5361D0; }
 .mainjazz .genrelist a:hover, .mainjazz .genrelist-mobile a:hover { color: #5199EC; }
 .maincountry .genrelist a:hover, .maincountry .genrelist-mobile a:hover { color: #B8C299; }
@@ -206,13 +205,12 @@ p {
 .maindrumandbass .genrelist a:hover, .maindrumandbass .genrelist-mobile a:hover { color: #DD2251; }
 .mainukgarage .genrelist a:hover, .mainukgarage .genrelist-mobile a:hover { color: #B59DDB; }
 .maindowntempo .genrelist a:hover, .maindowntempo .genrelist-mobile a:hover { color: #EC407A; }
-.mainclassical .genrelist a:hover, .mainclassical .genrelist-mobile a:hover { color: #A18259; }
 .mainfolk .genrelist a:hover, .mainfolk .genrelist-mobile a:hover { color: #D8C188; }
 .mainaesthetic .genrelist a:hover, .mainaesthetic .genrelist-mobile a:hover { color: #2FEDED; }
 
 /*---------------------------------------------------------------------------*/
 
-.maingospel .genrelist ::selection, .maingospel .genrelist-mobile ::selection { background: rgba(229,115,115,0.998); }
+.mainclassical .genrelist ::selection, .mainclassical .genrelist-mobile ::selection { background: rgba(112,90,61,0.998); }
 .mainblues .genrelist ::selection, .mainblues .genrelist-mobile ::selection { background: rgba(40,53,147,0.998); }
 .mainjazz .genrelist ::selection, .mainjazz .genrelist-mobile ::selection { background: rgba(21,101,192,0.998); }
 .maincountry .genrelist ::selection, .maincountry .genrelist-mobile ::selection { background: rgba(138,154,91,0.998); }
@@ -235,7 +233,6 @@ p {
 .maindrumandbass .genrelist ::selection, .maindrumandbass .genrelist-mobile ::selection { background: rgba(154,24,57,0.998); }
 .mainukgarage .genrelist ::selection, .mainukgarage .genrelist-mobile ::selection { background: rgba(143,124,173,0.998); }
 .maindowntempo .genrelist ::selection, .maindowntempo .genrelist-mobile ::selection { background: rgba(194,24,91,0.998); }
-.mainclassical .genrelist ::selection, .mainclassical .genrelist-mobile ::selection { background: rgba(112,90,61,0.998); }
 .mainfolk .genrelist ::selection, .mainfolk .genrelist-mobile ::selection { background: rgba(198,164,77,0.998); }
 .mainaesthetic .genrelist ::selection, .mainaesthetic .genrelist-mobile ::selection { background: rgba(41,204,204,0.998); }
 
@@ -248,7 +245,6 @@ p {
     padding: 1.25em 1.5em 0.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: right;
-    text-align: justify;
     overflow: auto;
     font-size: 1.1em;
 }
@@ -258,7 +254,6 @@ p {
     width: 100%;
     padding: 1.5em;
     font-size: 4vw;
-    text-align: justify;
 }
 
 .genre {
@@ -271,12 +266,11 @@ p {
     width: 40em;
     padding: 1.5em;
     margin: 3.5em;
-    text-align: justify;
     border-radius: 0.7em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.gospel { background-color: #E57373; color: #FFF; }
+.classical { background-color: #705A3D; color: #FFF; }
 .blues { background-color: #283593; color: #FFF; }
 .jazz { background-color: #1565C0; color: #FFF; }
 .country { background-color: #8A9A5B; color: #FFF; }
@@ -299,18 +293,21 @@ p {
 .drumandbass { background-color: #9A1839; color: #FFF; }
 .ukgarage { background-color: #8F7CAD; color: #FFF; }
 .downtempo { background-color: #C2185B; color: #FFF; }
-.classical { background-color: #705A3D; color: #FFF; }
 .folk { background-color: #C6A44D; color: #FFF; }
 .aesthetic { background-color: #29CCCC; color: #FFF; }
 
 /*---------------------------------------------------------------------------*/
 
-#spirituals {background: url("../images/gospel/spirituals.jpg") center center no-repeat fixed; background-size: cover; }
-#traditionalgospel {background: url("../images/gospel/traditionalgospel.jpg") center center no-repeat fixed; background-size: cover; }
-#contemporarygospel {background: url("../images/gospel/contemporarygospel.jpg") center center no-repeat fixed; background-size: cover; }
-#contemporarychristian {background: url("../images/gospel/contemporarychristian.jpg") center center no-repeat fixed; background-size: cover; }
+#medieval {background: url("../images/classical/medieval.jpg") center center no-repeat fixed; background-size: cover; }
+#renaissance {background: url("../images/classical/renaissance.jpg") center center no-repeat fixed; background-size: cover; }
+#baroque {background: url("../images/classical/baroque.jpg") center center no-repeat fixed; background-size: cover; }
+#classical {background: url("../images/classical/classical.jpg") center center no-repeat fixed; background-size: cover; }
+#romantic {background: url("../images/classical/romantic.jpg") center center no-repeat fixed; background-size: cover; }
+#modern {background: url("../images/classical/modern.jpg") center center no-repeat fixed; background-size: cover; }
+#opera {background: url("../images/classical/opera.jpg") center center no-repeat fixed; background-size: cover; }
+#filmscore {background: url("../images/classical/filmscore.jpg") center center no-repeat fixed; background-size: cover; }
 
-#ragtime {background: url("../images/blues/ragtime.jpg") center center no-repeat fixed; background-size: cover; }
+#spirituals {background: url("../images/blues/spirituals.jpg") center center no-repeat fixed; background-size: cover; }
 #countryblues {background: url("../images/blues/countryblues.jpg") center center no-repeat fixed; background-size: cover; }
 #vaudevilleblues {background: url("../images/blues/vaudevilleblues.jpg") center center no-repeat fixed; background-size: cover; }
 #boogiewoogie {background: url("../images/blues/boogiewoogie.jpg") center center no-repeat fixed; background-size: cover; }
@@ -322,6 +319,7 @@ p {
 #soulblues {background: url("../images/blues/soulblues.jpg") center center no-repeat fixed; background-size: cover; }
 #electricblues {background: url("../images/blues/electricblues.jpg") center center no-repeat fixed; background-size: cover; }
 
+#ragtime {background: url("../images/jazz/ragtime.jpg") center center no-repeat fixed; background-size: cover; }
 #dixieland {background: url("../images/jazz/dixieland.jpg") center center no-repeat fixed; background-size: cover; }
 #swing {background: url("../images/jazz/swing.jpg") center center no-repeat fixed; background-size: cover; }
 #bebop {background: url("../images/jazz/bebop.jpg") center center no-repeat fixed; background-size: cover; }
@@ -332,8 +330,6 @@ p {
 #freejazz {background: url("../images/jazz/freejazz.jpg") center center no-repeat fixed; background-size: cover; }
 #jazzfusion {background: url("../images/jazz/jazzfusion.jpg") center center no-repeat fixed; background-size: cover; }
 #smoothjazz {background: url("../images/jazz/smoothjazz.jpg") center center no-repeat fixed; background-size: cover; }
-#acidjazz {background: url("../images/jazz/acidjazz.jpg") center center no-repeat fixed; background-size: cover; }
-#nujazz {background: url("../images/jazz/nujazz.jpg") center center no-repeat fixed; background-size: cover; }
 
 #hillbilly {background: url("../images/country/hillbilly.jpg") center center no-repeat fixed; background-size: cover; }
 #westernswing {background: url("../images/country/westernswing.jpg") center center no-repeat fixed; background-size: cover; }
@@ -363,10 +359,8 @@ p {
 #traditionalpop {background: url("../images/pop/traditionalpop.jpg") center center no-repeat fixed; background-size: cover; }
 #brillbuildingsound {background: url("../images/pop/brillbuildingsound.jpg") center center no-repeat fixed; background-size: cover; }
 #bubblegumpop {background: url("../images/pop/bubblegumpop.jpg") center center no-repeat fixed; background-size: cover; }
-#sunshinepop {background: url("../images/pop/sunshinepop.jpg") center center no-repeat fixed; background-size: cover; }
 #singersongwriter {background: url("../images/pop/singersongwriter.jpg") center center no-repeat fixed; background-size: cover; }
 #adultcontemporary {background: url("../images/pop/adultcontemporary.jpg") center center no-repeat fixed; background-size: cover; }
-#eurodisco {background: url("../images/pop/eurodisco.jpg") center center no-repeat fixed; background-size: cover; }
 #synthpop {background: url("../images/pop/synthpop.jpg") center center no-repeat fixed; background-size: cover; }
 #dancepop {background: url("../images/pop/dancepop.jpg") center center no-repeat fixed; background-size: cover; }
 #electropop {background: url("../images/pop/electropop.jpg") center center no-repeat fixed; background-size: cover; }
@@ -463,7 +457,7 @@ p {
 #ebm {background: url("../images/industrial/ebm.jpg") center center no-repeat fixed; background-size: cover; }
 #noise {background: url("../images/industrial/noise.jpg") center center no-repeat fixed; background-size: cover; }
 #industrialrock {background: url("../images/industrial/industrialrock.jpg") center center no-repeat fixed; background-size: cover; }
-#aggrotech {background: url("../images/industrial/aggrotech.jpg") center center no-repeat fixed; background-size: cover; }
+#electroindustrial {background: url("../images/industrial/electroindustrial.jpg") center center no-repeat fixed; background-size: cover; }
 #futurepop {background: url("../images/industrial/futurepop.jpg") center center no-repeat fixed; background-size: cover; }
 
 #chicagohouse {background: url("../images/house/chicagohouse.jpg") center center no-repeat fixed; background-size: cover; }
@@ -546,20 +540,10 @@ p {
 #ambient {background: url("../images/downtempo/ambient.jpg") center center no-repeat fixed; background-size: cover; }
 #chiptune {background: url("../images/downtempo/chiptune.png") center center no-repeat fixed; background-size: cover; }
 #darkambient {background: url("../images/downtempo/darkambient.jpg") center center no-repeat fixed; background-size: cover; }
-#idm {background: url("../images/downtempo/idm.jpg") center center no-repeat fixed; background-size: cover; }
+#nujazz {background: url("../images/downtempo/nujazz.jpg") center center no-repeat fixed; background-size: cover; }
 #triphop {background: url("../images/downtempo/triphop.jpg") center center no-repeat fixed; background-size: cover; }
 #illbient {background: url("../images/downtempo/illbient.jpg") center center no-repeat fixed; background-size: cover; }
 #glitch {background: url("../images/downtempo/glitch.jpg") center center no-repeat fixed; background-size: cover; }
-#lowercase {background: url("../images/downtempo/lowercase.jpg") center center no-repeat fixed; background-size: cover; }
-
-#medieval {background: url("../images/classical/medieval.jpg") center center no-repeat fixed; background-size: cover; }
-#renaissance {background: url("../images/classical/renaissance.jpg") center center no-repeat fixed; background-size: cover; }
-#baroque {background: url("../images/classical/baroque.jpg") center center no-repeat fixed; background-size: cover; }
-#classical {background: url("../images/classical/classical.jpg") center center no-repeat fixed; background-size: cover; }
-#romantic {background: url("../images/classical/romantic.jpg") center center no-repeat fixed; background-size: cover; }
-#modern {background: url("../images/classical/modern.jpg") center center no-repeat fixed; background-size: cover; }
-#opera {background: url("../images/classical/opera.jpg") center center no-repeat fixed; background-size: cover; }
-#filmscore {background: url("../images/classical/filmscore.jpg") center center no-repeat fixed; background-size: cover; }
 
 #africanfolk {background: url("../images/folk/africanfolk.jpg") center center no-repeat fixed; background-size: cover; }
 #australianfolk {background: url("../images/folk/australianfolk.jpg") center center no-repeat fixed; background-size: cover; }
@@ -594,7 +578,7 @@ p {
     margin: 0.3em 0 0.6em;
 }
 
-.buttons-gospel, .buttons-gospel-stop { background-color: #ED9C9C; }
+.buttons-classical, .buttons-classical-stop { background-color: #917550; }
 .buttons-blues, .buttons-blues-stop { background-color: #3F4FCA; }
 .buttons-jazz, .buttons-jazz-stop { background-color: #3A8CE9; }
 .buttons-country, .buttons-country-stop { background-color: #ADB889; }
@@ -617,13 +601,12 @@ p {
 .buttons-drumandbass, .buttons-drumandbass-stop { background-color: #C71F49; }
 .buttons-ukgarage, .buttons-ukgarage-stop { background-color: #A892CC; }
 .buttons-downtempo, .buttons-downtempo-stop { background-color: #E91E63; }
-.buttons-classical, .buttons-classical-stop { background-color: #917550; }
 .buttons-folk, .buttons-folk-stop { background-color: #D2B774; }
 .buttons-aesthetic, .buttons-aesthetic-stop { background-color: #2CDEDE; }
 
 /*---------------------------------------------------------------------------*/
 
-.buttons-gospel:hover, .buttons-gospel-stop:hover { background-color: #F1B1B1; }
+.buttons-classical:hover, .buttons-classical-stop:hover { background-color: #A18259; }
 .buttons-blues:hover, .buttons-blues-stop:hover { background-color: #5361D0; }
 .buttons-jazz:hover, .buttons-jazz-stop:hover { background-color: #5199EC; }
 .buttons-country:hover, .buttons-country-stop:hover { background-color: #B8C299; }
@@ -646,13 +629,12 @@ p {
 .buttons-drumandbass:hover, .buttons-drumandbass-stop:hover { background-color: #DD2251; }
 .buttons-ukgarage:hover, .buttons-ukgarage-stop:hover { background-color: #B59DDB; }
 .buttons-downtempo:hover, .buttons-downtempo-stop:hover { background-color: #EC407A; }
-.buttons-classical:hover, .buttons-classical-stop:hover { background-color: #A18259; }
 .buttons-folk:hover, .buttons-folk-stop:hover { background-color: #D8C188; }
 .buttons-aesthetic:hover, .buttons-aesthetic-stop:hover { background-color: #2FEDED; }
 
 /*---------------------------------------------------------------------------*/
 
-.buttons-gospel.clicked, .buttons-gospel-stop.clicked,
+.buttons-classical.clicked, .buttons-classical-stop.clicked,
 .buttons-blues.clicked, .buttons-blues-stop.clicked,
 .buttons-jazz.clicked, .buttons-jazz-stop.clicked,
 .buttons-country.clicked, .buttons-country-stop.clicked,
@@ -674,7 +656,6 @@ p {
 .buttons-drumandbass.clicked, .buttons-drumandbass-stop.clicked,
 .buttons-ukgarage.clicked, .buttons-ukgarage-stop.clicked,
 .buttons-downtempo.clicked, .buttons-downtempo-stop.clicked,
-.buttons-classical.clicked, .buttons-classical-stop.clicked,
 .buttons-folk.clicked, .buttons-folk-stop.clicked,
 .buttons-aesthetic.clicked, .buttons-aesthetic-stop.clicked {
     box-shadow:inset 0em 0em 0em 0.1em #FFF;

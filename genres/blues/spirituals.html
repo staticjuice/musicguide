@@ -9,27 +9,27 @@
     </head>
 
     <body class="genre" id="spirituals">
-        <div class="box gospel">
+        <div class="box blues">
             <h1>SPIRITUALS</h1>
 
             <p>An interesting fact about Popular Music is that it emerged out of necessity rather than being a form of art or expression. The earliest genres can be traced back as early as the 19th century, at a time when slavery of African people was still omnipresent in the United States. When African slaves were brought to the United States and Christianised, they began to perceive biblical parallels to their own situation (and were sometimes even encouraged to do so by zealously Evangelical whites). Thus, many Spirituals address themes of freedom, earthly suffering and hope for deliverance. They were sung both at worship services and in the fields and were passed down orally from generation to generation. Given those origins, Spirituals are usually performed very simply and written in repetitive, easily remembered structures (for example, many verses in Spirituals include a one-line refrain that's sung by the entire group and repeated after each new line of the verse). In that sense, Spirituals often bear a resemblance to secular pre-war Blues, a music stemming from a similarly rural lineage.</p>
 
             <div class="row icon-list">
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">1</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">2</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">3</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">4</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">5</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">6</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">7</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">8</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">9</div></div>
-                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-gospel-stop">&FilledSmallSquare;</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-blues">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-blues-stop">&FilledSmallSquare;</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-gospel-stop">&FilledSmallSquare;</div></div>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-blues-stop">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -40,47 +40,47 @@
                     {
                         artist: "Ed Young",
                         track: "Jim And John",
-                        path: "../../samples/gospel/spirituals1.ogg"
+                        path: "../../samples/blues/spirituals1.ogg"
                     },
                     {
                         artist: "Ervin Webb",
                         track: "I'm Going Home",
-                        path: "../../samples/gospel/spirituals2.ogg"
+                        path: "../../samples/blues/spirituals2.ogg"
                     },
                     {
                         artist: "Ed Lewis",
                         track: "Tom Devil",
-                        path: "../../samples/gospel/spirituals3.ogg"
+                        path: "../../samples/blues/spirituals3.ogg"
                     },
                     {
                         artist: "Lightning",
                         track: "Long John",
-                        path: "../../samples/gospel/spirituals4.ogg"
+                        path: "../../samples/blues/spirituals4.ogg"
                     },
                     {
                         artist: "Johnny Lee Moore",
                         track: "Eighteen Hammers",
-                        path: "../../samples/gospel/spirituals5.ogg"
+                        path: "../../samples/blues/spirituals5.ogg"
                     },
                     {
                         artist: "John Davis",
                         track: "Blow Gabriel",
-                        path: "../../samples/gospel/spirituals6.ogg"
+                        path: "../../samples/blues/spirituals6.ogg"
                     },
                     {
                         artist: "Jesse Lee Pratcher",
                         track: "Green Sally, Up",
-                        path: "../../samples/gospel/spirituals7.ogg"
+                        path: "../../samples/blues/spirituals7.ogg"
                     },
                     {
                         artist: "James Carter",
                         track: "Po' Lazarus",
-                        path: "../../samples/gospel/spirituals8.ogg"
+                        path: "../../samples/blues/spirituals8.ogg"
                     },
                     {
                         artist: "Dock Reed",
                         track: "Troubled Lord I'm Troubled",
-                        path: "../../samples/gospel/spirituals9.ogg"
+                        path: "../../samples/blues/spirituals9.ogg"
                     }
                 ]
 
@@ -96,7 +96,7 @@
                 var buttons = [];
                 var audioInstance;
 
-                $(document).find('.buttons-gospel').each(function(index, button) {
+                $(document).find('.buttons-blues').each(function(index, button) {
                     buttons.push(button);
                     $(this).click(function() {
                         removeAllButtonBorders()
@@ -110,7 +110,7 @@
                     });
                 });
 
-                $('.buttons-gospel-stop').on('click', function() {
+                $('.buttons-blues-stop').on('click', function() {
                     stopAllMusic()
                     artistSpan.innerHTML = ''
                     track.innerHTML = ''
@@ -119,7 +119,7 @@
 
                 var removeAllButtonBorders = () => {
                     buttons.forEach(
-                        button => button.className = "buttons buttons-gospel"
+                        button => button.className = "buttons buttons-blues"
                     )
                 }
 
