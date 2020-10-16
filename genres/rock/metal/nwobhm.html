@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>NWoBHM</title>
+    </head>
+
+    <body class="genre" id="nwobhm">
+        <div class="box metal">
+            <h1>NWOBHM</h1>
+
+            <p>When Heavy Metal was picked up in the UK, a lot of young bands were eager to make raw, energetic, revolutionary music on their own. On the one hand driven by a contempt for the popularity of Glam Metal's commercialism, on the other hand by an urge to keep the British Punk legacy alive. By being a lot faster, louder and tougher and with lyrics becoming more pessimistic and aggressive, they transformed Heavy Metal into the New Wave of British Heavy Metal (NWoBHM). The NWoBHM reinvented earlier Traditional Metal and Hard Rock bands into a more metallic and edgier sound and thereby shaping Metal into the characteristic sound it is most affiliated with. British Metal musicians moulded Heavy Metal into the genre most people know, by showing off with bullet-speed riffs, screaming solos and high-pitched vocals. After its arrival on US soil, the NWoBHM changed into Thrash Metal, while many UK based bands kept performing and stayed more or less true to their sound. The NWoBHM was a lot more swinging and sometimes even "poppy", compared to later Thrash Metal.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-metal">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-metal">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-metal">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-metal">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-metal">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-metal">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-metal">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-metal">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-metal">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-metal-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-metal-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Iron Maiden",
+                        track: "2 Minutes To Midnight",
+                        path: "../../../samples/metal/nwobhm1.ogg"
+                    },
+                    {
+                        artist: "Motörhead",
+                        track: "Overkill",
+                        path: "../../../samples/metal/nwobhm2.ogg"
+                    },
+                    {
+                        artist: "Diamond Head",
+                        track: "Lightning To The Nations",
+                        path: "../../../samples/metal/nwobhm3.ogg"
+                    },
+                    {
+                        artist: "Angel Witch",
+                        track: "Angel Witch",
+                        path: "../../../samples/metal/nwobhm4.ogg"
+                    },
+                    {
+                        artist: "Saxon",
+                        track: "Heavy Metal Thunder",
+                        path: "../../../samples/metal/nwobhm5.ogg"
+                    },
+                    {
+                        artist: "Girlschool",
+                        track: "C'mon Let's Go",
+                        path: "../../../samples/metal/nwobhm6.ogg"
+                    },
+                    {
+                        artist: "Praying Mantis",
+                        track: "Running For Tomorrow",
+                        path: "../../../samples/metal/nwobhm7.ogg"
+                    },
+                    {
+                        artist: "Quartz",
+                        track: "Stand Up And Fight",
+                        path: "../../../samples/metal/nwobhm8.ogg"
+                    },
+                    {
+                        artist: "Tygers Of Pan Tang",
+                        track: "Euthanasia",
+                        path: "../../../samples/metal/nwobhm9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-metal').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-metal-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-metal"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
