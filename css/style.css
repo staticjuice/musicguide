@@ -317,6 +317,8 @@ p {
 #freejazz {background: url("../images/jazz/freejazz.jpg") center center no-repeat fixed; background-size: cover; }
 #jazzfusion {background: url("../images/jazz/jazzfusion.jpg") center center no-repeat fixed; background-size: cover; }
 #smoothjazz {background: url("../images/jazz/smoothjazz.jpg") center center no-repeat fixed; background-size: cover; }
+#acidjazz {background: url("../images/jazz/acidjazz.jpg") center center no-repeat fixed; background-size: cover; }
+#nujazz {background: url("../images/jazz/nujazz.jpg") center center no-repeat fixed; background-size: cover; }
 
 #hillbilly {background: url("../images/country/hillbilly.jpg") center center no-repeat fixed; background-size: cover; }
 #westernswing {background: url("../images/country/westernswing.jpg") center center no-repeat fixed; background-size: cover; }
@@ -346,6 +348,7 @@ p {
 #traditionalpop {background: url("../images/pop/traditionalpop.jpg") center center no-repeat fixed; background-size: cover; }
 #brillbuildingsound {background: url("../images/pop/brillbuildingsound.jpg") center center no-repeat fixed; background-size: cover; }
 #bubblegumpop {background: url("../images/pop/bubblegumpop.jpg") center center no-repeat fixed; background-size: cover; }
+#sunshinepop {background: url("../images/pop/sunshinepop.jpg") center center no-repeat fixed; background-size: cover; }
 #singersongwriter {background: url("../images/pop/singersongwriter.jpg") center center no-repeat fixed; background-size: cover; }
 #adultcontemporary {background: url("../images/pop/adultcontemporary.jpg") center center no-repeat fixed; background-size: cover; }
 #synthpop {background: url("../images/pop/synthpop.jpg") center center no-repeat fixed; background-size: cover; }
@@ -520,10 +523,11 @@ p {
 #ambient {background: url("../images/downtempo/ambient.jpg") center center no-repeat fixed; background-size: cover; }
 #chiptune {background: url("../images/downtempo/chiptune.png") center center no-repeat fixed; background-size: cover; }
 #darkambient {background: url("../images/downtempo/darkambient.jpg") center center no-repeat fixed; background-size: cover; }
-#nujazz {background: url("../images/downtempo/nujazz.jpg") center center no-repeat fixed; background-size: cover; }
+#idm {background: url("../images/downtempo/idm.jpg") center center no-repeat fixed; background-size: cover; }
 #triphop {background: url("../images/downtempo/triphop.jpg") center center no-repeat fixed; background-size: cover; }
 #illbient {background: url("../images/downtempo/illbient.jpg") center center no-repeat fixed; background-size: cover; }
 #glitch {background: url("../images/downtempo/glitch.jpg") center center no-repeat fixed; background-size: cover; }
+#lowercase {background: url("../images/downtempo/lowercase.jpg") center center no-repeat fixed; background-size: cover; }
 
 #chillwave {background: url("../images/aesthetic/chillwave.jpg") center center no-repeat fixed; background-size: cover; }
 #synthwave {background: url("../images/aesthetic/synthwave.jpg") center center no-repeat fixed; background-size: cover; }

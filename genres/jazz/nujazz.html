@@ -9,27 +9,27 @@
     </head>
 
     <body class="genre" id="nujazz">
-        <div class="box downtempo">
+        <div class="box jazz">
             <h1>NU JAZZ</h1>
 
             <p>During summer afternoons or evenings, in picturesque metropolitan suburbs (such as Saint-Germain, Paris), Nu Jazz would be the ideal background music for any café terrace or coffee bar. It is electronic, melodic and playful Jazz with lots of soothing, ambient sound effects that wash over the gentle Jazz percussion like a warm summer breeze. Being made entirely electronic, it marked the end of the traditional Jazz band. Nu Jazz can have a broad range of influences, such as deep basses from Ambient House or Deep House, groovy drum rhythms from Breakbeat and exotic percussion from Latin genres. This makes Nu Jazz a core genre of the second or electronic wave of Lounge, but these influences are subtle enough to not masquerade the fact that it truly is Jazz. Nevertheless, Nu Jazz differs radically from older Jazz genres in means of production and its electronic sound. Hence, most Jazz enthusiasts regard Nu Jazz rather as a rupture instead of a continuation within Jazz and encourage its classification among non-Jazz genres. But in the realm of music, tradition is a bad advisor for survival.</p>
 
             <div class="row icon-list">
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">1</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">2</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">3</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">4</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">5</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">6</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">7</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">8</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-downtempo">9</div></div>
-                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-downtempo-stop">&FilledSmallSquare;</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-jazz">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-jazz">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-jazz">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-jazz">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-jazz">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-jazz">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-jazz">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-jazz">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-jazz">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-jazz-stop">&FilledSmallSquare;</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-downtempo-stop">&FilledSmallSquare;</div></div>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-jazz-stop">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -38,49 +38,49 @@
             $(document).ready(function() {
                 var tracks = [
                     {
-                        artist: "Sven Van Hees",
-                        track: "Breakfast With Abductees",
-                        path: "../../samples/downtempo/nujazz1.ogg"
+                        artist: "De-Phazz",
+                        track: "Godsdog",
+                        path: "../../samples/jazz/nujazz1.ogg"
                     },
                     {
                         artist: "Funki Porcini",
                         track: "Long Road",
-                        path: "../../samples/downtempo/nujazz2.ogg"
+                        path: "../../samples/jazz/nujazz2.ogg"
                     },
                     {
                         artist: "Pnu Riff",
                         track: "Comfy Club",
-                        path: "../../samples/downtempo/nujazz3.ogg"
+                        path: "../../samples/jazz/nujazz3.ogg"
                     },
                     {
-                        artist: "Mateo & Matos",
-                        track: "Taste Of Funk",
-                        path: "../../samples/downtempo/nujazz4.ogg"
+                        artist: "Jaga Jazzist",
+                        track: "Made For Radio",
+                        path: "../../samples/jazz/nujazz4.ogg"
                     },
                     {
-                        artist: "Silent Poets",
-                        track: "Break In The Circle",
-                        path: "../../samples/downtempo/nujazz5.ogg"
+                        artist: "Fila Brazillia",
+                        track: "Harmonicas Are Shite",
+                        path: "../../samples/jazz/nujazz5.ogg"
                     },
                     {
                         artist: "Jazzanova",
                         track: "Bohemian Sunset",
-                        path: "../../samples/downtempo/nujazz6.ogg"
+                        path: "../../samples/jazz/nujazz6.ogg"
                     },
                     {
                         artist: "Journeyman",
                         track: "Biscuits",
-                        path: "../../samples/downtempo/nujazz7.ogg"
+                        path: "../../samples/jazz/nujazz7.ogg"
                     },
                     {
                         artist: "Luke Vibert",
                         track: "Get Your Head Down",
-                        path: "../../samples/downtempo/nujazz8.ogg"
+                        path: "../../samples/jazz/nujazz8.ogg"
                     },
                     {
                         artist: "Skalpel",
                         track: "So Far",
-                        path: "../../samples/downtempo/nujazz9.ogg"
+                        path: "../../samples/jazz/nujazz9.ogg"
                     }
                 ]
 
@@ -96,7 +96,7 @@
                 var buttons = [];
                 var audioInstance;
 
-                $(document).find('.buttons-downtempo').each(function(index, button) {
+                $(document).find('.buttons-jazz').each(function(index, button) {
                     buttons.push(button);
                     $(this).click(function() {
                         removeAllButtonBorders()
@@ -110,7 +110,7 @@
                     });
                 });
 
-                $('.buttons-downtempo-stop').on('click', function() {
+                $('.buttons-jazz-stop').on('click', function() {
                     stopAllMusic()
                     artistSpan.innerHTML = ''
                     track.innerHTML = ''
@@ -119,7 +119,7 @@
 
                 var removeAllButtonBorders = () => {
                     buttons.forEach(
-                        button => button.className = "buttons buttons-downtempo"
+                        button => button.className = "buttons buttons-jazz"
                     )
                 }
 
