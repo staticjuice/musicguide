@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Witch House</title>
+    </head>
+
+    <body class="genre" id="witchhouse">
+        <div class="box hauntology">
+            <h1>WITCH HOUSE</h1>
+
+            <p>Witch House is an occult-themed dark electronic music microgenre and visual aesthetic that emerged in the early 2010s. The music is heavily influenced by chopped-and-screwed Hip Hop soundscapes, Industrial and Noise experimentation, and features use of synthesisers, drum machines, obscure samples, droning repetition and heavily altered, ethereal, indiscernible vocals. The Witch House visual aesthetic includes occult, witchcraft, shamanism, terror and horror-inspired artworks, collages and photographs as well as significant use of hidden messages and typographic elements such as Unicode symbols. Many works by Witch House visual artists incorporate themes, from Horror films such as The Blair Witch Project, the television series Twin Peaks, Horror-inspired dark web videos and mainstream Pop culture celebrities. Common typographic elements in artist and track names include triangles, crosses and Unicode symbols, which are seen by some as a method of keeping the scene underground and harder to search for on the Internet as well as references to the television series Twin Peaks and Charmed.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-hauntology-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-hauntology-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "White Ring",
+                        track: "IxC999",
+                        path: "../../samples/hauntology/witchhouse1.ogg"
+                    },
+                    {
+                        artist: "oOoOO",
+                        track: "Without Your Love",
+                        path: "../../samples/hauntology/witchhouse2.ogg"
+                    },
+                    {
+                        artist: "Crim3s",
+                        track: "Still Goin",
+                        path: "../../samples/hauntology/witchhouse3.ogg"
+                    },
+                    {
+                        artist: "Salem",
+                        track: "King Night",
+                        path: "../../samples/hauntology/witchhouse4.ogg"
+                    },
+                    {
+                        artist: "∆AIMON",
+                        track: "Amen",
+                        path: "../../samples/hauntology/witchhouse5.ogg"
+                    },
+                    {
+                        artist: "powwowW",
+                        track: "I Am One",
+                        path: "../../samples/hauntology/witchhouse6.ogg"
+                    },
+                    {
+                        artist: "Ic3peak",
+                        track: "Ether",
+                        path: "../../samples/hauntology/witchhouse7.ogg"
+                    },
+                    {
+                        artist: "Sidewalks And Skeletons",
+                        track: "Sleep Paralysis",
+                        path: "../../samples/hauntology/witchhouse8.ogg"
+                    },
+                    {
+                        artist: "Skit x Kareful",
+                        track: "Luminoscity",
+                        path: "../../samples/hauntology/witchhouse9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hauntology').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hauntology-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hauntology"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

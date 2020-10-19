@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Chiptune</title>
+    </head>
+
+    <body class="genre" id="chiptune">
+        <div class="box experimental">
+            <h1>CHIPTUNE</h1>
+
+            <p>With the arrival of early home computers and the first game consoles, a weird and particular kind of music was born &ndash; electronic music made for electronic games. Because of primitive chips and hardware, this music had to be small in data and was therefore by default minimalistic, lo-fi and consisting of recurring parts. Often it was barely more than a catchy, high-frequency melody and a single rhythmic bass chord produced by a small sound chip. The result is an extremely primitive sound, but that didn't matter as early computers or arcade consoles had low-quality speakers anyway. However, during the coming decades (and until this very day) countless artists were drawn to the sound and started to make their own game music &ndash; without games. At first Video Game Music consisted primarily of two subgenres &ndash; very basic 8-bit music and the slightly more advanced 16-bit, which allowed for a richer and more layered sound, though still very rudimentary. Although this genre might seem unimportant, the technology itself brought forth lots of other instruments and influenced a lot of other electronic music.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-experimental-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-experimental-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Koji Kondo",
+                        track: "Super Mario Bros. Theme",
+                        path: "../../samples/experimental/chiptune1.ogg"
+                    },
+                    {
+                        artist: "Hirokazu Tanaka",
+                        track: "Tetris Theme",
+                        path: "../../samples/experimental/chiptune2.ogg"
+                    },
+                    {
+                        artist: "Brad Fuller",
+                        track: "Marble Madness - Beginner Race",
+                        path: "../../samples/experimental/chiptune3.ogg"
+                    },
+                    {
+                        artist: "Tadashi Kimijima",
+                        track: "Bubble Bobble - Main Theme",
+                        path: "../../samples/experimental/chiptune4.ogg"
+                    },
+                    {
+                        artist: "Masato Nakamura",
+                        track: "Sonic The Hedgehog - Green Hill Zone Theme",
+                        path: "../../samples/experimental/chiptune5.ogg"
+                    },
+                    {
+                        artist: "Brian Johnston, Tim Wright & Tony Williams",
+                        track: "Lemmings - Lemming 1",
+                        path: "../../samples/experimental/chiptune6.ogg"
+                    },
+                    {
+                        artist: "Nullsleep",
+                        track: "Chippon",
+                        path: "../../samples/experimental/chiptune7.ogg"
+                    },
+                    {
+                        artist: "C-Jeff",
+                        track: "Angels Flying",
+                        path: "../../samples/experimental/chiptune8.ogg"
+                    },
+                    {
+                        artist: "Morusque",
+                        track: "Linerman",
+                        path: "../../samples/experimental/chiptune9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-experimental').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-experimental-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-experimental"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

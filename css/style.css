@@ -80,7 +80,7 @@ p {
     font-family: 'ProductSansRegular';
     top: 41.25%; left: 0; bottom: 0; right: 0;
     font-weight: 300;
-    font-size: 2.9vw;
+    font-size: 2.75vw;
     position: absolute;
     text-align: center;
     z-index: 1;
@@ -111,10 +111,6 @@ p {
 .mobilerow img {
     height: 25vw;
     object-fit: cover;
-}
-
-#rock h1 {
-    font-size: 1.85vw;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -154,12 +150,13 @@ p {
 
 .intro:before { background: url("../images/intro.jpg"); background-size: cover; }
 .allgenres { background: url("../images/wood.jpg"); background-size: cover; }
+.mainclassical:before { background: url("../images/classicalbig.jpg"); background-size: cover; }
+.mainfolk:before { background: url("../images/folkbig.jpg"); background-size: cover; }
 .mainblues:before { background: url("../images/bluesbig.jpg"); background-size: cover; }
 .mainjazz:before { background: url("../images/jazzbig.jpg"); background-size: cover; }
 .maincountry:before { background: url("../images/countrybig.jpg"); background-size: cover; }
 .mainrhythmandblues:before { background: url("../images/rhythmandbluesbig.jpg"); background-size: cover; }
 .mainpop:before { background: url("../images/popbig.jpg"); background-size: cover; }
-.mainrockandroll:before { background: url("../images/rockandrollbig.jpg"); background-size: cover; }
 .mainclassicrock:before { background: url("../images/classicrockbig.jpg"); background-size: cover; }
 .mainmetal:before { background: url("../images/metalbig.jpg"); background-size: cover; }
 .mainpunk:before { background: url("../images/punkrockbig.jpg"); background-size: cover; }
@@ -174,19 +171,18 @@ p {
 .mainbreakbeat:before { background: url("../images/breakbeatbig.jpg"); background-size: cover; }
 .maindrumandbass:before { background: url("../images/drumandbassbig.jpg"); background-size: cover; }
 .mainukgarage:before { background: url("../images/ukgaragebig.jpg"); background-size: cover; }
-.maindowntempo:before { background: url("../images/downtempobig.jpg"); background-size: cover; }
-.mainaesthetic:before { background: url("../images/aestheticbig.jpg"); background-size: cover; }
-.mainclassical:before { background: url("../images/classicalbig.jpg"); background-size: cover; }
-.mainfolk:before { background: url("../images/folkbig.jpg"); background-size: cover; }
+.mainexperimental:before { background: url("../images/experimentalbig.jpg"); background-size: cover; }
+.mainhauntology:before { background: url("../images/hauntologybig.jpg"); background-size: cover; }
 
 /*---------------------------------------------------------------------------*/
 
+.mainclassical .genrelist a:hover, .mainclassical .genrelist-mobile a:hover { color: #A18259; }
+.mainfolk .genrelist a:hover, .mainfolk .genrelist-mobile a:hover { color: #D8C188; }
 .mainblues .genrelist a:hover, .mainblues .genrelist-mobile a:hover { color: #5361D0; }
-.mainjazz .genrelist a:hover, .mainjazz .genrelist-mobile a:hover { color: #5199EC; }
+.mainjazz .genrelist a:hover, .mainjazz .genrelist-mobile a:hover { color: #4FC3F7; }
 .maincountry .genrelist a:hover, .maincountry .genrelist-mobile a:hover { color: #B8C299; }
 .mainrhythmandblues .genrelist a:hover, .mainrhythmandblues .genrelist-mobile a:hover { color: #26A69A; }
 .mainpop .genrelist a:hover, .mainpop .genrelist-mobile a:hover { color: #FFF176; }
-.mainrockandroll .genrelist a:hover, .mainrockandroll .genrelist-mobile a:hover { color: #4FC3F7; }
 .mainclassicrock .genrelist a:hover, .mainclassicrock .genrelist-mobile a:hover { color: #EF5350; }
 .mainmetal .genrelist a:hover, .mainmetal .genrelist-mobile a:hover { color: #424242; }
 .mainpunk .genrelist a:hover, .mainpunk .genrelist-mobile a:hover { color: #FFA726; }
@@ -201,19 +197,18 @@ p {
 .mainbreakbeat .genrelist a:hover, .mainbreakbeat .genrelist-mobile a:hover { color: #A95B83; }
 .maindrumandbass .genrelist a:hover, .maindrumandbass .genrelist-mobile a:hover { color: #DD2251; }
 .mainukgarage .genrelist a:hover, .mainukgarage .genrelist-mobile a:hover { color: #B59DDB; }
-.maindowntempo .genrelist a:hover, .maindowntempo .genrelist-mobile a:hover { color: #EC407A; }
-.mainaesthetic .genrelist a:hover, .mainaesthetic .genrelist-mobile a:hover { color: #2FEDED; }
-.mainclassical .genrelist a:hover, .mainclassical .genrelist-mobile a:hover { color: #A18259; }
-.mainfolk .genrelist a:hover, .mainfolk .genrelist-mobile a:hover { color: #D8C188; }
+.mainexperimental .genrelist a:hover, .mainexperimental .genrelist-mobile a:hover { color: #BDBDBD; }
+.mainhauntology .genrelist a:hover, .mainhauntology .genrelist-mobile a:hover { color: #EC407A; }
 
 /*---------------------------------------------------------------------------*/
 
+.mainclassical .genrelist ::selection, .mainclassical .genrelist-mobile ::selection { background: rgba(112,90,61,0.998); }
+.mainfolk .genrelist ::selection, .mainfolk .genrelist-mobile ::selection { background: rgba(198,164,77,0.998); }
 .mainblues .genrelist ::selection, .mainblues .genrelist-mobile ::selection { background: rgba(40,53,147,0.998); }
-.mainjazz .genrelist ::selection, .mainjazz .genrelist-mobile ::selection { background: rgba(21,101,192,0.998); }
+.mainjazz .genrelist ::selection, .mainjazz .genrelist-mobile ::selection { background: rgba(3,155,229,0.998); }
 .maincountry .genrelist ::selection, .maincountry .genrelist-mobile ::selection { background: rgba(138,154,91,0.998); }
 .mainrhythmandblues .genrelist ::selection, .mainrhythmandblues .genrelist-mobile ::selection { background: rgba(0,105,92,0.998); }
 .mainpop .genrelist ::selection, .mainpop .genrelist-mobile ::selection { background: rgba(253,216,53,0.998); color: #222; }
-.mainrockandroll .genrelist ::selection, .mainrockandroll .genrelist-mobile ::selection { background: rgba(3,155,229,0.998); }
 .mainclassicrock .genrelist ::selection, .mainclassicrock .genrelist-mobile ::selection { background: rgba(198,40,40,0.998); }
 .mainmetal .genrelist ::selection, .mainmetal .genrelist-mobile ::selection { background: rgba(8,8,8,0.998); }
 .mainpunk .genrelist ::selection, .mainpunk .genrelist-mobile ::selection { background: rgba(239,108,0,0.998); }
@@ -228,10 +223,8 @@ p {
 .mainbreakbeat .genrelist ::selection, .mainbreakbeat .genrelist-mobile ::selection { background: rgba(120,63,93,0.998); }
 .maindrumandbass .genrelist ::selection, .maindrumandbass .genrelist-mobile ::selection { background: rgba(154,24,57,0.998); }
 .mainukgarage .genrelist ::selection, .mainukgarage .genrelist-mobile ::selection { background: rgba(143,124,173,0.998); }
-.maindowntempo .genrelist ::selection, .maindowntempo .genrelist-mobile ::selection { background: rgba(194,24,91,0.998); }
-.mainaesthetic .genrelist ::selection, .mainaesthetic .genrelist-mobile ::selection { background: rgba(41,204,204,0.998); }
-.mainclassical .genrelist ::selection, .mainclassical .genrelist-mobile ::selection { background: rgba(112,90,61,0.998); }
-.mainfolk .genrelist ::selection, .mainfolk .genrelist-mobile ::selection { background: rgba(198,164,77,0.998); }
+.mainexperimental .genrelist ::selection, .mainexperimental .genrelist-mobile ::selection { background: rgba(237,237,237,0.998); color: #222; }
+.mainhauntology .genrelist ::selection, .mainhauntology .genrelist-mobile ::selection { background: rgba(194,24,91,0.998); }
 
 /*---------------------------------------------------------------------------*/
 
@@ -267,12 +260,13 @@ p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.classical { background-color: #705A3D; color: #FFF; }
+.folk { background-color: #C6A44D; color: #FFF; }
 .blues { background-color: #283593; color: #FFF; }
-.jazz { background-color: #1565C0; color: #FFF; }
+.jazz { background-color: #039BE5; color: #FFF; }
 .country { background-color: #8A9A5B; color: #FFF; }
 .rhythmandblues { background-color: #00695C; color: #FFF; }
 .pop { background-color: #FDD835; color: #222; }
-.rockandroll { background-color: #039BE5; color: #FFF; }
 .classicrock { background-color: #C62828; color: #FFF; }
 .metal { background-color: #080808; color: #FFF; }
 .punk { background-color: #EF6C00; color: #FFF; }
@@ -287,12 +281,30 @@ p {
 .breakbeat { background-color: #783F5D; color: #FFF; }
 .drumandbass { background-color: #9A1839; color: #FFF; }
 .ukgarage { background-color: #8F7CAD; color: #FFF; }
-.downtempo { background-color: #C2185B; color: #FFF; }
-.aesthetic { background-color: #29CCCC; color: #FFF; }
-.classical { background-color: #705A3D; color: #FFF; }
-.folk { background-color: #C6A44D; color: #FFF; }
+.experimental { background-color: #EDEDED; color: #222; }
+.hauntology { background-color: #C2185B; color: #FFF; }
 
 /*---------------------------------------------------------------------------*/
+
+#medieval {background: url("../images/classical/medieval.jpg") center center no-repeat fixed; background-size: cover; }
+#renaissance {background: url("../images/classical/renaissance.jpg") center center no-repeat fixed; background-size: cover; }
+#baroque {background: url("../images/classical/baroque.jpg") center center no-repeat fixed; background-size: cover; }
+#classical {background: url("../images/classical/classical.jpg") center center no-repeat fixed; background-size: cover; }
+#romantic {background: url("../images/classical/romantic.jpg") center center no-repeat fixed; background-size: cover; }
+#modern {background: url("../images/classical/modern.jpg") center center no-repeat fixed; background-size: cover; }
+#opera {background: url("../images/classical/opera.jpg") center center no-repeat fixed; background-size: cover; }
+#filmscore {background: url("../images/classical/filmscore.jpg") center center no-repeat fixed; background-size: cover; }
+
+#africanfolk {background: url("../images/folk/africanfolk.jpg") center center no-repeat fixed; background-size: cover; }
+#australianfolk {background: url("../images/folk/australianfolk.jpg") center center no-repeat fixed; background-size: cover; }
+#chinesefolk {background: url("../images/folk/chinesefolk.jpg") center center no-repeat fixed; background-size: cover; }
+#indianfolk {background: url("../images/folk/indianfolk.jpg") center center no-repeat fixed; background-size: cover; }
+#frenchfolk {background: url("../images/folk/frenchfolk.jpg") center center no-repeat fixed; background-size: cover; }
+#latinfolk {background: url("../images/folk/latinfolk.jpg") center center no-repeat fixed; background-size: cover; }
+#irishfolk {background: url("../images/folk/irishfolk.jpg") center center no-repeat fixed; background-size: cover; }
+#scottishfolk {background: url("../images/folk/scottishfolk.jpg") center center no-repeat fixed; background-size: cover; }
+#nordicfolk {background: url("../images/folk/nordicfolk.jpg") center center no-repeat fixed; background-size: cover; }
+#russianfolk {background: url("../images/folk/russianfolk.jpg") center center no-repeat fixed; background-size: cover; }
 
 #spirituals {background: url("../images/blues/spirituals.jpg") center center no-repeat fixed; background-size: cover; }
 #countryblues {background: url("../images/blues/countryblues.jpg") center center no-repeat fixed; background-size: cover; }
@@ -355,11 +367,10 @@ p {
 #dancepop {background: url("../images/pop/dancepop.jpg") center center no-repeat fixed; background-size: cover; }
 #electropop {background: url("../images/pop/electropop.jpg") center center no-repeat fixed; background-size: cover; }
 
-#rockandroll {background: url("../images/rockandroll/rockandroll.jpg") center center no-repeat fixed; background-size: cover; }
-#surfrock {background: url("../images/rockandroll/surfrock.jpg") center center no-repeat fixed; background-size: cover; }
-#garagerock {background: url("../images/rockandroll/garagerock.jpg") center center no-repeat fixed; background-size: cover; }
-#beat {background: url("../images/rockandroll/beat.jpg") center center no-repeat fixed; background-size: cover; }
-
+#rockandroll {background: url("../images/classicrock/rockandroll.jpg") center center no-repeat fixed; background-size: cover; }
+#surfrock {background: url("../images/classicrock/surfrock.jpg") center center no-repeat fixed; background-size: cover; }
+#beat {background: url("../images/classicrock/beat.jpg") center center no-repeat fixed; background-size: cover; }
+#garagerock {background: url("../images/classicrock/garagerock.jpg") center center no-repeat fixed; background-size: cover; }
 #bluesrock {background: url("../images/classicrock/bluesrock.jpg") center center no-repeat fixed; background-size: cover; }
 #folkrock {background: url("../images/classicrock/folkrock.jpg") center center no-repeat fixed; background-size: cover; }
 #psychedelicrock {background: url("../images/classicrock/psychedelicrock.jpg") center center no-repeat fixed; background-size: cover; }
@@ -517,46 +528,26 @@ p {
 #edmtrap {background: url("../images/ukgarage/edmtrap.jpg") center center no-repeat fixed; background-size: cover; }
 #futurebass {background: url("../images/ukgarage/futurebass.jpg") center center no-repeat fixed; background-size: cover; }
 
-#musiqueconcrete {background: url("../images/downtempo/musiqueconcrete.jpg") center center no-repeat fixed; background-size: cover; }
-#synth {background: url("../images/downtempo/synth.jpg") center center no-repeat fixed; background-size: cover; }
-#newage {background: url("../images/downtempo/newage.jpg") center center no-repeat fixed; background-size: cover; }
-#ambient {background: url("../images/downtempo/ambient.jpg") center center no-repeat fixed; background-size: cover; }
-#chiptune {background: url("../images/downtempo/chiptune.png") center center no-repeat fixed; background-size: cover; }
-#darkambient {background: url("../images/downtempo/darkambient.jpg") center center no-repeat fixed; background-size: cover; }
-#idm {background: url("../images/downtempo/idm.jpg") center center no-repeat fixed; background-size: cover; }
-#triphop {background: url("../images/downtempo/triphop.jpg") center center no-repeat fixed; background-size: cover; }
-#illbient {background: url("../images/downtempo/illbient.jpg") center center no-repeat fixed; background-size: cover; }
-#glitch {background: url("../images/downtempo/glitch.jpg") center center no-repeat fixed; background-size: cover; }
-#lowercase {background: url("../images/downtempo/lowercase.jpg") center center no-repeat fixed; background-size: cover; }
+#musiqueconcrete {background: url("../images/experimental/musiqueconcrete.jpg") center center no-repeat fixed; background-size: cover; }
+#synth {background: url("../images/experimental/synth.jpg") center center no-repeat fixed; background-size: cover; }
+#newage {background: url("../images/experimental/newage.jpg") center center no-repeat fixed; background-size: cover; }
+#ambient {background: url("../images/experimental/ambient.jpg") center center no-repeat fixed; background-size: cover; }
+#chiptune {background: url("../images/experimental/chiptune.png") center center no-repeat fixed; background-size: cover; }
+#darkambient {background: url("../images/experimental/darkambient.jpg") center center no-repeat fixed; background-size: cover; }
+#idm {background: url("../images/experimental/idm.jpg") center center no-repeat fixed; background-size: cover; }
+#triphop {background: url("../images/experimental/triphop.jpg") center center no-repeat fixed; background-size: cover; }
+#illbient {background: url("../images/experimental/illbient.jpg") center center no-repeat fixed; background-size: cover; }
+#glitch {background: url("../images/experimental/glitch.jpg") center center no-repeat fixed; background-size: cover; }
+#lowercase {background: url("../images/experimental/lowercase.jpg") center center no-repeat fixed; background-size: cover; }
 
-#chillwave {background: url("../images/aesthetic/chillwave.jpg") center center no-repeat fixed; background-size: cover; }
-#synthwave {background: url("../images/aesthetic/synthwave.jpg") center center no-repeat fixed; background-size: cover; }
-#vaporwave {background: url("../images/aesthetic/vaporwave.jpg") center center no-repeat fixed; background-size: cover; }
-#witchhouse {background: url("../images/aesthetic/witchhouse.jpg") center center no-repeat fixed; background-size: cover; }
-#seapunk {background: url("../images/aesthetic/seapunk.jpg") center center no-repeat fixed; background-size: cover; }
-#futurefunk {background: url("../images/aesthetic/futurefunk.jpg") center center no-repeat fixed; background-size: cover; }
-#mallsoft {background: url("../images/aesthetic/mallsoft.jpg") center center no-repeat fixed; background-size: cover; }
-#lofi {background: url("../images/aesthetic/lofi.jpg") center center no-repeat fixed; background-size: cover; }
-
-#medieval {background: url("../images/classical/medieval.jpg") center center no-repeat fixed; background-size: cover; }
-#renaissance {background: url("../images/classical/renaissance.jpg") center center no-repeat fixed; background-size: cover; }
-#baroque {background: url("../images/classical/baroque.jpg") center center no-repeat fixed; background-size: cover; }
-#classical {background: url("../images/classical/classical.jpg") center center no-repeat fixed; background-size: cover; }
-#romantic {background: url("../images/classical/romantic.jpg") center center no-repeat fixed; background-size: cover; }
-#modern {background: url("../images/classical/modern.jpg") center center no-repeat fixed; background-size: cover; }
-#opera {background: url("../images/classical/opera.jpg") center center no-repeat fixed; background-size: cover; }
-#filmscore {background: url("../images/classical/filmscore.jpg") center center no-repeat fixed; background-size: cover; }
-
-#africanfolk {background: url("../images/folk/africanfolk.jpg") center center no-repeat fixed; background-size: cover; }
-#australianfolk {background: url("../images/folk/australianfolk.jpg") center center no-repeat fixed; background-size: cover; }
-#chinesefolk {background: url("../images/folk/chinesefolk.jpg") center center no-repeat fixed; background-size: cover; }
-#indianfolk {background: url("../images/folk/indianfolk.jpg") center center no-repeat fixed; background-size: cover; }
-#frenchfolk {background: url("../images/folk/frenchfolk.jpg") center center no-repeat fixed; background-size: cover; }
-#latinfolk {background: url("../images/folk/latinfolk.jpg") center center no-repeat fixed; background-size: cover; }
-#irishfolk {background: url("../images/folk/irishfolk.jpg") center center no-repeat fixed; background-size: cover; }
-#scottishfolk {background: url("../images/folk/scottishfolk.jpg") center center no-repeat fixed; background-size: cover; }
-#nordicfolk {background: url("../images/folk/nordicfolk.jpg") center center no-repeat fixed; background-size: cover; }
-#russianfolk {background: url("../images/folk/russianfolk.jpg") center center no-repeat fixed; background-size: cover; }
+#chillwave {background: url("../images/hauntology/chillwave.jpg") center center no-repeat fixed; background-size: cover; }
+#synthwave {background: url("../images/hauntology/synthwave.jpg") center center no-repeat fixed; background-size: cover; }
+#vaporwave {background: url("../images/hauntology/vaporwave.jpg") center center no-repeat fixed; background-size: cover; }
+#witchhouse {background: url("../images/hauntology/witchhouse.jpg") center center no-repeat fixed; background-size: cover; }
+#seapunk {background: url("../images/hauntology/seapunk.jpg") center center no-repeat fixed; background-size: cover; }
+#futurefunk {background: url("../images/hauntology/futurefunk.jpg") center center no-repeat fixed; background-size: cover; }
+#mallsoft {background: url("../images/hauntology/mallsoft.jpg") center center no-repeat fixed; background-size: cover; }
+#lofi {background: url("../images/hauntology/lofi.jpg") center center no-repeat fixed; background-size: cover; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -571,12 +562,13 @@ p {
     margin: 0.3em 0 0.6em;
 }
 
+.buttons-classical, .buttons-classical-stop { background-color: #917550; }
+.buttons-folk, .buttons-folk-stop { background-color: #D2B774; }
 .buttons-blues, .buttons-blues-stop { background-color: #3F4FCA; }
-.buttons-jazz, .buttons-jazz-stop { background-color: #3A8CE9; }
+.buttons-jazz, .buttons-jazz-stop { background-color: #29B6F6; }
 .buttons-country, .buttons-country-stop { background-color: #ADB889; }
 .buttons-rhythmandblues, .buttons-rhythmandblues-stop { background-color: #009688; }
 .buttons-pop, .buttons-pop-stop { background-color: #FFEB3B; }
-.buttons-rockandroll, .buttons-rockandroll-stop { background-color: #29B6F6; }
 .buttons-classicrock, .buttons-classicrock-stop { background-color: #F44336; }
 .buttons-metal, .buttons-metal-stop { background-color: #212121; }
 .buttons-punk, .buttons-punk-stop { background-color: #FF9800; }
@@ -591,19 +583,18 @@ p {
 .buttons-breakbeat, .buttons-breakbeat-stop { background-color: #9A5177; }
 .buttons-drumandbass, .buttons-drumandbass-stop { background-color: #C71F49; }
 .buttons-ukgarage, .buttons-ukgarage-stop { background-color: #A892CC; }
-.buttons-downtempo, .buttons-downtempo-stop { background-color: #E91E63; }
-.buttons-aesthetic, .buttons-aesthetic-stop { background-color: #2CDEDE; }
-.buttons-classical, .buttons-classical-stop { background-color: #917550; }
-.buttons-folk, .buttons-folk-stop { background-color: #D2B774; }
+.buttons-experimental, .buttons-experimental-stop { background-color: #F5F5F5; }
+.buttons-hauntology, .buttons-hauntology-stop { background-color: #E91E63; }
 
 /*---------------------------------------------------------------------------*/
 
+.buttons-classical:hover, .buttons-classical-stop:hover { background-color: #A18259; }
+.buttons-folk:hover, .buttons-folk-stop:hover { background-color: #D8C188; }
 .buttons-blues:hover, .buttons-blues-stop:hover { background-color: #5361D0; }
-.buttons-jazz:hover, .buttons-jazz-stop:hover { background-color: #5199EC; }
+.buttons-jazz:hover, .buttons-jazz-stop:hover { background-color: #4FC3F7; }
 .buttons-country:hover, .buttons-country-stop:hover { background-color: #B8C299; }
 .buttons-rhythmandblues:hover, .buttons-rhythmandblues-stop:hover { background-color: #26A69A; }
 .buttons-pop:hover, .buttons-pop-stop:hover { background-color: #FFF176; }
-.buttons-rockandroll:hover, .buttons-rockandroll-stop:hover { background-color: #4FC3F7; }
 .buttons-classicrock:hover, .buttons-classicrock-stop:hover { background-color: #EF5350; }
 .buttons-metal:hover, .buttons-metal-stop:hover { background-color: #424242; }
 .buttons-punk:hover, .buttons-punk-stop:hover { background-color: #FFA726; }
@@ -618,18 +609,17 @@ p {
 .buttons-breakbeat:hover, .buttons-breakbeat-stop:hover { background-color: #A95B83; }
 .buttons-drumandbass:hover, .buttons-drumandbass-stop:hover { background-color: #DD2251; }
 .buttons-ukgarage:hover, .buttons-ukgarage-stop:hover { background-color: #B59DDB; }
-.buttons-downtempo:hover, .buttons-downtempo-stop:hover { background-color: #EC407A; }
-.buttons-aesthetic:hover, .buttons-aesthetic-stop:hover { background-color: #2FEDED; }
-.buttons-classical:hover, .buttons-classical-stop:hover { background-color: #A18259; }
-.buttons-folk:hover, .buttons-folk-stop:hover { background-color: #D8C188; }
+.buttons-experimental:hover, .buttons-experimental-stop:hover { background-color: #FFFFFF; }
+.buttons-hauntology:hover, .buttons-hauntology-stop:hover { background-color: #EC407A; }
 
 /*---------------------------------------------------------------------------*/
 
+.buttons-classical.clicked, .buttons-classical-stop.clicked,
+.buttons-folk.clicked, .buttons-folk-stop.clicked,
 .buttons-blues.clicked, .buttons-blues-stop.clicked,
 .buttons-jazz.clicked, .buttons-jazz-stop.clicked,
 .buttons-country.clicked, .buttons-country-stop.clicked,
 .buttons-rhythmandblues.clicked, .buttons-rhythmandblues-stop.clicked,
-.buttons-rockandroll.clicked, .buttons-rockandroll-stop.clicked,
 .buttons-classicrock.clicked, .buttons-classicrock-stop.clicked,
 .buttons-metal.clicked, .buttons-metal-stop.clicked,
 .buttons-punk.clicked, .buttons-punk-stop.clicked,
@@ -644,14 +634,12 @@ p {
 .buttons-breakbeat.clicked, .buttons-breakbeat-stop.clicked,
 .buttons-drumandbass.clicked, .buttons-drumandbass-stop.clicked,
 .buttons-ukgarage.clicked, .buttons-ukgarage-stop.clicked,
-.buttons-downtempo.clicked, .buttons-downtempo-stop.clicked,
-.buttons-aesthetic.clicked, .buttons-aesthetic-stop.clicked,
-.buttons-classical.clicked, .buttons-classical-stop.clicked,
-.buttons-folk.clicked, .buttons-folk-stop.clicked {
+.buttons-hauntology.clicked, .buttons-hauntology-stop.clicked {
     box-shadow:inset 0em 0em 0em 0.1em #FFF;
 }
 
-.buttons-pop.clicked, .buttons-pop-stop.clicked {
+.buttons-pop.clicked, .buttons-pop-stop.clicked,
+.buttons-experimental.clicked, .buttons-experimental-stop.clicked {
     box-shadow:inset 0em 0em 0em 0.1em #222;
 }
 

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Musique Concrète</title>
+    </head>
+
+    <body class="genre" id="musiqueconcrete">
+        <div class="box experimental">
+            <h1>MUSIQUE CONCRÈTE</h1>
+
+            <p>The origin of all electronic music already started in the 40s &ndash; Classical composers (mostly European) experimented in advanced sound studios with the new possibilities of magnetic tape. By recording, replaying, looping, multi-tracking, reserving, sound altering and delaying they were able to create long and diverse compositions without the need for live instruments. Thus the first artificially created music was born. Musique Concrète has no origin, no parent genre &ndash; it evolves directly out of the very first electro-acoustic music, such as theremin performances. The Avant-Garde composers of Musique Concrète saw themselves more than academic researchers. To them, this music was more real (concrete) than any other. Music played by live instruments was something abstract and fleeting. Once you heard it, it was gone. Their music wasn't &ndash; it was recorded and stored, saved for eternity and capable of being paused, rewound, re-listened and more. In the mid-70s, a second wave of Musique Concrète (Sound Collage or Tape Music) took place, sampling all sounds into soundscapes with advanced recorders.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-experimental">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-experimental-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-experimental-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Karlheinz Stockhausen",
+                        track: "Gesang Der Jünglinge",
+                        path: "../../samples/experimental/musiqueconcrete1.ogg"
+                    },
+                    {
+                        artist: "Morton Subotnick",
+                        track: "Silver Apples Of The Moon Part A",
+                        path: "../../samples/experimental/musiqueconcrete2.ogg"
+                    },
+                    {
+                        artist: "Pierre Schaeffer",
+                        track: "Étude Noire",
+                        path: "../../samples/experimental/musiqueconcrete3.ogg"
+                    },
+                    {
+                        artist: "John Cage",
+                        track: "Williams Mix",
+                        path: "../../samples/experimental/musiqueconcrete4.ogg"
+                    },
+                    {
+                        artist: "Iannis Xenakis",
+                        track: "Concret Ph",
+                        path: "../../samples/experimental/musiqueconcrete5.ogg"
+                    },
+                    {
+                        artist: "Kid Baltan",
+                        track: "Song Of The Second Moon",
+                        path: "../../samples/experimental/musiqueconcrete6.ogg"
+                    },
+                    {
+                        artist: "Raymond Scott",
+                        track: "Twilight In Turkey",
+                        path: "../../samples/experimental/musiqueconcrete7.ogg"
+                    },
+                    {
+                        artist: "Tom Dissevelt",
+                        track: "Anchor Chains",
+                        path: "../../samples/experimental/musiqueconcrete8.ogg"
+                    },
+                    {
+                        artist: "The Beatles",
+                        track: "Revolution 9",
+                        path: "../../samples/experimental/musiqueconcrete9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-experimental').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-experimental-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-experimental"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

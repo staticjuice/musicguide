@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Surf Rock</title>
+    </head>
+
+    <body class="genre" id="surfrock">
+        <div class="box classicrock">
+            <h1>SURF ROCK</h1>
+
+            <p>The sun, the beach, palm trees and a carefree lifestyle were the perfect atmosphere for surf boys to retreat in the shack to work on their guitar technique. With incredibly fast, rolling guitar riffs put in reverb, they created a washing sound that could easily imitate ocean waves and impress girls in that true Rock &amp; Roll heritage. Almost all Surf Rock is purely instrumental and this draws even more attention towards the proficiency of its guitarists. Non-instrumental genres were often much slower and less technical, such as the music of The Beach Boys, who were by far the most well-known exponent. Surf Rock features standard 4/4 Rock &amp; Roll riffs, yet spiced up by influences from Cuban malagueña songs. This made them so fast, catchy and addictive that everyone wanted to play them. Covering Surf Rock tunes from other bands was so common and tolerated, that eventually, nobody knew who actually made the originals anymore. This was non-commercial, DIY, fun music in its purest form, which sadly became almost completely extinct because almost all bands cared too little for professional distribution or promotion of their music.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classicrock">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classicrock">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classicrock">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classicrock">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classicrock">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classicrock">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classicrock">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classicrock">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-classicrock">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-classicrock-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-classicrock-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "The Surfaris",
+                        track: "Wipe Out",
+                        path: "../../../samples/classicrock/surfrock1.ogg"
+                    },
+                    {
+                        artist: "Dick Dale And The Del-Tones",
+                        track: "Misirlou",
+                        path: "../../../samples/classicrock/surfrock2.ogg"
+                    },
+                    {
+                        artist: "The Beach Boys",
+                        track: "Surfin' U.S.A.",
+                        path: "../../../samples/classicrock/surfrock3.ogg"
+                    },
+                    {
+                        artist: "The Shadows",
+                        track: "Apache",
+                        path: "../../../samples/classicrock/surfrock4.ogg"
+                    },
+                    {
+                        artist: "The Ventures",
+                        track: "Walk, Don't Run",
+                        path: "../../../samples/classicrock/surfrock5.ogg"
+                    },
+                    {
+                        artist: "The Chantays",
+                        track: "Pipeline",
+                        path: "../../../samples/classicrock/surfrock6.ogg"
+                    },
+                    {
+                        artist: "The Marketts",
+                        track: "Out Of Limits",
+                        path: "../../../samples/classicrock/surfrock7.ogg"
+                    },
+                    {
+                        artist: "The Champs",
+                        track: "Tequila",
+                        path: "../../../samples/classicrock/surfrock8.ogg"
+                    },
+                    {
+                        artist: "The Bel-Aires",
+                        track: "Mr. Moto",
+                        path: "../../../samples/classicrock/surfrock9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-classicrock').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-classicrock-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-classicrock"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

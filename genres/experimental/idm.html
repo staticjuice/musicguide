@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>IDM</title>
+    </head>
+
+    <body class="genre" id="idm">
+        <div class="box experimental">
+            <h1>IDM</h1>
+
+            <p>The term "Intelligent Dance Music" or IDM is despised by both its practitioners as its opponents. This makes sense, as what exactly does make music intelligent? There certainly never was any intention to do so. Early IDM composers just wanted to create electronic music with analog instruments and samples. The songs have a complicated, unexpected structure and are compiled of a variety of analog effects, acid bleeps, washes, breaks and scratches. There's often more than one bassline, as deep as possible. IDM is sometimes hard to separate from more experimental forms of Breakbeat, because the classic four-to-the-floor Techno beat is often abandoned. After the rise of Jungle, IDM starts to use Drum &amp; Bass rhythms as well, which makes the genre almost impossible to categorise within a single supergenre. IDM can also be regarded as one with Ambient Techno, as they share a great deal of overlapping. Like Rave, IDM was born in a series of illegal parties across the UK, but where they preferred the opposite type of music. At first the music was rather minimal and less experimental and called Bleep Techno.</p>
+
+            <div class="row icon-list">
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-experimental">1</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-experimental">2</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-experimental">3</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-experimental">4</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-experimental">5</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-experimental">6</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-experimental">7</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-experimental">8</div></div>
+                <div class="col-md-1 col-xs-1"><div class="buttons buttons-experimental">9</div></div>
+                <div class="d-block d-md-none col-md-1 col-xs-1"><div class="buttons buttons-experimental-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-experimental-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Autechre",
+                        track: "AcroyearII",
+                        path: "../../samples/experimental/idm1.ogg"
+                    },
+                    {
+                        artist: "The Black Dog",
+                        track: "Nommo",
+                        path: "../../samples/experimental/idm2.ogg"
+                    },
+                    {
+                        artist: "Plastikman",
+                        track: "Consumed",
+                        path: "../../samples/experimental/idm3.ogg"
+                    },
+                    {
+                        artist: "Aphex Twin",
+                        track: "Xtal",
+                        path: "../../samples/experimental/idm4.ogg"
+                    },
+                    {
+                        artist: "Ochre",
+                        track: "Infotain Me",
+                        path: "../../samples/experimental/idm5.ogg"
+                    },
+                    {
+                        artist: "Amon Tobin",
+                        track: "Journeyman",
+                        path: "../../samples/experimental/idm6.ogg"
+                    },
+                    {
+                        artist: "Tricky Disco",
+                        track: "Tricky Disco (Plone Mix)",
+                        path: "../../samples/experimental/idm7.ogg"
+                    },
+                    {
+                        artist: "Hrvatski",
+                        track: "Insect Digestion Melancholy",
+                        path: "../../samples/experimental/idm8.ogg"
+                    },
+                    {
+                        artist: "Mouse On Mars",
+                        track: "Tux & Damask",
+                        path: "../../samples/experimental/idm9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-experimental').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-experimental-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-experimental"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

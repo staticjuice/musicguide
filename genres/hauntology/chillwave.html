@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Chillwave</title>
+    </head>
+
+    <body class="genre" id="chillwave">
+        <div class="box hauntology">
+            <h1>CHILLWAVE</h1>
+
+            <p>Chillwave is a music microgenre that emerged in the late 2000s. It is characterised by a faded or dreamy retro-pop sound, escapist lyrics (frequent topics include the beach or summer), psychedelic or lo-fi aesthetics, mellow vocals, low-to-moderate tempos, effects processing (especially reverb), and vintage synthesisers. The term was originally synonymous with "glo-fi" or "hypnagogic pop". Chillwave loosely emulates 1980s Synthpop and engages with notions of memory and nostalgia. It was one of the first music genres to develop primarily through the Internet. The term was coined in 2009 by the satirical blog Hipster Runoff to describe Indie acts whose sounds resembled incidental music from 1980s VHS tapes. Washed Out's 2009 track "Feel It All Around" remains the best-known Chillwave song. The term was criticised for being nebulous and contrived by various media publications, while the music was often derided for its reliance on nostalgia. Some artists rejected the tag, while many exploited the style's low-budget simplicity, which led to an oversaturation of acts. Another Internet-based microgenre, Vaporwave, evolved from Chillwave.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hauntology">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-hauntology-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-hauntology-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Washed Out",
+                        track: "Feel It All Around",
+                        path: "../../samples/hauntology/chillwave1.ogg"
+                    },
+                    {
+                        artist: "Panda Bear",
+                        track: "Take Pills",
+                        path: "../../samples/hauntology/chillwave2.ogg"
+                    },
+                    {
+                        artist: "Neon Indian",
+                        track: "Deadbeat Summer",
+                        path: "../../samples/hauntology/chillwave3.ogg"
+                    },
+                    {
+                        artist: "Slow Magic",
+                        track: "Corvette Cassette",
+                        path: "../../samples/hauntology/chillwave4.ogg"
+                    },
+                    {
+                        artist: "Toro Y Moi",
+                        track: "Labyrinth",
+                        path: "../../samples/hauntology/chillwave5.ogg"
+                    },
+                    {
+                        artist: "Blackbird Blackbird",
+                        track: "Pure",
+                        path: "../../samples/hauntology/chillwave6.ogg"
+                    },
+                    {
+                        artist: "Ariel Pink",
+                        track: "Lipstick",
+                        path: "../../samples/hauntology/chillwave7.ogg"
+                    },
+                    {
+                        artist: "Summer Heart",
+                        track: "Beat Of Your Heart",
+                        path: "../../samples/hauntology/chillwave8.ogg"
+                    },
+                    {
+                        artist: "Tycho",
+                        track: "Daydream",
+                        path: "../../samples/hauntology/chillwave9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hauntology').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hauntology-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hauntology"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
