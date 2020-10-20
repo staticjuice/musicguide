@@ -6,13 +6,15 @@ a:link, a:visited, a:hover, a:active {
     color: #FFF; text-decoration: none;
 }
 
+* {
+    font-family: 'ProductSansRegular';
+    line-height: 1.6em;
+}
+
 h1 {
     font-family: 'RobotoBlack';
     font-size: 2.5em;
-}
-
-p {
-    margin-top: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 ::selection {
@@ -33,15 +35,13 @@ p {
 }
 
 .sidebar.pop::-webkit-scrollbar-thumb,
-.sidebar.mymusic::-webkit-scrollbar-thumb {
+.sidebar.experimental::-webkit-scrollbar-thumb {
     background: #222;
-    border-radius: 8px;
 }
 
 /*---------------------------------------------------------------------------*/
 
 #introbox {
-    font-family: 'ProductSansRegular';
     color: #FFF;
     font-size: 3.75vw;
     position: absolute;
@@ -77,9 +77,8 @@ p {
 }
 
 #genres-grid h1 {
-    font-family: 'ProductSansRegular';
+    font-family: ProductSansRegular;
     top: 41.25%; left: 0; bottom: 0; right: 0;
-    font-weight: 300;
     font-size: 2.75vw;
     position: absolute;
     text-align: center;
@@ -94,7 +93,7 @@ p {
 }
 
 #genres-heading-mobile {
-    padding: 1.5em;
+    padding-top: 1em;
     font-size: 4.25vw;
     color: #FFF;
     text-align: center;
@@ -118,11 +117,11 @@ p {
 .genrelist {
     color: #FFF;
     padding: 1.2em 1.5em;
-    font-size: 2.1em;
+    font-size: 3.3vh;
 }
 
 .genrelist h1 {
-    font-size: 2.1em;
+    font-size: 2em;
     margin-bottom: 0.5em;
 }
 
@@ -229,30 +228,23 @@ p {
 /*---------------------------------------------------------------------------*/
 
 .sidebar {
-    font-family: 'ProductSansRegular';
+    font-size: 1.8vh;
     width: 40em;
     height: 100vh;
     padding: 1.25em 1.5em 0.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: right;
     overflow: auto;
-    font-size: 1.1em;
 }
 
 .sidebar-mobile {
-    font-family: 'ProductSansRegular';
     width: 100%;
     padding: 1.5em;
-    font-size: 4vw;
-}
-
-.genre {
-    font-family: 'ProductSansRegular';
-    font-size: 1.544vh;
+    font-size: 3.5vw;
 }
 
 .box {
-    font-family: 'ProductSansRegular';
+    font-size: 1.6vh;
     width: 40em;
     padding: 1.5em;
     margin: 3.5em;
@@ -651,10 +643,6 @@ p {
   	display: inline;
 }
 
-#artist, #track {
-    font-family: 'ProductSansRegular';
-}
-
 .stop {
     float: right;
     margin-top: -2.2em;
@@ -688,7 +676,8 @@ p {
     }
 
     .col-xs-1 {
-        width: 10%;
+        width: 9%;
+        padding: 1.15em;
     }
 
     .artisttrack {
