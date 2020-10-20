@@ -9,27 +9,27 @@
     </head>
 
     <body id="postgrunge">
-        <div class="box alternative">
+        <div class="box indie">
             <h1>POST-GRUNGE</h1>
 
             <p>Post-Grunge refers to the wave of bands who appeared shortly after Seattle grunge hit the mainstream. The major difference is that while the Seattle bands were firmly rooted in underground Alternative Rock of the 80s, Post-Grunge was influenced by what Grunge became &ndash; a wildly popular form of inward-looking, serious-minded Hard Rock. Many new Rock bands filled the hole that Grunge left and were especially influenced by its tragic, introspective, sentimental lyrics. Post-Grunge elaborated further on this theme but also took a step away from Grunge's heavy distortion, chaos and roughness. The result was a slicker, more polished sound with a clear song structure that turned out to be a commercial success. Post-Grunge became so popular that it stayed in the mainstream much longer than other Alt-Rock styles. Many people claimed that Post-Grunge was merely a commercial imitation of something genius and that it should be clearly separated from the original (leading to its name). On the other hand, the fans saw it as the culmination of Rock where finally a perfect balance of roughness versus slickness was found.</p>
 
             <div class="row icon-list">
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">1</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">2</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">3</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">4</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">5</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">6</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">7</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">8</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">9</div></div>
-                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -40,47 +40,47 @@
                     {
                         artist: "Foo Fighters",
                         track: "The Pretender",
-                        path: "../../../samples/alternative/postgrunge1.ogg"
+                        path: "../../../samples/indie/postgrunge1.ogg"
                     },
                     {
                         artist: "Creed",
                         track: "My Sacrifice",
-                        path: "../../../samples/alternative/postgrunge2.ogg"
+                        path: "../../../samples/indie/postgrunge2.ogg"
                     },
                     {
                         artist: "3 Doors Down",
                         track: "Kryptonite",
-                        path: "../../../samples/alternative/postgrunge3.ogg"
+                        path: "../../../samples/indie/postgrunge3.ogg"
                     },
                     {
                         artist: "Green Day",
                         track: "Boulevard Of Broken Dreams",
-                        path: "../../../samples/alternative/postgrunge4.ogg"
+                        path: "../../../samples/indie/postgrunge4.ogg"
                     },
                     {
                         artist: "Nickelback",
                         track: "How You Remind Me",
-                        path: "../../../samples/alternative/postgrunge5.ogg"
+                        path: "../../../samples/indie/postgrunge5.ogg"
                     },
                     {
                         artist: "HIM",
                         track: "Join Me In Death",
-                        path: "../../../samples/alternative/postgrunge6.ogg"
+                        path: "../../../samples/indie/postgrunge6.ogg"
                     },
                     {
                         artist: "Matchbox Twenty",
                         track: "Push",
-                        path: "../../../samples/alternative/postgrunge7.ogg"
+                        path: "../../../samples/indie/postgrunge7.ogg"
                     },
                     {
                         artist: "Staind",
                         track: "It's Been Awhile",
-                        path: "../../../samples/alternative/postgrunge8.ogg"
+                        path: "../../../samples/indie/postgrunge8.ogg"
                     },
                     {
                         artist: "Puddle Of Mudd",
                         track: "She Hates Me",
-                        path: "../../../samples/alternative/postgrunge9.ogg"
+                        path: "../../../samples/indie/postgrunge9.ogg"
                     }
                 ]
 
@@ -96,7 +96,7 @@
                 var buttons = [];
                 var audioInstance;
 
-                $(document).find('.buttons-alternative').each(function(index, button) {
+                $(document).find('.buttons-indie').each(function(index, button) {
                     buttons.push(button);
                     $(this).click(function() {
                         removeAllButtonBorders()
@@ -110,7 +110,7 @@
                     });
                 });
 
-                $('.buttons-alternative-stop').on('click', function() {
+                $('.buttons-indie-stop').on('click', function() {
                     stopAllMusic()
                     artistSpan.innerHTML = ''
                     track.innerHTML = ''
@@ -119,7 +119,7 @@
 
                 var removeAllButtonBorders = () => {
                     buttons.forEach(
-                        button => button.className = "buttons buttons-alternative"
+                        button => button.className = "buttons buttons-indie"
                     )
                 }
 

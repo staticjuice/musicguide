@@ -9,27 +9,27 @@
     </head>
 
     <body id="raprock">
-        <div class="box alternative">
+        <div class="box indie">
             <h1>RAP ROCK</h1>
 
             <p>The combination of Rock and Rap found its origin in the latter half of the 80s, with the desire of Run DMC's producers to reach a bigger audience. But at the start of the 90s, a real genre emerges &ndash; called either Rap Rock, Rapcore or Funk Rock. Strictly speaking, these are all different genres but so closely related, it's pointless to separate them. In short, they are heavier, faster types of Alternative Rock, with strong influences from the Golden Age of Hip Hop music, sharing the same ferocity and anti-commercial mindset. One must not forget after all, that Hip Hop was still "fresh" in the 90s, even though it had already been around for quite some time. As a result, artists were eager to infuse Hip Hop in contrasting genres such as Alternative Rock. The lyrics are fast, in a Rap-like way (or even true raps), and the music is more rhythmical than other types of Rock. Both Rock and Hip Hop artists crossed over to each other's side, but unfortunately, the genre didn't break through in mainstream charts. The genre gradually became harder, more experimental and mixed with Metal, eventually evolving into Nu Metal.</p>
 
             <div class="row icon-list">
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">1</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">2</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">3</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">4</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">5</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">6</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">7</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">8</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">9</div></div>
-                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -40,47 +40,47 @@
                     {
                         artist: "Kid Rock",
                         track: "Bawitdaba",
-                        path: "../../../samples/alternative/raprock1.ogg"
+                        path: "../../../samples/indie/raprock1.ogg"
                     },
                     {
                         artist: "Rage Against The Machine",
                         track: "Guerrilla Radio",
-                        path: "../../../samples/alternative/raprock2.ogg"
+                        path: "../../../samples/indie/raprock2.ogg"
                     },
                     {
                         artist: "Faith No More",
                         track: "Epic",
-                        path: "../../../samples/alternative/raprock3.ogg"
+                        path: "../../../samples/indie/raprock3.ogg"
                     },
                     {
                         artist: "Dog Eat Dog",
                         track: "Who's The King",
-                        path: "../../../samples/alternative/raprock4.ogg"
+                        path: "../../../samples/indie/raprock4.ogg"
                     },
                     {
                         artist: "Red Hot Chili Peppers",
                         track: "Give It Away",
-                        path: "../../../samples/alternative/raprock5.ogg"
+                        path: "../../../samples/indie/raprock5.ogg"
                     },
                     {
                         artist: "Urban Dance Squad",
                         track: "Demagogue",
-                        path: "../../../samples/alternative/raprock6.ogg"
+                        path: "../../../samples/indie/raprock6.ogg"
                     },
                     {
                         artist: "Helmet & House Of Pain",
                         track: "Just Another Victim",
-                        path: "../../../samples/alternative/raprock7.ogg"
+                        path: "../../../samples/indie/raprock7.ogg"
                     },
                     {
                         artist: "Alley Life feat. Black Planet",
                         track: "Out With The Old",
-                        path: "../../../samples/alternative/raprock8.ogg"
+                        path: "../../../samples/indie/raprock8.ogg"
                     },
                     {
                         artist: "Papa Roach",
                         track: "Blood Brothers",
-                        path: "../../../samples/alternative/raprock9.ogg"
+                        path: "../../../samples/indie/raprock9.ogg"
                     }
                 ]
 
@@ -96,7 +96,7 @@
                 var buttons = [];
                 var audioInstance;
 
-                $(document).find('.buttons-alternative').each(function(index, button) {
+                $(document).find('.buttons-indie').each(function(index, button) {
                     buttons.push(button);
                     $(this).click(function() {
                         removeAllButtonBorders()
@@ -110,7 +110,7 @@
                     });
                 });
 
-                $('.buttons-alternative-stop').on('click', function() {
+                $('.buttons-indie-stop').on('click', function() {
                     stopAllMusic()
                     artistSpan.innerHTML = ''
                     track.innerHTML = ''
@@ -119,7 +119,7 @@
 
                 var removeAllButtonBorders = () => {
                     buttons.forEach(
-                        button => button.className = "buttons buttons-alternative"
+                        button => button.className = "buttons buttons-indie"
                     )
                 }
 

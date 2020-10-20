@@ -9,27 +9,27 @@
     </head>
 
     <body id="indierock">
-        <div class="box alternative">
+        <div class="box indie">
             <h1>INDIE ROCK</h1>
 
             <p>After the big Grunge revolution, Indie Rock experienced a metamorphosis and splintered in many subgenres, which were all a response to Grunge, both positive and negative. Many Indie Rock artists changed the genre into a darker, heavier version of itself, with more desperate tragedy and angry frustration in its lyrics. It also lost some of its Hardcore and DIY influences, with songs becoming longer, more complex and better produced. The second wave of Alternative Rock was no longer truly alternative, and their artists less and less a part of independent record labels. Some Alternative Rock bands even became bestselling stars, filling Rock festivals for decades to come. However, some musicians believed there was too much stardom and too much focus from majors on Grunge and Alternative Rock. Two underground subgenres emerged &ndash; the heavily under-produced Lo-Fi, Sadcore, Math Rock and Baroque Pop. Lo-Fi is primarily defined by its low-fidelity sound, Sadcore is gentle and slow, placid and filled with tender, fragile sounds. Math Rock focussed on complicated rhythms and Baroque Pop adds orchestral elements to its songs.</p>
 
             <div class="row icon-list">
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">1</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">2</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">3</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">4</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">5</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">6</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">7</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">8</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">9</div></div>
-                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -40,47 +40,47 @@
                     {
                         artist: "Beck",
                         track: "E-Pro",
-                        path: "../../../samples/alternative/indierock1.ogg"
+                        path: "../../../samples/indie/indierock1.ogg"
                     },
                     {
                         artist: "Sebadoh",
                         track: "Flame",
-                        path: "../../../samples/alternative/indierock2.ogg"
+                        path: "../../../samples/indie/indierock2.ogg"
                     },
                     {
                         artist: "Pavement",
                         track: "Cut Your Hair",
-                        path: "../../../samples/alternative/indierock3.ogg"
+                        path: "../../../samples/indie/indierock3.ogg"
                     },
                     {
                         artist: "Quickspace",
                         track: "Take Away",
-                        path: "../../../samples/alternative/indierock4.ogg"
+                        path: "../../../samples/indie/indierock4.ogg"
                     },
                     {
                         artist: "Don Caballero",
                         track: "Railroad Cancellation",
-                        path: "../../../samples/alternative/indierock5.ogg"
+                        path: "../../../samples/indie/indierock5.ogg"
                     },
                     {
                         artist: "Radiohead",
                         track: "No Surprises",
-                        path: "../../../samples/alternative/indierock6.ogg"
+                        path: "../../../samples/indie/indierock6.ogg"
                     },
                     {
                         artist: "American Music Club",
                         track: "Goodbye To Love",
-                        path: "../../../samples/alternative/indierock7.ogg"
+                        path: "../../../samples/indie/indierock7.ogg"
                     },
                     {
                         artist: "Red House Painters",
                         track: "Mistress",
-                        path: "../../../samples/alternative/indierock8.ogg"
+                        path: "../../../samples/indie/indierock8.ogg"
                     },
                     {
                         artist: "Arcade Fire",
                         track: "Rebellion (Lies)",
-                        path: "../../../samples/alternative/indierock9.ogg"
+                        path: "../../../samples/indie/indierock9.ogg"
                     }
                 ]
 
@@ -96,7 +96,7 @@
                 var buttons = [];
                 var audioInstance;
 
-                $(document).find('.buttons-alternative').each(function(index, button) {
+                $(document).find('.buttons-indie').each(function(index, button) {
                     buttons.push(button);
                     $(this).click(function() {
                         removeAllButtonBorders()
@@ -110,7 +110,7 @@
                     });
                 });
 
-                $('.buttons-alternative-stop').on('click', function() {
+                $('.buttons-indie-stop').on('click', function() {
                     stopAllMusic()
                     artistSpan.innerHTML = ''
                     track.innerHTML = ''
@@ -119,7 +119,7 @@
 
                 var removeAllButtonBorders = () => {
                     buttons.forEach(
-                        button => button.className = "buttons buttons-alternative"
+                        button => button.className = "buttons buttons-indie"
                     )
                 }
 

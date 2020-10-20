@@ -9,27 +9,27 @@
     </head>
 
     <body id="screamo">
-        <div class="box alternative">
+        <div class="box indie">
             <h1>SCREAMO</h1>
 
             <p>Screamo is a genre that is derived from Hardcore, specifically the nature of Emocore that evolved during the Post-Hardcore era. Though initial bands began appearing around this time, it wasn’t until the 2000s that many had entered mainstream consciousness. After the turn of the millennium, the music was generally based in the aggressive side of the overarching Emo scene. Even bands that weren’t necessarily Screamo would often delve into the genre’s characteristic guttural vocal style not so dissimilar from the abrasive nature of Hardcore. It came to be that the soft/loud dynamic of having either one or two singers who alternate between passionate singing and distraught shrieking that characterises most Screamo. These vocals are often layered or appear side-by-side amid aggressive, hard-hitting guitar licks used to trigger an exhaustive, emotional catharsis. Though the music is outwardly tough and powerful, the lyrics are usually of the introspective kind found in softer Emo bands. For many groups, lyrics often boasted violent or bloody imagery alongside subject matter dealing with overwhelming angst and relationships.</p>
 
             <div class="row icon-list">
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">1</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">2</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">3</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">4</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">5</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">6</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">7</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">8</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">9</div></div>
-                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -40,47 +40,47 @@
                     {
                         artist: "Orchid",
                         track: "Lights Out",
-                        path: "../../../samples/alternative/screamo1.ogg"
+                        path: "../../../samples/indie/screamo1.ogg"
                     },
                     {
                         artist: "Silverstein",
                         track: "My Heroine",
-                        path: "../../../samples/alternative/screamo2.ogg"
+                        path: "../../../samples/indie/screamo2.ogg"
                     },
                     {
                         artist: "Pierce The Veil",
                         track: "King For A Day",
-                        path: "../../../samples/alternative/screamo3.ogg"
+                        path: "../../../samples/indie/screamo3.ogg"
                     },
                     {
                         artist: "Loma Prieta",
                         track: "Fly By Night",
-                        path: "../../../samples/alternative/screamo4.ogg"
+                        path: "../../../samples/indie/screamo4.ogg"
                     },
                     {
                         artist: "Escape The Fate",
                         track: "One For The Money",
-                        path: "../../../samples/alternative/screamo5.ogg"
+                        path: "../../../samples/indie/screamo5.ogg"
                     },
                     {
                         artist: "Alexisonfire",
                         track: "This Could Be Anywhere In The World",
-                        path: "../../../samples/alternative/screamo6.ogg"
+                        path: "../../../samples/indie/screamo6.ogg"
                     },
                     {
                         artist: "Sleeping With Sirens",
                         track: "Kick Me",
-                        path: "../../../samples/alternative/screamo7.ogg"
+                        path: "../../../samples/indie/screamo7.ogg"
                     },
                     {
                         artist: "The Used",
                         track: "Pretty Handsome Awkward",
-                        path: "../../../samples/alternative/screamo8.ogg"
+                        path: "../../../samples/indie/screamo8.ogg"
                     },
                     {
                         artist: "Underoath",
                         track: "Writing On The Walls",
-                        path: "../../../samples/alternative/screamo9.ogg"
+                        path: "../../../samples/indie/screamo9.ogg"
                     }
                 ]
 
@@ -96,7 +96,7 @@
                 var buttons = [];
                 var audioInstance;
 
-                $(document).find('.buttons-alternative').each(function(index, button) {
+                $(document).find('.buttons-indie').each(function(index, button) {
                     buttons.push(button);
                     $(this).click(function() {
                         removeAllButtonBorders()
@@ -110,7 +110,7 @@
                     });
                 });
 
-                $('.buttons-alternative-stop').on('click', function() {
+                $('.buttons-indie-stop').on('click', function() {
                     stopAllMusic()
                     artistSpan.innerHTML = ''
                     track.innerHTML = ''
@@ -119,7 +119,7 @@
 
                 var removeAllButtonBorders = () => {
                     buttons.forEach(
-                        button => button.className = "buttons buttons-alternative"
+                        button => button.className = "buttons buttons-indie"
                     )
                 }
 

@@ -9,27 +9,27 @@
     </head>
 
     <body id="poppunk">
-        <div class="box alternative">
+        <div class="box indie">
             <h1>POP PUNK</h1>
 
             <p>Pop Punk and Skate Punk deliver the bursting, loud mouthing energy of Punk, neatly tucked into a flashy jacket of Pop. Where the latter genre consists of independent artists strongly linked to skater subculture, the former is the product of a marketing hype towards teens, with a strong lack of integrity in their lyrics (like 25-year olds pretending to still be in high school). Both genres are strongly teen/adolescent-orientated, with lyrics that attempt to make sense in their daily lives (Pop Punk bands were purely designed for this like a "bad" boy band). Topics of heartbreak, drugs, friendship and anti-establishment, often in a rebellious way, are perfect for the reactionary teenager but not too explicit to sell in large volumes. But Pop Punk can go much deeper and become highly political, such as the reactionary "Rock Against Bush" movement. Both genres qualify as Punk Rock revivals, albeit with Grunge influences. Pop Punk and Skate Punk are Punk because they are aggressive with mainly short and explosive songs. On the other hand, they are also Pop, with their melodic sing-along tunes or even anthems.</p>
 
             <div class="row icon-list">
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">1</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">2</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">3</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">4</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">5</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">6</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">7</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">8</div></div>
-                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-alternative">9</div></div>
-                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-indie">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-alternative-stop">&FilledSmallSquare;</div></div>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -40,47 +40,47 @@
                     {
                         artist: "NOFX",
                         track: "Don't Call Me White",
-                        path: "../../../samples/alternative/poppunk1.ogg"
+                        path: "../../../samples/indie/poppunk1.ogg"
                     },
                     {
                         artist: "Sum 41",
                         track: "In Too Deep",
-                        path: "../../../samples/alternative/poppunk2.ogg"
+                        path: "../../../samples/indie/poppunk2.ogg"
                     },
                     {
                         artist: "Good Charlotte",
                         track: "The Anthem",
-                        path: "../../../samples/alternative/poppunk3.ogg"
+                        path: "../../../samples/indie/poppunk3.ogg"
                     },
                     {
                         artist: "New Found Glory",
                         track: "My Friends Over You",
-                        path: "../../../samples/alternative/poppunk4.ogg"
+                        path: "../../../samples/indie/poppunk4.ogg"
                     },
                     {
                         artist: "Blink-182",
                         track: "All The Small Things",
-                        path: "../../../samples/alternative/poppunk5.ogg"
+                        path: "../../../samples/indie/poppunk5.ogg"
                     },
                     {
                         artist: "Goldfinger",
                         track: "Spokesman",
-                        path: "../../../samples/alternative/poppunk6.ogg"
+                        path: "../../../samples/indie/poppunk6.ogg"
                     },
                     {
                         artist: "Millencolin",
                         track: "No Cigar",
-                        path: "../../../samples/alternative/poppunk7.ogg"
+                        path: "../../../samples/indie/poppunk7.ogg"
                     },
                     {
                         artist: "Lit",
                         track: "My Own Worst Enemy",
-                        path: "../../../samples/alternative/poppunk8.ogg"
+                        path: "../../../samples/indie/poppunk8.ogg"
                     },
                     {
                         artist: "Panic! At The Disco",
                         track: "I Write Sins Not Tragedies",
-                        path: "../../../samples/alternative/poppunk9.ogg"
+                        path: "../../../samples/indie/poppunk9.ogg"
                     }
                 ]
 
@@ -96,7 +96,7 @@
                 var buttons = [];
                 var audioInstance;
 
-                $(document).find('.buttons-alternative').each(function(index, button) {
+                $(document).find('.buttons-indie').each(function(index, button) {
                     buttons.push(button);
                     $(this).click(function() {
                         removeAllButtonBorders()
@@ -110,7 +110,7 @@
                     });
                 });
 
-                $('.buttons-alternative-stop').on('click', function() {
+                $('.buttons-indie-stop').on('click', function() {
                     stopAllMusic()
                     artistSpan.innerHTML = ''
                     track.innerHTML = ''
@@ -119,7 +119,7 @@
 
                 var removeAllButtonBorders = () => {
                     buttons.forEach(
-                        button => button.className = "buttons buttons-alternative"
+                        button => button.className = "buttons buttons-indie"
                     )
                 }
 
