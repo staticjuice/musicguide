@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Progressive Breaks</title>
+    </head>
+
+    <body id="progressivebreaks">
+        <div class="box breakbeat">
+            <h1>PROGRESSIVE BREAKS</h1>
+
+            <p>Inspired by Progressive House, some Nu Skool Breaks artists started to create a more driven, atmospheric and lighter sound, known as Progressive Breaks. Alongside Progressive Breaks (which is regarded as a subgenre, not something new), more and more Big Beat artists start to cooperate with Nu Skool artists to revitalise their sound. Much like Progressive House, this subgenre is characterised by its "trancy" sound. Its defining traits include extended synthesiser pads and washes, melodic synth leads, heavy reverberation and electronic breakbeats. However, unlike Progressive House, very few Progressive Breaks tracks have vocals, with most tracks being entirely instrumental or using only electronically-altered snippets of vocal samples for sonic effect. Typical Progressive Breaks tracks will often have a long build-up section that leads to a breakdown and a climax, often having numerous sonic elements being added or subtracted from the track at various intervals to increase its intensity. Artists include Hybrid, BT, Way Out West, Digital Witchcraft, Momu, Wrecked Angle, Burufunk, Under This and Fretwell.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-breakbeat-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Tim Davison feat. Stacey Kitson",
+                        track: "Deliver Me (Hush Mix)",
+                        path: "../../samples/breakbeat/progressivebreaks1.ogg"
+                    },
+                    {
+                        artist: "Bedrock",
+                        track: "Forge (Fretwell Mix)",
+                        path: "../../samples/breakbeat/progressivebreaks2.ogg"
+                    },
+                    {
+                        artist: "Luke Chable",
+                        track: "Melburn",
+                        path: "../../samples/breakbeat/progressivebreaks3.ogg"
+                    },
+                    {
+                        artist: "Brancaccio & Aisher",
+                        track: "Darker (Reset The Breaks Mix)",
+                        path: "../../samples/breakbeat/progressivebreaks4.ogg"
+                    },
+                    {
+                        artist: "Jono Fernandez",
+                        track: "Colours Of Conscience (Fretwell Remix)",
+                        path: "../../samples/breakbeat/progressivebreaks5.ogg"
+                    },
+                    {
+                        artist: "Hybrid",
+                        track: "Just For Today",
+                        path: "../../samples/breakbeat/progressivebreaks6.ogg"
+                    },
+                    {
+                        artist: "Energy 52",
+                        track: "Café Del Mar (Hybrid's Time Traveller Remix)",
+                        path: "../../samples/breakbeat/progressivebreaks7.ogg"
+                    },
+                    {
+                        artist: "Momu",
+                        track: "The Dive",
+                        path: "../../samples/breakbeat/progressivebreaks8.ogg"
+                    },
+                    {
+                        artist: "Petter",
+                        track: "These Days",
+                        path: "../../samples/breakbeat/progressivebreaks9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-breakbeat').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-breakbeat-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-breakbeat"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

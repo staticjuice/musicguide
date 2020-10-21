@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Uplifting Trance</title>
+    </head>
+
+    <body id="upliftingtrance">
+        <div class="box trance">
+            <h1>UPLIFTING TRANCE</h1>
+
+            <p>Uplifting Trance (also referred to as Epic Trance) finds its origin in the mid-to-late 90s out of Progressive Trance. In Germany, many songs become even longer and slightly faster than usual (136-144 BPM). Chord progression increases and especially breakdown sections become incredibly long to build up to a postponed climax. Gradually, more and more elements get thrown into the mix to enhance the joyful, euphoric feeling Uplifting Trance is all about. This is not uncontrolled ecstasy tearing down the house like many previous Dance genres &ndash; Uplifting Trance is a new kind of sensation &ndash; euphoric bliss symbolised by a mass of waving hands, daytime venues and lasers. Uplifting Trance has much longer songs than Eurotrance, meant for festivals or Dance events, whereas the latter genre is more aimed at record sales and radio broadcasting. Because of its large focus on the most characteristic Trance elements and its brief moment of international fame, Uplifting Trance is also known as "Pure Trance". A noun firmly resented by the opposite side of Classic and underground Trance lovers.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-trance-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-trance-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Alex M.O.R.P.H.",
+                        track: "Sunshine (Nitrous Oxide Remix)",
+                        path: "../../samples/trance/upliftingtrance1.ogg"
+                    },
+                    {
+                        artist: "Gareth Emery feat. Lucy Saunders",
+                        track: "Sanctuary (Sean Tyas Remix)",
+                        path: "../../samples/trance/upliftingtrance2.ogg"
+                    },
+                    {
+                        artist: "Aly & Fila feat. Jwaydan",
+                        track: "We Control The Sunlight",
+                        path: "../../samples/trance/upliftingtrance3.ogg"
+                    },
+                    {
+                        artist: "Above & Beyond feat. Richard Bedford",
+                        track: "Thing Called Love",
+                        path: "../../samples/trance/upliftingtrance4.ogg"
+                    },
+                    {
+                        artist: "Andy Blueman",
+                        track: "Neverland",
+                        path: "../../samples/trance/upliftingtrance5.ogg"
+                    },
+                    {
+                        artist: "Ram",
+                        track: "RAMsterdam (Jorn Van Deynhoven Remix)",
+                        path: "../../samples/trance/upliftingtrance6.ogg"
+                    },
+                    {
+                        artist: "Simon Patterson feat. Lucy Pillin",
+                        track: "Now I Can Breathe Again",
+                        path: "../../samples/trance/upliftingtrance7.ogg"
+                    },
+                    {
+                        artist: "Agulo feat. David Berkeley",
+                        track: "Fire Sign (Suncatcher Remix)",
+                        path: "../../samples/trance/upliftingtrance8.ogg"
+                    },
+                    {
+                        artist: "Energy Reflect vs Arctic Moon",
+                        track: "Cold Planet (Osip Vocal Mix)",
+                        path: "../../samples/trance/upliftingtrance9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-trance').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-trance-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-trance"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

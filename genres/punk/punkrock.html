@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Punk Rock</title>
+    </head>
+
+    <body id="punkrock">
+        <div class="box punk">
+            <h1>PUNK ROCK</h1>
+
+            <p>Punk Rock probably was the biggest revolution in Rock history. The economic and political situation in Britain during the early 70s made a few young up-to-no-good kids ("punks") angry. In the US, they rediscovered the similar forgotten Garage Rock mentality, but the most important contributor of Punk was a strong backlash against "Arena Rock" of the early 70s. Popular Progressive Rock and Arena Rock bands started to reach massive (and more mature) audiences and Rock had become an eclectic spectacle for the elite masses. It was time for a return to the primordial roots of Rock &ndash; to give the youth back its stolen and deformed middle finger. The music was Garage Rock, but with much shorter, faster, energetic, raw and stripped-to-the-base chords which blended in with the rapidly growing out-of-control Punk subculture. Many early amateur Punk Rock band names were gross and sleazy &ndash; Punk liked to indulge in a provocative culture of extreme haircuts and rebellious fashion. A lot of UK Punk was witnessed in the Roxy club, London, whereas US Punk evolved mainly out of the legendary club CBGB's in New York.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Sex Pistols",
+                        track: "Anarchy In The UK",
+                        path: "../../samples/punk/punkrock1.ogg"
+                    },
+                    {
+                        artist: "The Ramones",
+                        track: "Blitzkrieg Bop",
+                        path: "../../samples/punk/punkrock2.ogg"
+                    },
+                    {
+                        artist: "Buzzcocks",
+                        track: "What Do I Get?",
+                        path: "../../samples/punk/punkrock3.ogg"
+                    },
+                    {
+                        artist: "The Clash",
+                        track: "White Riot",
+                        path: "../../samples/punk/punkrock4.ogg"
+                    },
+                    {
+                        artist: "The Undertones",
+                        track: "Teenage Kicks",
+                        path: "../../samples/punk/punkrock5.ogg"
+                    },
+                    {
+                        artist: "The Damned",
+                        track: "New Rose",
+                        path: "../../samples/punk/punkrock6.ogg"
+                    },
+                    {
+                        artist: "The Saints",
+                        track: "(I'm) Stranded",
+                        path: "../../samples/punk/punkrock7.ogg"
+                    },
+                    {
+                        artist: "The Adverts",
+                        track: "Gary Gilmore's Eyes",
+                        path: "../../samples/punk/punkrock8.ogg"
+                    },
+                    {
+                        artist: "The Jam",
+                        track: "Going Underground",
+                        path: "../../samples/punk/punkrock9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-punk').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-punk-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-punk"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

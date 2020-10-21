@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Future House</title>
+    </head>
+
+    <body id="futurehouse">
+        <div class="box house">
+            <h1>FUTURE HOUSE</h1>
+
+            <p>Emerging in the 2010s, some musicians took the musical characteristics of Deep House (especially regarding its chromatic chords and use of 7ths, 9ths and 13ths) and applied them to the upbeat sounds of "EDM" such as Anthem House which was popular at the time. The rise of Future House is generally credited to Oliver Heldens with his international chart successes of "Gecko (Overdrive)" and "Last All Night (Koala)" which brought the genre to wider mainstream recognition in 2014. Following the success of Oliver Heldens' tracks, other artists such as Don Diablo, Kerri Chandler, Martin Solveig, Mesto and Swanky Tunes have since incorporated the sound into their work, leading some commentators to observe and criticise the commercialisation of the style, just like what happened with Anthem House. Stylistically, songs within the genre are normally characterised by a muted melody with a metallic, elastic sounding drop and frequency modulated basslines. Although the genre didn't receive any crossovers into Pop music, the genre remains one of the top-selling genres of Beatport and is frequently featured at EDM festivals.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-house-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-house-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Lucas & Steve x Mike Williams x Curbi",
+                        track: "Let's Go",
+                        path: "../../samples/house/futurehouse1.ogg"
+                    },
+                    {
+                        artist: "Alesso feat. Sirena",
+                        track: "Sweet Escape (Pep & Rash Remix)",
+                        path: "../../samples/house/futurehouse2.ogg"
+                    },
+                    {
+                        artist: "Pep & Rash x Lucas & Steve",
+                        track: "Enigma",
+                        path: "../../samples/house/futurehouse3.ogg"
+                    },
+                    {
+                        artist: "Oliver Heldens & Throttle",
+                        track: "Waiting",
+                        path: "../../samples/house/futurehouse4.ogg"
+                    },
+                    {
+                        artist: "Don Diablo",
+                        track: "Save A Little Love",
+                        path: "../../samples/house/futurehouse5.ogg"
+                    },
+                    {
+                        artist: "Swanky Tunes & Going Deeper",
+                        track: "Far From Home",
+                        path: "../../samples/house/futurehouse6.ogg"
+                    },
+                    {
+                        artist: "Tchami feat. Stacy Barthe",
+                        track: "After Life",
+                        path: "../../samples/house/futurehouse7.ogg"
+                    },
+                    {
+                        artist: "Mike Williams",
+                        track: "The Beat",
+                        path: "../../samples/house/futurehouse8.ogg"
+                    },
+                    {
+                        artist: "Sam Feldt x Lush & Simon feat. INNA",
+                        track: "Fade Away (Calvo Remix)",
+                        path: "../../samples/house/futurehouse9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-house').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-house-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-house"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

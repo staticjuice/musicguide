@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Techstep</title>
+    </head>
+
+    <body id="techstep">
+        <div class="box drumandbass">
+            <h1>TECHSTEP</h1>
+
+            <p>Toward the end of the 90s, Hardstep gets pushed aside by the successor of Darkstep and gives birth to the rise of Techstep. This technical Drum &amp; Bass, influenced by Industrial Techno, barely had anything in common with the funky, sophisticated Detroit sound. Filled with heavily manipulated Reese-basslines, sci-fi references and so-called "butcher beats", this should've been called Industrial Drum &amp; Bass &ndash; loud, uncompromising, grotesque, nihilistic factory noise. Techstep almost immediately saw the potential of heavy Drum &amp; Bass thanks to Hardstep, and took it up another notch. Full of sound effect experimentation, it was an antimusical sadomasochistic soundtrack, just like early Industrial but painted for a gritty post-Rave selfish world, instead of a conceptual movement. Though Techstep is stylistically more linked to its predecessor Darkstep, its joining with Hardstep illustrates Drum &amp; Bass' rapid transformation in the mid-90s and what that expresses &amp; a requiem for a lost Rave dream, ruptured into an aural nightmare, like Heavy Metal after the end of the flower power age.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-drumandbass-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-drumandbass-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Jonny L",
+                        track: "Piper (Grooverider Remix)",
+                        path: "../../samples/drumandbass/techstep1.ogg"
+                    },
+                    {
+                        artist: "Ed Rush, Optical & Fierce",
+                        track: "Alien Girl",
+                        path: "../../samples/drumandbass/techstep2.ogg"
+                    },
+                    {
+                        artist: "Alex Reece",
+                        track: "Pulp Fiction (Lemon D Remix)",
+                        path: "../../samples/drumandbass/techstep3.ogg"
+                    },
+                    {
+                        artist: "Ganja Kru",
+                        track: "Politrix",
+                        path: "../../samples/drumandbass/techstep4.ogg"
+                    },
+                    {
+                        artist: "Eye-D & Kid Entropy",
+                        track: "Wireless",
+                        path: "../../samples/drumandbass/techstep5.ogg"
+                    },
+                    {
+                        artist: "Decoder & Substance",
+                        track: "Hazardous",
+                        path: "../../samples/drumandbass/techstep6.ogg"
+                    },
+                    {
+                        artist: "Technical Itch",
+                        track: "Darkhalf",
+                        path: "../../samples/drumandbass/techstep7.ogg"
+                    },
+                    {
+                        artist: "The Vagrant",
+                        track: "Stealth",
+                        path: "../../samples/drumandbass/techstep8.ogg"
+                    },
+                    {
+                        artist: "Spor",
+                        track: "Aztec",
+                        path: "../../samples/drumandbass/techstep9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-drumandbass').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-drumandbass-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-drumandbass"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

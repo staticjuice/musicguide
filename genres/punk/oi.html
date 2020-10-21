@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Oi!</title>
+    </head>
+
+    <body id="oi">
+        <div class="box punk">
+            <h1>OI!</h1>
+
+            <p>Following the lead of first-wave British Punk bands, in the late 1970s second-wave units sought to realign Punk Rock with a working-class, street-level following. For that purpose, they believed the music needed to stay "accessible and unpretentious". Their style was originally called "Real Punk" or Street Punk &ndash; The name Oi! is partly derived from the Cockney Rejects' habit of shouting "Oi! Oi! Oi!" before each song, instead of the time-honoured "1,2,3,4!" The Oi! movement was fueled by a sense that many participants in the early Punk Eock scene were trendy university people using long words, trying to be artistic and losing touch. Punk was meant to be the voice of the dole queue, and in reality most of them were not. But Oi! was the reality of the Punk mythology. Although most Oi! bands in the initial wave were apolitical or left wing, many of them began to attract a white power skinhead following. Racist skinheads sometimes disrupted Oi! concerts by shouting fascist slogans and starting fights, but some Oi! bands were reluctant to endorse criticism of their fans from what they perceived as the "middle-class establishment".</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Cockney Rejects",
+                        track: "Oi! Oi! Oi!",
+                        path: "../../samples/punk/oi1.ogg"
+                    },
+                    {
+                        artist: "Sham 69",
+                        track: "If The Kids Are United",
+                        path: "../../samples/punk/oi2.ogg"
+                    },
+                    {
+                        artist: "Cock Sparrer",
+                        track: "Take 'Em All",
+                        path: "../../samples/punk/oi3.ogg"
+                    },
+                    {
+                        artist: "4 Skins",
+                        track: "Chaos",
+                        path: "../../samples/punk/oi4.ogg"
+                    },
+                    {
+                        artist: "Blitz",
+                        track: "Razors In The Night",
+                        path: "../../samples/punk/oi5.ogg"
+                    },
+                    {
+                        artist: "The Business",
+                        track: "Suburban Rebels",
+                        path: "../../samples/punk/oi6.ogg"
+                    },
+                    {
+                        artist: "The Oppressed",
+                        track: "Ultra Violence",
+                        path: "../../samples/punk/oi7.ogg"
+                    },
+                    {
+                        artist: "Bishops Green",
+                        track: "Tumbling Down",
+                        path: "../../samples/punk/oi8.ogg"
+                    },
+                    {
+                        artist: "Evil Conduct",
+                        track: "Remember 81",
+                        path: "../../samples/punk/oi9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-punk').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-punk-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-punk"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

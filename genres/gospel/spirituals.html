@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Spirituals</title>
+    </head>
+
+    <body id="spirituals">
+        <div class="box gospel">
+            <h1>SPIRITUALS</h1>
+
+            <p>An interesting fact about Popular Music is that it emerged out of necessity rather than being a form of art or expression. The earliest genres can be traced back as early as the 19th century, at a time when slavery of African people was still omnipresent in the United States. When African slaves were brought to the United States and Christianised, they began to perceive biblical parallels to their own situation (and were sometimes even encouraged to do so by zealously Evangelical whites). Thus, many Spirituals address themes of freedom, earthly suffering and hope for deliverance. They were sung both at worship services and in the fields and were passed down orally from generation to generation. Given those origins, Spirituals are usually performed very simply and written in repetitive, easily remembered structures (for example, many verses in Spirituals include a one-line refrain that's sung by the entire group and repeated after each new line of the verse). In that sense, Spirituals often bear a resemblance to secular pre-war Blues, a music stemming from a similarly rural lineage.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-gospel">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-gospel-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-gospel-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Ed Young",
+                        track: "Jim And John",
+                        path: "../../samples/gospel/spirituals1.ogg"
+                    },
+                    {
+                        artist: "Ervin Webb",
+                        track: "I'm Going Home",
+                        path: "../../samples/gospel/spirituals2.ogg"
+                    },
+                    {
+                        artist: "Ed Lewis",
+                        track: "Tom Devil",
+                        path: "../../samples/gospel/spirituals3.ogg"
+                    },
+                    {
+                        artist: "Lightning",
+                        track: "Long John",
+                        path: "../../samples/gospel/spirituals4.ogg"
+                    },
+                    {
+                        artist: "Johnny Lee Moore",
+                        track: "Eighteen Hammers",
+                        path: "../../samples/gospel/spirituals5.ogg"
+                    },
+                    {
+                        artist: "John Davis",
+                        track: "Blow Gabriel",
+                        path: "../../samples/gospel/spirituals6.ogg"
+                    },
+                    {
+                        artist: "Jesse Lee Pratcher",
+                        track: "Green Sally, Up",
+                        path: "../../samples/gospel/spirituals7.ogg"
+                    },
+                    {
+                        artist: "James Carter",
+                        track: "Po' Lazarus",
+                        path: "../../samples/gospel/spirituals8.ogg"
+                    },
+                    {
+                        artist: "Dock Reed",
+                        track: "Troubled Lord I'm Troubled",
+                        path: "../../samples/gospel/spirituals9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-gospel').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-gospel-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-gospel"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Deep House</title>
+    </head>
+
+    <body id="deephouse">
+        <div class="box house">
+            <h1>DEEP HOUSE</h1>
+
+            <p>A strong and undefeated house within the family line of House is Deep House, the somewhat opposite counterweight for Eurodance. Deep House has an endless appeal by going back to the primary Roots of House. Fusion instruments (such as Hammond organs and electric pianos) give Deep House a funky, warm sound. The most typical characteristic of Deep House is a total absence of climax and lyrics &ndash; the music is one long mix of groovy House beats. After Deep House, the closely related genre Funky House emerged &ndash; a more Funk than Soul-orientated variant. Deep House forms the opposing pole of a polarised House universe &ndash; ambient and soulful versus hard and sharp, which has turned both sides into love-it-or-hate-it styles. Deep House's average tempo is slightly slower than Chicago's (120 BPM) and often features downtuned or downsampled sounds, which sound like they are heard underwater. As such, Deep House submerges the listener in the groovy waves of soulful House. It is not there to relentlessly blast impulses into the brain &ndash; it is there to party all night long without excesses.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-house">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-house-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-house-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Dusky",
+                        track: "Cold Heart",
+                        path: "../../samples/house/deephouse1.ogg"
+                    },
+                    {
+                        artist: "Larry Heard",
+                        track: "Missing You",
+                        path: "../../samples/house/deephouse2.ogg"
+                    },
+                    {
+                        artist: "SNBRN feat. Kerli",
+                        track: "Raindrops",
+                        path: "../../samples/house/deephouse3.ogg"
+                    },
+                    {
+                        artist: "Me & My Toothbrush",
+                        track: "One Thing (Nora En Pure Remix)",
+                        path: "../../samples/house/deephouse4.ogg"
+                    },
+                    {
+                        artist: "Miguel Migs",
+                        track: "Petalpushing",
+                        path: "../../samples/house/deephouse5.ogg"
+                    },
+                    {
+                        artist: "Philip George",
+                        track: "Wish You Were Mine",
+                        path: "../../samples/house/deephouse6.ogg"
+                    },
+                    {
+                        artist: "Saison",
+                        track: "Moments",
+                        path: "../../samples/house/deephouse7.ogg"
+                    },
+                    {
+                        artist: "Al Zanders",
+                        track: "Dexter's Morning",
+                        path: "../../samples/house/deephouse8.ogg"
+                    },
+                    {
+                        artist: "Dusky",
+                        track: "Resin",
+                        path: "../../samples/house/deephouse9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-house').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-house-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-house"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

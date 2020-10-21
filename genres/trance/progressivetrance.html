@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Progressive Trance</title>
+    </head>
+
+    <body id="progressivetrance">
+        <div class="box trance">
+            <h1>PROGRESSIVE TRANCE</h1>
+
+            <p>One of the most complicated stories in popular music history is the tangle between Progressive House and Progressive Trance. The House version is very, very Trance-like and the Trance version is strongly influenced by House. The word "Progressive" in Progressive House and Trance points to a progress of chords within the music &ndash; the song gradually evolves. Progressive Trance appears after and is influenced by (the second wave of) Progressive House. Between mainstream, radio-edited Balearic Trance and underground, uncompromising Psytrance, there was a need for a flexible middle ground. Inspired by the success and formula of Deep House, Trance evolves into much longer songs (thus easier to mix) with extended build-ups, chords and breakdowns. With an average tempo lower than most Trance (around 130 BPM) and heavy use of reverb, delay and washing sounds, Progressive Trance aims at a serious sound. Slightly heavy and gloomy and more subtle in its approach of melody (usually in a minor key), the genre is perhaps one of the most effective Trance genres to well up images from another reality.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-trance">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-trance-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-trance-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "BT",
+                        track: "Flaming June",
+                        path: "../../samples/trance/progressivetrance1.ogg"
+                    },
+                    {
+                        artist: "L.S.G.",
+                        track: "Netherworld",
+                        path: "../../samples/trance/progressivetrance2.ogg"
+                    },
+                    {
+                        artist: "M.I.K.E.",
+                        track: "Totally Fascinated (M.I.K.E.'s Totally Mix)",
+                        path: "../../samples/trance/progressivetrance3.ogg"
+                    },
+                    {
+                        artist: "Maor Levi",
+                        track: "Reflect",
+                        path: "../../samples/trance/progressivetrance4.ogg"
+                    },
+                    {
+                        artist: "John O'Callaghan feat. Bryan Kearney",
+                        track: "Exactly (DJ Governor Remix)",
+                        path: "../../samples/trance/progressivetrance5.ogg"
+                    },
+                    {
+                        artist: "Darude",
+                        track: "Passing By",
+                        path: "../../samples/trance/progressivetrance6.ogg"
+                    },
+                    {
+                        artist: "Markus Schulz feat. Ana Criado",
+                        track: "Surreal (Omnia Remix)",
+                        path: "../../samples/trance/progressivetrance7.ogg"
+                    },
+                    {
+                        artist: "Arnej",
+                        track: "For The People",
+                        path: "../../samples/trance/progressivetrance8.ogg"
+                    },
+                    {
+                        artist: "Sneijder",
+                        track: "Away From Here (Arty Remix)",
+                        path: "../../samples/trance/progressivetrance9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-trance').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-trance-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-trance"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

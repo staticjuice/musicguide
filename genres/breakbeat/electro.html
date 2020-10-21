@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Electro</title>
+    </head>
+
+    <body id="electro">
+        <div class="box breakbeat">
+            <h1>ELECTRO</h1>
+
+            <p>True Electro, the beginning of Breakbeat, is essentially Hip Hop music with lots of Krautrock influences (particularly Kraftwerk). American rappers embraced the German revolutionary music and quickly started making Hip Hop music with the aid of drum machines and sequencers, resulting in digital sampling and looping of breakbeats. Electro has few vocals let alone raps, though if they are present they are usually vocoded. Robotic breakdancing and vocoders give Electro that stereotypical futuristic "robo-feel", often imitated or parodied. On the other hand, the experiment of Old School Rap found itself in a precarious and fragile state at the beginning of the 80s. The music never really caught on and was in danger of being suppressed by Synthpop, which was growing exponentially in popularity. With lots of spacy, robotic sounds and basic synthesiser melodies, this was a completely different sound than your average Rap song or any early 80s genre for that matter. It must come as no surprise, therefore, that Electro's mission was accomplished and its influence on further electronic music beyond the scale.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-breakbeat-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-breakbeat-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Kraftwerk",
+                        track: "Radioactivity",
+                        path: "../../samples/breakbeat/electro1.ogg"
+                    },
+                    {
+                        artist: "Afrika Bambaataa",
+                        track: "Planet Rock",
+                        path: "../../samples/breakbeat/electro2.ogg"
+                    },
+                    {
+                        artist: "Freestyle",
+                        track: "It's Automatic",
+                        path: "../../samples/breakbeat/electro3.ogg"
+                    },
+                    {
+                        artist: "Mantronix",
+                        track: "Needle To The Groove",
+                        path: "../../samples/breakbeat/electro4.ogg"
+                    },
+                    {
+                        artist: "Herbie Hancock",
+                        track: "Rockit",
+                        path: "../../samples/breakbeat/electro5.ogg"
+                    },
+                    {
+                        artist: "The Alliance",
+                        track: "Action",
+                        path: "../../samples/breakbeat/electro6.ogg"
+                    },
+                    {
+                        artist: "B.O.S.E.",
+                        track: "Rock The World",
+                        path: "../../samples/breakbeat/electro7.ogg"
+                    },
+                    {
+                        artist: "Newcleus",
+                        track: "Computer Age (Push The Button)",
+                        path: "../../samples/breakbeat/electro8.ogg"
+                    },
+                    {
+                        artist: "The Egyptian Lover",
+                        track: "Egypt Egypt",
+                        path: "../../samples/breakbeat/electro9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-breakbeat').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-breakbeat-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-breakbeat"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

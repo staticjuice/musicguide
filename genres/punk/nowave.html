@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>No Wave</title>
+    </head>
+
+    <body id="nowave">
+        <div class="box punk">
+            <h1>NO WAVE</h1>
+
+            <p>No Wave was a cultural avant-garde movement sprawling forth out of the darker, more industrial and abandoned places of New York City. Many intellectual artists could no longer bear the depressing events of the 70s, nor the irony of the rising tendency to make New Wave catchier and happier. In the concrete underground jungle of their urban warzone, they created a soundtrack fit for total apocalypse &ndash; instrumental, atonal, eclectic, super pissed off and depressing Post-Post-Punk. Often there were extremely chaotic passages directly inspired by Free Jazz. But No Wave was more than just music &ndash; directors, inspired by the French Nouvelle Vague movement and performance artists displayed similar expressions of deconstructivism and nihilism. The minimal lifespan of No Wave can be explained by the absence of a unified goal. All No Wave artists were connected by their rejection of everything, yet failed to become a conglomerated movement. If it weren't for Brian Eno's infamous compilation "No New York", No Wave's face would probably still be masqueraded in the grainy low-key shadows it so dearly embraced.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Teenage Jesus And The Jerks",
+                        track: "The Closet",
+                        path: "../../samples/punk/nowave1.ogg"
+                    },
+                    {
+                        artist: "Swans",
+                        track: "No Words No Thoughts",
+                        path: "../../samples/punk/nowave2.ogg"
+                    },
+                    {
+                        artist: "Live Skull",
+                        track: "Sparky",
+                        path: "../../samples/punk/nowave3.ogg"
+                    },
+                    {
+                        artist: "Mars",
+                        track: "Helen Forsdale",
+                        path: "../../samples/punk/nowave4.ogg"
+                    },
+                    {
+                        artist: "Theoretical Girls",
+                        track: "Computer Dating",
+                        path: "../../samples/punk/nowave5.ogg"
+                    },
+                    {
+                        artist: "The Lounge Lizards",
+                        track: "Do The Wrong Thing",
+                        path: "../../samples/punk/nowave6.ogg"
+                    },
+                    {
+                        artist: "Suicide",
+                        track: "Wild In Blue",
+                        path: "../../samples/punk/nowave7.ogg"
+                    },
+                    {
+                        artist: "The Contortions",
+                        track: "Contort Yourself",
+                        path: "../../samples/punk/nowave8.ogg"
+                    },
+                    {
+                        artist: "Sonic Youth",
+                        track: "Death Valley '69",
+                        path: "../../samples/punk/nowave9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-punk').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-punk-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-punk"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

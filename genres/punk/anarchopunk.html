@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Anarcho-Punk</title>
+    </head>
+
+    <body id="anarchopunk">
+        <div class="box punk">
+            <h1>ANARCHO-PUNK</h1>
+
+            <p>Punk Rock was besides music also a marketing machine, cleverly steered by the movement's frontman and Sex Pistol's manager Malcolm McLaren. In response, a new subgenre answered to the machine &ndash; Anarcho-Punk. These bands swore by heavy DIY approach, little marketing or publicity and by their own record production. A strong community sense is another trademark of Anarcho-Punk, both by the artists and their fans. But most importantly are real political messages, fueled by a distaste for the lyrical shallowness of some of Punk Rock's most famous bands. Political reaction grew stronger when conservative Margaret Thatcher took office in the UK in 1979, who proved to be a long-lasting punching bag for Punk's offspring genres. A while after the development of Hardcore Punk, Anarcho-Punk gets heavily influenced by Metal. This is clearly discernible in both a more chaotic and faster sound. Two Punk Rock subgenres emerge &ndash; Crust Punk and D-Beat. Crust is a heavy, bass-filled style, much more nihilistic and bleak than Anarcho. D-Beat is a smaller and more straightforward style named after its repetitive, stuttering drum beats.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-punk">9</div></div>
+                <div class="d-block d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Flux Of Pink Indians",
+                        track: "They Lie, We Die",
+                        path: "../../samples/punk/anarchopunk1.ogg"
+                    },
+                    {
+                        artist: "Subhumans",
+                        track: "No",
+                        path: "../../samples/punk/anarchopunk2.ogg"
+                    },
+                    {
+                        artist: "Nausea",
+                        track: "Smash Racism",
+                        path: "../../samples/punk/anarchopunk3.ogg"
+                    },
+                    {
+                        artist: "Hellbastard",
+                        track: "Death Camp",
+                        path: "../../samples/punk/anarchopunk4.ogg"
+                    },
+                    {
+                        artist: "Amebix",
+                        track: "Largactyl",
+                        path: "../../samples/punk/anarchopunk5.ogg"
+                    },
+                    {
+                        artist: "Avskum",
+                        track: "Capitalism Is Terrorism",
+                        path: "../../samples/punk/anarchopunk6.ogg"
+                    },
+                    {
+                        artist: "Doom",
+                        track: "Police Bastard",
+                        path: "../../samples/punk/anarchopunk7.ogg"
+                    },
+                    {
+                        artist: "Discharge",
+                        track: "Protest And Survive",
+                        path: "../../samples/punk/anarchopunk8.ogg"
+                    },
+                    {
+                        artist: "Anti Cimex",
+                        track: "Criminal Trap",
+                        path: "../../samples/punk/anarchopunk9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-punk').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-punk-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-punk"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

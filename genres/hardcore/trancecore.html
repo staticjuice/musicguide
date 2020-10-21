@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Trancecore</title>
+    </head>
+
+    <body id="trancecore">
+        <div class="box hardcore">
+            <h1>TRANCECORE</h1>
+
+            <p>At the end of the 90s, the "happy" sound of Happy Hardcore had gone stale and predictable. In the UK, Happy Hardcore traded its happiness and formal structure for something rougher and free. Trancecore or "UK Hardcore" is essentially the survival outcome of Happy Hardcore &ndash; stronger, faster, harder and less happy. The type of music went really well with Trance, merging into a new type of music. Just like Trance, different channels of melodies, sound effects and basslines are part of the music, and all of the songs are instrumental. Because Trancecore fuses Hardcore with Trance it is very similar to the fusions of either Acid Trance or Psychedelic Trance with Hardcore, respectively known as Freeform or Acidcore. The connection between these two subgenres is unsurprisingly the heavy use of the TB-303, which becomes explored (or even abused) in every possible way, and is no stranger in the world of Trancecore either. Therefore, all these genres are one big bowl of acid and spacy speedy Hardcore, as if Rave never died. This current sound similarly has also found followers from all corners of the globe.</p>
+
+            <div class="row icon-list">
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hardcore">1</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hardcore">2</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hardcore">3</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hardcore">4</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hardcore">5</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hardcore">6</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hardcore">7</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hardcore">8</div></div>
+                <div class="col-lg-1 col-xs-1"><div class="buttons buttons-hardcore">9</div></div>
+                <div class="d-lg-none col-lg-1 col-xs-1"><div class="buttons buttons-hardcore-stop">&FilledSmallSquare;</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="d-none d-lg-block col-md-1 stop"><div class="buttons buttons-hardcore-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Dougal & Gammer",
+                        track: "Jam The Nightclub",
+                        path: "../../samples/hardcore/trancecore1.ogg"
+                    },
+                    {
+                        artist: "Deejay Bee & Overflow feat. Vision",
+                        track: "Sunrise",
+                        path: "../../samples/hardcore/trancecore2.ogg"
+                    },
+                    {
+                        artist: "Alek Száhala",
+                        track: "Darkstar",
+                        path: "../../samples/hardcore/trancecore3.ogg"
+                    },
+                    {
+                        artist: "CLSM",
+                        track: "Liberation",
+                        path: "../../samples/hardcore/trancecore4.ogg"
+                    },
+                    {
+                        artist: "Chwhynny",
+                        track: "Morris Call",
+                        path: "../../samples/hardcore/trancecore5.ogg"
+                    },
+                    {
+                        artist: "Scott Majestik",
+                        track: "Acid Dreams",
+                        path: "../../samples/hardcore/trancecore6.ogg"
+                    },
+                    {
+                        artist: "Ranzor",
+                        track: "Flux",
+                        path: "../../samples/hardcore/trancecore7.ogg"
+                    },
+                    {
+                        artist: "Mr B vs K-Complex",
+                        track: "The World Is Strange",
+                        path: "../../samples/hardcore/trancecore8.ogg"
+                    },
+                    {
+                        artist: "DJ Delta vs K-Complex",
+                        track: "The Retreat",
+                        path: "../../samples/hardcore/trancecore9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hardcore').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hardcore-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hardcore"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
