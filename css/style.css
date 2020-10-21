@@ -77,7 +77,7 @@ h1 {
 }
 
 #genres-grid h1 {
-    font-family: ProductSansRegular;
+    font-family: 'ProductSansRegular';
     top: 41.25%; left: 0; bottom: 0; right: 0;
     font-size: 2.75vw;
     position: absolute;
@@ -93,7 +93,7 @@ h1 {
 }
 
 #genres-heading-mobile {
-    padding-top: 1em;
+    padding-top: 1.5em;
     font-size: 4.25vw;
     color: #FFF;
     text-align: center;
@@ -333,7 +333,7 @@ h1 {
 #countrypop {background: url("../images/country/countrypop.jpg") center center no-repeat fixed; background-size: cover; }
 #outlawcountry {background: url("../images/country/outlawcountry.jpg") center center no-repeat fixed; background-size: cover; }
 #neotraditionalcountry {background: url("../images/country/neotraditionalcountry.jpg") center center no-repeat fixed; background-size: cover; }
-#alternativecountry {background: url("../images/country/indiecountry.jpg") center center no-repeat fixed; background-size: cover; }
+#alternativecountry {background: url("../images/country/alternativecountry.jpg") center center no-repeat fixed; background-size: cover; }
 
 #rhythmandblues {background: url("../images/rhythmandblues/rhythmandblues.jpg") center center no-repeat fixed; background-size: cover; }
 #doowop {background: url("../images/rhythmandblues/doowop.jpg") center center no-repeat fixed; background-size: cover; }
@@ -347,7 +347,7 @@ h1 {
 #newjackswing {background: url("../images/rhythmandblues/newjackswing.jpg") center center no-repeat fixed; background-size: cover; }
 #neosoul {background: url("../images/rhythmandblues/neosoul.jpg") center center no-repeat fixed; background-size: cover; }
 #urbancontemporary {background: url("../images/rhythmandblues/urbancontemporary.jpg") center center no-repeat fixed; background-size: cover; }
-#alternativerhythmandblues {background: url("../images/rhythmandblues/indierhythmandblues.jpg") center center no-repeat fixed; background-size: cover; }
+#alternativerhythmandblues {background: url("../images/rhythmandblues/alternativerhythmandblues.jpg") center center no-repeat fixed; background-size: cover; }
 
 #traditionalpop {background: url("../images/pop/traditionalpop.jpg") center center no-repeat fixed; background-size: cover; }
 #brillbuildingsound {background: url("../images/pop/brillbuildingsound.jpg") center center no-repeat fixed; background-size: cover; }
@@ -412,8 +412,8 @@ h1 {
 #postgrunge {background: url("../images/indie/postgrunge.jpg") center center no-repeat fixed; background-size: cover; }
 #postbritpop {background: url("../images/indie/postbritpop.jpg") center center no-repeat fixed; background-size: cover; }
 #emo {background: url("../images/indie/emo.jpg") center center no-repeat fixed; background-size: cover; }
-#screamo {background: url("../images/indie/screamo.jpg") center center no-repeat fixed; background-size: cover; }
 #garagerockrevival {background: url("../images/indie/garagerockrevival.jpg") center center no-repeat fixed; background-size: cover; }
+#dancepunk {background: url("../images/indie/dancepunk.jpg") center center no-repeat fixed; background-size: cover; }
 #indietronica {background: url("../images/indie/indietronica.jpg") center center no-repeat fixed; background-size: cover; }
 
 #mento {background: url("../images/reggae/mento.jpg") center center no-repeat fixed; background-size: cover; }
@@ -433,7 +433,7 @@ h1 {
 #eastcoastrap {background: url("../images/hiphop/eastcoastrap.jpg") center center no-repeat fixed; background-size: cover; }
 #westcoastrap {background: url("../images/hiphop/westcoastrap.jpg") center center no-repeat fixed; background-size: cover; }
 #jazzrap {background: url("../images/hiphop/jazzrap.jpg") center center no-repeat fixed; background-size: cover; }
-#alternativerap {background: url("../images/hiphop/indierap.jpg") center center no-repeat fixed; background-size: cover; }
+#alternativerap {background: url("../images/hiphop/alternativerap.jpg") center center no-repeat fixed; background-size: cover; }
 #crunk {background: url("../images/hiphop/crunk.jpg") center center no-repeat fixed; background-size: cover; }
 #trap {background: url("../images/hiphop/trap.jpg") center center no-repeat fixed; background-size: cover; }
 
