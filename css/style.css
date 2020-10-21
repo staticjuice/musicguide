@@ -18,7 +18,7 @@ h1 {
 }
 
 ::selection {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255,255,255,0.3);
 }
 
 ::-webkit-scrollbar {
@@ -31,7 +31,7 @@ h1 {
 }
 
 .allgenres::-webkit-scrollbar-track {
-    background: #080808;
+    background: #111;
 }
 
 .sidebar.pop::-webkit-scrollbar-thumb,
@@ -85,10 +85,10 @@ h1 {
     z-index: 1;
 }
 
-.img-row img {
+#genres-grid img {
     width: 100%;
     border-radius: 0.7em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     filter: brightness(40%);
 }
 
@@ -99,15 +99,12 @@ h1 {
     text-align: center;
 }
 
-.img-row-mobile img {
+.mobilerow img {
     width: 100%;
     margin-top: 4vw;
     border-radius: 0.7em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     filter: brightness(40%);
-}
-
-.mobilerow img {
     height: 25vw;
     object-fit: cover;
 }
@@ -235,7 +232,7 @@ h1 {
     width: 40em;
     height: 100vh;
     padding: 1.25em 1.5em 0.5em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     float: right;
     overflow: auto;
 }
@@ -252,7 +249,7 @@ h1 {
     padding: 1.5em;
     margin: 3.5em;
     border-radius: 0.7em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .classical { background-color: #705A3D; color: #FFF; }
