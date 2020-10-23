@@ -1,27 +1,119 @@
 @font-face { font-family: 'RobotoBlack'; src: url(../fonts/RobotoBlack.ttf); }
 @font-face { font-family: 'ProductSansRegular'; src: url(../fonts/ProductSansRegular.ttf); }
 @font-face { font-family: 'ProductSansBold'; src: url(../fonts/ProductSansBold.ttf); }
-* { font-family: 'ProductSansRegular'; line-height: 1.6em; }
-h1 { font-family: 'RobotoBlack'; font-size: 2.5em; margin-bottom: 0.5em; }
-a:link, a:visited, a:hover, a:active { color: #FFF; text-decoration: none; }
 
-::selection { background-color: rgba(255,255,255,0.3); }
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-thumb { background: #FFF; border-radius: 8px; }
-.allgenres::-webkit-scrollbar-track, .sidebar.pop::-webkit-scrollbar-thumb, .sidebar.experimental::-webkit-scrollbar-thumb { background: #222; }
+* {
+    font-family: 'ProductSansRegular';
+    line-height: 1.6em; }
 
-#introbox { color: #FFF; font-size: 3.75vw; position: absolute; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-#introbutton { font-size: 1.7em; color: #FFF; padding: 0.25em; border-radius: 0.1em; border: 0.1em solid #FFF; }
-#introbutton:hover { color: #FF6D00; border-color: #FF6D00; }
+h1 {
+    font-family: 'RobotoBlack';
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
 
-#genres-heading { margin: 1.5vw 9vw; font-size: 1.5vw; color: #FFF; }
-#genres-grid { margin: 0 9vw 1vw; }
-#genres-grid h1 { font-family: 'ProductSansRegular'; top: 41.25%; left: 0; bottom: 0; right: 0; font-size: 2.75vw; position: absolute; text-align: center; z-index: 1; }
-#genres-grid img { width: 100%; border-radius: 0.7em; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); filter: brightness(40%); }
+a:link, a:visited, a:hover, a:active {
+    color: #FFF;
+    text-decoration: none;
+}
 
-.genrelist { color: #FFF; padding: 1.2em 1.5em; font-size: 3.3vh; float: left; }
-.genrelist h1 { font-size: 2em; margin-bottom: 0.5em; }
-.supergenre:before { content: ""; position: fixed; z-index: -1; width: 100vw; height: 100vh; filter: brightness(40%); }
+::selection {
+    background-color:
+    rgba(255,255,255,0.3);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFF;
+    border-radius: 8px;
+}
+
+.allgenres::-webkit-scrollbar-track,
+.sidebar.pop::-webkit-scrollbar-thumb,
+.sidebar.experimental::-webkit-scrollbar-thumb {
+    background: #222;
+}
+
+/*---------------------------------------------------------------------------*/
+
+#introbox {
+    color: #FFF;
+    font-size: 3.75vw;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#introbutton {
+    font-size: 1.7em;
+    color: #FFF;
+    padding: 0.25em;
+    border-radius: 0.1em;
+    border: 0.1em solid #FFF;
+}
+
+#introbutton:hover {
+    color: #FF6D00;
+    border-color: #FF6D00;
+}
+
+/*---------------------------------------------------------------------------*/
+
+#genres-heading {
+    margin: 1.5vw 9vw;
+    font-size: 1.5vw;
+    color: #FFF;
+}
+
+#genres-grid {
+    margin: 0 9vw 1vw;
+}
+
+#genres-grid h1 {
+    font-family: 'ProductSansRegular';
+    top: 41.25%; left: 0; bottom: 0; right: 0;
+    font-size: 2.75vw;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+
+#genres-grid img {
+    width: 100%;
+    border-radius: 0.7em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    filter: brightness(40%);
+}
+
+/*---------------------------------------------------------------------------*/
+
+.genrelist {
+    color: #FFF;
+    padding: 1.2em 1.5em;
+    font-size: 3.3vh;
+    float: left;
+}
+
+.genrelist h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.supergenre:before {
+    content: "";
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(40%);
+    z-index: -1;
+}
+
+/*---------------------------------------------------------------------------*/
 
 .intro:before { background: url("../images/intro.jpg"); background-size: cover; }
 .allgenres { background: url("../images/wood.jpg"); background-size: cover; }
@@ -100,8 +192,25 @@ a:link, a:visited, a:hover, a:active { color: #FFF; text-decoration: none; }
 .mainclassical .genrelist ::selection { background: rgba(112,90,61,0.998); }
 .mainfolk .genrelist ::selection { background: rgba(198,164,77,0.998); }
 
-.sidebar { font-size: 1.8vh; width: 40em; height: 100vh; padding: 1.25em 1.5em 0.5em; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); float: right; overflow: auto; }
-.box { font-size: 1.6vh; width: 40em; padding: 1.5em; margin: 3.5em; border-radius: 0.7em; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); }
+.sidebar {
+    font-size: 1.8vh;
+    width: 40em; height: 100vh;
+    padding: 1.25em 1.5em 0.5em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    float: right;
+    overflow: auto;
+}
+
+/*---------------------------------------------------------------------------*/
+
+.box {
+    font-size: 1.6vh;
+    width: 40em;
+    padding: 1.5em;
+    margin: 3.5em;
+    border-radius: 0.7em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
 .gospel { background-color: #E57373; color: #FFF; }
 .blues { background-color: #283593; color: #FFF; }
@@ -392,7 +501,16 @@ a:link, a:visited, a:hover, a:active { color: #FFF; text-decoration: none; }
 #nordicfolk {background: url("../images/folk/nordicfolk.jpg") center center no-repeat fixed; background-size: cover; }
 #russianfolk {background: url("../images/folk/russianfolk.jpg") center center no-repeat fixed; background-size: cover; }
 
-.buttons { font-family: 'ProductSansBold'; font-size: 2.5em; text-align: center; width: 1em; line-height: 1.2em; user-select: none; border-radius: 0.1em; margin: 0.3em 0 0.6em; }
+.buttons {
+    font-family: 'ProductSansBold';
+    font-size: 2.5em;
+    text-align: center;
+    width: 1em;
+    line-height: 1.2em;
+    user-select: none;
+    border-radius: 0.1em;
+    margin: 0.3em 0 0.6em;
+}
 
 .buttons-gospel, .buttons-gospel-stop { background-color: #ED9C9C; }
 .buttons-blues, .buttons-blues-stop { background-color: #3F4FCA; }
@@ -465,25 +583,88 @@ a:link, a:visited, a:hover, a:active { color: #FFF; text-decoration: none; }
 .buttons-ukgarage.clicked, .buttons-ukgarage-stop.clicked,
 .buttons-hauntology.clicked, .buttons-hauntology-stop.clicked,
 .buttons-classical.clicked, .buttons-classical-stop.clicked,
-.buttons-folk.clicked, .buttons-folk-stop.clicked { box-shadow:inset 0em 0em 0em 0.1em #FFF; }
+.buttons-folk.clicked, .buttons-folk-stop.clicked {
+    box-shadow:inset 0em 0em 0em 0.1em #FFF;
+}
 
 .buttons-pop.clicked, .buttons-pop-stop.clicked,
-.buttons-experimental.clicked, .buttons-experimental-stop.clicked { box-shadow:inset 0em 0em 0em 0.1em #222; }
+.buttons-experimental.clicked, .buttons-experimental-stop.clicked {
+    box-shadow:inset 0em 0em 0em 0.1em #222;
+}
 
-.artisttrack { font-size: 1.3em; font-family: 'RobotoBlack'; display: inline; }
-.stop { float: right; margin-top: -2.2em; margin-right: 0.5em; }
+.artisttrack {
+    font-size: 1.3em;
+    font-family: 'RobotoBlack';
+    display: inline;
+}
+
+.stop {
+    float: right;
+    margin-top: -1.75em;
+    margin-right: 0.5em;
+}
+
+/*---------------------------------------------------------------------------*/
 
 @media (max-width: 991px) {
-    #introbox, .buttons { font-size: 2em; }
-    .allgenres { background-color: #222; background-image: none; }
-    #genres-heading { padding-top: 0.5em; font-size: 4vw; text-align: center; }
-    #genres-grid { margin: -1.5em 1.5em 1.5em; }
-    #genres-grid h1 { font-size: 6vw; }
-    #genres-grid img { margin-top: 4vw; height: 25vw; object-fit: cover; }
-    .genrelist { padding: 0.7em 1em; font-size: 5vw; }
-    .genrelist h1 { font-size: 1.5em; margin: 0.25em 0 0.5em; }
-    .sidebar { width: 100%; height: 100%; padding: 1.5em; font-size: 3.5vw; overflow: hidden; }
-    .box { font-size: 3.5vw; width: 86.5%; margin: 1.5em; }
-    .col-xs-1 { width: 9.5%; }
-    .artisttrack { font-size: 3.5vw; }
+    #introbox, .buttons {
+        font-size: 2em;
+    }
+
+    .allgenres {
+        background-color: #222;
+        background-image: none;
+    }
+
+    #genres-heading {
+        padding-top: 0.5em;
+        font-size: 4vw;
+        text-align: center;
+    }
+
+    #genres-grid {
+        margin: -1.5em 1.5em 1.5em;
+    }
+
+    #genres-grid h1 {
+        font-size: 5.75vw;
+        top: 46.5%;
+    }
+
+    #genres-grid img {
+        margin-top: 4vw;
+        height: 25vw;
+        object-fit: cover;
+    }
+
+    .genrelist {
+        padding: 0.7em 1em;
+        font-size: 6vw;
+    }
+
+    .genrelist h1 {
+        font-size: 1.75em;
+        margin: 0.25em 0 0.5em;
+    }
+
+    .sidebar {
+        width: 100%; height: 100%;
+        padding: 1.5em;
+        font-size: 4vw;
+        overflow: hidden;
+    }
+
+    .box {
+        font-size: 3.5vw;
+        width: 90%;
+        margin: 1.5em;
+    }
+
+    .artisttrack {
+        font-size: 3.5vw;
+    }
+
+    .col-1 {
+        margin-right: 0.525em;
+    }
 }
