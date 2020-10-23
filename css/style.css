@@ -628,8 +628,8 @@ only screen and (min-resolution: 1.25dppx) {
     }
 
     #genres-heading {
-        padding: 0.5em;
-        font-size: 4vw;
+        padding: 1em;
+        font-size: 5vw;
         text-align: center;
     }
 
