@@ -638,12 +638,12 @@ only screen and (min-resolution: 1.25dppx) {
     }
 
     #genres-grid h1 {
-        font-size: 5.75vw;
-        top: 28.5%;
+        font-size: 8vw;
+        top: 27.5%;
     }
 
     #genres-grid img {
-        height: 20vw;
+        height: 25vw;
         object-fit: cover;
     }
 
