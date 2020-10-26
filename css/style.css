@@ -47,9 +47,12 @@ a:link, a:visited, a:hover, a:active {
 #introbox {
     color: #FFF;
     font-size: 3.75vw;
-    position: absolute;
+    text-align: center;
     width: 100%;
-    top: 25%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #introbutton {
