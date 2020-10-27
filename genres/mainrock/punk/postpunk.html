@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Post-Punk</title>
+    </head>
+
+    <body id="postpunk">
+        <div class="box punk"><div class="year year-punk">1977</div>
+            <h1>POST-PUNK</h1>
+
+            <p>The Punk movement died around the same time Disco reached her peak. The fall of Punk juxtaposed to the rise of Disco cast a gloomy shadow of both fear and hate among Rock artists. This can be witnessed in the many genres interwoven in the same sociocultural framework as Post-Punk &ndash; Early Industrial and Noise genres, Goth Rock and the No Wave movement. But the immediate aftermath of Punk was Post-Punk &ndash; Punk Rock without its edges, but also without some of its amateurism and naïvety. In this genre, a dark, arty struggle is noticeable &ndash; a difficult coping with what society had become and the impotence of music to change it. Post-Punk songs became longer, less aggressive but more complex and challenging. Searching for new structures, Post-Punk explored less conventional techniques such as those found in Funk and Dub. Different Post-Punk songs can sound entirely different and a cohesive definition of the genre is lacking. The experimental nature of Post-Punk prevented a true countermovement as there was no unified sound, merely an endless quest. Only New Wave was capable of shedding a light at the end of the tunnel.</p>
+
+            <div class="row icon-list">
+                <div class="col-1"><div class="buttons buttons-punk">1</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">2</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">3</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">4</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">5</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">6</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">7</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">8</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Joy Division",
+                        track: "Love Will Tear Us Apart",
+                        path: "../../../samples/punk/postpunk1.ogg"
+                    },
+                    {
+                        artist: "The Psychedelic Furs",
+                        track: "Pretty In Pink",
+                        path: "../../../samples/punk/postpunk2.ogg"
+                    },
+                    {
+                        artist: "Public Image Ltd",
+                        track: "This Is Not A Love Song",
+                        path: "../../../samples/punk/postpunk3.ogg"
+                    },
+                    {
+                        artist: "Section 25",
+                        track: "Dirty Disco",
+                        path: "../../../samples/punk/postpunk4.ogg"
+                    },
+                    {
+                        artist: "The Fall",
+                        track: "Totally Wired",
+                        path: "../../../samples/punk/postpunk5.ogg"
+                    },
+                    {
+                        artist: "Gang Of Four",
+                        track: "Damaged Goods",
+                        path: "../../../samples/punk/postpunk6.ogg"
+                    },
+                    {
+                        artist: "Echo & The Bunnymen",
+                        track: "Bring On The Dancing Horses",
+                        path: "../../../samples/punk/postpunk7.ogg"
+                    },
+                    {
+                        artist: "Killing Joke",
+                        track: "Love Like Blood",
+                        path: "../../../samples/punk/postpunk8.ogg"
+                    },
+                    {
+                        artist: "Au Pairs",
+                        track: "It's Obvious",
+                        path: "../../../samples/punk/postpunk9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-punk').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-punk-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-punk"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

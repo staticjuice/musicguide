@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Progressive House</title>
+    </head>
+
+    <body id="progressivehouse">
+        <div class="box house"><div class="year year-house">1990</div>
+            <h1>PROGRESSIVE HOUSE</h1>
+
+            <p>There are actually two waves of Progressive House. The first wave arrives in the mid-90s &ndash; long, slightly psychedelic tracks also with lots of hyper-rhythmic percussion and primarily UK based. Highly confusing, this new genre was sometimes called "Trance" at the time, as Trance hadn't established itself as a supergenre yet. The second wave of Progressive House takes hold during the 2000s. Percussion and bass become heavier, but not more complex. Dynamic range also gets toned down, with all the sound frequencies lying closer together. Songs become even longer and are more often the work of relatively unknown DJs instead of album-orientated bands, aimed at long, progressing DJ sets. This second wave was mainly the reaction on another House subgenre &ndash; Handbag House, which is a soft, female-orientated, lightweight type of Eurodance in the mid-90s. Clearly the opposite in sound, Progressive House tries to please its target audience with its never-ending easy-to-mix pumping sound. And it worked due to a certain notion of sophistication and technology, though its name discloses rather an air of condescension.</p>
+
+            <div class="row icon-list">
+                <div class="col-1"><div class="buttons buttons-house">1</div></div>
+                <div class="col-1"><div class="buttons buttons-house">2</div></div>
+                <div class="col-1"><div class="buttons buttons-house">3</div></div>
+                <div class="col-1"><div class="buttons buttons-house">4</div></div>
+                <div class="col-1"><div class="buttons buttons-house">5</div></div>
+                <div class="col-1"><div class="buttons buttons-house">6</div></div>
+                <div class="col-1"><div class="buttons buttons-house">7</div></div>
+                <div class="col-1"><div class="buttons buttons-house">8</div></div>
+                <div class="col-1"><div class="buttons buttons-house">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-house-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Eric Prydz",
+                        track: "Liberate",
+                        path: "../../../samples/house/progressivehouse1.ogg"
+                    },
+                    {
+                        artist: "Deadmau5 feat. Chris James",
+                        track: "The Veldt",
+                        path: "../../../samples/house/progressivehouse2.ogg"
+                    },
+                    {
+                        artist: "Reflekt feat. Delline Bass",
+                        track: "Need To Feel Loved (Adam K & Soha Vocal Mix)",
+                        path: "../../../samples/house/progressivehouse3.ogg"
+                    },
+                    {
+                        artist: "Ben Preston",
+                        track: "New Planet",
+                        path: "../../../samples/house/progressivehouse4.ogg"
+                    },
+                    {
+                        artist: "Adam K & Soha",
+                        track: "Twilight",
+                        path: "../../../samples/house/progressivehouse5.ogg"
+                    },
+                    {
+                        artist: "Dinka",
+                        track: "White Christmas",
+                        path: "../../../samples/house/progressivehouse6.ogg"
+                    },
+                    {
+                        artist: "EDX",
+                        track: "Touched",
+                        path: "../../../samples/house/progressivehouse7.ogg"
+                    },
+                    {
+                        artist: "Glenn Morrison",
+                        track: "No Sudden Moves",
+                        path: "../../../samples/house/progressivehouse8.ogg"
+                    },
+                    {
+                        artist: "Pryda",
+                        track: "Allein",
+                        path: "../../../samples/house/progressivehouse9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-house').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-house-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-house"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

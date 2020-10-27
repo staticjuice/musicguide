@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Krautrock</title>
+    </head>
+
+    <body id="krautrock">
+        <div class="box experimental"><div class="year year-experimental">1969</div>
+            <h1>KRAUTROCK</h1>
+
+            <p>Krautrock refers to the legions of German bands of the early 70s that expanded the sonic possibilities of art and Progressive Rock. Instead of following in the direction of their British and American counterparts, who were moving toward Jazz and Classical-based compositions and concept albums, the German bands became more mechanical and electronic. Working with early synthesisers and splicing together seemingly unconnected reels of tape, bands like Faust, Can, and Neu! created a droning, pulsating sound that owed more to the Avant-Garde than to Rock &amp; Roll. Although the bands didn't make much of an impact while they were active in the 70s, their music anticipated much Post-Punk of the early 80s, particularly Industrial Rock. One band, however, chose a far more radical path than others by abandoning all Rock influences. Kraftwerk made the first completely electronic music that had recognisable structure, melody and bass. With Kraftwerk as arguably the most revolutionary popular music artist of all time, Krautrock is one of the most influential genres, bridging the gap between Rock and Electronic.</p>
+
+            <div class="row icon-list">
+                <div class="col-1"><div class="buttons buttons-experimental">1</div></div>
+                <div class="col-1"><div class="buttons buttons-experimental">2</div></div>
+                <div class="col-1"><div class="buttons buttons-experimental">3</div></div>
+                <div class="col-1"><div class="buttons buttons-experimental">4</div></div>
+                <div class="col-1"><div class="buttons buttons-experimental">5</div></div>
+                <div class="col-1"><div class="buttons buttons-experimental">6</div></div>
+                <div class="col-1"><div class="buttons buttons-experimental">7</div></div>
+                <div class="col-1"><div class="buttons buttons-experimental">8</div></div>
+                <div class="col-1"><div class="buttons buttons-experimental">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-experimental-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Kraftwerk",
+                        track: "Trans-Europe Express",
+                        path: "../../samples/experimental/krautrock1.ogg"
+                    },
+                    {
+                        artist: "Neu!",
+                        track: "Hallogallo",
+                        path: "../../samples/experimental/krautrock2.ogg"
+                    },
+                    {
+                        artist: "Can",
+                        track: "Vitamin C",
+                        path: "../../samples/experimental/krautrock3.ogg"
+                    },
+                    {
+                        artist: "Faust",
+                        track: "So Far",
+                        path: "../../samples/experimental/krautrock4.ogg"
+                    },
+                    {
+                        artist: "Amon Düül II",
+                        track: "Surrounded By The Stars",
+                        path: "../../samples/experimental/krautrock5.ogg"
+                    },
+                    {
+                        artist: "Ash Ra Tempel",
+                        track: "Amboss",
+                        path: "../../samples/experimental/krautrock6.ogg"
+                    },
+                    {
+                        artist: "Guru Guru",
+                        track: "Der Elektrolurch",
+                        path: "../../samples/experimental/krautrock7.ogg"
+                    },
+                    {
+                        artist: "Cosmic Jokers",
+                        track: "Galactic Joke",
+                        path: "../../samples/experimental/krautrock8.ogg"
+                    },
+                    {
+                        artist: "Sperrmüll",
+                        track: "No Freak Out",
+                        path: "../../samples/experimental/krautrock9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-experimental').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-experimental-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-experimental"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

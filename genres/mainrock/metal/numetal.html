@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Nu Metal</title>
+    </head>
+
+    <body id="numetal">
+        <div class="box metal"><div class="year year-metal">1993</div>
+            <h1>NU METAL</h1>
+
+            <p>When Nu Metal formed, the heaviest Metal genres of the time were all thrown into a large melting pot, but it was mostly Groove Metal and Rap Rock that formed the basis for Nu Metal. These genres were only a small step away from fusing Hip Hop or Breakbeat elements into Metal. The outcome was a recipe that could not fail because it was Rap, Rock and Metal all-in-one. Indeed, Nu Metal had many Hip Hop and few Metal elements &ndash; down-tuned riffs, breakbeats, scratching, emphasis on kick drums and most noticeably no guitar solos, though the genre lacked no heavy bass or aggressiveness anyway. Nu Metal is often linked to Emo, as piercing lyrics about frustration and depression (self-mutilation, suicide and abuse) find its way into the heart of adolescents through melancholic choruses &ndash; a very distinctive rupture with previous Metal genres. Fashion is another topic where Nu Metal breaks the rules, with a bizarre mix of Emo and Metal styles and some marginal extravaganza. All these elements contribute to a living paradigm of disturbance &ndash; psychosis in sound and flesh.</p>
+
+            <div class="row icon-list">
+                <div class="col-1"><div class="buttons buttons-metal">1</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">2</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">3</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">4</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">5</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">6</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">7</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">8</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-metal-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Limp Bizkit",
+                        track: "Nookie",
+                        path: "../../../samples/metal/numetal1.ogg"
+                    },
+                    {
+                        artist: "Korn",
+                        track: "Falling Away From Me",
+                        path: "../../../samples/metal/numetal2.ogg"
+                    },
+                    {
+                        artist: "Slipknot",
+                        track: "Wait And Bleed",
+                        path: "../../../samples/metal/numetal3.ogg"
+                    },
+                    {
+                        artist: "System Of A Down",
+                        track: "Chop Suey!",
+                        path: "../../../samples/metal/numetal4.ogg"
+                    },
+                    {
+                        artist: "Linkin Park",
+                        track: "In The End",
+                        path: "../../../samples/metal/numetal5.ogg"
+                    },
+                    {
+                        artist: "Papa Roach",
+                        track: "Last Resort",
+                        path: "../../../samples/metal/numetal6.ogg"
+                    },
+                    {
+                        artist: "Mudvayne",
+                        track: "Forget To Remember",
+                        path: "../../../samples/metal/numetal7.ogg"
+                    },
+                    {
+                        artist: "Coal Chamber",
+                        track: "Loco",
+                        path: "../../../samples/metal/numetal8.ogg"
+                    },
+                    {
+                        artist: "Disturbed",
+                        track: "Down With The Sickness",
+                        path: "../../../samples/metal/numetal9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-metal').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-metal-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-metal"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

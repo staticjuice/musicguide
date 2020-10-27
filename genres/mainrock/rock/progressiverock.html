@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Progressive Rock</title>
+    </head>
+
+    <body id="progressiverock">
+        <div class="box rock"><div class="year year-rock">1967</div>
+            <h1>PROGRESSIVE ROCK</h1>
+
+            <p>By the mid-60s the new 33 RPM long-play records had pushed away the older 78 RPM records, allowing for more playtime on one record. Thus shifted the focus from hit singles to elaborate concept albums, in which also longer songs were possible. Longer songs meant more opportunity to experiment with passages, structure and song progression (hence the genre name). The freeform and crossover of Psychedelic Rock inspired some progressive artists to experiment as well, but more towards Classical music than World music. Softer, longer and more intricate songs were the result, with lots of tempo changes and special instruments like a mellotron. It was contemplative, difficult to write music and not really meant for live performances, but to be mastered to perfection on vinyl. Because during the 60s, another key event in music history occurred that explains Progressive Rock's appeal &ndash; the appearance of stereo headphones and hi-fidelity speakers. Stereo becomes the norm instead of mono and music listening turns into an uncanny sensation through technology that still delivers excellent sound quality even by today's standards.</p>
+
+            <div class="row icon-list">
+                <div class="col-1"><div class="buttons buttons-rock">1</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">2</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">3</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">4</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">5</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">6</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">7</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">8</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-rock-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Pink Floyd",
+                        track: "Time",
+                        path: "../../../samples/rock/progressiverock1.ogg"
+                    },
+                    {
+                        artist: "The Moody Blues",
+                        track: "Nights In White Satin",
+                        path: "../../../samples/rock/progressiverock2.ogg"
+                    },
+                    {
+                        artist: "Jethro Tull",
+                        track: "Aqualung",
+                        path: "../../../samples/rock/progressiverock3.ogg"
+                    },
+                    {
+                        artist: "Yes",
+                        track: "Siberian Khatru",
+                        path: "../../../samples/rock/progressiverock4.ogg"
+                    },
+                    {
+                        artist: "Emerson, Lake & Palmer",
+                        track: "Knife Edge",
+                        path: "../../../samples/rock/progressiverock5.ogg"
+                    },
+                    {
+                        artist: "Procol Harum",
+                        track: "A Whiter Shade Of Pale",
+                        path: "../../../samples/rock/progressiverock6.ogg"
+                    },
+                    {
+                        artist: "Marillion",
+                        track: "Script For A Jester's Tear",
+                        path: "../../../samples/rock/progressiverock7.ogg"
+                    },
+                    {
+                        artist: "Rush",
+                        track: "Xanadu",
+                        path: "../../../samples/rock/progressiverock8.ogg"
+                    },
+                    {
+                        artist: "King Crimson",
+                        track: "In The Court Of The Crimson King",
+                        path: "../../../samples/rock/progressiverock9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-rock').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-rock-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-rock"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

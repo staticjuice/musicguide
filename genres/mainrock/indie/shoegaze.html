@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Shoegaze</title>
+    </head>
+
+    <body id="shoegaze">
+        <div class="box indie"><div class="year year-indie">1988</div>
+            <h1>SHOEGAZE</h1>
+
+            <p>Mostly interchangeable with Dream Pop but more saturated in reverb, the term "shoegazing" was coined by the British music press to ridicule the stage presence of a wave of groups who stood still during live performances in a detached, introspective, non-confrontational state, often with their heads down, as the heavy use of effects pedals meant the performers were often looking down at their feet during concerts. The sound of the music was overwhelmingly loud, with long, droning riffs, waves of distortion, and cascades of feedback. Vocals and melodies disappeared into the walls of guitars, creating a wash of sound where no instrument was distinguishable from the other. Almost none of the Shoegazers were dynamic performers, which prevented them from breaking through into the US market. In the early 90s &ndash; after the groups had dominated the British music press and Indie charts &ndash; the Shoegaze groups were swept aside by the twin tides of American Grunge and British Britpop. Some Shoegazers broke up within a few years, while other groups evolved with the times and were able to sustain careers well into the late 90s.</p>
+
+            <div class="row icon-list">
+                <div class="col-1"><div class="buttons buttons-indie">1</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">2</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">3</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">4</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">5</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">6</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">7</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">8</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "My Bloody Valentine",
+                        track: "Only Shallow",
+                        path: "../../../samples/indie/shoegaze1.ogg"
+                    },
+                    {
+                        artist: "Curve",
+                        track: "Horror Head",
+                        path: "../../../samples/indie/shoegaze2.ogg"
+                    },
+                    {
+                        artist: "Ride",
+                        track: "Seagull",
+                        path: "../../../samples/indie/shoegaze3.ogg"
+                    },
+                    {
+                        artist: "Slowdive",
+                        track: "Alison",
+                        path: "../../../samples/indie/shoegaze4.ogg"
+                    },
+                    {
+                        artist: "Cocteau Twins",
+                        track: "Pearly-Dewdrops' Drops",
+                        path: "../../../samples/indie/shoegaze5.ogg"
+                    },
+                    {
+                        artist: "A.R. Kane",
+                        track: "Green Hazed Daze",
+                        path: "../../../samples/indie/shoegaze6.ogg"
+                    },
+                    {
+                        artist: "The Jesus And Mary Chain",
+                        track: "Just Like Honey",
+                        path: "../../../samples/indie/shoegaze7.ogg"
+                    },
+                    {
+                        artist: "The Stone Roses",
+                        track: "I Wanna Be Adored",
+                        path: "../../../samples/indie/shoegaze8.ogg"
+                    },
+                    {
+                        artist: "Beach House",
+                        track: "Take Care",
+                        path: "../../../samples/indie/shoegaze9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-indie').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-indie-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-indie"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

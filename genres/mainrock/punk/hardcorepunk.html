@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Hardcore Punk</title>
+    </head>
+
+    <body id="hardcorepunk">
+        <div class="box punk"><div class="year year-punk">1979</div>
+            <h1>HARDCORE PUNK</h1>
+
+            <p>If Punk did survive, then it was in the spirit of Hardcore. Only this kind of no-nonsense Rock harboured the bursting energy typical of Punk and even took it a step further. Hardcore Punk is extremely fast, raw, heavy and explosive. Many Hardcore songs are even less than two minutes. It's just a kick in the head with drums, guitars and shouting, angry vocals. The anarchy and chaos tangible in the music seems to be the direct opposite of Hardcore's disciplined lifestyle &ndash; Hardcore artists and fans are often known to be puritanical, non-hedonistic, strict and loyal. Some subgroups take this very seriously (almost militant) and have their own subgenres such as Straight-Edge. The reason for this paradox (anarchy versus order) can be explained by the inner core of Hardcore, its essence &ndash; protest. Hardcore is all about critique on society, government and lifestyle. Hardcore Punk rose fast to popularity, leaving a long trail of subgenres in its wake &ndash; Straight-Edge (very purist and full of self-respect), Bent-Edge (more the opposite), Beatdown Hardcore (very heavy and slower) and Melodic Hardcore, which traded some velocity and fierceness for melody.</p>
+
+            <div class="row icon-list">
+                <div class="col-1"><div class="buttons buttons-punk">1</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">2</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">3</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">4</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">5</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">6</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">7</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">8</div></div>
+                <div class="col-1"><div class="buttons buttons-punk">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Wasted Youth",
+                        track: "Teenage Nark",
+                        path: "../../../samples/punk/hardcorepunk1.ogg"
+                    },
+                    {
+                        artist: "Bad Religion",
+                        track: "Sensory Overload",
+                        path: "../../../samples/punk/hardcorepunk2.ogg"
+                    },
+                    {
+                        artist: "Bad Brains",
+                        track: "Banned In D.C.",
+                        path: "../../../samples/punk/hardcorepunk3.ogg"
+                    },
+                    {
+                        artist: "Agnostic Front",
+                        track: "Victim In Pain",
+                        path: "../../../samples/punk/hardcorepunk4.ogg"
+                    },
+                    {
+                        artist: "Black Flag",
+                        track: "Nervous Breakdown",
+                        path: "../../../samples/punk/hardcorepunk5.ogg"
+                    },
+                    {
+                        artist: "Minor Threat",
+                        track: "Filler",
+                        path: "../../../samples/punk/hardcorepunk6.ogg"
+                    },
+                    {
+                        artist: "Circle Jerks",
+                        track: "Wild In The Streets",
+                        path: "../../../samples/punk/hardcorepunk7.ogg"
+                    },
+                    {
+                        artist: "Cro-Mags",
+                        track: "Hard Times",
+                        path: "../../../samples/punk/hardcorepunk8.ogg"
+                    },
+                    {
+                        artist: "Dead Kennedys",
+                        track: "Nazi Punks Fuckk Off",
+                        path: "../../../samples/punk/hardcorepunk9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-punk').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-punk-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-punk"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
