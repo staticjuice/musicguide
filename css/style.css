@@ -651,11 +651,6 @@ only screen and (min-resolution: 1.25dppx) {
         font-size: 2em;
     }
 
-    .allgenres {
-        background-color: #222;
-        background-image: none;
-    }
-
     #genres-heading {
         padding: 1em;
         font-size: 5vw;
