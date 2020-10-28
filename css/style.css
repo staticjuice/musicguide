@@ -216,6 +216,14 @@ a:link, a:visited, a:hover, a:active {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+.box h1 {
+    float: left;
+}
+
+.box p {
+    margin-top: 4.2em;
+}
+
 .year {
     font-family: 'ProductSansBold';
     font-size: 2em;
@@ -669,8 +677,16 @@ only screen and (min-resolution: 1.25dppx) {
         margin: 1.5em;
     }
 
+    .box h1 {
+        margin-bottom: 0.3em;
+    }
+
     .year {
-        display: none;
+        float: left;
+        margin-right: 100%;
+        margin-bottom: 0.5em;
+        font-size: 1.5em;
+        white-space: nowrap;
     }
 
     .artisttrack {
