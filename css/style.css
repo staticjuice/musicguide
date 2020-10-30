@@ -54,14 +54,13 @@ a:link, a:visited, a:hover, a:active {
     text-align: center;
     width: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #introbutton {
-    font-size: 1.8em;
-    padding: 0.2em;
+    font-size: 1.7em;
+    padding: 0.3em;
     border-radius: 0.15em;
     border: 0.1em solid #FFF;
 }
@@ -83,7 +82,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #genres-grid img {
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
     width: 100%;
     border-radius: 0.75em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -92,10 +91,12 @@ a:link, a:visited, a:hover, a:active {
 
 #genres-grid h1 {
     font-family: ProductSansRegular;
-    top: 38%; left: 0; right: 0;
     font-size: 2.75vw;
     position: absolute;
-    text-align: center;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 0.75em;
+    white-space: nowrap;
     z-index: 1;
 }
 
@@ -152,29 +153,29 @@ a:link, a:visited, a:hover, a:active {
 .experimental { background-color: #EDEDED; color: #222; }
 .hauntology { background-color: #C2185B; }
 
-.mainclassical .genrelist a:hover { color: #A18259; }
-.mainfolk .genrelist a:hover { color: #D8C188; }
-.mainblues .genrelist a:hover { color: #5361D0; }
-.mainjazz .genrelist a:hover { color: #F1B1B1; }
-.maincountry .genrelist a:hover { color: #B8C299; }
-.mainrhythmandblues .genrelist a:hover { color: #26A69A; }
-.mainpop .genrelist a:hover { color: #FFF176; }
-.mainrock .genrelist a:hover { color: #EF5350; }
-.mainmetal .genrelist a:hover { color: #424242; }
-.mainpunk .genrelist a:hover { color: #FFA726; }
-.mainindie .genrelist a:hover { color: #78909C; }
-.mainreggae .genrelist a:hover { color: #66BB6A; }
-.mainhiphop .genrelist a:hover { color: #79577F; }
-.mainindustrial .genrelist a:hover { color: #8D6E63; }
-.mainhouse .genrelist a:hover { color: #00DE95; }
-.maintrance .genrelist a:hover { color: #9426D9; }
-.maintechno .genrelist a:hover { color: #777777; }
-.mainhardcore .genrelist a:hover { color: #70675C; }
-.mainbreakbeat .genrelist a:hover { color: #A95B83; }
-.maindrumandbass .genrelist a:hover { color: #DD2251; }
-.mainukgarage .genrelist a:hover { color: #B59DDB; }
-.mainexperimental .genrelist a:hover { color: #BDBDBD; }
-.mainhauntology .genrelist a:hover { color: #EC407A; }
+.mainclassical a:hover { color: #A18259; }
+.mainfolk a:hover { color: #D8C188; }
+.mainblues a:hover { color: #5361D0; }
+.mainjazz a:hover { color: #F1B1B1; }
+.maincountry a:hover { color: #B8C299; }
+.mainrhythmandblues a:hover { color: #26A69A; }
+.mainpop a:hover { color: #FFF176; }
+.mainrock a:hover { color: #EF5350; }
+.mainmetal a:hover { color: #424242; }
+.mainpunk a:hover { color: #FFA726; }
+.mainindie a:hover { color: #78909C; }
+.mainreggae a:hover { color: #66BB6A; }
+.mainhiphop a:hover { color: #79577F; }
+.mainindustrial a:hover { color: #8D6E63; }
+.mainhouse a:hover { color: #00DE95; }
+.maintrance a:hover { color: #9426D9; }
+.maintechno a:hover { color: #777777; }
+.mainhardcore a:hover { color: #70675C; }
+.mainbreakbeat a:hover { color: #A95B83; }
+.maindrumandbass a:hover { color: #DD2251; }
+.mainukgarage a:hover { color: #B59DDB; }
+.mainexperimental a:hover { color: #BDBDBD; }
+.mainhauntology a:hover { color: #EC407A; }
 
 .mainclassical .genrelist ::selection { background: rgba(112, 90, 61, 0.998); }
 .mainfolk .genrelist ::selection { background: rgba(198, 164, 77, 0.998); }
@@ -258,7 +259,7 @@ a:link, a:visited, a:hover, a:active {
     font-size: 2.5em;
     text-align: center;
     width: 1em;
-    line-height: 1.2em;
+    line-height: 1.2;
     user-select: none;
     border-radius: 0.1em;
     margin-bottom: 0.6em;
@@ -660,7 +661,6 @@ only screen and (min-resolution: 1.25dppx) {
 
     #genres-grid h1 {
         font-size: 8vw;
-        top: 25%;
     }
 
     #genres-grid img {
