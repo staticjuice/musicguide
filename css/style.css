@@ -91,12 +91,10 @@ a:link, a:visited, a:hover, a:active {
 
 #genres-grid h1 {
     font-family: ProductSansRegular;
-    font-size: 2.75vw;
+    top: 38%; left: 0; right: 0;
+    font-size: 2.7vw;
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    padding-bottom: 0.75em;
-    white-space: nowrap;
+    text-align: center;
     z-index: 1;
 }
 
@@ -661,10 +659,12 @@ only screen and (min-resolution: 1.25dppx) {
 
     #genres-grid h1 {
         font-size: 8vw;
+        top: 25%;
     }
 
     #genres-grid img {
         height: 25vw;
+        margin-bottom: 1.5em;
         object-fit: cover;
     }
 
