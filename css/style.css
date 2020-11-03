@@ -175,29 +175,29 @@ a:link, a:visited, a:hover, a:active {
 .mainexperimental a:hover { color: #BDBDBD; }
 .mainhauntology a:hover { color: #EC407A; }
 
-.mainclassical ::selection { background: rgba(112, 90, 61, 0.998); }
-.mainfolk ::selection { background: rgba(198, 164, 77, 0.998); }
-.mainblues ::selection { background: rgba(40, 53, 147, 0.998); }
-.mainjazz ::selection { background: rgba(229, 115, 115, 0.998); }
-.maincountry ::selection { background: rgba(138, 154, 91, 0.998); }
-.mainrhythmandblues ::selection { background: rgba(0, 105, 92, 0.998); }
-.mainpop ::selection { background: rgba(253, 216, 53, 0.998); color: #222; }
-.mainrock ::selection { background: rgba(198, 40, 40, 0.998); }
-.mainmetal ::selection { background: rgba(8, 8, 8, 0.998); }
-.mainpunk ::selection { background: rgba(239, 108, 0, 0.998); }
-.mainindie ::selection { background: rgba(55, 71, 79, 0.998); }
-.mainreggae ::selection { background: rgba(46, 125, 50, 0.998); }
-.mainhiphop ::selection { background: rgba(78, 56, 82, 0.998); }
-.mainindustrial ::selection { background: rgba(78, 52, 46, 0.998); }
-.mainhouse ::selection { background: rgba(0, 159, 104, 0.998); }
-.maintrance ::selection { background: rgba(106, 27, 154, 0.998); }
-.maintechno ::selection { background: rgba(85, 85, 85, 0.998); }
-.mainhardcore ::selection { background: rgba(70, 64, 57, 0.998); }
-.mainbreakbeat ::selection { background: rgba(120, 63, 93, 0.998); }
-.maindrumandbass ::selection { background: rgba(154, 24, 57, 0.998); }
-.mainukgarage ::selection { background: rgba(143, 124, 173, 0.998); }
-.mainexperimental ::selection { background: rgba(237, 237, 237, 0.998); color: #222; }
-.mainhauntology ::selection { background: rgba(194, 24, 91, 0.998); }
+.mainclassical ..genrelist ::selection { background: rgba(112, 90, 61, 0.998); }
+.mainfolk .genrelist ::selection { background: rgba(198, 164, 77, 0.998); }
+.mainblues .genrelist ::selection { background: rgba(40, 53, 147, 0.998); }
+.mainjazz .genrelist ::selection { background: rgba(229, 115, 115, 0.998); }
+.maincountry .genrelist ::selection { background: rgba(138, 154, 91, 0.998); }
+.mainrhythmandblues .genrelist ::selection { background: rgba(0, 105, 92, 0.998); }
+.mainpop .genrelist ::selection { background: rgba(253, 216, 53, 0.998); color: #222; }
+.mainrock .genrelist ::selection { background: rgba(198, 40, 40, 0.998); }
+.mainmetal .genrelist ::selection { background: rgba(8, 8, 8, 0.998); }
+.mainpunk .genrelist ::selection { background: rgba(239, 108, 0, 0.998); }
+.mainindie .genrelist ::selection { background: rgba(55, 71, 79, 0.998); }
+.mainreggae .genrelist ::selection { background: rgba(46, 125, 50, 0.998); }
+.mainhiphop .genrelist ::selection { background: rgba(78, 56, 82, 0.998); }
+.mainindustrial .genrelist ::selection { background: rgba(78, 52, 46, 0.998); }
+.mainhouse .genrelist ::selection { background: rgba(0, 159, 104, 0.998); }
+.maintrance .genrelist ::selection { background: rgba(106, 27, 154, 0.998); }
+.maintechno .genrelist ::selection { background: rgba(85, 85, 85, 0.998); }
+.mainhardcore .genrelist ::selection { background: rgba(70, 64, 57, 0.998); }
+.mainbreakbeat .genrelist ::selection { background: rgba(120, 63, 93, 0.998); }
+.maindrumandbass .genrelist ::selection { background: rgba(154, 24, 57, 0.998); }
+.mainukgarage .genrelist ::selection { background: rgba(143, 124, 173, 0.998); }
+.mainexperimental .genrelist ::selection { background: rgba(237, 237, 237, 0.998); color: #222; }
+.mainhauntology .genrelist ::selection { background: rgba(194, 24, 91, 0.998); }
 
 .intro:before { background: url("../images/intro.jpg"); background-size: cover; }
 .allgenres { background: url("../images/wood.jpg"); position: absolute; background-size: cover; }
@@ -241,7 +241,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .box p {
-    margin-top: 4.2em;
+    margin-top: 4.25em;
 }
 
 .year {
