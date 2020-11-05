@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Glitch Hop</title>
+    </head>
+
+    <body id="glitchhop">
+        <div class="box ukgarage">
+            <h1>GLITCH HOP</h1><div class="year year-ukgarage">2011</div>
+
+            <p>The definition of Glitch Hop has changed throughout the years. Though Glitch Hop has its roots in Hip Hop and Glitch music from the early 2000s, it was thrust into the spotlight during the early 2010s with close ties to Dubstep. Where it was once based on heavily twisted, sliced and distorted glitchy Hip Hop beats, modern Glitch Hop has become a more defined standalone genre, quite detached from its Hip Hop origins. Glitch Hop sits between 80-115 BPM. Apart from its relatively slow speed, the defining characteristic of Glitch Hop is the rhythm of its drum sequencing, often giving an extremely groovy swing feel. More recently, the sounds used can be far more aggressive than their earlier counterparts, taking influence from Dubstep and the Drum &amp; Bass subgenre Neurofunk (hence Neurohop). Aside from heavy bass sounds, however, Glitch Hop that is being produced today can sometimes include influences from other genres, such as Jazz, Funk and Future Synth. Some Glitch Hop tracks even go back to their original Hip Hop roots, featuring rapping on top of various R&amp;B-type instruments.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-ukgarage">1</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">2</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">3</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">4</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">5</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">6</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">7</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">8</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-ukgarage-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Skrillex & Kill The Noise",
+                        track: "Recess",
+                        path: "../../samples/ukgarage/glitchhop1.ogg"
+                    },
+                    {
+                        artist: "Froxic",
+                        track: "Satellite",
+                        path: "../../samples/ukgarage/glitchhop2.ogg"
+                    },
+                    {
+                        artist: "KOAN Sound",
+                        track: "Mr. Brown",
+                        path: "../../samples/ukgarage/glitchhop3.ogg"
+                    },
+                    {
+                        artist: "Zanski",
+                        track: "Retrosession",
+                        path: "../../samples/ukgarage/glitchhop4.ogg"
+                    },
+                    {
+                        artist: "Kill Paris",
+                        track: "Catch You",
+                        path: "../../samples/ukgarage/glitchhop5.ogg"
+                    },
+                    {
+                        artist: "Coyote Kisses",
+                        track: "This Is How You Know",
+                        path: "../../samples/ukgarage/glitchhop6.ogg"
+                    },
+                    {
+                        artist: "Au5 & Fractal",
+                        track: "Subvert",
+                        path: "../../samples/ukgarage/glitchhop7.ogg"
+                    },
+                    {
+                        artist: "Savant",
+                        track: "Starfish (Blanco Remix)",
+                        path: "../../samples/ukgarage/glitchhop8.ogg"
+                    },
+                    {
+                        artist: "Kill Paris",
+                        track: "Float (Wicked City Remix)",
+                        path: "../../samples/ukgarage/glitchhop9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-ukgarage').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-ukgarage-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-ukgarage"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

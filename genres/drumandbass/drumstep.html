@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Drumstep</title>
+    </head>
+
+    <body id="drumstep">
+        <div class="box drumandbass">
+            <h1>DRUMSTEP</h1><div class="year year-drumandbass">2008</div>
+
+            <p>Drum &amp; Bass loves Dubstep. The two scenes are very close and they pollinate each other's genres often with artists, labels and consumers frequently partaking in both. At its outset, Dubstep was often the music of choice for Drum &amp; Bass parties in the 2000s. It was the perfect counterweight because it was just like Drum &amp; Bass, only half speed. At some point in the mid-2000s, Drum &amp; Bass DJs started playing Dubstep songs in their sets. It was just a track or two, as a break against the 160 BPM monotony that drove a lot of the music. People really liked the change of pace. Because it was so distinctive-sounding, people appreciated it more and over time DJs began incorporating more Dubstep tracks in their sets until it took over entirely. D&amp;B producers saw the way these winds were blowing and decided to just put Dubstep drops straight into their D&amp;B cuts, and a new fusion genre was born. Drumstep is an extension of Nu Jump Up as there is a lot of crossover. But characteristic of most Drumstep is its half-time drum programming and its heavy Dubstep influence.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-drumandbass">1</div></div>
+                <div class="col-1"><div class="buttons buttons-drumandbass">2</div></div>
+                <div class="col-1"><div class="buttons buttons-drumandbass">3</div></div>
+                <div class="col-1"><div class="buttons buttons-drumandbass">4</div></div>
+                <div class="col-1"><div class="buttons buttons-drumandbass">5</div></div>
+                <div class="col-1"><div class="buttons buttons-drumandbass">6</div></div>
+                <div class="col-1"><div class="buttons buttons-drumandbass">7</div></div>
+                <div class="col-1"><div class="buttons buttons-drumandbass">8</div></div>
+                <div class="col-1"><div class="buttons buttons-drumandbass">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-drumandbass-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Pendulum",
+                        track: "Witchcraft (Rob Swire's Drum-Step Mix)",
+                        path: "../../samples/drumandbass/drumstep1.ogg"
+                    },
+                    {
+                        artist: "Rusko",
+                        track: "Everyday (Netsky Remix)",
+                        path: "../../samples/drumandbass/drumstep2.ogg"
+                    },
+                    {
+                        artist: "Tristam & Braken",
+                        track: "Flight",
+                        path: "../../samples/drumandbass/drumstep3.ogg"
+                    },
+                    {
+                        artist: "Far Too Loud",
+                        track: "Lightbringer",
+                        path: "../../samples/drumandbass/drumstep4.ogg"
+                    },
+                    {
+                        artist: "Skrillex feat. Ragga Twins",
+                        track: "Ragga Bomb",
+                        path: "../../samples/drumandbass/drumstep5.ogg"
+                    },
+                    {
+                        artist: "Noisestorm",
+                        track: "Breakdown VIP",
+                        path: "../../samples/drumandbass/drumstep6.ogg"
+                    },
+                    {
+                        artist: "Camo & Krooked",
+                        track: "Further Away",
+                        path: "../../samples/drumandbass/drumstep7.ogg"
+                    },
+                    {
+                        artist: "T & Sugah feat. MVE",
+                        track: "Sleepless",
+                        path: "../../samples/drumandbass/drumstep8.ogg"
+                    },
+                    {
+                        artist: "Geoxor",
+                        track: "You & I",
+                        path: "../../samples/drumandbass/drumstep9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-drumandbass').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-drumandbass-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-drumandbass"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

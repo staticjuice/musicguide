@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Psychedelic Rock</title>
+    </head>
+
+    <body id="psychedelicrock">
+        <div class="box rock">
+            <h1>PSYCHEDELIC ROCK</h1><div class="year year-rock">1965</div>
+
+            <p>The 60s marked a new age of hope, reconstruction, love and peace after the aftershocks of World War II. A huge hippie subculture flourished in many places, especially those with a large student population. The principal among them was the famous Haight Ashbury district in San Francisco, where young hippies were inspired by Eastern cultures and countless psychedelic drugs to create freeform, exotic Rock music with psychedelic sound effects. The stereotypical warm and fuzzy sound of Hammond organs is no stranger to Psychedelic Rock either. Because of its highly experimental nature and drug-and-peace-friendly appeal, many subgenres saw the light and were conjoined under the tag "Psychedelia". The power of the countercultural movement and Psychedelic Rock was strongly felt in a large social gathering in 1967, known as the "Summer of Love", but the height came in the form of Woodstock in 1969 &ndash; one of the largest festivals of all time and a symbol of connection between all attendees, but also a turning point for Rock music in general. Eventually the hippie tidal wave became too big, and finally broke.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-rock">1</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">2</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">3</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">4</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">5</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">6</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">7</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">8</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-rock-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Jefferson Airplane",
+                        track: "Somebody To Love",
+                        path: "../../samples/rock/psychedelicrock1.ogg"
+                    },
+                    {
+                        artist: "Jimi Hendrix",
+                        track: "All Along The Watchtower",
+                        path: "../../samples/rock/psychedelicrock2.ogg"
+                    },
+                    {
+                        artist: "Grateful Dead",
+                        track: "Scarlet Begonias",
+                        path: "../../samples/rock/psychedelicrock3.ogg"
+                    },
+                    {
+                        artist: "The Yardbirds",
+                        track: "Happenings Ten Years Time Ago",
+                        path: "../../samples/rock/psychedelicrock4.ogg"
+                    },
+                    {
+                        artist: "The Doors",
+                        track: "Strange Days",
+                        path: "../../samples/rock/psychedelicrock5.ogg"
+                    },
+                    {
+                        artist: "The Byrds",
+                        track: "I See You",
+                        path: "../../samples/rock/psychedelicrock6.ogg"
+                    },
+                    {
+                        artist: "The Crazy World Of Arthur Brown",
+                        track: "Fire",
+                        path: "../../samples/rock/psychedelicrock7.ogg"
+                    },
+                    {
+                        artist: "? & The Mysterians",
+                        track: "96 Tears",
+                        path: "../../samples/rock/psychedelicrock8.ogg"
+                    },
+                    {
+                        artist: "Strawberry Alarm Clock",
+                        track: "Incense And Peppermints",
+                        path: "../../samples/rock/psychedelicrock9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-rock').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-rock-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-rock"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

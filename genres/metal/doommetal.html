@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Doom Metal</title>
+    </head>
+
+    <body id="doommetal">
+        <div class="box metal">
+            <h1>DOOM METAL</h1><div class="year year-metal">1982</div>
+
+            <p>Inspired largely by the lumbering dirges and stoned, paranoid darkness of Black Sabbath, Doom Metal is one of the very few Metal subgenres to prize feel and mood more than flashy technique. Doom Metal is extremely slow, sludgy and creepy, feeling so heavy it can barely move &ndash; its deliberate pace and murky guitars are meant to evoke a sense of impending doom. Doom Metal often deals about the occult, whether in band names, track titles, imagery or lyrical content. The lyrics are often slightly howled, sometimes with echo, which reminds listeners again of Black Sabbath. It's the slowest form of Metal and one that came around at a time when Metal only seemed to want to go faster and faster. Several bands felt the urge to provide some sort of counterbalance. The slower tempo of Doom Metal leaves lots of room for silence between the ultra-heavy sluggish riffs. Not all songs by Doom Metal bands are strictly Doom &ndash; some are quite fast and simply Heavy Metal, which would influence Stoner/Sludge Metal bands, as the only alternative approach for non-hyperactive artists.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-metal">1</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">2</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">3</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">4</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">5</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">6</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">7</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">8</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-metal-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Saint Vitus",
+                        track: "Saint Vitus",
+                        path: "../../samples/metal/doommetal1.ogg"
+                    },
+                    {
+                        artist: "Pentagram",
+                        track: "The Ghoul",
+                        path: "../../samples/metal/doommetal2.ogg"
+                    },
+                    {
+                        artist: "Trouble",
+                        track: "Psalm 9",
+                        path: "../../samples/metal/doommetal3.ogg"
+                    },
+                    {
+                        artist: "Cathedral",
+                        track: "Tower Of Silence",
+                        path: "../../samples/metal/doommetal4.ogg"
+                    },
+                    {
+                        artist: "Electric Wizard",
+                        track: "Dopethrone",
+                        path: "../../samples/metal/doommetal5.ogg"
+                    },
+                    {
+                        artist: "Conan",
+                        track: "Gravity Chasm",
+                        path: "../../samples/metal/doommetal6.ogg"
+                    },
+                    {
+                        artist: "Candlemass",
+                        track: "Bewitched",
+                        path: "../../samples/metal/doommetal7.ogg"
+                    },
+                    {
+                        artist: "Witchfinder General",
+                        track: "Death Penalty",
+                        path: "../../samples/metal/doommetal8.ogg"
+                    },
+                    {
+                        artist: "My Dying Bride",
+                        track: "Feel The Misery",
+                        path: "../../samples/metal/doommetal9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-metal').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-metal-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-metal"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

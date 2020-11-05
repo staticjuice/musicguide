@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Grunge</title>
+    </head>
+
+    <body id="grunge">
+        <div class="box indie">
+            <h1>GRUNGE</h1><div class="year year-indie">1985</div>
+
+            <p>The focus on glamour and fashion in much 80s music formed the catalyst of a strong anti-movement. Being the complete opposite of Glam Rock, this so-called "Grunge" was humble and inwards, with sincere songs about tragedy and frustrations. The sound, on the other hand, was dirty, distorted, lo-fi, vintage and crunchy as if it was composed by accident. Instead of guitar pedals, Grunge uses distortion on the amps, creating an even more abrasive sound. Grunge fashion reinforces such a notion of nonchalance &ndash; blue jeans, woollen lumberjack shirts, and dirty, sleazy long hair. Grunge's brief but crowd-gathering music revolution started all in the cold and remote city of Seattle. Typical about the Seattle music scene in the 80s was high popularity of Hard Rock and Metal. When emotional Post-Hardcore bands popped up across the states, the genre mixed with Metal and became Grunge. Its success lies in the strength of a return to the mutual core of Rock and Blues. Something that had been lost along the way &ndash; raw, unbridled emotion that seemed so hard to bear that it even distorted the music itself.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-indie">1</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">2</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">3</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">4</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">5</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">6</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">7</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">8</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Nirvana",
+                        track: "Smells Like Teen Spirit",
+                        path: "../../samples/indie/grunge1.ogg"
+                    },
+                    {
+                        artist: "Pearl Jam",
+                        track: "Alive",
+                        path: "../../samples/indie/grunge2.ogg"
+                    },
+                    {
+                        artist: "Stone Temple Pilots",
+                        track: "Plush",
+                        path: "../../samples/indie/grunge3.ogg"
+                    },
+                    {
+                        artist: "Soundgarden",
+                        track: "Black Hole Sun",
+                        path: "../../samples/indie/grunge4.ogg"
+                    },
+                    {
+                        artist: "Alice In Chains",
+                        track: "Man In The Box",
+                        path: "../../samples/indie/grunge5.ogg"
+                    },
+                    {
+                        artist: "Green River",
+                        track: "Unwind",
+                        path: "../../samples/indie/grunge6.ogg"
+                    },
+                    {
+                        artist: "The Smashing Pumpkins",
+                        track: "Bullet With Butterfly Wings",
+                        path: "../../samples/indie/grunge7.ogg"
+                    },
+                    {
+                        artist: "Screaming Trees",
+                        track: "Dollar Bill",
+                        path: "../../samples/indie/grunge8.ogg"
+                    },
+                    {
+                        artist: "Mudhoney",
+                        track: "Touch Me I'm Sick",
+                        path: "../../samples/indie/grunge9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-indie').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-indie-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-indie"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

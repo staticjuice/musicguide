@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Blues Rock</title>
+    </head>
+
+    <body id="bluesrock">
+        <div class="box rock">
+            <h1>BLUES ROCK</h1><div class="year year-rock">1963</div>
+
+            <p>Parallel to the British Rock Invasion, the British Blues Invasion took hold, which was sometimes hard to separate from the other one. Yet British Blues started out in London instead of Liverpool and was not influenced by Merseybeat. As Blues became harder, faster and louder and Rock started to take an interest in Jazz, the two grew from quite different paths into a powerful combination which was performed by a huge amount of artists during the 60s and 70s. There is a large area of overlapping between Blues Rock and Psychedelic Rock and often the same artists are mentioned for both genres. Blues Rock artists usually sang anti-establishment lyrics, paving the road for later Metal. Blues Rock stayed true to the early three-chord Urban Blues but added more guitar improvisation (solos), distortion and psychedelic effects. Especially Chicago legends Muddy Waters, Howlin' Wolf and Robert Johnson were a huge influence on this new wave of Blues artists. A remarkable fact, considering that all original Blues Rock artists are white. And thus African-American Blues was injected into the world of white British Rock.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-rock">1</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">2</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">3</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">4</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">5</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">6</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">7</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">8</div></div>
+                <div class="col-1"><div class="buttons buttons-rock">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-rock-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "The Rolling Stones",
+                        track: "Gimme Shelter",
+                        path: "../../samples/rock/bluesrock1.ogg"
+                    },
+                    {
+                        artist: "Canned Heat",
+                        track: "On The Road Again",
+                        path: "../../samples/rock/bluesrock2.ogg"
+                    },
+                    {
+                        artist: "Eric Clapton",
+                        track: "Cocaine",
+                        path: "../../samples/rock/bluesrock3.ogg"
+                    },
+                    {
+                        artist: "The Paul Butterfield Blues Band",
+                        track: "Born In Chicago",
+                        path: "../../samples/rock/bluesrock4.ogg"
+                    },
+                    {
+                        artist: "Johnny Winter",
+                        track: "Rock And Roll, Hoochie Koo",
+                        path: "../../samples/rock/bluesrock5.ogg"
+                    },
+                    {
+                        artist: "Pretty Things",
+                        track: "Don't Bring Me Down",
+                        path: "../../samples/rock/bluesrock6.ogg"
+                    },
+                    {
+                        artist: "The Spencer Davis Group",
+                        track: "I'm A Man",
+                        path: "../../samples/rock/bluesrock7.ogg"
+                    },
+                    {
+                        artist: "Alexis Korner",
+                        track: "Get Off My Cloud",
+                        path: "../../samples/rock/bluesrock8.ogg"
+                    },
+                    {
+                        artist: "Derek & The Dominos",
+                        track: "Layla",
+                        path: "../../samples/rock/bluesrock9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-rock').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-rock-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-rock"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

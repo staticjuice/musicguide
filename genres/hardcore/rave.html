@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Rave</title>
+    </head>
+
+    <body id="rave">
+        <div class="box hardcore">
+            <h1>RAVE</h1><div class="year year-hardcore">1990</div>
+
+            <p>What Punk was to Rock, Rave was to Dance. The all-changing, undeniable shock-revolution, shaking things up that otherwise might have gone stale. In Germany and Belgium, young, militant DJs discovered the infamous "hoover" sound &ndash; an accelerated, distorted sound of an alien vacuum cleaner being turned on. In the beginning, this dark and brutal European underground Techno was purely instrumental and barely melodic, but gradually the tempo increased and the hoover sounds were used to establish an anthem-like, bombastic melody. This led to a sort of Dance music unheard of &ndash; dark, hard, ecstatic and overwhelming. Rave became a party phenomenon &ndash; massive illegal and secret pop-up parties (called "Raves") with excessive drug abuse were soon the target of a nationwide police hunt. This was even reflected in the music &ndash; alarm bells, sirens and other paranoia-inducing effects all added to the theatrical overstimulation that is Rave. The most important aspect of Rave is undoubtedly XTC. What was already a small shock during New Beat completely erupted when the perfect XTC soundtrack was finally conceived.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-hardcore">1</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">2</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">3</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">4</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">5</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">6</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">7</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">8</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-hardcore-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Channel X",
+                        track: "Rave The Rhythm",
+                        path: "../../samples/hardcore/rave1.ogg"
+                    },
+                    {
+                        artist: "Second Phase",
+                        track: "Mentasm",
+                        path: "../../samples/hardcore/rave2.ogg"
+                    },
+                    {
+                        artist: "L.A. Style",
+                        track: "James Brown Is Dead",
+                        path: "../../samples/hardcore/rave3.ogg"
+                    },
+                    {
+                        artist: "Dilemma",
+                        track: "Erase Your Mind",
+                        path: "../../samples/hardcore/rave4.ogg"
+                    },
+                    {
+                        artist: "Human Resource",
+                        track: "Dominator",
+                        path: "../../samples/hardcore/rave5.ogg"
+                    },
+                    {
+                        artist: "Ace The Space",
+                        track: "9 Is A Classic (Ultimate Rave Mix)",
+                        path: "../../samples/hardcore/rave6.ogg"
+                    },
+                    {
+                        artist: "T99",
+                        track: "Anasthasia",
+                        path: "../../samples/hardcore/rave7.ogg"
+                    },
+                    {
+                        artist: "The Hypnotist",
+                        track: "Hardcore U Know The Score",
+                        path: "../../samples/hardcore/rave8.ogg"
+                    },
+                    {
+                        artist: "U96",
+                        track: "Das Boot",
+                        path: "../../samples/hardcore/rave9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hardcore').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hardcore-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hardcore"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

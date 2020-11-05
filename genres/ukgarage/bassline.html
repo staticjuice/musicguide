@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Bassline</title>
+    </head>
+
+    <body id="bassline">
+        <div class="box ukgarage">
+            <h1>BASSLINE</h1><div class="year year-ukgarage">1997</div>
+
+            <p>The UK Grime scene had always been a violent, criminal, ghetto scene reminding a lot of Gangsta Rap, but with the rising advent of Dubstep the adjectives "dark", "slow" and "weird" could be added to its personality. This detracted too many girls from coming to the clubs and UK Garage had to reapply its very reason for existence to itself. History became repeated and Speed Garage was used to alter Grime in such a way that the female crowd was well represented. Naturally, Dubstep had some influence as well and a more continuous bass sound led to the name of this new genre &ndash; Bassline. Sheffield was the breeding ground for the UK Grime and Bassline scene &ndash; especially the club Niche, which had to close down after incidents of violence, drug use and gang criminality. Because Bassline was even faster than Speed Garage and still quite aggressive, it had to make sure the trick to even out gender ratio could not fail and used Deep House as well as Dub to create an exotic, percussion-heavy type of UK Garage. One could almost say this was "Tribal Garage" with House-like tempo and synths.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-ukgarage">1</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">2</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">3</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">4</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">5</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">6</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">7</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">8</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-ukgarage-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Jauz",
+                        track: "Feel The Volume",
+                        path: "../../samples/ukgarage/bassline1.ogg"
+                    },
+                    {
+                        artist: "P Money",
+                        track: "Round The Clock (Cause & Affect Remix)",
+                        path: "../../samples/ukgarage/bassline2.ogg"
+                    },
+                    {
+                        artist: "Legitimate Scandal",
+                        track: "Fu Ge La",
+                        path: "../../samples/ukgarage/bassline3.ogg"
+                    },
+                    {
+                        artist: "My Nu Leng",
+                        track: "Levels",
+                        path: "../../samples/ukgarage/bassline4.ogg"
+                    },
+                    {
+                        artist: "DJ Q",
+                        track: "Breathe",
+                        path: "../../samples/ukgarage/bassline5.ogg"
+                    },
+                    {
+                        artist: "Chris Lorenzo & Taiki Nulight feat. Dread MC",
+                        track: "Mind Control (Never Say Never)",
+                        path: "../../samples/ukgarage/bassline6.ogg"
+                    },
+                    {
+                        artist: "AC Slater feat. Bassboy & Scrufizzer",
+                        track: "All About Paper (Taiki Nulight Remix)",
+                        path: "../../samples/ukgarage/bassline7.ogg"
+                    },
+                    {
+                        artist: "Tuff Culture",
+                        track: "Quarks",
+                        path: "../../samples/ukgarage/bassline8.ogg"
+                    },
+                    {
+                        artist: "Botnek",
+                        track: "Don't Need U",
+                        path: "../../samples/ukgarage/bassline9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-ukgarage').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-ukgarage-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-ukgarage"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Grime</title>
+    </head>
+
+    <body id="grime">
+        <div class="box ukgarage">
+            <h1>GRIME</h1><div class="year year-ukgarage">2000</div>
+
+            <p>At the turn of the millennium, 2-Step Garage loses its momentum. The scene changes into two different directions &ndash; Breakbeat Garage leaves all House and fancy influences behind, and almost immediately a new wave of very young artists starts adding rap vocals and more Drum &amp; Bass elements on top of this. The old UKG classes of the second half of the 90s however, found it hard to get along with such an aggressive style and a generational gap ensues. From the comfort of their bedrooms, British kids started to make home-produced music, featuring Drum &amp; Bass-like breaks at a slower tempo with dark, "grimy" rhymes &ndash; Grime is born. Thanks to internet streaming, Grime rapidly conquers the globe. Its violent sawtooth basslines onto lo-fi riddims was truly unique and original in an era of few innovative genres. Grime bridges Hip Hop, Breakbeat and Drum &amp; Bass, and brings UK Garage back to the streets, to the youth and the clubs. Its popularity and subsonic quality becomes exposed by its variety of aliases and it would have been the star of the 2000s if Dubstep didn't claim that prize shortly after.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-ukgarage">1</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">2</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">3</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">4</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">5</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">6</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">7</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">8</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-ukgarage-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Roll Deep",
+                        track: "When I'm 'Ere",
+                        path: "../../samples/ukgarage/grime1.ogg"
+                    },
+                    {
+                        artist: "Wiley",
+                        track: "Wot Do U Call It?",
+                        path: "../../samples/ukgarage/grime2.ogg"
+                    },
+                    {
+                        artist: "Stormzy",
+                        track: "Shut Up",
+                        path: "../../samples/ukgarage/grime3.ogg"
+                    },
+                    {
+                        artist: "Skepta feat. Jme",
+                        track: "That's Not Me",
+                        path: "../../samples/ukgarage/grime4.ogg"
+                    },
+                    {
+                        artist: "Jme feat. Giggs",
+                        track: "Man Don't Care",
+                        path: "../../samples/ukgarage/grime5.ogg"
+                    },
+                    {
+                        artist: "Yungen",
+                        track: "Comfy",
+                        path: "../../samples/ukgarage/grime6.ogg"
+                    },
+                    {
+                        artist: "Bugzy Malone",
+                        track: "Waste Man",
+                        path: "../../samples/ukgarage/grime7.ogg"
+                    },
+                    {
+                        artist: "Breakage feat. Newham Generals & David Rodigan",
+                        track: "Hard",
+                        path: "../../samples/ukgarage/grime8.ogg"
+                    },
+                    {
+                        artist: "Chip feat. Stormzy",
+                        track: "Hear Dis",
+                        path: "../../samples/ukgarage/grime9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-ukgarage').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-ukgarage-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-ukgarage"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

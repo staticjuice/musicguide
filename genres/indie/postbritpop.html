@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Post-Britpop</title>
+    </head>
+
+    <body id="postbritpop">
+        <div class="box indie">
+            <h1>POST-BRITPOP</h1><div class="year year-indie">1997</div>
+
+            <p>Despite the aversion of relevant bands to the label "Post-Britpop" and claims that genre fragmentation within Britpop is pointless, this style is a lot more defined than what you would expect. Britpop's patriotism got in the way of experimentation and American or Indie influences. Yet a second wave of British artists in the late 90s valued these merits higher than cultural preservation. A clear distinction with their predecessors is the rejection of guitar as the dominant instrument, in favour of a more electronic-orientated sound. Another key alteration is the absence of Britpop's cocky attitude, which got replaced by highly sensitive, fragile lyrics. Post-Britpop is symbolised by a loss of ego. The popularity of Post-Britpop bands quickly outgrew traditional Britpop, making Post-Britpop a sort of Arena Rock of the 00s. With success comes envy and Post-Britpop songs eventually became accused of sounding too uniform, sterile and predictable. Coupled with whiter-than-white sound production and high-pitched male vocals, the way was paved for a countering return to sleazy, lo-fi Garage Rock.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-indie">1</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">2</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">3</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">4</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">5</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">6</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">7</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">8</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Coldplay",
+                        track: "Clocks",
+                        path: "../../samples/indie/postbritpop1.ogg"
+                    },
+                    {
+                        artist: "Travis",
+                        track: "Sing",
+                        path: "../../samples/indie/postbritpop2.ogg"
+                    },
+                    {
+                        artist: "Embrace",
+                        track: "Gravity",
+                        path: "../../samples/indie/postbritpop3.ogg"
+                    },
+                    {
+                        artist: "Stereophonics",
+                        track: "Dakota",
+                        path: "../../samples/indie/postbritpop4.ogg"
+                    },
+                    {
+                        artist: "Feeder",
+                        track: "Feeling A Moment",
+                        path: "../../samples/indie/postbritpop5.ogg"
+                    },
+                    {
+                        artist: "Doves",
+                        track: "Kingdom Of Rust",
+                        path: "../../samples/indie/postbritpop6.ogg"
+                    },
+                    {
+                        artist: "Snow Patrol",
+                        track: "Chasing Cars",
+                        path: "../../samples/indie/postbritpop7.ogg"
+                    },
+                    {
+                        artist: "Keane",
+                        track: "Everybody's Changing",
+                        path: "../../samples/indie/postbritpop8.ogg"
+                    },
+                    {
+                        artist: "Bloc Party",
+                        track: "Banquet",
+                        path: "../../samples/indie/postbritpop9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-indie').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-indie-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-indie"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

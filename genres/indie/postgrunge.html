@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Post-Grunge</title>
+    </head>
+
+    <body id="postgrunge">
+        <div class="box indie">
+            <h1>POST-GRUNGE</h1><div class="year year-indie">1995</div>
+
+            <p>Post-Grunge refers to the wave of bands who appeared shortly after Grunge hit the mainstream. The major difference is that while the Seattle bands were firmly rooted in underground Indie Rock of the 80s, Post-Grunge was influenced by what Grunge became &ndash; a wildly popular form of inward-looking, serious-minded Hard Rock. Many new Rock bands filled the hole that Grunge left and were especially influenced by its tragic, introspective, sentimental lyrics. Post-Grunge elaborated further on this theme but also took a step away from Grunge's heavy distortion, chaos and roughness. The result was a slicker, more polished sound with a clear song structure that turned out to be a commercial success. Post-Grunge became so popular that it stayed in the mainstream much longer than other Alt-Rock styles. Many people claimed that Post-Grunge was merely a commercial imitation of something genius and that it should be clearly separated from the original (leading to its name). On the other hand, the fans saw it as the culmination of Rock where finally a perfect balance of roughness versus slickness was found.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-indie">1</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">2</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">3</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">4</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">5</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">6</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">7</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">8</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Foo Fighters",
+                        track: "The Pretender",
+                        path: "../../samples/indie/postgrunge1.ogg"
+                    },
+                    {
+                        artist: "Creed",
+                        track: "My Sacrifice",
+                        path: "../../samples/indie/postgrunge2.ogg"
+                    },
+                    {
+                        artist: "3 Doors Down",
+                        track: "Kryptonite",
+                        path: "../../samples/indie/postgrunge3.ogg"
+                    },
+                    {
+                        artist: "Green Day",
+                        track: "Boulevard Of Broken Dreams",
+                        path: "../../samples/indie/postgrunge4.ogg"
+                    },
+                    {
+                        artist: "Nickelback",
+                        track: "How You Remind Me",
+                        path: "../../samples/indie/postgrunge5.ogg"
+                    },
+                    {
+                        artist: "HIM",
+                        track: "Join Me In Death",
+                        path: "../../samples/indie/postgrunge6.ogg"
+                    },
+                    {
+                        artist: "Matchbox Twenty",
+                        track: "Push",
+                        path: "../../samples/indie/postgrunge7.ogg"
+                    },
+                    {
+                        artist: "Staind",
+                        track: "It's Been Awhile",
+                        path: "../../samples/indie/postgrunge8.ogg"
+                    },
+                    {
+                        artist: "Puddle Of Mudd",
+                        track: "She Hates Me",
+                        path: "../../samples/indie/postgrunge9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-indie').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-indie-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-indie"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
