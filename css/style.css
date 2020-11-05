@@ -173,7 +173,7 @@ a:link, a:visited, a:hover, a:active {
 .mainexperimental a:hover { color: #BDBDBD; }
 .mainhauntology a:hover { color: #EC407A; }
 
-.mainclassical ..genrelist ::selection { background: rgba(112, 90, 61, 0.998); }
+.mainclassical .genrelist ::selection { background: rgba(112, 90, 61, 0.998); }
 .mainblues .genrelist ::selection { background: rgba(40, 53, 147, 0.998); }
 .mainjazz .genrelist ::selection { background: rgba(229, 115, 115, 0.998); }
 .maincountry .genrelist ::selection { background: rgba(138, 154, 91, 0.998); }
