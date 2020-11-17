@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Chillstep</title>
+    </head>
+
+    <body id="chillstep">
+        <div class="box ukgarage">
+            <h1>CHILLSTEP</h1><div class="year year-ukgarage">2010</div>
+
+            <p>Chillstep set out to be the complete opposite of Brostep. Instead of being heavy and percussive, the music was calm and full of beautiful harmonies and melodies. Unlike Liquid Dubstep however, Chillstep did not set out to be upbeat and club-friendly, but completely chilled out for relaxing listening environments &ndash; music that you could even fall asleep to. As a result of this, the quintessential "wub-wub" sound that came to be associated with Dubstep is almost never found in Chillstep tracks, instead being replaced by acoustic instruments and/or lovely atmospheric textures. In recent years, Chillstep (alongside Liquid Dubstep) has also fallen out of favour due to the rise of Future Bass, but also more genre-defying chilled-out electronic music. There aren't really any notable musicians who pioneered this style, but the YouTube channel known as MrSuicideSheep helped popularise it and bring a lot of otherwise-unknown Chillstep artists into the spotlight. One could even say that the whole concept of Chillstep itself was out to prove to the world that Dubstep can be a beautiful genre and that it's not all about aggression.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-ukgarage">1</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">2</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">3</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">4</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">5</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">6</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">7</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">8</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-ukgarage-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Blackmill",
+                        track: "The Light",
+                        path: "../../../samples/ukgarage/chillstep1.ogg"
+                    },
+                    {
+                        artist: "Phaeleh",
+                        track: "In The Twilight",
+                        path: "../../../samples/ukgarage/chillstep2.ogg"
+                    },
+                    {
+                        artist: "Electus",
+                        track: "Kingdom Of Lions",
+                        path: "../../../samples/ukgarage/chillstep3.ogg"
+                    },
+                    {
+                        artist: "Shockline",
+                        track: "Alive",
+                        path: "../../../samples/ukgarage/chillstep4.ogg"
+                    },
+                    {
+                        artist: "SizzleBird",
+                        track: "Elixir",
+                        path: "../../../samples/ukgarage/chillstep5.ogg"
+                    },
+                    {
+                        artist: "CMA",
+                        track: "You're Free",
+                        path: "../../../samples/ukgarage/chillstep6.ogg"
+                    },
+                    {
+                        artist: "Rameses B feat. Meron Ryan",
+                        track: "Underwater",
+                        path: "../../../samples/ukgarage/chillstep7.ogg"
+                    },
+                    {
+                        artist: "Idenline",
+                        track: "Together VIP",
+                        path: "../../../samples/ukgarage/chillstep8.ogg"
+                    },
+                    {
+                        artist: "Myon & Shane 54 feat. Aruna",
+                        track: "Lights (5vel Remix)",
+                        path: "../../../samples/ukgarage/chillstep9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-ukgarage').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-ukgarage-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-ukgarage"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

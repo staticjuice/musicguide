@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Brostep</title>
+    </head>
+
+    <body id="brostep">
+        <div class="box ukgarage">
+            <h1>BROSTEP</h1><div class="year year-ukgarage">2008</div>
+
+            <p>In early Dubstep, beat drops were accentuated by the stretched drum pattern. Over the course of time, these drops became more and more important, with long build-ups running up to them. Artists even held races to see who could create "the biggest drop". Ambient soundscapes also got replaced by hooks providing catchy melodic themes. When finally mid-frequency rifflike synth lines got introduced in the genre, Dubstep became accepted by the masses in the US and a versatile template on which just about any song can get remixed. This sparked a huge wave of revulsion between the early Dubstep producers and fans as well as a new Dubstep craze. Dubstep broke loose out of its UK underground environment and spread like a virus to other contemporary genres also eager to cross over. A whole array of subgenres appeared on the stage, but most importantly was the merging with Drum &amp; Bass. Hereby, Dubstep reinvigorated the genre and united both subcultures in the form of Drumstep. The term Brostep itself was originally used as a pejorative, highlighting the polarising nature of this new sound.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-ukgarage">1</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">2</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">3</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">4</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">5</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">6</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">7</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">8</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-ukgarage-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Excision & Datsik",
+                        track: "Swagga",
+                        path: "../../../samples/ukgarage/brostep1.ogg"
+                    },
+                    {
+                        artist: "Nero",
+                        track: "Innocence",
+                        path: "../../../samples/ukgarage/brostep2.ogg"
+                    },
+                    {
+                        artist: "Flux Pavilion",
+                        track: "Hold Me Close",
+                        path: "../../../samples/ukgarage/brostep3.ogg"
+                    },
+                    {
+                        artist: "Cookie Monsta",
+                        track: "Blurgh!",
+                        path: "../../../samples/ukgarage/brostep4.ogg"
+                    },
+                    {
+                        artist: "Modestep",
+                        track: "Sunlight (Torqux & Twist Remix)",
+                        path: "../../../samples/ukgarage/brostep5.ogg"
+                    },
+                    {
+                        artist: "Skrillex",
+                        track: "Scary Monsters And Nice Sprites",
+                        path: "../../../samples/ukgarage/brostep6.ogg"
+                    },
+                    {
+                        artist: "Ayah Marar",
+                        track: "The Raver (Xilent Remix)",
+                        path: "../../../samples/ukgarage/brostep7.ogg"
+                    },
+                    {
+                        artist: "MUST DIE! & Mantis",
+                        track: "Culture",
+                        path: "../../../samples/ukgarage/brostep8.ogg"
+                    },
+                    {
+                        artist: "Zomboy",
+                        track: "Immunity",
+                        path: "../../../samples/ukgarage/brostep9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-ukgarage').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-ukgarage-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-ukgarage"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

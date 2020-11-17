@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Acid Techno</title>
+    </head>
+
+    <body id="acidtechno">
+        <div class="box techno">
+            <h1>ACID TECHNO</h1><div class="year year-techno">1991</div>
+
+            <p>Acid Techno is a genre of Techno that developed out of late 80s Chicago Acid House scene. Acid House was essentially House music made with a specific sound, obtained by using very distinctive instruments created mainly by Roland, such as the SH-101 and TB-303 for bass and lead sounds, and the TR-707, TR-808 and TR-909 for percussion. Acid specifically refers to the use of the Roland TB-303 or any other synthesiser designed to emulate its unique sound. When the squelch of mid-80s Acid House music was given time to sink into the minds of impressionable youths, they became quite influenced by the sound. Many who began to make music in the early 90s applied the sound to harder Techno instead of the warm sounds of classic Chicago House. While modern electronic instruments have memory banks of different sounds or patches, these machines had to be manually set by adjusting control knobs. The acid sound was obtained by either setting these controls to extreme parameters or manipulating these controls in real-time as the track was being recorded, something record producers would call tweaking.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-techno">1</div></div>
+                <div class="col-1"><div class="buttons buttons-techno">2</div></div>
+                <div class="col-1"><div class="buttons buttons-techno">3</div></div>
+                <div class="col-1"><div class="buttons buttons-techno">4</div></div>
+                <div class="col-1"><div class="buttons buttons-techno">5</div></div>
+                <div class="col-1"><div class="buttons buttons-techno">6</div></div>
+                <div class="col-1"><div class="buttons buttons-techno">7</div></div>
+                <div class="col-1"><div class="buttons buttons-techno">8</div></div>
+                <div class="col-1"><div class="buttons buttons-techno">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-techno-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Ascorbin Acid",
+                        track: "Sweet Liberty",
+                        path: "../../../samples/techno/acidtechno1.ogg"
+                    },
+                    {
+                        artist: "Miss Djax",
+                        track: "Evil Machines",
+                        path: "../../../samples/techno/acidtechno2.ogg"
+                    },
+                    {
+                        artist: "The Wipeouts",
+                        track: "High Society",
+                        path: "../../../samples/techno/acidtechno3.ogg"
+                    },
+                    {
+                        artist: "Secret Hero",
+                        track: "Speed Freak",
+                        path: "../../../samples/techno/acidtechno4.ogg"
+                    },
+                    {
+                        artist: "Pzylo",
+                        track: "Sanitarium",
+                        path: "../../../samples/techno/acidtechno5.ogg"
+                    },
+                    {
+                        artist: "Dynamo City",
+                        track: "Somebody Or Nobody",
+                        path: "../../../samples/techno/acidtechno6.ogg"
+                    },
+                    {
+                        artist: "Alexs Tinman",
+                        track: "Teleportation",
+                        path: "../../../samples/techno/acidtechno7.ogg"
+                    },
+                    {
+                        artist: "Steve Mills",
+                        track: "Disco Shit",
+                        path: "../../../samples/techno/acidtechno8.ogg"
+                    },
+                    {
+                        artist: "Mobile Dogwash",
+                        track: "Catch The Freak",
+                        path: "../../../samples/techno/acidtechno9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-techno').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-techno-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-techno"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Jangle Pop</title>
+    </head>
+
+    <body id="janglepop">
+        <div class="box indie">
+            <h1>JANGLE POP</h1><div class="year year-indie">1983</div>
+
+            <p>By the end of the 80s, the power of Hard Rock or the spirit of Punk Rock seemed nowhere to be found. The majority of Rock had become electronic and commercialised. Many Generation X rock artists tried to stay away from the big record companies to prevent their music from succumbing to the same fate and turned to smaller, independent labels instead, where they had the freedom to make what they liked &ndash; serious, downbeat rock with heavy, distorted guitar riffs, often dealing about emotional troubles or tragic thoughts. The music consciously partakes in the debate about the music industry, with a strong stance against MTV. To strengthen and justify its point of view, Indie often uses objectified lyrics instead of a personal perspective. Early Alternative music was primarily college radio music with jangly guitars and minimal attention to rhythm. Therefore it became known as "Jangle Pop". Closely related and heavily overlapping with Jangle Pop was the Paisley Underground movement &ndash; a revival of 60s Psychedelic Rock in LA with a variety of Rock and Folk influences.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-indie">1</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">2</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">3</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">4</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">5</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">6</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">7</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">8</div></div>
+                <div class="col-1"><div class="buttons buttons-indie">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "The Smiths",
+                        track: "There Is A Light That Never Goes Out",
+                        path: "../../../samples/indie/janglepop1.ogg"
+                    },
+                    {
+                        artist: "Pixies",
+                        track: "Where Is My Mind?",
+                        path: "../../../samples/indie/janglepop2.ogg"
+                    },
+                    {
+                        artist: "R.E.M.",
+                        track: "Losing My Religion",
+                        path: "../../../samples/indie/janglepop3.ogg"
+                    },
+                    {
+                        artist: "Orange Juice",
+                        track: "Felicity",
+                        path: "../../../samples/indie/janglepop4.ogg"
+                    },
+                    {
+                        artist: "The Replacements",
+                        track: "Alex Chilton",
+                        path: "../../../samples/indie/janglepop5.ogg"
+                    },
+                    {
+                        artist: "Camper Van Beethoven",
+                        track: "Take The Skinheads Bowling",
+                        path: "../../../samples/indie/janglepop6.ogg"
+                    },
+                    {
+                        artist: "Live",
+                        track: "Operation Spirit",
+                        path: "../../../samples/indie/janglepop7.ogg"
+                    },
+                    {
+                        artist: "The Go-Betweens",
+                        track: "Streets Of Your Town",
+                        path: "../../../samples/indie/janglepop8.ogg"
+                    },
+                    {
+                        artist: "The Sundays",
+                        track: "Here's Where The Story Ends",
+                        path: "../../../samples/indie/janglepop9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-indie').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-indie-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-indie"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

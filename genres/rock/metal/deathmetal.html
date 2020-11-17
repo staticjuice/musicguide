@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Death Metal</title>
+    </head>
+
+    <body id="deathmetal">
+        <div class="box metal">
+            <h1>DEATH METAL</h1><div class="year year-metal">1985</div>
+
+            <p>Death Metal can be seen as the leading force in contemporary Metal. In form, it is similar to Thrash Metal but heavier, deeper, and with updated distortions and effects. Accompanied by extremely deep growling vocals, it is downright brutal and performed as if the artists are trying to shrug off intense pain. The first wave of Death Metal began in the late 80s and was an even faster, harder and darker continuation of Thrash Metal. Because guitar velocity had become so high, Metal drummers developed a special hyper-fast drum technique, called "blast beats". This wave was very rough, unpolished and with little melody &ndash; almost a feral form of Metal, which later strongly influenced Grindcore during its development. The second wave of Death Metal happened in the 90s and particularly in Sweden. The second wave is a lot more melodic than the first one, with more synth influences and different (sometimes instrumental) passages throughout the music. Apart from these two large waves, Death Metal has numerous subgenres, indicating the versatility and popularity of the genre.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-metal">1</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">2</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">3</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">4</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">5</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">6</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">7</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">8</div></div>
+                <div class="col-1"><div class="buttons buttons-metal">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-metal-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Death",
+                        track: "Leprosy",
+                        path: "../../../samples/metal/deathmetal1.ogg"
+                    },
+                    {
+                        artist: "Deicide",
+                        track: "In The Minds Of Evil",
+                        path: "../../../samples/metal/deathmetal2.ogg"
+                    },
+                    {
+                        artist: "Morbid Angel",
+                        track: "Rapture",
+                        path: "../../../samples/metal/deathmetal3.ogg"
+                    },
+                    {
+                        artist: "Cannibal Corpse",
+                        track: "Hammer Smashed Face",
+                        path: "../../../samples/metal/deathmetal4.ogg"
+                    },
+                    {
+                        artist: "Possessed",
+                        track: "Death Metal",
+                        path: "../../../samples/metal/deathmetal5.ogg"
+                    },
+                    {
+                        artist: "Dark Tranquility",
+                        track: "Monochromatic Stains",
+                        path: "../../../samples/metal/deathmetal6.ogg"
+                    },
+                    {
+                        artist: "Malevolent Creation",
+                        track: "Soul Razer",
+                        path: "../../../samples/metal/deathmetal7.ogg"
+                    },
+                    {
+                        artist: "At The Gates",
+                        track: "Slaughter Of The Soul",
+                        path: "../../../samples/metal/deathmetal8.ogg"
+                    },
+                    {
+                        artist: "Arch Enemy",
+                        track: "Nemesis",
+                        path: "../../../samples/metal/deathmetal9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-metal').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-metal-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-metal"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

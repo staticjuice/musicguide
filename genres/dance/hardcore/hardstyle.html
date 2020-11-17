@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Hardstyle</title>
+    </head>
+
+    <body id="hardstyle">
+        <div class="box hardcore">
+            <h1>HARDSTYLE</h1><div class="year year-hardcore">1999</div>
+
+            <p>Hardstyle develops when a group of people try to recreate the original, casual feeling of old skool Gabber but without any explicit reference towards the genre. Hardstyle becomes a success, not the least due to a larger appeal by women. Hardstyle is a massive genre, incorporating tons of songs, composers and multiple subgenres. Though still largely underground, Hardstyle has survived since its birth and still has a strong fanbase in many cities around the world. The probable reason for this popularity is a good combination of the appealing factors of EDM's heaviest genres &ndash; Gabber, Hard Trance and Hard NRG, which makes Hardstyle a flexible jack of all trades (as long as it's ultra-hard and loud). The "slower" tempo and abrasive sounds of Hard Trance, the focus on synth stabs and vocal samples of Hard NRG, and the typical distortion on kick drums or melodies of Gabber are the key ingredients of Hardstyle's spicy melting pot. After a few years, a very popular subgenre known as Jumpstyle arrives. Afterwards, Jumpstyle fused with Techno and becomes Tekstyle &ndash; a genre that is still in its infancy but quite promising.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-hardcore">1</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">2</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">3</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">4</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">5</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">6</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">7</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">8</div></div>
+                <div class="col-1"><div class="buttons buttons-hardcore">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-hardcore-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Frontliner",
+                        track: "Summer",
+                        path: "../../../samples/hardcore/hardstyle1.ogg"
+                    },
+                    {
+                        artist: "D-Block & S-Te-Fan",
+                        track: "Music Made Addict",
+                        path: "../../../samples/hardcore/hardstyle2.ogg"
+                    },
+                    {
+                        artist: "Outlander",
+                        track: "Our World",
+                        path: "../../../samples/hardcore/hardstyle3.ogg"
+                    },
+                    {
+                        artist: "Tatanka",
+                        track: "A True Story",
+                        path: "../../../samples/hardcore/hardstyle4.ogg"
+                    },
+                    {
+                        artist: "Dr Rude & Villian",
+                        track: "Break The Floor",
+                        path: "../../../samples/hardcore/hardstyle5.ogg"
+                    },
+                    {
+                        artist: "Josh & Wesz",
+                        track: "Believe",
+                        path: "../../../samples/hardcore/hardstyle6.ogg"
+                    },
+                    {
+                        artist: "Noisecontrollers",
+                        track: "What?!",
+                        path: "../../../samples/hardcore/hardstyle7.ogg"
+                    },
+                    {
+                        artist: "Headhunterz",
+                        track: "Dragonborn",
+                        path: "../../../samples/hardcore/hardstyle8.ogg"
+                    },
+                    {
+                        artist: "Concept Art",
+                        track: "Playing With Fire",
+                        path: "../../../samples/hardcore/hardstyle9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-hardcore').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-hardcore-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-hardcore"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

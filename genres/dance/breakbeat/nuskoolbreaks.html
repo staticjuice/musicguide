@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Nu Skool Breaks</title>
+    </head>
+
+    <body id="nuskoolbreaks">
+        <div class="box breakbeat">
+            <h1>NU SKOOL BREAKS</h1><div class="year year-breakbeat">1999</div>
+
+            <p>Like almost all Dance supergenres, Breakbeat has a back-and-forth polarity of purism versus eclecticism, old skool versus nu skool, back to the roots versus further crossing over. Nu Skool Breaks is a misleading term, however, as it attempts to keep the old skool spirit alive after the Big Beat explosion. The style is usually characterised by more abstract, more technical sounds, sometimes incorporated from other genres of Electronic Dance Music, including UK Garage, Electro House and Drum &amp; Bass. Typically, tracks range between 125-140 BPM, often featuring a dominant bassline. In contrast with Big Beat, the sound consisted less of Hip Hop samples and acid-type sounds, instead emphasising dance-friendliness and a new sound produced by modern production techniques using synthesisers, effects processors and computers. Some Nu Skool Breaks tracks might seem a lot like a sort of slowed-down Jungle (as they both originated in London), being equally dark and menacing, but many also go the complete opposite direction. Elements of Techno and Electro might be traceable as well.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-breakbeat">1</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">2</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">3</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">4</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">5</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">6</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">7</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">8</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-breakbeat-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Tipper",
+                        track: "Twister",
+                        path: "../../../samples/breakbeat/nuskoolbreaks1.ogg"
+                    },
+                    {
+                        artist: "Freq Nasty",
+                        track: "Amped",
+                        path: "../../../samples/breakbeat/nuskoolbreaks2.ogg"
+                    },
+                    {
+                        artist: "Slyde",
+                        track: "Kiss Kiss Bang Bang",
+                        path: "../../../samples/breakbeat/nuskoolbreaks3.ogg"
+                    },
+                    {
+                        artist: "Stereo 8",
+                        track: "Never Coming Back",
+                        path: "../../../samples/breakbeat/nuskoolbreaks4.ogg"
+                    },
+                    {
+                        artist: "Rennie Pilgrem & Roxiller",
+                        track: "Bug",
+                        path: "../../../samples/breakbeat/nuskoolbreaks5.ogg"
+                    },
+                    {
+                        artist: "Plump DJs",
+                        track: "Rocket Soul",
+                        path: "../../../samples/breakbeat/nuskoolbreaks6.ogg"
+                    },
+                    {
+                        artist: "Krafty Kuts",
+                        track: "Funky Ass Beats",
+                        path: "../../../samples/breakbeat/nuskoolbreaks7.ogg"
+                    },
+                    {
+                        artist: "B-Phreak",
+                        track: "Funkbox",
+                        path: "../../../samples/breakbeat/nuskoolbreaks8.ogg"
+                    },
+                    {
+                        artist: "Stanton Warriors feat. Ruby Goe",
+                        track: "Shoot Me Down",
+                        path: "../../../samples/breakbeat/nuskoolbreaks9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-breakbeat').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-breakbeat-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-breakbeat"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

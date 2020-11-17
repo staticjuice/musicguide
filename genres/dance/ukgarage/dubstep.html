@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Dubstep</title>
+    </head>
+
+    <body id="dubstep">
+        <div class="box ukgarage">
+            <h1>DUBSTEP</h1><div class="year year-ukgarage">2002</div>
+
+            <p>Dubstep can be described as the only true innovative Dance genre since 2000 (alongside Grime), and is sometimes even labelled as a supergenre on its own. After all, it’s hard to categorise, being a mixture of Breakbeat, Drum &amp; Bass and Jamaican Dub music. Just like Dub, Dubstep started out as instrumental B-sides, only Grime ones instead of Reggae. Early or True Dubstep is recognisable by an eerie, ambient soundscape, heavily influenced by Dub, which it lost over the years in subsequent subgenres. To fully appreciate Dubstep, a decent subwoofer or club sound system is vital, as frequencies tend to drop even below Drum &amp; Bass. These LFO-subsonic basslines are often re-oscillated, creating the stereotypical Dubstep "wobbly bass", which got transferred to other music genres afterwards. Dubstep has a steady drum rhythm (kick-snare-kick-snare) stretched far apart, and thus leaving lots of listening room, while also making Dubstep appear slower than its actual tempo (140 bpm). Dubstep eventually led to an abundance of crossovers, subgenres and a more commercial approach &ndash; enter Post-Dubstep.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-ukgarage">1</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">2</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">3</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">4</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">5</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">6</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">7</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">8</div></div>
+                <div class="col-1"><div class="buttons buttons-ukgarage">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-ukgarage-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Icicle",
+                        track: "Xylophobia",
+                        path: "../../../samples/ukgarage/dubstep1.ogg"
+                    },
+                    {
+                        artist: "Horsepower Productions",
+                        track: "Nothing Can Go Wrong",
+                        path: "../../../samples/ukgarage/dubstep2.ogg"
+                    },
+                    {
+                        artist: "Skream",
+                        track: "Hedd Banger",
+                        path: "../../../samples/ukgarage/dubstep3.ogg"
+                    },
+                    {
+                        artist: "Kryptic Minds & Youngsta",
+                        track: "Surge",
+                        path: "../../../samples/ukgarage/dubstep4.ogg"
+                    },
+                    {
+                        artist: "Kromestar & Dark Tantrums",
+                        track: "Trianglez",
+                        path: "../../../samples/ukgarage/dubstep5.ogg"
+                    },
+                    {
+                        artist: "Kulture",
+                        track: "Claustrophobic Angel",
+                        path: "../../../samples/ukgarage/dubstep6.ogg"
+                    },
+                    {
+                        artist: "16bit",
+                        track: "Boston Cream",
+                        path: "../../../samples/ukgarage/dubstep7.ogg"
+                    },
+                    {
+                        artist: "Thelem",
+                        track: "False Imprint",
+                        path: "../../../samples/ukgarage/dubstep8.ogg"
+                    },
+                    {
+                        artist: "Benga & Coki",
+                        track: "Night",
+                        path: "../../../samples/ukgarage/dubstep9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-ukgarage').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-ukgarage-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-ukgarage"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
