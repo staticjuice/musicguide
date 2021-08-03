@@ -477,7 +477,6 @@ a:link, a:visited, a:hover, a:active {
 #oi {background: url("../images/punk/oi.jpg") center center no-repeat fixed; background-size: cover; }
 #skapunk {background: url("../images/punk/skapunk.jpg") center center no-repeat fixed; background-size: cover; }
 #hardcorepunk {background: url("../images/punk/hardcorepunk.jpg") center center no-repeat fixed; background-size: cover; }
-#crustpunk {background: url("../images/punk/crustpunk.jpg") center center no-repeat fixed; background-size: cover; }
 #psychobilly {background: url("../images/punk/psychobilly.jpg") center center no-repeat fixed; background-size: cover; }
 #posthardcore {background: url("../images/punk/posthardcore.jpg") center center no-repeat fixed; background-size: cover; }
 #riotgrrrl {background: url("../images/punk/riotgrrrl.jpg") center center no-repeat fixed; background-size: cover; }
@@ -488,7 +487,6 @@ a:link, a:visited, a:hover, a:active {
 #raprock {background: url("../images/indie/raprock.jpg") center center no-repeat fixed; background-size: cover; }
 #britpop {background: url("../images/indie/britpop.jpg") center center no-repeat fixed; background-size: cover; }
 #poppunk {background: url("../images/indie/poppunk.jpg") center center no-repeat fixed; background-size: cover; }
-#indierock {background: url("../images/indie/indierock.jpg") center center no-repeat fixed; background-size: cover; }
 #postrock {background: url("../images/indie/postrock.jpg") center center no-repeat fixed; background-size: cover; }
 #postgrunge {background: url("../images/indie/postgrunge.jpg") center center no-repeat fixed; background-size: cover; }
 #postbritpop {background: url("../images/indie/postbritpop.jpg") center center no-repeat fixed; background-size: cover; }
@@ -548,7 +546,6 @@ a:link, a:visited, a:hover, a:active {
 #hardtrance {background: url("../images/trance/hardtrance.jpg") center center no-repeat fixed; background-size: cover; }
 #techtrance {background: url("../images/trance/techtrance.jpg") center center no-repeat fixed; background-size: cover; }
 #upliftingtrance {background: url("../images/trance/upliftingtrance.jpg") center center no-repeat fixed; background-size: cover; }
-#neotrance {background: url("../images/trance/neotrance.jpg") center center no-repeat fixed; background-size: cover; }
 
 #detroittechno {background: url("../images/techno/detroittechno.jpg") center center no-repeat fixed; background-size: cover; }
 #acidtechno {background: url("../images/techno/acidtechno.jpg") center center no-repeat fixed; background-size: cover; }
@@ -591,8 +588,7 @@ a:link, a:visited, a:hover, a:active {
 #dubstep {background: url("../images/ukgarage/dubstep.jpg") center center no-repeat fixed; background-size: cover; }
 #futuregarage {background: url("../images/ukgarage/futuregarage.jpg") center center no-repeat fixed; background-size: cover; }
 #brostep {background: url("../images/ukgarage/brostep.jpg") center center no-repeat fixed; background-size: cover; }
-#liquiddubstep {background: url("../images/ukgarage/liquiddubstep.jpg") center center no-repeat fixed; background-size: cover; }
-#chillstep {background: url("../images/ukgarage/chillstep.jpg") center center no-repeat fixed; background-size: cover; }
+#melodicdubstep {background: url("../images/ukgarage/melodicdubstep.jpg") center center no-repeat fixed; background-size: cover; }
 #glitchhop {background: url("../images/ukgarage/glitchhop.jpg") center center no-repeat fixed; background-size: cover; }
 #edmtrap {background: url("../images/ukgarage/edmtrap.jpg") center center no-repeat fixed; background-size: cover; }
 #futurebass {background: url("../images/ukgarage/futurebass.jpg") center center no-repeat fixed; background-size: cover; }
@@ -604,11 +600,9 @@ a:link, a:visited, a:hover, a:active {
 #newage {background: url("../images/experimental/newage.jpg") center center no-repeat fixed; background-size: cover; }
 #chiptune {background: url("../images/experimental/chiptune.png") center center no-repeat fixed; background-size: cover; }
 #darkambient {background: url("../images/experimental/darkambient.jpg") center center no-repeat fixed; background-size: cover; }
-#idm {background: url("../images/experimental/idm.jpg") center center no-repeat fixed; background-size: cover; }
 #triphop {background: url("../images/experimental/triphop.jpg") center center no-repeat fixed; background-size: cover; }
 #illbient {background: url("../images/experimental/illbient.jpg") center center no-repeat fixed; background-size: cover; }
 #glitch {background: url("../images/experimental/glitch.jpg") center center no-repeat fixed; background-size: cover; }
-#lowercase {background: url("../images/experimental/lowercase.jpg") center center no-repeat fixed; background-size: cover; }
 
 #chillwave {background: url("../images/hauntology/chillwave.jpg") center center no-repeat fixed; background-size: cover; }
 #synthwave {background: url("../images/hauntology/synthwave.jpg") center center no-repeat fixed; background-size: cover; }
