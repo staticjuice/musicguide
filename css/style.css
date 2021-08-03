@@ -98,6 +98,10 @@ a:link, a:visited, a:hover, a:active {
     z-index: 1;
 }
 
+.col-3, .col-12 {
+    position: relative;
+}
+
 /*---------------------------------------------------------------------------*/
 
 .genrelist {
@@ -268,7 +272,7 @@ a:link, a:visited, a:hover, a:active {
 .stop {
     float: right;
     margin-top: -1em;
-    margin-right: 0.25em;
+    margin-right: -0.5em;
 }
 
 .box.classical { border: 0.5em solid #917550; }
