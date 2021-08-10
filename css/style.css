@@ -382,12 +382,12 @@ a:link, a:visited, a:hover, a:active {
 #filmscore {background: url("../images/classical/filmscore.jpg") center center no-repeat fixed; background-size: cover; }
 
 #spirituals {background: url("../images/blues/spirituals.jpg") center center no-repeat fixed; background-size: cover; }
-#countryblues {background: url("../images/blues/countryblues.jpg") center center no-repeat fixed; background-size: cover; }
+#deltablues {background: url("../images/blues/deltablues.jpg") center center no-repeat fixed; background-size: cover; }
 #boogiewoogie {background: url("../images/blues/boogiewoogie.jpg") center center no-repeat fixed; background-size: cover; }
 #vaudevilleblues {background: url("../images/blues/vaudevilleblues.jpg") center center no-repeat fixed; background-size: cover; }
 #jumpblues {background: url("../images/blues/jumpblues.jpg") center center no-repeat fixed; background-size: cover; }
 #westcoastblues {background: url("../images/blues/westcoastblues.jpg") center center no-repeat fixed; background-size: cover; }
-#urbanblues {background: url("../images/blues/urbanblues.jpg") center center no-repeat fixed; background-size: cover; }
+#chicagoblues {background: url("../images/blues/chicagoblues.jpg") center center no-repeat fixed; background-size: cover; }
 #louisianablues {background: url("../images/blues/louisianablues.jpg") center center no-repeat fixed; background-size: cover; }
 #hillcountryblues {background: url("../images/blues/hillcountryblues.jpg") center center no-repeat fixed; background-size: cover; }
 #soulblues {background: url("../images/blues/soulblues.jpg") center center no-repeat fixed; background-size: cover; }
@@ -492,8 +492,7 @@ a:link, a:visited, a:hover, a:active {
 #postbritpop {background: url("../images/indie/postbritpop.jpg") center center no-repeat fixed; background-size: cover; }
 #emo {background: url("../images/indie/emo.jpg") center center no-repeat fixed; background-size: cover; }
 #garagerockrevival {background: url("../images/indie/garagerockrevival.jpg") center center no-repeat fixed; background-size: cover; }
-#dancepunk {background: url("../images/indie/dancepunk.jpg") center center no-repeat fixed; background-size: cover; }
-#indietronica {background: url("../images/indie/indietronica.jpg") center center no-repeat fixed; background-size: cover; }
+#digitalelectronicrock {background: url("../images/indie/digitalelectronicrock.jpg") center center no-repeat fixed; background-size: cover; }
 
 #ska {background: url("../images/reggae/ska.jpg") center center no-repeat fixed; background-size: cover; }
 #rocksteady {background: url("../images/reggae/rocksteady.jpg") center center no-repeat fixed; background-size: cover; }
@@ -534,7 +533,6 @@ a:link, a:visited, a:hover, a:active {
 #electroswing {background: url("../images/house/electroswing.jpg") center center no-repeat fixed; background-size: cover; }
 #mainroomhouse {background: url("../images/house/mainroomhouse.jpg") center center no-repeat fixed; background-size: cover; }
 #nudisco {background: url("../images/house/nudisco.jpg") center center no-repeat fixed; background-size: cover; }
-#tropicalhouse {background: url("../images/house/tropicalhouse.jpg") center center no-repeat fixed; background-size: cover; }
 #futurehouse {background: url("../images/house/futurehouse.jpg") center center no-repeat fixed; background-size: cover; }
 
 #acidtrance {background: url("../images/trance/acidtrance.jpg") center center no-repeat fixed; background-size: cover; }
@@ -563,7 +561,6 @@ a:link, a:visited, a:hover, a:active {
 #ukhardcore {background: url("../images/hardcore/ukhardcore.jpg") center center no-repeat fixed; background-size: cover; }
 
 #electro {background: url("../images/breakbeat/electro.jpg") center center no-repeat fixed; background-size: cover; }
-#freestyle {background: url("../images/breakbeat/freestyle.jpg") center center no-repeat fixed; background-size: cover; }
 #chemicalbreaks {background: url("../images/breakbeat/chemicalbreaks.jpg") center center no-repeat fixed; background-size: cover; }
 #floridabreaks {background: url("../images/breakbeat/floridabreaks.jpg") center center no-repeat fixed; background-size: cover; }
 #bigbeat {background: url("../images/breakbeat/bigbeat.jpg") center center no-repeat fixed; background-size: cover; }
@@ -571,16 +568,14 @@ a:link, a:visited, a:hover, a:active {
 #nuskoolbreaks {background: url("../images/breakbeat/nuskoolbreaks.jpg") center center no-repeat fixed; background-size: cover; }
 
 #jungle {background: url("../images/drumandbass/jungle.jpg") center center no-repeat fixed; background-size: cover; }
-#darkstep {background: url("../images/drumandbass/darkstep.jpg") center center no-repeat fixed; background-size: cover; }
-#atmosphericjungle {background: url("../images/drumandbass/atmosphericjungle.jpg") center center no-repeat fixed; background-size: cover; }
+#atmosphericdrumandbass {background: url("../images/drumandbass/atmosphericdrumandbass.jpg") center center no-repeat fixed; background-size: cover; }
 #jazzstep {background: url("../images/drumandbass/jazzstep.jpg") center center no-repeat fixed; background-size: cover; }
 #jumpup {background: url("../images/drumandbass/jumpup.jpg") center center no-repeat fixed; background-size: cover; }
 #techstep {background: url("../images/drumandbass/techstep.jpg") center center no-repeat fixed; background-size: cover; }
 #neurofunk {background: url("../images/drumandbass/neurofunk.jpg") center center no-repeat fixed; background-size: cover; }
 #liquidfunk {background: url("../images/drumandbass/liquidfunk.jpg") center center no-repeat fixed; background-size: cover; }
-#nujumpup {background: url("../images/drumandbass/nujumpup.jpg") center center no-repeat fixed; background-size: cover; }
+#dancefloordrumandbass {background: url("../images/drumandbass/dancefloordrumandbass.jpg") center center no-repeat fixed; background-size: cover; }
 #microfunk {background: url("../images/drumandbass/microfunk.jpg") center center no-repeat fixed; background-size: cover; }
-#drumstep {background: url("../images/drumandbass/drumstep.jpg") center center no-repeat fixed; background-size: cover; }
 
 #twostepgarage {background: url("../images/ukgarage/2stepgarage.jpg") center center no-repeat fixed; background-size: cover; }
 #grime {background: url("../images/ukgarage/grime.jpg") center center no-repeat fixed; background-size: cover; }
