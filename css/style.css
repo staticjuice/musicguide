@@ -522,7 +522,8 @@ a:link, a:visited, a:hover, a:active {
 #techhouse {background: url("../images/house/techhouse.jpg") center center no-repeat fixed; background-size: cover; }
 #frenchhouse {background: url("../images/house/frenchhouse.jpg") center center no-repeat fixed; background-size: cover; }
 #electrohouse {background: url("../images/house/electrohouse.jpg") center center no-repeat fixed; background-size: cover; }
-#mainroomhouse {background: url("../images/house/mainroomhouse.jpg") center center no-repeat fixed; background-size: cover; }
+#electroswing {background: url("../images/house/electroswing.jpg") center center no-repeat fixed; background-size: cover; }
+#bigroom {background: url("../images/house/bigroom.jpg") center center no-repeat fixed; background-size: cover; }
 #nudisco {background: url("../images/house/nudisco.jpg") center center no-repeat fixed; background-size: cover; }
 #futurehouse {background: url("../images/house/futurehouse.jpg") center center no-repeat fixed; background-size: cover; }
 
@@ -552,6 +553,7 @@ a:link, a:visited, a:hover, a:active {
 #ukhardcore {background: url("../images/hardcore/ukhardcore.jpg") center center no-repeat fixed; background-size: cover; }
 
 #electro {background: url("../images/breakbeat/electro.jpg") center center no-repeat fixed; background-size: cover; }
+#freestyle {background: url("../images/breakbeat/freestyle.jpg") center center no-repeat fixed; background-size: cover; }
 #floridabreaks {background: url("../images/breakbeat/floridabreaks.jpg") center center no-repeat fixed; background-size: cover; }
 #bigbeat {background: url("../images/breakbeat/bigbeat.jpg") center center no-repeat fixed; background-size: cover; }
 #progressivebreaks {background: url("../images/breakbeat/progressivebreaks.jpg") center center no-repeat fixed; background-size: cover; }

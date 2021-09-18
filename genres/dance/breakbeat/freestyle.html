@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Freestyle</title>
+    </head>
+
+    <body id="freestyle">
+        <div class="box breakbeat">
+            <h1>FREESTYLE</h1><div class="year year-breakbeat">1983</div>
+
+            <p>Breakdancing is a fundamental element of Hip Hop culture, as old as Hip Hop itself. As a music genre however it doesn't really exist. It's a collection/mix of anything one can breakdance to. When the drum sampler was invented, music specifically made for breakdancing popped up. On one hand, there is a much heavier, faster, bass-driven type of Electro called Freestyle, with less subtle and catchier synthesiser melodies accompanied by powerful raps. On the other hand, new heavy and melodic instrumental Funk records with lots of breaks and drum samples were being released for all the "b-boys" and "fly girls" to dance to. This Breakdance is quite different from Freestyle, but both are strongly tied together in the same subculture. The difference between Freestyle and Electro can be marginal, but Freestyle is true Breakbeat &ndash; it uses more pronounced breaks and more percussion while implementing Hip Hop elements such as scratching, sampling and electronic sounds. However, Freestyle also has a different meaning when it is used to describe Electro-influenced Disco, like Joyce Sims' "Lifetime Love" for example.</p>
+
+            <div class="row">
+                <div class="col-1"><div class="buttons buttons-breakbeat">1</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">2</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">3</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">4</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">5</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">6</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">7</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">8</div></div>
+                <div class="col-1"><div class="buttons buttons-breakbeat">9</div></div>
+            </div>
+
+            <p class="artisttrack">Artist: <span id="artist"><span></p><br>
+            <p class="artisttrack">Track: <span id="track"></span></p>
+            <div class="col-1 stop"><div class="buttons buttons-breakbeat-stop">&FilledSmallSquare;</div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var tracks = [
+                    {
+                        artist: "Break Machine",
+                        track: "Street Dance",
+                        path: "../../../samples/breakbeat/freestyle1.ogg"
+                    },
+                    {
+                        artist: "Alizée",
+                        track: "Fantasy Love",
+                        path: "../../../samples/breakbeat/freestyle2.ogg"
+                    },
+                    {
+                        artist: "Pretty Poison",
+                        track: "Nightime",
+                        path: "../../../samples/breakbeat/freestyle3.ogg"
+                    },
+                    {
+                        artist: "Lil Suzy",
+                        track: "We'd Always Be Together",
+                        path: "../../../samples/breakbeat/freestyle4.ogg"
+                    },
+                    {
+                        artist: "Shantelle",
+                        track: "Love Attack",
+                        path: "../../../samples/breakbeat/freestyle5.ogg"
+                    },
+                    {
+                        artist: "The Cover Girls",
+                        track: "Don't Stop Now",
+                        path: "../../../samples/breakbeat/freestyle6.ogg"
+                    },
+                    {
+                        artist: "Tribe",
+                        track: "Just You And I",
+                        path: "../../../samples/breakbeat/freestyle7.ogg"
+                    },
+                    {
+                        artist: "Debbie Deb",
+                        track: "I Wanna Dance",
+                        path: "../../../samples/breakbeat/freestyle8.ogg"
+                    },
+                    {
+                        artist: "K5",
+                        track: "Passion",
+                        path: "../../../samples/breakbeat/freestyle9.ogg"
+                    }
+                ]
+
+                tracks.forEach(track => {
+                    const audio = new Audio()
+                    audio.addEventListener('canplaythrough', null, false)
+                    audio.src = track.path
+                })
+
+                var artistSpan = $(document).find('#artist')[0]
+                var track = $(document).find('#track')[0]
+                var audioInstanceArray = [];
+                var buttons = [];
+                var audioInstance;
+
+                $(document).find('.buttons-breakbeat').each(function(index, button) {
+                    buttons.push(button);
+                    $(this).click(function() {
+                        removeAllButtonBorders()
+                        $(this).toggleClass('clicked');
+                        stopAllMusic()
+                        audioInstance = new Audio(tracks[index].path);
+                        audioInstanceArray.push(audioInstance);
+                        audioInstance.play();
+                        artistSpan.innerHTML = tracks[index].artist
+                        track.innerHTML = tracks[index].track
+                    });
+                });
+
+                $('.buttons-breakbeat-stop').on('click', function() {
+                    stopAllMusic()
+                    artistSpan.innerHTML = ''
+                    track.innerHTML = ''
+                    removeAllButtonBorders()
+                });
+
+                var removeAllButtonBorders = () => {
+                    buttons.forEach(
+                        button => button.className = "buttons buttons-breakbeat"
+                    )
+                }
+
+                var stopAllMusic = () => {
+                    audioInstanceArray.forEach(function(audioInstance, index) {
+                        audioInstance.pause();
+                        audioInstance.currentTime = 0;
+                        audioInstanceArray.pop();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
