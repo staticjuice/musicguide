@@ -53,7 +53,7 @@ a:link, a:visited, a:hover, a:active {
     font-size: 3.75vw;
     text-align: center;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -91,7 +91,7 @@ a:link, a:visited, a:hover, a:active {
 
 #genres-grid h1 {
     font-family: ProductSansRegular;
-    top: 38%; left: 0; right: 0;
+    top: 3em; left: 0; right: 0;
     font-size: 2.7vw;
     position: absolute;
     text-align: center;
@@ -123,14 +123,6 @@ a:link, a:visited, a:hover, a:active {
     overflow: auto;
 }
 
-.supergenre:before {
-    content: "";
-    position: fixed;
-    width: 100vw; height: 100vh;
-    filter: brightness(40%);
-    z-index: -1;
-}
-
 .classical { background-color: #705A3D; }
 .blues { background-color: #283593; }
 .jazz { background-color: #E57373; }
@@ -152,6 +144,15 @@ a:link, a:visited, a:hover, a:active {
 .drumandbass { background-color: #9A1839; }
 .ukgarage { background-color: #8F7CAD; }
 .experimental { background-color: #EDEDED; color: #222; }
+
+.intro:before, .mainclassical:before, .mainblues:before, .mainjazz:before, .maincountry:before, .mainrhythmandblues:before, .mainpop:before, .mainrock:before, .mainmetal:before, .mainpunk:before, .mainindie:before, .mainreggae:before, .mainhiphop:before, .mainindustrial:before, .mainhouse:before, .maintrance:before, .maintechno:before, .mainhardcore:before, .mainbreakbeat:before, .maindrumandbass:before, .mainukgarage:before, .mainexperimental:before {
+    content: "";
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(40%);
+    z-index: -1;
+}
 
 .mainclassical a:hover { color: #A18259; }
 .mainblues a:hover { color: #5361D0; }
@@ -179,8 +180,8 @@ a:link, a:visited, a:hover, a:active {
 .mainblues .genrelist ::selection { background: rgba(40, 53, 147, 0.998); }
 .mainjazz .genrelist ::selection { background: rgba(229, 115, 115, 0.998); }
 .maincountry .genrelist ::selection { background: rgba(138, 154, 91, 0.998); }
-.mainpop .genrelist ::selection { background: rgba(253, 216, 53, 0.998); color: #222; }
 .mainrhythmandblues .genrelist ::selection { background: rgba(0, 105, 92, 0.998); }
+.mainpop .genrelist ::selection { background: rgba(253, 216, 53, 0.998); color: #222; }
 .mainrock .genrelist ::selection { background: rgba(198, 40, 40, 0.998); }
 .mainmetal .genrelist ::selection { background: rgba(8, 8, 8, 0.998); }
 .mainpunk .genrelist ::selection { background: rgba(239, 108, 0, 0.998); }
@@ -197,29 +198,29 @@ a:link, a:visited, a:hover, a:active {
 .mainukgarage .genrelist ::selection { background: rgba(143, 124, 173, 0.998); }
 .mainexperimental .genrelist ::selection { background: rgba(237, 237, 237, 0.998); color: #222; }
 
-.intro:before { background: url("../images/intro.jpg"); background-size: cover; }
+.intro:before { background: url("../images/intro.jpg") center center no-repeat fixed; background-size: cover; }
 .allgenres { background: url("../images/wood.jpg"); position: absolute; background-size: cover; }
-.mainclassical:before { background: url("../images/classicalbig.jpg"); background-size: cover; }
-.mainblues:before { background: url("../images/bluesbig.jpg"); background-size: cover; }
-.mainjazz:before { background: url("../images/jazzbig.jpg"); background-size: cover; }
-.maincountry:before { background: url("../images/countrybig.jpg"); background-size: cover; }
-.mainpop:before { background: url("../images/popbig.jpg"); background-size: cover; }
-.mainrhythmandblues:before { background: url("../images/rhythmandbluesbig.jpg"); background-size: cover; }
-.mainrock:before { background: url("../images/rockbig.jpg"); background-size: cover; }
-.mainmetal:before { background: url("../images/metalbig.jpg"); background-size: cover; }
-.mainpunk:before { background: url("../images/punkrockbig.jpg"); background-size: cover; }
-.mainindie:before { background: url("../images/indiebig.jpg"); background-size: cover; }
-.mainreggae:before { background: url("../images/reggaebig.jpg"); background-size: cover; }
-.mainhiphop:before { background: url("../images/hiphopbig.jpg"); background-size: cover; }
-.mainindustrial:before { background: url("../images/industrialbig.jpg"); background-size: cover; }
-.mainhouse:before { background: url("../images/housebig.jpg"); background-size: cover; }
-.maintrance:before { background: url("../images/trancebig.jpg"); background-size: cover; }
-.maintechno:before { background: url("../images/technobig.jpg"); background-size: cover; }
-.mainhardcore:before { background: url("../images/hardcorebig.jpg"); background-size: cover; }
-.mainbreakbeat:before { background: url("../images/breakbeatbig.jpg"); background-size: cover; }
-.maindrumandbass:before { background: url("../images/drumandbassbig.jpg"); background-size: cover; }
-.mainukgarage:before { background: url("../images/ukgaragebig.jpg"); background-size: cover; }
-.mainexperimental:before { background: url("../images/experimentalbig.jpg"); background-size: cover; }
+.mainclassical:before { background: url("../images/classicalbig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainblues:before { background: url("../images/bluesbig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainjazz:before { background: url("../images/jazzbig.jpg") center center no-repeat fixed; background-size: cover; }
+.maincountry:before { background: url("../images/countrybig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainrhythmandblues:before { background: url("../images/rhythmandbluesbig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainpop:before { background: url("../images/popbig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainrock:before { background: url("../images/rockbig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainmetal:before { background: url("../images/metalbig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainpunk:before { background: url("../images/punkrockbig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainindie:before { background: url("../images/indiebig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainreggae:before { background: url("../images/reggaebig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainhiphop:before { background: url("../images/hiphopbig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainindustrial:before { background: url("../images/industrialbig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainhouse:before { background: url("../images/housebig.jpg") center center no-repeat fixed; background-size: cover; }
+.maintrance:before { background: url("../images/trancebig.jpg") center center no-repeat fixed; background-size: cover; }
+.maintechno:before { background: url("../images/technobig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainhardcore:before { background: url("../images/hardcorebig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainbreakbeat:before { background: url("../images/breakbeatbig.jpg") center center no-repeat fixed; background-size: cover; }
+.maindrumandbass:before { background: url("../images/drumandbassbig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainukgarage:before { background: url("../images/ukgaragebig.jpg") center center no-repeat fixed; background-size: cover; }
+.mainexperimental:before { background: url("../images/experimentalbig.jpg") center center no-repeat fixed; background-size: cover; }
 
 /*---------------------------------------------------------------------------*/
 
