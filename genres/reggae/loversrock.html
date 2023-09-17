@@ -83,51 +83,33 @@
                     }
                 ]
 
-                tracks.forEach(track => {
-                    const audio = new Audio()
-                    audio.addEventListener('canplaythrough', null, false)
-                    audio.src = track.path
-                })
+                var audioInstances = tracks.map(track => new Audio(track.path));
+                var $artistSpan = $('#artist');
+                var $trackSpan = $('#track');
 
-                var artistSpan = $(document).find('#artist')[0]
-                var track = $(document).find('#track')[0]
-                var audioInstanceArray = [];
-                var buttons = [];
-                var audioInstance;
-
-                $(document).find('.buttons-reggae').each(function(index, button) {
-                    buttons.push(button);
-                    $(this).click(function() {
-                        removeAllButtonBorders()
+                $('.buttons-reggae').each(function(index, button) {
+                    $(button).click(function() {
+                        stopAllMusic();
                         $(this).toggleClass('clicked');
-                        stopAllMusic()
-                        audioInstance = new Audio(tracks[index].path);
-                        audioInstanceArray.push(audioInstance);
-                        audioInstance.play();
-                        artistSpan.innerHTML = tracks[index].artist
-                        track.innerHTML = tracks[index].track
+                        let audio = audioInstances[index];
+                        audio.play();
+                        $artistSpan.text(tracks[index].artist);
+                        $trackSpan.text(tracks[index].track);
                     });
                 });
 
                 $('.buttons-reggae-stop').on('click', function() {
-                    stopAllMusic()
-                    artistSpan.innerHTML = ''
-                    track.innerHTML = ''
-                    removeAllButtonBorders()
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
                 });
 
-                var removeAllButtonBorders = () => {
-                    buttons.forEach(
-                        button => button.className = "buttons buttons-reggae"
-                    )
-                }
-
-                var stopAllMusic = () => {
-                    audioInstanceArray.forEach(function(audioInstance, index) {
-                        audioInstance.pause();
-                        audioInstance.currentTime = 0;
-                        audioInstanceArray.pop();
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
                     });
+                    $('.buttons-reggae').removeClass('clicked');
                 }
             });
         </script>
