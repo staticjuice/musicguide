@@ -443,6 +443,7 @@ a:link, a:visited, a:hover, a:active {
 #progressiverock {background: url("../images/rock/progressiverock.jpg") center center no-repeat fixed; background-size: cover; }
 #hardrock {background: url("../images/rock/hardrock.jpg") center center no-repeat fixed; background-size: cover; }
 #southernrock {background: url("../images/rock/southernrock.jpg") center center no-repeat fixed; background-size: cover; }
+#krautrock {background: url("../images/rock/krautrock.jpg") center center no-repeat fixed; background-size: cover; }
 #glamrock {background: url("../images/rock/glamrock.jpg") center center no-repeat fixed; background-size: cover; }
 #heartlandrock {background: url("../images/rock/heartlandrock.jpg") center center no-repeat fixed; background-size: cover; }
 
@@ -486,6 +487,7 @@ a:link, a:visited, a:hover, a:active {
 #garagerockrevival {background: url("../images/indie/garagerockrevival.jpg") center center no-repeat fixed; background-size: cover; }
 #indietronica {background: url("../images/indie/indietronica.jpg") center center no-repeat fixed; background-size: cover; }
 
+#mento {background: url("../images/reggae/mento.jpg") center center no-repeat fixed; background-size: cover; }
 #ska {background: url("../images/reggae/ska.jpg") center center no-repeat fixed; background-size: cover; }
 #rocksteady {background: url("../images/reggae/rocksteady.jpg") center center no-repeat fixed; background-size: cover; }
 #reggae {background: url("../images/reggae/reggae.jpg") center center no-repeat fixed; background-size: cover; }
@@ -582,8 +584,8 @@ a:link, a:visited, a:hover, a:active {
 
 #musiqueconcrete {background: url("../images/experimental/musiqueconcrete.jpg") center center no-repeat fixed; background-size: cover; }
 #synth {background: url("../images/experimental/synth.jpg") center center no-repeat fixed; background-size: cover; }
-#krautrock {background: url("../images/experimental/krautrock.jpg") center center no-repeat fixed; background-size: cover; }
 #ambient {background: url("../images/experimental/ambient.jpg") center center no-repeat fixed; background-size: cover; }
+#newage {background: url("../images/experimental/newage.jpg") center center no-repeat fixed; background-size: cover; }
 #chiptune {background: url("../images/experimental/chiptune.png") center center no-repeat fixed; background-size: cover; }
 #darkambient {background: url("../images/experimental/darkambient.jpg") center center no-repeat fixed; background-size: cover; }
 #triphop {background: url("../images/experimental/triphop.jpg") center center no-repeat fixed; background-size: cover; }
