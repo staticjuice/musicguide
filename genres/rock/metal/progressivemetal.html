@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Queensrÿche",
-                        track: "Anarchy-X",
-                        path: "../../../samples/metal/progressivemetal1.ogg"
-                    },
-                    {
-                        artist: "Dream Theater",
-                        track: "Pull Me Under",
-                        path: "../../../samples/metal/progressivemetal2.ogg"
-                    },
-                    {
-                        artist: "Symphony X",
-                        track: "Nevermore",
-                        path: "../../../samples/metal/progressivemetal3.ogg"
-                    },
-                    {
-                        artist: "Fates Warning",
-                        track: "Guardian",
-                        path: "../../../samples/metal/progressivemetal4.ogg"
-                    },
-                    {
-                        artist: "Vanden Plas",
-                        track: "Holes In The Sky",
-                        path: "../../../samples/metal/progressivemetal5.ogg"
-                    },
-                    {
-                        artist: "Tool",
-                        track: "Rosetta Stoned",
-                        path: "../../../samples/metal/progressivemetal6.ogg"
-                    },
-                    {
-                        artist: "Pain Of Salvation",
-                        track: "Iter Impius",
-                        path: "../../../samples/metal/progressivemetal7.ogg"
-                    },
-                    {
-                        artist: "Threshold",
-                        track: "Unforgiven",
-                        path: "../../../samples/metal/progressivemetal8.ogg"
-                    },
-                    {
-                        artist: "Evergrey",
-                        track: "The Grand Collapse",
-                        path: "../../../samples/metal/progressivemetal9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Queensrÿche", track: "Anarchy-X", path: "../../../samples/metal/progressivemetal1.ogg" },
+                    { artist: "Dream Theater", track: "Pull Me Under", path: "../../../samples/metal/progressivemetal2.ogg" },
+                    { artist: "Symphony X", track: "Nevermore", path: "../../../samples/metal/progressivemetal3.ogg" },
+                    { artist: "Fates Warning", track: "Guardian", path: "../../../samples/metal/progressivemetal4.ogg" },
+                    { artist: "Vanden Plas", track: "Holes In The Sky", path: "../../../samples/metal/progressivemetal5.ogg" },
+                    { artist: "Tool", track: "Rosetta Stoned", path: "../../../samples/metal/progressivemetal6.ogg" },
+                    { artist: "Pain Of Salvation", track: "Iter Impius", path: "../../../samples/metal/progressivemetal7.ogg" },
+                    { artist: "Threshold", track: "Unforgiven", path: "../../../samples/metal/progressivemetal8.ogg" },
+                    { artist: "Evergrey", track: "The Grand Collapse", path: "../../../samples/metal/progressivemetal9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsMetal = $('.buttons-metal');
 
-                $('.buttons-metal').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsMetal.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsMetal.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-metal-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-metal').removeClass('clicked');
+                    $buttonsMetal.removeClass('clicked');
                 }
             });
         </script>

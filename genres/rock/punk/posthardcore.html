@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Hüsker Dü",
-                        track: "Diane",
-                        path: "../../../samples/punk/posthardcore1.ogg"
-                    },
-                    {
-                        artist: "Soulside",
-                        track: "Trigger",
-                        path: "../../../samples/punk/posthardcore2.ogg"
-                    },
-                    {
-                        artist: "Rites Of Spring",
-                        track: "End On End",
-                        path: "../../../samples/punk/posthardcore3.ogg"
-                    },
-                    {
-                        artist: "Embrace",
-                        track: "No More Pain",
-                        path: "../../../samples/punk/posthardcore4.ogg"
-                    },
-                    {
-                        artist: "Orchid",
-                        track: "Lights Out",
-                        path: "../../../samples/punk/posthardcore5.ogg"
-                    },
-                    {
-                        artist: "Silverstein",
-                        track: "My Heroine",
-                        path: "../../../samples/punk/posthardcore6.ogg"
-                    },
-                    {
-                        artist: "Loma Prieta",
-                        track: "Fly By Night",
-                        path: "../../../samples/punk/posthardcore7.ogg"
-                    },
-                    {
-                        artist: "Alexisonfire",
-                        track: "This Could Be Anywhere In The World",
-                        path: "../../../samples/punk/posthardcore8.ogg"
-                    },
-                    {
-                        artist: "Underoath",
-                        track: "Writing On The Walls",
-                        path: "../../../samples/punk/posthardcore9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Hüsker Dü", track: "Diane", path: "../../../samples/punk/posthardcore1.ogg" },
+                    { artist: "Soulside", track: "Trigger", path: "../../../samples/punk/posthardcore2.ogg" },
+                    { artist: "Rites Of Spring", track: "End On End", path: "../../../samples/punk/posthardcore3.ogg" },
+                    { artist: "Embrace", track: "No More Pain", path: "../../../samples/punk/posthardcore4.ogg" },
+                    { artist: "Orchid", track: "Lights Out", path: "../../../samples/punk/posthardcore5.ogg" },
+                    { artist: "Silverstein", track: "My Heroine", path: "../../../samples/punk/posthardcore6.ogg" },
+                    { artist: "Loma Prieta", track: "Fly By Night", path: "../../../samples/punk/posthardcore7.ogg" },
+                    { artist: "Alexisonfire", track: "This Could Be Anywhere In The World", path: "../../../samples/punk/posthardcore8.ogg" },
+                    { artist: "Underoath", track: "Writing On The Walls", path: "../../../samples/punk/posthardcore9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsPunk = $('.buttons-punk');
 
-                $('.buttons-punk').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsPunk.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsPunk.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-punk-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-punk').removeClass('clicked');
+                    $buttonsPunk.removeClass('clicked');
                 }
             });
         </script>

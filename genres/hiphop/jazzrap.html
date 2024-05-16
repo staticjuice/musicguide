@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "A Tribe Called Quest",
-                        track: "Award Tour",
-                        path: "../../samples/hiphop/jazzrap1.ogg"
-                    },
-                    {
-                        artist: "Gang Starr",
-                        track: "Lovesick",
-                        path: "../../samples/hiphop/jazzrap2.ogg"
-                    },
-                    {
-                        artist: "Del The Funky Homosapien",
-                        track: "Mistadobalina",
-                        path: "../../samples/hiphop/jazzrap3.ogg"
-                    },
-                    {
-                        artist: "The Beatnuts",
-                        track: "Watch Out Now",
-                        path: "../../samples/hiphop/jazzrap4.ogg"
-                    },
-                    {
-                        artist: "Naughty By Nature",
-                        track: "Hip Hop Hooray",
-                        path: "../../samples/hiphop/jazzrap5.ogg"
-                    },
-                    {
-                        artist: "Queen Latifah",
-                        track: "U.N.I.T.Y.",
-                        path: "../../samples/hiphop/jazzrap6.ogg"
-                    },
-                    {
-                        artist: "Arrested Development",
-                        track: "Warm Sentiments",
-                        path: "../../samples/hiphop/jazzrap7.ogg"
-                    },
-                    {
-                        artist: "OutKast",
-                        track: "Southernplayalisticadillacmuzik",
-                        path: "../../samples/hiphop/jazzrap8.ogg"
-                    },
-                    {
-                        artist: "Souls Of Mischief",
-                        track: "93 'Til Infinity",
-                        path: "../../samples/hiphop/jazzrap9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "A Tribe Called Quest", track: "Award Tour", path: "../../samples/hiphop/jazzrap1.ogg" },
+                    { artist: "Gang Starr", track: "Lovesick", path: "../../samples/hiphop/jazzrap2.ogg" },
+                    { artist: "Del The Funky Homosapien", track: "Mistadobalina", path: "../../samples/hiphop/jazzrap3.ogg" },
+                    { artist: "The Beatnuts", track: "Watch Out Now", path: "../../samples/hiphop/jazzrap4.ogg" },
+                    { artist: "Naughty By Nature", track: "Hip Hop Hooray", path: "../../samples/hiphop/jazzrap5.ogg" },
+                    { artist: "Queen Latifah", track: "U.N.I.T.Y.", path: "../../samples/hiphop/jazzrap6.ogg" },
+                    { artist: "Arrested Development", track: "Warm Sentiments", path: "../../samples/hiphop/jazzrap7.ogg" },
+                    { artist: "OutKast", track: "Southernplayalisticadillacmuzik", path: "../../samples/hiphop/jazzrap8.ogg" },
+                    { artist: "Souls Of Mischief", track: "93 'Til Infinity", path: "../../samples/hiphop/jazzrap9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHiphop = $('.buttons-hiphop');
 
-                $('.buttons-hiphop').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHiphop.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHiphop.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hiphop-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hiphop').removeClass('clicked');
+                    $buttonsHiphop.removeClass('clicked');
                 }
             });
         </script>

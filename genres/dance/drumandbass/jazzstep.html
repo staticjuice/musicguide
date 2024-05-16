@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "London Elektricity",
-                        track: "Flesh Music",
-                        path: "../../../samples/drumandbass/jazzstep1.ogg"
-                    },
-                    {
-                        artist: "Random Movement",
-                        track: "Waterlogged",
-                        path: "../../../samples/drumandbass/jazzstep2.ogg"
-                    },
-                    {
-                        artist: "Utah Jazz",
-                        track: "Circa '96",
-                        path: "../../../samples/drumandbass/jazzstep3.ogg"
-                    },
-                    {
-                        artist: "D.Kay & Intoxicated",
-                        track: "Thinner Edge",
-                        path: "../../../samples/drumandbass/jazzstep4.ogg"
-                    },
-                    {
-                        artist: "Flaco",
-                        track: "Choose Me",
-                        path: "../../../samples/drumandbass/jazzstep5.ogg"
-                    },
-                    {
-                        artist: "LSB",
-                        track: "Some Disco",
-                        path: "../../../samples/drumandbass/jazzstep6.ogg"
-                    },
-                    {
-                        artist: "DJ Marky & S.P.Y.",
-                        track: "Yellow Shoes",
-                        path: "../../../samples/drumandbass/jazzstep7.ogg"
-                    },
-                    {
-                        artist: "Lenzman",
-                        track: "Ever So Slightly",
-                        path: "../../../samples/drumandbass/jazzstep8.ogg"
-                    },
-                    {
-                        artist: "Command Strange",
-                        track: "This Night",
-                        path: "../../../samples/drumandbass/jazzstep9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "London Elektricity", track: "Flesh Music", path: "../../../samples/drumandbass/jazzstep1.ogg" },
+                    { artist: "Random Movement", track: "Waterlogged", path: "../../../samples/drumandbass/jazzstep2.ogg" },
+                    { artist: "Utah Jazz", track: "Circa '96", path: "../../../samples/drumandbass/jazzstep3.ogg" },
+                    { artist: "D.Kay & Intoxicated", track: "Thinner Edge", path: "../../../samples/drumandbass/jazzstep4.ogg" },
+                    { artist: "Flaco", track: "Choose Me", path: "../../../samples/drumandbass/jazzstep5.ogg" },
+                    { artist: "LSB", track: "Some Disco", path: "../../../samples/drumandbass/jazzstep6.ogg" },
+                    { artist: "DJ Marky & S.P.Y.", track: "Yellow Shoes", path: "../../../samples/drumandbass/jazzstep7.ogg" },
+                    { artist: "Lenzman", track: "Ever So Slightly", path: "../../../samples/drumandbass/jazzstep8.ogg" },
+                    { artist: "Command Strange", track: "This Night", path: "../../../samples/drumandbass/jazzstep9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsDrumandbass = $('.buttons-drumandbass');
 
-                $('.buttons-drumandbass').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsDrumandbass.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsDrumandbass.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-drumandbass-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-drumandbass').removeClass('clicked');
+                    $buttonsDrumandbass.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Brighter Death Now",
-                        track: "There Is Nothing Left In This World",
-                        path: "../../samples/industrial/noise1.ogg"
-                    },
-                    {
-                        artist: "The New Blockaders",
-                        track: "Manifesto",
-                        path: "../../samples/industrial/noise2.ogg"
-                    },
-                    {
-                        artist: "Winterkälte",
-                        track: "Incinerator",
-                        path: "../../samples/industrial/noise3.ogg"
-                    },
-                    {
-                        artist: "Pain Jerk",
-                        track: "Aufheben",
-                        path: "../../samples/industrial/noise4.ogg"
-                    },
-                    {
-                        artist: "Msbr",
-                        track: "Zyklon B Zombie",
-                        path: "../../samples/industrial/noise5.ogg"
-                    },
-                    {
-                        artist: "Merzbow",
-                        track: "Requiem",
-                        path: "../../samples/industrial/noise6.ogg"
-                    },
-                    {
-                        artist: "Pharmakon",
-                        track: "Transmission",
-                        path: "../../samples/industrial/noise7.ogg"
-                    },
-                    {
-                        artist: "River Magic",
-                        track: "I Just Couldn't Get Thin",
-                        path: "../../samples/industrial/noise8.ogg"
-                    },
-                    {
-                        artist: "Navicon Torture Technologies",
-                        track: "Knowing No Mercy, They Rage Against Mankind",
-                        path: "../../samples/industrial/noise9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Brighter Death Now", track: "There Is Nothing Left In This World", path: "../../samples/industrial/noise1.ogg" },
+                    { artist: "The New Blockaders", track: "Manifesto", path: "../../samples/industrial/noise2.ogg" },
+                    { artist: "Winterkälte", track: "Incinerator", path: "../../samples/industrial/noise3.ogg" },
+                    { artist: "Pain Jerk", track: "Aufheben", path: "../../samples/industrial/noise4.ogg" },
+                    { artist: "Msbr", track: "Zyklon B Zombie", path: "../../samples/industrial/noise5.ogg" },
+                    { artist: "Merzbow", track: "Requiem", path: "../../samples/industrial/noise6.ogg" },
+                    { artist: "Pharmakon", track: "Transmission", path: "../../samples/industrial/noise7.ogg" },
+                    { artist: "River Magic", track: "I Just Couldn't Get Thin", path: "../../samples/industrial/noise8.ogg" },
+                    { artist: "Navicon Torture Technologies", track: "Knowing No Mercy, They Rage Against Mankind", path: "../../samples/industrial/noise9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndustrial = $('.buttons-industrial');
 
-                $('.buttons-industrial').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndustrial.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndustrial.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-industrial-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-industrial').removeClass('clicked');
+                    $buttonsIndustrial.removeClass('clicked');
                 }
             });
         </script>

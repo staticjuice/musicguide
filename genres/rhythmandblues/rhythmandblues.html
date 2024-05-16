@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Fats Domino",
-                        track: "Blueberry Hill",
-                        path: "../../samples/rhythmandblues/rhythmandblues1.ogg"
-                    },
-                    {
-                        artist: "Little Richard",
-                        track: "Tutti Frutti",
-                        path: "../../samples/rhythmandblues/rhythmandblues2.ogg"
-                    },
-                    {
-                        artist: "Ray Charles",
-                        track: "I've Got A Woman",
-                        path: "../../samples/rhythmandblues/rhythmandblues3.ogg"
-                    },
-                    {
-                        artist: "Ruth Brown",
-                        track: "The Tears Keep Tumbling Down",
-                        path: "../../samples/rhythmandblues/rhythmandblues4.ogg"
-                    },
-                    {
-                        artist: "Bo Diddley",
-                        track: "Bo Diddley",
-                        path: "../../samples/rhythmandblues/rhythmandblues5.ogg"
-                    },
-                    {
-                        artist: 'Johnny "Guitar" Watson',
-                        track: "I Say I Love You",
-                        path: "../../samples/rhythmandblues/rhythmandblues6.ogg"
-                    },
-                    {
-                        artist: "Little Milton",
-                        track: "So Mean To Me",
-                        path: "../../samples/rhythmandblues/rhythmandblues7.ogg"
-                    },
-                    {
-                        artist: "Dinah Washington",
-                        track: "Relax Max",
-                        path: "../../samples/rhythmandblues/rhythmandblues8.ogg"
-                    },
-                    {
-                        artist: "Etta James",
-                        track: "Mellow Fellow",
-                        path: "../../samples/rhythmandblues/rhythmandblues9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Fats Domino", track: "Blueberry Hill", path: "../../samples/rhythmandblues/rhythmandblues1.ogg" },
+                    { artist: "Little Richard", track: "Tutti Frutti", path: "../../samples/rhythmandblues/rhythmandblues2.ogg" },
+                    { artist: "Ray Charles", track: "I've Got A Woman", path: "../../samples/rhythmandblues/rhythmandblues3.ogg" },
+                    { artist: "Ruth Brown", track: "The Tears Keep Tumbling Down", path: "../../samples/rhythmandblues/rhythmandblues4.ogg" },
+                    { artist: "Bo Diddley", track: "Bo Diddley", path: "../../samples/rhythmandblues/rhythmandblues5.ogg" },
+                    { artist: "Johnny 'Guitar' Watson", track: "I Say I Love You", path: "../../samples/rhythmandblues/rhythmandblues6.ogg" },
+                    { artist: "Little Milton", track: "So Mean To Me", path: "../../samples/rhythmandblues/rhythmandblues7.ogg" },
+                    { artist: "Dinah Washington", track: "Relax Max", path: "../../samples/rhythmandblues/rhythmandblues8.ogg" },
+                    { artist: "Etta James", track: "Mellow Fellow", path: "../../samples/rhythmandblues/rhythmandblues9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRhythmandblues = $('.buttons-rhythmandblues');
 
-                $('.buttons-rhythmandblues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRhythmandblues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRhythmandblues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rhythmandblues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rhythmandblues').removeClass('clicked');
+                    $buttonsRhythmandblues.removeClass('clicked');
                 }
             });
         </script>

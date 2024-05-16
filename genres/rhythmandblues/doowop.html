@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Platters",
-                        track: "The Great Pretender",
-                        path: "../../samples/rhythmandblues/doowop1.ogg"
-                    },
-                    {
-                        artist: "The Mills Brothers",
-                        track: "The Glow Worm",
-                        path: "../../samples/rhythmandblues/doowop2.ogg"
-                    },
-                    {
-                        artist: "The Coasters",
-                        track: "Down In Mexico",
-                        path: "../../samples/rhythmandblues/doowop3.ogg"
-                    },
-                    {
-                        artist: "The Quotations",
-                        track: "Imagination",
-                        path: "../../samples/rhythmandblues/doowop4.ogg"
-                    },
-                    {
-                        artist: "The Orioles",
-                        track: "For All We Know",
-                        path: "../../samples/rhythmandblues/doowop5.ogg"
-                    },
-                    {
-                        artist: "Frankie Lymon & The Teenagers",
-                        track: "Baby Baby",
-                        path: "../../samples/rhythmandblues/doowop6.ogg"
-                    },
-                    {
-                        artist: "The Turbans",
-                        track: "When You Dance",
-                        path: "../../samples/rhythmandblues/doowop7.ogg"
-                    },
-                    {
-                        artist: "Randy & The Rainbows",
-                        track: "Denise",
-                        path: "../../samples/rhythmandblues/doowop8.ogg"
-                    },
-                    {
-                        artist: "The Clovers",
-                        track: "Love Potion No. 9",
-                        path: "../../samples/rhythmandblues/doowop9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Platters", track: "The Great Pretender", path: "../../samples/rhythmandblues/doowop1.ogg" },
+                    { artist: "The Mills Brothers", track: "The Glow Worm", path: "../../samples/rhythmandblues/doowop2.ogg" },
+                    { artist: "The Coasters", track: "Down In Mexico", path: "../../samples/rhythmandblues/doowop3.ogg" },
+                    { artist: "The Quotations", track: "Imagination", path: "../../samples/rhythmandblues/doowop4.ogg" },
+                    { artist: "The Orioles", track: "For All We Know", path: "../../samples/rhythmandblues/doowop5.ogg" },
+                    { artist: "Frankie Lymon & The Teenagers", track: "Baby Baby", path: "../../samples/rhythmandblues/doowop6.ogg" },
+                    { artist: "The Turbans", track: "When You Dance", path: "../../samples/rhythmandblues/doowop7.ogg" },
+                    { artist: "Randy & The Rainbows", track: "Denise", path: "../../samples/rhythmandblues/doowop8.ogg" },
+                    { artist: "The Clovers", track: "Love Potion No. 9", path: "../../samples/rhythmandblues/doowop9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRhythmandblues = $('.buttons-rhythmandblues');
 
-                $('.buttons-rhythmandblues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRhythmandblues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRhythmandblues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rhythmandblues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rhythmandblues').removeClass('clicked');
+                    $buttonsRhythmandblues.removeClass('clicked');
                 }
             });
         </script>

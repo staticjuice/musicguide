@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Darude",
-                        track: "Sandstorm",
-                        path: "../../../samples/trance/eurotrance1.ogg"
-                    },
-                    {
-                        artist: "Pulsedriver",
-                        track: "The Whistle Song (Solar Patrol Remix)",
-                        path: "../../../samples/trance/eurotrance2.ogg"
-                    },
-                    {
-                        artist: "Safri Duo",
-                        track: "Played-A-Live (The Bongo Song)",
-                        path: "../../../samples/trance/eurotrance3.ogg"
-                    },
-                    {
-                        artist: "Scooter",
-                        track: "The Logical Song",
-                        path: "../../../samples/trance/eurotrance4.ogg"
-                    },
-                    {
-                        artist: "Ultrabeat",
-                        track: "Pretty Green Eyes (CJ Stone Remix)",
-                        path: "../../../samples/trance/eurotrance5.ogg"
-                    },
-                    {
-                        artist: "DJ Sammy",
-                        track: "Heaven",
-                        path: "../../../samples/trance/eurotrance6.ogg"
-                    },
-                    {
-                        artist: "Alice Deejay",
-                        track: "Better Off Alone",
-                        path: "../../../samples/trance/eurotrance7.ogg"
-                    },
-                    {
-                        artist: "Sash!",
-                        track: "Ecuador",
-                        path: "../../../samples/trance/eurotrance8.ogg"
-                    },
-                    {
-                        artist: "Gigi D'Agostino",
-                        track: "L'Amour Toujours",
-                        path: "../../../samples/trance/eurotrance9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Darude", track: "Sandstorm", path: "../../../samples/trance/eurotrance1.ogg" },
+                    { artist: "Pulsedriver", track: "The Whistle Song (Solar Patrol Remix)", path: "../../../samples/trance/eurotrance2.ogg" },
+                    { artist: "Safri Duo", track: "Played-A-Live (The Bongo Song)", path: "../../../samples/trance/eurotrance3.ogg" },
+                    { artist: "Scooter", track: "The Logical Song", path: "../../../samples/trance/eurotrance4.ogg" },
+                    { artist: "Ultrabeat", track: "Pretty Green Eyes (CJ Stone Remix)", path: "../../../samples/trance/eurotrance5.ogg" },
+                    { artist: "DJ Sammy", track: "Heaven", path: "../../../samples/trance/eurotrance6.ogg" },
+                    { artist: "Alice Deejay", track: "Better Off Alone", path: "../../../samples/trance/eurotrance7.ogg" },
+                    { artist: "Sash!", track: "Ecuador", path: "../../../samples/trance/eurotrance8.ogg" },
+                    { artist: "Gigi D'Agostino", track: "L'Amour Toujours", path: "../../../samples/trance/eurotrance9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsTrance = $('.buttons-trance');
 
-                $('.buttons-trance').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsTrance.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsTrance.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-trance-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-trance').removeClass('clicked');
+                    $buttonsTrance.removeClass('clicked');
                 }
             });
         </script>

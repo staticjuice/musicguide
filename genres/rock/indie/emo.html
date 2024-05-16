@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Get Up Kids",
-                        track: "Action & Action",
-                        path: "../../../samples/indie/emo1.ogg"
-                    },
-                    {
-                        artist: "My Chemical Romance",
-                        track: "Welcome To The Black Parade",
-                        path: "../../../samples/indie/emo2.ogg"
-                    },
-                    {
-                        artist: "Jimmy Eat World",
-                        track: "Pain",
-                        path: "../../../samples/indie/emo3.ogg"
-                    },
-                    {
-                        artist: "Fall Out Boy",
-                        track: "The Phoenix",
-                        path: "../../../samples/indie/emo4.ogg"
-                    },
-                    {
-                        artist: "Paramore",
-                        track: "Emergency",
-                        path: "../../../samples/indie/emo5.ogg"
-                    },
-                    {
-                        artist: "Tokio Hotel",
-                        track: "Monsoon",
-                        path: "../../../samples/indie/emo6.ogg"
-                    },
-                    {
-                        artist: "The All-American Rejects",
-                        track: "It Ends Tonight",
-                        path: "../../../samples/indie/emo7.ogg"
-                    },
-                    {
-                        artist: "Evanescence",
-                        track: "Bring Me To Life",
-                        path: "../../../samples/indie/emo8.ogg"
-                    },
-                    {
-                        artist: "The Rasmus",
-                        track: "In The Shadows",
-                        path: "../../../samples/indie/emo9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Get Up Kids", track: "Action & Action", path: "../../../samples/indie/emo1.ogg" },
+                    { artist: "My Chemical Romance", track: "Welcome To The Black Parade", path: "../../../samples/indie/emo2.ogg" },
+                    { artist: "Jimmy Eat World", track: "Pain", path: "../../../samples/indie/emo3.ogg" },
+                    { artist: "Fall Out Boy", track: "The Phoenix", path: "../../../samples/indie/emo4.ogg" },
+                    { artist: "Paramore", track: "Emergency", path: "../../../samples/indie/emo5.ogg" },
+                    { artist: "Tokio Hotel", track: "Monsoon", path: "../../../samples/indie/emo6.ogg" },
+                    { artist: "The All-American Rejects", track: "It Ends Tonight", path: "../../../samples/indie/emo7.ogg" },
+                    { artist: "Evanescence", track: "Bring Me To Life", path: "../../../samples/indie/emo8.ogg" },
+                    { artist: "The Rasmus", track: "In The Shadows", path: "../../../samples/indie/emo9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndie = $('.buttons-indie');
 
-                $('.buttons-indie').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndie.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndie.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-indie-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-indie').removeClass('clicked');
+                    $buttonsIndie.removeClass('clicked');
                 }
             });
         </script>

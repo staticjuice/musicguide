@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Deine Lakaien",
-                        track: "The Night Of Love",
-                        path: "../../samples/industrial/darkwave1.ogg"
-                    },
-                    {
-                        artist: "Beborn Beton",
-                        track: "Another World",
-                        path: "../../samples/industrial/darkwave2.ogg"
-                    },
-                    {
-                        artist: "Wolfsheim",
-                        track: "The Sparrows And The Nightingales",
-                        path: "../../samples/industrial/darkwave3.ogg"
-                    },
-                    {
-                        artist: "Clan Of Xymox",
-                        track: "Stranger",
-                        path: "../../samples/industrial/darkwave4.ogg"
-                    },
-                    {
-                        artist: "Switchblade Symphony",
-                        track: "Dollhouse",
-                        path: "../../samples/industrial/darkwave5.ogg"
-                    },
-                    {
-                        artist: "The Crüxshadows",
-                        track: "Clerestory",
-                        path: "../../samples/industrial/darkwave6.ogg"
-                    },
-                    {
-                        artist: "Rosetta Stone",
-                        track: "Adrenaline",
-                        path: "../../samples/industrial/darkwave7.ogg"
-                    },
-                    {
-                        artist: "Cocteau Twins",
-                        track: "Millimillenary",
-                        path: "../../samples/industrial/darkwave8.ogg"
-                    },
-                    {
-                        artist: "Trance To The Sun",
-                        track: "Sleeping With The Natives",
-                        path: "../../samples/industrial/darkwave9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Deine Lakaien", track: "The Night Of Love", path: "../../samples/industrial/darkwave1.ogg" },
+                    { artist: "Beborn Beton", track: "Another World", path: "../../samples/industrial/darkwave2.ogg" },
+                    { artist: "Wolfsheim", track: "The Sparrows And The Nightingales", path: "../../samples/industrial/darkwave3.ogg" },
+                    { artist: "Clan Of Xymox", track: "Stranger", path: "../../samples/industrial/darkwave4.ogg" },
+                    { artist: "Switchblade Symphony", track: "Dollhouse", path: "../../samples/industrial/darkwave5.ogg" },
+                    { artist: "The Crüxshadows", track: "Clerestory", path: "../../samples/industrial/darkwave6.ogg" },
+                    { artist: "Rosetta Stone", track: "Adrenaline", path: "../../samples/industrial/darkwave7.ogg" },
+                    { artist: "Cocteau Twins", track: "Millimillenary", path: "../../samples/industrial/darkwave8.ogg" },
+                    { artist: "Trance To The Sun", track: "Sleeping With The Natives", path: "../../samples/industrial/darkwave9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndustrial = $('.buttons-industrial');
 
-                $('.buttons-industrial').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndustrial.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndustrial.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-industrial-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-industrial').removeClass('clicked');
+                    $buttonsIndustrial.removeClass('clicked');
                 }
             });
         </script>

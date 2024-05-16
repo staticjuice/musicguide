@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Horace Silver",
-                        track: "Song For My Father",
-                        path: "../../samples/jazz/hardbop1.ogg"
-                    },
-                    {
-                        artist: "John Coltrane",
-                        track: "Blue Train",
-                        path: "../../samples/jazz/hardbop2.ogg"
-                    },
-                    {
-                        artist: "Art Blakey",
-                        track: "Moanin'",
-                        path: "../../samples/jazz/hardbop3.ogg"
-                    },
-                    {
-                        artist: "Hank Mobley",
-                        track: "My Groove Your Move",
-                        path: "../../samples/jazz/hardbop4.ogg"
-                    },
-                    {
-                        artist: "Charles Mingus",
-                        track: "Devil Blues",
-                        path: "../../samples/jazz/hardbop5.ogg"
-                    },
-                    {
-                        artist: "Clifford Jordan & John Gilmore",
-                        track: "Status Quo",
-                        path: "../../samples/jazz/hardbop6.ogg"
-                    },
-                    {
-                        artist: "Cannonball Adderley",
-                        track: "Somethin' Else",
-                        path: "../../samples/jazz/hardbop7.ogg"
-                    },
-                    {
-                        artist: "Lee Morgan",
-                        track: "The Sidewinder",
-                        path: "../../samples/jazz/hardbop8.ogg"
-                    },
-                    {
-                        artist: "Sonny Rollins",
-                        track: "The Most Beautiful Girl In The World",
-                        path: "../../samples/jazz/hardbop9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Horace Silver", track: "Song For My Father", path: "../../samples/jazz/hardbop1.ogg" },
+                    { artist: "John Coltrane", track: "Blue Train", path: "../../samples/jazz/hardbop2.ogg" },
+                    { artist: "Art Blakey", track: "Moanin'", path: "../../samples/jazz/hardbop3.ogg" },
+                    { artist: "Hank Mobley", track: "My Groove Your Move", path: "../../samples/jazz/hardbop4.ogg" },
+                    { artist: "Charles Mingus", track: "Devil Blues", path: "../../samples/jazz/hardbop5.ogg" },
+                    { artist: "Clifford Jordan & John Gilmore", track: "Status Quo", path: "../../samples/jazz/hardbop6.ogg" },
+                    { artist: "Cannonball Adderley", track: "Somethin' Else", path: "../../samples/jazz/hardbop7.ogg" },
+                    { artist: "Lee Morgan", track: "The Sidewinder", path: "../../samples/jazz/hardbop8.ogg" },
+                    { artist: "Sonny Rollins", track: "The Most Beautiful Girl In The World", path: "../../samples/jazz/hardbop9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsJazz = $('.buttons-jazz');
 
-                $('.buttons-jazz').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsJazz.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsJazz.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-jazz-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-jazz').removeClass('clicked');
+                    $buttonsJazz.removeClass('clicked');
                 }
             });
         </script>

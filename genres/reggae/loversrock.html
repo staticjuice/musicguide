@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Janet Kay",
-                        track: "Silly Games",
-                        path: "../../samples/reggae/loversrock1.ogg"
-                    },
-                    {
-                        artist: "UB40",
-                        track: "Red Red Wine",
-                        path: "../../samples/reggae/loversrock2.ogg"
-                    },
-                    {
-                        artist: "Maxi Priest",
-                        track: "Wild World",
-                        path: "../../samples/reggae/loversrock3.ogg"
-                    },
-                    {
-                        artist: "Dawn Penn",
-                        track: "You Don't Love Me (No, No, No)",
-                        path: "../../samples/reggae/loversrock4.ogg"
-                    },
-                    {
-                        artist: "10cc",
-                        track: "Dreadlock Holiday",
-                        path: "../../samples/reggae/loversrock5.ogg"
-                    },
-                    {
-                        artist: "Musical Youth",
-                        track: "Pass The Dutchie",
-                        path: "../../samples/reggae/loversrock6.ogg"
-                    },
-                    {
-                        artist: "Althea & Donna",
-                        track: "Uptown Top Ranking",
-                        path: "../../samples/reggae/loversrock7.ogg"
-                    },
-                    {
-                        artist: "Sophia George",
-                        track: "Girlie Girlie",
-                        path: "../../samples/reggae/loversrock8.ogg"
-                    },
-                    {
-                        artist: "Jimmy Cliff",
-                        track: "I Can See Clearly Now",
-                        path: "../../samples/reggae/loversrock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Janet Kay", track: "Silly Games", path: "../../samples/reggae/loversrock1.ogg" },
+                    { artist: "UB40", track: "Red Red Wine", path: "../../samples/reggae/loversrock2.ogg" },
+                    { artist: "Maxi Priest", track: "Wild World", path: "../../samples/reggae/loversrock3.ogg" },
+                    { artist: "Dawn Penn", track: "You Don't Love Me (No, No, No)", path: "../../samples/reggae/loversrock4.ogg" },
+                    { artist: "10cc", track: "Dreadlock Holiday", path: "../../samples/reggae/loversrock5.ogg" },
+                    { artist: "Musical Youth", track: "Pass The Dutchie", path: "../../samples/reggae/loversrock6.ogg" },
+                    { artist: "Althea & Donna", track: "Uptown Top Ranking", path: "../../samples/reggae/loversrock7.ogg" },
+                    { artist: "Sophia George", track: "Girlie Girlie", path: "../../samples/reggae/loversrock8.ogg" },
+                    { artist: "Jimmy Cliff", track: "I Can See Clearly Now", path: "../../samples/reggae/loversrock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsReggae = $('.buttons-reggae');
 
-                $('.buttons-reggae').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsReggae.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsReggae.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-reggae-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-reggae').removeClass('clicked');
+                    $buttonsReggae.removeClass('clicked');
                 }
             });
         </script>

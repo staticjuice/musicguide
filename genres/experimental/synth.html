@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Hot Butter",
-                        track: "Popcorn",
-                        path: "../../samples/experimental/synth1.ogg"
-                    },
-                    {
-                        artist: "Bruce Haack",
-                        track: "Mean Old Devil",
-                        path: "../../samples/experimental/synth2.ogg"
-                    },
-                    {
-                        artist: "Perrey And Kingsley",
-                        track: "The Savers",
-                        path: "../../samples/experimental/synth3.ogg"
-                    },
-                    {
-                        artist: "Kraftwerk",
-                        track: "Autobahn",
-                        path: "../../samples/experimental/synth4.ogg"
-                    },
-                    {
-                        artist: "Dave Richmond",
-                        track: "Movin' Along",
-                        path: "../../samples/experimental/synth5.ogg"
-                    },
-                    {
-                        artist: "Vangelis",
-                        track: "Chariots Of Fire",
-                        path: "../../samples/experimental/synth6.ogg"
-                    },
-                    {
-                        artist: "Harold Faltermeyer",
-                        track: "Axel F",
-                        path: "../../samples/experimental/synth7.ogg"
-                    },
-                    {
-                        artist: "Heinz Funk",
-                        track: "Menuett",
-                        path: "../../samples/experimental/synth8.ogg"
-                    },
-                    {
-                        artist: "Ted Atking & Alain Feanch",
-                        track: "Children's Carnival",
-                        path: "../../samples/experimental/synth9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Hot Butter", track: "Popcorn", path: "../../samples/experimental/synth1.ogg" },
+                    { artist: "Bruce Haack", track: "Mean Old Devil", path: "../../samples/experimental/synth2.ogg" },
+                    { artist: "Perrey And Kingsley", track: "The Savers", path: "../../samples/experimental/synth3.ogg" },
+                    { artist: "Kraftwerk", track: "Autobahn", path: "../../samples/experimental/synth4.ogg" },
+                    { artist: "Dave Richmond", track: "Movin' Along", path: "../../samples/experimental/synth5.ogg" },
+                    { artist: "Vangelis", track: "Chariots Of Fire", path: "../../samples/experimental/synth6.ogg" },
+                    { artist: "Harold Faltermeyer", track: "Axel F", path: "../../samples/experimental/synth7.ogg" },
+                    { artist: "Heinz Funk", track: "Menuett", path: "../../samples/experimental/synth8.ogg" },
+                    { artist: "Ted Atking & Alain Feanch", track: "Children's Carnival", path: "../../samples/experimental/synth9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsExperimental = $('.buttons-experimental');
 
-                $('.buttons-experimental').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsExperimental.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsExperimental.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-experimental-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-experimental').removeClass('clicked');
+                    $buttonsExperimental.removeClass('clicked');
                 }
             });
         </script>

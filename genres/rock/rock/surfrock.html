@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Surfaris",
-                        track: "Wipe Out",
-                        path: "../../../samples/rock/surfrock1.ogg"
-                    },
-                    {
-                        artist: "Dick Dale And The Del-Tones",
-                        track: "Misirlou",
-                        path: "../../../samples/rock/surfrock2.ogg"
-                    },
-                    {
-                        artist: "The Beach Boys",
-                        track: "Surfin' U.S.A.",
-                        path: "../../../samples/rock/surfrock3.ogg"
-                    },
-                    {
-                        artist: "The Shadows",
-                        track: "Apache",
-                        path: "../../../samples/rock/surfrock4.ogg"
-                    },
-                    {
-                        artist: "The Ventures",
-                        track: "Walk, Don't Run",
-                        path: "../../../samples/rock/surfrock5.ogg"
-                    },
-                    {
-                        artist: "The Chantays",
-                        track: "Pipeline",
-                        path: "../../../samples/rock/surfrock6.ogg"
-                    },
-                    {
-                        artist: "The Marketts",
-                        track: "Out Of Limits",
-                        path: "../../../samples/rock/surfrock7.ogg"
-                    },
-                    {
-                        artist: "The Champs",
-                        track: "Tequila",
-                        path: "../../../samples/rock/surfrock8.ogg"
-                    },
-                    {
-                        artist: "The Bel-Aires",
-                        track: "Mr. Moto",
-                        path: "../../../samples/rock/surfrock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Surfaris", track: "Wipe Out", path: "../../../samples/rock/surfrock1.ogg" },
+                    { artist: "Dick Dale And The Del-Tones", track: "Misirlou", path: "../../../samples/rock/surfrock2.ogg" },
+                    { artist: "The Beach Boys", track: "Surfin' U.S.A.", path: "../../../samples/rock/surfrock3.ogg" },
+                    { artist: "The Shadows", track: "Apache", path: "../../../samples/rock/surfrock4.ogg" },
+                    { artist: "The Ventures", track: "Walk, Don't Run", path: "../../../samples/rock/surfrock5.ogg" },
+                    { artist: "The Chantays", track: "Pipeline", path: "../../../samples/rock/surfrock6.ogg" },
+                    { artist: "The Marketts", track: "Out Of Limits", path: "../../../samples/rock/surfrock7.ogg" },
+                    { artist: "The Champs", track: "Tequila", path: "../../../samples/rock/surfrock8.ogg" },
+                    { artist: "The Bel-Aires", track: "Mr. Moto", path: "../../../samples/rock/surfrock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRock = $('.buttons-rock');
 
-                $('.buttons-rock').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRock.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRock.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rock-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rock').removeClass('clicked');
+                    $buttonsRock.removeClass('clicked');
                 }
             });
         </script>

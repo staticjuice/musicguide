@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Scott Joplin",
-                        track: "The Entertainer",
-                        path: "../../samples/jazz/ragtime1.ogg"
-                    },
-                    {
-                        artist: "Scott Joplin",
-                        track: "Maple Leaf Rag",
-                        path: "../../samples/jazz/ragtime2.ogg"
-                    },
-                    {
-                        artist: "Tom Turpin",
-                        track: "Harlem Rag",
-                        path: "../../samples/jazz/ragtime3.ogg"
-                    },
-                    {
-                        artist: "Eubie Blake",
-                        track: "Charleston Rag",
-                        path: "../../samples/jazz/ragtime4.ogg"
-                    },
-                    {
-                        artist: "James Scott",
-                        track: "Frog Legs Rag",
-                        path: "../../samples/jazz/ragtime5.ogg"
-                    },
-                    {
-                        artist: "Joseph Lamb",
-                        track: "Champagne Rag",
-                        path: "../../samples/jazz/ragtime6.ogg"
-                    },
-                    {
-                        artist: 'Willie "The Lion" Smith',
-                        track: "Finger Buster",
-                        path: "../../samples/jazz/ragtime7.ogg"
-                    },
-                    {
-                        artist: "Dave Tucker",
-                        track: "12th Street Rag Medley",
-                        path: "../../samples/jazz/ragtime8.ogg"
-                    },
-                    {
-                        artist: "Jon Brosseau",
-                        track: "Grizzly Bear Rag",
-                        path: "../../samples/jazz/ragtime9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Scott Joplin", track: "The Entertainer", path: "../../samples/jazz/ragtime1.ogg" },
+                    { artist: "Scott Joplin", track: "Maple Leaf Rag", path: "../../samples/jazz/ragtime2.ogg" },
+                    { artist: "Tom Turpin", track: "Harlem Rag", path: "../../samples/jazz/ragtime3.ogg" },
+                    { artist: "Eubie Blake", track: "Charleston Rag", path: "../../samples/jazz/ragtime4.ogg" },
+                    { artist: "James Scott", track: "Frog Legs Rag", path: "../../samples/jazz/ragtime5.ogg" },
+                    { artist: "Joseph Lamb", track: "Champagne Rag", path: "../../samples/jazz/ragtime6.ogg" },
+                    { artist: "Willie The Lion Smith", track: "Finger Buster", path: "../../samples/jazz/ragtime7.ogg" },
+                    { artist: "Dave Tucker", track: "12th Street Rag Medley", path: "../../samples/jazz/ragtime8.ogg" },
+                    { artist: "Jon Brosseau", track: "Grizzly Bear Rag", path: "../../samples/jazz/ragtime9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsJazz = $('.buttons-jazz');
 
-                $('.buttons-jazz').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsJazz.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsJazz.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-jazz-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-jazz').removeClass('clicked');
+                    $buttonsJazz.removeClass('clicked');
                 }
             });
         </script>

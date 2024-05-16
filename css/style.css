@@ -145,7 +145,7 @@ a:link, a:visited, a:hover, a:active {
 .ukgarage { background-color: #8F7CAD; }
 .experimental { background-color: #EDEDED; color: #222; }
 
-.intro:before, .mainclassical:before, .mainblues:before, .mainjazz:before, .maincountry:before, .mainrhythmandblues:before, .mainpop:before, .mainrock:before, .mainmetal:before, .mainpunk:before, .mainindie:before, .mainreggae:before, .mainhiphop:before, .mainindustrial:before, .mainhouse:before, .maintrance:before, .maintechno:before, .mainhardcore:before, .mainbreakbeat:before, .maindrumandbass:before, .mainukgarage:before, .mainexperimental:before {
+[class*="main"]:before, .intro:before {
     content: "";
     position: fixed;
     width: 100vw;

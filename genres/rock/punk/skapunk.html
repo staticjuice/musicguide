@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Specials",
-                        track: "A Message To You Rudy",
-                        path: "../../../samples/punk/skapunk1.ogg"
-                    },
-                    {
-                        artist: "The Beat",
-                        track: "Mirror In The Bathroom",
-                        path: "../../../samples/punk/skapunk2.ogg"
-                    },
-                    {
-                        artist: "Madness",
-                        track: "House Of Fun",
-                        path: "../../../samples/punk/skapunk3.ogg"
-                    },
-                    {
-                        artist: "The Selecter",
-                        track: "On My Radio",
-                        path: "../../../samples/punk/skapunk4.ogg"
-                    },
-                    {
-                        artist: "Bad Manners",
-                        track: "Lip Up Fatty",
-                        path: "../../../samples/punk/skapunk5.ogg"
-                    },
-                    {
-                        artist: "The Mighty Mighty Bosstones",
-                        track: "The Impression That I Get",
-                        path: "../../../samples/punk/skapunk6.ogg"
-                    },
-                    {
-                        artist: "Operation Ivy",
-                        track: "Sound System",
-                        path: "../../../samples/punk/skapunk7.ogg"
-                    },
-                    {
-                        artist: "Rancid",
-                        track: "Time Bomb",
-                        path: "../../../samples/punk/skapunk8.ogg"
-                    },
-                    {
-                        artist: "Fishbone",
-                        track: "Party At Ground Zero",
-                        path: "../../../samples/punk/skapunk9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Specials", track: "A Message To You Rudy", path: "../../../samples/punk/skapunk1.ogg" },
+                    { artist: "The Beat", track: "Mirror In The Bathroom", path: "../../../samples/punk/skapunk2.ogg" },
+                    { artist: "Madness", track: "House Of Fun", path: "../../../samples/punk/skapunk3.ogg" },
+                    { artist: "The Selecter", track: "On My Radio", path: "../../../samples/punk/skapunk4.ogg" },
+                    { artist: "Bad Manners", track: "Lip Up Fatty", path: "../../../samples/punk/skapunk5.ogg" },
+                    { artist: "The Mighty Mighty Bosstones", track: "The Impression That I Get", path: "../../../samples/punk/skapunk6.ogg" },
+                    { artist: "Operation Ivy", track: "Sound System", path: "../../../samples/punk/skapunk7.ogg" },
+                    { artist: "Rancid", track: "Time Bomb", path: "../../../samples/punk/skapunk8.ogg" },
+                    { artist: "Fishbone", track: "Party At Ground Zero", path: "../../../samples/punk/skapunk9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsPunk = $('.buttons-punk');
 
-                $('.buttons-punk').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsPunk.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsPunk.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-punk-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-punk').removeClass('clicked');
+                    $buttonsPunk.removeClass('clicked');
                 }
             });
         </script>

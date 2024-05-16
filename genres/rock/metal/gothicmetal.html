@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Tristania",
-                        track: "Beyond The Veil",
-                        path: "../../../samples/metal/gothicmetal1.ogg"
-                    },
-                    {
-                        artist: "Theatre Of Tragedy",
-                        track: "Lorelei",
-                        path: "../../../samples/metal/gothicmetal2.ogg"
-                    },
-                    {
-                        artist: "Nightwish",
-                        track: "Wish I Had An Angel",
-                        path: "../../../samples/metal/gothicmetal3.ogg"
-                    },
-                    {
-                        artist: "Paradise Lost",
-                        track: "As I Die",
-                        path: "../../../samples/metal/gothicmetal4.ogg"
-                    },
-                    {
-                        artist: "Type O Negative",
-                        track: "My Girlfriend's Girlfriend",
-                        path: "../../../samples/metal/gothicmetal5.ogg"
-                    },
-                    {
-                        artist: "Tiamat",
-                        track: "Brighter Than The Sun",
-                        path: "../../../samples/metal/gothicmetal6.ogg"
-                    },
-                    {
-                        artist: "Therion",
-                        track: "The Rise Of Sodom And Gomorrah",
-                        path: "../../../samples/metal/gothicmetal7.ogg"
-                    },
-                    {
-                        artist: "Within Temptation",
-                        track: "Ice Queen",
-                        path: "../../../samples/metal/gothicmetal8.ogg"
-                    },
-                    {
-                        artist: "The Sins Of Thy Beloved",
-                        track: "Forever",
-                        path: "../../../samples/metal/gothicmetal9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Tristania", track: "Beyond The Veil", path: "../../../samples/metal/gothicmetal1.ogg" },
+                    { artist: "Theatre Of Tragedy", track: "Lorelei", path: "../../../samples/metal/gothicmetal2.ogg" },
+                    { artist: "Nightwish", track: "Wish I Had An Angel", path: "../../../samples/metal/gothicmetal3.ogg" },
+                    { artist: "Paradise Lost", track: "As I Die", path: "../../../samples/metal/gothicmetal4.ogg" },
+                    { artist: "Type O Negative", track: "My Girlfriend's Girlfriend", path: "../../../samples/metal/gothicmetal5.ogg" },
+                    { artist: "Tiamat", track: "Brighter Than The Sun", path: "../../../samples/metal/gothicmetal6.ogg" },
+                    { artist: "Therion", track: "The Rise Of Sodom And Gomorrah", path: "../../../samples/metal/gothicmetal7.ogg" },
+                    { artist: "Within Temptation", track: "Ice Queen", path: "../../../samples/metal/gothicmetal8.ogg" },
+                    { artist: "The Sins Of Thy Beloved", track: "Forever", path: "../../../samples/metal/gothicmetal9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsMetal = $('.buttons-metal');
 
-                $('.buttons-metal').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsMetal.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsMetal.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-metal-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-metal').removeClass('clicked');
+                    $buttonsMetal.removeClass('clicked');
                 }
             });
         </script>

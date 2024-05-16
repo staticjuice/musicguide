@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "My Bloody Valentine",
-                        track: "Only Shallow",
-                        path: "../../../samples/indie/shoegaze1.ogg"
-                    },
-                    {
-                        artist: "Curve",
-                        track: "Horror Head",
-                        path: "../../../samples/indie/shoegaze2.ogg"
-                    },
-                    {
-                        artist: "Ride",
-                        track: "Seagull",
-                        path: "../../../samples/indie/shoegaze3.ogg"
-                    },
-                    {
-                        artist: "Slowdive",
-                        track: "Alison",
-                        path: "../../../samples/indie/shoegaze4.ogg"
-                    },
-                    {
-                        artist: "Cocteau Twins",
-                        track: "Pearly-Dewdrops' Drops",
-                        path: "../../../samples/indie/shoegaze5.ogg"
-                    },
-                    {
-                        artist: "A.R. Kane",
-                        track: "Green Hazed Daze",
-                        path: "../../../samples/indie/shoegaze6.ogg"
-                    },
-                    {
-                        artist: "The Jesus And Mary Chain",
-                        track: "Just Like Honey",
-                        path: "../../../samples/indie/shoegaze7.ogg"
-                    },
-                    {
-                        artist: "The Stone Roses",
-                        track: "I Wanna Be Adored",
-                        path: "../../../samples/indie/shoegaze8.ogg"
-                    },
-                    {
-                        artist: "Beach House",
-                        track: "Take Care",
-                        path: "../../../samples/indie/shoegaze9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "My Bloody Valentine", track: "Only Shallow", path: "../../../samples/indie/shoegaze1.ogg" },
+                    { artist: "Curve", track: "Horror Head", path: "../../../samples/indie/shoegaze2.ogg" },
+                    { artist: "Ride", track: "Seagull", path: "../../../samples/indie/shoegaze3.ogg" },
+                    { artist: "Slowdive", track: "Alison", path: "../../../samples/indie/shoegaze4.ogg" },
+                    { artist: "Cocteau Twins", track: "Pearly-Dewdrops' Drops", path: "../../../samples/indie/shoegaze5.ogg" },
+                    { artist: "A.R. Kane", track: "Green Hazed Daze", path: "../../../samples/indie/shoegaze6.ogg" },
+                    { artist: "The Jesus And Mary Chain", track: "Just Like Honey", path: "../../../samples/indie/shoegaze7.ogg" },
+                    { artist: "The Stone Roses", track: "I Wanna Be Adored", path: "../../../samples/indie/shoegaze8.ogg" },
+                    { artist: "Beach House", track: "Take Care", path: "../../../samples/indie/shoegaze9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndie = $('.buttons-indie');
 
-                $('.buttons-indie').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndie.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndie.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-indie-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-indie').removeClass('clicked');
+                    $buttonsIndie.removeClass('clicked');
                 }
             });
         </script>

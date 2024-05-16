@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Koji Kondo",
-                        track: "Super Mario Bros. Theme",
-                        path: "../../samples/experimental/chiptune1.ogg"
-                    },
-                    {
-                        artist: "Hirokazu Tanaka",
-                        track: "Tetris Theme",
-                        path: "../../samples/experimental/chiptune2.ogg"
-                    },
-                    {
-                        artist: "Brad Fuller",
-                        track: "Marble Madness - Beginner Race",
-                        path: "../../samples/experimental/chiptune3.ogg"
-                    },
-                    {
-                        artist: "Tadashi Kimijima",
-                        track: "Bubble Bobble - Main Theme",
-                        path: "../../samples/experimental/chiptune4.ogg"
-                    },
-                    {
-                        artist: "Masato Nakamura",
-                        track: "Sonic The Hedgehog - Green Hill Zone Theme",
-                        path: "../../samples/experimental/chiptune5.ogg"
-                    },
-                    {
-                        artist: "Brian Johnston, Tim Wright & Tony Williams",
-                        track: "Lemmings - Lemming 1",
-                        path: "../../samples/experimental/chiptune6.ogg"
-                    },
-                    {
-                        artist: "Nullsleep",
-                        track: "Chippon",
-                        path: "../../samples/experimental/chiptune7.ogg"
-                    },
-                    {
-                        artist: "C-Jeff",
-                        track: "Angels Flying",
-                        path: "../../samples/experimental/chiptune8.ogg"
-                    },
-                    {
-                        artist: "Morusque",
-                        track: "Linerman",
-                        path: "../../samples/experimental/chiptune9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Koji Kondo", track: "Super Mario Bros. Theme", path: "../../samples/experimental/chiptune1.ogg" },
+                    { artist: "Hirokazu Tanaka", track: "Tetris Theme", path: "../../samples/experimental/chiptune2.ogg" },
+                    { artist: "Brad Fuller", track: "Marble Madness - Beginner Race", path: "../../samples/experimental/chiptune3.ogg" },
+                    { artist: "Tadashi Kimijima", track: "Bubble Bobble - Main Theme", path: "../../samples/experimental/chiptune4.ogg" },
+                    { artist: "Masato Nakamura", track: "Sonic The Hedgehog - Green Hill Zone Theme", path: "../../samples/experimental/chiptune5.ogg" },
+                    { artist: "Brian Johnston, Tim Wright & Tony Williams", track: "Lemmings - Lemming 1", path: "../../samples/experimental/chiptune6.ogg" },
+                    { artist: "Nullsleep", track: "Chippon", path: "../../samples/experimental/chiptune7.ogg" },
+                    { artist: "C-Jeff", track: "Angels Flying", path: "../../samples/experimental/chiptune8.ogg" },
+                    { artist: "Morusque", track: "Linerman", path: "../../samples/experimental/chiptune9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsExperimental = $('.buttons-experimental');
 
-                $('.buttons-experimental').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsExperimental.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsExperimental.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-experimental-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-experimental').removeClass('clicked');
+                    $buttonsExperimental.removeClass('clicked');
                 }
             });
         </script>

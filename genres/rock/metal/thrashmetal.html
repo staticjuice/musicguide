@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Metallica",
-                        track: "Master Of Puppets",
-                        path: "../../../samples/metal/thrashmetal1.ogg"
-                    },
-                    {
-                        artist: "Megadeth",
-                        track: "Skin O' My Teeth",
-                        path: "../../../samples/metal/thrashmetal2.ogg"
-                    },
-                    {
-                        artist: "Exodus",
-                        track: "The Toxic Waltz",
-                        path: "../../../samples/metal/thrashmetal3.ogg"
-                    },
-                    {
-                        artist: "Sodom",
-                        track: "M-16",
-                        path: "../../../samples/metal/thrashmetal4.ogg"
-                    },
-                    {
-                        artist: "Kreator",
-                        track: "Enemy Of God",
-                        path: "../../../samples/metal/thrashmetal5.ogg"
-                    },
-                    {
-                        artist: "Destruction",
-                        track: "Nailed To The Cross",
-                        path: "../../../samples/metal/thrashmetal6.ogg"
-                    },
-                    {
-                        artist: "Testament",
-                        track: "Native Blood",
-                        path: "../../../samples/metal/thrashmetal7.ogg"
-                    },
-                    {
-                        artist: "Pantera",
-                        track: "Cowboys From Hell",
-                        path: "../../../samples/metal/thrashmetal8.ogg"
-                    },
-                    {
-                        artist: "Machine Head",
-                        track: "Aesthetics Of Hate",
-                        path: "../../../samples/metal/thrashmetal9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Metallica", track: "Master Of Puppets", path: "../../../samples/metal/thrashmetal1.ogg" },
+                    { artist: "Megadeth", track: "Skin O' My Teeth", path: "../../../samples/metal/thrashmetal2.ogg" },
+                    { artist: "Exodus", track: "The Toxic Waltz", path: "../../../samples/metal/thrashmetal3.ogg" },
+                    { artist: "Sodom", track: "M-16", path: "../../../samples/metal/thrashmetal4.ogg" },
+                    { artist: "Kreator", track: "Enemy Of God", path: "../../../samples/metal/thrashmetal5.ogg" },
+                    { artist: "Destruction", track: "Nailed To The Cross", path: "../../../samples/metal/thrashmetal6.ogg" },
+                    { artist: "Testament", track: "Native Blood", path: "../../../samples/metal/thrashmetal7.ogg" },
+                    { artist: "Pantera", track: "Cowboys From Hell", path: "../../../samples/metal/thrashmetal8.ogg" },
+                    { artist: "Machine Head", track: "Aesthetics Of Hate", path: "../../../samples/metal/thrashmetal9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsMetal = $('.buttons-metal');
 
-                $('.buttons-metal').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsMetal.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsMetal.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-metal-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-metal').removeClass('clicked');
+                    $buttonsMetal.removeClass('clicked');
                 }
             });
         </script>

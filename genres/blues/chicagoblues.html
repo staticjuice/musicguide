@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Howlin' Wolf",
-                        track: "Smokestack Lightnin'",
-                        path: "../../samples/blues/chicagoblues1.ogg"
-                    },
-                    {
-                        artist: "Sonny Boy Williamson II",
-                        track: "Dust My Broom",
-                        path: "../../samples/blues/chicagoblues2.ogg"
-                    },
-                    {
-                        artist: "Elmore James",
-                        track: "The Sky Is Crying",
-                        path: "../../samples/blues/chicagoblues3.ogg"
-                    },
-                    {
-                        artist: "Muddy Waters",
-                        track: "Mannish Boy",
-                        path: "../../samples/blues/chicagoblues4.ogg"
-                    },
-                    {
-                        artist: "Jimmy Reed",
-                        track: "Shame, Shame, Shame",
-                        path: "../../samples/blues/chicagoblues5.ogg"
-                    },
-                    {
-                        artist: "Junior Wells",
-                        track: "Messin' With The Kid",
-                        path: "../../samples/blues/chicagoblues6.ogg"
-                    },
-                    {
-                        artist: "Willie Dixon",
-                        track: "Back Door Man",
-                        path: "../../samples/blues/chicagoblues7.ogg"
-                    },
-                    {
-                        artist: "Magic Sam",
-                        track: "Sweet Home Chicago",
-                        path: "../../samples/blues/chicagoblues8.ogg"
-                    },
-                    {
-                        artist: "John Lee Hooker",
-                        track: "Boom Boom",
-                        path: "../../samples/blues/chicagoblues9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Howlin' Wolf", track: "Smokestack Lightnin'", path: "../../samples/blues/chicagoblues1.ogg" },
+                    { artist: "Sonny Boy Williamson II", track: "Dust My Broom", path: "../../samples/blues/chicagoblues2.ogg" },
+                    { artist: "Elmore James", track: "The Sky Is Crying", path: "../../samples/blues/chicagoblues3.ogg" },
+                    { artist: "Muddy Waters", track: "Mannish Boy", path: "../../samples/blues/chicagoblues4.ogg" },
+                    { artist: "Jimmy Reed", track: "Shame, Shame, Shame", path: "../../samples/blues/chicagoblues5.ogg" },
+                    { artist: "Junior Wells", track: "Messin' With The Kid", path: "../../samples/blues/chicagoblues6.ogg" },
+                    { artist: "Willie Dixon", track: "Back Door Man", path: "../../samples/blues/chicagoblues7.ogg" },
+                    { artist: "Magic Sam", track: "Sweet Home Chicago", path: "../../samples/blues/chicagoblues8.ogg" },
+                    { artist: "John Lee Hooker", track: "Boom Boom", path: "../../samples/blues/chicagoblues9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBlues = $('.buttons-blues');
 
-                $('.buttons-blues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBlues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBlues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-blues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-blues').removeClass('clicked');
+                    $buttonsBlues.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Gramophonedzie",
-                        track: "Why Don't You",
-                        path: "../../../samples/house/electroswing1.ogg"
-                    },
-                    {
-                        artist: "Yolanda Be Cool & DCUP",
-                        track: "We No Speak Americano",
-                        path: "../../../samples/house/electroswing2.ogg"
-                    },
-                    {
-                        artist: "Caravan Palace",
-                        track: "Bambous",
-                        path: "../../../samples/house/electroswing3.ogg"
-                    },
-                    {
-                        artist: "Caravan Palace",
-                        track: "Suzy",
-                        path: "../../../samples/house/electroswing4.ogg"
-                    },
-                    {
-                        artist: "Jamie Berry feat. Rosie Rascal",
-                        track: "Twitch",
-                        path: "../../../samples/house/electroswing5.ogg"
-                    },
-                    {
-                        artist: "Caravan Palace",
-                        track: "Clash",
-                        path: "../../../samples/house/electroswing6.ogg"
-                    },
-                    {
-                        artist: "Parov Stelar",
-                        track: "Doctor Foo",
-                        path: "../../../samples/house/electroswing7.ogg"
-                    },
-                    {
-                        artist: "Peggy Suave",
-                        track: "Best Buns In Town",
-                        path: "../../../samples/house/electroswing8.ogg"
-                    },
-                    {
-                        artist: "The Drapers",
-                        track: "Diga Diga Doo",
-                        path: "../../../samples/house/electroswing9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Gramophonedzie", track: "Why Don't You", path: "../../../samples/house/electroswing1.ogg" },
+                    { artist: "Yolanda Be Cool & DCUP", track: "We No Speak Americano", path: "../../../samples/house/electroswing2.ogg" },
+                    { artist: "Caravan Palace", track: "Bambous", path: "../../../samples/house/electroswing3.ogg" },
+                    { artist: "Caravan Palace", track: "Suzy", path: "../../../samples/house/electroswing4.ogg" },
+                    { artist: "Jamie Berry feat. Rosie Rascal", track: "Twitch", path: "../../../samples/house/electroswing5.ogg" },
+                    { artist: "Caravan Palace", track: "Clash", path: "../../../samples/house/electroswing6.ogg" },
+                    { artist: "Parov Stelar", track: "Doctor Foo", path: "../../../samples/house/electroswing7.ogg" },
+                    { artist: "Peggy Suave", track: "Best Buns In Town", path: "../../../samples/house/electroswing8.ogg" },
+                    { artist: "The Drapers", track: "Diga Diga Doo", path: "../../../samples/house/electroswing9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHouse = $('.buttons-house');
 
-                $('.buttons-house').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHouse.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHouse.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-house-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-house').removeClass('clicked');
+                    $buttonsHouse.removeClass('clicked');
                 }
             });
         </script>

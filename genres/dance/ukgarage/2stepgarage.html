@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Artful Dodger feat. Craig David",
-                        track: "Re-Rewind",
-                        path: "../../../samples/ukgarage/2stepgarage1.ogg"
-                    },
-                    {
-                        artist: "Gabrielle",
-                        track: "Sunshine (Wookie Main Mix)",
-                        path: "../../../samples/ukgarage/2stepgarage2.ogg"
-                    },
-                    {
-                        artist: "MJ Cole",
-                        track: "Sincere",
-                        path: "../../../samples/ukgarage/2stepgarage3.ogg"
-                    },
-                    {
-                        artist: "The Streets",
-                        track: "Has It Come To This?",
-                        path: "../../../samples/ukgarage/2stepgarage4.ogg"
-                    },
-                    {
-                        artist: "Joy Orbison",
-                        track: "Hyph Mngo",
-                        path: "../../../samples/ukgarage/2stepgarage5.ogg"
-                    },
-                    {
-                        artist: "Neneh Cherry",
-                        track: "Buddy X '99 (Dreem House Edit)",
-                        path: "../../../samples/ukgarage/2stepgarage6.ogg"
-                    },
-                    {
-                        artist: "Stephen Emmanuel Presents Colours",
-                        track: "Hold On (SE22 Mix)",
-                        path: "../../../samples/ukgarage/2stepgarage7.ogg"
-                    },
-                    {
-                        artist: "Dem 2",
-                        track: "Destiny",
-                        path: "../../../samples/ukgarage/2stepgarage8.ogg"
-                    },
-                    {
-                        artist: "Sunship",
-                        track: "Try Me Out",
-                        path: "../../../samples/ukgarage/2stepgarage9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Artful Dodger feat. Craig David", track: "Re-Rewind", path: "../../../samples/ukgarage/2stepgarage1.ogg" },
+                    { artist: "Gabrielle", track: "Sunshine (Wookie Main Mix)", path: "../../../samples/ukgarage/2stepgarage2.ogg" },
+                    { artist: "MJ Cole", track: "Sincere", path: "../../../samples/ukgarage/2stepgarage3.ogg" },
+                    { artist: "The Streets", track: "Has It Come To This?", path: "../../../samples/ukgarage/2stepgarage4.ogg" },
+                    { artist: "Joy Orbison", track: "Hyph Mngo", path: "../../../samples/ukgarage/2stepgarage5.ogg" },
+                    { artist: "Neneh Cherry", track: "Buddy X '99 (Dreem House Edit)", path: "../../../samples/ukgarage/2stepgarage6.ogg" },
+                    { artist: "Stephen Emmanuel Presents Colours", track: "Hold On (SE22 Mix)", path: "../../../samples/ukgarage/2stepgarage7.ogg" },
+                    { artist: "Dem 2", track: "Destiny", path: "../../../samples/ukgarage/2stepgarage8.ogg" },
+                    { artist: "Sunship", track: "Try Me Out", path: "../../../samples/ukgarage/2stepgarage9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsUkgarage = $('.buttons-ukgarage');
 
-                $('.buttons-ukgarage').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsUkgarage.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsUkgarage.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-ukgarage-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-ukgarage').removeClass('clicked');
+                    $buttonsUkgarage.removeClass('clicked');
                 }
             });
         </script>

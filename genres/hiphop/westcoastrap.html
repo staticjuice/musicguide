@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "N.W.A",
-                        track: "Straight Outta Compton",
-                        path: "../../samples/hiphop/westcoastrap1.ogg"
-                    },
-                    {
-                        artist: "Digital Underground",
-                        track: "The Humpty Dance",
-                        path: "../../samples/hiphop/westcoastrap2.ogg"
-                    },
-                    {
-                        artist: "Cypress Hill",
-                        track: "Insane In The Brain",
-                        path: "../../samples/hiphop/westcoastrap3.ogg"
-                    },
-                    {
-                        artist: "Ice Cube",
-                        track: "When Will They Shoot?",
-                        path: "../../samples/hiphop/westcoastrap4.ogg"
-                    },
-                    {
-                        artist: "Above The Law",
-                        track: "Black Superman",
-                        path: "../../samples/hiphop/westcoastrap5.ogg"
-                    },
-                    {
-                        artist: "2Pac",
-                        track: "Ambitionz Az A Ridah",
-                        path: "../../samples/hiphop/westcoastrap6.ogg"
-                    },
-                    {
-                        artist: "Eminem",
-                        track: "The Real Slim Shady",
-                        path: "../../samples/hiphop/westcoastrap7.ogg"
-                    },
-                    {
-                        artist: "Dr. Dre",
-                        track: "Fuck Wit Dre Day (And Everybody's Celebratin')",
-                        path: "../../samples/hiphop/westcoastrap8.ogg"
-                    },
-                    {
-                        artist: "Snoop Doggy Dogg",
-                        track: "Who Am I? (What's My Name?)",
-                        path: "../../samples/hiphop/westcoastrap9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "N.W.A", track: "Straight Outta Compton", path: "../../samples/hiphop/westcoastrap1.ogg" },
+                    { artist: "Digital Underground", track: "The Humpty Dance", path: "../../samples/hiphop/westcoastrap2.ogg" },
+                    { artist: "Cypress Hill", track: "Insane In The Brain", path: "../../samples/hiphop/westcoastrap3.ogg" },
+                    { artist: "Ice Cube", track: "When Will They Shoot?", path: "../../samples/hiphop/westcoastrap4.ogg" },
+                    { artist: "Above The Law", track: "Black Superman", path: "../../samples/hiphop/westcoastrap5.ogg" },
+                    { artist: "2Pac", track: "Ambitionz Az A Ridah", path: "../../samples/hiphop/westcoastrap6.ogg" },
+                    { artist: "Eminem", track: "The Real Slim Shady", path: "../../samples/hiphop/westcoastrap7.ogg" },
+                    { artist: "Dr. Dre", track: "Fuck Wit Dre Day (And Everybody's Celebratin')", path: "../../samples/hiphop/westcoastrap8.ogg" },
+                    { artist: "Snoop Doggy Dogg", track: "Who Am I? (What's My Name?)", path: "../../samples/hiphop/westcoastrap9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHiphop = $('.buttons-hiphop');
 
-                $('.buttons-hiphop').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHiphop.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHiphop.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hiphop-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hiphop').removeClass('clicked');
+                    $buttonsHiphop.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Skrillex & Kill The Noise",
-                        track: "Recess",
-                        path: "../../../samples/ukgarage/glitchhop1.ogg"
-                    },
-                    {
-                        artist: "Froxic",
-                        track: "Satellite",
-                        path: "../../../samples/ukgarage/glitchhop2.ogg"
-                    },
-                    {
-                        artist: "KOAN Sound",
-                        track: "Mr. Brown",
-                        path: "../../../samples/ukgarage/glitchhop3.ogg"
-                    },
-                    {
-                        artist: "Zanski",
-                        track: "Retrosession",
-                        path: "../../../samples/ukgarage/glitchhop4.ogg"
-                    },
-                    {
-                        artist: "Kill Paris",
-                        track: "Catch You",
-                        path: "../../../samples/ukgarage/glitchhop5.ogg"
-                    },
-                    {
-                        artist: "Coyote Kisses",
-                        track: "This Is How You Know",
-                        path: "../../../samples/ukgarage/glitchhop6.ogg"
-                    },
-                    {
-                        artist: "Au5 & Fractal",
-                        track: "Subvert",
-                        path: "../../../samples/ukgarage/glitchhop7.ogg"
-                    },
-                    {
-                        artist: "Savant",
-                        track: "Starfish (Blanco Remix)",
-                        path: "../../../samples/ukgarage/glitchhop8.ogg"
-                    },
-                    {
-                        artist: "Kill Paris",
-                        track: "Float (Wicked City Remix)",
-                        path: "../../../samples/ukgarage/glitchhop9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Skrillex & Kill The Noise", track: "Recess", path: "../../../samples/ukgarage/glitchhop1.ogg" },
+                    { artist: "Froxic", track: "Satellite", path: "../../../samples/ukgarage/glitchhop2.ogg" },
+                    { artist: "KOAN Sound", track: "Mr. Brown", path: "../../../samples/ukgarage/glitchhop3.ogg" },
+                    { artist: "Zanski", track: "Retrosession", path: "../../../samples/ukgarage/glitchhop4.ogg" },
+                    { artist: "Kill Paris", track: "Catch You", path: "../../../samples/ukgarage/glitchhop5.ogg" },
+                    { artist: "Coyote Kisses", track: "This Is How You Know", path: "../../../samples/ukgarage/glitchhop6.ogg" },
+                    { artist: "Au5 & Fractal", track: "Subvert", path: "../../../samples/ukgarage/glitchhop7.ogg" },
+                    { artist: "Savant", track: "Starfish (Blanco Remix)", path: "../../../samples/ukgarage/glitchhop8.ogg" },
+                    { artist: "Kill Paris", track: "Float (Wicked City Remix)", path: "../../../samples/ukgarage/glitchhop9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsUkgarage = $('.buttons-ukgarage');
 
-                $('.buttons-ukgarage').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsUkgarage.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsUkgarage.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-ukgarage-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-ukgarage').removeClass('clicked');
+                    $buttonsUkgarage.removeClass('clicked');
                 }
             });
         </script>

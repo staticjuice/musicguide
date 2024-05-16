@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Teenage Jesus And The Jerks",
-                        track: "The Closet",
-                        path: "../../../samples/punk/nowave1.ogg"
-                    },
-                    {
-                        artist: "Swans",
-                        track: "No Words No Thoughts",
-                        path: "../../../samples/punk/nowave2.ogg"
-                    },
-                    {
-                        artist: "Live Skull",
-                        track: "Sparky",
-                        path: "../../../samples/punk/nowave3.ogg"
-                    },
-                    {
-                        artist: "Mars",
-                        track: "Helen Forsdale",
-                        path: "../../../samples/punk/nowave4.ogg"
-                    },
-                    {
-                        artist: "Theoretical Girls",
-                        track: "Computer Dating",
-                        path: "../../../samples/punk/nowave5.ogg"
-                    },
-                    {
-                        artist: "The Lounge Lizards",
-                        track: "Do The Wrong Thing",
-                        path: "../../../samples/punk/nowave6.ogg"
-                    },
-                    {
-                        artist: "Suicide",
-                        track: "Wild In Blue",
-                        path: "../../../samples/punk/nowave7.ogg"
-                    },
-                    {
-                        artist: "The Contortions",
-                        track: "Contort Yourself",
-                        path: "../../../samples/punk/nowave8.ogg"
-                    },
-                    {
-                        artist: "Sonic Youth",
-                        track: "Death Valley '69",
-                        path: "../../../samples/punk/nowave9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Teenage Jesus And The Jerks", track: "The Closet", path: "../../../samples/punk/nowave1.ogg" },
+                    { artist: "Swans", track: "No Words No Thoughts", path: "../../../samples/punk/nowave2.ogg" },
+                    { artist: "Live Skull", track: "Sparky", path: "../../../samples/punk/nowave3.ogg" },
+                    { artist: "Mars", track: "Helen Forsdale", path: "../../../samples/punk/nowave4.ogg" },
+                    { artist: "Theoretical Girls", track: "Computer Dating", path: "../../../samples/punk/nowave5.ogg" },
+                    { artist: "The Lounge Lizards", track: "Do The Wrong Thing", path: "../../../samples/punk/nowave6.ogg" },
+                    { artist: "Suicide", track: "Wild In Blue", path: "../../../samples/punk/nowave7.ogg" },
+                    { artist: "The Contortions", track: "Contort Yourself", path: "../../../samples/punk/nowave8.ogg" },
+                    { artist: "Sonic Youth", track: "Death Valley '69", path: "../../../samples/punk/nowave9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsPunk = $('.buttons-punk');
 
-                $('.buttons-punk').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsPunk.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsPunk.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-punk-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-punk').removeClass('clicked');
+                    $buttonsPunk.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Lynyrd Skynyrd",
-                        track: "Sweet Home Alabama",
-                        path: "../../../samples/rock/southernrock1.ogg"
-                    },
-                    {
-                        artist: "The Allman Brothers Band",
-                        track: "Midnight Rider",
-                        path: "../../../samples/rock/southernrock2.ogg"
-                    },
-                    {
-                        artist: "Creedence Clearwater Revival",
-                        track: "Run Through The Jungle",
-                        path: "../../../samples/rock/southernrock3.ogg"
-                    },
-                    {
-                        artist: "ZZ Top",
-                        track: "Sharp Dressed Man",
-                        path: "../../../samples/rock/southernrock4.ogg"
-                    },
-                    {
-                        artist: "Black Oak Arkansas",
-                        track: "Lord Have Mercy On My Soul",
-                        path: "../../../samples/rock/southernrock5.ogg"
-                    },
-                    {
-                        artist: "Blackfoot",
-                        track: "Train, Train",
-                        path: "../../../samples/rock/southernrock6.ogg"
-                    },
-                    {
-                        artist: "Kings Of Leon",
-                        track: "Red Morning Light",
-                        path: "../../../samples/rock/southernrock7.ogg"
-                    },
-                    {
-                        artist: "The Black Crowes",
-                        track: "Remedy",
-                        path: "../../../samples/rock/southernrock8.ogg"
-                    },
-                    {
-                        artist: "The Georgia Satellites",
-                        track: "Keep Your Hands To Yourself",
-                        path: "../../../samples/rock/southernrock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Lynyrd Skynyrd", track: "Sweet Home Alabama", path: "../../../samples/rock/southernrock1.ogg" },
+                    { artist: "The Allman Brothers Band", track: "Midnight Rider", path: "../../../samples/rock/southernrock2.ogg" },
+                    { artist: "Creedence Clearwater Revival", track: "Run Through The Jungle", path: "../../../samples/rock/southernrock3.ogg" },
+                    { artist: "ZZ Top", track: "Sharp Dressed Man", path: "../../../samples/rock/southernrock4.ogg" },
+                    { artist: "Black Oak Arkansas", track: "Lord Have Mercy On My Soul", path: "../../../samples/rock/southernrock5.ogg" },
+                    { artist: "Blackfoot", track: "Train, Train", path: "../../../samples/rock/southernrock6.ogg" },
+                    { artist: "Kings Of Leon", track: "Red Morning Light", path: "../../../samples/rock/southernrock7.ogg" },
+                    { artist: "The Black Crowes", track: "Remedy", path: "../../../samples/rock/southernrock8.ogg" },
+                    { artist: "The Georgia Satellites", track: "Keep Your Hands To Yourself", path: "../../../samples/rock/southernrock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRock = $('.buttons-rock');
 
-                $('.buttons-rock').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRock.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRock.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rock-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rock').removeClass('clicked');
+                    $buttonsRock.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Lady Gaga",
-                        track: "Poker Face",
-                        path: "../../samples/pop/electropop1.ogg"
-                    },
-                    {
-                        artist: "Ke$ha",
-                        track: "TiK ToK",
-                        path: "../../samples/pop/electropop2.ogg"
-                    },
-                    {
-                        artist: "Katy Perry",
-                        track: "Firework",
-                        path: "../../samples/pop/electropop3.ogg"
-                    },
-                    {
-                        artist: "The Black Eyed Peas",
-                        track: "I Gotta Feeling",
-                        path: "../../samples/pop/electropop4.ogg"
-                    },
-                    {
-                        artist: "LMFAO feat. Lauren Bennett & GoonRock",
-                        track: "Party Rock Anthem",
-                        path: "../../samples/pop/electropop5.ogg"
-                    },
-                    {
-                        artist: "Calvin Harris",
-                        track: "Feel So Close",
-                        path: "../../samples/pop/electropop6.ogg"
-                    },
-                    {
-                        artist: "David Guetta feat. Flo Rida & Nicki Minaj",
-                        track: "Where Them Girls At",
-                        path: "../../samples/pop/electropop7.ogg"
-                    },
-                    {
-                        artist: "Flo Rida",
-                        track: "Good Feeling",
-                        path: "../../samples/pop/electropop8.ogg"
-                    },
-                    {
-                        artist: "Owl City & Carly Rae Jepsen",
-                        track: "Good Time",
-                        path: "../../samples/pop/electropop9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Lady Gaga", track: "Poker Face", path: "../../samples/pop/electropop1.ogg" },
+                    { artist: "Ke$ha", track: "TiK ToK", path: "../../samples/pop/electropop2.ogg" },
+                    { artist: "Katy Perry", track: "Firework", path: "../../samples/pop/electropop3.ogg" },
+                    { artist: "The Black Eyed Peas", track: "I Gotta Feeling", path: "../../samples/pop/electropop4.ogg" },
+                    { artist: "LMFAO feat. Lauren Bennett & GoonRock", track: "Party Rock Anthem", path: "../../samples/pop/electropop5.ogg" },
+                    { artist: "Calvin Harris", track: "Feel So Close", path: "../../samples/pop/electropop6.ogg" },
+                    { artist: "David Guetta feat. Flo Rida & Nicki Minaj", track: "Where Them Girls At", path: "../../samples/pop/electropop7.ogg" },
+                    { artist: "Flo Rida", track: "Good Feeling", path: "../../samples/pop/electropop8.ogg" },
+                    { artist: "Owl City & Carly Rae Jepsen", track: "Good Time", path: "../../samples/pop/electropop9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsPop = $('.buttons-pop');
 
-                $('.buttons-pop').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsPop.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsPop.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-pop-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-pop').removeClass('clicked');
+                    $buttonsPop.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Dillards",
-                        track: "Dooley",
-                        path: "../../samples/country/bluegrass1.ogg"
-                    },
-                    {
-                        artist: "Jim & Jesse",
-                        track: "She Left Me Standing On The Mountain",
-                        path: "../../samples/country/bluegrass2.ogg"
-                    },
-                    {
-                        artist: "The Stanley Brothers",
-                        track: "Clinch Mountain Backstep",
-                        path: "../../samples/country/bluegrass3.ogg"
-                    },
-                    {
-                        artist: "Bill Monroe",
-                        track: "White House Blues",
-                        path: "../../samples/country/bluegrass4.ogg"
-                    },
-                    {
-                        artist: "The Kingston Trio",
-                        track: "M.T.A.",
-                        path: "../../samples/country/bluegrass5.ogg"
-                    },
-                    {
-                        artist: "Flatt & Scruggs",
-                        track: "Foggy Mountain Breakdown",
-                        path: "../../samples/country/bluegrass6.ogg"
-                    },
-                    {
-                        artist: "The Osborne Brothers",
-                        track: "Rocky Top",
-                        path: "../../samples/country/bluegrass7.ogg"
-                    },
-                    {
-                        artist: "Dailey & Vincent",
-                        track: "Head Hung Down",
-                        path: "../../samples/country/bluegrass8.ogg"
-                    },
-                    {
-                        artist: "Ralph Joe Meadows",
-                        track: "East Tennessee Blues",
-                        path: "../../samples/country/bluegrass9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Dillards", track: "Dooley", path: "../../samples/country/bluegrass1.ogg" },
+                    { artist: "Jim & Jesse", track: "She Left Me Standing On The Mountain", path: "../../samples/country/bluegrass2.ogg" },
+                    { artist: "The Stanley Brothers", track: "Clinch Mountain Backstep", path: "../../samples/country/bluegrass3.ogg" },
+                    { artist: "Bill Monroe", track: "White House Blues", path: "../../samples/country/bluegrass4.ogg" },
+                    { artist: "The Kingston Trio", track: "M.T.A.", path: "../../samples/country/bluegrass5.ogg" },
+                    { artist: "Flatt & Scruggs", track: "Foggy Mountain Breakdown", path: "../../samples/country/bluegrass6.ogg" },
+                    { artist: "The Osborne Brothers", track: "Rocky Top", path: "../../samples/country/bluegrass7.ogg" },
+                    { artist: "Dailey & Vincent", track: "Head Hung Down", path: "../../samples/country/bluegrass8.ogg" },
+                    { artist: "Ralph Joe Meadows", track: "East Tennessee Blues", path: "../../samples/country/bluegrass9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsCountry = $('.buttons-country');
 
-                $('.buttons-country').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsCountry.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsCountry.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-country-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-country').removeClass('clicked');
+                    $buttonsCountry.removeClass('clicked');
                 }
             });
         </script>

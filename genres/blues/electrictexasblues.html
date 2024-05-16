@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Freddie King",
-                        track: "Big Legged Woman",
-                        path: "../../samples/blues/electrictexasblues1.ogg"
-                    },
-                    {
-                        artist: "Johnny Copeland",
-                        track: "Blues Ain't Nothin'",
-                        path: "../../samples/blues/electrictexasblues2.ogg"
-                    },
-                    {
-                        artist: "Albert Collins",
-                        track: "Lights Are On But Nobody's Home",
-                        path: "../../samples/blues/electrictexasblues3.ogg"
-                    },
-                    {
-                        artist: "Roy Buchanan",
-                        track: "Sweet Dreams",
-                        path: "../../samples/blues/electrictexasblues4.ogg"
-                    },
-                    {
-                        artist: "Robben Ford",
-                        track: "Talk To Your Daughter",
-                        path: "../../samples/blues/electrictexasblues5.ogg"
-                    },
-                    {
-                        artist: "Robert Cray",
-                        track: "Smoking Gun",
-                        path: "../../samples/blues/electrictexasblues6.ogg"
-                    },
-                    {
-                        artist: "The Fabulous Thunderbirds",
-                        track: "Tuff Enuff",
-                        path: "../../samples/blues/electrictexasblues7.ogg"
-                    },
-                    {
-                        artist: "Joe Louis Walker",
-                        track: "I Won't Do That",
-                        path: "../../samples/blues/electrictexasblues8.ogg"
-                    },
-                    {
-                        artist: "The Barr Brothers",
-                        track: "Half Crazy",
-                        path: "../../samples/blues/electrictexasblues9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Freddie King", track: "Big Legged Woman", path: "../../samples/blues/electrictexasblues1.ogg" },
+                    { artist: "Johnny Copeland", track: "Blues Ain't Nothin'", path: "../../samples/blues/electrictexasblues2.ogg" },
+                    { artist: "Albert Collins", track: "Lights Are On But Nobody's Home", path: "../../samples/blues/electrictexasblues3.ogg" },
+                    { artist: "Roy Buchanan", track: "Sweet Dreams", path: "../../samples/blues/electrictexasblues4.ogg" },
+                    { artist: "Robben Ford", track: "Talk To Your Daughter", path: "../../samples/blues/electrictexasblues5.ogg" },
+                    { artist: "Robert Cray", track: "Smoking Gun", path: "../../samples/blues/electrictexasblues6.ogg" },
+                    { artist: "The Fabulous Thunderbirds", track: "Tuff Enuff", path: "../../samples/blues/electrictexasblues7.ogg" },
+                    { artist: "Joe Louis Walker", track: "I Won't Do That", path: "../../samples/blues/electrictexasblues8.ogg" },
+                    { artist: "The Barr Brothers", track: "Half Crazy", path: "../../samples/blues/electrictexasblues9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBlues = $('.buttons-blues');
 
-                $('.buttons-blues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBlues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBlues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-blues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-blues').removeClass('clicked');
+                    $buttonsBlues.removeClass('clicked');
                 }
             });
         </script>

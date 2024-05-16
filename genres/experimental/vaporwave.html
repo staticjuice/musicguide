@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "ESPRIT 空想",
-                        track: "WHISPERS.WAV",
-                        path: "../../samples/experimental/vaporwave1.ogg"
-                    },
-                    {
-                        artist: "MACINTOSH PLUS",
-                        track: "リサフランク420 / 現代のコンピュー",
-                        path: "../../samples/experimental/vaporwave2.ogg"
-                    },
-                    {
-                        artist: "Saint Pepsi",
-                        track: "Enjoy Yourself",
-                        path: "../../samples/experimental/vaporwave3.ogg"
-                    },
-                    {
-                        artist: "k y a r a 永遠に",
-                        track: "ATLASスポーツカー",
-                        path: "../../samples/experimental/vaporwave4.ogg"
-                    },
-                    {
-                        artist: "Desired",
-                        track: "Commercial Break",
-                        path: "../../samples/experimental/vaporwave5.ogg"
-                    },
-                    {
-                        artist: "Balents",
-                        track: "(Fitness Area)Fitness Center",
-                        path: "../../samples/experimental/vaporwave6.ogg"
-                    },
-                    {
-                        artist: "CYBEREALITYライフ",
-                        track: "サービスのカタログ http://www.virtualresort.org",
-                        path: "../../samples/experimental/vaporwave7.ogg"
-                    },
-                    {
-                        artist: "BBRAINZ",
-                        track: "DATA TOUCH DELUXE",
-                        path: "../../samples/experimental/vaporwave8.ogg"
-                    },
-                    {
-                        artist: "18 Carat Affair",
-                        track: "Desire",
-                        path: "../../samples/experimental/vaporwave9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "ESPRIT 空想", track: "WHISPERS.WAV", path: "../../samples/experimental/vaporwave1.ogg" },
+                    { artist: "MACINTOSH PLUS", track: "リサフランク420 / 現代のコンピュー", path: "../../samples/experimental/vaporwave2.ogg" },
+                    { artist: "Saint Pepsi", track: "Enjoy Yourself", path: "../../samples/experimental/vaporwave3.ogg" },
+                    { artist: "k y a r a 永遠に", track: "ATLASスポーツカー", path: "../../samples/experimental/vaporwave4.ogg" },
+                    { artist: "Desired", track: "Commercial Break", path: "../../samples/experimental/vaporwave5.ogg" },
+                    { artist: "Balents", track: "(Fitness Area)Fitness Center", path: "../../samples/experimental/vaporwave6.ogg" },
+                    { artist: "CYBEREALITYライフ", track: "サービスのカタログ http://www.virtualresort.org", path: "../../samples/experimental/vaporwave7.ogg" },
+                    { artist: "BBRAINZ", track: "DATA TOUCH DELUXE", path: "../../samples/experimental/vaporwave8.ogg" },
+                    { artist: "18 Carat Affair", track: "Desire", path: "../../samples/experimental/vaporwave9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsExperimental = $('.buttons-experimental');
 
-                $('.buttons-experimental').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsExperimental.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsExperimental.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-experimental-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-experimental').removeClass('clicked');
+                    $buttonsExperimental.removeClass('clicked');
                 }
             });
         </script>

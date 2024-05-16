@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Uncle Tupelo",
-                        track: "Moonshiner",
-                        path: "../../samples/country/alternativecountry1.ogg"
-                    },
-                    {
-                        artist: "Sturgill Simpson",
-                        track: "In Bloom",
-                        path: "../../samples/country/alternativecountry2.ogg"
-                    },
-                    {
-                        artist: "Lambchop",
-                        track: "Up With People",
-                        path: "../../samples/country/alternativecountry3.ogg"
-                    },
-                    {
-                        artist: "Wilco",
-                        track: "Jesus, Etc.",
-                        path: "../../samples/country/alternativecountry4.ogg"
-                    },
-                    {
-                        artist: "The Jayhawks",
-                        track: "Bird Never Flies",
-                        path: "../../samples/country/alternativecountry5.ogg"
-                    },
-                    {
-                        artist: "Jason Isbell",
-                        track: "Something More Than Free",
-                        path: "../../samples/country/alternativecountry6.ogg"
-                    },
-                    {
-                        artist: "The Flatlanders",
-                        track: "Jole Blon",
-                        path: "../../samples/country/alternativecountry7.ogg"
-                    },
-                    {
-                        artist: "The Handsome Family",
-                        track: "Far From Any Road",
-                        path: "../../samples/country/alternativecountry8.ogg"
-                    },
-                    {
-                        artist: "Drive-By Truckers",
-                        track: "Goddamn Lonely Love",
-                        path: "../../samples/country/alternativecountry9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Uncle Tupelo", track: "Moonshiner", path: "../../samples/country/alternativecountry1.ogg" },
+                    { artist: "Sturgill Simpson", track: "In Bloom", path: "../../samples/country/alternativecountry2.ogg" },
+                    { artist: "Lambchop", track: "Up With People", path: "../../samples/country/alternativecountry3.ogg" },
+                    { artist: "Wilco", track: "Jesus, Etc.", path: "../../samples/country/alternativecountry4.ogg" },
+                    { artist: "The Jayhawks", track: "Bird Never Flies", path: "../../samples/country/alternativecountry5.ogg" },
+                    { artist: "Jason Isbell", track: "Something More Than Free", path: "../../samples/country/alternativecountry6.ogg" },
+                    { artist: "The Flatlanders", track: "Jole Blon", path: "../../samples/country/alternativecountry7.ogg" },
+                    { artist: "The Handsome Family", track: "Far From Any Road", path: "../../samples/country/alternativecountry8.ogg" },
+                    { artist: "Drive-By Truckers", track: "Goddamn Lonely Love", path: "../../samples/country/alternativecountry9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsCountry = $('.buttons-country');
 
-                $('.buttons-country').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsCountry.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsCountry.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-country-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-country').removeClass('clicked');
+                    $buttonsCountry.removeClass('clicked');
                 }
             });
         </script>

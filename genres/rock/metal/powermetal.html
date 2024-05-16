@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Blind Guardian",
-                        track: "Mirror, Mirror",
-                        path: "../../../samples/metal/powermetal1.ogg"
-                    },
-                    {
-                        artist: "Hammerfall",
-                        track: "Any Means Necessary",
-                        path: "../../../samples/metal/powermetal2.ogg"
-                    },
-                    {
-                        artist: "Helloween",
-                        track: "I Want Out",
-                        path: "../../../samples/metal/powermetal3.ogg"
-                    },
-                    {
-                        artist: "Savatage",
-                        track: "Hall Of The Mountain King",
-                        path: "../../../samples/metal/powermetal4.ogg"
-                    },
-                    {
-                        artist: "Manowar",
-                        track: "Hail And Kill",
-                        path: "../../../samples/metal/powermetal5.ogg"
-                    },
-                    {
-                        artist: "Gamma Ray",
-                        track: "Wings Of Destiny",
-                        path: "../../../samples/metal/powermetal6.ogg"
-                    },
-                    {
-                        artist: "DragonForce",
-                        track: "Heroes Of Our Time",
-                        path: "../../../samples/metal/powermetal7.ogg"
-                    },
-                    {
-                        artist: "Kamelot",
-                        track: "Insomnia",
-                        path: "../../../samples/metal/powermetal8.ogg"
-                    },
-                    {
-                        artist: "Iced Earth",
-                        track: "Dracula",
-                        path: "../../../samples/metal/powermetal9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Blind Guardian", track: "Mirror, Mirror", path: "../../../samples/metal/powermetal1.ogg" },
+                    { artist: "Hammerfall", track: "Any Means Necessary", path: "../../../samples/metal/powermetal2.ogg" },
+                    { artist: "Helloween", track: "I Want Out", path: "../../../samples/metal/powermetal3.ogg" },
+                    { artist: "Savatage", track: "Hall Of The Mountain King", path: "../../../samples/metal/powermetal4.ogg" },
+                    { artist: "Manowar", track: "Hail And Kill", path: "../../../samples/metal/powermetal5.ogg" },
+                    { artist: "Gamma Ray", track: "Wings Of Destiny", path: "../../../samples/metal/powermetal6.ogg" },
+                    { artist: "DragonForce", track: "Heroes Of Our Time", path: "../../../samples/metal/powermetal7.ogg" },
+                    { artist: "Kamelot", track: "Insomnia", path: "../../../samples/metal/powermetal8.ogg" },
+                    { artist: "Iced Earth", track: "Dracula", path: "../../../samples/metal/powermetal9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsMetal = $('.buttons-metal');
 
-                $('.buttons-metal').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsMetal.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsMetal.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-metal-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-metal').removeClass('clicked');
+                    $buttonsMetal.removeClass('clicked');
                 }
             });
         </script>

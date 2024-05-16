@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Grover Washington Jr.",
-                        track: "Knucklehead",
-                        path: "../../samples/jazz/souljazz1.ogg"
-                    },
-                    {
-                        artist: "The Cannonball Adderley Quintet",
-                        track: "Walk Tall",
-                        path: "../../samples/jazz/souljazz2.ogg"
-                    },
-                    {
-                        artist: "Jimmy Smith",
-                        track: "Root Down And Get It",
-                        path: "../../samples/jazz/souljazz3.ogg"
-                    },
-                    {
-                        artist: "Lou Donaldson",
-                        track: "Alligator Boogaloo",
-                        path: "../../samples/jazz/souljazz4.ogg"
-                    },
-                    {
-                        artist: "Horace Silver",
-                        track: "Acid, Pot Or Pills",
-                        path: "../../samples/jazz/souljazz5.ogg"
-                    },
-                    {
-                        artist: 'Richard "Groove" Holmes',
-                        track: "Living Soul",
-                        path: "../../samples/jazz/souljazz6.ogg"
-                    },
-                    {
-                        artist: "Stanley Turrentine",
-                        track: "Sunshine Alley",
-                        path: "../../samples/jazz/souljazz7.ogg"
-                    },
-                    {
-                        artist: "Shirley Scott",
-                        track: "411 West",
-                        path: "../../samples/jazz/souljazz8.ogg"
-                    },
-                    {
-                        artist: 'Johnny "Hammond" Smith',
-                        track: "Workin' On A Groovy Thing",
-                        path: "../../samples/jazz/souljazz9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Grover Washington Jr.", track: "Knucklehead", path: "../../samples/jazz/souljazz1.ogg" },
+                    { artist: "The Cannonball Adderley Quintet", track: "Walk Tall", path: "../../samples/jazz/souljazz2.ogg" },
+                    { artist: "Jimmy Smith", track: "Root Down And Get It", path: "../../samples/jazz/souljazz3.ogg" },
+                    { artist: "Lou Donaldson", track: "Alligator Boogaloo", path: "../../samples/jazz/souljazz4.ogg" },
+                    { artist: "Horace Silver", track: "Acid, Pot Or Pills", path: "../../samples/jazz/souljazz5.ogg" },
+                    { artist: "Richard 'Groove' Holmes", track: "Living Soul", path: "../../samples/jazz/souljazz6.ogg" },
+                    { artist: "Stanley Turrentine", track: "Sunshine Alley", path: "../../samples/jazz/souljazz7.ogg" },
+                    { artist: "Shirley Scott", track: "411 West", path: "../../samples/jazz/souljazz8.ogg" },
+                    { artist: "Johnny 'Hammond' Smith", track: "Workin' On A Groovy Thing", path: "../../samples/jazz/souljazz9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsJazz = $('.buttons-jazz');
 
-                $('.buttons-jazz').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsJazz.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsJazz.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-jazz-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-jazz').removeClass('clicked');
+                    $buttonsJazz.removeClass('clicked');
                 }
             });
         </script>

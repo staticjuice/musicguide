@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Cockney Rejects",
-                        track: "Oi! Oi! Oi!",
-                        path: "../../../samples/punk/oi1.ogg"
-                    },
-                    {
-                        artist: "Sham 69",
-                        track: "If The Kids Are United",
-                        path: "../../../samples/punk/oi2.ogg"
-                    },
-                    {
-                        artist: "Cock Sparrer",
-                        track: "Take 'Em All",
-                        path: "../../../samples/punk/oi3.ogg"
-                    },
-                    {
-                        artist: "4 Skins",
-                        track: "Chaos",
-                        path: "../../../samples/punk/oi4.ogg"
-                    },
-                    {
-                        artist: "Blitz",
-                        track: "Razors In The Night",
-                        path: "../../../samples/punk/oi5.ogg"
-                    },
-                    {
-                        artist: "The Business",
-                        track: "Suburban Rebels",
-                        path: "../../../samples/punk/oi6.ogg"
-                    },
-                    {
-                        artist: "The Oppressed",
-                        track: "Ultra Violence",
-                        path: "../../../samples/punk/oi7.ogg"
-                    },
-                    {
-                        artist: "Bishops Green",
-                        track: "Tumbling Down",
-                        path: "../../../samples/punk/oi8.ogg"
-                    },
-                    {
-                        artist: "Evil Conduct",
-                        track: "Remember 81",
-                        path: "../../../samples/punk/oi9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Cockney Rejects", track: "Oi! Oi! Oi!", path: "../../../samples/punk/oi1.ogg" },
+                    { artist: "Sham 69", track: "If The Kids Are United", path: "../../../samples/punk/oi2.ogg" },
+                    { artist: "Cock Sparrer", track: "Take 'Em All", path: "../../../samples/punk/oi3.ogg" },
+                    { artist: "4 Skins", track: "Chaos", path: "../../../samples/punk/oi4.ogg" },
+                    { artist: "Blitz", track: "Razors In The Night", path: "../../../samples/punk/oi5.ogg" },
+                    { artist: "The Business", track: "Suburban Rebels", path: "../../../samples/punk/oi6.ogg" },
+                    { artist: "The Oppressed", track: "Ultra Violence", path: "../../../samples/punk/oi7.ogg" },
+                    { artist: "Bishops Green", track: "Tumbling Down", path: "../../../samples/punk/oi8.ogg" },
+                    { artist: "Evil Conduct", track: "Remember 81", path: "../../../samples/punk/oi9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsPunk = $('.buttons-punk');
 
-                $('.buttons-punk').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsPunk.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsPunk.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-punk-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-punk').removeClass('clicked');
+                    $buttonsPunk.removeClass('clicked');
                 }
             });
         </script>

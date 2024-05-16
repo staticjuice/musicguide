@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Randy Travis",
-                        track: "Forever And Ever, Amen",
-                        path: "../../samples/country/neotraditionalcountry1.ogg"
-                    },
-                    {
-                        artist: "Emmylou Harris",
-                        track: "Wayfaring Stranger",
-                        path: "../../samples/country/neotraditionalcountry2.ogg"
-                    },
-                    {
-                        artist: "George Strait",
-                        track: "Check Yes Or No",
-                        path: "../../samples/country/neotraditionalcountry3.ogg"
-                    },
-                    {
-                        artist: "John Anderson",
-                        track: "Seminole Wind",
-                        path: "../../samples/country/neotraditionalcountry4.ogg"
-                    },
-                    {
-                        artist: "Lyle Lovett",
-                        track: "In My Own Mind",
-                        path: "../../samples/country/neotraditionalcountry5.ogg"
-                    },
-                    {
-                        artist: "Patty Loveless",
-                        track: "You Don't Even Know Who I Am",
-                        path: "../../samples/country/neotraditionalcountry6.ogg"
-                    },
-                    {
-                        artist: "Gail Davies",
-                        track: "Someone Is Looking For Someone Like You",
-                        path: "../../samples/country/neotraditionalcountry7.ogg"
-                    },
-                    {
-                        artist: "Dwight Yoakam",
-                        track: "A Thousand Miles From Nowhere",
-                        path: "../../samples/country/neotraditionalcountry8.ogg"
-                    },
-                    {
-                        artist: "Alan Jackson",
-                        track: "Country Boy",
-                        path: "../../samples/country/neotraditionalcountry9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Randy Travis", track: "Forever And Ever, Amen", path: "../../samples/country/neotraditionalcountry1.ogg" },
+                    { artist: "Emmylou Harris", track: "Wayfaring Stranger", path: "../../samples/country/neotraditionalcountry2.ogg" },
+                    { artist: "George Strait", track: "Check Yes Or No", path: "../../samples/country/neotraditionalcountry3.ogg" },
+                    { artist: "John Anderson", track: "Seminole Wind", path: "../../samples/country/neotraditionalcountry4.ogg" },
+                    { artist: "Lyle Lovett", track: "In My Own Mind", path: "../../samples/country/neotraditionalcountry5.ogg" },
+                    { artist: "Patty Loveless", track: "You Don't Even Know Who I Am", path: "../../samples/country/neotraditionalcountry6.ogg" },
+                    { artist: "Gail Davies", track: "Someone Is Looking For Someone Like You", path: "../../samples/country/neotraditionalcountry7.ogg" },
+                    { artist: "Dwight Yoakam", track: "A Thousand Miles From Nowhere", path: "../../samples/country/neotraditionalcountry8.ogg" },
+                    { artist: "Alan Jackson", track: "Country Boy", path: "../../samples/country/neotraditionalcountry9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsCountry = $('.buttons-country');
 
-                $('.buttons-country').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsCountry.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsCountry.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-country-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-country').removeClass('clicked');
+                    $buttonsCountry.removeClass('clicked');
                 }
             });
         </script>

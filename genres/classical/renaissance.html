@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Giorgio Mainerio",
-                        track: "Schiarazula Marazula",
-                        path: "../../samples/classical/renaissance1.ogg"
-                    },
-                    {
-                        artist: "Giovanni Gabrieli",
-                        track: "Canzona Seconda",
-                        path: "../../samples/classical/renaissance2.ogg"
-                    },
-                    {
-                        artist: "Vincenzo Galilei",
-                        track: "Contrapunto Secondo",
-                        path: "../../samples/classical/renaissance3.ogg"
-                    },
-                    {
-                        artist: "Giovanni Giacomo Gastoldi",
-                        track: "Il Tedesco",
-                        path: "../../samples/classical/renaissance4.ogg"
-                    },
-                    {
-                        artist: "Alessandro Orologio",
-                        track: "Intrada XXI",
-                        path: "../../samples/classical/renaissance5.ogg"
-                    },
-                    {
-                        artist: "Francesco Bendusi",
-                        track: "Pass'e Mezo Ditto Il Romano",
-                        path: "../../samples/classical/renaissance6.ogg"
-                    },
-                    {
-                        artist: "Vincenzo Ruffo",
-                        track: "La Gamba",
-                        path: "../../samples/classical/renaissance7.ogg"
-                    },
-                    {
-                        artist: "Alfonso X El Sabio",
-                        track: "Rosa Das Rosas",
-                        path: "../../samples/classical/renaissance8.ogg"
-                    },
-                    {
-                        artist: "The Renaissance Music Players",
-                        track: "Branle De Bourgogne",
-                        path: "../../samples/classical/renaissance9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Giorgio Mainerio", track: "Schiarazula Marazula", path: "../../samples/classical/renaissance1.ogg" },
+                    { artist: "Giovanni Gabrieli", track: "Canzona Seconda", path: "../../samples/classical/renaissance2.ogg" },
+                    { artist: "Vincenzo Galilei", track: "Contrapunto Secondo", path: "../../samples/classical/renaissance3.ogg" },
+                    { artist: "Giovanni Giacomo Gastoldi", track: "Il Tedesco", path: "../../samples/classical/renaissance4.ogg" },
+                    { artist: "Alessandro Orologio", track: "Intrada XXI", path: "../../samples/classical/renaissance5.ogg" },
+                    { artist: "Francesco Bendusi", track: "Pass'e Mezo Ditto Il Romano", path: "../../samples/classical/renaissance6.ogg" },
+                    { artist: "Vincenzo Ruffo", track: "La Gamba", path: "../../samples/classical/renaissance7.ogg" },
+                    { artist: "Alfonso X El Sabio", track: "Rosa Das Rosas", path: "../../samples/classical/renaissance8.ogg" },
+                    { artist: "The Renaissance Music Players", track: "Branle De Bourgogne", path: "../../samples/classical/renaissance9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsClassical = $('.buttons-classical');
 
-                $('.buttons-classical').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsClassical.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsClassical.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-classical-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-classical').removeClass('clicked');
+                    $buttonsClassical.removeClass('clicked');
                 }
             });
         </script>

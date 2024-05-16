@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Guns N' Roses",
-                        track: "Welcome To The Jungle",
-                        path: "../../../samples/metal/glammetal1.ogg"
-                    },
-                    {
-                        artist: "KISS",
-                        track: "I Was Made For Lovin' You",
-                        path: "../../../samples/metal/glammetal2.ogg"
-                    },
-                    {
-                        artist: "Alice Cooper",
-                        track: "Poison",
-                        path: "../../../samples/metal/glammetal3.ogg"
-                    },
-                    {
-                        artist: "Scorpions",
-                        track: "Rock You Like A Hurricane",
-                        path: "../../../samples/metal/glammetal4.ogg"
-                    },
-                    {
-                        artist: "Bon Jovi",
-                        track: "Livin' On A Prayer",
-                        path: "../../../samples/metal/glammetal5.ogg"
-                    },
-                    {
-                        artist: "W.A.S.P.",
-                        track: "Wild Child",
-                        path: "../../../samples/metal/glammetal6.ogg"
-                    },
-                    {
-                        artist: "Def Leppard",
-                        track: "Pour Some Sugar On Me",
-                        path: "../../../samples/metal/glammetal7.ogg"
-                    },
-                    {
-                        artist: "Van Halen",
-                        track: "Jump",
-                        path: "../../../samples/metal/glammetal8.ogg"
-                    },
-                    {
-                        artist: "Europe",
-                        track: "The Final Countdown",
-                        path: "../../../samples/metal/glammetal9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Guns N' Roses", track: "Welcome To The Jungle", path: "../../../samples/metal/glammetal1.ogg" },
+                    { artist: "KISS", track: "I Was Made For Lovin' You", path: "../../../samples/metal/glammetal2.ogg" },
+                    { artist: "Alice Cooper", track: "Poison", path: "../../../samples/metal/glammetal3.ogg" },
+                    { artist: "Scorpions", track: "Rock You Like A Hurricane", path: "../../../samples/metal/glammetal4.ogg" },
+                    { artist: "Bon Jovi", track: "Livin' On A Prayer", path: "../../../samples/metal/glammetal5.ogg" },
+                    { artist: "W.A.S.P.", track: "Wild Child", path: "../../../samples/metal/glammetal6.ogg" },
+                    { artist: "Def Leppard", track: "Pour Some Sugar On Me", path: "../../../samples/metal/glammetal7.ogg" },
+                    { artist: "Van Halen", track: "Jump", path: "../../../samples/metal/glammetal8.ogg" },
+                    { artist: "Europe", track: "The Final Countdown", path: "../../../samples/metal/glammetal9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsMetal = $('.buttons-metal');
 
-                $('.buttons-metal').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsMetal.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsMetal.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-metal-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-metal').removeClass('clicked');
+                    $buttonsMetal.removeClass('clicked');
                 }
             });
         </script>

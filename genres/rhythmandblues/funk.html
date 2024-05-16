@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "James Brown",
-                        track: "Papa's Got A Brand New Bag",
-                        path: "../../samples/rhythmandblues/funk1.ogg"
-                    },
-                    {
-                        artist: "Parliament",
-                        track: "P-Funk (Wants To Get Funked Up)",
-                        path: "../../samples/rhythmandblues/funk2.ogg"
-                    },
-                    {
-                        artist: "Tower Of Power",
-                        track: "What Is Hip?",
-                        path: "../../samples/rhythmandblues/funk3.ogg"
-                    },
-                    {
-                        artist: "Funkadelic",
-                        track: "Standing On The Verge Of Getting It On",
-                        path: "../../samples/rhythmandblues/funk4.ogg"
-                    },
-                    {
-                        artist: "Bootsy Collins",
-                        track: "Bootzilla",
-                        path: "../../samples/rhythmandblues/funk5.ogg"
-                    },
-                    {
-                        artist: "Sly & The Family Stone",
-                        track: "Underdog",
-                        path: "../../samples/rhythmandblues/funk6.ogg"
-                    },
-                    {
-                        artist: "Average White Band",
-                        track: "Pick Up The Pieces",
-                        path: "../../samples/rhythmandblues/funk7.ogg"
-                    },
-                    {
-                        artist: "Curtis Mayfield",
-                        track: "Superfly",
-                        path: "../../samples/rhythmandblues/funk8.ogg"
-                    },
-                    {
-                        artist: "Maceo",
-                        track: "Soul Power '74",
-                        path: "../../samples/rhythmandblues/funk9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "James Brown", track: "Papa's Got A Brand New Bag", path: "../../samples/rhythmandblues/funk1.ogg" },
+                    { artist: "Parliament", track: "P-Funk (Wants To Get Funked Up)", path: "../../samples/rhythmandblues/funk2.ogg" },
+                    { artist: "Tower Of Power", track: "What Is Hip?", path: "../../samples/rhythmandblues/funk3.ogg" },
+                    { artist: "Funkadelic", track: "Standing On The Verge Of Getting It On", path: "../../samples/rhythmandblues/funk4.ogg" },
+                    { artist: "Bootsy Collins", track: "Bootzilla", path: "../../samples/rhythmandblues/funk5.ogg" },
+                    { artist: "Sly & The Family Stone", track: "Underdog", path: "../../samples/rhythmandblues/funk6.ogg" },
+                    { artist: "Average White Band", track: "Pick Up The Pieces", path: "../../samples/rhythmandblues/funk7.ogg" },
+                    { artist: "Curtis Mayfield", track: "Superfly", path: "../../samples/rhythmandblues/funk8.ogg" },
+                    { artist: "Maceo", track: "Soul Power '74", path: "../../samples/rhythmandblues/funk9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRhythmandblues = $('.buttons-rhythmandblues');
 
-                $('.buttons-rhythmandblues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRhythmandblues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRhythmandblues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rhythmandblues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rhythmandblues').removeClass('clicked');
+                    $buttonsRhythmandblues.removeClass('clicked');
                 }
             });
         </script>

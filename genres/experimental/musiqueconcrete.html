@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Karlheinz Stockhausen",
-                        track: "Gesang Der Jünglinge",
-                        path: "../../samples/experimental/musiqueconcrete1.ogg"
-                    },
-                    {
-                        artist: "Morton Subotnick",
-                        track: "Silver Apples Of The Moon Part A",
-                        path: "../../samples/experimental/musiqueconcrete2.ogg"
-                    },
-                    {
-                        artist: "Pierre Schaeffer",
-                        track: "Étude Noire",
-                        path: "../../samples/experimental/musiqueconcrete3.ogg"
-                    },
-                    {
-                        artist: "John Cage",
-                        track: "Williams Mix",
-                        path: "../../samples/experimental/musiqueconcrete4.ogg"
-                    },
-                    {
-                        artist: "Iannis Xenakis",
-                        track: "Concret Ph",
-                        path: "../../samples/experimental/musiqueconcrete5.ogg"
-                    },
-                    {
-                        artist: "Kid Baltan",
-                        track: "Song Of The Second Moon",
-                        path: "../../samples/experimental/musiqueconcrete6.ogg"
-                    },
-                    {
-                        artist: "Raymond Scott",
-                        track: "Twilight In Turkey",
-                        path: "../../samples/experimental/musiqueconcrete7.ogg"
-                    },
-                    {
-                        artist: "Tom Dissevelt",
-                        track: "Anchor Chains",
-                        path: "../../samples/experimental/musiqueconcrete8.ogg"
-                    },
-                    {
-                        artist: "The Beatles",
-                        track: "Revolution 9",
-                        path: "../../samples/experimental/musiqueconcrete9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Karlheinz Stockhausen", track: "Gesang Der Jünglinge", path: "../../samples/experimental/musiqueconcrete1.ogg" },
+                    { artist: "Morton Subotnick", track: "Silver Apples Of The Moon Part A", path: "../../samples/experimental/musiqueconcrete2.ogg" },
+                    { artist: "Pierre Schaeffer", track: "Étude Noire", path: "../../samples/experimental/musiqueconcrete3.ogg" },
+                    { artist: "John Cage", track: "Williams Mix", path: "../../samples/experimental/musiqueconcrete4.ogg" },
+                    { artist: "Iannis Xenakis", track: "Concret Ph", path: "../../samples/experimental/musiqueconcrete5.ogg" },
+                    { artist: "Kid Baltan", track: "Song Of The Second Moon", path: "../../samples/experimental/musiqueconcrete6.ogg" },
+                    { artist: "Raymond Scott", track: "Twilight In Turkey", path: "../../samples/experimental/musiqueconcrete7.ogg" },
+                    { artist: "Tom Dissevelt", track: "Anchor Chains", path: "../../samples/experimental/musiqueconcrete8.ogg" },
+                    { artist: "The Beatles", track: "Revolution 9", path: "../../samples/experimental/musiqueconcrete9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsExperimental = $('.buttons-experimental');
 
-                $('.buttons-experimental').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsExperimental.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsExperimental.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-experimental-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-experimental').removeClass('clicked');
+                    $buttonsExperimental.removeClass('clicked');
                 }
             });
         </script>

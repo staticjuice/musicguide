@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Icicle",
-                        track: "Xylophobia",
-                        path: "../../../samples/ukgarage/dubstep1.ogg"
-                    },
-                    {
-                        artist: "Skream",
-                        track: "Hedd Banger",
-                        path: "../../../samples/ukgarage/dubstep2.ogg"
-                    },
-                    {
-                        artist: "16bit",
-                        track: "Boston Cream",
-                        path: "../../../samples/ukgarage/dubstep3.ogg"
-                    },
-                    {
-                        artist: "Excision & Datsik",
-                        track: "Swagga",
-                        path: "../../../samples/ukgarage/dubstep4.ogg"
-                    },
-                    {
-                        artist: "Nero",
-                        track: "Innocence",
-                        path: "../../../samples/ukgarage/dubstep5.ogg"
-                    },
-                    {
-                        artist: "Flux Pavilion",
-                        track: "Hold Me Close",
-                        path: "../../../samples/ukgarage/dubstep6.ogg"
-                    },
-                    {
-                        artist: "Cookie Monsta",
-                        track: "Blurgh!",
-                        path: "../../../samples/ukgarage/dubstep7.ogg"
-                    },
-                    {
-                        artist: "Skrillex",
-                        track: "Scary Monsters And Nice Sprites",
-                        path: "../../../samples/ukgarage/dubstep8.ogg"
-                    },
-                    {
-                        artist: "Zomboy",
-                        track: "Immunity",
-                        path: "../../../samples/ukgarage/dubstep9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Icicle", track: "Xylophobia", path: "../../../samples/ukgarage/dubstep1.ogg" },
+                    { artist: "Skream", track: "Hedd Banger", path: "../../../samples/ukgarage/dubstep2.ogg" },
+                    { artist: "16bit", track: "Boston Cream", path: "../../../samples/ukgarage/dubstep3.ogg" },
+                    { artist: "Excision & Datsik", track: "Swagga", path: "../../../samples/ukgarage/dubstep4.ogg" },
+                    { artist: "Nero", track: "Innocence", path: "../../../samples/ukgarage/dubstep5.ogg" },
+                    { artist: "Flux Pavilion", track: "Hold Me Close", path: "../../../samples/ukgarage/dubstep6.ogg" },
+                    { artist: "Cookie Monsta", track: "Blurgh!", path: "../../../samples/ukgarage/dubstep7.ogg" },
+                    { artist: "Skrillex", track: "Scary Monsters And Nice Sprites", path: "../../../samples/ukgarage/dubstep8.ogg" },
+                    { artist: "Zomboy", track: "Immunity", path: "../../../samples/ukgarage/dubstep9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsUkgarage = $('.buttons-ukgarage');
 
-                $('.buttons-ukgarage').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsUkgarage.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsUkgarage.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-ukgarage-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-ukgarage').removeClass('clicked');
+                    $buttonsUkgarage.removeClass('clicked');
                 }
             });
         </script>

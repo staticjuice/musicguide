@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Chicane",
-                        track: "Offshore",
-                        path: "../../../samples/trance/balearictrance1.ogg"
-                    },
-                    {
-                        artist: "Miro",
-                        track: "Paradise",
-                        path: "../../../samples/trance/balearictrance2.ogg"
-                    },
-                    {
-                        artist: "Solar Stone",
-                        track: "Seven Cities",
-                        path: "../../../samples/trance/balearictrance3.ogg"
-                    },
-                    {
-                        artist: "ATB",
-                        track: "Underwater World",
-                        path: "../../../samples/trance/balearictrance4.ogg"
-                    },
-                    {
-                        artist: "Nalin & Kane",
-                        track: "Beachball",
-                        path: "../../../samples/trance/balearictrance5.ogg"
-                    },
-                    {
-                        artist: "Jam & Spoon",
-                        track: "Stella",
-                        path: "../../../samples/trance/balearictrance6.ogg"
-                    },
-                    {
-                        artist: "Gouryella",
-                        track: "Gouryella",
-                        path: "../../../samples/trance/balearictrance7.ogg"
-                    },
-                    {
-                        artist: "Global Experience",
-                        track: "Zanzibar",
-                        path: "../../../samples/trance/balearictrance8.ogg"
-                    },
-                    {
-                        artist: "Energy 52",
-                        track: "Café Del Mar (Three N One Mix)",
-                        path: "../../../samples/trance/balearictrance9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Chicane", track: "Offshore", path: "../../../samples/trance/balearictrance1.ogg" },
+                    { artist: "Miro", track: "Paradise", path: "../../../samples/trance/balearictrance2.ogg" },
+                    { artist: "Solar Stone", track: "Seven Cities", path: "../../../samples/trance/balearictrance3.ogg" },
+                    { artist: "ATB", track: "Underwater World", path: "../../../samples/trance/balearictrance4.ogg" },
+                    { artist: "Nalin & Kane", track: "Beachball", path: "../../../samples/trance/balearictrance5.ogg" },
+                    { artist: "Jam & Spoon", track: "Stella", path: "../../../samples/trance/balearictrance6.ogg" },
+                    { artist: "Gouryella", track: "Gouryella", path: "../../../samples/trance/balearictrance7.ogg" },
+                    { artist: "Global Experience", track: "Zanzibar", path: "../../../samples/trance/balearictrance8.ogg" },
+                    { artist: "Energy 52", track: "Café Del Mar (Three N One Mix)", path: "../../../samples/trance/balearictrance9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsTrance = $('.buttons-trance');
 
-                $('.buttons-trance').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsTrance.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsTrance.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-trance-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-trance').removeClass('clicked');
+                    $buttonsTrance.removeClass('clicked');
                 }
             });
         </script>

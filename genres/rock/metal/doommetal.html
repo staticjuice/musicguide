@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Saint Vitus",
-                        track: "Saint Vitus",
-                        path: "../../../samples/metal/doommetal1.ogg"
-                    },
-                    {
-                        artist: "Pentagram",
-                        track: "The Ghoul",
-                        path: "../../../samples/metal/doommetal2.ogg"
-                    },
-                    {
-                        artist: "Trouble",
-                        track: "Psalm 9",
-                        path: "../../../samples/metal/doommetal3.ogg"
-                    },
-                    {
-                        artist: "Cathedral",
-                        track: "Tower Of Silence",
-                        path: "../../../samples/metal/doommetal4.ogg"
-                    },
-                    {
-                        artist: "Electric Wizard",
-                        track: "Dopethrone",
-                        path: "../../../samples/metal/doommetal5.ogg"
-                    },
-                    {
-                        artist: "Conan",
-                        track: "Gravity Chasm",
-                        path: "../../../samples/metal/doommetal6.ogg"
-                    },
-                    {
-                        artist: "Candlemass",
-                        track: "Bewitched",
-                        path: "../../../samples/metal/doommetal7.ogg"
-                    },
-                    {
-                        artist: "Witchfinder General",
-                        track: "Death Penalty",
-                        path: "../../../samples/metal/doommetal8.ogg"
-                    },
-                    {
-                        artist: "My Dying Bride",
-                        track: "Feel The Misery",
-                        path: "../../../samples/metal/doommetal9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Saint Vitus", track: "Saint Vitus", path: "../../../samples/metal/doommetal1.ogg" },
+                    { artist: "Pentagram", track: "The Ghoul", path: "../../../samples/metal/doommetal2.ogg" },
+                    { artist: "Trouble", track: "Psalm 9", path: "../../../samples/metal/doommetal3.ogg" },
+                    { artist: "Cathedral", track: "Tower Of Silence", path: "../../../samples/metal/doommetal4.ogg" },
+                    { artist: "Electric Wizard", track: "Dopethrone", path: "../../../samples/metal/doommetal5.ogg" },
+                    { artist: "Conan", track: "Gravity Chasm", path: "../../../samples/metal/doommetal6.ogg" },
+                    { artist: "Candlemass", track: "Bewitched", path: "../../../samples/metal/doommetal7.ogg" },
+                    { artist: "Witchfinder General", track: "Death Penalty", path: "../../../samples/metal/doommetal8.ogg" },
+                    { artist: "My Dying Bride", track: "Feel The Misery", path: "../../../samples/metal/doommetal9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsMetal = $('.buttons-metal');
 
-                $('.buttons-metal').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsMetal.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsMetal.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-metal-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-metal').removeClass('clicked');
+                    $buttonsMetal.removeClass('clicked');
                 }
             });
         </script>

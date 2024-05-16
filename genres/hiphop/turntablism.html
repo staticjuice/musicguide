@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Terminator X feat. DJ Kool Herc",
-                        track: "Make Room For Thunder",
-                        path: "../../samples/hiphop/turntablism1.ogg"
-                    },
-                    {
-                        artist: "The X-Ecutioners",
-                        track: "One Man Band",
-                        path: "../../samples/hiphop/turntablism2.ogg"
-                    },
-                    {
-                        artist: "DJ Q-Bert",
-                        track: "Razorblade Alcohol Slide",
-                        path: "../../samples/hiphop/turntablism3.ogg"
-                    },
-                    {
-                        artist: "Kid Koala",
-                        track: "Fender Bender",
-                        path: "../../samples/hiphop/turntablism4.ogg"
-                    },
-                    {
-                        artist: "Harmonic 33",
-                        track: "Doo The Zoo",
-                        path: "../../samples/hiphop/turntablism5.ogg"
-                    },
-                    {
-                        artist: "DJ Vadim",
-                        track: "Theme From Conquest Of The Irrational",
-                        path: "../../samples/hiphop/turntablism6.ogg"
-                    },
-                    {
-                        artist: "DJ Q-Bert",
-                        track: "Turntable TV (Re-Vizion)",
-                        path: "../../samples/hiphop/turntablism7.ogg"
-                    },
-                    {
-                        artist: "Mix Master Mike",
-                        track: "Supa Wyde Laces",
-                        path: "../../samples/hiphop/turntablism8.ogg"
-                    },
-                    {
-                        artist: "Cut Chemist",
-                        track: "The Periodic Table",
-                        path: "../../samples/hiphop/turntablism9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Terminator X feat. DJ Kool Herc", track: "Make Room For Thunder", path: "../../samples/hiphop/turntablism1.ogg" },
+                    { artist: "The X-Ecutioners", track: "One Man Band", path: "../../samples/hiphop/turntablism2.ogg" },
+                    { artist: "DJ Q-Bert", track: "Razorblade Alcohol Slide", path: "../../samples/hiphop/turntablism3.ogg" },
+                    { artist: "Kid Koala", track: "Fender Bender", path: "../../samples/hiphop/turntablism4.ogg" },
+                    { artist: "Harmonic 33", track: "Doo The Zoo", path: "../../samples/hiphop/turntablism5.ogg" },
+                    { artist: "DJ Vadim", track: "Theme From Conquest Of The Irrational", path: "../../samples/hiphop/turntablism6.ogg" },
+                    { artist: "DJ Q-Bert", track: "Turntable TV (Re-Vizion)", path: "../../samples/hiphop/turntablism7.ogg" },
+                    { artist: "Mix Master Mike", track: "Supa Wyde Laces", path: "../../samples/hiphop/turntablism8.ogg" },
+                    { artist: "Cut Chemist", track: "The Periodic Table", path: "../../samples/hiphop/turntablism9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHiphop = $('.buttons-hiphop');
 
-                $('.buttons-hiphop').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHiphop.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHiphop.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hiphop-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hiphop').removeClass('clicked');
+                    $buttonsHiphop.removeClass('clicked');
                 }
             });
         </script>

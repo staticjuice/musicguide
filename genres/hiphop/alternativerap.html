@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Poor Righteous Teachers",
-                        track: "Word Iz Life",
-                        path: "../../samples/hiphop/alternativerap1.ogg"
-                    },
-                    {
-                        artist: "The Pharcyde",
-                        track: "Passin' Me By",
-                        path: "../../samples/hiphop/alternativerap2.ogg"
-                    },
-                    {
-                        artist: "Del The Funky Homosapien",
-                        track: "Phoney Phranchise",
-                        path: "../../samples/hiphop/alternativerap3.ogg"
-                    },
-                    {
-                        artist: "Mos Def",
-                        track: "Mathematics",
-                        path: "../../samples/hiphop/alternativerap4.ogg"
-                    },
-                    {
-                        artist: "MF Doom",
-                        track: "Hoe Cakes",
-                        path: "../../samples/hiphop/alternativerap5.ogg"
-                    },
-                    {
-                        artist: "Tyler, The Creator & A$AP Rocky",
-                        track: "Potato Salad",
-                        path: "../../samples/hiphop/alternativerap6.ogg"
-                    },
-                    {
-                        artist: "The Roots feat. Cody Chesnutt",
-                        track: "The Seed (2.0)",
-                        path: "../../samples/hiphop/alternativerap7.ogg"
-                    },
-                    {
-                        artist: "Camp Lo",
-                        track: "Luchini AKA This Is It",
-                        path: "../../samples/hiphop/alternativerap8.ogg"
-                    },
-                    {
-                        artist: "Disposable Heroes Of Hiphoprisy",
-                        track: "Television, The Drug Of The Nation",
-                        path: "../../samples/hiphop/alternativerap9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Poor Righteous Teachers", track: "Word Iz Life", path: "../../samples/hiphop/alternativerap1.ogg" },
+                    { artist: "The Pharcyde", track: "Passin' Me By", path: "../../samples/hiphop/alternativerap2.ogg" },
+                    { artist: "Del The Funky Homosapien", track: "Phoney Phranchise", path: "../../samples/hiphop/alternativerap3.ogg" },
+                    { artist: "Mos Def", track: "Mathematics", path: "../../samples/hiphop/alternativerap4.ogg" },
+                    { artist: "MF Doom", track: "Hoe Cakes", path: "../../samples/hiphop/alternativerap5.ogg" },
+                    { artist: "Tyler, The Creator & A$AP Rocky", track: "Potato Salad", path: "../../samples/hiphop/alternativerap6.ogg" },
+                    { artist: "The Roots feat. Cody Chesnutt", track: "The Seed (2.0)", path: "../../samples/hiphop/alternativerap7.ogg" },
+                    { artist: "Camp Lo", track: "Luchini AKA This Is It", path: "../../samples/hiphop/alternativerap8.ogg" },
+                    { artist: "Disposable Heroes Of Hiphoprisy", track: "Television, The Drug Of The Nation", path: "../../samples/hiphop/alternativerap9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHiphop = $('.buttons-hiphop');
 
-                $('.buttons-hiphop').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHiphop.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHiphop.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hiphop-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hiphop').removeClass('clicked');
+                    $buttonsHiphop.removeClass('clicked');
                 }
             });
         </script>

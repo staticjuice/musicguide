@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "DRS feat. Enei",
-                        track: "Count To Ten",
-                        path: "../../../samples/drumandbass/deepdrumandbass1.ogg"
-                    },
-                    {
-                        artist: "BTK",
-                        track: "Things I Do (SpectraSoul Remix)",
-                        path: "../../../samples/drumandbass/deepdrumandbass2.ogg"
-                    },
-                    {
-                        artist: "Skeptical & Alix Perez",
-                        track: "Without A Trace",
-                        path: "../../../samples/drumandbass/deepdrumandbass3.ogg"
-                    },
-                    {
-                        artist: "Jubei",
-                        track: "State Of The Art",
-                        path: "../../../samples/drumandbass/deepdrumandbass4.ogg"
-                    },
-                    {
-                        artist: "Hybris",
-                        track: "Keeping Me",
-                        path: "../../../samples/drumandbass/deepdrumandbass5.ogg"
-                    },
-                    {
-                        artist: "Rockwell",
-                        track: "Noir (Ulterior Motive Remix)",
-                        path: "../../../samples/drumandbass/deepdrumandbass6.ogg"
-                    },
-                    {
-                        artist: "Enei, Eastcolors & Noel",
-                        track: "Cracker",
-                        path: "../../../samples/drumandbass/deepdrumandbass7.ogg"
-                    },
-                    {
-                        artist: "Sustance",
-                        track: "Searching For You (Icicle Remix)",
-                        path: "../../../samples/drumandbass/deepdrumandbass8.ogg"
-                    },
-                    {
-                        artist: "Rockwell",
-                        track: "User",
-                        path: "../../../samples/drumandbass/deepdrumandbass9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "DRS feat. Enei", track: "Count To Ten", path: "../../../samples/drumandbass/deepdrumandbass1.ogg" },
+                    { artist: "BTK", track: "Things I Do (SpectraSoul Remix)", path: "../../../samples/drumandbass/deepdrumandbass2.ogg" },
+                    { artist: "Skeptical & Alix Perez", track: "Without A Trace", path: "../../../samples/drumandbass/deepdrumandbass3.ogg" },
+                    { artist: "Jubei", track: "State Of The Art", path: "../../../samples/drumandbass/deepdrumandbass4.ogg" },
+                    { artist: "Hybris", track: "Keeping Me", path: "../../../samples/drumandbass/deepdrumandbass5.ogg" },
+                    { artist: "Rockwell", track: "Noir (Ulterior Motive Remix)", path: "../../../samples/drumandbass/deepdrumandbass6.ogg" },
+                    { artist: "Enei, Eastcolors & Noel", track: "Cracker", path: "../../../samples/drumandbass/deepdrumandbass7.ogg" },
+                    { artist: "Sustance", track: "Searching For You (Icicle Remix)", path: "../../../samples/drumandbass/deepdrumandbass8.ogg" },
+                    { artist: "Rockwell", track: "User", path: "../../../samples/drumandbass/deepdrumandbass9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsDrumandbass = $('.buttons-drumandbass');
 
-                $('.buttons-drumandbass').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsDrumandbass.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsDrumandbass.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-drumandbass-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-drumandbass').removeClass('clicked');
+                    $buttonsDrumandbass.removeClass('clicked');
                 }
             });
         </script>

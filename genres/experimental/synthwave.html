@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Kavinsky",
-                        track: "Nightcall",
-                        path: "../../samples/experimental/synthwave1.ogg"
-                    },
-                    {
-                        artist: "Lazerhawk",
-                        track: "Overdrive",
-                        path: "../../samples/experimental/synthwave2.ogg"
-                    },
-                    {
-                        artist: "Betamaxx",
-                        track: "Guided By Moonlight",
-                        path: "../../samples/experimental/synthwave3.ogg"
-                    },
-                    {
-                        artist: "FM-84",
-                        track: "Mainframe",
-                        path: "../../samples/experimental/synthwave4.ogg"
-                    },
-                    {
-                        artist: "VHS Dreams",
-                        track: "Vice Point",
-                        path: "../../samples/experimental/synthwave5.ogg"
-                    },
-                    {
-                        artist: "Arwelone",
-                        track: "Everlasting Journey",
-                        path: "../../samples/experimental/synthwave6.ogg"
-                    },
-                    {
-                        artist: "W O L F C L U B",
-                        track: "Binary Stars",
-                        path: "../../samples/experimental/synthwave7.ogg"
-                    },
-                    {
-                        artist: "Cloud Battalion",
-                        track: "High Octane",
-                        path: "../../samples/experimental/synthwave8.ogg"
-                    },
-                    {
-                        artist: "Scandroid",
-                        track: "Salvation Code",
-                        path: "../../samples/experimental/synthwave9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Kavinsky", track: "Nightcall", path: "../../samples/experimental/synthwave1.ogg" },
+                    { artist: "Lazerhawk", track: "Overdrive", path: "../../samples/experimental/synthwave2.ogg" },
+                    { artist: "Betamaxx", track: "Guided By Moonlight", path: "../../samples/experimental/synthwave3.ogg" },
+                    { artist: "FM-84", track: "Mainframe", path: "../../samples/experimental/synthwave4.ogg" },
+                    { artist: "VHS Dreams", track: "Vice Point", path: "../../samples/experimental/synthwave5.ogg" },
+                    { artist: "Arwelone", track: "Everlasting Journey", path: "../../samples/experimental/synthwave6.ogg" },
+                    { artist: "W O L F C L U B", track: "Binary Stars", path: "../../samples/experimental/synthwave7.ogg" },
+                    { artist: "Cloud Battalion", track: "High Octane", path: "../../samples/experimental/synthwave8.ogg" },
+                    { artist: "Scandroid", track: "Salvation Code", path: "../../samples/experimental/synthwave9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsExperimental = $('.buttons-experimental');
 
-                $('.buttons-experimental').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsExperimental.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsExperimental.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-experimental-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-experimental').removeClass('clicked');
+                    $buttonsExperimental.removeClass('clicked');
                 }
             });
         </script>

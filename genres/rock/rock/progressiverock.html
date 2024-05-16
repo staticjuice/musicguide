@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Pink Floyd",
-                        track: "Time",
-                        path: "../../../samples/rock/progressiverock1.ogg"
-                    },
-                    {
-                        artist: "The Moody Blues",
-                        track: "Nights In White Satin",
-                        path: "../../../samples/rock/progressiverock2.ogg"
-                    },
-                    {
-                        artist: "Jethro Tull",
-                        track: "Aqualung",
-                        path: "../../../samples/rock/progressiverock3.ogg"
-                    },
-                    {
-                        artist: "Yes",
-                        track: "Siberian Khatru",
-                        path: "../../../samples/rock/progressiverock4.ogg"
-                    },
-                    {
-                        artist: "Emerson, Lake & Palmer",
-                        track: "Knife Edge",
-                        path: "../../../samples/rock/progressiverock5.ogg"
-                    },
-                    {
-                        artist: "Procol Harum",
-                        track: "A Whiter Shade Of Pale",
-                        path: "../../../samples/rock/progressiverock6.ogg"
-                    },
-                    {
-                        artist: "Marillion",
-                        track: "Script For A Jester's Tear",
-                        path: "../../../samples/rock/progressiverock7.ogg"
-                    },
-                    {
-                        artist: "Rush",
-                        track: "Xanadu",
-                        path: "../../../samples/rock/progressiverock8.ogg"
-                    },
-                    {
-                        artist: "King Crimson",
-                        track: "In The Court Of The Crimson King",
-                        path: "../../../samples/rock/progressiverock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Pink Floyd", track: "Time", path: "../../../samples/rock/progressiverock1.ogg" },
+                    { artist: "The Moody Blues", track: "Nights In White Satin", path: "../../../samples/rock/progressiverock2.ogg" },
+                    { artist: "Jethro Tull", track: "Aqualung", path: "../../../samples/rock/progressiverock3.ogg" },
+                    { artist: "Yes", track: "Siberian Khatru", path: "../../../samples/rock/progressiverock4.ogg" },
+                    { artist: "Emerson, Lake & Palmer", track: "Knife Edge", path: "../../../samples/rock/progressiverock5.ogg" },
+                    { artist: "Procol Harum", track: "A Whiter Shade Of Pale", path: "../../../samples/rock/progressiverock6.ogg" },
+                    { artist: "Marillion", track: "Script For A Jester's Tear", path: "../../../samples/rock/progressiverock7.ogg" },
+                    { artist: "Rush", track: "Xanadu", path: "../../../samples/rock/progressiverock8.ogg" },
+                    { artist: "King Crimson", track: "In The Court Of The Crimson King", path: "../../../samples/rock/progressiverock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRock = $('.buttons-rock');
 
-                $('.buttons-rock').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRock.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRock.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rock-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rock').removeClass('clicked');
+                    $buttonsRock.removeClass('clicked');
                 }
             });
         </script>

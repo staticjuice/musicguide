@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Beck",
-                        track: "E-Pro",
-                        path: "../../../samples/indie/indierock1.ogg"
-                    },
-                    {
-                        artist: "Sebadoh",
-                        track: "Flame",
-                        path: "../../../samples/indie/indierock2.ogg"
-                    },
-                    {
-                        artist: "Pavement",
-                        track: "Cut Your Hair",
-                        path: "../../../samples/indie/indierock3.ogg"
-                    },
-                    {
-                        artist: "Quickspace",
-                        track: "Take Away",
-                        path: "../../../samples/indie/indierock4.ogg"
-                    },
-                    {
-                        artist: "Don Caballero",
-                        track: "Railroad Cancellation",
-                        path: "../../../samples/indie/indierock5.ogg"
-                    },
-                    {
-                        artist: "Radiohead",
-                        track: "No Surprises",
-                        path: "../../../samples/indie/indierock6.ogg"
-                    },
-                    {
-                        artist: "American Music Club",
-                        track: "Goodbye To Love",
-                        path: "../../../samples/indie/indierock7.ogg"
-                    },
-                    {
-                        artist: "Red House Painters",
-                        track: "Mistress",
-                        path: "../../../samples/indie/indierock8.ogg"
-                    },
-                    {
-                        artist: "Arcade Fire",
-                        track: "Rebellion (Lies)",
-                        path: "../../../samples/indie/indierock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Beck", track: "E-Pro", path: "../../../samples/indie/indierock1.ogg" },
+                    { artist: "Sebadoh", track: "Flame", path: "../../../samples/indie/indierock2.ogg" },
+                    { artist: "Pavement", track: "Cut Your Hair", path: "../../../samples/indie/indierock3.ogg" },
+                    { artist: "Quickspace", track: "Take Away", path: "../../../samples/indie/indierock4.ogg" },
+                    { artist: "Don Caballero", track: "Railroad Cancellation", path: "../../../samples/indie/indierock5.ogg" },
+                    { artist: "Radiohead", track: "No Surprises", path: "../../../samples/indie/indierock6.ogg" },
+                    { artist: "American Music Club", track: "Goodbye To Love", path: "../../../samples/indie/indierock7.ogg" },
+                    { artist: "Red House Painters", track: "Mistress", path: "../../../samples/indie/indierock8.ogg" },
+                    { artist: "Arcade Fire", track: "Rebellion (Lies)", path: "../../../samples/indie/indierock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndie = $('.buttons-indie');
 
-                $('.buttons-indie').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndie.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndie.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-indie-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-indie').removeClass('clicked');
+                    $buttonsIndie.removeClass('clicked');
                 }
             });
         </script>

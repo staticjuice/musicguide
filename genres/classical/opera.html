@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Georges Bizet",
-                        track: "Carmen - Act 1: L'amour Est Un Oiseau Rebelle",
-                        path: "../../samples/classical/opera1.ogg"
-                    },
-                    {
-                        artist: "Giuseppe Verdi",
-                        track: "La Traviata - Act 1: Libiamo Ne'lieti Calici",
-                        path: "../../samples/classical/opera2.ogg"
-                    },
-                    {
-                        artist: "Richard Wagner",
-                        track: "Tannhäuser - Act 3: O Du, Mein Holder Abendstern",
-                        path: "../../samples/classical/opera3.ogg"
-                    },
-                    {
-                        artist: "Johann Strauss II",
-                        track: "Die Fledermaus - Act 1: So Muss Allein Ich Bleiben",
-                        path: "../../samples/classical/opera4.ogg"
-                    },
-                    {
-                        artist: "Giovanni Battista Pergolesi",
-                        track: "La Serva Padrona - Intermezzo 1: Aria",
-                        path: "../../samples/classical/opera5.ogg"
-                    },
-                    {
-                        artist: "George Frideric Handel",
-                        track: "Serse - Act 1 Scene 1 No. 2: Ombra Mai Fu",
-                        path: "../../samples/classical/opera6.ogg"
-                    },
-                    {
-                        artist: "Giacomo Puccini",
-                        track: "Turandot - Act 3: Nessun Dorma!",
-                        path: "../../samples/classical/opera7.ogg"
-                    },
-                    {
-                        artist: "Wolfgang Amadeus Mozart",
-                        track: "Die Zauberflöte - Act 2: Der Hölle Rache",
-                        path: "../../samples/classical/opera8.ogg"
-                    },
-                    {
-                        artist: "Richard Strauss",
-                        track: "Salome - Scene 4: Ah! Ich Habe Deinen",
-                        path: "../../samples/classical/opera9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Georges Bizet", track: "Carmen - Act 1: L'amour Est Un Oiseau Rebelle", path: "../../samples/classical/opera1.ogg" },
+                    { artist: "Giuseppe Verdi", track: "La Traviata - Act 1: Libiamo Ne'lieti Calici", path: "../../samples/classical/opera2.ogg" },
+                    { artist: "Richard Wagner", track: "Tannhäuser - Act 3: O Du, Mein Holder Abendstern", path: "../../samples/classical/opera3.ogg" },
+                    { artist: "Johann Strauss II", track: "Die Fledermaus - Act 1: So Muss Allein Ich Bleiben", path: "../../samples/classical/opera4.ogg" },
+                    { artist: "Giovanni Battista Pergolesi", track: "La Serva Padrona - Intermezzo 1: Aria", path: "../../samples/classical/opera5.ogg" },
+                    { artist: "George Frideric Handel", track: "Serse - Act 1 Scene 1 No. 2: Ombra Mai Fu", path: "../../samples/classical/opera6.ogg" },
+                    { artist: "Giacomo Puccini", track: "Turandot - Act 3: Nessun Dorma!", path: "../../samples/classical/opera7.ogg" },
+                    { artist: "Wolfgang Amadeus Mozart", track: "Die Zauberflöte - Act 2: Der Hölle Rache", path: "../../samples/classical/opera8.ogg" },
+                    { artist: "Richard Strauss", track: "Salome - Scene 4: Ah! Ich Habe Deinen", path: "../../samples/classical/opera9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsClassical = $('.buttons-classical');
 
-                $('.buttons-classical').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsClassical.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsClassical.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-classical-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-classical').removeClass('clicked');
+                    $buttonsClassical.removeClass('clicked');
                 }
             });
         </script>

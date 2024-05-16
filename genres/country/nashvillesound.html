@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Tammy Wynette",
-                        track: "Stand By Your Man",
-                        path: "../../samples/country/nashvillesound1.ogg"
-                    },
-                    {
-                        artist: "Charlie Rich",
-                        track: "Behind Closed Doors",
-                        path: "../../samples/country/nashvillesound2.ogg"
-                    },
-                    {
-                        artist: "Patsy Cline",
-                        track: "Crazy",
-                        path: "../../samples/country/nashvillesound3.ogg"
-                    },
-                    {
-                        artist: "Skeeter Davis",
-                        track: "The End Of The World",
-                        path: "../../samples/country/nashvillesound4.ogg"
-                    },
-                    {
-                        artist: "Jim Reeves",
-                        track: "I Love You Because",
-                        path: "../../samples/country/nashvillesound5.ogg"
-                    },
-                    {
-                        artist: "Connie Smith",
-                        track: "Once A Day",
-                        path: "../../samples/country/nashvillesound6.ogg"
-                    },
-                    {
-                        artist: "David Houston",
-                        track: "Almost Persuaded",
-                        path: "../../samples/country/nashvillesound7.ogg"
-                    },
-                    {
-                        artist: "Stonewall Jackson",
-                        track: "A Wound Time Can't Erase",
-                        path: "../../samples/country/nashvillesound8.ogg"
-                    },
-                    {
-                        artist: "Glen Campbell",
-                        track: "Rhinestone Cowboy",
-                        path: "../../samples/country/nashvillesound9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Tammy Wynette", track: "Stand By Your Man", path: "../../samples/country/nashvillesound1.ogg" },
+                    { artist: "Charlie Rich", track: "Behind Closed Doors", path: "../../samples/country/nashvillesound2.ogg" },
+                    { artist: "Patsy Cline", track: "Crazy", path: "../../samples/country/nashvillesound3.ogg" },
+                    { artist: "Skeeter Davis", track: "The End Of The World", path: "../../samples/country/nashvillesound4.ogg" },
+                    { artist: "Jim Reeves", track: "I Love You Because", path: "../../samples/country/nashvillesound5.ogg" },
+                    { artist: "Connie Smith", track: "Once A Day", path: "../../samples/country/nashvillesound6.ogg" },
+                    { artist: "David Houston", track: "Almost Persuaded", path: "../../samples/country/nashvillesound7.ogg" },
+                    { artist: "Stonewall Jackson", track: "A Wound Time Can't Erase", path: "../../samples/country/nashvillesound8.ogg" },
+                    { artist: "Glen Campbell", track: "Rhinestone Cowboy", path: "../../samples/country/nashvillesound9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsCountry = $('.buttons-country');
 
-                $('.buttons-country').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsCountry.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsCountry.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-country-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-country').removeClass('clicked');
+                    $buttonsCountry.removeClass('clicked');
                 }
             });
         </script>

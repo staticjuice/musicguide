@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Nirvana",
-                        track: "Smells Like Teen Spirit",
-                        path: "../../../samples/indie/grunge1.ogg"
-                    },
-                    {
-                        artist: "Pearl Jam",
-                        track: "Alive",
-                        path: "../../../samples/indie/grunge2.ogg"
-                    },
-                    {
-                        artist: "Stone Temple Pilots",
-                        track: "Plush",
-                        path: "../../../samples/indie/grunge3.ogg"
-                    },
-                    {
-                        artist: "Soundgarden",
-                        track: "Black Hole Sun",
-                        path: "../../../samples/indie/grunge4.ogg"
-                    },
-                    {
-                        artist: "Alice In Chains",
-                        track: "Man In The Box",
-                        path: "../../../samples/indie/grunge5.ogg"
-                    },
-                    {
-                        artist: "Green River",
-                        track: "Unwind",
-                        path: "../../../samples/indie/grunge6.ogg"
-                    },
-                    {
-                        artist: "The Smashing Pumpkins",
-                        track: "Bullet With Butterfly Wings",
-                        path: "../../../samples/indie/grunge7.ogg"
-                    },
-                    {
-                        artist: "Screaming Trees",
-                        track: "Dollar Bill",
-                        path: "../../../samples/indie/grunge8.ogg"
-                    },
-                    {
-                        artist: "Mudhoney",
-                        track: "Touch Me I'm Sick",
-                        path: "../../../samples/indie/grunge9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Nirvana", track: "Smells Like Teen Spirit", path: "../../../samples/indie/grunge1.ogg" },
+                    { artist: "Pearl Jam", track: "Alive", path: "../../../samples/indie/grunge2.ogg" },
+                    { artist: "Stone Temple Pilots", track: "Plush", path: "../../../samples/indie/grunge3.ogg" },
+                    { artist: "Soundgarden", track: "Black Hole Sun", path: "../../../samples/indie/grunge4.ogg" },
+                    { artist: "Alice In Chains", track: "Man In The Box", path: "../../../samples/indie/grunge5.ogg" },
+                    { artist: "Green River", track: "Unwind", path: "../../../samples/indie/grunge6.ogg" },
+                    { artist: "The Smashing Pumpkins", track: "Bullet With Butterfly Wings", path: "../../../samples/indie/grunge7.ogg" },
+                    { artist: "Screaming Trees", track: "Dollar Bill", path: "../../../samples/indie/grunge8.ogg" },
+                    { artist: "Mudhoney", track: "Touch Me I'm Sick", path: "../../../samples/indie/grunge9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndie = $('.buttons-indie');
 
-                $('.buttons-indie').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndie.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndie.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-indie-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-indie').removeClass('clicked');
+                    $buttonsIndie.removeClass('clicked');
                 }
             });
         </script>

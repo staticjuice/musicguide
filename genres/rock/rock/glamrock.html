@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "David Bowie",
-                        track: "Starman",
-                        path: "../../../samples/rock/glamrock1.ogg"
-                    },
-                    {
-                        artist: "Queen",
-                        track: "Don't Stop Me Now",
-                        path: "../../../samples/rock/glamrock2.ogg"
-                    },
-                    {
-                        artist: "Roxy Music",
-                        track: "Love Is The Drug",
-                        path: "../../../samples/rock/glamrock3.ogg"
-                    },
-                    {
-                        artist: "Lou Reed",
-                        track: "Satellite Of Love",
-                        path: "../../../samples/rock/glamrock4.ogg"
-                    },
-                    {
-                        artist: "T. Rex",
-                        track: "Children Of The Revolution",
-                        path: "../../../samples/rock/glamrock5.ogg"
-                    },
-                    {
-                        artist: "Suzi Quatro",
-                        track: "Can The Can",
-                        path: "../../../samples/rock/glamrock6.ogg"
-                    },
-                    {
-                        artist: "Slade",
-                        track: "Far Far Away",
-                        path: "../../../samples/rock/glamrock7.ogg"
-                    },
-                    {
-                        artist: "Sweet",
-                        track: "The Ballroom Blitz",
-                        path: "../../../samples/rock/glamrock8.ogg"
-                    },
-                    {
-                        artist: "Garry Glitter",
-                        track: "Rock And Roll (Part 1)",
-                        path: "../../../samples/rock/glamrock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "David Bowie", track: "Starman", path: "../../../samples/rock/glamrock1.ogg" },
+                    { artist: "Queen", track: "Don't Stop Me Now", path: "../../../samples/rock/glamrock2.ogg" },
+                    { artist: "Roxy Music", track: "Love Is The Drug", path: "../../../samples/rock/glamrock3.ogg" },
+                    { artist: "Lou Reed", track: "Satellite Of Love", path: "../../../samples/rock/glamrock4.ogg" },
+                    { artist: "T. Rex", track: "Children Of The Revolution", path: "../../../samples/rock/glamrock5.ogg" },
+                    { artist: "Suzi Quatro", track: "Can The Can", path: "../../../samples/rock/glamrock6.ogg" },
+                    { artist: "Slade", track: "Far Far Away", path: "../../../samples/rock/glamrock7.ogg" },
+                    { artist: "Sweet", track: "The Ballroom Blitz", path: "../../../samples/rock/glamrock8.ogg" },
+                    { artist: "Garry Glitter", track: "Rock And Roll (Part 1)", path: "../../../samples/rock/glamrock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRock = $('.buttons-rock');
 
-                $('.buttons-rock').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRock.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRock.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rock-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rock').removeClass('clicked');
+                    $buttonsRock.removeClass('clicked');
                 }
             });
         </script>

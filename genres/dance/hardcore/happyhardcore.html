@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "2 Brothers On The 4th Floor",
-                        track: "Fairytales",
-                        path: "../../../samples/hardcore/happyhardcore1.ogg"
-                    },
-                    {
-                        artist: "Nakatomi",
-                        track: "Children Of The Night",
-                        path: "../../../samples/hardcore/happyhardcore2.ogg"
-                    },
-                    {
-                        artist: "Bang!",
-                        track: "Shooting Star",
-                        path: "../../../samples/hardcore/happyhardcore3.ogg"
-                    },
-                    {
-                        artist: "Tokyo Ghetto Pussy",
-                        track: "I Kiss Your Lips",
-                        path: "../../../samples/hardcore/happyhardcore4.ogg"
-                    },
-                    {
-                        artist: "Scott Brown",
-                        track: "Elysium Plus",
-                        path: "../../../samples/hardcore/happyhardcore5.ogg"
-                    },
-                    {
-                        artist: "Visa",
-                        track: "Fly Away (DJ Seduction Remix)",
-                        path: "../../../samples/hardcore/happyhardcore6.ogg"
-                    },
-                    {
-                        artist: "Critical Mass",
-                        track: "Happy Generation",
-                        path: "../../../samples/hardcore/happyhardcore7.ogg"
-                    },
-                    {
-                        artist: "4 Tune Fairytales",
-                        track: "My Little Fantasy",
-                        path: "../../../samples/hardcore/happyhardcore8.ogg"
-                    },
-                    {
-                        artist: "Dune",
-                        track: "Rainbow To The Stars",
-                        path: "../../../samples/hardcore/happyhardcore9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "2 Brothers On The 4th Floor", track: "Fairytales", path: "../../../samples/hardcore/happyhardcore1.ogg" },
+                    { artist: "Nakatomi", track: "Children Of The Night", path: "../../../samples/hardcore/happyhardcore2.ogg" },
+                    { artist: "Bang!", track: "Shooting Star", path: "../../../samples/hardcore/happyhardcore3.ogg" },
+                    { artist: "Tokyo Ghetto Pussy", track: "I Kiss Your Lips", path: "../../../samples/hardcore/happyhardcore4.ogg" },
+                    { artist: "Scott Brown", track: "Elysium Plus", path: "../../../samples/hardcore/happyhardcore5.ogg" },
+                    { artist: "Visa", track: "Fly Away (DJ Seduction Remix)", path: "../../../samples/hardcore/happyhardcore6.ogg" },
+                    { artist: "Critical Mass", track: "Happy Generation", path: "../../../samples/hardcore/happyhardcore7.ogg" },
+                    { artist: "4 Tune Fairytales", track: "My Little Fantasy", path: "../../../samples/hardcore/happyhardcore8.ogg" },
+                    { artist: "Dune", track: "Rainbow To The Stars", path: "../../../samples/hardcore/happyhardcore9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHardcore = $('.buttons-hardcore');
 
-                $('.buttons-hardcore').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHardcore.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHardcore.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hardcore-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hardcore').removeClass('clicked');
+                    $buttonsHardcore.removeClass('clicked');
                 }
             });
         </script>

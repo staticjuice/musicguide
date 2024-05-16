@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Black Sabbath",
-                        track: "Supernaut",
-                        path: "../../../samples/metal/heavymetal1.ogg"
-                    },
-                    {
-                        artist: "Led Zeppelin",
-                        track: "Whole Lotta Love",
-                        path: "../../../samples/metal/heavymetal2.ogg"
-                    },
-                    {
-                        artist: "Deep Purple",
-                        track: "Black Night",
-                        path: "../../../samples/metal/heavymetal3.ogg"
-                    },
-                    {
-                        artist: "Judas Priest",
-                        track: "Breaking The Law",
-                        path: "../../../samples/metal/heavymetal4.ogg"
-                    },
-                    {
-                        artist: "Budgie",
-                        track: "Breadfan",
-                        path: "../../../samples/metal/heavymetal5.ogg"
-                    },
-                    {
-                        artist: "Buffalo",
-                        track: "Shylock",
-                        path: "../../../samples/metal/heavymetal6.ogg"
-                    },
-                    {
-                        artist: "UFO",
-                        track: "Silver Bird",
-                        path: "../../../samples/metal/heavymetal7.ogg"
-                    },
-                    {
-                        artist: "Rush",
-                        track: "Tom Sawyer",
-                        path: "../../../samples/metal/heavymetal8.ogg"
-                    },
-                    {
-                        artist: "Mountain",
-                        track: "Mississippi Queen",
-                        path: "../../../samples/metal/heavymetal9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Black Sabbath", track: "Supernaut", path: "../../../samples/metal/heavymetal1.ogg" },
+                    { artist: "Led Zeppelin", track: "Whole Lotta Love", path: "../../../samples/metal/heavymetal2.ogg" },
+                    { artist: "Deep Purple", track: "Black Night", path: "../../../samples/metal/heavymetal3.ogg" },
+                    { artist: "Judas Priest", track: "Breaking The Law", path: "../../../samples/metal/heavymetal4.ogg" },
+                    { artist: "Budgie", track: "Breadfan", path: "../../../samples/metal/heavymetal5.ogg" },
+                    { artist: "Buffalo", track: "Shylock", path: "../../../samples/metal/heavymetal6.ogg" },
+                    { artist: "UFO", track: "Silver Bird", path: "../../../samples/metal/heavymetal7.ogg" },
+                    { artist: "Rush", track: "Tom Sawyer", path: "../../../samples/metal/heavymetal8.ogg" },
+                    { artist: "Mountain", track: "Mississippi Queen", path: "../../../samples/metal/heavymetal9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsMetal = $('.buttons-metal');
 
-                $('.buttons-metal').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsMetal.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsMetal.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-metal-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-metal').removeClass('clicked');
+                    $buttonsMetal.removeClass('clicked');
                 }
             });
         </script>

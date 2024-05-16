@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Ornette Coleman",
-                        track: "Free Jazz",
-                        path: "../../samples/jazz/freejazz1.ogg"
-                    },
-                    {
-                        artist: "Sun Ra",
-                        track: "Space Is The Place",
-                        path: "../../samples/jazz/freejazz2.ogg"
-                    },
-                    {
-                        artist: "Albert Ayler",
-                        track: "Ghosts",
-                        path: "../../samples/jazz/freejazz3.ogg"
-                    },
-                    {
-                        artist: "Pharaoh Sanders",
-                        track: "Astral Traveling",
-                        path: "../../samples/jazz/freejazz4.ogg"
-                    },
-                    {
-                        artist: "Cecil Taylor",
-                        track: "Lena",
-                        path: "../../samples/jazz/freejazz5.ogg"
-                    },
-                    {
-                        artist: "Eric Dolphy",
-                        track: "Hat And Beard",
-                        path: "../../samples/jazz/freejazz6.ogg"
-                    },
-                    {
-                        artist: "Sunny Sharrock",
-                        track: "Peanut",
-                        path: "../../samples/jazz/freejazz7.ogg"
-                    },
-                    {
-                        artist: "Anthony Braxton",
-                        track: "Impressions",
-                        path: "../../samples/jazz/freejazz8.ogg"
-                    },
-                    {
-                        artist: "Archie Shepp",
-                        track: "Hipnosis",
-                        path: "../../samples/jazz/freejazz9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Ornette Coleman", track: "Free Jazz", path: "../../samples/jazz/freejazz1.ogg" },
+                    { artist: "Sun Ra", track: "Space Is The Place", path: "../../samples/jazz/freejazz2.ogg" },
+                    { artist: "Albert Ayler", track: "Ghosts", path: "../../samples/jazz/freejazz3.ogg" },
+                    { artist: "Pharaoh Sanders", track: "Astral Traveling", path: "../../samples/jazz/freejazz4.ogg" },
+                    { artist: "Cecil Taylor", track: "Lena", path: "../../samples/jazz/freejazz5.ogg" },
+                    { artist: "Eric Dolphy", track: "Hat And Beard", path: "../../samples/jazz/freejazz6.ogg" },
+                    { artist: "Sunny Sharrock", track: "Peanut", path: "../../samples/jazz/freejazz7.ogg" },
+                    { artist: "Anthony Braxton", track: "Impressions", path: "../../samples/jazz/freejazz8.ogg" },
+                    { artist: "Archie Shepp", track: "Hipnosis", path: "../../samples/jazz/freejazz9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsJazz = $('.buttons-jazz');
 
-                $('.buttons-jazz').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsJazz.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsJazz.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-jazz-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-jazz').removeClass('clicked');
+                    $buttonsJazz.removeClass('clicked');
                 }
             });
         </script>

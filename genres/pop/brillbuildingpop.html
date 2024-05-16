@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Neil Sedaka",
-                        track: "Calendar Girl",
-                        path: "../../samples/pop/brillbuildingpop1.ogg"
-                    },
-                    {
-                        artist: "The Righteous Brothers",
-                        track: "You've Lost That Lovin' Feelin'",
-                        path: "../../samples/pop/brillbuildingpop2.ogg"
-                    },
-                    {
-                        artist: "Paul Anka",
-                        track: "Put Your Head On My Shoulder",
-                        path: "../../samples/pop/brillbuildingpop3.ogg"
-                    },
-                    {
-                        artist: "Johnny Tillotson",
-                        track: "Earth Angel",
-                        path: "../../samples/pop/brillbuildingpop4.ogg"
-                    },
-                    {
-                        artist: "Gene Pitney",
-                        track: "24 Hours From Tulsa",
-                        path: "../../samples/pop/brillbuildingpop5.ogg"
-                    },
-                    {
-                        artist: "The Dixie Cups",
-                        track: "Chapel Of Love",
-                        path: "../../samples/pop/brillbuildingpop6.ogg"
-                    },
-                    {
-                        artist: "The Shangri-Las",
-                        track: "Leader Of The Pack",
-                        path: "../../samples/pop/brillbuildingpop7.ogg"
-                    },
-                    {
-                        artist: "Pat Boone",
-                        track: "Speedy Gonzales",
-                        path: "../../samples/pop/brillbuildingpop8.ogg"
-                    },
-                    {
-                        artist: "Del Shannon",
-                        track: "Runaway",
-                        path: "../../samples/pop/brillbuildingpop9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Neil Sedaka", track: "Calendar Girl", path: "../../samples/pop/brillbuildingpop1.ogg" },
+                    { artist: "The Righteous Brothers", track: "You've Lost That Lovin' Feelin'", path: "../../samples/pop/brillbuildingpop2.ogg" },
+                    { artist: "Paul Anka", track: "Put Your Head On My Shoulder", path: "../../samples/pop/brillbuildingpop3.ogg" },
+                    { artist: "Johnny Tillotson", track: "Earth Angel", path: "../../samples/pop/brillbuildingpop4.ogg" },
+                    { artist: "Gene Pitney", track: "24 Hours From Tulsa", path: "../../samples/pop/brillbuildingpop5.ogg" },
+                    { artist: "The Dixie Cups", track: "Chapel Of Love", path: "../../samples/pop/brillbuildingpop6.ogg" },
+                    { artist: "The Shangri-Las", track: "Leader Of The Pack", path: "../../samples/pop/brillbuildingpop7.ogg" },
+                    { artist: "Pat Boone", track: "Speedy Gonzales", path: "../../samples/pop/brillbuildingpop8.ogg" },
+                    { artist: "Del Shannon", track: "Runaway", path: "../../samples/pop/brillbuildingpop9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsPop = $('.buttons-pop');
 
-                $('.buttons-pop').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsPop.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsPop.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-pop-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-pop').removeClass('clicked');
+                    $buttonsPop.removeClass('clicked');
                 }
             });
         </script>

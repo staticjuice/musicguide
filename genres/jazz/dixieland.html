@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Original Dixieland Jass Band",
-                        track: "Livery Stable Blues",
-                        path: "../../samples/jazz/dixieland1.ogg"
-                    },
-                    {
-                        artist: "Spike's Seven Pods Of Pepper Orchestra",
-                        track: "Ory's Creole Trombone",
-                        path: "../../samples/jazz/dixieland2.ogg"
-                    },
-                    {
-                        artist: "King Oliver",
-                        track: "Shake It And Break It",
-                        path: "../../samples/jazz/dixieland3.ogg"
-                    },
-                    {
-                        artist: "Lu Watters",
-                        track: "Skid Dat De Dat",
-                        path: "../../samples/jazz/dixieland4.ogg"
-                    },
-                    {
-                        artist: "Louis Armstrong",
-                        track: "New Orleans Stomp",
-                        path: "../../samples/jazz/dixieland5.ogg"
-                    },
-                    {
-                        artist: "Bunk Johnson",
-                        track: "When The Saints Go Marching In",
-                        path: "../../samples/jazz/dixieland6.ogg"
-                    },
-                    {
-                        artist: "Freddie Keppard",
-                        track: "High Fever",
-                        path: "../../samples/jazz/dixieland7.ogg"
-                    },
-                    {
-                        artist: "Red Nichols",
-                        track: "Original Dixieland One-Step",
-                        path: "../../samples/jazz/dixieland8.ogg"
-                    },
-                    {
-                        artist: "King Oliver's Creole Jazz Band",
-                        track: "Dippermouth Blues",
-                        path: "../../samples/jazz/dixieland9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Original Dixieland Jass Band", track: "Livery Stable Blues", path: "../../samples/jazz/dixieland1.ogg" },
+                    { artist: "Spike's Seven Pods Of Pepper Orchestra", track: "Ory's Creole Trombone", path: "../../samples/jazz/dixieland2.ogg" },
+                    { artist: "King Oliver", track: "Shake It And Break It", path: "../../samples/jazz/dixieland3.ogg" },
+                    { artist: "Lu Watters", track: "Skid Dat De Dat", path: "../../samples/jazz/dixieland4.ogg" },
+                    { artist: "Louis Armstrong", track: "New Orleans Stomp", path: "../../samples/jazz/dixieland5.ogg" },
+                    { artist: "Bunk Johnson", track: "When The Saints Go Marching In", path: "../../samples/jazz/dixieland6.ogg" },
+                    { artist: "Freddie Keppard", track: "High Fever", path: "../../samples/jazz/dixieland7.ogg" },
+                    { artist: "Red Nichols", track: "Original Dixieland One-Step", path: "../../samples/jazz/dixieland8.ogg" },
+                    { artist: "King Oliver's Creole Jazz Band", track: "Dippermouth Blues", path: "../../samples/jazz/dixieland9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsJazz = $('.buttons-jazz');
 
-                $('.buttons-jazz').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsJazz.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsJazz.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-jazz-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-jazz').removeClass('clicked');
+                    $buttonsJazz.removeClass('clicked');
                 }
             });
         </script>

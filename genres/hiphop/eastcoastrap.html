@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Public Enemy",
-                        track: "Rebel Without A Pause",
-                        path: "../../samples/hiphop/eastcoastrap1.ogg"
-                    },
-                    {
-                        artist: "Ultramagnetic MCs",
-                        track: "Watch Me Now",
-                        path: "../../samples/hiphop/eastcoastrap2.ogg"
-                    },
-                    {
-                        artist: "LL Cool J",
-                        track: "Mama Said Knock You Out",
-                        path: "../../samples/hiphop/eastcoastrap3.ogg"
-                    },
-                    {
-                        artist: "Wu-Tang Clan",
-                        track: "Triumph",
-                        path: "../../samples/hiphop/eastcoastrap4.ogg"
-                    },
-                    {
-                        artist: "DMX",
-                        track: "Fuckin' Wit' D",
-                        path: "../../samples/hiphop/eastcoastrap5.ogg"
-                    },
-                    {
-                        artist: "Busta Rhymes feat. M.O.P.",
-                        track: "Ready For War",
-                        path: "../../samples/hiphop/eastcoastrap6.ogg"
-                    },
-                    {
-                        artist: "The Notorious B.I.G.",
-                        track: "Big Poppa",
-                        path: "../../samples/hiphop/eastcoastrap7.ogg"
-                    },
-                    {
-                        artist: "Nas",
-                        track: "Every Ghetto",
-                        path: "../../samples/hiphop/eastcoastrap8.ogg"
-                    },
-                    {
-                        artist: "Jay-Z",
-                        track: "99 Problems",
-                        path: "../../samples/hiphop/eastcoastrap9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Public Enemy", track: "Rebel Without A Pause", path: "../../samples/hiphop/eastcoastrap1.ogg" },
+                    { artist: "Ultramagnetic MCs", track: "Watch Me Now", path: "../../samples/hiphop/eastcoastrap2.ogg" },
+                    { artist: "LL Cool J", track: "Mama Said Knock You Out", path: "../../samples/hiphop/eastcoastrap3.ogg" },
+                    { artist: "Wu-Tang Clan", track: "Triumph", path: "../../samples/hiphop/eastcoastrap4.ogg" },
+                    { artist: "DMX", track: "Fuckin' Wit' D", path: "../../samples/hiphop/eastcoastrap5.ogg" },
+                    { artist: "Busta Rhymes feat. M.O.P.", track: "Ready For War", path: "../../samples/hiphop/eastcoastrap6.ogg" },
+                    { artist: "The Notorious B.I.G.", track: "Big Poppa", path: "../../samples/hiphop/eastcoastrap7.ogg" },
+                    { artist: "Nas", track: "Every Ghetto", path: "../../samples/hiphop/eastcoastrap8.ogg" },
+                    { artist: "Jay-Z", track: "99 Problems", path: "../../samples/hiphop/eastcoastrap9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHiphop = $('.buttons-hiphop');
 
-                $('.buttons-hiphop').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHiphop.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHiphop.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hiphop-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hiphop').removeClass('clicked');
+                    $buttonsHiphop.removeClass('clicked');
                 }
             });
         </script>

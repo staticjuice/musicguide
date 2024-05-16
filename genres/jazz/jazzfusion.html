@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Miles Davis",
-                        track: "Bitches Brew",
-                        path: "../../samples/jazz/jazzfusion1.ogg"
-                    },
-                    {
-                        artist: "Weather Report",
-                        track: "Birdland",
-                        path: "../../samples/jazz/jazzfusion2.ogg"
-                    },
-                    {
-                        artist: "Billy Cobham",
-                        track: "Stratus",
-                        path: "../../samples/jazz/jazzfusion3.ogg"
-                    },
-                    {
-                        artist: "Return To Forever",
-                        track: "Sorceress",
-                        path: "../../samples/jazz/jazzfusion4.ogg"
-                    },
-                    {
-                        artist: "Tony Williams",
-                        track: "Sweet Revenge",
-                        path: "../../samples/jazz/jazzfusion5.ogg"
-                    },
-                    {
-                        artist: "Mahavishnu Orchestra",
-                        track: "Vital Transformation",
-                        path: "../../samples/jazz/jazzfusion6.ogg"
-                    },
-                    {
-                        artist: "Stanley Clarke",
-                        track: "School Days",
-                        path: "../../samples/jazz/jazzfusion7.ogg"
-                    },
-                    {
-                        artist: "Chick Corea",
-                        track: "Dance Of Chance",
-                        path: "../../samples/jazz/jazzfusion8.ogg"
-                    },
-                    {
-                        artist: "Frank Zappa",
-                        track: "Apostrophe (')",
-                        path: "../../samples/jazz/jazzfusion9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Miles Davis", track: "Bitches Brew", path: "../../samples/jazz/jazzfusion1.ogg" },
+                    { artist: "Weather Report", track: "Birdland", path: "../../samples/jazz/jazzfusion2.ogg" },
+                    { artist: "Billy Cobham", track: "Stratus", path: "../../samples/jazz/jazzfusion3.ogg" },
+                    { artist: "Return To Forever", track: "Sorceress", path: "../../samples/jazz/jazzfusion4.ogg" },
+                    { artist: "Tony Williams", track: "Sweet Revenge", path: "../../samples/jazz/jazzfusion5.ogg" },
+                    { artist: "Mahavishnu Orchestra", track: "Vital Transformation", path: "../../samples/jazz/jazzfusion6.ogg" },
+                    { artist: "Stanley Clarke", track: "School Days", path: "../../samples/jazz/jazzfusion7.ogg" },
+                    { artist: "Chick Corea", track: "Dance Of Chance", path: "../../samples/jazz/jazzfusion8.ogg" },
+                    { artist: "Frank Zappa", track: "Apostrophe (')", path: "../../samples/jazz/jazzfusion9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsJazz = $('.buttons-jazz');
 
-                $('.buttons-jazz').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsJazz.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsJazz.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-jazz-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-jazz').removeClass('clicked');
+                    $buttonsJazz.removeClass('clicked');
                 }
             });
         </script>

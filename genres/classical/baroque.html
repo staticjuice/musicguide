@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Johann Sebastian Bach",
-                        track: "Concerto No. 5",
-                        path: "../../samples/classical/baroque1.ogg"
-                    },
-                    {
-                        artist: "Antonio Vivaldi",
-                        track: "Concerto For Violin And Strings",
-                        path: "../../samples/classical/baroque2.ogg"
-                    },
-                    {
-                        artist: "George Frideric Handel",
-                        track: "Concerto Grosso",
-                        path: "../../samples/classical/baroque3.ogg"
-                    },
-                    {
-                        artist: "Claudio Monteverdi",
-                        track: "Ciaccona",
-                        path: "../../samples/classical/baroque4.ogg"
-                    },
-                    {
-                        artist: "Domenico Scarlatti",
-                        track: "Keyboard Sonata",
-                        path: "../../samples/classical/baroque5.ogg"
-                    },
-                    {
-                        artist: "Henry Purcell",
-                        track: "Dido And Aeneas",
-                        path: "../../samples/classical/baroque6.ogg"
-                    },
-                    {
-                        artist: "Georg Philipp Telemann",
-                        track: "Sonata For Violin And Basso Continuo",
-                        path: "../../samples/classical/baroque7.ogg"
-                    },
-                    {
-                        artist: "François Couperin",
-                        track: "Premier Ordre",
-                        path: "../../samples/classical/baroque8.ogg"
-                    },
-                    {
-                        artist: "Dieterich Buxtehude",
-                        track: "Sonata",
-                        path: "../../samples/classical/baroque9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Johann Sebastian Bach", track: "Concerto No. 5", path: "../../samples/classical/baroque1.ogg" },
+                    { artist: "Antonio Vivaldi", track: "Concerto For Violin And Strings", path: "../../samples/classical/baroque2.ogg" },
+                    { artist: "George Frideric Handel", track: "Concerto Grosso", path: "../../samples/classical/baroque3.ogg" },
+                    { artist: "Claudio Monteverdi", track: "Ciaccona", path: "../../samples/classical/baroque4.ogg" },
+                    { artist: "Domenico Scarlatti", track: "Keyboard Sonata", path: "../../samples/classical/baroque5.ogg" },
+                    { artist: "Henry Purcell", track: "Dido And Aeneas", path: "../../samples/classical/baroque6.ogg" },
+                    { artist: "Georg Philipp Telemann", track: "Sonata For Violin And Basso Continuo", path: "../../samples/classical/baroque7.ogg" },
+                    { artist: "François Couperin", track: "Premier Ordre", path: "../../samples/classical/baroque8.ogg" },
+                    { artist: "Dieterich Buxtehude", track: "Sonata", path: "../../samples/classical/baroque9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsClassical = $('.buttons-classical');
 
-                $('.buttons-classical').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsClassical.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsClassical.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-classical-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-classical').removeClass('clicked');
+                    $buttonsClassical.removeClass('clicked');
                 }
             });
         </script>

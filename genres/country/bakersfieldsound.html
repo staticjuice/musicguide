@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Buck Owens & The Buckaroos",
-                        track: "Act Naturally",
-                        path: "../../samples/country/bakersfieldsound1.ogg"
-                    },
-                    {
-                        artist: "Merle Haggard & The Strangers",
-                        track: "Stealin' Corn",
-                        path: "../../samples/country/bakersfieldsound2.ogg"
-                    },
-                    {
-                        artist: "Tommy Collins",
-                        track: "You Better Not Do That",
-                        path: "../../samples/country/bakersfieldsound3.ogg"
-                    },
-                    {
-                        artist: "Susan Raye",
-                        track: "L.A. International Airport",
-                        path: "../../samples/country/bakersfieldsound4.ogg"
-                    },
-                    {
-                        artist: "Dwight Yoakam",
-                        track: "Turn It On, Turn It Up, Turn Me Loose",
-                        path: "../../samples/country/bakersfieldsound5.ogg"
-                    },
-                    {
-                        artist: "Wynn Stewart",
-                        track: "Playboy",
-                        path: "../../samples/country/bakersfieldsound6.ogg"
-                    },
-                    {
-                        artist: "Dennis Payne",
-                        track: "I'd Rather Live My Life Alone",
-                        path: "../../samples/country/bakersfieldsound7.ogg"
-                    },
-                    {
-                        artist: "Larry Daniels & The Buckshots",
-                        track: "Bakersfield Steed",
-                        path: "../../samples/country/bakersfieldsound8.ogg"
-                    },
-                    {
-                        artist: "Jean Shepard",
-                        track: "Slippin' Away",
-                        path: "../../samples/country/bakersfieldsound9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Buck Owens & The Buckaroos", track: "Act Naturally", path: "../../samples/country/bakersfieldsound1.ogg" },
+                    { artist: "Merle Haggard & The Strangers", track: "Stealin' Corn", path: "../../samples/country/bakersfieldsound2.ogg" },
+                    { artist: "Tommy Collins", track: "You Better Not Do That", path: "../../samples/country/bakersfieldsound3.ogg" },
+                    { artist: "Susan Raye", track: "L.A. International Airport", path: "../../samples/country/bakersfieldsound4.ogg" },
+                    { artist: "Dwight Yoakam", track: "Turn It On, Turn It Up, Turn Me Loose", path: "../../samples/country/bakersfieldsound5.ogg" },
+                    { artist: "Wynn Stewart", track: "Playboy", path: "../../samples/country/bakersfieldsound6.ogg" },
+                    { artist: "Dennis Payne", track: "I'd Rather Live My Life Alone", path: "../../samples/country/bakersfieldsound7.ogg" },
+                    { artist: "Larry Daniels & The Buckshots", track: "Bakersfield Steed", path: "../../samples/country/bakersfieldsound8.ogg" },
+                    { artist: "Jean Shepard", track: "Slippin' Away", path: "../../samples/country/bakersfieldsound9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsCountry = $('.buttons-country');
 
-                $('.buttons-country').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsCountry.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsCountry.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-country-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-country').removeClass('clicked');
+                    $buttonsCountry.removeClass('clicked');
                 }
             });
         </script>

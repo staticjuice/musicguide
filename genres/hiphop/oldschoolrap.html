@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Sugarhill Gang",
-                        track: "Rapper's Delight",
-                        path: "../../samples/hiphop/oldschoolrap1.ogg"
-                    },
-                    {
-                        artist: "Grandmaster Flash & The Furious Five",
-                        track: "The Message",
-                        path: "../../samples/hiphop/oldschoolrap2.ogg"
-                    },
-                    {
-                        artist: "Spoonie Gee",
-                        track: "Spoonie Is Back",
-                        path: "../../samples/hiphop/oldschoolrap3.ogg"
-                    },
-                    {
-                        artist: "The Younger Generation",
-                        track: "We Rap More Mellow",
-                        path: "../../samples/hiphop/oldschoolrap4.ogg"
-                    },
-                    {
-                        artist: "Kurtis Blow",
-                        track: "The Breaks",
-                        path: "../../samples/hiphop/oldschoolrap5.ogg"
-                    },
-                    {
-                        artist: "Funky 4+1",
-                        track: "That's The Joint",
-                        path: "../../samples/hiphop/oldschoolrap6.ogg"
-                    },
-                    {
-                        artist: "Cold Crush Brothers",
-                        track: "Cold Crush",
-                        path: "../../samples/hiphop/oldschoolrap7.ogg"
-                    },
-                    {
-                        artist: "Fab 5 Freddy",
-                        track: "Change The Beat",
-                        path: "../../samples/hiphop/oldschoolrap8.ogg"
-                    },
-                    {
-                        artist: "Young MC",
-                        track: "Bust A Move",
-                        path: "../../samples/hiphop/oldschoolrap9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Sugarhill Gang", track: "Rapper's Delight", path: "../../samples/hiphop/oldschoolrap1.ogg" },
+                    { artist: "Grandmaster Flash & The Furious Five", track: "The Message", path: "../../samples/hiphop/oldschoolrap2.ogg" },
+                    { artist: "Spoonie Gee", track: "Spoonie Is Back", path: "../../samples/hiphop/oldschoolrap3.ogg" },
+                    { artist: "The Younger Generation", track: "We Rap More Mellow", path: "../../samples/hiphop/oldschoolrap4.ogg" },
+                    { artist: "Kurtis Blow", track: "The Breaks", path: "../../samples/hiphop/oldschoolrap5.ogg" },
+                    { artist: "Funky 4+1", track: "That's The Joint", path: "../../samples/hiphop/oldschoolrap6.ogg" },
+                    { artist: "Cold Crush Brothers", track: "Cold Crush", path: "../../samples/hiphop/oldschoolrap7.ogg" },
+                    { artist: "Fab 5 Freddy", track: "Change The Beat", path: "../../samples/hiphop/oldschoolrap8.ogg" },
+                    { artist: "Young MC", track: "Bust A Move", path: "../../samples/hiphop/oldschoolrap9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHiphop = $('.buttons-hiphop');
 
-                $('.buttons-hiphop').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHiphop.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHiphop.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hiphop-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hiphop').removeClass('clicked');
+                    $buttonsHiphop.removeClass('clicked');
                 }
             });
         </script>

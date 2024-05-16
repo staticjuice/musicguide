@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Kid Rock",
-                        track: "Bawitdaba",
-                        path: "../../../samples/indie/raprock1.ogg"
-                    },
-                    {
-                        artist: "Rage Against The Machine",
-                        track: "Guerrilla Radio",
-                        path: "../../../samples/indie/raprock2.ogg"
-                    },
-                    {
-                        artist: "Faith No More",
-                        track: "Epic",
-                        path: "../../../samples/indie/raprock3.ogg"
-                    },
-                    {
-                        artist: "Dog Eat Dog",
-                        track: "Who's The King",
-                        path: "../../../samples/indie/raprock4.ogg"
-                    },
-                    {
-                        artist: "Red Hot Chili Peppers",
-                        track: "Give It Away",
-                        path: "../../../samples/indie/raprock5.ogg"
-                    },
-                    {
-                        artist: "Urban Dance Squad",
-                        track: "Demagogue",
-                        path: "../../../samples/indie/raprock6.ogg"
-                    },
-                    {
-                        artist: "Helmet & House Of Pain",
-                        track: "Just Another Victim",
-                        path: "../../../samples/indie/raprock7.ogg"
-                    },
-                    {
-                        artist: "Alley Life feat. Black Planet",
-                        track: "Out With The Old",
-                        path: "../../../samples/indie/raprock8.ogg"
-                    },
-                    {
-                        artist: "Papa Roach",
-                        track: "Blood Brothers",
-                        path: "../../../samples/indie/raprock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Kid Rock", track: "Bawitdaba", path: "../../../samples/indie/raprock1.ogg" },
+                    { artist: "Rage Against The Machine", track: "Guerrilla Radio", path: "../../../samples/indie/raprock2.ogg" },
+                    { artist: "Faith No More", track: "Epic", path: "../../../samples/indie/raprock3.ogg" },
+                    { artist: "Dog Eat Dog", track: "Who's The King", path: "../../../samples/indie/raprock4.ogg" },
+                    { artist: "Red Hot Chili Peppers", track: "Give It Away", path: "../../../samples/indie/raprock5.ogg" },
+                    { artist: "Urban Dance Squad", track: "Demagogue", path: "../../../samples/indie/raprock6.ogg" },
+                    { artist: "Helmet & House Of Pain", track: "Just Another Victim", path: "../../../samples/indie/raprock7.ogg" },
+                    { artist: "Alley Life feat. Black Planet", track: "Out With The Old", path: "../../../samples/indie/raprock8.ogg" },
+                    { artist: "Papa Roach", track: "Blood Brothers", path: "../../../samples/indie/raprock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndie = $('.buttons-indie');
 
-                $('.buttons-indie').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndie.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndie.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-indie-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-indie').removeClass('clicked');
+                    $buttonsIndie.removeClass('clicked');
                 }
             });
         </script>

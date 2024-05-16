@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Adam F",
-                        track: "Circles",
-                        path: "../../../samples/drumandbass/atmosphericdrumandbass1.ogg"
-                    },
-                    {
-                        artist: "LTJ Bukem",
-                        track: "Horizons",
-                        path: "../../../samples/drumandbass/atmosphericdrumandbass2.ogg"
-                    },
-                    {
-                        artist: "Doc Scott",
-                        track: "Tokyo Dawn",
-                        path: "../../../samples/drumandbass/atmosphericdrumandbass3.ogg"
-                    },
-                    {
-                        artist: "Logistics",
-                        track: "City Life",
-                        path: "../../../samples/drumandbass/atmosphericdrumandbass4.ogg"
-                    },
-                    {
-                        artist: "Seba",
-                        track: "Snow",
-                        path: "../../../samples/drumandbass/atmosphericdrumandbass5.ogg"
-                    },
-                    {
-                        artist: "Bachelors Of Science",
-                        track: "The Ice Dance",
-                        path: "../../../samples/drumandbass/atmosphericdrumandbass6.ogg"
-                    },
-                    {
-                        artist: "Seismix & Cahb",
-                        track: "Space",
-                        path: "../../../samples/drumandbass/atmosphericdrumandbass7.ogg"
-                    },
-                    {
-                        artist: "Hybrid Minds",
-                        track: "That Way",
-                        path: "../../../samples/drumandbass/atmosphericdrumandbass8.ogg"
-                    },
-                    {
-                        artist: "BCee & S.P.Y.",
-                        track: "Is Anybody Out There?",
-                        path: "../../../samples/drumandbass/atmosphericdrumandbass9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Adam F", track: "Circles", path: "../../../samples/drumandbass/atmosphericdrumandbass1.ogg" },
+                    { artist: "LTJ Bukem", track: "Horizons", path: "../../../samples/drumandbass/atmosphericdrumandbass2.ogg" },
+                    { artist: "Doc Scott", track: "Tokyo Dawn", path: "../../../samples/drumandbass/atmosphericdrumandbass3.ogg" },
+                    { artist: "Logistics", track: "City Life", path: "../../../samples/drumandbass/atmosphericdrumandbass4.ogg" },
+                    { artist: "Seba", track: "Snow", path: "../../../samples/drumandbass/atmosphericdrumandbass5.ogg" },
+                    { artist: "Bachelors Of Science", track: "The Ice Dance", path: "../../../samples/drumandbass/atmosphericdrumandbass6.ogg" },
+                    { artist: "Seismix & Cahb", track: "Space", path: "../../../samples/drumandbass/atmosphericdrumandbass7.ogg" },
+                    { artist: "Hybrid Minds", track: "That Way", path: "../../../samples/drumandbass/atmosphericdrumandbass8.ogg" },
+                    { artist: "BCee & S.P.Y.", track: "Is Anybody Out There?", path: "../../../samples/drumandbass/atmosphericdrumandbass9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsDrumandbass = $('.buttons-drumandbass');
 
-                $('.buttons-drumandbass').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsDrumandbass.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsDrumandbass.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-drumandbass-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-drumandbass').removeClass('clicked');
+                    $buttonsDrumandbass.removeClass('clicked');
                 }
             });
         </script>

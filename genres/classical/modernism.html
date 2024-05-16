@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Arnold Schoenberg",
-                        track: "Presto In C Major",
-                        path: "../../samples/classical/modernism1.ogg"
-                    },
-                    {
-                        artist: "Anton Webern",
-                        track: "String Quartet",
-                        path: "../../samples/classical/modernism2.ogg"
-                    },
-                    {
-                        artist: "Igor Stravinsky",
-                        track: "The Rite Of Spring",
-                        path: "../../samples/classical/modernism3.ogg"
-                    },
-                    {
-                        artist: "Maurice Ravel",
-                        track: "Gaspard De La Nuit",
-                        path: "../../samples/classical/modernism4.ogg"
-                    },
-                    {
-                        artist: "Bohuslav Martinů",
-                        track: "Concerto For Piano Trio And String Orchestra",
-                        path: "../../samples/classical/modernism5.ogg"
-                    },
-                    {
-                        artist: "Paul Hindemith",
-                        track: "Kammermusick No. 6",
-                        path: "../../samples/classical/modernism6.ogg"
-                    },
-                    {
-                        artist: "Charles Ives",
-                        track: "Sonata For Violin And Piano",
-                        path: "../../samples/classical/modernism7.ogg"
-                    },
-                    {
-                        artist: "Claude Debussy",
-                        track: "La Mer No. 1",
-                        path: "../../samples/classical/modernism8.ogg"
-                    },
-                    {
-                        artist: "George Gershwin",
-                        track: "Rhapsody In Blue",
-                        path: "../../samples/classical/modernism9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Arnold Schoenberg", track: "Presto In C Major", path: "../../samples/classical/modernism1.ogg" },
+                    { artist: "Anton Webern", track: "String Quartet", path: "../../samples/classical/modernism2.ogg" },
+                    { artist: "Igor Stravinsky", track: "The Rite Of Spring", path: "../../samples/classical/modernism3.ogg" },
+                    { artist: "Maurice Ravel", track: "Gaspard De La Nuit", path: "../../samples/classical/modernism4.ogg" },
+                    { artist: "Bohuslav Martinů", track: "Concerto For Piano Trio And String Orchestra", path: "../../samples/classical/modernism5.ogg" },
+                    { artist: "Paul Hindemith", track: "Kammermusick No. 6", path: "../../samples/classical/modernism6.ogg" },
+                    { artist: "Charles Ives", track: "Sonata For Violin And Piano", path: "../../samples/classical/modernism7.ogg" },
+                    { artist: "Claude Debussy", track: "La Mer No. 1", path: "../../samples/classical/modernism8.ogg" },
+                    { artist: "George Gershwin", track: "Rhapsody In Blue", path: "../../samples/classical/modernism9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsClassical = $('.buttons-classical');
 
-                $('.buttons-classical').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsClassical.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsClassical.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-classical-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-classical').removeClass('clicked');
+                    $buttonsClassical.removeClass('clicked');
                 }
             });
         </script>

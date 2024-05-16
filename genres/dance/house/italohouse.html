@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "49ers",
-                        track: "Touch Me",
-                        path: "../../../samples/house/italohouse1.ogg"
-                    },
-                    {
-                        artist: "Black Box",
-                        track: "Ride On Time",
-                        path: "../../../samples/house/italohouse2.ogg"
-                    },
-                    {
-                        artist: "CeCe Peniston",
-                        track: "Finally",
-                        path: "../../../samples/house/italohouse3.ogg"
-                    },
-                    {
-                        artist: "Pierre Feroldi feat. Linda Ray",
-                        track: "Movin Now",
-                        path: "../../../samples/house/italohouse4.ogg"
-                    },
-                    {
-                        artist: "Nightcrawlers",
-                        track: "Push The Feeling On (MK Dub Revisited Edit)",
-                        path: "../../../samples/house/italohouse5.ogg"
-                    },
-                    {
-                        artist: "Robin S",
-                        track: "Show Me Love",
-                        path: "../../../samples/house/italohouse6.ogg"
-                    },
-                    {
-                        artist: "Haddaway",
-                        track: "What Is Love",
-                        path: "../../../samples/house/italohouse7.ogg"
-                    },
-                    {
-                        artist: "Corona",
-                        track: "The Rhythm Of The Night",
-                        path: "../../../samples/house/italohouse8.ogg"
-                    },
-                    {
-                        artist: "Junior Jack",
-                        track: "My Feeling (Daddy's Prime Time Edit)",
-                        path: "../../../samples/house/italohouse9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "49ers", track: "Touch Me", path: "../../../samples/house/italohouse1.ogg" },
+                    { artist: "Black Box", track: "Ride On Time", path: "../../../samples/house/italohouse2.ogg" },
+                    { artist: "CeCe Peniston", track: "Finally", path: "../../../samples/house/italohouse3.ogg" },
+                    { artist: "Pierre Feroldi feat. Linda Ray", track: "Movin Now", path: "../../../samples/house/italohouse4.ogg" },
+                    { artist: "Nightcrawlers", track: "Push The Feeling On (MK Dub Revisited Edit)", path: "../../../samples/house/italohouse5.ogg" },
+                    { artist: "Robin S", track: "Show Me Love", path: "../../../samples/house/italohouse6.ogg" },
+                    { artist: "Haddaway", track: "What Is Love", path: "../../../samples/house/italohouse7.ogg" },
+                    { artist: "Corona", track: "The Rhythm Of The Night", path: "../../../samples/house/italohouse8.ogg" },
+                    { artist: "Junior Jack", track: "My Feeling (Daddy's Prime Time Edit)", path: "../../../samples/house/italohouse9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHouse = $('.buttons-house');
 
-                $('.buttons-house').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHouse.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHouse.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-house-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-house').removeClass('clicked');
+                    $buttonsHouse.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Joe Gibbs & The Professionals",
-                        track: "Chapter Three",
-                        path: "../../samples/reggae/dub1.ogg"
-                    },
-                    {
-                        artist: "Prince Jammy",
-                        track: "Conspiracy On Neptune",
-                        path: "../../samples/reggae/dub2.ogg"
-                    },
-                    {
-                        artist: "Augustus Pablo",
-                        track: "555 Dub Street",
-                        path: "../../samples/reggae/dub3.ogg"
-                    },
-                    {
-                        artist: "Mad Professor",
-                        track: "Jail House Dub",
-                        path: "../../samples/reggae/dub4.ogg"
-                    },
-                    {
-                        artist: 'Lee "Scratch" Perry',
-                        track: "Jah",
-                        path: "../../samples/reggae/dub5.ogg"
-                    },
-                    {
-                        artist: "Jah Shaka",
-                        track: "Rastafari Dub",
-                        path: "../../samples/reggae/dub6.ogg"
-                    },
-                    {
-                        artist: "Sly & The Revolutionaries",
-                        track: "Cocaine",
-                        path: "../../samples/reggae/dub7.ogg"
-                    },
-                    {
-                        artist: "King Tubby",
-                        track: "Blood, Sweat And Danza Dub",
-                        path: "../../samples/reggae/dub8.ogg"
-                    },
-                    {
-                        artist: "Nightshade",
-                        track: "Steppers",
-                        path: "../../samples/reggae/dub9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Joe Gibbs & The Professionals", track: "Chapter Three", path: "../../samples/reggae/dub1.ogg" },
+                    { artist: "Prince Jammy", track: "Conspiracy On Neptune", path: "../../samples/reggae/dub2.ogg" },
+                    { artist: "Augustus Pablo", track: "555 Dub Street", path: "../../samples/reggae/dub3.ogg" },
+                    { artist: "Mad Professor", track: "Jail House Dub", path: "../../samples/reggae/dub4.ogg" },
+                    { artist: "Lee 'Scratch' Perry", track: "Jah", path: "../../samples/reggae/dub5.ogg" },
+                    { artist: "Jah Shaka", track: "Rastafari Dub", path: "../../samples/reggae/dub6.ogg" },
+                    { artist: "Sly & The Revolutionaries", track: "Cocaine", path: "../../samples/reggae/dub7.ogg" },
+                    { artist: "King Tubby", track: "Blood, Sweat And Danza Dub", path: "../../samples/reggae/dub8.ogg" },
+                    { artist: "Nightshade", track: "Steppers", path: "../../samples/reggae/dub9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsReggae = $('.buttons-reggae');
 
-                $('.buttons-reggae').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsReggae.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsReggae.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-reggae-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-reggae').removeClass('clicked');
+                    $buttonsReggae.removeClass('clicked');
                 }
             });
         </script>

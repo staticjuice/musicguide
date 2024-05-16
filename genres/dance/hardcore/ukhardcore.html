@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Dougal & Gammer",
-                        track: "Jam The Nightclub",
-                        path: "../../../samples/hardcore/ukhardcore1.ogg"
-                    },
-                    {
-                        artist: "Deejay Bee & Overflow feat. Vision",
-                        track: "Sunrise",
-                        path: "../../../samples/hardcore/ukhardcore2.ogg"
-                    },
-                    {
-                        artist: "Alek Száhala",
-                        track: "Darkstar",
-                        path: "../../../samples/hardcore/ukhardcore3.ogg"
-                    },
-                    {
-                        artist: "CLSM",
-                        track: "Liberation",
-                        path: "../../../samples/hardcore/ukhardcore4.ogg"
-                    },
-                    {
-                        artist: "Chwhynny",
-                        track: "Morris Call",
-                        path: "../../../samples/hardcore/ukhardcore5.ogg"
-                    },
-                    {
-                        artist: "Scott Majestik",
-                        track: "Acid Dreams",
-                        path: "../../../samples/hardcore/ukhardcore6.ogg"
-                    },
-                    {
-                        artist: "Ranzor",
-                        track: "Flux",
-                        path: "../../../samples/hardcore/ukhardcore7.ogg"
-                    },
-                    {
-                        artist: "Mr B vs K-Complex",
-                        track: "The World Is Strange",
-                        path: "../../../samples/hardcore/ukhardcore8.ogg"
-                    },
-                    {
-                        artist: "DJ Delta vs K-Complex",
-                        track: "The Retreat",
-                        path: "../../../samples/hardcore/ukhardcore9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Dougal & Gammer", track: "Jam The Nightclub", path: "../../../samples/hardcore/ukhardcore1.ogg" },
+                    { artist: "Deejay Bee & Overflow feat. Vision", track: "Sunrise", path: "../../../samples/hardcore/ukhardcore2.ogg" },
+                    { artist: "Alek Száhala", track: "Darkstar", path: "../../../samples/hardcore/ukhardcore3.ogg" },
+                    { artist: "CLSM", track: "Liberation", path: "../../../samples/hardcore/ukhardcore4.ogg" },
+                    { artist: "Chwhynny", track: "Morris Call", path: "../../../samples/hardcore/ukhardcore5.ogg" },
+                    { artist: "Scott Majestik", track: "Acid Dreams", path: "../../../samples/hardcore/ukhardcore6.ogg" },
+                    { artist: "Ranzor", track: "Flux", path: "../../../samples/hardcore/ukhardcore7.ogg" },
+                    { artist: "Mr B vs K-Complex", track: "The World Is Strange", path: "../../../samples/hardcore/ukhardcore8.ogg" },
+                    { artist: "DJ Delta vs K-Complex", track: "The Retreat", path: "../../../samples/hardcore/ukhardcore9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHardcore = $('.buttons-hardcore');
 
-                $('.buttons-hardcore').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHardcore.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHardcore.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hardcore-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hardcore').removeClass('clicked');
+                    $buttonsHardcore.removeClass('clicked');
                 }
             });
         </script>

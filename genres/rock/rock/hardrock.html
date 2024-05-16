@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "AC/DC",
-                        track: "Thunderstruck",
-                        path: "../../../samples/rock/hardrock1.ogg"
-                    },
-                    {
-                        artist: "George Thorogood & The Destroyers",
-                        track: "Bad To The Bone",
-                        path: "../../../samples/rock/hardrock2.ogg"
-                    },
-                    {
-                        artist: "Ram Jam",
-                        track: "Black Betty",
-                        path: "../../../samples/rock/hardrock3.ogg"
-                    },
-                    {
-                        artist: "Aerosmith",
-                        track: "Love In An Elevator",
-                        path: "../../../samples/rock/hardrock4.ogg"
-                    },
-                    {
-                        artist: "Thin Lizzy",
-                        track: "Johnny",
-                        path: "../../../samples/rock/hardrock5.ogg"
-                    },
-                    {
-                        artist: "Free",
-                        track: "All Right Now",
-                        path: "../../../samples/rock/hardrock6.ogg"
-                    },
-                    {
-                        artist: "Humble Pie",
-                        track: "Honky Tonk Women",
-                        path: "../../../samples/rock/hardrock7.ogg"
-                    },
-                    {
-                        artist: "Steppenwolf",
-                        track: "Born To Be Wild",
-                        path: "../../../samples/rock/hardrock8.ogg"
-                    },
-                    {
-                        artist: "The Who",
-                        track: "Won't Get Fooled Again",
-                        path: "../../../samples/rock/hardrock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "AC/DC", track: "Thunderstruck", path: "../../../samples/rock/hardrock1.ogg" },
+                    { artist: "George Thorogood & The Destroyers", track: "Bad To The Bone", path: "../../../samples/rock/hardrock2.ogg" },
+                    { artist: "Ram Jam", track: "Black Betty", path: "../../../samples/rock/hardrock3.ogg" },
+                    { artist: "Aerosmith", track: "Love In An Elevator", path: "../../../samples/rock/hardrock4.ogg" },
+                    { artist: "Thin Lizzy", track: "Johnny", path: "../../../samples/rock/hardrock5.ogg" },
+                    { artist: "Free", track: "All Right Now", path: "../../../samples/rock/hardrock6.ogg" },
+                    { artist: "Humble Pie", track: "Honky Tonk Women", path: "../../../samples/rock/hardrock7.ogg" },
+                    { artist: "Steppenwolf", track: "Born To Be Wild", path: "../../../samples/rock/hardrock8.ogg" },
+                    { artist: "The Who", track: "Won't Get Fooled Again", path: "../../../samples/rock/hardrock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRock = $('.buttons-rock');
 
-                $('.buttons-rock').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRock.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRock.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rock-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rock').removeClass('clicked');
+                    $buttonsRock.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Dusky",
-                        track: "Cold Heart",
-                        path: "../../../samples/house/deephouse1.ogg"
-                    },
-                    {
-                        artist: "Larry Heard",
-                        track: "Missing You",
-                        path: "../../../samples/house/deephouse2.ogg"
-                    },
-                    {
-                        artist: "SNBRN feat. Kerli",
-                        track: "Raindrops",
-                        path: "../../../samples/house/deephouse3.ogg"
-                    },
-                    {
-                        artist: "Me & My Toothbrush",
-                        track: "One Thing (Nora En Pure Remix)",
-                        path: "../../../samples/house/deephouse4.ogg"
-                    },
-                    {
-                        artist: "Miguel Migs",
-                        track: "Petalpushing",
-                        path: "../../../samples/house/deephouse5.ogg"
-                    },
-                    {
-                        artist: "Philip George",
-                        track: "Wish You Were Mine",
-                        path: "../../../samples/house/deephouse6.ogg"
-                    },
-                    {
-                        artist: "Saison",
-                        track: "Moments",
-                        path: "../../../samples/house/deephouse7.ogg"
-                    },
-                    {
-                        artist: "Al Zanders",
-                        track: "Dexter's Morning",
-                        path: "../../../samples/house/deephouse8.ogg"
-                    },
-                    {
-                        artist: "Dusky",
-                        track: "Resin",
-                        path: "../../../samples/house/deephouse9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Dusky", track: "Cold Heart", path: "../../../samples/house/deephouse1.ogg" },
+                    { artist: "Larry Heard", track: "Missing You", path: "../../../samples/house/deephouse2.ogg" },
+                    { artist: "SNBRN feat. Kerli", track: "Raindrops", path: "../../../samples/house/deephouse3.ogg" },
+                    { artist: "Me & My Toothbrush", track: "One Thing (Nora En Pure Remix)", path: "../../../samples/house/deephouse4.ogg" },
+                    { artist: "Miguel Migs", track: "Petalpushing", path: "../../../samples/house/deephouse5.ogg" },
+                    { artist: "Philip George", track: "Wish You Were Mine", path: "../../../samples/house/deephouse6.ogg" },
+                    { artist: "Saison", track: "Moments", path: "../../../samples/house/deephouse7.ogg" },
+                    { artist: "Al Zanders", track: "Dexter's Morning", path: "../../../samples/house/deephouse8.ogg" },
+                    { artist: "Dusky", track: "Resin", path: "../../../samples/house/deephouse9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHouse = $('.buttons-house');
 
-                $('.buttons-house').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHouse.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHouse.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-house-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-house').removeClass('clicked');
+                    $buttonsHouse.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: 'Cow Cow Davenport',
-                        track: "Cow Cow Blues",
-                        path: "../../samples/blues/boogiewoogie1.ogg"
-                    },
-                    {
-                        artist: "Little Brother Montgomery",
-                        track: "Little Brother's Little Boogie",
-                        path: "../../samples/blues/boogiewoogie2.ogg"
-                    },
-                    {
-                        artist: "Amos Milburn",
-                        track: "Down The Road A Piece",
-                        path: "../../samples/blues/boogiewoogie3.ogg"
-                    },
-                    {
-                        artist: 'Meade "Lux" Lewis',
-                        track: "Yancey Special",
-                        path: "../../samples/blues/boogiewoogie4.ogg"
-                    },
-                    {
-                        artist: "Sammy Price",
-                        track: "Pinetop's Boogie Woogie",
-                        path: "../../samples/blues/boogiewoogie5.ogg"
-                    },
-                    {
-                        artist: "Albert Ammons & Pete Johnson",
-                        track: "Boogie Woogie Man",
-                        path: "../../samples/blues/boogiewoogie6.ogg"
-                    },
-                    {
-                        artist: "Pete Johnson",
-                        track: "Dive Bomber",
-                        path: "../../samples/blues/boogiewoogie7.ogg"
-                    },
-                    {
-                        artist: "Art Tatum",
-                        track: "Tatum Pole Boogie",
-                        path: "../../samples/blues/boogiewoogie8.ogg"
-                    },
-                    {
-                        artist: "Jimmy Yancey",
-                        track: "Yancey Stomp",
-                        path: "../../samples/blues/boogiewoogie9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Cow Cow Davenport", track: "Cow Cow Blues", path: "../../samples/blues/boogiewoogie1.ogg" },
+                    { artist: "Little Brother Montgomery", track: "Little Brother's Little Boogie", path: "../../samples/blues/boogiewoogie2.ogg" },
+                    { artist: "Amos Milburn", track: "Down The Road A Piece", path: "../../samples/blues/boogiewoogie3.ogg" },
+                    { artist: "Meade 'Lux' Lewis", track: "Yancey Special", path: "../../samples/blues/boogiewoogie4.ogg" },
+                    { artist: "Sammy Price", track: "Pinetop's Boogie Woogie", path: "../../samples/blues/boogiewoogie5.ogg" },
+                    { artist: "Albert Ammons & Pete Johnson", track: "Boogie Woogie Man", path: "../../samples/blues/boogiewoogie6.ogg" },
+                    { artist: "Pete Johnson", track: "Dive Bomber", path: "../../samples/blues/boogiewoogie7.ogg" },
+                    { artist: "Art Tatum", track: "Tatum Pole Boogie", path: "../../samples/blues/boogiewoogie8.ogg" },
+                    { artist: "Jimmy Yancey", track: "Yancey Stomp", path: "../../samples/blues/boogiewoogie9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBlues = $('.buttons-blues');
 
-                $('.buttons-blues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBlues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBlues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-blues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-blues').removeClass('clicked');
+                    $buttonsBlues.removeClass('clicked');
                 }
             });
         </script>

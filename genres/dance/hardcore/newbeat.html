@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Lords Of Acid",
-                        track: "I Sit On Acid",
-                        path: "../../../samples/hardcore/newbeat1.ogg"
-                    },
-                    {
-                        artist: "Amnesia",
-                        track: "Ibiza",
-                        path: "../../../samples/hardcore/newbeat2.ogg"
-                    },
-                    {
-                        artist: "101",
-                        track: "Rock To The Beat",
-                        path: "../../../samples/hardcore/newbeat3.ogg"
-                    },
-                    {
-                        artist: "The KLF",
-                        track: "It's Grim Up North",
-                        path: "../../../samples/hardcore/newbeat4.ogg"
-                    },
-                    {
-                        artist: "Dirty Harry",
-                        track: "D'Bop",
-                        path: "../../../samples/hardcore/newbeat5.ogg"
-                    },
-                    {
-                        artist: "Confetti's",
-                        track: "The Sound Of C",
-                        path: "../../../samples/hardcore/newbeat6.ogg"
-                    },
-                    {
-                        artist: "Edwards & Armani",
-                        track: "La Cosa Nostra",
-                        path: "../../../samples/hardcore/newbeat7.ogg"
-                    },
-                    {
-                        artist: "Major Problem",
-                        track: "I Still Have A Dream",
-                        path: "../../../samples/hardcore/newbeat8.ogg"
-                    },
-                    {
-                        artist: "Nasty Thoughts",
-                        track: "Rock The House",
-                        path: "../../../samples/hardcore/newbeat9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Lords Of Acid", track: "I Sit On Acid", path: "../../../samples/hardcore/newbeat1.ogg" },
+                    { artist: "Amnesia", track: "Ibiza", path: "../../../samples/hardcore/newbeat2.ogg" },
+                    { artist: "101", track: "Rock To The Beat", path: "../../../samples/hardcore/newbeat3.ogg" },
+                    { artist: "The KLF", track: "It's Grim Up North", path: "../../../samples/hardcore/newbeat4.ogg" },
+                    { artist: "Dirty Harry", track: "D'Bop", path: "../../../samples/hardcore/newbeat5.ogg" },
+                    { artist: "Confetti's", track: "The Sound Of C", path: "../../../samples/hardcore/newbeat6.ogg" },
+                    { artist: "Edwards & Armani", track: "La Cosa Nostra", path: "../../../samples/hardcore/newbeat7.ogg" },
+                    { artist: "Major Problem", track: "I Still Have A Dream", path: "../../../samples/hardcore/newbeat8.ogg" },
+                    { artist: "Nasty Thoughts", track: "Rock The House", path: "../../../samples/hardcore/newbeat9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHardcore = $('.buttons-hardcore');
 
-                $('.buttons-hardcore').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHardcore.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHardcore.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hardcore-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hardcore').removeClass('clicked');
+                    $buttonsHardcore.removeClass('clicked');
                 }
             });
         </script>

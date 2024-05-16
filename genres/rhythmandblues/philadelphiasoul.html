@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "MFSB",
-                        track: "Love Is The Message",
-                        path: "../../samples/rhythmandblues/philadelphiasoul1.ogg"
-                    },
-                    {
-                        artist: "The Three Degrees",
-                        track: "Dirty Ol' Man",
-                        path: "../../samples/rhythmandblues/philadelphiasoul2.ogg"
-                    },
-                    {
-                        artist: "The O'Jays",
-                        track: "I Love Music",
-                        path: "../../samples/rhythmandblues/philadelphiasoul3.ogg"
-                    },
-                    {
-                        artist: "Barry White",
-                        track: "Let The Music Play",
-                        path: "../../samples/rhythmandblues/philadelphiasoul4.ogg"
-                    },
-                    {
-                        artist: "The Philadelphia International All-Stars",
-                        track: "Let's Clean Up The Ghetto",
-                        path: "../../samples/rhythmandblues/philadelphiasoul5.ogg"
-                    },
-                    {
-                        artist: "The Spinners",
-                        track: "Working My Way Back To You",
-                        path: "../../samples/rhythmandblues/philadelphiasoul6.ogg"
-                    },
-                    {
-                        artist: "Loleatta Holloway",
-                        track: "Love Sensation",
-                        path: "../../samples/rhythmandblues/philadelphiasoul7.ogg"
-                    },
-                    {
-                        artist: "The Delfonics",
-                        track: "Ready Or Not Here I Come (Can't Hide From Love)",
-                        path: "../../samples/rhythmandblues/philadelphiasoul8.ogg"
-                    },
-                    {
-                        artist: "Lou Rawls",
-                        track: "You'll Never Find Another Love Like Mine",
-                        path: "../../samples/rhythmandblues/philadelphiasoul9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "MFSB", track: "Love Is The Message", path: "../../samples/rhythmandblues/philadelphiasoul1.ogg" },
+                    { artist: "The Three Degrees", track: "Dirty Ol' Man", path: "../../samples/rhythmandblues/philadelphiasoul2.ogg" },
+                    { artist: "The O'Jays", track: "I Love Music", path: "../../samples/rhythmandblues/philadelphiasoul3.ogg" },
+                    { artist: "Barry White", track: "Let The Music Play", path: "../../samples/rhythmandblues/philadelphiasoul4.ogg" },
+                    { artist: "The Philadelphia International All-Stars", track: "Let's Clean Up The Ghetto", path: "../../samples/rhythmandblues/philadelphiasoul5.ogg" },
+                    { artist: "The Spinners", track: "Working My Way Back To You", path: "../../samples/rhythmandblues/philadelphiasoul6.ogg" },
+                    { artist: "Loleatta Holloway", track: "Love Sensation", path: "../../samples/rhythmandblues/philadelphiasoul7.ogg" },
+                    { artist: "The Delfonics", track: "Ready Or Not Here I Come (Can't Hide From Love)", path: "../../samples/rhythmandblues/philadelphiasoul8.ogg" },
+                    { artist: "Lou Rawls", track: "You'll Never Find Another Love Like Mine", path: "../../samples/rhythmandblues/philadelphiasoul9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRhythmandblues = $('.buttons-rhythmandblues');
 
-                $('.buttons-rhythmandblues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRhythmandblues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRhythmandblues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rhythmandblues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rhythmandblues').removeClass('clicked');
+                    $buttonsRhythmandblues.removeClass('clicked');
                 }
             });
         </script>

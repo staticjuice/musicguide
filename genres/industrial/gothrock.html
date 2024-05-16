@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Sisters Of Mercy",
-                        track: "This Corrosion",
-                        path: "../../samples/industrial/gothrock1.ogg"
-                    },
-                    {
-                        artist: "Bauhaus",
-                        track: "Dancing",
-                        path: "../../samples/industrial/gothrock2.ogg"
-                    },
-                    {
-                        artist: "The Danse Society",
-                        track: "Heaven Is Waiting",
-                        path: "../../samples/industrial/gothrock3.ogg"
-                    },
-                    {
-                        artist: "Fields Of The Nephilim",
-                        track: "Moonchild",
-                        path: "../../samples/industrial/gothrock4.ogg"
-                    },
-                    {
-                        artist: "Siouxsie And The Banshees",
-                        track: "Cities In Dust",
-                        path: "../../samples/industrial/gothrock5.ogg"
-                    },
-                    {
-                        artist: "The Mission",
-                        track: "Wasteland",
-                        path: "../../samples/industrial/gothrock6.ogg"
-                    },
-                    {
-                        artist: "Christian Death",
-                        track: "Church Of No Return",
-                        path: "../../samples/industrial/gothrock7.ogg"
-                    },
-                    {
-                        artist: "Asylum Party",
-                        track: "The Sabbath",
-                        path: "../../samples/industrial/gothrock8.ogg"
-                    },
-                    {
-                        artist: "Echo & The Bunnymen",
-                        track: "Lips Like Sugar",
-                        path: "../../samples/industrial/gothrock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Sisters Of Mercy", track: "This Corrosion", path: "../../samples/industrial/gothrock1.ogg" },
+                    { artist: "Bauhaus", track: "Dancing", path: "../../samples/industrial/gothrock2.ogg" },
+                    { artist: "The Danse Society", track: "Heaven Is Waiting", path: "../../samples/industrial/gothrock3.ogg" },
+                    { artist: "Fields Of The Nephilim", track: "Moonchild", path: "../../samples/industrial/gothrock4.ogg" },
+                    { artist: "Siouxsie And The Banshees", track: "Cities In Dust", path: "../../samples/industrial/gothrock5.ogg" },
+                    { artist: "The Mission", track: "Wasteland", path: "../../samples/industrial/gothrock6.ogg" },
+                    { artist: "Christian Death", track: "Church Of No Return", path: "../../samples/industrial/gothrock7.ogg" },
+                    { artist: "Asylum Party", track: "The Sabbath", path: "../../samples/industrial/gothrock8.ogg" },
+                    { artist: "Echo & The Bunnymen", track: "Lips Like Sugar", path: "../../samples/industrial/gothrock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndustrial = $('.buttons-industrial');
 
-                $('.buttons-industrial').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndustrial.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndustrial.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-industrial-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-industrial').removeClass('clicked');
+                    $buttonsIndustrial.removeClass('clicked');
                 }
             });
         </script>

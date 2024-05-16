@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Lucas & Steve x Mike Williams x Curbi",
-                        track: "Let's Go",
-                        path: "../../../samples/house/futurehouse1.ogg"
-                    },
-                    {
-                        artist: "Alesso feat. Sirena",
-                        track: "Sweet Escape (Pep & Rash Remix)",
-                        path: "../../../samples/house/futurehouse2.ogg"
-                    },
-                    {
-                        artist: "Pep & Rash x Lucas & Steve",
-                        track: "Enigma",
-                        path: "../../../samples/house/futurehouse3.ogg"
-                    },
-                    {
-                        artist: "Oliver Heldens & Throttle",
-                        track: "Waiting",
-                        path: "../../../samples/house/futurehouse4.ogg"
-                    },
-                    {
-                        artist: "Don Diablo",
-                        track: "Save A Little Love",
-                        path: "../../../samples/house/futurehouse5.ogg"
-                    },
-                    {
-                        artist: "Swanky Tunes & Going Deeper",
-                        track: "Far From Home",
-                        path: "../../../samples/house/futurehouse6.ogg"
-                    },
-                    {
-                        artist: "Tchami feat. Stacy Barthe",
-                        track: "After Life",
-                        path: "../../../samples/house/futurehouse7.ogg"
-                    },
-                    {
-                        artist: "Mike Williams",
-                        track: "The Beat",
-                        path: "../../../samples/house/futurehouse8.ogg"
-                    },
-                    {
-                        artist: "Sam Feldt x Lush & Simon feat. INNA",
-                        track: "Fade Away (Calvo Remix)",
-                        path: "../../../samples/house/futurehouse9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Lucas & Steve x Mike Williams x Curbi", track: "Let's Go", path: "../../../samples/house/futurehouse1.ogg" },
+                    { artist: "Alesso feat. Sirena", track: "Sweet Escape (Pep & Rash Remix)", path: "../../../samples/house/futurehouse2.ogg" },
+                    { artist: "Pep & Rash x Lucas & Steve", track: "Enigma", path: "../../../samples/house/futurehouse3.ogg" },
+                    { artist: "Oliver Heldens & Throttle", track: "Waiting", path: "../../../samples/house/futurehouse4.ogg" },
+                    { artist: "Don Diablo", track: "Save A Little Love", path: "../../../samples/house/futurehouse5.ogg" },
+                    { artist: "Swanky Tunes & Going Deeper", track: "Far From Home", path: "../../../samples/house/futurehouse6.ogg" },
+                    { artist: "Tchami feat. Stacy Barthe", track: "After Life", path: "../../../samples/house/futurehouse7.ogg" },
+                    { artist: "Mike Williams", track: "The Beat", path: "../../../samples/house/futurehouse8.ogg" },
+                    { artist: "Sam Feldt x Lush & Simon feat. INNA", track: "Fade Away (Calvo Remix)", path: "../../../samples/house/futurehouse9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHouse = $('.buttons-house');
 
-                $('.buttons-house').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHouse.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHouse.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-house-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-house').removeClass('clicked');
+                    $buttonsHouse.removeClass('clicked');
                 }
             });
         </script>

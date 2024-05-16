@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Blondie",
-                        track: "Heart Of Glass",
-                        path: "../../../samples/punk/newwave1.ogg"
-                    },
-                    {
-                        artist: "Talking Heads",
-                        track: "Once In A Lifetime",
-                        path: "../../../samples/punk/newwave2.ogg"
-                    },
-                    {
-                        artist: "Adam And The Ants",
-                        track: "Stand And Deliver",
-                        path: "../../../samples/punk/newwave3.ogg"
-                    },
-                    {
-                        artist: "The Stranglers",
-                        track: "Peaches",
-                        path: "../../../samples/punk/newwave4.ogg"
-                    },
-                    {
-                        artist: "The B-52's",
-                        track: "Mesopotamia",
-                        path: "../../../samples/punk/newwave5.ogg"
-                    },
-                    {
-                        artist: "Devo",
-                        track: "Mongoloid",
-                        path: "../../../samples/punk/newwave6.ogg"
-                    },
-                    {
-                        artist: "The Police",
-                        track: "Roxanne",
-                        path: "../../../samples/punk/newwave7.ogg"
-                    },
-                    {
-                        artist: "Thomas Dolby",
-                        track: "Hyperactive!",
-                        path: "../../../samples/punk/newwave8.ogg"
-                    },
-                    {
-                        artist: "The Teardrop Explodes",
-                        track: "Reward",
-                        path: "../../../samples/punk/newwave9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Blondie", track: "Heart Of Glass", path: "../../../samples/punk/newwave1.ogg" },
+                    { artist: "Talking Heads", track: "Once In A Lifetime", path: "../../../samples/punk/newwave2.ogg" },
+                    { artist: "Adam And The Ants", track: "Stand And Deliver", path: "../../../samples/punk/newwave3.ogg" },
+                    { artist: "The Stranglers", track: "Peaches", path: "../../../samples/punk/newwave4.ogg" },
+                    { artist: "The B-52's", track: "Mesopotamia", path: "../../../samples/punk/newwave5.ogg" },
+                    { artist: "Devo", track: "Mongoloid", path: "../../../samples/punk/newwave6.ogg" },
+                    { artist: "The Police", track: "Roxanne", path: "../../../samples/punk/newwave7.ogg" },
+                    { artist: "Thomas Dolby", track: "Hyperactive!", path: "../../../samples/punk/newwave8.ogg" },
+                    { artist: "The Teardrop Explodes", track: "Reward", path: "../../../samples/punk/newwave9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsPunk = $('.buttons-punk');
 
-                $('.buttons-punk').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsPunk.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsPunk.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-punk-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-punk').removeClass('clicked');
+                    $buttonsPunk.removeClass('clicked');
                 }
             });
         </script>

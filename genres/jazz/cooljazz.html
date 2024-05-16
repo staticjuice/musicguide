@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Dave Brubeck Quartet",
-                        track: "Take Five",
-                        path: "../../samples/jazz/cooljazz1.ogg"
-                    },
-                    {
-                        artist: "Chet Baker",
-                        track: "But Not For Me",
-                        path: "../../samples/jazz/cooljazz2.ogg"
-                    },
-                    {
-                        artist: "Stan Getz Quintet & Jimmy Raney",
-                        track: "Autumn Leaves",
-                        path: "../../samples/jazz/cooljazz3.ogg"
-                    },
-                    {
-                        artist: "Miles Davis",
-                        track: "Rouge",
-                        path: "../../samples/jazz/cooljazz4.ogg"
-                    },
-                    {
-                        artist: "The Modern Jazz Quartet",
-                        track: "Softly, As In A Morning Sunrise",
-                        path: "../../samples/jazz/cooljazz5.ogg"
-                    },
-                    {
-                        artist: "The Art Farmer Quartet feat. Jim Hall",
-                        track: "Sometime Ago",
-                        path: "../../samples/jazz/cooljazz6.ogg"
-                    },
-                    {
-                        artist: "George Shearing",
-                        track: "Have You Met Miss Jones?",
-                        path: "../../samples/jazz/cooljazz7.ogg"
-                    },
-                    {
-                        artist: "Chico Hamilton",
-                        track: "Beanstalk",
-                        path: "../../samples/jazz/cooljazz8.ogg"
-                    },
-                    {
-                        artist: "Gerry Mulligan Sextet",
-                        track: "Night Lights",
-                        path: "../../samples/jazz/cooljazz9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Dave Brubeck Quartet", track: "Take Five", path: "../../samples/jazz/cooljazz1.ogg" },
+                    { artist: "Chet Baker", track: "But Not For Me", path: "../../samples/jazz/cooljazz2.ogg" },
+                    { artist: "Stan Getz Quintet & Jimmy Raney", track: "Autumn Leaves", path: "../../samples/jazz/cooljazz3.ogg" },
+                    { artist: "Miles Davis", track: "Rouge", path: "../../samples/jazz/cooljazz4.ogg" },
+                    { artist: "The Modern Jazz Quartet", track: "Softly, As In A Morning Sunrise", path: "../../samples/jazz/cooljazz5.ogg" },
+                    { artist: "The Art Farmer Quartet feat. Jim Hall", track: "Sometime Ago", path: "../../samples/jazz/cooljazz6.ogg" },
+                    { artist: "George Shearing", track: "Have You Met Miss Jones?", path: "../../samples/jazz/cooljazz7.ogg" },
+                    { artist: "Chico Hamilton", track: "Beanstalk", path: "../../samples/jazz/cooljazz8.ogg" },
+                    { artist: "Gerry Mulligan Sextet", track: "Night Lights", path: "../../samples/jazz/cooljazz9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsJazz = $('.buttons-jazz');
 
-                $('.buttons-jazz').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsJazz.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsJazz.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-jazz-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-jazz').removeClass('clicked');
+                    $buttonsJazz.removeClass('clicked');
                 }
             });
         </script>

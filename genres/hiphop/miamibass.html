@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "DJ Magic Mike",
-                        track: "You Want Bass",
-                        path: "../../samples/hiphop/miamibass1.ogg"
-                    },
-                    {
-                        artist: "69 Boyz",
-                        track: "Hoop In Yo Face",
-                        path: "../../samples/hiphop/miamibass2.ogg"
-                    },
-                    {
-                        artist: "Quad City DJs",
-                        track: "Space Jam",
-                        path: "../../samples/hiphop/miamibass3.ogg"
-                    },
-                    {
-                        artist: "95 South",
-                        track: "Whoot, There It Is",
-                        path: "../../samples/hiphop/miamibass4.ogg"
-                    },
-                    {
-                        artist: "24K feat. K-Nock",
-                        track: "Teenie Weenie",
-                        path: "../../samples/hiphop/miamibass5.ogg"
-                    },
-                    {
-                        artist: "Uncle Al",
-                        track: "Slip 'N' Slide",
-                        path: "../../samples/hiphop/miamibass6.ogg"
-                    },
-                    {
-                        artist: "Bass Tribe feat. 2 BMF",
-                        track: "Dance Like A Freak",
-                        path: "../../samples/hiphop/miamibass7.ogg"
-                    },
-                    {
-                        artist: "Sir Mix-A-Lot",
-                        track: "Baby Got Back",
-                        path: "../../samples/hiphop/miamibass8.ogg"
-                    },
-                    {
-                        artist: "Baha Men",
-                        track: "Who Let The Dogs Out",
-                        path: "../../samples/hiphop/miamibass9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "DJ Magic Mike", track: "You Want Bass", path: "../../samples/hiphop/miamibass1.ogg" },
+                    { artist: "69 Boyz", track: "Hoop In Yo Face", path: "../../samples/hiphop/miamibass2.ogg" },
+                    { artist: "Quad City DJs", track: "Space Jam", path: "../../samples/hiphop/miamibass3.ogg" },
+                    { artist: "95 South", track: "Whoot, There It Is", path: "../../samples/hiphop/miamibass4.ogg" },
+                    { artist: "24K feat. K-Nock", track: "Teenie Weenie", path: "../../samples/hiphop/miamibass5.ogg" },
+                    { artist: "Uncle Al", track: "Slip 'N' Slide", path: "../../samples/hiphop/miamibass6.ogg" },
+                    { artist: "Bass Tribe feat. 2 BMF", track: "Dance Like A Freak", path: "../../samples/hiphop/miamibass7.ogg" },
+                    { artist: "Sir Mix-A-Lot", track: "Baby Got Back", path: "../../samples/hiphop/miamibass8.ogg" },
+                    { artist: "Baha Men", track: "Who Let The Dogs Out", path: "../../samples/hiphop/miamibass9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHiphop = $('.buttons-hiphop');
 
-                $('.buttons-hiphop').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHiphop.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHiphop.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hiphop-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hiphop').removeClass('clicked');
+                    $buttonsHiphop.removeClass('clicked');
                 }
             });
         </script>

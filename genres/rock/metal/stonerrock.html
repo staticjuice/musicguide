@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Monster Magnet",
-                        track: "Superjudge",
-                        path: "../../../samples/metal/stonerrock1.ogg"
-                    },
-                    {
-                        artist: "Kyuss",
-                        track: "Demon Cleaner",
-                        path: "../../../samples/metal/stonerrock2.ogg"
-                    },
-                    {
-                        artist: "Orange Goblin",
-                        track: "Shine",
-                        path: "../../../samples/metal/stonerrock3.ogg"
-                    },
-                    {
-                        artist: "Spirit Caravan",
-                        track: "Lost Sun Dance",
-                        path: "../../../samples/metal/stonerrock4.ogg"
-                    },
-                    {
-                        artist: "The Sword",
-                        track: "Freya",
-                        path: "../../../samples/metal/stonerrock5.ogg"
-                    },
-                    {
-                        artist: "Bongzilla",
-                        track: "Grim Reefer",
-                        path: "../../../samples/metal/stonerrock6.ogg"
-                    },
-                    {
-                        artist: "Kylesa",
-                        track: "Unspoken",
-                        path: "../../../samples/metal/stonerrock7.ogg"
-                    },
-                    {
-                        artist: "Mastodon",
-                        track: "The Motherload",
-                        path: "../../../samples/metal/stonerrock8.ogg"
-                    },
-                    {
-                        artist: "Baroness",
-                        track: "Take My Bones Away",
-                        path: "../../../samples/metal/stonerrock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Monster Magnet", track: "Superjudge", path: "../../../samples/metal/stonerrock1.ogg" },
+                    { artist: "Kyuss", track: "Demon Cleaner", path: "../../../samples/metal/stonerrock2.ogg" },
+                    { artist: "Orange Goblin", track: "Shine", path: "../../../samples/metal/stonerrock3.ogg" },
+                    { artist: "Spirit Caravan", track: "Lost Sun Dance", path: "../../../samples/metal/stonerrock4.ogg" },
+                    { artist: "The Sword", track: "Freya", path: "../../../samples/metal/stonerrock5.ogg" },
+                    { artist: "Bongzilla", track: "Grim Reefer", path: "../../../samples/metal/stonerrock6.ogg" },
+                    { artist: "Kylesa", track: "Unspoken", path: "../../../samples/metal/stonerrock7.ogg" },
+                    { artist: "Mastodon", track: "The Motherload", path: "../../../samples/metal/stonerrock8.ogg" },
+                    { artist: "Baroness", track: "Take My Bones Away", path: "../../../samples/metal/stonerrock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsMetal = $('.buttons-metal');
 
-                $('.buttons-metal').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsMetal.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsMetal.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-metal-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-metal').removeClass('clicked');
+                    $buttonsMetal.removeClass('clicked');
                 }
             });
         </script>

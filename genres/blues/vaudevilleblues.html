@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Mamie Smith",
-                        track: "Crazy Blues",
-                        path: "../../samples/blues/vaudevilleblues1.ogg"
-                    },
-                    {
-                        artist: "Alberta Hunter",
-                        track: "My Castle's Rockin'",
-                        path: "../../samples/blues/vaudevilleblues2.ogg"
-                    },
-                    {
-                        artist: "Bessie Smith",
-                        track: "I Need A Little Sugar In My Bowl",
-                        path: "../../samples/blues/vaudevilleblues3.ogg"
-                    },
-                    {
-                        artist: "Ma Rainey",
-                        track: "Booze And Blues",
-                        path: "../../samples/blues/vaudevilleblues4.ogg"
-                    },
-                    {
-                        artist: "Lucille Bogan",
-                        track: "Shave 'Em Dry II",
-                        path: "../../samples/blues/vaudevilleblues5.ogg"
-                    },
-                    {
-                        artist: "Ida Cox",
-                        track: "Ida Cox's Lawdy, Lawdy Blues",
-                        path: "../../samples/blues/vaudevilleblues6.ogg"
-                    },
-                    {
-                        artist: "Alice Leslie Carter",
-                        track: "You'll Think Of Me Blues",
-                        path: "../../samples/blues/vaudevilleblues7.ogg"
-                    },
-                    {
-                        artist: "Martha Copeland",
-                        track: "Everybody Does It Now",
-                        path: "../../samples/blues/vaudevilleblues8.ogg"
-                    },
-                    {
-                        artist: "Clara Smith",
-                        track: "Sobbin' Sister Blues",
-                        path: "../../samples/blues/vaudevilleblues9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Mamie Smith", track: "Crazy Blues", path: "../../samples/blues/vaudevilleblues1.ogg" },
+                    { artist: "Alberta Hunter", track: "My Castle's Rockin'", path: "../../samples/blues/vaudevilleblues2.ogg" },
+                    { artist: "Bessie Smith", track: "I Need A Little Sugar In My Bowl", path: "../../samples/blues/vaudevilleblues3.ogg" },
+                    { artist: "Ma Rainey", track: "Booze And Blues", path: "../../samples/blues/vaudevilleblues4.ogg" },
+                    { artist: "Lucille Bogan", track: "Shave 'Em Dry II", path: "../../samples/blues/vaudevilleblues5.ogg" },
+                    { artist: "Ida Cox", track: "Ida Cox's Lawdy, Lawdy Blues", path: "../../samples/blues/vaudevilleblues6.ogg" },
+                    { artist: "Alice Leslie Carter", track: "You'll Think Of Me Blues", path: "../../samples/blues/vaudevilleblues7.ogg" },
+                    { artist: "Martha Copeland", track: "Everybody Does It Now", path: "../../samples/blues/vaudevilleblues8.ogg" },
+                    { artist: "Clara Smith", track: "Sobbin' Sister Blues", path: "../../samples/blues/vaudevilleblues9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBlues = $('.buttons-blues');
 
-                $('.buttons-blues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBlues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBlues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-blues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-blues').removeClass('clicked');
+                    $buttonsBlues.removeClass('clicked');
                 }
             });
         </script>

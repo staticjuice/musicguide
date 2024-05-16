@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Front 242",
-                        track: "Motion",
-                        path: "../../samples/industrial/ebm1.ogg"
-                    },
-                    {
-                        artist: "Assemblage 23",
-                        track: "Love My Way",
-                        path: "../../samples/industrial/ebm2.ogg"
-                    },
-                    {
-                        artist: "Front Line Assembly",
-                        track: "Mindphaser",
-                        path: "../../samples/industrial/ebm3.ogg"
-                    },
-                    {
-                        artist: "Bigod 20",
-                        track: "America",
-                        path: "../../samples/industrial/ebm4.ogg"
-                    },
-                    {
-                        artist: "Cyberaktif",
-                        track: "Black & White",
-                        path: "../../samples/industrial/ebm5.ogg"
-                    },
-                    {
-                        artist: "Electric Hellfire Club",
-                        track: "Incubus (Leather Strip Remix)",
-                        path: "../../samples/industrial/ebm6.ogg"
-                    },
-                    {
-                        artist: "Skinny Puppy",
-                        track: "Assimilate",
-                        path: "../../samples/industrial/ebm7.ogg"
-                    },
-                    {
-                        artist: "And One",
-                        track: "Techno Man",
-                        path: "../../samples/industrial/ebm8.ogg"
-                    },
-                    {
-                        artist: "Cabaret Voltaire",
-                        track: "Sensoria",
-                        path: "../../samples/industrial/ebm9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Front 242", track: "Motion", path: "../../samples/industrial/ebm1.ogg" },
+                    { artist: "Assemblage 23", track: "Love My Way", path: "../../samples/industrial/ebm2.ogg" },
+                    { artist: "Front Line Assembly", track: "Mindphaser", path: "../../samples/industrial/ebm3.ogg" },
+                    { artist: "Bigod 20", track: "America", path: "../../samples/industrial/ebm4.ogg" },
+                    { artist: "Cyberaktif", track: "Black & White", path: "../../samples/industrial/ebm5.ogg" },
+                    { artist: "Electric Hellfire Club", track: "Incubus (Leather Strip Remix)", path: "../../samples/industrial/ebm6.ogg" },
+                    { artist: "Skinny Puppy", track: "Assimilate", path: "../../samples/industrial/ebm7.ogg" },
+                    { artist: "And One", track: "Techno Man", path: "../../samples/industrial/ebm8.ogg" },
+                    { artist: "Cabaret Voltaire", track: "Sensoria", path: "../../samples/industrial/ebm9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndustrial = $('.buttons-industrial');
 
-                $('.buttons-industrial').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndustrial.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndustrial.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-industrial-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-industrial').removeClass('clicked');
+                    $buttonsIndustrial.removeClass('clicked');
                 }
             });
         </script>

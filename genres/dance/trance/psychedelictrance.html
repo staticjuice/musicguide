@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Earthling",
-                        track: "Star Bus",
-                        path: "../../../samples/trance/psychedelictrance1.ogg"
-                    },
-                    {
-                        artist: "Penta",
-                        track: "Time Jump",
-                        path: "../../../samples/trance/psychedelictrance2.ogg"
-                    },
-                    {
-                        artist: "GMS vs Alien Project",
-                        track: "One Good",
-                        path: "../../../samples/trance/psychedelictrance3.ogg"
-                    },
-                    {
-                        artist: "Astral Projection",
-                        track: "Mahadeva",
-                        path: "../../../samples/trance/psychedelictrance4.ogg"
-                    },
-                    {
-                        artist: "Shakta",
-                        track: "Lepton Head (Deedrah Remix)",
-                        path: "../../../samples/trance/psychedelictrance5.ogg"
-                    },
-                    {
-                        artist: "Koxbox",
-                        track: "Geomancer 2004",
-                        path: "../../../samples/trance/psychedelictrance6.ogg"
-                    },
-                    {
-                        artist: "Kindzadza",
-                        track: "Keep It Clean",
-                        path: "../../../samples/trance/psychedelictrance7.ogg"
-                    },
-                    {
-                        artist: "Infected Mushroom",
-                        track: "Acid Killer",
-                        path: "../../../samples/trance/psychedelictrance8.ogg"
-                    },
-                    {
-                        artist: "1200 Micrograms",
-                        track: "Marijuana",
-                        path: "../../../samples/trance/psychedelictrance9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Earthling", track: "Star Bus", path: "../../../samples/trance/psychedelictrance1.ogg" },
+                    { artist: "Penta", track: "Time Jump", path: "../../../samples/trance/psychedelictrance2.ogg" },
+                    { artist: "GMS vs Alien Project", track: "One Good", path: "../../../samples/trance/psychedelictrance3.ogg" },
+                    { artist: "Astral Projection", track: "Mahadeva", path: "../../../samples/trance/psychedelictrance4.ogg" },
+                    { artist: "Shakta", track: "Lepton Head (Deedrah Remix)", path: "../../../samples/trance/psychedelictrance5.ogg" },
+                    { artist: "Koxbox", track: "Geomancer 2004", path: "../../../samples/trance/psychedelictrance6.ogg" },
+                    { artist: "Kindzadza", track: "Keep It Clean", path: "../../../samples/trance/psychedelictrance7.ogg" },
+                    { artist: "Infected Mushroom", track: "Acid Killer", path: "../../../samples/trance/psychedelictrance8.ogg" },
+                    { artist: "1200 Micrograms", track: "Marijuana", path: "../../../samples/trance/psychedelictrance9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsTrance = $('.buttons-trance');
 
-                $('.buttons-trance').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsTrance.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsTrance.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-trance-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-trance').removeClass('clicked');
+                    $buttonsTrance.removeClass('clicked');
                 }
             });
         </script>

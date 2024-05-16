@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The White Stripes",
-                        track: "Seven Nation Army",
-                        path: "../../../samples/indie/garagerockrevival1.ogg"
-                    },
-                    {
-                        artist: "The Strokes",
-                        track: "Juicebox",
-                        path: "../../../samples/indie/garagerockrevival2.ogg"
-                    },
-                    {
-                        artist: "The Black Keys",
-                        track: "Lonely Boy",
-                        path: "../../../samples/indie/garagerockrevival3.ogg"
-                    },
-                    {
-                        artist: "The Hives",
-                        track: "Tick Tick Boom",
-                        path: "../../../samples/indie/garagerockrevival4.ogg"
-                    },
-                    {
-                        artist: "The Libertines",
-                        track: "Can't Stand Me Now",
-                        path: "../../../samples/indie/garagerockrevival5.ogg"
-                    },
-                    {
-                        artist: "Arctic Monkeys",
-                        track: "Don't Sit Down 'Cause I've Moved Your Chair",
-                        path: "../../../samples/indie/garagerockrevival6.ogg"
-                    },
-                    {
-                        artist: "Spring King",
-                        track: "City",
-                        path: "../../../samples/indie/garagerockrevival7.ogg"
-                    },
-                    {
-                        artist: "Interpol",
-                        track: "Obstacle 1",
-                        path: "../../../samples/indie/garagerockrevival8.ogg"
-                    },
-                    {
-                        artist: "The Killers",
-                        track: "Mr. Brightside",
-                        path: "../../../samples/indie/garagerockrevival9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The White Stripes", track: "Seven Nation Army", path: "../../../samples/indie/garagerockrevival1.ogg" },
+                    { artist: "The Strokes", track: "Juicebox", path: "../../../samples/indie/garagerockrevival2.ogg" },
+                    { artist: "The Black Keys", track: "Lonely Boy", path: "../../../samples/indie/garagerockrevival3.ogg" },
+                    { artist: "The Hives", track: "Tick Tick Boom", path: "../../../samples/indie/garagerockrevival4.ogg" },
+                    { artist: "The Libertines", track: "Can't Stand Me Now", path: "../../../samples/indie/garagerockrevival5.ogg" },
+                    { artist: "Arctic Monkeys", track: "Don't Sit Down 'Cause I've Moved Your Chair", path: "../../../samples/indie/garagerockrevival6.ogg" },
+                    { artist: "Spring King", track: "City", path: "../../../samples/indie/garagerockrevival7.ogg" },
+                    { artist: "Interpol", track: "Obstacle 1", path: "../../../samples/indie/garagerockrevival8.ogg" },
+                    { artist: "The Killers", track: "Mr. Brightside", path: "../../../samples/indie/garagerockrevival9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndie = $('.buttons-indie');
 
-                $('.buttons-indie').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndie.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndie.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-indie-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-indie').removeClass('clicked');
+                    $buttonsIndie.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "T-Bone Walker",
-                        track: "Call It Stormy Monday (But Tuesday Is Just As Bad)",
-                        path: "../../samples/blues/westcoastblues1.ogg"
-                    },
-                    {
-                        artist: "Amos Milburn",
-                        track: "One Scotch, One Bourbon, One Beer",
-                        path: "../../samples/blues/westcoastblues2.ogg"
-                    },
-                    {
-                        artist: "Pee Wee Crayton",
-                        track: "The Telephone Is Ringing",
-                        path: "../../samples/blues/westcoastblues3.ogg"
-                    },
-                    {
-                        artist: "Percy Mayfield",
-                        track: "Please Send Me Someone To Love",
-                        path: "../../samples/blues/westcoastblues4.ogg"
-                    },
-                    {
-                        artist: "Lowell Fulson",
-                        track: "Black Nights",
-                        path: "../../samples/blues/westcoastblues5.ogg"
-                    },
-                    {
-                        artist: "Little Willie Littlefield",
-                        track: "K.C. Loving",
-                        path: "../../samples/blues/westcoastblues6.ogg"
-                    },
-                    {
-                        artist: "Ivory Joe Hunter",
-                        track: "Since I Met You Baby",
-                        path: "../../samples/blues/westcoastblues7.ogg"
-                    },
-                    {
-                        artist: "Charles Brown",
-                        track: "These Blues",
-                        path: "../../samples/blues/westcoastblues8.ogg"
-                    },
-                    {
-                        artist: "J.J. Malone",
-                        track: "Louisiana Blues",
-                        path: "../../samples/blues/westcoastblues9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "T-Bone Walker", track: "Call It Stormy Monday (But Tuesday Is Just As Bad)", path: "../../samples/blues/westcoastblues1.ogg" },
+                    { artist: "Amos Milburn", track: "One Scotch, One Bourbon, One Beer", path: "../../samples/blues/westcoastblues2.ogg" },
+                    { artist: "Pee Wee Crayton", track: "The Telephone Is Ringing", path: "../../samples/blues/westcoastblues3.ogg" },
+                    { artist: "Percy Mayfield", track: "Please Send Me Someone To Love", path: "../../samples/blues/westcoastblues4.ogg" },
+                    { artist: "Lowell Fulson", track: "Black Nights", path: "../../samples/blues/westcoastblues5.ogg" },
+                    { artist: "Little Willie Littlefield", track: "K.C. Loving", path: "../../samples/blues/westcoastblues6.ogg" },
+                    { artist: "Ivory Joe Hunter", track: "Since I Met You Baby", path: "../../samples/blues/westcoastblues7.ogg" },
+                    { artist: "Charles Brown", track: "These Blues", path: "../../samples/blues/westcoastblues8.ogg" },
+                    { artist: "J.J. Malone", track: "Louisiana Blues", path: "../../samples/blues/westcoastblues9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBlues = $('.buttons-blues');
 
-                $('.buttons-blues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBlues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBlues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-blues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-blues').removeClass('clicked');
+                    $buttonsBlues.removeClass('clicked');
                 }
             });
         </script>

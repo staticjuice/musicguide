@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Joy Division",
-                        track: "Love Will Tear Us Apart",
-                        path: "../../../samples/punk/postpunk1.ogg"
-                    },
-                    {
-                        artist: "The Psychedelic Furs",
-                        track: "Pretty In Pink",
-                        path: "../../../samples/punk/postpunk2.ogg"
-                    },
-                    {
-                        artist: "Public Image Ltd",
-                        track: "This Is Not A Love Song",
-                        path: "../../../samples/punk/postpunk3.ogg"
-                    },
-                    {
-                        artist: "Section 25",
-                        track: "Dirty Disco",
-                        path: "../../../samples/punk/postpunk4.ogg"
-                    },
-                    {
-                        artist: "The Fall",
-                        track: "Totally Wired",
-                        path: "../../../samples/punk/postpunk5.ogg"
-                    },
-                    {
-                        artist: "Gang Of Four",
-                        track: "Damaged Goods",
-                        path: "../../../samples/punk/postpunk6.ogg"
-                    },
-                    {
-                        artist: "Echo & The Bunnymen",
-                        track: "Bring On The Dancing Horses",
-                        path: "../../../samples/punk/postpunk7.ogg"
-                    },
-                    {
-                        artist: "Killing Joke",
-                        track: "Love Like Blood",
-                        path: "../../../samples/punk/postpunk8.ogg"
-                    },
-                    {
-                        artist: "Au Pairs",
-                        track: "It's Obvious",
-                        path: "../../../samples/punk/postpunk9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Joy Division", track: "Love Will Tear Us Apart", path: "../../../samples/punk/postpunk1.ogg" },
+                    { artist: "The Psychedelic Furs", track: "Pretty In Pink", path: "../../../samples/punk/postpunk2.ogg" },
+                    { artist: "Public Image Ltd", track: "This Is Not A Love Song", path: "../../../samples/punk/postpunk3.ogg" },
+                    { artist: "Section 25", track: "Dirty Disco", path: "../../../samples/punk/postpunk4.ogg" },
+                    { artist: "The Fall", track: "Totally Wired", path: "../../../samples/punk/postpunk5.ogg" },
+                    { artist: "Gang Of Four", track: "Damaged Goods", path: "../../../samples/punk/postpunk6.ogg" },
+                    { artist: "Echo & The Bunnymen", track: "Bring On The Dancing Horses", path: "../../../samples/punk/postpunk7.ogg" },
+                    { artist: "Killing Joke", track: "Love Like Blood", path: "../../../samples/punk/postpunk8.ogg" },
+                    { artist: "Au Pairs", track: "It's Obvious", path: "../../../samples/punk/postpunk9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsPunk = $('.buttons-punk');
 
-                $('.buttons-punk').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsPunk.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsPunk.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-punk-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-punk').removeClass('clicked');
+                    $buttonsPunk.removeClass('clicked');
                 }
             });
         </script>

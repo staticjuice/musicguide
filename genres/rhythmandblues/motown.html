@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Temptations",
-                        track: "Ain't Too Proud To Beg",
-                        path: "../../samples/rhythmandblues/motown1.ogg"
-                    },
-                    {
-                        artist: "Four Tops",
-                        track: "Reach Out, I'll Be There",
-                        path: "../../samples/rhythmandblues/motown2.ogg"
-                    },
-                    {
-                        artist: "The Velvelettes",
-                        track: "Needle In A Haystack",
-                        path: "../../samples/rhythmandblues/motown3.ogg"
-                    },
-                    {
-                        artist: "Smokey Robinson & The Miracles",
-                        track: "The Tears Of A Clown",
-                        path: "../../samples/rhythmandblues/motown4.ogg"
-                    },
-                    {
-                        artist: "Donny Hathaway",
-                        track: "The Ghetto",
-                        path: "../../samples/rhythmandblues/motown5.ogg"
-                    },
-                    {
-                        artist: "The Supremes",
-                        track: "You Can't Hurry Love",
-                        path: "../../samples/rhythmandblues/motown6.ogg"
-                    },
-                    {
-                        artist: "Frank Wilson",
-                        track: "Do I Love You (Indeed I Do)",
-                        path: "../../samples/rhythmandblues/motown7.ogg"
-                    },
-                    {
-                        artist: "Marvin Gaye & Tammi Terrell",
-                        track: "Ain't No Mountain High Enough",
-                        path: "../../samples/rhythmandblues/motown8.ogg"
-                    },
-                    {
-                        artist: "Stevie Wonder",
-                        track: "For Once In My Life",
-                        path: "../../samples/rhythmandblues/motown9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Temptations", track: "Ain't Too Proud To Beg", path: "../../samples/rhythmandblues/motown1.ogg" },
+                    { artist: "Four Tops", track: "Reach Out, I'll Be There", path: "../../samples/rhythmandblues/motown2.ogg" },
+                    { artist: "The Velvelettes", track: "Needle In A Haystack", path: "../../samples/rhythmandblues/motown3.ogg" },
+                    { artist: "Smokey Robinson & The Miracles", track: "The Tears Of A Clown", path: "../../samples/rhythmandblues/motown4.ogg" },
+                    { artist: "Donny Hathaway", track: "The Ghetto", path: "../../samples/rhythmandblues/motown5.ogg" },
+                    { artist: "The Supremes", track: "You Can't Hurry Love", path: "../../samples/rhythmandblues/motown6.ogg" },
+                    { artist: "Frank Wilson", track: "Do I Love You (Indeed I Do)", path: "../../samples/rhythmandblues/motown7.ogg" },
+                    { artist: "Marvin Gaye & Tammi Terrell", track: "Ain't No Mountain High Enough", path: "../../samples/rhythmandblues/motown8.ogg" },
+                    { artist: "Stevie Wonder", track: "For Once In My Life", path: "../../samples/rhythmandblues/motown9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRhythmandblues = $('.buttons-rhythmandblues');
 
-                $('.buttons-rhythmandblues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRhythmandblues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRhythmandblues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rhythmandblues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rhythmandblues').removeClass('clicked');
+                    $buttonsRhythmandblues.removeClass('clicked');
                 }
             });
         </script>

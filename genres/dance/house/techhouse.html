@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Mark Knight",
-                        track: "The Future",
-                        path: "../../../samples/house/techhouse1.ogg"
-                    },
-                    {
-                        artist: "Gorgon City",
-                        track: "Grooves On The Vinyl",
-                        path: "../../../samples/house/techhouse2.ogg"
-                    },
-                    {
-                        artist: "UMEK",
-                        track: "Double The Lust",
-                        path: "../../../samples/house/techhouse3.ogg"
-                    },
-                    {
-                        artist: "Martin Ikin feat. Hayley May",
-                        track: "How I Feel (Biscits Remix)",
-                        path: "../../../samples/house/techhouse4.ogg"
-                    },
-                    {
-                        artist: "ACRAZE feat. Cherish",
-                        track: "Do It To It",
-                        path: "../../../samples/house/techhouse5.ogg"
-                    },
-                    {
-                        artist: "Gary Caos",
-                        track: "Milk Shake",
-                        path: "../../../samples/house/techhouse6.ogg"
-                    },
-                    {
-                        artist: "Tiga",
-                        track: "Dancing (Again!)",
-                        path: "../../../samples/house/techhouse7.ogg"
-                    },
-                    {
-                        artist: "Hot Since 82",
-                        track: "Veins",
-                        path: "../../../samples/house/techhouse8.ogg"
-                    },
-                    {
-                        artist: "Siwell",
-                        track: "Yoyo",
-                        path: "../../../samples/house/techhouse9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Mark Knight", track: "The Future", path: "../../../samples/house/techhouse1.ogg" },
+                    { artist: "Gorgon City", track: "Grooves On The Vinyl", path: "../../../samples/house/techhouse2.ogg" },
+                    { artist: "UMEK", track: "Double The Lust", path: "../../../samples/house/techhouse3.ogg" },
+                    { artist: "Martin Ikin feat. Hayley May", track: "How I Feel (Biscits Remix)", path: "../../../samples/house/techhouse4.ogg" },
+                    { artist: "ACRAZE feat. Cherish", track: "Do It To It", path: "../../../samples/house/techhouse5.ogg" },
+                    { artist: "Gary Caos", track: "Milk Shake", path: "../../../samples/house/techhouse6.ogg" },
+                    { artist: "Tiga", track: "Dancing (Again!)", path: "../../../samples/house/techhouse7.ogg" },
+                    { artist: "Hot Since 82", track: "Veins", path: "../../../samples/house/techhouse8.ogg" },
+                    { artist: "Siwell", track: "Yoyo", path: "../../../samples/house/techhouse9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHouse = $('.buttons-house');
 
-                $('.buttons-house').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHouse.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHouse.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-house-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-house').removeClass('clicked');
+                    $buttonsHouse.removeClass('clicked');
                 }
             });
         </script>

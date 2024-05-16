@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Hank Williams",
-                        track: "Hey Good Looking",
-                        path: "../../samples/country/honkytonk1.ogg"
-                    },
-                    {
-                        artist: "Johnny Cash",
-                        track: "I Walk The Line",
-                        path: "../../samples/country/honkytonk2.ogg"
-                    },
-                    {
-                        artist: "Ernest Tubb",
-                        track: "Pass The Booze",
-                        path: "../../samples/country/honkytonk3.ogg"
-                    },
-                    {
-                        artist: "Faron Young",
-                        track: "Live Fast, Love Hard, Die Young",
-                        path: "../../samples/country/honkytonk4.ogg"
-                    },
-                    {
-                        artist: "George Jones",
-                        track: "You're Still On My Mind",
-                        path: "../../samples/country/honkytonk5.ogg"
-                    },
-                    {
-                        artist: "Hank Thompson",
-                        track: "Hangover Heart",
-                        path: "../../samples/country/honkytonk6.ogg"
-                    },
-                    {
-                        artist: "Carl Smith",
-                        track: "If Teardrops Were Pennies",
-                        path: "../../samples/country/honkytonk7.ogg"
-                    },
-                    {
-                        artist: "Floyd Tillman",
-                        track: "I Cheated On You",
-                        path: "../../samples/country/honkytonk8.ogg"
-                    },
-                    {
-                        artist: "Kitty Wells",
-                        track: "It Wasn't God Who Made Honky Tonk Angels",
-                        path: "../../samples/country/honkytonk9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Hank Williams", track: "Hey Good Looking", path: "../../samples/country/honkytonk1.ogg" },
+                    { artist: "Johnny Cash", track: "I Walk The Line", path: "../../samples/country/honkytonk2.ogg" },
+                    { artist: "Ernest Tubb", track: "Pass The Booze", path: "../../samples/country/honkytonk3.ogg" },
+                    { artist: "Faron Young", track: "Live Fast, Love Hard, Die Young", path: "../../samples/country/honkytonk4.ogg" },
+                    { artist: "George Jones", track: "You're Still On My Mind", path: "../../samples/country/honkytonk5.ogg" },
+                    { artist: "Hank Thompson", track: "Hangover Heart", path: "../../samples/country/honkytonk6.ogg" },
+                    { artist: "Carl Smith", track: "If Teardrops Were Pennies", path: "../../samples/country/honkytonk7.ogg" },
+                    { artist: "Floyd Tillman", track: "I Cheated On You", path: "../../samples/country/honkytonk8.ogg" },
+                    { artist: "Kitty Wells", track: "It Wasn't God Who Made Honky Tonk Angels", path: "../../samples/country/honkytonk9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsCountry = $('.buttons-country');
 
-                $('.buttons-country').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsCountry.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsCountry.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-country-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-country').removeClass('clicked');
+                    $buttonsCountry.removeClass('clicked');
                 }
             });
         </script>

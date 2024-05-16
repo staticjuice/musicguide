@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Chemical Brothers",
-                        track: "Elektrobank",
-                        path: "../../../samples/breakbeat/bigbeat1.ogg"
-                    },
-                    {
-                        artist: "Fatboy Slim",
-                        track: "Illuminati",
-                        path: "../../../samples/breakbeat/bigbeat2.ogg"
-                    },
-                    {
-                        artist: "The Crystal Method",
-                        track: "Keep Hope Alive",
-                        path: "../../../samples/breakbeat/bigbeat3.ogg"
-                    },
-                    {
-                        artist: "Junkie XL",
-                        track: "Billy Club",
-                        path: "../../../samples/breakbeat/bigbeat4.ogg"
-                    },
-                    {
-                        artist: "The Prodigy",
-                        track: "Smack My Bitch Up",
-                        path: "../../../samples/breakbeat/bigbeat5.ogg"
-                    },
-                    {
-                        artist: "CJ Bolland",
-                        track: "It Ain't Gonna Be Me",
-                        path: "../../../samples/breakbeat/bigbeat6.ogg"
-                    },
-                    {
-                        artist: "Overseer",
-                        track: "Supermoves",
-                        path: "../../../samples/breakbeat/bigbeat7.ogg"
-                    },
-                    {
-                        artist: "Paul Oakenfold",
-                        track: "Ready Steady Go",
-                        path: "../../../samples/breakbeat/bigbeat8.ogg"
-                    },
-                    {
-                        artist: "Lunatic Calm",
-                        track: "Leave You Far Behind",
-                        path: "../../../samples/breakbeat/bigbeat9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Chemical Brothers", track: "Elektrobank", path: "../../../samples/breakbeat/bigbeat1.ogg" },
+                    { artist: "Fatboy Slim", track: "Illuminati", path: "../../../samples/breakbeat/bigbeat2.ogg" },
+                    { artist: "The Crystal Method", track: "Keep Hope Alive", path: "../../../samples/breakbeat/bigbeat3.ogg" },
+                    { artist: "Junkie XL", track: "Billy Club", path: "../../../samples/breakbeat/bigbeat4.ogg" },
+                    { artist: "The Prodigy", track: "Smack My Bitch Up", path: "../../../samples/breakbeat/bigbeat5.ogg" },
+                    { artist: "CJ Bolland", track: "It Ain't Gonna Be Me", path: "../../../samples/breakbeat/bigbeat6.ogg" },
+                    { artist: "Overseer", track: "Supermoves", path: "../../../samples/breakbeat/bigbeat7.ogg" },
+                    { artist: "Paul Oakenfold", track: "Ready Steady Go", path: "../../../samples/breakbeat/bigbeat8.ogg" },
+                    { artist: "Lunatic Calm", track: "Leave You Far Behind", path: "../../../samples/breakbeat/bigbeat9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBreakbeat = $('.buttons-breakbeat');
 
-                $('.buttons-breakbeat').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBreakbeat.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBreakbeat.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-breakbeat-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-breakbeat').removeClass('clicked');
+                    $buttonsBreakbeat.removeClass('clicked');
                 }
             });
         </script>

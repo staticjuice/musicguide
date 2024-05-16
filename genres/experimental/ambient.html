@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Angling Loser",
-                        track: "River Song",
-                        path: "../../samples/experimental/ambient1.ogg"
-                    },
-                    {
-                        artist: "Aglaia",
-                        track: "Seven Ancient Glaciers",
-                        path: "../../samples/experimental/ambient2.ogg"
-                    },
-                    {
-                        artist: "Redshift",
-                        track: "Panzer",
-                        path: "../../samples/experimental/ambient3.ogg"
-                    },
-                    {
-                        artist: "Pete Namlook & Mixmaster Morris",
-                        track: "School Of Fish",
-                        path: "../../samples/experimental/ambient4.ogg"
-                    },
-                    {
-                        artist: "Robert Rich & Steve Roach",
-                        track: "Fearless",
-                        path: "../../samples/experimental/ambient5.ogg"
-                    },
-                    {
-                        artist: "Hammock",
-                        track: "I Can Almost See You",
-                        path: "../../samples/experimental/ambient6.ogg"
-                    },
-                    {
-                        artist: "Cleveland Wehle",
-                        track: "Do Androids Dream?",
-                        path: "../../samples/experimental/ambient7.ogg"
-                    },
-                    {
-                        artist: "Biosphere",
-                        track: "Poa Alpina",
-                        path: "../../samples/experimental/ambient8.ogg"
-                    },
-                    {
-                        artist: "Brian Eno",
-                        track: "Stars",
-                        path: "../../samples/experimental/ambient9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Angling Loser", track: "River Song", path: "../../samples/experimental/ambient1.ogg" },
+                    { artist: "Aglaia", track: "Seven Ancient Glaciers", path: "../../samples/experimental/ambient2.ogg" },
+                    { artist: "Redshift", track: "Panzer", path: "../../samples/experimental/ambient3.ogg" },
+                    { artist: "Pete Namlook & Mixmaster Morris", track: "School Of Fish", path: "../../samples/experimental/ambient4.ogg" },
+                    { artist: "Robert Rich & Steve Roach", track: "Fearless", path: "../../samples/experimental/ambient5.ogg" },
+                    { artist: "Hammock", track: "I Can Almost See You", path: "../../samples/experimental/ambient6.ogg" },
+                    { artist: "Cleveland Wehle", track: "Do Androids Dream?", path: "../../samples/experimental/ambient7.ogg" },
+                    { artist: "Biosphere", track: "Poa Alpina", path: "../../samples/experimental/ambient8.ogg" },
+                    { artist: "Brian Eno", track: "Stars", path: "../../samples/experimental/ambient9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsExperimental = $('.buttons-experimental');
 
-                $('.buttons-experimental').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsExperimental.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsExperimental.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-experimental-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-experimental').removeClass('clicked');
+                    $buttonsExperimental.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Age Of Love",
-                        track: "Age Of Love",
-                        path: "../../../samples/trance/acidtrance1.ogg"
-                    },
-                    {
-                        artist: "Rebel Youth",
-                        track: "Deep Star",
-                        path: "../../../samples/trance/acidtrance2.ogg"
-                    },
-                    {
-                        artist: "Commander Tom",
-                        track: "The Vulcan",
-                        path: "../../../samples/trance/acidtrance3.ogg"
-                    },
-                    {
-                        artist: "Union Jack",
-                        track: "Red Herring",
-                        path: "../../../samples/trance/acidtrance4.ogg"
-                    },
-                    {
-                        artist: "Awex",
-                        track: "It's Our Future",
-                        path: "../../../samples/trance/acidtrance5.ogg"
-                    },
-                    {
-                        artist: "Emmanuel Top",
-                        track: "Acid Phase",
-                        path: "../../../samples/trance/acidtrance6.ogg"
-                    },
-                    {
-                        artist: "Unreal",
-                        track: "After Hours",
-                        path: "../../../samples/trance/acidtrance7.ogg"
-                    },
-                    {
-                        artist: "Spicelab",
-                        track: "Amorph",
-                        path: "../../../samples/trance/acidtrance8.ogg"
-                    },
-                    {
-                        artist: "Underworld",
-                        track: "Thing In A Book",
-                        path: "../../../samples/trance/acidtrance9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Age Of Love", track: "Age Of Love", path: "../../../samples/trance/acidtrance1.ogg" },
+                    { artist: "Rebel Youth", track: "Deep Star", path: "../../../samples/trance/acidtrance2.ogg" },
+                    { artist: "Commander Tom", track: "The Vulcan", path: "../../../samples/trance/acidtrance3.ogg" },
+                    { artist: "Union Jack", track: "Red Herring", path: "../../../samples/trance/acidtrance4.ogg" },
+                    { artist: "Awex", track: "It's Our Future", path: "../../../samples/trance/acidtrance5.ogg" },
+                    { artist: "Emmanuel Top", track: "Acid Phase", path: "../../../samples/trance/acidtrance6.ogg" },
+                    { artist: "Unreal", track: "After Hours", path: "../../../samples/trance/acidtrance7.ogg" },
+                    { artist: "Spicelab", track: "Amorph", path: "../../../samples/trance/acidtrance8.ogg" },
+                    { artist: "Underworld", track: "Thing In A Book", path: "../../../samples/trance/acidtrance9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsTrance = $('.buttons-trance');
 
-                $('.buttons-trance').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsTrance.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsTrance.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-trance-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-trance').removeClass('clicked');
+                    $buttonsTrance.removeClass('clicked');
                 }
             });
         </script>

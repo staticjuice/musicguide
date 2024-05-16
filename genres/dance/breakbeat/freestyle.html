@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Break Machine",
-                        track: "Street Dance",
-                        path: "../../../samples/breakbeat/freestyle1.ogg"
-                    },
-                    {
-                        artist: "Alizée",
-                        track: "Fantasy Love",
-                        path: "../../../samples/breakbeat/freestyle2.ogg"
-                    },
-                    {
-                        artist: "Pretty Poison",
-                        track: "Nightime",
-                        path: "../../../samples/breakbeat/freestyle3.ogg"
-                    },
-                    {
-                        artist: "Lil Suzy",
-                        track: "We'd Always Be Together",
-                        path: "../../../samples/breakbeat/freestyle4.ogg"
-                    },
-                    {
-                        artist: "Shantelle",
-                        track: "Love Attack",
-                        path: "../../../samples/breakbeat/freestyle5.ogg"
-                    },
-                    {
-                        artist: "The Cover Girls",
-                        track: "Don't Stop Now",
-                        path: "../../../samples/breakbeat/freestyle6.ogg"
-                    },
-                    {
-                        artist: "Tribe",
-                        track: "Just You And I",
-                        path: "../../../samples/breakbeat/freestyle7.ogg"
-                    },
-                    {
-                        artist: "Debbie Deb",
-                        track: "I Wanna Dance",
-                        path: "../../../samples/breakbeat/freestyle8.ogg"
-                    },
-                    {
-                        artist: "K5",
-                        track: "Passion",
-                        path: "../../../samples/breakbeat/freestyle9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Break Machine", track: "Street Dance", path: "../../../samples/breakbeat/freestyle1.ogg" },
+                    { artist: "Alizée", track: "Fantasy Love", path: "../../../samples/breakbeat/freestyle2.ogg" },
+                    { artist: "Pretty Poison", track: "Nightime", path: "../../../samples/breakbeat/freestyle3.ogg" },
+                    { artist: "Lil Suzy", track: "We'd Always Be Together", path: "../../../samples/breakbeat/freestyle4.ogg" },
+                    { artist: "Shantelle", track: "Love Attack", path: "../../../samples/breakbeat/freestyle5.ogg" },
+                    { artist: "The Cover Girls", track: "Don't Stop Now", path: "../../../samples/breakbeat/freestyle6.ogg" },
+                    { artist: "Tribe", track: "Just You And I", path: "../../../samples/breakbeat/freestyle7.ogg" },
+                    { artist: "Debbie Deb", track: "I Wanna Dance", path: "../../../samples/breakbeat/freestyle8.ogg" },
+                    { artist: "K5", track: "Passion", path: "../../../samples/breakbeat/freestyle9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBreakbeat = $('.buttons-breakbeat');
 
-                $('.buttons-breakbeat').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBreakbeat.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBreakbeat.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-breakbeat-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-breakbeat').removeClass('clicked');
+                    $buttonsBreakbeat.removeClass('clicked');
                 }
             });
         </script>

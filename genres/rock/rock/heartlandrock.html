@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Survivor",
-                        track: "Eye Of The Tiger",
-                        path: "../../../samples/rock/heartlandrock1.ogg"
-                    },
-                    {
-                        artist: "Boston",
-                        track: "More Than A Feeling",
-                        path: "../../../samples/rock/heartlandrock2.ogg"
-                    },
-                    {
-                        artist: "Journey",
-                        track: "Don't Stop Believin'",
-                        path: "../../../samples/rock/heartlandrock3.ogg"
-                    },
-                    {
-                        artist: "Toto",
-                        track: "Hold The Line",
-                        path: "../../../samples/rock/heartlandrock4.ogg"
-                    },
-                    {
-                        artist: "Heart",
-                        track: "Straight On",
-                        path: "../../../samples/rock/heartlandrock5.ogg"
-                    },
-                    {
-                        artist: "REO Speedwagon",
-                        track: "Can't Fight This Feeling",
-                        path: "../../../samples/rock/heartlandrock6.ogg"
-                    },
-                    {
-                        artist: "John Mellencamp",
-                        track: "Small Town",
-                        path: "../../../samples/rock/heartlandrock7.ogg"
-                    },
-                    {
-                        artist: "Bruce Springsteen",
-                        track: "Born In The U.S.A.",
-                        path: "../../../samples/rock/heartlandrock8.ogg"
-                    },
-                    {
-                        artist: "Tom Petty And The Heartbreakers",
-                        track: "Straight Into Darkness",
-                        path: "../../../samples/rock/heartlandrock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Survivor", track: "Eye Of The Tiger", path: "../../../samples/rock/heartlandrock1.ogg" },
+                    { artist: "Boston", track: "More Than A Feeling", path: "../../../samples/rock/heartlandrock2.ogg" },
+                    { artist: "Journey", track: "Don't Stop Believin'", path: "../../../samples/rock/heartlandrock3.ogg" },
+                    { artist: "Toto", track: "Hold The Line", path: "../../../samples/rock/heartlandrock4.ogg" },
+                    { artist: "Heart", track: "Straight On", path: "../../../samples/rock/heartlandrock5.ogg" },
+                    { artist: "REO Speedwagon", track: "Can't Fight This Feeling", path: "../../../samples/rock/heartlandrock6.ogg" },
+                    { artist: "John Mellencamp", track: "Small Town", path: "../../../samples/rock/heartlandrock7.ogg" },
+                    { artist: "Bruce Springsteen", track: "Born In The U.S.A.", path: "../../../samples/rock/heartlandrock8.ogg" },
+                    { artist: "Tom Petty And The Heartbreakers", track: "Straight Into Darkness", path: "../../../samples/rock/heartlandrock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRock = $('.buttons-rock');
 
-                $('.buttons-rock').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRock.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRock.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rock-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rock').removeClass('clicked');
+                    $buttonsRock.removeClass('clicked');
                 }
             });
         </script>

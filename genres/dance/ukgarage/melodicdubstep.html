@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "MitiS",
-                        track: "Parting",
-                        path: "../../../samples/ukgarage/melodicdubstep1.ogg"
-                    },
-                    {
-                        artist: "Tritonal feat. Cristina Soto",
-                        track: "Still With Me (Seven Lions Remix)",
-                        path: "../../../samples/ukgarage/melodicdubstep2.ogg"
-                    },
-                    {
-                        artist: "Sub.Sound",
-                        track: "Euphoric",
-                        path: "../../../samples/ukgarage/melodicdubstep3.ogg"
-                    },
-                    {
-                        artist: "Trivecta feat. Connor Zwetsch",
-                        track: "Believe",
-                        path: "../../../samples/ukgarage/melodicdubstep4.ogg"
-                    },
-                    {
-                        artist: "Amy Steele",
-                        track: "Bury You Deep (Gemini Remix)",
-                        path: "../../../samples/ukgarage/melodicdubstep5.ogg"
-                    },
-                    {
-                        artist: "Chase & Status feat. Liam Bailey",
-                        track: "Blind Faith",
-                        path: "../../../samples/ukgarage/melodicdubstep6.ogg"
-                    },
-                    {
-                        artist: "Shockline",
-                        track: "Alive",
-                        path: "../../../samples/ukgarage/melodicdubstep7.ogg"
-                    },
-                    {
-                        artist: "Rameses B feat. Meron Ryan",
-                        track: "Underwater",
-                        path: "../../../samples/ukgarage/melodicdubstep8.ogg"
-                    },
-                    {
-                        artist: "Myon & Shane 54 feat. Aruna",
-                        track: "Lights (5vel Remix)",
-                        path: "../../../samples/ukgarage/melodicdubstep9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "MitiS", track: "Parting", path: "../../../samples/ukgarage/melodicdubstep1.ogg" },
+                    { artist: "Tritonal feat. Cristina Soto", track: "Still With Me (Seven Lions Remix)", path: "../../../samples/ukgarage/melodicdubstep2.ogg" },
+                    { artist: "Sub.Sound", track: "Euphoric", path: "../../../samples/ukgarage/melodicdubstep3.ogg" },
+                    { artist: "Trivecta feat. Connor Zwetsch", track: "Believe", path: "../../../samples/ukgarage/melodicdubstep4.ogg" },
+                    { artist: "Amy Steele", track: "Bury You Deep (Gemini Remix)", path: "../../../samples/ukgarage/melodicdubstep5.ogg" },
+                    { artist: "Chase & Status feat. Liam Bailey", track: "Blind Faith", path: "../../../samples/ukgarage/melodicdubstep6.ogg" },
+                    { artist: "Shockline", track: "Alive", path: "../../../samples/ukgarage/melodicdubstep7.ogg" },
+                    { artist: "Rameses B feat. Meron Ryan", track: "Underwater", path: "../../../samples/ukgarage/melodicdubstep8.ogg" },
+                    { artist: "Myon & Shane 54 feat. Aruna", track: "Lights (5vel Remix)", path: "../../../samples/ukgarage/melodicdubstep9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsUkgarage = $('.buttons-ukgarage');
 
-                $('.buttons-ukgarage').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsUkgarage.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsUkgarage.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-ukgarage-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-ukgarage').removeClass('clicked');
+                    $buttonsUkgarage.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Elephant Man",
-                        track: "Nuh Linga",
-                        path: "../../samples/reggae/ragga1.ogg"
-                    },
-                    {
-                        artist: "Beenie Man",
-                        track: "Romie",
-                        path: "../../samples/reggae/ragga2.ogg"
-                    },
-                    {
-                        artist: "Spragga Benz",
-                        track: "Jack It Up",
-                        path: "../../samples/reggae/ragga3.ogg"
-                    },
-                    {
-                        artist: "Bounty Killer",
-                        track: "Dead This Time",
-                        path: "../../samples/reggae/ragga4.ogg"
-                    },
-                    {
-                        artist: "Shabba Ranks",
-                        track: "Ting-A-Ling",
-                        path: "../../samples/reggae/ragga5.ogg"
-                    },
-                    {
-                        artist: "Red Rat",
-                        track: "Tight Up Skirt",
-                        path: "../../samples/reggae/ragga6.ogg"
-                    },
-                    {
-                        artist: "Cutty Ranks",
-                        track: "Limb By Limb",
-                        path: "../../samples/reggae/ragga7.ogg"
-                    },
-                    {
-                        artist: "T.O.K.",
-                        track: "Shake Yuh Bam Bam",
-                        path: "../../samples/reggae/ragga8.ogg"
-                    },
-                    {
-                        artist: "Capleton",
-                        track: "Buggering",
-                        path: "../../samples/reggae/ragga9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Elephant Man", track: "Nuh Linga", path: "../../samples/reggae/ragga1.ogg" },
+                    { artist: "Beenie Man", track: "Romie", path: "../../samples/reggae/ragga2.ogg" },
+                    { artist: "Spragga Benz", track: "Jack It Up", path: "../../samples/reggae/ragga3.ogg" },
+                    { artist: "Bounty Killer", track: "Dead This Time", path: "../../samples/reggae/ragga4.ogg" },
+                    { artist: "Shabba Ranks", track: "Ting-A-Ling", path: "../../samples/reggae/ragga5.ogg" },
+                    { artist: "Red Rat", track: "Tight Up Skirt", path: "../../samples/reggae/ragga6.ogg" },
+                    { artist: "Cutty Ranks", track: "Limb By Limb", path: "../../samples/reggae/ragga7.ogg" },
+                    { artist: "T.O.K.", track: "Shake Yuh Bam Bam", path: "../../samples/reggae/ragga8.ogg" },
+                    { artist: "Capleton", track: "Buggering", path: "../../samples/reggae/ragga9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsReggae = $('.buttons-reggae');
 
-                $('.buttons-reggae').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsReggae.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsReggae.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-reggae-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-reggae').removeClass('clicked');
+                    $buttonsReggae.removeClass('clicked');
                 }
             });
         </script>

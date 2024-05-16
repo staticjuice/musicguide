@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Miles Davis",
-                        track: "So What",
-                        path: "../../samples/jazz/modaljazz1.ogg"
-                    },
-                    {
-                        artist: "Herbie Hancock",
-                        track: "Dolphin Dance",
-                        path: "../../samples/jazz/modaljazz2.ogg"
-                    },
-                    {
-                        artist: "John Coltrane",
-                        track: "Impressions",
-                        path: "../../samples/jazz/modaljazz3.ogg"
-                    },
-                    {
-                        artist: "Wayne Shorter",
-                        track: "Speak No Evil",
-                        path: "../../samples/jazz/modaljazz4.ogg"
-                    },
-                    {
-                        artist: "Joe Henderson",
-                        track: "Blue Bossa",
-                        path: "../../samples/jazz/modaljazz5.ogg"
-                    },
-                    {
-                        artist: "Woody Shaw",
-                        track: "From Moment To Moment",
-                        path: "../../samples/jazz/modaljazz6.ogg"
-                    },
-                    {
-                        artist: "Freddie Hubbard",
-                        track: "Red Clay",
-                        path: "../../samples/jazz/modaljazz7.ogg"
-                    },
-                    {
-                        artist: "McCoy Tyner",
-                        track: "Passion Dance",
-                        path: "../../samples/jazz/modaljazz8.ogg"
-                    },
-                    {
-                        artist: "Bill Evans Trio",
-                        track: "Beautiful Love",
-                        path: "../../samples/jazz/modaljazz9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Miles Davis", track: "So What", path: "../../samples/jazz/modaljazz1.ogg" },
+                    { artist: "Herbie Hancock", track: "Dolphin Dance", path: "../../samples/jazz/modaljazz2.ogg" },
+                    { artist: "John Coltrane", track: "Impressions", path: "../../samples/jazz/modaljazz3.ogg" },
+                    { artist: "Wayne Shorter", track: "Speak No Evil", path: "../../samples/jazz/modaljazz4.ogg" },
+                    { artist: "Joe Henderson", track: "Blue Bossa", path: "../../samples/jazz/modaljazz5.ogg" },
+                    { artist: "Woody Shaw", track: "From Moment To Moment", path: "../../samples/jazz/modaljazz6.ogg" },
+                    { artist: "Freddie Hubbard", track: "Red Clay", path: "../../samples/jazz/modaljazz7.ogg" },
+                    { artist: "McCoy Tyner", track: "Passion Dance", path: "../../samples/jazz/modaljazz8.ogg" },
+                    { artist: "Bill Evans Trio", track: "Beautiful Love", path: "../../samples/jazz/modaljazz9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsJazz = $('.buttons-jazz');
 
-                $('.buttons-jazz').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsJazz.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsJazz.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-jazz-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-jazz').removeClass('clicked');
+                    $buttonsJazz.removeClass('clicked');
                 }
             });
         </script>

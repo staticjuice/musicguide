@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Cramps",
-                        track: "Human Fly",
-                        path: "../../../samples/punk/psychobilly1.ogg"
-                    },
-                    {
-                        artist: "The Reverend Horton Heat",
-                        track: "Let Me Teach You How To Eat",
-                        path: "../../../samples/punk/psychobilly2.ogg"
-                    },
-                    {
-                        artist: "The Meteors",
-                        track: "Psycho For Your Love",
-                        path: "../../../samples/punk/psychobilly3.ogg"
-                    },
-                    {
-                        artist: "Demented Are Go",
-                        track: "Bodies In The Basement",
-                        path: "../../../samples/punk/psychobilly4.ogg"
-                    },
-                    {
-                        artist: "Red Elvises",
-                        track: "Boogie On The Beach",
-                        path: "../../../samples/punk/psychobilly5.ogg"
-                    },
-                    {
-                        artist: "Nekromantix",
-                        track: "Who Killed The Cheerleader",
-                        path: "../../../samples/punk/psychobilly6.ogg"
-                    },
-                    {
-                        artist: "Zombina And The Skeletones",
-                        track: "Zombie Hop",
-                        path: "../../../samples/punk/psychobilly7.ogg"
-                    },
-                    {
-                        artist: "The Brains",
-                        track: "Enjoy The Silence",
-                        path: "../../../samples/punk/psychobilly8.ogg"
-                    },
-                    {
-                        artist: "Koffin Kats",
-                        track: "It Happens Every Night",
-                        path: "../../../samples/punk/psychobilly9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Cramps", track: "Human Fly", path: "../../../samples/punk/psychobilly1.ogg" },
+                    { artist: "The Reverend Horton Heat", track: "Let Me Teach You How To Eat", path: "../../../samples/punk/psychobilly2.ogg" },
+                    { artist: "The Meteors", track: "Psycho For Your Love", path: "../../../samples/punk/psychobilly3.ogg" },
+                    { artist: "Demented Are Go", track: "Bodies In The Basement", path: "../../../samples/punk/psychobilly4.ogg" },
+                    { artist: "Red Elvises", track: "Boogie On The Beach", path: "../../../samples/punk/psychobilly5.ogg" },
+                    { artist: "Nekromantix", track: "Who Killed The Cheerleader", path: "../../../samples/punk/psychobilly6.ogg" },
+                    { artist: "Zombina And The Skeletones", track: "Zombie Hop", path: "../../../samples/punk/psychobilly7.ogg" },
+                    { artist: "The Brains", track: "Enjoy The Silence", path: "../../../samples/punk/psychobilly8.ogg" },
+                    { artist: "Koffin Kats", track: "It Happens Every Night", path: "../../../samples/punk/psychobilly9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsPunk = $('.buttons-punk');
 
-                $('.buttons-punk').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsPunk.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsPunk.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-punk-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-punk').removeClass('clicked');
+                    $buttonsPunk.removeClass('clicked');
                 }
             });
         </script>

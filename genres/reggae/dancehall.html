@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Yellowman",
-                        track: "Zungguzungguguzungguzeng",
-                        path: "../../samples/reggae/dancehall1.ogg"
-                    },
-                    {
-                        artist: "Sly & Robbie",
-                        track: "Boops (Here To Go)",
-                        path: "../../samples/reggae/dancehall2.ogg"
-                    },
-                    {
-                        artist: "Eek-A-Mouse",
-                        track: "Wa-Do-Dem",
-                        path: "../../samples/reggae/dancehall3.ogg"
-                    },
-                    {
-                        artist: "Tenor Saw",
-                        track: "Ring The Alarm",
-                        path: "../../samples/reggae/dancehall4.ogg"
-                    },
-                    {
-                        artist: "Barrington Levy",
-                        track: "Here I Come",
-                        path: "../../samples/reggae/dancehall5.ogg"
-                    },
-                    {
-                        artist: "Super Beagle",
-                        track: "Dust A Sound Boy",
-                        path: "../../samples/reggae/dancehall6.ogg"
-                    },
-                    {
-                        artist: "General Echo",
-                        track: "Bathroom Sex",
-                        path: "../../samples/reggae/dancehall7.ogg"
-                    },
-                    {
-                        artist: "Damian Marley",
-                        track: "Welcome To Jamrock",
-                        path: "../../samples/reggae/dancehall8.ogg"
-                    },
-                    {
-                        artist: "Sister Nancy",
-                        track: "Bam Bam",
-                        path: "../../samples/reggae/dancehall9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Yellowman", track: "Zungguzungguguzungguzeng", path: "../../samples/reggae/dancehall1.ogg" },
+                    { artist: "Sly & Robbie", track: "Boops (Here To Go)", path: "../../samples/reggae/dancehall2.ogg" },
+                    { artist: "Eek-A-Mouse", track: "Wa-Do-Dem", path: "../../samples/reggae/dancehall3.ogg" },
+                    { artist: "Tenor Saw", track: "Ring The Alarm", path: "../../samples/reggae/dancehall4.ogg" },
+                    { artist: "Barrington Levy", track: "Here I Come", path: "../../samples/reggae/dancehall5.ogg" },
+                    { artist: "Super Beagle", track: "Dust A Sound Boy", path: "../../samples/reggae/dancehall6.ogg" },
+                    { artist: "General Echo", track: "Bathroom Sex", path: "../../samples/reggae/dancehall7.ogg" },
+                    { artist: "Damian Marley", track: "Welcome To Jamrock", path: "../../samples/reggae/dancehall8.ogg" },
+                    { artist: "Sister Nancy", track: "Bam Bam", path: "../../samples/reggae/dancehall9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsReggae = $('.buttons-reggae');
 
-                $('.buttons-reggae').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsReggae.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsReggae.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-reggae-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-reggae').removeClass('clicked');
+                    $buttonsReggae.removeClass('clicked');
                 }
             });
         </script>

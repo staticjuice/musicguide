@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Panama",
-                        track: "Always (Wave Racer Remix)",
-                        path: "../../../samples/ukgarage/futurebass1.ogg"
-                    },
-                    {
-                        artist: "Grant Bowtie",
-                        track: "Cloud Nine",
-                        path: "../../../samples/ukgarage/futurebass2.ogg"
-                    },
-                    {
-                        artist: "Laszlo & WRLD",
-                        track: "You & Me",
-                        path: "../../../samples/ukgarage/futurebass3.ogg"
-                    },
-                    {
-                        artist: "Alison Wonderland",
-                        track: "I Want U (GANZ Flip)",
-                        path: "../../../samples/ukgarage/futurebass4.ogg"
-                    },
-                    {
-                        artist: "Cymatics",
-                        track: "Yesterday",
-                        path: "../../../samples/ukgarage/futurebass5.ogg"
-                    },
-                    {
-                        artist: "Flume feat. Tove Lo",
-                        track: "Say It",
-                        path: "../../../samples/ukgarage/futurebass6.ogg"
-                    },
-                    {
-                        artist: "ODESZA feat. Zyra",
-                        track: "Say My Name",
-                        path: "../../../samples/ukgarage/futurebass7.ogg"
-                    },
-                    {
-                        artist: "Zedd feat. Troye Sivan",
-                        track: "Papercut (Grey Remix)",
-                        path: "../../../samples/ukgarage/futurebass8.ogg"
-                    },
-                    {
-                        artist: "Vanic x Zella Day",
-                        track: "High",
-                        path: "../../../samples/ukgarage/futurebass9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Panama", track: "Always (Wave Racer Remix)", path: "../../../samples/ukgarage/futurebass1.ogg" },
+                    { artist: "Grant Bowtie", track: "Cloud Nine", path: "../../../samples/ukgarage/futurebass2.ogg" },
+                    { artist: "Laszlo & WRLD", track: "You & Me", path: "../../../samples/ukgarage/futurebass3.ogg" },
+                    { artist: "Alison Wonderland", track: "I Want U (GANZ Flip)", path: "../../../samples/ukgarage/futurebass4.ogg" },
+                    { artist: "Cymatics", track: "Yesterday", path: "../../../samples/ukgarage/futurebass5.ogg" },
+                    { artist: "Flume feat. Tove Lo", track: "Say It", path: "../../../samples/ukgarage/futurebass6.ogg" },
+                    { artist: "ODESZA feat. Zyra", track: "Say My Name", path: "../../../samples/ukgarage/futurebass7.ogg" },
+                    { artist: "Zedd feat. Troye Sivan", track: "Papercut (Grey Remix)", path: "../../../samples/ukgarage/futurebass8.ogg" },
+                    { artist: "Vanic x Zella Day", track: "High", path: "../../../samples/ukgarage/futurebass9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsUkgarage = $('.buttons-ukgarage');
 
-                $('.buttons-ukgarage').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsUkgarage.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsUkgarage.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-ukgarage-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-ukgarage').removeClass('clicked');
+                    $buttonsUkgarage.removeClass('clicked');
                 }
             });
         </script>

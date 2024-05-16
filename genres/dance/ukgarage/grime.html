@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Roll Deep",
-                        track: "When I'm 'Ere",
-                        path: "../../../samples/ukgarage/grime1.ogg"
-                    },
-                    {
-                        artist: "Wiley",
-                        track: "Wot Do U Call It?",
-                        path: "../../../samples/ukgarage/grime2.ogg"
-                    },
-                    {
-                        artist: "Stormzy",
-                        track: "Shut Up",
-                        path: "../../../samples/ukgarage/grime3.ogg"
-                    },
-                    {
-                        artist: "Skepta feat. Jme",
-                        track: "That's Not Me",
-                        path: "../../../samples/ukgarage/grime4.ogg"
-                    },
-                    {
-                        artist: "Jme feat. Giggs",
-                        track: "Man Don't Care",
-                        path: "../../../samples/ukgarage/grime5.ogg"
-                    },
-                    {
-                        artist: "Yungen",
-                        track: "Comfy",
-                        path: "../../../samples/ukgarage/grime6.ogg"
-                    },
-                    {
-                        artist: "Bugzy Malone",
-                        track: "Waste Man",
-                        path: "../../../samples/ukgarage/grime7.ogg"
-                    },
-                    {
-                        artist: "Breakage feat. Newham Generals & David Rodigan",
-                        track: "Hard",
-                        path: "../../../samples/ukgarage/grime8.ogg"
-                    },
-                    {
-                        artist: "Chip feat. Stormzy",
-                        track: "Hear Dis",
-                        path: "../../../samples/ukgarage/grime9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Roll Deep", track: "When I'm 'Ere", path: "../../../samples/ukgarage/grime1.ogg" },
+                    { artist: "Wiley", track: "Wot Do U Call It?", path: "../../../samples/ukgarage/grime2.ogg" },
+                    { artist: "Stormzy", track: "Shut Up", path: "../../../samples/ukgarage/grime3.ogg" },
+                    { artist: "Skepta feat. Jme", track: "That's Not Me", path: "../../../samples/ukgarage/grime4.ogg" },
+                    { artist: "Jme feat. Giggs", track: "Man Don't Care", path: "../../../samples/ukgarage/grime5.ogg" },
+                    { artist: "Yungen", track: "Comfy", path: "../../../samples/ukgarage/grime6.ogg" },
+                    { artist: "Bugzy Malone", track: "Waste Man", path: "../../../samples/ukgarage/grime7.ogg" },
+                    { artist: "Breakage feat. Newham Generals & David Rodigan", track: "Hard", path: "../../../samples/ukgarage/grime8.ogg" },
+                    { artist: "Chip feat. Stormzy", track: "Hear Dis", path: "../../../samples/ukgarage/grime9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsUkgarage = $('.buttons-ukgarage');
 
-                $('.buttons-ukgarage').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsUkgarage.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsUkgarage.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-ukgarage-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-ukgarage').removeClass('clicked');
+                    $buttonsUkgarage.removeClass('clicked');
                 }
             });
         </script>

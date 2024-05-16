@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Eric Prydz",
-                        track: "Liberate",
-                        path: "../../../samples/house/progressivehouse1.ogg"
-                    },
-                    {
-                        artist: "Deadmau5 feat. Chris James",
-                        track: "The Veldt",
-                        path: "../../../samples/house/progressivehouse2.ogg"
-                    },
-                    {
-                        artist: "Reflekt feat. Delline Bass",
-                        track: "Need To Feel Loved (Adam K & Soha Vocal Mix)",
-                        path: "../../../samples/house/progressivehouse3.ogg"
-                    },
-                    {
-                        artist: "Ben Preston",
-                        track: "New Planet",
-                        path: "../../../samples/house/progressivehouse4.ogg"
-                    },
-                    {
-                        artist: "Adam K & Soha",
-                        track: "Twilight",
-                        path: "../../../samples/house/progressivehouse5.ogg"
-                    },
-                    {
-                        artist: "Dinka",
-                        track: "White Christmas",
-                        path: "../../../samples/house/progressivehouse6.ogg"
-                    },
-                    {
-                        artist: "EDX",
-                        track: "Neptune",
-                        path: "../../../samples/house/progressivehouse7.ogg"
-                    },
-                    {
-                        artist: "Glenn Morrison",
-                        track: "No Sudden Moves",
-                        path: "../../../samples/house/progressivehouse8.ogg"
-                    },
-                    {
-                        artist: "Pryda",
-                        track: "Allein",
-                        path: "../../../samples/house/progressivehouse9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Eric Prydz", track: "Liberate", path: "../../../samples/house/progressivehouse1.ogg" },
+                    { artist: "Deadmau5 feat. Chris James", track: "The Veldt", path: "../../../samples/house/progressivehouse2.ogg" },
+                    { artist: "Reflekt feat. Delline Bass", track: "Need To Feel Loved (Adam K & Soha Vocal Mix)", path: "../../../samples/house/progressivehouse3.ogg" },
+                    { artist: "Ben Preston", track: "New Planet", path: "../../../samples/house/progressivehouse4.ogg" },
+                    { artist: "Adam K & Soha", track: "Twilight", path: "../../../samples/house/progressivehouse5.ogg" },
+                    { artist: "Dinka", track: "White Christmas", path: "../../../samples/house/progressivehouse6.ogg" },
+                    { artist: "EDX", track: "Neptune", path: "../../../samples/house/progressivehouse7.ogg" },
+                    { artist: "Glenn Morrison", track: "No Sudden Moves", path: "../../../samples/house/progressivehouse8.ogg" },
+                    { artist: "Pryda", track: "Allein", path: "../../../samples/house/progressivehouse9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHouse = $('.buttons-house');
 
-                $('.buttons-house').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHouse.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHouse.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-house-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-house').removeClass('clicked');
+                    $buttonsHouse.removeClass('clicked');
                 }
             });
         </script>

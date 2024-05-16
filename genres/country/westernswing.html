@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Light Crust Doughboys",
-                        track: "Tom Cat Rag",
-                        path: "../../samples/country/westernswing1.ogg"
-                    },
-                    {
-                        artist: "Bob Wills & His Texas Playboys",
-                        track: "San Antonio Rose",
-                        path: "../../samples/country/westernswing2.ogg"
-                    },
-                    {
-                        artist: "Prairie Ramblers",
-                        track: "Deep Elem Blues",
-                        path: "../../samples/country/westernswing3.ogg"
-                    },
-                    {
-                        artist: "Spade Cooley",
-                        track: "Miss Molly",
-                        path: "../../samples/country/westernswing4.ogg"
-                    },
-                    {
-                        artist: "Milton Brown",
-                        track: "Garbage Man Blues",
-                        path: "../../samples/country/westernswing5.ogg"
-                    },
-                    {
-                        artist: "Tex Williams",
-                        track: "Fiddle Time",
-                        path: "../../samples/country/westernswing6.ogg"
-                    },
-                    {
-                        artist: "Hank Penny",
-                        track: "Steel Guitar Stomp",
-                        path: "../../samples/country/westernswing7.ogg"
-                    },
-                    {
-                        artist: "Bill Boyd's Cowboy Ramblers",
-                        track: "Under The Double Eagle",
-                        path: "../../samples/country/westernswing8.ogg"
-                    },
-                    {
-                        artist: "The Tune Wranglers",
-                        track: "Ragtime Cowboy Joe",
-                        path: "../../samples/country/westernswing9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Light Crust Doughboys", track: "Tom Cat Rag", path: "../../samples/country/westernswing1.ogg" },
+                    { artist: "Bob Wills & His Texas Playboys", track: "San Antonio Rose", path: "../../samples/country/westernswing2.ogg" },
+                    { artist: "Prairie Ramblers", track: "Deep Elem Blues", path: "../../samples/country/westernswing3.ogg" },
+                    { artist: "Spade Cooley", track: "Miss Molly", path: "../../samples/country/westernswing4.ogg" },
+                    { artist: "Milton Brown", track: "Garbage Man Blues", path: "../../samples/country/westernswing5.ogg" },
+                    { artist: "Tex Williams", track: "Fiddle Time", path: "../../samples/country/westernswing6.ogg" },
+                    { artist: "Hank Penny", track: "Steel Guitar Stomp", path: "../../samples/country/westernswing7.ogg" },
+                    { artist: "Bill Boyd's Cowboy Ramblers", track: "Under The Double Eagle", path: "../../samples/country/westernswing8.ogg" },
+                    { artist: "The Tune Wranglers", track: "Ragtime Cowboy Joe", path: "../../samples/country/westernswing9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsCountry = $('.buttons-country');
 
-                $('.buttons-country').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsCountry.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsCountry.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-country-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-country').removeClass('clicked');
+                    $buttonsCountry.removeClass('clicked');
                 }
             });
         </script>

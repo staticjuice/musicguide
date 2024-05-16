@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "DJ Spooky",
-                        track: "Phase Interlude",
-                        path: "../../samples/experimental/illbient1.ogg"
-                    },
-                    {
-                        artist: "Aravane",
-                        track: "Tokyo Ghost Stories",
-                        path: "../../samples/experimental/illbient2.ogg"
-                    },
-                    {
-                        artist: "UNKLE",
-                        track: "Rabbit In Your Headlights",
-                        path: "../../samples/experimental/illbient3.ogg"
-                    },
-                    {
-                        artist: "Slotek",
-                        track: "Jumbo",
-                        path: "../../samples/experimental/illbient4.ogg"
-                    },
-                    {
-                        artist: "Neotropic",
-                        track: "Northwest 37th",
-                        path: "../../samples/experimental/illbient5.ogg"
-                    },
-                    {
-                        artist: "Spectre",
-                        track: "Mayday / Nightstalker",
-                        path: "../../samples/experimental/illbient6.ogg"
-                    },
-                    {
-                        artist: "DJ Spooky",
-                        track: "Anansi Abstrakt",
-                        path: "../../samples/experimental/illbient7.ogg"
-                    },
-                    {
-                        artist: "Scorn",
-                        track: "Silver Rain Fell (Meat Beat Manifesto Mix)",
-                        path: "../../samples/experimental/illbient8.ogg"
-                    },
-                    {
-                        artist: "Sixtoo",
-                        track: "Boxcutter Emporium",
-                        path: "../../samples/experimental/illbient9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "DJ Spooky", track: "Phase Interlude", path: "../../samples/experimental/illbient1.ogg" },
+                    { artist: "Aravane", track: "Tokyo Ghost Stories", path: "../../samples/experimental/illbient2.ogg" },
+                    { artist: "UNKLE", track: "Rabbit In Your Headlights", path: "../../samples/experimental/illbient3.ogg" },
+                    { artist: "Slotek", track: "Jumbo", path: "../../samples/experimental/illbient4.ogg" },
+                    { artist: "Neotropic", track: "Northwest 37th", path: "../../samples/experimental/illbient5.ogg" },
+                    { artist: "Spectre", track: "Mayday / Nightstalker", path: "../../samples/experimental/illbient6.ogg" },
+                    { artist: "DJ Spooky", track: "Anansi Abstrakt", path: "../../samples/experimental/illbient7.ogg" },
+                    { artist: "Scorn", track: "Silver Rain Fell (Meat Beat Manifesto Mix)", path: "../../samples/experimental/illbient8.ogg" },
+                    { artist: "Sixtoo", track: "Boxcutter Emporium", path: "../../samples/experimental/illbient9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsExperimental = $('.buttons-experimental');
 
-                $('.buttons-experimental').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsExperimental.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsExperimental.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-experimental-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-experimental').removeClass('clicked');
+                    $buttonsExperimental.removeClass('clicked');
                 }
             });
         </script>

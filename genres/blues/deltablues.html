@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Blind Lemon Jefferson",
-                        track: "Match Box Blues",
-                        path: "../../samples/blues/deltablues1.ogg"
-                    },
-                    {
-                        artist: "Papa Charlie Jackson",
-                        track: "Shake That Thing",
-                        path: "../../samples/blues/deltablues2.ogg"
-                    },
-                    {
-                        artist: "Lead Belly",
-                        track: "Take A Whiff On Me",
-                        path: "../../samples/blues/deltablues3.ogg"
-                    },
-                    {
-                        artist: "Mississippi John Hurt",
-                        track: "Nobody's Dirty Business",
-                        path: "../../samples/blues/deltablues4.ogg"
-                    },
-                    {
-                        artist: "Charley Patton",
-                        track: "Shake It And Break It (But Don't Let It Fall Mama)",
-                        path: "../../samples/blues/deltablues5.ogg"
-                    },
-                    {
-                        artist: "Blind Willie Johnson",
-                        track: "It's Nobody's Fault But Mine",
-                        path: "../../samples/blues/deltablues6.ogg"
-                    },
-                    {
-                        artist: "Lonnie Johnson",
-                        track: "Blues In G",
-                        path: "../../samples/blues/deltablues7.ogg"
-                    },
-                    {
-                        artist: "Son House",
-                        track: "Death Letter Blues",
-                        path: "../../samples/blues/deltablues8.ogg"
-                    },
-                    {
-                        artist: "Robert Johnson",
-                        track: "Hellhound On My Trail",
-                        path: "../../samples/blues/deltablues9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Blind Lemon Jefferson", track: "Match Box Blues", path: "../../samples/blues/deltablues1.ogg" },
+                    { artist: "Papa Charlie Jackson", track: "Shake That Thing", path: "../../samples/blues/deltablues2.ogg" },
+                    { artist: "Lead Belly", track: "Take A Whiff On Me", path: "../../samples/blues/deltablues3.ogg" },
+                    { artist: "Mississippi John Hurt", track: "Nobody's Dirty Business", path: "../../samples/blues/deltablues4.ogg" },
+                    { artist: "Charley Patton", track: "Shake It And Break It (But Don't Let It Fall Mama)", path: "../../samples/blues/deltablues5.ogg" },
+                    { artist: "Blind Willie Johnson", track: "It's Nobody's Fault But Mine", path: "../../samples/blues/deltablues6.ogg" },
+                    { artist: "Lonnie Johnson", track: "Blues In G", path: "../../samples/blues/deltablues7.ogg" },
+                    { artist: "Son House", track: "Death Letter Blues", path: "../../samples/blues/deltablues8.ogg" },
+                    { artist: "Robert Johnson", track: "Hellhound On My Trail", path: "../../samples/blues/deltablues9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBlues = $('.buttons-blues');
 
-                $('.buttons-blues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBlues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBlues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-blues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-blues').removeClass('clicked');
+                    $buttonsBlues.removeClass('clicked');
                 }
             });
         </script>

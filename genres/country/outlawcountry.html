@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Waylon Jennings",
-                        track: "Lonesome, On'ry And Mean",
-                        path: "../../samples/country/outlawcountry1.ogg"
-                    },
-                    {
-                        artist: "Willie Nelson",
-                        track: "Hard To Be An Outlaw",
-                        path: "../../samples/country/outlawcountry2.ogg"
-                    },
-                    {
-                        artist: "Hank Williams Jr.",
-                        track: "A Country Boy Can Survive",
-                        path: "../../samples/country/outlawcountry3.ogg"
-                    },
-                    {
-                        artist: "David Allan Coe",
-                        track: "Tennessee Whiskey",
-                        path: "../../samples/country/outlawcountry4.ogg"
-                    },
-                    {
-                        artist: "Billy Joe Shaver",
-                        track: "Oklahoma Wind",
-                        path: "../../samples/country/outlawcountry5.ogg"
-                    },
-                    {
-                        artist: "Townes Van Zandt",
-                        track: "Pancho And Lefty",
-                        path: "../../samples/country/outlawcountry6.ogg"
-                    },
-                    {
-                        artist: "The Highwaymen",
-                        track: "Highwayman",
-                        path: "../../samples/country/outlawcountry7.ogg"
-                    },
-                    {
-                        artist: "Jessi Colter",
-                        track: "You Mean To Say",
-                        path: "../../samples/country/outlawcountry8.ogg"
-                    },
-                    {
-                        artist: "Kenny Rogers",
-                        track: "The Gambler",
-                        path: "../../samples/country/outlawcountry9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Waylon Jennings", track: "Lonesome, On'ry And Mean", path: "../../samples/country/outlawcountry1.ogg" },
+                    { artist: "Willie Nelson", track: "Hard To Be An Outlaw", path: "../../samples/country/outlawcountry2.ogg" },
+                    { artist: "Hank Williams Jr.", track: "A Country Boy Can Survive", path: "../../samples/country/outlawcountry3.ogg" },
+                    { artist: "David Allan Coe", track: "Tennessee Whiskey", path: "../../samples/country/outlawcountry4.ogg" },
+                    { artist: "Billy Joe Shaver", track: "Oklahoma Wind", path: "../../samples/country/outlawcountry5.ogg" },
+                    { artist: "Townes Van Zandt", track: "Pancho And Lefty", path: "../../samples/country/outlawcountry6.ogg" },
+                    { artist: "The Highwaymen", track: "Highwayman", path: "../../samples/country/outlawcountry7.ogg" },
+                    { artist: "Jessi Colter", track: "You Mean To Say", path: "../../samples/country/outlawcountry8.ogg" },
+                    { artist: "Kenny Rogers", track: "The Gambler", path: "../../samples/country/outlawcountry9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsCountry = $('.buttons-country');
 
-                $('.buttons-country').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsCountry.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsCountry.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-country-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-country').removeClass('clicked');
+                    $buttonsCountry.removeClass('clicked');
                 }
             });
         </script>

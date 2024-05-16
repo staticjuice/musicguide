@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Emperor",
-                        track: "Mind Games",
-                        path: "../../../samples/drumandbass/neurofunk1.ogg"
-                    },
-                    {
-                        artist: "Mefjus",
-                        track: "Fractured",
-                        path: "../../../samples/drumandbass/neurofunk2.ogg"
-                    },
-                    {
-                        artist: "Noisia",
-                        track: "Soul Purge (Current Value Remix)",
-                        path: "../../../samples/drumandbass/neurofunk3.ogg"
-                    },
-                    {
-                        artist: "Rido & Counterstrike",
-                        track: "Let It Roll",
-                        path: "../../../samples/drumandbass/neurofunk4.ogg"
-                    },
-                    {
-                        artist: "Black Sun Empire & State Of Mind",
-                        track: "Twisted Up",
-                        path: "../../../samples/drumandbass/neurofunk5.ogg"
-                    },
-                    {
-                        artist: "Mizo",
-                        track: "Soul Reaper",
-                        path: "../../../samples/drumandbass/neurofunk6.ogg"
-                    },
-                    {
-                        artist: "A.M.C & Six Blade",
-                        track: "Rock 'N' Ride",
-                        path: "../../../samples/drumandbass/neurofunk7.ogg"
-                    },
-                    {
-                        artist: "Teddy Killerz",
-                        track: "Dominus",
-                        path: "../../../samples/drumandbass/neurofunk8.ogg"
-                    },
-                    {
-                        artist: "Joe Ford",
-                        track: "The End",
-                        path: "../../../samples/drumandbass/neurofunk9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Emperor", track: "Mind Games", path: "../../../samples/drumandbass/neurofunk1.ogg" },
+                    { artist: "Mefjus", track: "Fractured", path: "../../../samples/drumandbass/neurofunk2.ogg" },
+                    { artist: "Noisia", track: "Soul Purge (Current Value Remix)", path: "../../../samples/drumandbass/neurofunk3.ogg" },
+                    { artist: "Rido & Counterstrike", track: "Let It Roll", path: "../../../samples/drumandbass/neurofunk4.ogg" },
+                    { artist: "Black Sun Empire & State Of Mind", track: "Twisted Up", path: "../../../samples/drumandbass/neurofunk5.ogg" },
+                    { artist: "Mizo", track: "Soul Reaper", path: "../../../samples/drumandbass/neurofunk6.ogg" },
+                    { artist: "A.M.C & Six Blade", track: "Rock 'N' Ride", path: "../../../samples/drumandbass/neurofunk7.ogg" },
+                    { artist: "Teddy Killerz", track: "Dominus", path: "../../../samples/drumandbass/neurofunk8.ogg" },
+                    { artist: "Joe Ford", track: "The End", path: "../../../samples/drumandbass/neurofunk9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsDrumandbass = $('.buttons-drumandbass');
 
-                $('.buttons-drumandbass').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsDrumandbass.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsDrumandbass.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-drumandbass-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-drumandbass').removeClass('clicked');
+                    $buttonsDrumandbass.removeClass('clicked');
                 }
             });
         </script>

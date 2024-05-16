@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Rolling Stones",
-                        track: "Gimme Shelter",
-                        path: "../../../samples/rock/bluesrock1.ogg"
-                    },
-                    {
-                        artist: "Canned Heat",
-                        track: "On The Road Again",
-                        path: "../../../samples/rock/bluesrock2.ogg"
-                    },
-                    {
-                        artist: "Eric Clapton",
-                        track: "Cocaine",
-                        path: "../../../samples/rock/bluesrock3.ogg"
-                    },
-                    {
-                        artist: "The Paul Butterfield Blues Band",
-                        track: "Born In Chicago",
-                        path: "../../../samples/rock/bluesrock4.ogg"
-                    },
-                    {
-                        artist: "Johnny Winter",
-                        track: "Rock And Roll, Hoochie Koo",
-                        path: "../../../samples/rock/bluesrock5.ogg"
-                    },
-                    {
-                        artist: "Pretty Things",
-                        track: "Don't Bring Me Down",
-                        path: "../../../samples/rock/bluesrock6.ogg"
-                    },
-                    {
-                        artist: "The Spencer Davis Group",
-                        track: "I'm A Man",
-                        path: "../../../samples/rock/bluesrock7.ogg"
-                    },
-                    {
-                        artist: "Alexis Korner",
-                        track: "Get Off My Cloud",
-                        path: "../../../samples/rock/bluesrock8.ogg"
-                    },
-                    {
-                        artist: "Derek & The Dominos",
-                        track: "Layla",
-                        path: "../../../samples/rock/bluesrock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Rolling Stones", track: "Gimme Shelter", path: "../../../samples/rock/bluesrock1.ogg" },
+                    { artist: "Canned Heat", track: "On The Road Again", path: "../../../samples/rock/bluesrock2.ogg" },
+                    { artist: "Eric Clapton", track: "Cocaine", path: "../../../samples/rock/bluesrock3.ogg" },
+                    { artist: "The Paul Butterfield Blues Band", track: "Born In Chicago", path: "../../../samples/rock/bluesrock4.ogg" },
+                    { artist: "Johnny Winter", track: "Rock And Roll, Hoochie Koo", path: "../../../samples/rock/bluesrock5.ogg" },
+                    { artist: "Pretty Things", track: "Don't Bring Me Down", path: "../../../samples/rock/bluesrock6.ogg" },
+                    { artist: "The Spencer Davis Group", track: "I'm A Man", path: "../../../samples/rock/bluesrock7.ogg" },
+                    { artist: "Alexis Korner", track: "Get Off My Cloud", path: "../../../samples/rock/bluesrock8.ogg" },
+                    { artist: "Derek & The Dominos", track: "Layla", path: "../../../samples/rock/bluesrock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRock = $('.buttons-rock');
 
-                $('.buttons-rock').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRock.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRock.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rock-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rock').removeClass('clicked');
+                    $buttonsRock.removeClass('clicked');
                 }
             });
         </script>

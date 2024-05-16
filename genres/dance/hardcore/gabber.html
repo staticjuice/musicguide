@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Decipher & Shinra",
-                        track: "It's On",
-                        path: "../../../samples/hardcore/gabber1.ogg"
-                    },
-                    {
-                        artist: "Prophet & Omar Santana",
-                        track: "Power Pill",
-                        path: "../../../samples/hardcore/gabber2.ogg"
-                    },
-                    {
-                        artist: "Neophyte",
-                        track: "Army Of Hardcore",
-                        path: "../../../samples/hardcore/gabber3.ogg"
-                    },
-                    {
-                        artist: "The Stunned Guys",
-                        track: "SHE (Confused Mix)",
-                        path: "../../../samples/hardcore/gabber4.ogg"
-                    },
-                    {
-                        artist: "DJ Nosferatu",
-                        track: "The Prayer",
-                        path: "../../../samples/hardcore/gabber5.ogg"
-                    },
-                    {
-                        artist: "The Beat Controller",
-                        track: "The Game",
-                        path: "../../../samples/hardcore/gabber6.ogg"
-                    },
-                    {
-                        artist: "Brutal Force",
-                        track: "Drifting Away (Hard Mix)",
-                        path: "../../../samples/hardcore/gabber7.ogg"
-                    },
-                    {
-                        artist: "Angerfist",
-                        track: "Circus Circus",
-                        path: "../../../samples/hardcore/gabber8.ogg"
-                    },
-                    {
-                        artist: "G-Town Madness vs The Viper",
-                        track: "Here It Comes",
-                        path: "../../../samples/hardcore/gabber9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Decipher & Shinra", track: "It's On", path: "../../../samples/hardcore/gabber1.ogg" },
+                    { artist: "Prophet & Omar Santana", track: "Power Pill", path: "../../../samples/hardcore/gabber2.ogg" },
+                    { artist: "Neophyte", track: "Army Of Hardcore", path: "../../../samples/hardcore/gabber3.ogg" },
+                    { artist: "The Stunned Guys", track: "SHE (Confused Mix)", path: "../../../samples/hardcore/gabber4.ogg" },
+                    { artist: "DJ Nosferatu", track: "The Prayer", path: "../../../samples/hardcore/gabber5.ogg" },
+                    { artist: "The Beat Controller", track: "The Game", path: "../../../samples/hardcore/gabber6.ogg" },
+                    { artist: "Brutal Force", track: "Drifting Away (Hard Mix)", path: "../../../samples/hardcore/gabber7.ogg" },
+                    { artist: "Angerfist", track: "Circus Circus", path: "../../../samples/hardcore/gabber8.ogg" },
+                    { artist: "G-Town Madness vs The Viper", track: "Here It Comes", path: "../../../samples/hardcore/gabber9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHardcore = $('.buttons-hardcore');
 
-                $('.buttons-hardcore').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHardcore.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHardcore.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hardcore-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hardcore').removeClass('clicked');
+                    $buttonsHardcore.removeClass('clicked');
                 }
             });
         </script>

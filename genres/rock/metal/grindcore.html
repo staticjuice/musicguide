@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Napalm Death",
-                        track: "Negative Approach",
-                        path: "../../../samples/metal/grindcore1.ogg"
-                    },
-                    {
-                        artist: "Extreme Noise Terror",
-                        track: "Raping The Earth",
-                        path: "../../../samples/metal/grindcore2.ogg"
-                    },
-                    {
-                        artist: "Heresy",
-                        track: "Blinded By Power",
-                        path: "../../../samples/metal/grindcore3.ogg"
-                    },
-                    {
-                        artist: "Insect Warfare",
-                        track: "Self Termination",
-                        path: "../../../samples/metal/grindcore4.ogg"
-                    },
-                    {
-                        artist: "Brutal Truth",
-                        track: "Sugardaddy",
-                        path: "../../../samples/metal/grindcore5.ogg"
-                    },
-                    {
-                        artist: "Wormrot",
-                        track: "Hollow Roots",
-                        path: "../../../samples/metal/grindcore6.ogg"
-                    },
-                    {
-                        artist: "Rotten Sound",
-                        track: "Mass Suicide",
-                        path: "../../../samples/metal/grindcore7.ogg"
-                    },
-                    {
-                        artist: "Pig Destroyer",
-                        track: "Towering Flesh",
-                        path: "../../../samples/metal/grindcore8.ogg"
-                    },
-                    {
-                        artist: "General Surgery",
-                        track: "Grotesque Laceration Of Mortified Flesh",
-                        path: "../../../samples/metal/grindcore9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Napalm Death", track: "Negative Approach", path: "../../../samples/metal/grindcore1.ogg" },
+                    { artist: "Extreme Noise Terror", track: "Raping The Earth", path: "../../../samples/metal/grindcore2.ogg" },
+                    { artist: "Heresy", track: "Blinded By Power", path: "../../../samples/metal/grindcore3.ogg" },
+                    { artist: "Insect Warfare", track: "Self Termination", path: "../../../samples/metal/grindcore4.ogg" },
+                    { artist: "Brutal Truth", track: "Sugardaddy", path: "../../../samples/metal/grindcore5.ogg" },
+                    { artist: "Wormrot", track: "Hollow Roots", path: "../../../samples/metal/grindcore6.ogg" },
+                    { artist: "Rotten Sound", track: "Mass Suicide", path: "../../../samples/metal/grindcore7.ogg" },
+                    { artist: "Pig Destroyer", track: "Towering Flesh", path: "../../../samples/metal/grindcore8.ogg" },
+                    { artist: "General Surgery", track: "Grotesque Laceration Of Mortified Flesh", path: "../../../samples/metal/grindcore9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsMetal = $('.buttons-metal');
 
-                $('.buttons-metal').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsMetal.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsMetal.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-metal-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-metal').removeClass('clicked');
+                    $buttonsMetal.removeClass('clicked');
                 }
             });
         </script>

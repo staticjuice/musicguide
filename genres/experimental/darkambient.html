@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Robert Rich",
-                        track: "Hidden Refuge",
-                        path: "../../samples/experimental/darkambient1.ogg"
-                    },
-                    {
-                        artist: "In Slaughter Natives",
-                        track: "113th Scar",
-                        path: "../../samples/experimental/darkambient2.ogg"
-                    },
-                    {
-                        artist: "Lustmord",
-                        track: "Primordial",
-                        path: "../../samples/experimental/darkambient3.ogg"
-                    },
-                    {
-                        artist: "Cities Last Broadcast",
-                        track: "Glossolalia",
-                        path: "../../samples/experimental/darkambient4.ogg"
-                    },
-                    {
-                        artist: "Dronny Darko",
-                        track: "Mortal Skin",
-                        path: "../../samples/experimental/darkambient5.ogg"
-                    },
-                    {
-                        artist: "Melek-Tha",
-                        track: "Hymn Of The Dead",
-                        path: "../../samples/experimental/darkambient6.ogg"
-                    },
-                    {
-                        artist: "Dahlia's Tear",
-                        track: "Toward The Dark Cellar",
-                        path: "../../samples/experimental/darkambient7.ogg"
-                    },
-                    {
-                        artist: "Vestigial",
-                        track: "The Void",
-                        path: "../../samples/experimental/darkambient8.ogg"
-                    },
-                    {
-                        artist: "Triangular Ascension",
-                        track: "The Future Code",
-                        path: "../../samples/experimental/darkambient9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Robert Rich", track: "Hidden Refuge", path: "../../samples/experimental/darkambient1.ogg" },
+                    { artist: "In Slaughter Natives", track: "113th Scar", path: "../../samples/experimental/darkambient2.ogg" },
+                    { artist: "Lustmord", track: "Primordial", path: "../../samples/experimental/darkambient3.ogg" },
+                    { artist: "Cities Last Broadcast", track: "Glossolalia", path: "../../samples/experimental/darkambient4.ogg" },
+                    { artist: "Dronny Darko", track: "Mortal Skin", path: "../../samples/experimental/darkambient5.ogg" },
+                    { artist: "Melek-Tha", track: "Hymn Of The Dead", path: "../../samples/experimental/darkambient6.ogg" },
+                    { artist: "Dahlia's Tear", track: "Toward The Dark Cellar", path: "../../samples/experimental/darkambient7.ogg" },
+                    { artist: "Vestigial", track: "The Void", path: "../../samples/experimental/darkambient8.ogg" },
+                    { artist: "Triangular Ascension", track: "The Future Code", path: "../../samples/experimental/darkambient9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsExperimental = $('.buttons-experimental');
 
-                $('.buttons-experimental').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsExperimental.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsExperimental.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-experimental-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-experimental').removeClass('clicked');
+                    $buttonsExperimental.removeClass('clicked');
                 }
             });
         </script>

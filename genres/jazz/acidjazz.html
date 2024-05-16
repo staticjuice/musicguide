@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Raw Instinct",
-                        track: "De La Bass",
-                        path: "../../samples/jazz/acidjazz1.ogg"
-                    },
-                    {
-                        artist: "Mateo & Matos",
-                        track: "Taste Of Funk",
-                        path: "../../samples/jazz/acidjazz2.ogg"
-                    },
-                    {
-                        artist: "Ronny Jordan",
-                        track: "After Hours",
-                        path: "../../samples/jazz/acidjazz3.ogg"
-                    },
-                    {
-                        artist: "Galliano",
-                        track: "So Much Confusion",
-                        path: "../../samples/jazz/acidjazz4.ogg"
-                    },
-                    {
-                        artist: "Nightmares On Wax",
-                        track: "Les Nuits",
-                        path: "../../samples/jazz/acidjazz5.ogg"
-                    },
-                    {
-                        artist: "Us3",
-                        track: "Cantaloop",
-                        path: "../../samples/jazz/acidjazz6.ogg"
-                    },
-                    {
-                        artist: "Groove Collective",
-                        track: "In Your Mind",
-                        path: "../../samples/jazz/acidjazz7.ogg"
-                    },
-                    {
-                        artist: "DJ Cam Quartet",
-                        track: "Rebirth Of Cool",
-                        path: "../../samples/jazz/acidjazz8.ogg"
-                    },
-                    {
-                        artist: "Silent Poets",
-                        track: "Break In The Circle",
-                        path: "../../samples/jazz/acidjazz9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Raw Instinct", track: "De La Bass", path: "../../samples/jazz/acidjazz1.ogg" },
+                    { artist: "Mateo & Matos", track: "Taste Of Funk", path: "../../samples/jazz/acidjazz2.ogg" },
+                    { artist: "Ronny Jordan", track: "After Hours", path: "../../samples/jazz/acidjazz3.ogg" },
+                    { artist: "Galliano", track: "So Much Confusion", path: "../../samples/jazz/acidjazz4.ogg" },
+                    { artist: "Nightmares On Wax", track: "Les Nuits", path: "../../samples/jazz/acidjazz5.ogg" },
+                    { artist: "Us3", track: "Cantaloop", path: "../../samples/jazz/acidjazz6.ogg" },
+                    { artist: "Groove Collective", track: "In Your Mind", path: "../../samples/jazz/acidjazz7.ogg" },
+                    { artist: "DJ Cam Quartet", track: "Rebirth Of Cool", path: "../../samples/jazz/acidjazz8.ogg" },
+                    { artist: "Silent Poets", track: "Break In The Circle", path: "../../samples/jazz/acidjazz9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsJazz = $('.buttons-jazz');
 
-                $('.buttons-jazz').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsJazz.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsJazz.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-jazz-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-jazz').removeClass('clicked');
+                    $buttonsJazz.removeClass('clicked');
                 }
             });
         </script>

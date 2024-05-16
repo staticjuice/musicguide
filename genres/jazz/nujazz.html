@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Sven Van Hees",
-                        track: "Breakfast With Abductees",
-                        path: "../../samples/jazz/nujazz1.ogg"
-                    },
-                    {
-                        artist: "Funki Porcini",
-                        track: "Long Road",
-                        path: "../../samples/jazz/nujazz2.ogg"
-                    },
-                    {
-                        artist: "Pnu Riff",
-                        track: "Comfy Club",
-                        path: "../../samples/jazz/nujazz3.ogg"
-                    },
-                    {
-                        artist: "Jaga Jazzist",
-                        track: "Made For Radio",
-                        path: "../../samples/jazz/nujazz4.ogg"
-                    },
-                    {
-                        artist: "Fila Brazillia",
-                        track: "Harmonicas Are Shite",
-                        path: "../../samples/jazz/nujazz5.ogg"
-                    },
-                    {
-                        artist: "Jazzanova",
-                        track: "Bohemian Sunset",
-                        path: "../../samples/jazz/nujazz6.ogg"
-                    },
-                    {
-                        artist: "Journeyman",
-                        track: "Biscuits",
-                        path: "../../samples/jazz/nujazz7.ogg"
-                    },
-                    {
-                        artist: "Luke Vibert",
-                        track: "Get Your Head Down",
-                        path: "../../samples/jazz/nujazz8.ogg"
-                    },
-                    {
-                        artist: "Skalpel",
-                        track: "So Far",
-                        path: "../../samples/jazz/nujazz9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Sven Van Hees", track: "Breakfast With Abductees", path: "../../samples/jazz/nujazz1.ogg" },
+                    { artist: "Funki Porcini", track: "Long Road", path: "../../samples/jazz/nujazz2.ogg" },
+                    { artist: "Pnu Riff", track: "Comfy Club", path: "../../samples/jazz/nujazz3.ogg" },
+                    { artist: "Jaga Jazzist", track: "Made For Radio", path: "../../samples/jazz/nujazz4.ogg" },
+                    { artist: "Fila Brazillia", track: "Harmonicas Are Shite", path: "../../samples/jazz/nujazz5.ogg" },
+                    { artist: "Jazzanova", track: "Bohemian Sunset", path: "../../samples/jazz/nujazz6.ogg" },
+                    { artist: "Journeyman", track: "Biscuits", path: "../../samples/jazz/nujazz7.ogg" },
+                    { artist: "Luke Vibert", track: "Get Your Head Down", path: "../../samples/jazz/nujazz8.ogg" },
+                    { artist: "Skalpel", track: "So Far", path: "../../samples/jazz/nujazz9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsJazz = $('.buttons-jazz');
 
-                $('.buttons-jazz').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsJazz.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsJazz.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-jazz-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-jazz').removeClass('clicked');
+                    $buttonsJazz.removeClass('clicked');
                 }
             });
         </script>

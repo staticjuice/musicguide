@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Dolly Parton",
-                        track: "Jolene",
-                        path: "../../samples/country/countrypop1.ogg"
-                    },
-                    {
-                        artist: "The Carpenters",
-                        track: "Top Of The World",
-                        path: "../../samples/country/countrypop2.ogg"
-                    },
-                    {
-                        artist: "John Denver",
-                        track: "Take Me Home, Country Roads",
-                        path: "../../samples/country/countrypop3.ogg"
-                    },
-                    {
-                        artist: "The Flying Burrito Brothers",
-                        track: "Wild Horses",
-                        path: "../../samples/country/countrypop4.ogg"
-                    },
-                    {
-                        artist: "The Bellamy Brothers",
-                        track: "Let Your Love Flow",
-                        path: "../../samples/country/countrypop5.ogg"
-                    },
-                    {
-                        artist: "Shania Twain",
-                        track: "Don't Be Stupid (You Know I Love You)",
-                        path: "../../samples/country/countrypop6.ogg"
-                    },
-                    {
-                        artist: "Taylor Swift",
-                        track: "You Belong With Me",
-                        path: "../../samples/country/countrypop7.ogg"
-                    },
-                    {
-                        artist: "Jake Owen",
-                        track: "Days Of Gold",
-                        path: "../../samples/country/countrypop8.ogg"
-                    },
-                    {
-                        artist: "Florida Georgia Line",
-                        track: "Cruise",
-                        path: "../../samples/country/countrypop9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Dolly Parton", track: "Jolene", path: "../../samples/country/countrypop1.ogg" },
+                    { artist: "The Carpenters", track: "Top Of The World", path: "../../samples/country/countrypop2.ogg" },
+                    { artist: "John Denver", track: "Take Me Home, Country Roads", path: "../../samples/country/countrypop3.ogg" },
+                    { artist: "The Flying Burrito Brothers", track: "Wild Horses", path: "../../samples/country/countrypop4.ogg" },
+                    { artist: "The Bellamy Brothers", track: "Let Your Love Flow", path: "../../samples/country/countrypop5.ogg" },
+                    { artist: "Shania Twain", track: "Don't Be Stupid (You Know I Love You)", path: "../../samples/country/countrypop6.ogg" },
+                    { artist: "Taylor Swift", track: "You Belong With Me", path: "../../samples/country/countrypop7.ogg" },
+                    { artist: "Jake Owen", track: "Days Of Gold", path: "../../samples/country/countrypop8.ogg" },
+                    { artist: "Florida Georgia Line", track: "Cruise", path: "../../samples/country/countrypop9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsCountry = $('.buttons-country');
 
-                $('.buttons-country').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsCountry.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsCountry.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-country-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-country').removeClass('clicked');
+                    $buttonsCountry.removeClass('clicked');
                 }
             });
         </script>

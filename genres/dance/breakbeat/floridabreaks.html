@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "DJ Icey",
-                        track: "Ease The Beat Back Up",
-                        path: "../../../samples/breakbeat/floridabreaks1.ogg"
-                    },
-                    {
-                        artist: "Tony Faline",
-                        track: "Feel The Funk",
-                        path: "../../../samples/breakbeat/floridabreaks2.ogg"
-                    },
-                    {
-                        artist: "DJ Baby Anne",
-                        track: "Fury",
-                        path: "../../../samples/breakbeat/floridabreaks3.ogg"
-                    },
-                    {
-                        artist: "Dave London",
-                        track: "The Roof",
-                        path: "../../../samples/breakbeat/floridabreaks4.ogg"
-                    },
-                    {
-                        artist: "General Midi",
-                        track: "The Westerner",
-                        path: "../../../samples/breakbeat/floridabreaks5.ogg"
-                    },
-                    {
-                        artist: "Biochip C",
-                        track: "Go Bang (Jackal & Hyde Remix)",
-                        path: "../../../samples/breakbeat/floridabreaks6.ogg"
-                    },
-                    {
-                        artist: "Transformer Man",
-                        track: "Everybody Get Up (Circuit Breaker Remix)",
-                        path: "../../../samples/breakbeat/floridabreaks7.ogg"
-                    },
-                    {
-                        artist: "Flying Steps",
-                        track: "Breakin' It Down",
-                        path: "../../../samples/breakbeat/floridabreaks8.ogg"
-                    },
-                    {
-                        artist: "Kay Cee",
-                        track: "Escape",
-                        path: "../../../samples/breakbeat/floridabreaks9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "DJ Icey", track: "Ease The Beat Back Up", path: "../../../samples/breakbeat/floridabreaks1.ogg" },
+                    { artist: "Tony Faline", track: "Feel The Funk", path: "../../../samples/breakbeat/floridabreaks2.ogg" },
+                    { artist: "DJ Baby Anne", track: "Fury", path: "../../../samples/breakbeat/floridabreaks3.ogg" },
+                    { artist: "Dave London", track: "The Roof", path: "../../../samples/breakbeat/floridabreaks4.ogg" },
+                    { artist: "General Midi", track: "The Westerner", path: "../../../samples/breakbeat/floridabreaks5.ogg" },
+                    { artist: "Biochip C", track: "Go Bang (Jackal & Hyde Remix)", path: "../../../samples/breakbeat/floridabreaks6.ogg" },
+                    { artist: "Transformer Man", track: "Everybody Get Up (Circuit Breaker Remix)", path: "../../../samples/breakbeat/floridabreaks7.ogg" },
+                    { artist: "Flying Steps", track: "Breakin' It Down", path: "../../../samples/breakbeat/floridabreaks8.ogg" },
+                    { artist: "Kay Cee", track: "Escape", path: "../../../samples/breakbeat/floridabreaks9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBreakbeat = $('.buttons-breakbeat');
 
-                $('.buttons-breakbeat').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBreakbeat.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBreakbeat.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-breakbeat-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-breakbeat').removeClass('clicked');
+                    $buttonsBreakbeat.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Mike Ink",
-                        track: "Orange",
-                        path: "../../../samples/techno/minimaltechno1.ogg"
-                    },
-                    {
-                        artist: "Safety Scissors",
-                        track: "Fridgelife",
-                        path: "../../../samples/techno/minimaltechno2.ogg"
-                    },
-                    {
-                        artist: "Subjected",
-                        track: "Concept 3",
-                        path: "../../../samples/techno/minimaltechno3.ogg"
-                    },
-                    {
-                        artist: "Green Velvet",
-                        track: "Flash",
-                        path: "../../../samples/techno/minimaltechno4.ogg"
-                    },
-                    {
-                        artist: "Teenage Mutants",
-                        track: "Future",
-                        path: "../../../samples/techno/minimaltechno5.ogg"
-                    },
-                    {
-                        artist: "Maxie Devine",
-                        track: "Express 90",
-                        path: "../../../samples/techno/minimaltechno6.ogg"
-                    },
-                    {
-                        artist: "Mikael Stavöstrand",
-                        track: "Repl",
-                        path: "../../../samples/techno/minimaltechno7.ogg"
-                    },
-                    {
-                        artist: "Laurel Halo",
-                        track: "Chance Of Rain",
-                        path: "../../../samples/techno/minimaltechno8.ogg"
-                    },
-                    {
-                        artist: "Dminus",
-                        track: "Ultramarine",
-                        path: "../../../samples/techno/minimaltechno9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Mike Ink", track: "Orange", path: "../../../samples/techno/minimaltechno1.ogg" },
+                    { artist: "Safety Scissors", track: "Fridgelife", path: "../../../samples/techno/minimaltechno2.ogg" },
+                    { artist: "Subjected", track: "Concept 3", path: "../../../samples/techno/minimaltechno3.ogg" },
+                    { artist: "Green Velvet", track: "Flash", path: "../../../samples/techno/minimaltechno4.ogg" },
+                    { artist: "Teenage Mutants", track: "Future", path: "../../../samples/techno/minimaltechno5.ogg" },
+                    { artist: "Maxie Devine", track: "Express 90", path: "../../../samples/techno/minimaltechno6.ogg" },
+                    { artist: "Mikael Stavöstrand", track: "Repl", path: "../../../samples/techno/minimaltechno7.ogg" },
+                    { artist: "Laurel Halo", track: "Chance Of Rain", path: "../../../samples/techno/minimaltechno8.ogg" },
+                    { artist: "Dminus", track: "Ultramarine", path: "../../../samples/techno/minimaltechno9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsTechno = $('.buttons-techno');
 
-                $('.buttons-techno').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsTechno.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsTechno.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-techno-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-techno').removeClass('clicked');
+                    $buttonsTechno.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Kraftwerk",
-                        track: "Trans-Europe Express",
-                        path: "../../../samples/rock/krautrock1.ogg"
-                    },
-                    {
-                        artist: "Neu!",
-                        track: "Hallogallo",
-                        path: "../../../samples/rock/krautrock2.ogg"
-                    },
-                    {
-                        artist: "Can",
-                        track: "Vitamin C",
-                        path: "../../../samples/rock/krautrock3.ogg"
-                    },
-                    {
-                        artist: "Faust",
-                        track: "So Far",
-                        path: "../../../samples/rock/krautrock4.ogg"
-                    },
-                    {
-                        artist: "Amon Düül II",
-                        track: "Surrounded By The Stars",
-                        path: "../../../samples/rock/krautrock5.ogg"
-                    },
-                    {
-                        artist: "Ash Ra Tempel",
-                        track: "Amboss",
-                        path: "../../../samples/rock/krautrock6.ogg"
-                    },
-                    {
-                        artist: "Guru Guru",
-                        track: "Der Elektrolurch",
-                        path: "../../../samples/rock/krautrock7.ogg"
-                    },
-                    {
-                        artist: "Cosmic Jokers",
-                        track: "Galactic Joke",
-                        path: "../../../samples/rock/krautrock8.ogg"
-                    },
-                    {
-                        artist: "Sperrmüll",
-                        track: "No Freak Out",
-                        path: "../../../samples/rock/krautrock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Kraftwerk", track: "Trans-Europe Express", path: "../../../samples/rock/krautrock1.ogg" },
+                    { artist: "Neu!", track: "Hallogallo", path: "../../../samples/rock/krautrock2.ogg" },
+                    { artist: "Can", track: "Vitamin C", path: "../../../samples/rock/krautrock3.ogg" },
+                    { artist: "Faust", track: "So Far", path: "../../../samples/rock/krautrock4.ogg" },
+                    { artist: "Amon Düül II", track: "Surrounded By The Stars", path: "../../../samples/rock/krautrock5.ogg" },
+                    { artist: "Ash Ra Tempel", track: "Amboss", path: "../../../samples/rock/krautrock6.ogg" },
+                    { artist: "Guru Guru", track: "Der Elektrolurch", path: "../../../samples/rock/krautrock7.ogg" },
+                    { artist: "Cosmic Jokers", track: "Galactic Joke", path: "../../../samples/rock/krautrock8.ogg" },
+                    { artist: "Sperrmüll", track: "No Freak Out", path: "../../../samples/rock/krautrock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRock = $('.buttons-rock');
 
-                $('.buttons-rock').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRock.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRock.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rock-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rock').removeClass('clicked');
+                    $buttonsRock.removeClass('clicked');
                 }
             });
         </script>

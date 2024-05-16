@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Tim Davison feat. Stacey Kitson",
-                        track: "Deliver Me (Hush Mix)",
-                        path: "../../../samples/breakbeat/progressivebreaks1.ogg"
-                    },
-                    {
-                        artist: "Bedrock",
-                        track: "Forge (Fretwell Mix)",
-                        path: "../../../samples/breakbeat/progressivebreaks2.ogg"
-                    },
-                    {
-                        artist: "Luke Chable",
-                        track: "Melburn",
-                        path: "../../../samples/breakbeat/progressivebreaks3.ogg"
-                    },
-                    {
-                        artist: "Brancaccio & Aisher",
-                        track: "Darker (Reset The Breaks Mix)",
-                        path: "../../../samples/breakbeat/progressivebreaks4.ogg"
-                    },
-                    {
-                        artist: "Jono Fernandez",
-                        track: "Colours Of Conscience (Fretwell Remix)",
-                        path: "../../../samples/breakbeat/progressivebreaks5.ogg"
-                    },
-                    {
-                        artist: "Hybrid",
-                        track: "Just For Today",
-                        path: "../../../samples/breakbeat/progressivebreaks6.ogg"
-                    },
-                    {
-                        artist: "Energy 52",
-                        track: "Café Del Mar (Hybrid's Time Traveller Remix)",
-                        path: "../../../samples/breakbeat/progressivebreaks7.ogg"
-                    },
-                    {
-                        artist: "Momu",
-                        track: "The Dive",
-                        path: "../../../samples/breakbeat/progressivebreaks8.ogg"
-                    },
-                    {
-                        artist: "Petter",
-                        track: "These Days",
-                        path: "../../../samples/breakbeat/progressivebreaks9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Tim Davison feat. Stacey Kitson", track: "Deliver Me (Hush Mix)", path: "../../../samples/breakbeat/progressivebreaks1.ogg" },
+                    { artist: "Bedrock", track: "Forge (Fretwell Mix)", path: "../../../samples/breakbeat/progressivebreaks2.ogg" },
+                    { artist: "Luke Chable", track: "Melburn", path: "../../../samples/breakbeat/progressivebreaks3.ogg" },
+                    { artist: "Brancaccio & Aisher", track: "Darker (Reset The Breaks Mix)", path: "../../../samples/breakbeat/progressivebreaks4.ogg" },
+                    { artist: "Jono Fernandez", track: "Colours Of Conscience (Fretwell Remix)", path: "../../../samples/breakbeat/progressivebreaks5.ogg" },
+                    { artist: "Hybrid", track: "Just For Today", path: "../../../samples/breakbeat/progressivebreaks6.ogg" },
+                    { artist: "Energy 52", track: "Café Del Mar (Hybrid's Time Traveller Remix)", path: "../../../samples/breakbeat/progressivebreaks7.ogg" },
+                    { artist: "Momu", track: "The Dive", path: "../../../samples/breakbeat/progressivebreaks8.ogg" },
+                    { artist: "Petter", track: "These Days", path: "../../../samples/breakbeat/progressivebreaks9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBreakbeat = $('.buttons-breakbeat');
 
-                $('.buttons-breakbeat').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBreakbeat.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBreakbeat.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-breakbeat-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-breakbeat').removeClass('clicked');
+                    $buttonsBreakbeat.removeClass('clicked');
                 }
             });
         </script>

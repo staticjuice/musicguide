@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Limp Bizkit",
-                        track: "Nookie",
-                        path: "../../../samples/metal/numetal1.ogg"
-                    },
-                    {
-                        artist: "Korn",
-                        track: "Falling Away From Me",
-                        path: "../../../samples/metal/numetal2.ogg"
-                    },
-                    {
-                        artist: "Slipknot",
-                        track: "Wait And Bleed",
-                        path: "../../../samples/metal/numetal3.ogg"
-                    },
-                    {
-                        artist: "System Of A Down",
-                        track: "Chop Suey!",
-                        path: "../../../samples/metal/numetal4.ogg"
-                    },
-                    {
-                        artist: "Linkin Park",
-                        track: "In The End",
-                        path: "../../../samples/metal/numetal5.ogg"
-                    },
-                    {
-                        artist: "Papa Roach",
-                        track: "Last Resort",
-                        path: "../../../samples/metal/numetal6.ogg"
-                    },
-                    {
-                        artist: "Mudvayne",
-                        track: "Forget To Remember",
-                        path: "../../../samples/metal/numetal7.ogg"
-                    },
-                    {
-                        artist: "Coal Chamber",
-                        track: "Loco",
-                        path: "../../../samples/metal/numetal8.ogg"
-                    },
-                    {
-                        artist: "Disturbed",
-                        track: "Down With The Sickness",
-                        path: "../../../samples/metal/numetal9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Limp Bizkit", track: "Nookie", path: "../../../samples/metal/numetal1.ogg" },
+                    { artist: "Korn", track: "Falling Away From Me", path: "../../../samples/metal/numetal2.ogg" },
+                    { artist: "Slipknot", track: "Wait And Bleed", path: "../../../samples/metal/numetal3.ogg" },
+                    { artist: "System Of A Down", track: "Chop Suey!", path: "../../../samples/metal/numetal4.ogg" },
+                    { artist: "Linkin Park", track: "In The End", path: "../../../samples/metal/numetal5.ogg" },
+                    { artist: "Papa Roach", track: "Last Resort", path: "../../../samples/metal/numetal6.ogg" },
+                    { artist: "Mudvayne", track: "Forget To Remember", path: "../../../samples/metal/numetal7.ogg" },
+                    { artist: "Coal Chamber", track: "Loco", path: "../../../samples/metal/numetal8.ogg" },
+                    { artist: "Disturbed", track: "Down With The Sickness", path: "../../../samples/metal/numetal9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsMetal = $('.buttons-metal');
 
-                $('.buttons-metal').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsMetal.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsMetal.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-metal-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-metal').removeClass('clicked');
+                    $buttonsMetal.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Elvis Presley",
-                        track: "Hound Dog",
-                        path: "../../../samples/rock/rockandroll1.ogg"
-                    },
-                    {
-                        artist: "Jerry Lee Lewis",
-                        track: "Great Balls Of Fire",
-                        path: "../../../samples/rock/rockandroll2.ogg"
-                    },
-                    {
-                        artist: "Carl Perkins",
-                        track: "Blue Suede Shoes",
-                        path: "../../../samples/rock/rockandroll3.ogg"
-                    },
-                    {
-                        artist: "Eddie Cochran",
-                        track: "C'mon Everybody",
-                        path: "../../../samples/rock/rockandroll4.ogg"
-                    },
-                    {
-                        artist: "Chuck Berry",
-                        track: "Johnny B. Goode",
-                        path: "../../../samples/rock/rockandroll5.ogg"
-                    },
-                    {
-                        artist: "Sammy Masters",
-                        track: "Pink Cadillac",
-                        path: "../../../samples/rock/rockandroll6.ogg"
-                    },
-                    {
-                        artist: "Charlie Feathers",
-                        track: "That Certain Female",
-                        path: "../../../samples/rock/rockandroll7.ogg"
-                    },
-                    {
-                        artist: "Buddy Holly",
-                        track: "That'll Be The Day",
-                        path: "../../../samples/rock/rockandroll8.ogg"
-                    },
-                    {
-                        artist: "Bill Haley & His Comets",
-                        track: "Rock Around The Clock",
-                        path: "../../../samples/rock/rockandroll9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Elvis Presley", track: "Hound Dog", path: "../../../samples/rock/rockandroll1.ogg" },
+                    { artist: "Jerry Lee Lewis", track: "Great Balls Of Fire", path: "../../../samples/rock/rockandroll2.ogg" },
+                    { artist: "Carl Perkins", track: "Blue Suede Shoes", path: "../../../samples/rock/rockandroll3.ogg" },
+                    { artist: "Eddie Cochran", track: "C'mon Everybody", path: "../../../samples/rock/rockandroll4.ogg" },
+                    { artist: "Chuck Berry", track: "Johnny B. Goode", path: "../../../samples/rock/rockandroll5.ogg" },
+                    { artist: "Sammy Masters", track: "Pink Cadillac", path: "../../../samples/rock/rockandroll6.ogg" },
+                    { artist: "Charlie Feathers", track: "That Certain Female", path: "../../../samples/rock/rockandroll7.ogg" },
+                    { artist: "Buddy Holly", track: "That'll Be The Day", path: "../../../samples/rock/rockandroll8.ogg" },
+                    { artist: "Bill Haley & His Comets", track: "Rock Around The Clock", path: "../../../samples/rock/rockandroll9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRock = $('.buttons-rock');
 
-                $('.buttons-rock').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRock.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRock.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rock-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rock').removeClass('clicked');
+                    $buttonsRock.removeClass('clicked');
                 }
             });
         </script>

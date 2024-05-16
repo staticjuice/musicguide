@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "FKA Twigs",
-                        track: "Two Weeks",
-                        path: "../../samples/rhythmandblues/alternativerhythmandblues1.ogg"
-                    },
-                    {
-                        artist: "Frank Ocean",
-                        track: "Thinkin Bout You",
-                        path: "../../samples/rhythmandblues/alternativerhythmandblues2.ogg"
-                    },
-                    {
-                        artist: "The Weeknd",
-                        track: "Call Out My Name",
-                        path: "../../samples/rhythmandblues/alternativerhythmandblues3.ogg"
-                    },
-                    {
-                        artist: "Drake",
-                        track: "Shot For Me",
-                        path: "../../samples/rhythmandblues/alternativerhythmandblues4.ogg"
-                    },
-                    {
-                        artist: "Miguel",
-                        track: "Pineapple Skies",
-                        path: "../../samples/rhythmandblues/alternativerhythmandblues5.ogg"
-                    },
-                    {
-                        artist: "Kelela",
-                        track: "Rewind",
-                        path: "../../samples/rhythmandblues/alternativerhythmandblues6.ogg"
-                    },
-                    {
-                        artist: "Cautious Clay",
-                        track: "Cold War",
-                        path: "../../samples/rhythmandblues/alternativerhythmandblues7.ogg"
-                    },
-                    {
-                        artist: "Phony Ppl",
-                        track: "Why iii Love The Moon.",
-                        path: "../../samples/rhythmandblues/alternativerhythmandblues8.ogg"
-                    },
-                    {
-                        artist: "GoldLink feat. Ari PenSmith",
-                        track: "Joke Ting",
-                        path: "../../samples/rhythmandblues/alternativerhythmandblues9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "FKA Twigs", track: "Two Weeks", path: "../../samples/rhythmandblues/alternativerhythmandblues1.ogg" },
+                    { artist: "Frank Ocean", track: "Thinkin Bout You", path: "../../samples/rhythmandblues/alternativerhythmandblues2.ogg" },
+                    { artist: "The Weeknd", track: "Call Out My Name", path: "../../samples/rhythmandblues/alternativerhythmandblues3.ogg" },
+                    { artist: "Drake", track: "Shot For Me", path: "../../samples/rhythmandblues/alternativerhythmandblues4.ogg" },
+                    { artist: "Miguel", track: "Pineapple Skies", path: "../../samples/rhythmandblues/alternativerhythmandblues5.ogg" },
+                    { artist: "Kelela", track: "Rewind", path: "../../samples/rhythmandblues/alternativerhythmandblues6.ogg" },
+                    { artist: "Cautious Clay", track: "Cold War", path: "../../samples/rhythmandblues/alternativerhythmandblues7.ogg" },
+                    { artist: "Phony Ppl", track: "Why iii Love The Moon.", path: "../../samples/rhythmandblues/alternativerhythmandblues8.ogg" },
+                    { artist: "GoldLink feat. Ari PenSmith", track: "Joke Ting", path: "../../samples/rhythmandblues/alternativerhythmandblues9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRhythmandblues = $('.buttons-rhythmandblues');
 
-                $('.buttons-rhythmandblues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRhythmandblues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRhythmandblues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rhythmandblues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rhythmandblues').removeClass('clicked');
+                    $buttonsRhythmandblues.removeClass('clicked');
                 }
             });
         </script>

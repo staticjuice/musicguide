@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Avicii",
-                        track: "Levels",
-                        path: "../../../samples/house/bigroom1.ogg"
-                    },
-                    {
-                        artist: "Zedd feat. Matthew Koma",
-                        track: "Spectrum",
-                        path: "../../../samples/house/bigroom2.ogg"
-                    },
-                    {
-                        artist: "Nadia Ali, Starkillers & Alex Kenji",
-                        track: "Pressure (Alesso Remix)",
-                        path: "../../../samples/house/bigroom3.ogg"
-                    },
-                    {
-                        artist: "Swedish House Mafia feat. John Martin",
-                        track: "Don't You Worry Child",
-                        path: "../../../samples/house/bigroom4.ogg"
-                    },
-                    {
-                        artist: "Galantis",
-                        track: "Runaway (U & I)",
-                        path: "../../../samples/house/bigroom5.ogg"
-                    },
-                    {
-                        artist: "Seven Lions feat. Lights",
-                        track: "Falling Away (Festival Mix)",
-                        path: "../../../samples/house/bigroom6.ogg"
-                    },
-                    {
-                        artist: "Martin Garrix",
-                        track: "Animals",
-                        path: "../../../samples/house/bigroom7.ogg"
-                    },
-                    {
-                        artist: "David Guetta & Showtek feat. Vassy",
-                        track: "Bad",
-                        path: "../../../samples/house/bigroom8.ogg"
-                    },
-                    {
-                        artist: "Timmy Trumpet & Lady Bee",
-                        track: "Trumpets (Mashd N Kutcher Remix)",
-                        path: "../../../samples/house/bigroom9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Avicii", track: "Levels", path: "../../../samples/house/bigroom1.ogg" },
+                    { artist: "Zedd feat. Matthew Koma", track: "Spectrum", path: "../../../samples/house/bigroom2.ogg" },
+                    { artist: "Nadia Ali, Starkillers & Alex Kenji", track: "Pressure (Alesso Remix)", path: "../../../samples/house/bigroom3.ogg" },
+                    { artist: "Swedish House Mafia feat. John Martin", track: "Don't You Worry Child", path: "../../../samples/house/bigroom4.ogg" },
+                    { artist: "Galantis", track: "Runaway (U & I)", path: "../../../samples/house/bigroom5.ogg" },
+                    { artist: "Seven Lions feat. Lights", track: "Falling Away (Festival Mix)", path: "../../../samples/house/bigroom6.ogg" },
+                    { artist: "Martin Garrix", track: "Animals", path: "../../../samples/house/bigroom7.ogg" },
+                    { artist: "David Guetta & Showtek feat. Vassy", track: "Bad", path: "../../../samples/house/bigroom8.ogg" },
+                    { artist: "Timmy Trumpet & Lady Bee", track: "Trumpets (Mashd N Kutcher Remix)", path: "../../../samples/house/bigroom9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHouse = $('.buttons-house');
 
-                $('.buttons-house').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHouse.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHouse.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-house-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-house').removeClass('clicked');
+                    $buttonsHouse.removeClass('clicked');
                 }
             });
         </script>

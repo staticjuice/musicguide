@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Hopeton Lewis",
-                        track: "Rivers Of Babylon",
-                        path: "../../samples/reggae/rocksteady1.ogg"
-                    },
-                    {
-                        artist: "The Heptones",
-                        track: "Book Of Rules",
-                        path: "../../samples/reggae/rocksteady2.ogg"
-                    },
-                    {
-                        artist: "The Paragons",
-                        track: "The Tide Is High",
-                        path: "../../samples/reggae/rocksteady3.ogg"
-                    },
-                    {
-                        artist: "Alton Ellis",
-                        track: "You've Made Me So Very Happy",
-                        path: "../../samples/reggae/rocksteady4.ogg"
-                    },
-                    {
-                        artist: "Slim Smith & The Uniques",
-                        track: "My Conversation",
-                        path: "../../samples/reggae/rocksteady5.ogg"
-                    },
-                    {
-                        artist: "Rita Marley",
-                        track: "One Draw",
-                        path: "../../samples/reggae/rocksteady6.ogg"
-                    },
-                    {
-                        artist: "Phyllis Dillon",
-                        track: "Love The One You're With",
-                        path: "../../samples/reggae/rocksteady7.ogg"
-                    },
-                    {
-                        artist: "The Tennors",
-                        track: "Weather Report",
-                        path: "../../samples/reggae/rocksteady8.ogg"
-                    },
-                    {
-                        artist: "The Melodians",
-                        track: "I Will Get Along Without You",
-                        path: "../../samples/reggae/rocksteady9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Hopeton Lewis", track: "Rivers Of Babylon", path: "../../samples/reggae/rocksteady1.ogg" },
+                    { artist: "The Heptones", track: "Book Of Rules", path: "../../samples/reggae/rocksteady2.ogg" },
+                    { artist: "The Paragons", track: "The Tide Is High", path: "../../samples/reggae/rocksteady3.ogg" },
+                    { artist: "Alton Ellis", track: "You've Made Me So Very Happy", path: "../../samples/reggae/rocksteady4.ogg" },
+                    { artist: "Slim Smith & The Uniques", track: "My Conversation", path: "../../samples/reggae/rocksteady5.ogg" },
+                    { artist: "Rita Marley", track: "One Draw", path: "../../samples/reggae/rocksteady6.ogg" },
+                    { artist: "Phyllis Dillon", track: "Love The One You're With", path: "../../samples/reggae/rocksteady7.ogg" },
+                    { artist: "The Tennors", track: "Weather Report", path: "../../samples/reggae/rocksteady8.ogg" },
+                    { artist: "The Melodians", track: "I Will Get Along Without You", path: "../../samples/reggae/rocksteady9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsReggae = $('.buttons-reggae');
 
-                $('.buttons-reggae').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsReggae.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsReggae.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-reggae-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-reggae').removeClass('clicked');
+                    $buttonsReggae.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "The Sonics",
-                        track: "Have Love Will Travel",
-                        path: "../../../samples/rock/garagerock1.ogg"
-                    },
-                    {
-                        artist: "The Castaways",
-                        track: "Liar, Liar",
-                        path: "../../../samples/rock/garagerock2.ogg"
-                    },
-                    {
-                        artist: "The Wailers",
-                        track: "Hang Up",
-                        path: "../../../samples/rock/garagerock3.ogg"
-                    },
-                    {
-                        artist: "The Kingsmen",
-                        track: "Louie Louie",
-                        path: "../../../samples/rock/garagerock4.ogg"
-                    },
-                    {
-                        artist: "The Electric Prunes",
-                        track: "Get Me To The World On Time",
-                        path: "../../../samples/rock/garagerock5.ogg"
-                    },
-                    {
-                        artist: "The 13th Floor Elevators",
-                        track: "You're Gonna Miss Me",
-                        path: "../../../samples/rock/garagerock6.ogg"
-                    },
-                    {
-                        artist: "Count Five",
-                        track: "Psychotic Reaction",
-                        path: "../../../samples/rock/garagerock7.ogg"
-                    },
-                    {
-                        artist: "The Seeds",
-                        track: "Pushin' Too Hard",
-                        path: "../../../samples/rock/garagerock8.ogg"
-                    },
-                    {
-                        artist: "Halloween Fright Night",
-                        track: "Gloria (The Shadows Of The Knight)",
-                        path: "../../../samples/rock/garagerock9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "The Sonics", track: "Have Love Will Travel", path: "../../../samples/rock/garagerock1.ogg" },
+                    { artist: "The Castaways", track: "Liar, Liar", path: "../../../samples/rock/garagerock2.ogg" },
+                    { artist: "The Wailers", track: "Hang Up", path: "../../../samples/rock/garagerock3.ogg" },
+                    { artist: "The Kingsmen", track: "Louie Louie", path: "../../../samples/rock/garagerock4.ogg" },
+                    { artist: "The Electric Prunes", track: "Get Me To The World On Time", path: "../../../samples/rock/garagerock5.ogg" },
+                    { artist: "The 13th Floor Elevators", track: "You're Gonna Miss Me", path: "../../../samples/rock/garagerock6.ogg" },
+                    { artist: "Count Five", track: "Psychotic Reaction", path: "../../../samples/rock/garagerock7.ogg" },
+                    { artist: "The Seeds", track: "Pushin' Too Hard", path: "../../../samples/rock/garagerock8.ogg" },
+                    { artist: "Halloween Fright Night", track: "Gloria (The Shadows Of The Knight)", path: "../../../samples/rock/garagerock9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRock = $('.buttons-rock');
 
-                $('.buttons-rock').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRock.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRock.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rock-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rock').removeClass('clicked');
+                    $buttonsRock.removeClass('clicked');
                 }
             });
         </script>

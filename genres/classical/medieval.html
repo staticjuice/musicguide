@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Guillaume De Machaut",
-                        track: "Messe De Nostre Dame",
-                        path: "../../samples/classical/medieval1.ogg"
-                    },
-                    {
-                        artist: "Hildegard Von Bingen",
-                        track: "O Deus",
-                        path: "../../samples/classical/medieval2.ogg"
-                    },
-                    {
-                        artist: "Francesco Landini",
-                        track: "Quanto Piu Caro Fai",
-                        path: "../../samples/classical/medieval3.ogg"
-                    },
-                    {
-                        artist: "Matteo Da Perugia",
-                        track: "Ave Sancta Mundi Salus",
-                        path: "../../samples/classical/medieval4.ogg"
-                    },
-                    {
-                        artist: "Claudio Merulo",
-                        track: "O Adoranda Trinitas",
-                        path: "../../samples/classical/medieval5.ogg"
-                    },
-                    {
-                        artist: "Jacob De Senleches",
-                        track: "La Harpe De Melodie",
-                        path: "../../samples/classical/medieval6.ogg"
-                    },
-                    {
-                        artist: "Adam De Saint Victor",
-                        track: "Jubilemus Salvatori",
-                        path: "../../samples/classical/medieval7.ogg"
-                    },
-                    {
-                        artist: "John Dunstable",
-                        track: "Quam Pulchra Es, JD 44",
-                        path: "../../samples/classical/medieval8.ogg"
-                    },
-                    {
-                        artist: "Leonel Power",
-                        track: "Motet - Quam Pulchra Es",
-                        path: "../../samples/classical/medieval9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Guillaume De Machaut", track: "Messe De Nostre Dame", path: "../../samples/classical/medieval1.ogg" },
+                    { artist: "Hildegard Von Bingen", track: "O Deus", path: "../../samples/classical/medieval2.ogg" },
+                    { artist: "Francesco Landini", track: "Quanto Piu Caro Fai", path: "../../samples/classical/medieval3.ogg" },
+                    { artist: "Matteo Da Perugia", track: "Ave Sancta Mundi Salus", path: "../../samples/classical/medieval4.ogg" },
+                    { artist: "Claudio Merulo", track: "O Adoranda Trinitas", path: "../../samples/classical/medieval5.ogg" },
+                    { artist: "Jacob De Senleches", track: "La Harpe De Melodie", path: "../../samples/classical/medieval6.ogg" },
+                    { artist: "Adam De Saint Victor", track: "Jubilemus Salvatori", path: "../../samples/classical/medieval7.ogg" },
+                    { artist: "John Dunstable", track: "Quam Pulchra Es, JD 44", path: "../../samples/classical/medieval8.ogg" },
+                    { artist: "Leonel Power", track: "Motet - Quam Pulchra Es", path: "../../samples/classical/medieval9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsClassical = $('.buttons-classical');
 
-                $('.buttons-classical').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsClassical.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsClassical.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-classical-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-classical').removeClass('clicked');
+                    $buttonsClassical.removeClass('clicked');
                 }
             });
         </script>

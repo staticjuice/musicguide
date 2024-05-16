@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Oasis",
-                        track: "Wonderwall",
-                        path: "../../../samples/indie/britpop1.ogg"
-                    },
-                    {
-                        artist: "Blur",
-                        track: "Country House",
-                        path: "../../../samples/indie/britpop2.ogg"
-                    },
-                    {
-                        artist: "Pulp",
-                        track: "Common People",
-                        path: "../../../samples/indie/britpop3.ogg"
-                    },
-                    {
-                        artist: "The Verve",
-                        track: "Bitter Sweet Symphony",
-                        path: "../../../samples/indie/britpop4.ogg"
-                    },
-                    {
-                        artist: "Suede",
-                        track: "Beautiful Ones",
-                        path: "../../../samples/indie/britpop5.ogg"
-                    },
-                    {
-                        artist: "Supergrass",
-                        track: "Moving",
-                        path: "../../../samples/indie/britpop6.ogg"
-                    },
-                    {
-                        artist: "Mansun",
-                        track: "Wide Open Space",
-                        path: "../../../samples/indie/britpop7.ogg"
-                    },
-                    {
-                        artist: "Dodgy",
-                        track: "Good Enough",
-                        path: "../../../samples/indie/britpop8.ogg"
-                    },
-                    {
-                        artist: "Ocean Colour Scene",
-                        track: "Hundred Mile High City",
-                        path: "../../../samples/indie/britpop9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Oasis", track: "Wonderwall", path: "../../../samples/indie/britpop1.ogg" },
+                    { artist: "Blur", track: "Country House", path: "../../../samples/indie/britpop2.ogg" },
+                    { artist: "Pulp", track: "Common People", path: "../../../samples/indie/britpop3.ogg" },
+                    { artist: "The Verve", track: "Bitter Sweet Symphony", path: "../../../samples/indie/britpop4.ogg" },
+                    { artist: "Suede", track: "Beautiful Ones", path: "../../../samples/indie/britpop5.ogg" },
+                    { artist: "Supergrass", track: "Moving", path: "../../../samples/indie/britpop6.ogg" },
+                    { artist: "Mansun", track: "Wide Open Space", path: "../../../samples/indie/britpop7.ogg" },
+                    { artist: "Dodgy", track: "Good Enough", path: "../../../samples/indie/britpop8.ogg" },
+                    { artist: "Ocean Colour Scene", track: "Hundred Mile High City", path: "../../../samples/indie/britpop9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndie = $('.buttons-indie');
 
-                $('.buttons-indie').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndie.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndie.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-indie-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-indie').removeClass('clicked');
+                    $buttonsIndie.removeClass('clicked');
                 }
             });
         </script>

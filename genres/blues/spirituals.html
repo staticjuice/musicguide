@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Ed Young",
-                        track: "Jim And John",
-                        path: "../../samples/blues/spirituals1.ogg"
-                    },
-                    {
-                        artist: "Ervin Webb",
-                        track: "I'm Going Home",
-                        path: "../../samples/blues/spirituals2.ogg"
-                    },
-                    {
-                        artist: "Ed Lewis",
-                        track: "Tom Devil",
-                        path: "../../samples/blues/spirituals3.ogg"
-                    },
-                    {
-                        artist: "Lightning",
-                        track: "Long John",
-                        path: "../../samples/blues/spirituals4.ogg"
-                    },
-                    {
-                        artist: "Johnny Lee Moore",
-                        track: "Eighteen Hammers",
-                        path: "../../samples/blues/spirituals5.ogg"
-                    },
-                    {
-                        artist: "John Davis",
-                        track: "Blow Gabriel",
-                        path: "../../samples/blues/spirituals6.ogg"
-                    },
-                    {
-                        artist: "Jesse Lee Pratcher",
-                        track: "Green Sally, Up",
-                        path: "../../samples/blues/spirituals7.ogg"
-                    },
-                    {
-                        artist: "James Carter",
-                        track: "Po' Lazarus",
-                        path: "../../samples/blues/spirituals8.ogg"
-                    },
-                    {
-                        artist: "Dock Reed",
-                        track: "Troubled Lord I'm Troubled",
-                        path: "../../samples/blues/spirituals9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Ed Young", track: "Jim And John", path: "../../samples/blues/spirituals1.ogg" },
+                    { artist: "Ervin Webb", track: "I'm Going Home", path: "../../samples/blues/spirituals2.ogg" },
+                    { artist: "Ed Lewis", track: "Tom Devil", path: "../../samples/blues/spirituals3.ogg" },
+                    { artist: "Lightning", track: "Long John", path: "../../samples/blues/spirituals4.ogg" },
+                    { artist: "Johnny Lee Moore", track: "Eighteen Hammers", path: "../../samples/blues/spirituals5.ogg" },
+                    { artist: "John Davis", track: "Blow Gabriel", path: "../../samples/blues/spirituals6.ogg" },
+                    { artist: "Jesse Lee Pratcher", track: "Green Sally, Up", path: "../../samples/blues/spirituals7.ogg" },
+                    { artist: "James Carter", track: "Po' Lazarus", path: "../../samples/blues/spirituals8.ogg" },
+                    { artist: "Dock Reed", track: "Troubled Lord I'm Troubled", path: "../../samples/blues/spirituals9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBlues = $('.buttons-blues');
 
-                $('.buttons-blues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBlues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBlues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-blues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-blues').removeClass('clicked');
+                    $buttonsBlues.removeClass('clicked');
                 }
             });
         </script>

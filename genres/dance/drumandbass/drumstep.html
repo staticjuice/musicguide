@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "MONSTA",
-                        track: "Holdin' On (Skrillex & Nero Remix)",
-                        path: "../../../samples/drumandbass/drumstep1.ogg"
-                    },
-                    {
-                        artist: "Delta Heavy",
-                        track: "Space Time",
-                        path: "../../../samples/drumandbass/drumstep2.ogg"
-                    },
-                    {
-                        artist: "Rusko",
-                        track: "Everyday (Netsky Remix)",
-                        path: "../../../samples/drumandbass/drumstep3.ogg"
-                    },
-                    {
-                        artist: "Far Too Loud",
-                        track: "Lightbringer",
-                        path: "../../../samples/drumandbass/drumstep4.ogg"
-                    },
-                    {
-                        artist: "Skrillex feat. Ragga Twins",
-                        track: "Ragga Bomb",
-                        path: "../../../samples/drumandbass/drumstep5.ogg"
-                    },
-                    {
-                        artist: "Nero",
-                        track: "Crush On You (Knife Party Remix)",
-                        path: "../../../samples/drumandbass/drumstep6.ogg"
-                    },
-                    {
-                        artist: "Tristam & Braken",
-                        track: "Flight",
-                        path: "../../../samples/drumandbass/drumstep7.ogg"
-                    },
-                    {
-                        artist: "T & Sugah feat. MVE",
-                        track: "Sleepless",
-                        path: "../../../samples/drumandbass/drumstep8.ogg"
-                    },
-                    {
-                        artist: "Camo & Krooked",
-                        track: "Further Away",
-                        path: "../../../samples/drumandbass/drumstep9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "MONSTA", track: "Holdin' On (Skrillex & Nero Remix)", path: "../../../samples/drumandbass/drumstep1.ogg" },
+                    { artist: "Delta Heavy", track: "Space Time", path: "../../../samples/drumandbass/drumstep2.ogg" },
+                    { artist: "Rusko", track: "Everyday (Netsky Remix)", path: "../../../samples/drumandbass/drumstep3.ogg" },
+                    { artist: "Far Too Loud", track: "Lightbringer", path: "../../../samples/drumandbass/drumstep4.ogg" },
+                    { artist: "Skrillex feat. Ragga Twins", track: "Ragga Bomb", path: "../../../samples/drumandbass/drumstep5.ogg" },
+                    { artist: "Nero", track: "Crush On You (Knife Party Remix)", path: "../../../samples/drumandbass/drumstep6.ogg" },
+                    { artist: "Tristam & Braken", track: "Flight", path: "../../../samples/drumandbass/drumstep7.ogg" },
+                    { artist: "T & Sugah feat. MVE", track: "Sleepless", path: "../../../samples/drumandbass/drumstep8.ogg" },
+                    { artist: "Camo & Krooked", track: "Further Away", path: "../../../samples/drumandbass/drumstep9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsDrumandbass = $('.buttons-drumandbass');
 
-                $('.buttons-drumandbass').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsDrumandbass.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsDrumandbass.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-drumandbass-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-drumandbass').removeClass('clicked');
+                    $buttonsDrumandbass.removeClass('clicked');
                 }
             });
         </script>

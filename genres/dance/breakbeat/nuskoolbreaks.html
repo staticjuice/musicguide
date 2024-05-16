@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Tipper",
-                        track: "Twister",
-                        path: "../../../samples/breakbeat/nuskoolbreaks1.ogg"
-                    },
-                    {
-                        artist: "Freq Nasty",
-                        track: "Amped",
-                        path: "../../../samples/breakbeat/nuskoolbreaks2.ogg"
-                    },
-                    {
-                        artist: "Slyde",
-                        track: "Kiss Kiss Bang Bang",
-                        path: "../../../samples/breakbeat/nuskoolbreaks3.ogg"
-                    },
-                    {
-                        artist: "Stereo 8",
-                        track: "Never Coming Back",
-                        path: "../../../samples/breakbeat/nuskoolbreaks4.ogg"
-                    },
-                    {
-                        artist: "Rennie Pilgrem & Roxiller",
-                        track: "Bug",
-                        path: "../../../samples/breakbeat/nuskoolbreaks5.ogg"
-                    },
-                    {
-                        artist: "Plump DJs",
-                        track: "Rocket Soul",
-                        path: "../../../samples/breakbeat/nuskoolbreaks6.ogg"
-                    },
-                    {
-                        artist: "Krafty Kuts",
-                        track: "Funky Ass Beats",
-                        path: "../../../samples/breakbeat/nuskoolbreaks7.ogg"
-                    },
-                    {
-                        artist: "B-Phreak",
-                        track: "Funkbox",
-                        path: "../../../samples/breakbeat/nuskoolbreaks8.ogg"
-                    },
-                    {
-                        artist: "Stanton Warriors feat. Ruby Goe",
-                        track: "Shoot Me Down",
-                        path: "../../../samples/breakbeat/nuskoolbreaks9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Tipper", track: "Twister", path: "../../../samples/breakbeat/nuskoolbreaks1.ogg" },
+                    { artist: "Freq Nasty", track: "Amped", path: "../../../samples/breakbeat/nuskoolbreaks2.ogg" },
+                    { artist: "Slyde", track: "Kiss Kiss Bang Bang", path: "../../../samples/breakbeat/nuskoolbreaks3.ogg" },
+                    { artist: "Stereo 8", track: "Never Coming Back", path: "../../../samples/breakbeat/nuskoolbreaks4.ogg" },
+                    { artist: "Rennie Pilgrem & Roxiller", track: "Bug", path: "../../../samples/breakbeat/nuskoolbreaks5.ogg" },
+                    { artist: "Plump DJs", track: "Rocket Soul", path: "../../../samples/breakbeat/nuskoolbreaks6.ogg" },
+                    { artist: "Krafty Kuts", track: "Funky Ass Beats", path: "../../../samples/breakbeat/nuskoolbreaks7.ogg" },
+                    { artist: "B-Phreak", track: "Funkbox", path: "../../../samples/breakbeat/nuskoolbreaks8.ogg" },
+                    { artist: "Stanton Warriors feat. Ruby Goe", track: "Shoot Me Down", path: "../../../samples/breakbeat/nuskoolbreaks9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsBreakbeat = $('.buttons-breakbeat');
 
-                $('.buttons-breakbeat').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsBreakbeat.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsBreakbeat.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-breakbeat-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-breakbeat').removeClass('clicked');
+                    $buttonsBreakbeat.removeClass('clicked');
                 }
             });
         </script>

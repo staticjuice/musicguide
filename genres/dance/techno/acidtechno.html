@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Ascorbin Acid",
-                        track: "Sweet Liberty",
-                        path: "../../../samples/techno/acidtechno1.ogg"
-                    },
-                    {
-                        artist: "Miss Djax",
-                        track: "Evil Machines",
-                        path: "../../../samples/techno/acidtechno2.ogg"
-                    },
-                    {
-                        artist: "The Wipeouts",
-                        track: "High Society",
-                        path: "../../../samples/techno/acidtechno3.ogg"
-                    },
-                    {
-                        artist: "Secret Hero",
-                        track: "Speed Freak",
-                        path: "../../../samples/techno/acidtechno4.ogg"
-                    },
-                    {
-                        artist: "Pzylo",
-                        track: "Sanitarium",
-                        path: "../../../samples/techno/acidtechno5.ogg"
-                    },
-                    {
-                        artist: "Dynamo City",
-                        track: "Somebody Or Nobody",
-                        path: "../../../samples/techno/acidtechno6.ogg"
-                    },
-                    {
-                        artist: "Alexs Tinman",
-                        track: "Teleportation",
-                        path: "../../../samples/techno/acidtechno7.ogg"
-                    },
-                    {
-                        artist: "Steve Mills",
-                        track: "Disco Shit",
-                        path: "../../../samples/techno/acidtechno8.ogg"
-                    },
-                    {
-                        artist: "Mobile Dogwash",
-                        track: "Catch The Freak",
-                        path: "../../../samples/techno/acidtechno9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Ascorbin Acid", track: "Sweet Liberty", path: "../../../samples/techno/acidtechno1.ogg" },
+                    { artist: "Miss Djax", track: "Evil Machines", path: "../../../samples/techno/acidtechno2.ogg" },
+                    { artist: "The Wipeouts", track: "High Society", path: "../../../samples/techno/acidtechno3.ogg" },
+                    { artist: "Secret Hero", track: "Speed Freak", path: "../../../samples/techno/acidtechno4.ogg" },
+                    { artist: "Pzylo", track: "Sanitarium", path: "../../../samples/techno/acidtechno5.ogg" },
+                    { artist: "Dynamo City", track: "Somebody Or Nobody", path: "../../../samples/techno/acidtechno6.ogg" },
+                    { artist: "Alexs Tinman", track: "Teleportation", path: "../../../samples/techno/acidtechno7.ogg" },
+                    { artist: "Steve Mills", track: "Disco Shit", path: "../../../samples/techno/acidtechno8.ogg" },
+                    { artist: "Mobile Dogwash", track: "Catch The Freak", path: "../../../samples/techno/acidtechno9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsTechno = $('.buttons-techno');
 
-                $('.buttons-techno').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsTechno.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsTechno.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-techno-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-techno').removeClass('clicked');
+                    $buttonsTechno.removeClass('clicked');
                 }
             });
         </script>

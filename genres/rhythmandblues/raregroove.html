@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Incredible Bongo Band",
-                        track: "Apache",
-                        path: "../../samples/rhythmandblues/raregroove1.ogg"
-                    },
-                    {
-                        artist: "Fred Wesley & The J.B.'s",
-                        track: "Blow Your Head",
-                        path: "../../samples/rhythmandblues/raregroove2.ogg"
-                    },
-                    {
-                        artist: "The Mohawks",
-                        track: "The Champ",
-                        path: "../../samples/rhythmandblues/raregroove3.ogg"
-                    },
-                    {
-                        artist: "Rhythm Heritage",
-                        track: "Theme From S.W.A.T.",
-                        path: "../../samples/rhythmandblues/raregroove4.ogg"
-                    },
-                    {
-                        artist: "Commodores",
-                        track: "Machine Gun",
-                        path: "../../samples/rhythmandblues/raregroove5.ogg"
-                    },
-                    {
-                        artist: "The Bamboos",
-                        track: "The Bamboos Theme",
-                        path: "../../samples/rhythmandblues/raregroove6.ogg"
-                    },
-                    {
-                        artist: "Fort Knox Five",
-                        track: "Blowing Up The Barrio",
-                        path: "../../samples/rhythmandblues/raregroove7.ogg"
-                    },
-                    {
-                        artist: "Ashley & Jackson",
-                        track: "Solid Gold (Acid Jazz Mix)",
-                        path: "../../samples/rhythmandblues/raregroove8.ogg"
-                    },
-                    {
-                        artist: "Brownout",
-                        track: "Flaximus (Renegades Of Jazz Bboy Edit)",
-                        path: "../../samples/rhythmandblues/raregroove9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Incredible Bongo Band", track: "Apache", path: "../../samples/rhythmandblues/raregroove1.ogg" },
+                    { artist: "Fred Wesley & The J.B.'s", track: "Blow Your Head", path: "../../samples/rhythmandblues/raregroove2.ogg" },
+                    { artist: "The Mohawks", track: "The Champ", path: "../../samples/rhythmandblues/raregroove3.ogg" },
+                    { artist: "Rhythm Heritage", track: "Theme From S.W.A.T.", path: "../../samples/rhythmandblues/raregroove4.ogg" },
+                    { artist: "Commodores", track: "Machine Gun", path: "../../samples/rhythmandblues/raregroove5.ogg" },
+                    { artist: "The Bamboos", track: "The Bamboos Theme", path: "../../samples/rhythmandblues/raregroove6.ogg" },
+                    { artist: "Fort Knox Five", track: "Blowing Up The Barrio", path: "../../samples/rhythmandblues/raregroove7.ogg" },
+                    { artist: "Ashley & Jackson", track: "Solid Gold (Acid Jazz Mix)", path: "../../samples/rhythmandblues/raregroove8.ogg" },
+                    { artist: "Brownout", track: "Flaximus (Renegades Of Jazz Bboy Edit)", path: "../../samples/rhythmandblues/raregroove9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsRhythmandblues = $('.buttons-rhythmandblues');
 
-                $('.buttons-rhythmandblues').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsRhythmandblues.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsRhythmandblues.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-rhythmandblues-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-rhythmandblues').removeClass('clicked');
+                    $buttonsRhythmandblues.removeClass('clicked');
                 }
             });
         </script>

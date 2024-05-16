@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Coldplay",
-                        track: "Clocks",
-                        path: "../../../samples/indie/postbritpop1.ogg"
-                    },
-                    {
-                        artist: "Travis",
-                        track: "Sing",
-                        path: "../../../samples/indie/postbritpop2.ogg"
-                    },
-                    {
-                        artist: "Embrace",
-                        track: "Gravity",
-                        path: "../../../samples/indie/postbritpop3.ogg"
-                    },
-                    {
-                        artist: "Stereophonics",
-                        track: "Dakota",
-                        path: "../../../samples/indie/postbritpop4.ogg"
-                    },
-                    {
-                        artist: "Feeder",
-                        track: "Feeling A Moment",
-                        path: "../../../samples/indie/postbritpop5.ogg"
-                    },
-                    {
-                        artist: "Doves",
-                        track: "Kingdom Of Rust",
-                        path: "../../../samples/indie/postbritpop6.ogg"
-                    },
-                    {
-                        artist: "Snow Patrol",
-                        track: "Chasing Cars",
-                        path: "../../../samples/indie/postbritpop7.ogg"
-                    },
-                    {
-                        artist: "Keane",
-                        track: "Everybody's Changing",
-                        path: "../../../samples/indie/postbritpop8.ogg"
-                    },
-                    {
-                        artist: "Bloc Party",
-                        track: "Banquet",
-                        path: "../../../samples/indie/postbritpop9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Coldplay", track: "Clocks", path: "../../../samples/indie/postbritpop1.ogg" },
+                    { artist: "Travis", track: "Sing", path: "../../../samples/indie/postbritpop2.ogg" },
+                    { artist: "Embrace", track: "Gravity", path: "../../../samples/indie/postbritpop3.ogg" },
+                    { artist: "Stereophonics", track: "Dakota", path: "../../../samples/indie/postbritpop4.ogg" },
+                    { artist: "Feeder", track: "Feeling A Moment", path: "../../../samples/indie/postbritpop5.ogg" },
+                    { artist: "Doves", track: "Kingdom Of Rust", path: "../../../samples/indie/postbritpop6.ogg" },
+                    { artist: "Snow Patrol", track: "Chasing Cars", path: "../../../samples/indie/postbritpop7.ogg" },
+                    { artist: "Keane", track: "Everybody's Changing", path: "../../../samples/indie/postbritpop8.ogg" },
+                    { artist: "Bloc Party", track: "Banquet", path: "../../../samples/indie/postbritpop9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndie = $('.buttons-indie');
 
-                $('.buttons-indie').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndie.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndie.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-indie-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-indie').removeClass('clicked');
+                    $buttonsIndie.removeClass('clicked');
                 }
             });
         </script>

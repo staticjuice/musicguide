@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Icon Of Coil",
-                        track: "Former Self",
-                        path: "../../samples/industrial/futurepop1.ogg"
-                    },
-                    {
-                        artist: "VNV Nation",
-                        track: "Dark Angel",
-                        path: "../../samples/industrial/futurepop2.ogg"
-                    },
-                    {
-                        artist: "Apoptygma Berzerk",
-                        track: "Spiritual Reality",
-                        path: "../../samples/industrial/futurepop3.ogg"
-                    },
-                    {
-                        artist: "Decoded Feedback",
-                        track: "Ragescape",
-                        path: "../../samples/industrial/futurepop4.ogg"
-                    },
-                    {
-                        artist: "Assemblage 23",
-                        track: "Let The Wind Erase Me",
-                        path: "../../samples/industrial/futurepop5.ogg"
-                    },
-                    {
-                        artist: "Covenant",
-                        track: "Call The Ships To Port",
-                        path: "../../samples/industrial/futurepop6.ogg"
-                    },
-                    {
-                        artist: "Neuroticfish",
-                        track: "Velocity",
-                        path: "../../samples/industrial/futurepop7.ogg"
-                    },
-                    {
-                        artist: "Angels And Agony",
-                        track: "Forever",
-                        path: "../../samples/industrial/futurepop8.ogg"
-                    },
-                    {
-                        artist: "Mind.in.a.box",
-                        track: "Change",
-                        path: "../../samples/industrial/futurepop9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Icon Of Coil", track: "Former Self", path: "../../samples/industrial/futurepop1.ogg" },
+                    { artist: "VNV Nation", track: "Dark Angel", path: "../../samples/industrial/futurepop2.ogg" },
+                    { artist: "Apoptygma Berzerk", track: "Spiritual Reality", path: "../../samples/industrial/futurepop3.ogg" },
+                    { artist: "Decoded Feedback", track: "Ragescape", path: "../../samples/industrial/futurepop4.ogg" },
+                    { artist: "Assemblage 23", track: "Let The Wind Erase Me", path: "../../samples/industrial/futurepop5.ogg" },
+                    { artist: "Covenant", track: "Call The Ships To Port", path: "../../samples/industrial/futurepop6.ogg" },
+                    { artist: "Neuroticfish", track: "Velocity", path: "../../samples/industrial/futurepop7.ogg" },
+                    { artist: "Angels And Agony", track: "Forever", path: "../../samples/industrial/futurepop8.ogg" },
+                    { artist: "Mind.in.a.box", track: "Change", path: "../../samples/industrial/futurepop9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsIndustrial = $('.buttons-industrial');
 
-                $('.buttons-industrial').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsIndustrial.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsIndustrial.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-industrial-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-industrial').removeClass('clicked');
+                    $buttonsIndustrial.removeClass('clicked');
                 }
             });
         </script>

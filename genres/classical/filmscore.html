@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "John Williams",
-                        track: "Star Wars - Main Title",
-                        path: "../../samples/classical/filmscore1.ogg"
-                    },
-                    {
-                        artist: "Hans Zimmer",
-                        track: "Time",
-                        path: "../../samples/classical/filmscore2.ogg"
-                    },
-                    {
-                        artist: "John Powell",
-                        track: "Forbidden Friendship",
-                        path: "../../samples/classical/filmscore3.ogg"
-                    },
-                    {
-                        artist: "Howard Shore",
-                        track: "Concerning Hobbits",
-                        path: "../../samples/classical/filmscore4.ogg"
-                    },
-                    {
-                        artist: "Michael Giacchino",
-                        track: "Married Life",
-                        path: "../../samples/classical/filmscore5.ogg"
-                    },
-                    {
-                        artist: "Thomas Newman",
-                        track: "Define Dancing",
-                        path: "../../samples/classical/filmscore6.ogg"
-                    },
-                    {
-                        artist: "James Horner",
-                        track: "Jake Enters His Avatar World",
-                        path: "../../samples/classical/filmscore7.ogg"
-                    },
-                    {
-                        artist: "Harry Gregson-Williams",
-                        track: "The Battle",
-                        path: "../../samples/classical/filmscore8.ogg"
-                    },
-                    {
-                        artist: "Klaus Badelt",
-                        track: "He's A Pirate",
-                        path: "../../samples/classical/filmscore9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "John Williams", track: "Star Wars - Main Title", path: "../../samples/classical/filmscore1.ogg" },
+                    { artist: "Hans Zimmer", track: "Time", path: "../../samples/classical/filmscore2.ogg" },
+                    { artist: "John Powell", track: "Forbidden Friendship", path: "../../samples/classical/filmscore3.ogg" },
+                    { artist: "Howard Shore", track: "Concerning Hobbits", path: "../../samples/classical/filmscore4.ogg" },
+                    { artist: "Michael Giacchino", track: "Married Life", path: "../../samples/classical/filmscore5.ogg" },
+                    { artist: "Thomas Newman", track: "Define Dancing", path: "../../samples/classical/filmscore6.ogg" },
+                    { artist: "James Horner", track: "Jake Enters His Avatar World", path: "../../samples/classical/filmscore7.ogg" },
+                    { artist: "Harry Gregson-Williams", track: "The Battle", path: "../../samples/classical/filmscore8.ogg" },
+                    { artist: "Klaus Badelt", track: "He's A Pirate", path: "../../samples/classical/filmscore9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsClassical = $('.buttons-classical');
 
-                $('.buttons-classical').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsClassical.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsClassical.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-classical-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-classical').removeClass('clicked');
+                    $buttonsClassical.removeClass('clicked');
                 }
             });
         </script>

@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Jauz",
-                        track: "Feel The Volume",
-                        path: "../../../samples/ukgarage/bassline1.ogg"
-                    },
-                    {
-                        artist: "P Money",
-                        track: "Round The Clock (Cause & Affect Remix)",
-                        path: "../../../samples/ukgarage/bassline2.ogg"
-                    },
-                    {
-                        artist: "Majestic",
-                        track: "Let's Go Back (Cause & Affect Remix)",
-                        path: "../../../samples/ukgarage/bassline3.ogg"
-                    },
-                    {
-                        artist: "Legitimate Scandal",
-                        track: "Fu Ge La",
-                        path: "../../../samples/ukgarage/bassline4.ogg"
-                    },
-                    {
-                        artist: "My Nu Leng",
-                        track: "Levels",
-                        path: "../../../samples/ukgarage/bassline5.ogg"
-                    },
-                    {
-                        artist: "DJ Q",
-                        track: "Breathe",
-                        path: "../../../samples/ukgarage/bassline6.ogg"
-                    },
-                    {
-                        artist: "Chris Lorenzo & Taiki Nulight feat. Dread MC",
-                        track: "Mind Control (Never Say Never)",
-                        path: "../../../samples/ukgarage/bassline7.ogg"
-                    },
-                    {
-                        artist: "AC Slater feat. Bassboy & Scrufizzer",
-                        track: "All About Paper (Taiki Nulight Remix)",
-                        path: "../../../samples/ukgarage/bassline8.ogg"
-                    },
-                    {
-                        artist: "Diskord",
-                        track: "SHOOK",
-                        path: "../../../samples/ukgarage/bassline9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Jauz", track: "Feel The Volume", path: "../../../samples/ukgarage/bassline1.ogg" },
+                    { artist: "P Money", track: "Round The Clock (Cause & Affect Remix)", path: "../../../samples/ukgarage/bassline2.ogg" },
+                    { artist: "Majestic", track: "Let's Go Back (Cause & Affect Remix)", path: "../../../samples/ukgarage/bassline3.ogg" },
+                    { artist: "Legitimate Scandal", track: "Fu Ge La", path: "../../../samples/ukgarage/bassline4.ogg" },
+                    { artist: "My Nu Leng", track: "Levels", path: "../../../samples/ukgarage/bassline5.ogg" },
+                    { artist: "DJ Q", track: "Breathe", path: "../../../samples/ukgarage/bassline6.ogg" },
+                    { artist: "Chris Lorenzo & Taiki Nulight feat. Dread MC", track: "Mind Control (Never Say Never)", path: "../../../samples/ukgarage/bassline7.ogg" },
+                    { artist: "AC Slater feat. Bassboy & Scrufizzer", track: "All About Paper (Taiki Nulight Remix)", path: "../../../samples/ukgarage/bassline8.ogg" },
+                    { artist: "Diskord", track: "SHOOK", path: "../../../samples/ukgarage/bassline9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsUkgarage = $('.buttons-ukgarage');
 
-                $('.buttons-ukgarage').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsUkgarage.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsUkgarage.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-ukgarage-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-ukgarage').removeClass('clicked');
+                    $buttonsUkgarage.removeClass('clicked');
                 }
             });
         </script>

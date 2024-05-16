@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Enya",
-                        track: "Orinoco Flow",
-                        path: "../../samples/experimental/newage1.ogg"
-                    },
-                    {
-                        artist: "Boko Suzuki",
-                        track: "Spirit, Breath And Movement",
-                        path: "../../samples/experimental/newage2.ogg"
-                    },
-                    {
-                        artist: "Medwyn Goodall",
-                        track: "Crystal Alignment",
-                        path: "../../samples/experimental/newage3.ogg"
-                    },
-                    {
-                        artist: "Nicholas Gunn",
-                        track: "Entering Twin Falls",
-                        path: "../../samples/experimental/newage4.ogg"
-                    },
-                    {
-                        artist: "Karl Jenkins",
-                        track: "Adiemus",
-                        path: "../../samples/experimental/newage5.ogg"
-                    },
-                    {
-                        artist: "Chris Spheeris",
-                        track: "Kingdom In The Clouds",
-                        path: "../../samples/experimental/newage6.ogg"
-                    },
-                    {
-                        artist: "Secret Garden",
-                        track: "Sleepsong",
-                        path: "../../samples/experimental/newage7.ogg"
-                    },
-                    {
-                        artist: "Loreena McKennitt",
-                        track: "Snow",
-                        path: "../../samples/experimental/newage8.ogg"
-                    },
-                    {
-                        artist: "Enigma",
-                        track: "The Child In Us",
-                        path: "../../samples/experimental/newage9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Enya", track: "Orinoco Flow", path: "../../samples/experimental/newage1.ogg" },
+                    { artist: "Boko Suzuki", track: "Spirit, Breath And Movement", path: "../../samples/experimental/newage2.ogg" },
+                    { artist: "Medwyn Goodall", track: "Crystal Alignment", path: "../../samples/experimental/newage3.ogg" },
+                    { artist: "Nicholas Gunn", track: "Entering Twin Falls", path: "../../samples/experimental/newage4.ogg" },
+                    { artist: "Karl Jenkins", track: "Adiemus", path: "../../samples/experimental/newage5.ogg" },
+                    { artist: "Chris Spheeris", track: "Kingdom In The Clouds", path: "../../samples/experimental/newage6.ogg" },
+                    { artist: "Secret Garden", track: "Sleepsong", path: "../../samples/experimental/newage7.ogg" },
+                    { artist: "Loreena McKennitt", track: "Snow", path: "../../samples/experimental/newage8.ogg" },
+                    { artist: "Enigma", track: "The Child In Us", path: "../../samples/experimental/newage9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsExperimental = $('.buttons-experimental');
 
-                $('.buttons-experimental').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsExperimental.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsExperimental.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-experimental-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-experimental').removeClass('clicked');
+                    $buttonsExperimental.removeClass('clicked');
                 }
             });
         </script>

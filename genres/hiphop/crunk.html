@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Lil Jon & The East Side Boyz feat. Lil Scrappy",
-                        track: "What U Gon' Do",
-                        path: "../../samples/hiphop/crunk1.ogg"
-                    },
-                    {
-                        artist: "Soulja Boy Tell 'Em",
-                        track: "Crank That (Soulja Boy)",
-                        path: "../../samples/hiphop/crunk2.ogg"
-                    },
-                    {
-                        artist: "Ludacris feat. Mystikal",
-                        track: "Move Bitch",
-                        path: "../../samples/hiphop/crunk3.ogg"
-                    },
-                    {
-                        artist: "Chingy",
-                        track: "Right Thurr",
-                        path: "../../samples/hiphop/crunk4.ogg"
-                    },
-                    {
-                        artist: "Three 6 Mafia feat. Lil Flip",
-                        track: "Ridin' Spinners",
-                        path: "../../samples/hiphop/crunk5.ogg"
-                    },
-                    {
-                        artist: "Usher feat. Lil Jon",
-                        track: "Yeah",
-                        path: "../../samples/hiphop/crunk6.ogg"
-                    },
-                    {
-                        artist: "Lil Scrappy feat. Sean P & E-40",
-                        track: "Oh Yeah (Work)",
-                        path: "../../samples/hiphop/crunk7.ogg"
-                    },
-                    {
-                        artist: "Flo Rida feat. T-Pain",
-                        track: "Low",
-                        path: "../../samples/hiphop/crunk8.ogg"
-                    },
-                    {
-                        artist: "Waka Flocka Flame",
-                        track: "Hard In Da Paint",
-                        path: "../../samples/hiphop/crunk9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Lil Jon & The East Side Boyz feat. Lil Scrappy", track: "What U Gon' Do", path: "../../samples/hiphop/crunk1.ogg" },
+                    { artist: "Soulja Boy Tell 'Em", track: "Crank That (Soulja Boy)", path: "../../samples/hiphop/crunk2.ogg" },
+                    { artist: "Ludacris feat. Mystikal", track: "Move Bitch", path: "../../samples/hiphop/crunk3.ogg" },
+                    { artist: "Chingy", track: "Right Thurr", path: "../../samples/hiphop/crunk4.ogg" },
+                    { artist: "Three 6 Mafia feat. Lil Flip", track: "Ridin' Spinners", path: "../../samples/hiphop/crunk5.ogg" },
+                    { artist: "Usher feat. Lil Jon", track: "Yeah", path: "../../samples/hiphop/crunk6.ogg" },
+                    { artist: "Lil Scrappy feat. Sean P & E-40", track: "Oh Yeah (Work)", path: "../../samples/hiphop/crunk7.ogg" },
+                    { artist: "Flo Rida feat. T-Pain", track: "Low", path: "../../samples/hiphop/crunk8.ogg" },
+                    { artist: "Waka Flocka Flame", track: "Hard In Da Paint", path: "../../samples/hiphop/crunk9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsHiphop = $('.buttons-hiphop');
 
-                $('.buttons-hiphop').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsHiphop.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsHiphop.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-hiphop-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-hiphop').removeClass('clicked');
+                    $buttonsHiphop.removeClass('clicked');
                 }
             });
         </script>

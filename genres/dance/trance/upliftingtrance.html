@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "Alex M.O.R.P.H.",
-                        track: "Sunshine (Nitrous Oxide Remix)",
-                        path: "../../../samples/trance/upliftingtrance1.ogg"
-                    },
-                    {
-                        artist: "Gareth Emery feat. Lucy Saunders",
-                        track: "Sanctuary (Sean Tyas Remix)",
-                        path: "../../../samples/trance/upliftingtrance2.ogg"
-                    },
-                    {
-                        artist: "Aly & Fila feat. Jwaydan",
-                        track: "We Control The Sunlight",
-                        path: "../../../samples/trance/upliftingtrance3.ogg"
-                    },
-                    {
-                        artist: "Above & Beyond feat. Richard Bedford",
-                        track: "Thing Called Love",
-                        path: "../../../samples/trance/upliftingtrance4.ogg"
-                    },
-                    {
-                        artist: "Andy Blueman",
-                        track: "Neverland",
-                        path: "../../../samples/trance/upliftingtrance5.ogg"
-                    },
-                    {
-                        artist: "Ram",
-                        track: "RAMsterdam (Jorn Van Deynhoven Remix)",
-                        path: "../../../samples/trance/upliftingtrance6.ogg"
-                    },
-                    {
-                        artist: "Simon Patterson feat. Lucy Pillin",
-                        track: "Now I Can Breathe Again",
-                        path: "../../../samples/trance/upliftingtrance7.ogg"
-                    },
-                    {
-                        artist: "Agulo feat. David Berkeley",
-                        track: "Fire Sign (Suncatcher Remix)",
-                        path: "../../../samples/trance/upliftingtrance8.ogg"
-                    },
-                    {
-                        artist: "Energy Reflect vs Arctic Moon",
-                        track: "Cold Planet (Osip Vocal Mix)",
-                        path: "../../../samples/trance/upliftingtrance9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "Alex M.O.R.P.H.", track: "Sunshine (Nitrous Oxide Remix)", path: "../../../samples/trance/upliftingtrance1.ogg" },
+                    { artist: "Gareth Emery feat. Lucy Saunders", track: "Sanctuary (Sean Tyas Remix)", path: "../../../samples/trance/upliftingtrance2.ogg" },
+                    { artist: "Aly & Fila feat. Jwaydan", track: "We Control The Sunlight", path: "../../../samples/trance/upliftingtrance3.ogg" },
+                    { artist: "Above & Beyond feat. Richard Bedford", track: "Thing Called Love", path: "../../../samples/trance/upliftingtrance4.ogg" },
+                    { artist: "Andy Blueman", track: "Neverland", path: "../../../samples/trance/upliftingtrance5.ogg" },
+                    { artist: "Ram", track: "RAMsterdam (Jorn Van Deynhoven Remix)", path: "../../../samples/trance/upliftingtrance6.ogg" },
+                    { artist: "Simon Patterson feat. Lucy Pillin", track: "Now I Can Breathe Again", path: "../../../samples/trance/upliftingtrance7.ogg" },
+                    { artist: "Agulo feat. David Berkeley", track: "Fire Sign (Suncatcher Remix)", path: "../../../samples/trance/upliftingtrance8.ogg" },
+                    { artist: "Energy Reflect vs Arctic Moon", track: "Cold Planet (Osip Vocal Mix)", path: "../../../samples/trance/upliftingtrance9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsTrance = $('.buttons-trance');
 
-                $('.buttons-trance').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsTrance.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsTrance.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-trance-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-trance').removeClass('clicked');
+                    $buttonsTrance.removeClass('clicked');
                 }
             });
         </script>

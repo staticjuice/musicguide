@@ -34,68 +34,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
-                var tracks = [
-                    {
-                        artist: "DJ Hazard & D*Minds",
-                        track: "Mr Happy",
-                        path: "../../../samples/drumandbass/jumpup1.ogg"
-                    },
-                    {
-                        artist: "Majistrate",
-                        track: "Bombaclart",
-                        path: "../../../samples/drumandbass/jumpup2.ogg"
-                    },
-                    {
-                        artist: "Taxman",
-                        track: "Original Ninja",
-                        path: "../../../samples/drumandbass/jumpup3.ogg"
-                    },
-                    {
-                        artist: "Heist",
-                        track: "Moose Knuckle",
-                        path: "../../../samples/drumandbass/jumpup4.ogg"
-                    },
-                    {
-                        artist: "Original Sin",
-                        track: "Therapy",
-                        path: "../../../samples/drumandbass/jumpup5.ogg"
-                    },
-                    {
-                        artist: "Twisted Individual",
-                        track: "I Am Leg End",
-                        path: "../../../samples/drumandbass/jumpup6.ogg"
-                    },
-                    {
-                        artist: "Sub Zero",
-                        track: "Poon",
-                        path: "../../../samples/drumandbass/jumpup7.ogg"
-                    },
-                    {
-                        artist: "Drastik Measures & Revolution",
-                        track: "Bad Trip",
-                        path: "../../../samples/drumandbass/jumpup8.ogg"
-                    },
-                    {
-                        artist: "Benny V",
-                        track: "Oldskool Box (Modified Motion Remix)",
-                        path: "../../../samples/drumandbass/jumpup9.ogg"
-                    }
-                ]
+            $(function() {
+                const tracks = [
+                    { artist: "DJ Hazard & D*Minds", track: "Mr Happy", path: "../../../samples/drumandbass/jumpup1.ogg" },
+                    { artist: "Majistrate", track: "Bombaclart", path: "../../../samples/drumandbass/jumpup2.ogg" },
+                    { artist: "Taxman", track: "Original Ninja", path: "../../../samples/drumandbass/jumpup3.ogg" },
+                    { artist: "Heist", track: "Moose Knuckle", path: "../../../samples/drumandbass/jumpup4.ogg" },
+                    { artist: "Original Sin", track: "Therapy", path: "../../../samples/drumandbass/jumpup5.ogg" },
+                    { artist: "Twisted Individual", track: "I Am Leg End", path: "../../../samples/drumandbass/jumpup6.ogg" },
+                    { artist: "Sub Zero", track: "Poon", path: "../../../samples/drumandbass/jumpup7.ogg" },
+                    { artist: "Drastik Measures & Revolution", track: "Bad Trip", path: "../../../samples/drumandbass/jumpup8.ogg" },
+                    { artist: "Benny V", track: "Oldskool Box (Modified Motion Remix)", path: "../../../samples/drumandbass/jumpup9.ogg" }
+                ];
 
-                var audioInstances = tracks.map(track => new Audio(track.path));
-                var $artistSpan = $('#artist');
-                var $trackSpan = $('#track');
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $buttonsDrumandbass = $('.buttons-drumandbass');
 
-                $('.buttons-drumandbass').each(function(index, button) {
-                    $(button).click(function() {
-                        stopAllMusic();
-                        $(this).toggleClass('clicked');
-                        let audio = audioInstances[index];
-                        audio.play();
-                        $artistSpan.text(tracks[index].artist);
-                        $trackSpan.text(tracks[index].track);
-                    });
+                $buttonsDrumandbass.on('click', function() {
+                    stopAllMusic();
+                    const index = $buttonsDrumandbass.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
                 });
 
                 $('.buttons-drumandbass-stop').on('click', function() {
@@ -109,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $('.buttons-drumandbass').removeClass('clicked');
+                    $buttonsDrumandbass.removeClass('clicked');
                 }
             });
         </script>
