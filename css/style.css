@@ -27,7 +27,13 @@ a:link, a:visited, a:hover, a:active {
 }
 
 ::selection {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.998);
+    color: #222;
+}
+
+.sidebar.pop ::selection, .sidebar.experimental ::selection, .box.pop ::selection, .box.experimental ::selection {
+    background-color: rgba(34, 34, 34, 0.998);
+    color: #FFF;
 }
 
 ::-webkit-scrollbar {
@@ -177,26 +183,26 @@ a:link, a:visited, a:hover, a:active {
 .mainukgarage a:hover { color: #B59DDB; }
 .mainexperimental a:hover { color: #BDBDBD; }
 
-.mainclassical .genrelist ::selection { background: rgba(112, 90, 61, 0.998); }
-.mainblues .genrelist ::selection { background: rgba(40, 53, 147, 0.998); }
-.mainjazz .genrelist ::selection { background: rgba(229, 115, 115, 0.998); }
-.maincountry .genrelist ::selection { background: rgba(138, 154, 91, 0.998); }
-.mainrhythmandblues .genrelist ::selection { background: rgba(0, 105, 92, 0.998); }
+.mainclassical .genrelist ::selection { background: rgba(112, 90, 61, 0.998); color: #FFF; }
+.mainblues .genrelist ::selection { background: rgba(40, 53, 147, 0.998); color: #FFF; }
+.mainjazz .genrelist ::selection { background: rgba(229, 115, 115, 0.998); color: #FFF; }
+.maincountry .genrelist ::selection { background: rgba(138, 154, 91, 0.998); color: #FFF; }
+.mainrhythmandblues .genrelist ::selection { background: rgba(0, 105, 92, 0.998); color: #FFF; }
 .mainpop .genrelist ::selection { background: rgba(253, 216, 53, 0.998); color: #222; }
-.mainrock .genrelist ::selection { background: rgba(198, 40, 40, 0.998); }
-.mainmetal .genrelist ::selection { background: rgba(8, 8, 8, 0.998); }
-.mainpunk .genrelist ::selection { background: rgba(239, 108, 0, 0.998); }
-.mainindie .genrelist ::selection { background: rgba(55, 71, 79, 0.998); }
-.mainreggae .genrelist ::selection { background: rgba(46, 125, 50, 0.998); }
-.mainhiphop .genrelist ::selection { background: rgba(78, 56, 82, 0.998); }
-.mainindustrial .genrelist ::selection { background: rgba(78, 52, 46, 0.998); }
-.mainhouse .genrelist ::selection { background: rgba(0, 159, 104, 0.998); }
-.maintrance .genrelist ::selection { background: rgba(106, 27, 154, 0.998); }
-.maintechno .genrelist ::selection { background: rgba(85, 85, 85, 0.998); }
-.mainhardcore .genrelist ::selection { background: rgba(70, 64, 57, 0.998); }
-.mainbreakbeat .genrelist ::selection { background: rgba(120, 63, 93, 0.998); }
-.maindrumandbass .genrelist ::selection { background: rgba(154, 24, 57, 0.998); }
-.mainukgarage .genrelist ::selection { background: rgba(143, 124, 173, 0.998); }
+.mainrock .genrelist ::selection { background: rgba(198, 40, 40, 0.998); color: #FFF; }
+.mainmetal .genrelist ::selection { background: rgba(8, 8, 8, 0.998); color: #FFF; }
+.mainpunk .genrelist ::selection { background: rgba(239, 108, 0, 0.998); color: #FFF; }
+.mainindie .genrelist ::selection { background: rgba(55, 71, 79, 0.998); color: #FFF; }
+.mainreggae .genrelist ::selection { background: rgba(46, 125, 50, 0.998); color: #FFF; }
+.mainhiphop .genrelist ::selection { background: rgba(78, 56, 82, 0.998); color: #FFF; }
+.mainindustrial .genrelist ::selection { background: rgba(78, 52, 46, 0.998); color: #FFF; }
+.mainhouse .genrelist ::selection { background: rgba(0, 159, 104, 0.998); color: #FFF; }
+.maintrance .genrelist ::selection { background: rgba(106, 27, 154, 0.998); color: #FFF; }
+.maintechno .genrelist ::selection { background: rgba(85, 85, 85, 0.998); color: #FFF; }
+.mainhardcore .genrelist ::selection { background: rgba(70, 64, 57, 0.998); color: #FFF; }
+.mainbreakbeat .genrelist ::selection { background: rgba(120, 63, 93, 0.998); color: #FFF; }
+.maindrumandbass .genrelist ::selection { background: rgba(154, 24, 57, 0.998); color: #FFF; }
+.mainukgarage .genrelist ::selection { background: rgba(143, 124, 173, 0.998); color: #FFF; }
 .mainexperimental .genrelist ::selection { background: rgba(237, 237, 237, 0.998); color: #222; }
 
 .intro:before { background: url("../images/intro.jpg") center center no-repeat fixed; background-size: cover; }
