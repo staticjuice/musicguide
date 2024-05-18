@@ -274,6 +274,7 @@ a:link, a:visited, a:hover, a:active {
 
 .artisttrack {
     font-weight: 900;
+    font-size: 1.2em;
     display: inline;
 }
 
