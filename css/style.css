@@ -1,12 +1,9 @@
 @font-face { font-family: Outfit; src: url(../fonts/Outfit.ttf); }
 
-* {
+body {
     font-family: Outfit;
     font-weight: 400;
     line-height: 1.6;
-}
-
-body {
     color: #FFF;
 }
 
@@ -15,7 +12,6 @@ p {
 }
 
 h1 {
-    font-family: Outfit;
     font-weight: 900;
     font-size: 2.4em;
     margin-bottom: 0.5em;
@@ -66,8 +62,8 @@ a:link, a:visited, a:hover, a:active {
 
 #introbutton {
     font-size: 1.75em;
-    padding: 0.25em;
-    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    border-radius: 1em;
     border: 0.1em solid #FFF;
 }
 
@@ -96,10 +92,9 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #genres-grid h1 {
-    font-family: Outfit;
     font-weight: 400;
-    top: 3em; left: 0; right: 0;
-    font-size: 2.7vw;
+    top: 3.2em; left: 0; right: 0;
+    font-size: 2.5vw;
     position: absolute;
     text-align: center;
     z-index: 1;
@@ -123,7 +118,7 @@ a:link, a:visited, a:hover, a:active {
 
 .sidebar {
     font-size: 1.85vh;
-    width: 40em; height: 100vh;
+    width: 37.5em; height: 100vh;
     padding: 1.25em 1.5em 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: right;
@@ -249,7 +244,6 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .year {
-    font-family: Outfit;
     font-weight: 700;
     font-size: 2em;
     float: right;
@@ -258,7 +252,6 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .buttons {
-    font-family: Outfit;
     font-weight: 700;
     font-size: 2.5em;
     text-align: center;
@@ -270,7 +263,6 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .artisttrack {
-    font-family: Outfit;
     font-weight: 900;
     font-size: 1.2em;
     display: inline;
