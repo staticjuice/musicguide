@@ -13,7 +13,7 @@ p {
 
 h1 {
     font-weight: 900;
-    font-size: 2.4em;
+    font-size: 2.5em;
     margin-bottom: 0.5em;
 }
 
@@ -92,6 +92,15 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #genres-grid h1 {
+    top: 2.8em; left: 0; right: 0;
+    font-size: 2.8vw;
+    font-weight: 400;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+
+#genres-grid h2 {
     top: 3.2em; left: 0; right: 0;
     font-size: 2.5vw;
     font-weight: 400;
@@ -108,12 +117,12 @@ a:link, a:visited, a:hover, a:active {
 
 .genrelist {
     padding: 0.85em 1.35em;
-    font-size: 3.4vh;
+    font-size: 3.5vh;
     position: absolute;
 }
 
 .genrelist h1 {
-    font-size: 2em;
+    font-size: 1.95em;
 }
 
 .sidebar {
