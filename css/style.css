@@ -1,9 +1,9 @@
-@font-face { font-family: RobotoBlack; src: url(../fonts/RobotoBlack.ttf); }
-@font-face { font-family: ProductSansRegular; src: url(../fonts/ProductSansRegular.ttf); }
-@font-face { font-family: ProductSansBold; src: url(../fonts/ProductSansBold.ttf); }
+@font-face { font-family: OutfitBlack; src: url(../fonts/OutfitBlack.ttf); }
+@font-face { font-family: OutfitRegular; src: url(../fonts/OutfitRegular.ttf); }
+@font-face { font-family: OutfitBold; src: url(../fonts/OutfitBold.ttf); }
 
 * {
-    font-family: ProductSansRegular;
+    font-family: OutfitRegular;
     line-height: 1.6;
 }
 
@@ -16,8 +16,8 @@ p {
 }
 
 h1 {
-    font-family: RobotoBlack;
-    font-size: 2.5em;
+    font-family: OutfitBlack;
+    font-size: 2.4em;
     margin-bottom: 0.5em;
 }
 
@@ -50,7 +50,7 @@ a:link, a:visited, a:hover, a:active {
 /*---------------------------------------------------------------------------*/
 
 #introbox {
-    font-size: 3.75vw;
+    font-size: 4vw;
     text-align: center;
     width: 100%;
     position: fixed;
@@ -59,9 +59,9 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #introbutton {
-    font-size: 1.7em;
-    padding: 0.3em;
-    border-radius: 0.15em;
+    font-size: 1.75em;
+    padding: 0.25em;
+    border-radius: 0.25em;
     border: 0.1em solid #FFF;
 }
 
@@ -84,13 +84,13 @@ a:link, a:visited, a:hover, a:active {
 #genres-grid img {
     margin-bottom: 2em;
     width: 100%;
-    border-radius: 0.75em;
+    border-radius: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     filter: brightness(40%);
 }
 
 #genres-grid h1 {
-    font-family: ProductSansRegular;
+    font-family: OutfitRegular;
     top: 3em; left: 0; right: 0;
     font-size: 2.7vw;
     position: absolute;
@@ -229,7 +229,7 @@ a:link, a:visited, a:hover, a:active {
     width: 40em;
     padding: 1.5em;
     margin: 2.5em;
-    border-radius: 1em;
+    border-radius: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -242,26 +242,26 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .year {
-    font-family: ProductSansBold;
+    font-family: OutfitBold;
     font-size: 2em;
     float: right;
     padding: 0 0.25em;
-    border-radius: 0.2em;
+    border-radius: 0.25em;
 }
 
 .buttons {
-    font-family: ProductSansBold;
+    font-family: OutfitBold;
     font-size: 2.5em;
     text-align: center;
     width: 1em;
-    line-height: 1.2;
+    line-height: 1.25;
     user-select: none;
-    border-radius: 0.1em;
+    border-radius: 0.15em;
     margin-bottom: 0.6em;
 }
 
 .artisttrack {
-    font-family: RobotoBlack;
+    font-family: OutfitBlack;
     font-size: 1.2em;
     display: inline;
 }
