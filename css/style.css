@@ -126,8 +126,8 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .sidebar {
-    font-size: 1.85vh;
-    width: 37.5em; height: 100vh;
+    font-size: 2vh;
+    width: 33em; height: 100vh;
     padding: 1.25em 1.5em 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: right;
@@ -236,7 +236,7 @@ a:link, a:visited, a:hover, a:active {
 /*---------------------------------------------------------------------------*/
 
 .box {
-    font-size: 1.85vh;
+    font-size: 2vh;
     width: 40em;
     padding: 1.5em;
     margin: 2.5em;
@@ -258,6 +258,7 @@ a:link, a:visited, a:hover, a:active {
     float: right;
     padding: 0 0.25em;
     border-radius: 0.25em;
+    user-select: none;
 }
 
 .buttons {
@@ -273,7 +274,6 @@ a:link, a:visited, a:hover, a:active {
 
 .artisttrack {
     font-weight: 900;
-    font-size: 1.2em;
     display: inline;
 }
 
@@ -283,7 +283,7 @@ a:link, a:visited, a:hover, a:active {
 
 .stop {
     float: right;
-    margin-top: -1em;
+    margin-top: -1.5em;
     margin-right: -0.5em;
 }
 
