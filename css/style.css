@@ -1,9 +1,8 @@
-@font-face { font-family: OutfitBlack; src: url(../fonts/OutfitBlack.ttf); }
-@font-face { font-family: OutfitRegular; src: url(../fonts/OutfitRegular.ttf); }
-@font-face { font-family: OutfitBold; src: url(../fonts/OutfitBold.ttf); }
+@font-face { font-family: Outfit; src: url(../fonts/Outfit.ttf); }
 
 * {
-    font-family: OutfitRegular;
+    font-family: Outfit;
+    font-weight: 400;
     line-height: 1.6;
 }
 
@@ -16,7 +15,8 @@ p {
 }
 
 h1 {
-    font-family: OutfitBlack;
+    font-family: Outfit;
+    font-weight: 900;
     font-size: 2.4em;
     margin-bottom: 0.5em;
 }
@@ -90,7 +90,8 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #genres-grid h1 {
-    font-family: OutfitRegular;
+    font-family: Outfit;
+    font-weight: 400;
     top: 3em; left: 0; right: 0;
     font-size: 2.7vw;
     position: absolute;
@@ -242,7 +243,8 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .year {
-    font-family: OutfitBold;
+    font-family: Outfit;
+    font-weight: 700;
     font-size: 2em;
     float: right;
     padding: 0 0.25em;
@@ -250,7 +252,8 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .buttons {
-    font-family: OutfitBold;
+    font-family: Outfit;
+    font-weight: 700;
     font-size: 2.5em;
     text-align: center;
     width: 1em;
@@ -261,7 +264,8 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .artisttrack {
-    font-family: OutfitBlack;
+    font-family: Outfit;
+    font-weight: 900;
     font-size: 1.2em;
     display: inline;
 }
