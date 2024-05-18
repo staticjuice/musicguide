@@ -2,13 +2,13 @@
 
 body {
     font-family: Outfit;
-    font-weight: 400;
     line-height: 1.6;
     color: #FFF;
 }
 
 p {
     margin: 1.5em 0;
+    font-weight: 300;
 }
 
 h1 {
@@ -92,9 +92,9 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #genres-grid h1 {
-    font-weight: 400;
     top: 3.2em; left: 0; right: 0;
     font-size: 2.5vw;
+    font-weight: 400;
     position: absolute;
     text-align: center;
     z-index: 1;
@@ -266,6 +266,10 @@ a:link, a:visited, a:hover, a:active {
     font-weight: 900;
     font-size: 1.2em;
     display: inline;
+}
+
+#artist, #track {
+    font-weight: 300;
 }
 
 .stop {
