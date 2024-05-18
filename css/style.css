@@ -127,7 +127,7 @@ a:link, a:visited, a:hover, a:active {
 
 .sidebar {
     font-size: 2vh;
-    width: 33em; height: 100vh;
+    width: 33.33em; height: 100vh;
     padding: 1.25em 1.5em 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: right;
@@ -257,7 +257,7 @@ a:link, a:visited, a:hover, a:active {
     font-size: 2em;
     float: right;
     padding: 0 0.25em;
-    border-radius: 0.25em;
+    border-radius: 1em;
     user-select: none;
 }
 
