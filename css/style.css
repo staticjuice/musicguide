@@ -131,7 +131,7 @@ a {
 .genrelist h1 {
     font-size: 2em; /* Increases the size of the genre heading. */
     padding-bottom: 0.33em; /* Adds some extra space under the genre heading. */
-    width: 10em;
+    width: 50vw; /* Prevents the genre heading from overlapping with the sidebar by allowing it to wrap. */
 }
 
 .sidebar {
