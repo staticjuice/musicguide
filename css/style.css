@@ -1,159 +1,159 @@
 @font-face {
-    font-family: Outfit; /* Specifies the font to use in the website. */
-    src: url(../fonts/Outfit.ttf); /* Locates the font file. */
+    font-family: Outfit;
+    src: url(../fonts/Outfit.ttf);
 }
 
 body {
-    font-family: Outfit; /* Applies the Outfit font to all the text. */
-    line-height: 1.6; /* Increases the line spacing of all text to 1.6. */
-    color: #FFF; /* Makes all text white by default. */
+    font-family: Outfit;
+    line-height: 1.6;
+    color: #FFF;
 }
 
 p {
-    font-weight: 300; /* Makes the paragraph text Light instead of Regular. */
-    margin: 1.5em 0; /* Adds more spacing between paragraphs and more space above the buttons. */
+    font-weight: 300;
+    margin: 1.5em 0;
 }
 
 h1 {
-    font-weight: 900; /* Makes the text for the headings Black. */
+    font-weight: 900;
 }
 
 a {
-    color: #FFF; /* Makes the hyperlinks have white text instead of blue. */
-    text-decoration: none; /* Removes the underlines for hyperlinks. */
+    color: #FFF;
+    text-decoration: none;
 }
 
 ::selection {
-    background-color: rgba(255, 255, 255, 0.998); /* Adds a white background when selecting text. */
-    color: #222; /* Makes the text dark to match the white background on selection. */
+    background-color: rgba(255, 255, 255, 0.998);
+    color: #222;
 }
 
 .pop ::selection, .experimental ::selection {
-    background-color: rgba(34, 34, 34, 0.998); /* Adds a dark background when selecting text on the lighter genres. */
-    color: #FFF; /* Makes the text white to match the dark background on selection here. */
+    background-color: rgba(34, 34, 34, 0.998);
+    color: #FFF;
 }
 
 ::-webkit-scrollbar {
-    width: 0.5em; /* Adds a custom scrollbar and specifies its width. */
+    width: 0.5em;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #FFF; /* Makes the custom scrollbar white. */
-    border-radius: 0.5em; /* Gives the scrollbar rounded ends. */
+    background: #FFF;
+    border-radius: 0.5em;
 }
 
 #allgenres::-webkit-scrollbar-track {
-    background: #000; /* Makes the scrollbar background black to blend in with the wooden background. */
+    background: #000;
 }
 
 .pop::-webkit-scrollbar-thumb, .experimental::-webkit-scrollbar-thumb {
-    background: #222; /* Makes the custom scrollbar dark to match the text colour for the light genre pages. */
+    background: #222;
 }
 
 /*---------------------------------------------------------------------------*/
 
 #introbox {
-    font-size: 4vw; /* Makes all text on the landing page much larger. */
-    text-align: center; /* Centres the landing page text. */
-    width: 100%; /* Fills the text area to the width of the screen. */
-    position: fixed; /* Stops the text from being pushed away by other things. */
-    top: 50%; left: 50%; /* Shifts the text to place it in the centre of the page. */
-    transform: translate(-50%, -50%); /* Shifts the text to place it in the centre of the page. */
+    font-size: 4vw;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #introbox h1 {
-    font-size: 2.5em; /* Increases the text size of The Music Guide heading. */
-    margin-bottom: 0.5em; /* Adds some space under The Music Guide heading. */
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
 }
 
 #introbutton {
-    font-size: 1.75em; /* Increases the size of the Enter button. */
-    padding: 0.25em 0.5em; /* Puts some space between the Enter text and the border. */
-    border: 0.1em solid #FFF; /* Adds a border around the Enter button and specifies its thickness and colour. */
-    border-radius: 1em; /* Gives the Enter button border rounded edges. */
+    font-size: 1.75em;
+    padding: 0.25em 0.5em;
+    border: 0.1em solid #FFF;
+    border-radius: 1em;
 }
 
 #introbutton:hover {
-    color: #FF6D00; /* Makes the Enter button turn orange on hover. */
-    border-color: #FF6D00; /* Makes the border also turn orange on hover. */
+    color: #FF6D00;
+    border-color: #FF6D00;
 }
 
 /*---------------------------------------------------------------------------*/
 
 #genres-heading {
-    margin: 2vw 9vw; /* Gives the genre page heading a little vertical space and pushes it further to the right. */
-    font-size: 1.5vw; /* Increases the size of the Genres heading. */
+    margin: 2vw 9vw;
+    font-size: 1.5vw;
 }
 
 #genres-heading h1 {
-    font-size: 2.5em; /* Increases the size of the Genres heading. */
+    font-size: 2.5em;
 }
 
 #genres-grid {
-    margin: 1vw 9vw; /* Squeezes the entire genre squares grid into a smaller area. */
+    margin: 1vw 9vw;
 }
 
 #genres-grid img {
-    margin-bottom: 1.5em; /* Adds some space under each row of images. */
-    width: 100%; /* Stops the images from filling most of the screen. */
-    border-radius: 1em; /* Gives the images rounded corners.  */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Adds a box shadow to the images for a bit of depth. */
-    filter: brightness(40%); /* Dims the images to see the text more easily. */
+    margin-bottom: 1.5em;
+    width: 100%;
+    border-radius: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    filter: brightness(40%);
 }
 
 #genres-grid span {
-    top: 2.6em; /* Pushes the genre labels down to try and vertically centre them. */
-    left: 0; /* Horizontally centres the genre labels. */
-    right: 0; /* Horizontally centres the genre labels. */
-    font-size: 2.8vw; /* Sets the font size of the genre labels and make their size relative. */
-    position: absolute; /* Places the genre labels on top of the images. */
-    text-align: center; /* Centres the genre labels in addition to the left and right settings above. */
-    z-index: 1; /* Places the text in front of the images. */
+    top: 2.6em;
+    left: 0;
+    right: 0;
+    font-size: 2.8vw;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
 }
 
 #genres-grid span #fit {
-    top: 0.1em; /* Pushes the Experimental label down to vertically centre it according to its font size. */
-    font-size: 2.5vw; /* Does the same as h1 but for Experimental. */
+    top: 0.1em;
+    font-size: 2.5vw;
 }
 
 .col-3, .col-12 {
-    position: relative; /* Puts the labels on top of each of the columns, first for desktop and then for mobile. */
+    position: relative;
 }
 
 /*---------------------------------------------------------------------------*/
 
 .genrelist {
-    padding: 0.85em 1.35em; /* Adds vertical and horizontal space to the list of subgenres and its heading. */
-    font-size: 3.5vh; /* Increases the font size for the list of subgenres and its heading. */
-    position: absolute; /* Allows the sidebar to be next to the subgenre list. */
+    padding: 0.85em 1.35em;
+    font-size: 3.5vh;
+    position: absolute;
 }
 
 .genrelist h1 {
-    font-size: 2em; /* Increases the size of the genre heading. */
-    padding-bottom: 0.33em; /* Adds some extra space under the genre heading. */
-    width: 50vw; /* Prevents the genre heading from overlapping with the sidebar by allowing it to wrap. */
+    font-size: 2em;
+    padding-bottom: 0.33em;
+    width: 48vw;
 }
 
 .sidebar {
-    font-size: 2vh; /* Increases the font size for all text in the sidebar. */
-    width: 33.33em; /* Specifies the width of the sidebar, otherwise it would fill the whole screen. */
-    height: 100vh; /* Keeps the sidebar the same height as the screen to let it scroll down instead. */
-    padding: 1.25em 1.5em 0; /* Adds space around the sidebar text. */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Adds a shadow depth effect to the sidebar area. */
-    float: right; /* Places the sidebar to the right side of the page. */
-    overflow: auto; /* Lets the sidebar area use a scrollbar if the text is longer than the page area. */
+    font-size: 2vh;
+    width: 33.33em;
+    height: 100vh;
+    padding: 1.25em 1.5em 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    overflow: auto;
 }
 
 .sidebar h1 {
-    font-size: 2.5em; /* Increases the sidebar heading size and makes it responsive. */
+    font-size: 2.5em;
 }
 
-.classical { background-color: #705A3D; } /* Adds a background colour to the sidebar for each of the genres. */
+.classical { background-color: #705A3D; }
 .blues { background-color: #283593; }
 .jazz { background-color: #E57373; }
 .country { background-color: #8A9A5B; }
 .rhythmandblues { background-color: #00695C; }
-.pop { background-color: #FDD835; color: #222; } /* Gives the light genres dark text too. */
+.pop { background-color: #FDD835; color: #222; }
 .rock { background-color: #C62828; }
 .metal { background-color: #080808; }
 .punk { background-color: #EF6C00; }
@@ -171,17 +171,17 @@ a {
 .experimental { background-color: #EDEDED; color: #222; }
 
 [id*="main"]:before, #intro:before {
-    content: ""; /* Makes the background image display. */
-    position: fixed; /* Makes the background image display. */
-    width: 100vw; /* Makes the background image display. */
-    height: 100vh; /* Makes the background image display. */
-    filter: brightness(40%); /* Dims the background image to make the text easier to see. */
-    z-index: -1; /* Places the background behind everything so the sidebar will show. */
+    content: "";
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(40%);
+    z-index: -1;
 }
 
 #intro:before { background: url("../images/intro.jpg") center center / cover fixed; }
-#allgenres { background: url("../images/wood.jpg"); position: absolute; background-size: cover; } /* The wooden background has different sizing and positioning rules. */
-#mainclassical:before { background: url("../images/classicalbig.jpg") center center / cover fixed; } /* Specifies which image file to display for the genre page background and determines their sizing and positioning. */
+#allgenres { background: url("../images/wood.jpg"); position: absolute; background-size: cover; }
+#mainclassical:before { background: url("../images/classicalbig.jpg") center center / cover fixed; }
 #mainblues:before { background: url("../images/bluesbig.jpg") center center / cover fixed; }
 #mainjazz:before { background: url("../images/jazzbig.jpg") center center / cover fixed; }
 #maincountry:before { background: url("../images/countrybig.jpg") center center / cover fixed; }
@@ -203,7 +203,7 @@ a {
 #mainukgarage:before { background: url("../images/ukgaragebig.jpg") center center / cover fixed; }
 #mainexperimental:before { background: url("../images/experimentalbig.jpg") center center / cover fixed; }
 
-#mainclassical a:hover { color: #A18259; } /* For each genre page, makes the links change colour when you hover on them. */
+#mainclassical a:hover { color: #A18259; }
 #mainblues a:hover { color: #5361D0; }
 #mainjazz a:hover { color: #F1B1B1; }
 #maincountry a:hover { color: #B8C299; }
@@ -225,12 +225,12 @@ a {
 #mainukgarage a:hover { color: #B59DDB; }
 #mainexperimental a:hover { color: #BDBDBD; }
 
-#mainclassical .genrelist ::selection { background: rgba(112, 90, 61, 0.998); color: #FFF; } /* For each genre page, sets the selection colour to its repsective colour scheme and changes the text colour to white. */
+#mainclassical .genrelist ::selection { background: rgba(112, 90, 61, 0.998); color: #FFF; }
 #mainblues .genrelist ::selection { background: rgba(40, 53, 147, 0.998); color: #FFF; }
 #mainjazz .genrelist ::selection { background: rgba(229, 115, 115, 0.998); color: #FFF; }
 #maincountry .genrelist ::selection { background: rgba(138, 154, 91, 0.998); color: #FFF; }
 #mainrhythmandblues .genrelist ::selection { background: rgba(0, 105, 92, 0.998); color: #FFF; }
-#mainpop .genrelist ::selection { background: rgba(253, 216, 53, 0.998); color: #222; } /* For the light genre pages, it also makes the text dark on selection. */
+#mainpop .genrelist ::selection { background: rgba(253, 216, 53, 0.998); color: #222; }
 #mainrock .genrelist ::selection { background: rgba(198, 40, 40, 0.998); color: #FFF; }
 #mainmetal .genrelist ::selection { background: rgba(8, 8, 8, 0.998); color: #FFF; }
 #mainpunk .genrelist ::selection { background: rgba(239, 108, 0, 0.998); color: #FFF; }
@@ -250,60 +250,60 @@ a {
 /*---------------------------------------------------------------------------*/
 
 .box {
-    font-size: 2vh; /* Increases the size of the subgenre box text and keeps it relative. */
-    width: 40em; /* Fixes the width of the box so it doesn't fill the width of the whole screen. */
-    padding: 1.5em; /* Puts space around the contents inside the box. */
-    margin: 2.5em; /* Adds space to the area outside the box, so it doesn't start in the top-left corner.  */
-    border-radius: 1.5em; /* Gives the box rounded corners. */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Gives the box a small shadow for depth. */
+    font-size: 2vh;
+    width: 40em;
+    padding: 1.5em;
+    margin: 2.5em;
+    border-radius: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .box h1 {
-    float: left; /* Allows other content to exist next to the box genre heading. */
-    font-size: 2.5em; /* Increases the box heading size and makes it responsive. */
+    float: left;
+    font-size: 2.5em;
 }
 
 .box p {
-    padding-top: 2.75em; /* Pushes the paragraph text to make sure it's under the heading. */
+    padding-top: 2.75em;
 }
 
 .year {
-    font-weight: 700; /* Sets the weight of the year text to Bold. */
-    font-size: 2em; /* Increases the year's font size. */
-    float: right; /* Places the year part to the right of the box. */
-    padding: 0 0.3em; /* Adds a bit more space to the sides of the year. */
-    border-radius: 1em; /* Gives the year box rounded corners. */
-    user-select: none; /* Makes the text inside the year box unselectable. */
+    font-weight: 700;
+    font-size: 2em;
+    float: right;
+    padding: 0 0.3em;
+    border-radius: 1em;
+    user-select: none;
 }
 
 .buttons {
-    font-weight: 700; /* Makes the numbers for the buttons have a Bold weight. */
-    font-size: 2.5em; /* Increases the size of the numbers. */
-    text-align: center; /* Centres the numbers to be horizontally in the middle of the buttons. */
-    width: 1em; /* Adds a bit more space for the buttons. */
-    line-height: 1.25; /* Reduces the height of the buttons. */
-    border-radius: 0.15em; /* Slightly rounds the corners of the buttons. */
-    margin-bottom: 0.6em; /* Adds a bit more space under the buttons to make more room for the artist and track names. */
-    user-select: none; /* Makes the numbers unselectable. */
+    font-weight: 700;
+    font-size: 2.5em;
+    text-align: center;
+    width: 1em;
+    line-height: 1.25;
+    border-radius: 0.15em;
+    margin-bottom: 0.6em;
+    user-select: none;
 }
 
 .artisttrack {
-    font-weight: 900; /* Gives the artist and track labels a Black weight. */
-    font-size: 1.2em; /* Slightly increases the font size of the artist and track information. */
-    display: inline; /* Removes the excessive vertical padding for the artist and track information. */
+    font-weight: 900;
+    font-size: 1.2em;
+    display: inline;
 }
 
 #artist, #track {
-    font-weight: 300; /* Makes the current artist and track names Light instead of inheriting the Black weight. */
+    font-weight: 300;
 }
 
 .stop {
-    float: right; /* Puts the stop button at the right side of the box. */
-    margin-top: -1.5em; /* Shifts the stop button up to be in line with the artist and track info. */
-    margin-right: -0.5em; /* Shifts the stop button a bit more to the right to be more even. */
+    float: right;
+    margin-top: -1.5em;
+    margin-right: -0.5em;
 }
 
-.box.classical { border: 0.5em solid #917550; } /* Adds a slightly lighter border outline to the box, specifying the thickness and colour for each genre. */
+.box.classical { border: 0.5em solid #917550; }
 .box.blues { border: 0.5em solid #3F4FCA; }
 .box.jazz { border: 0.5em solid #ED9C9C; }
 .box.country { border: 0.5em solid #ADB889; }
@@ -325,7 +325,7 @@ a {
 .box.ukgarage { border: 0.5em solid #A892CC; }
 .box.experimental { border: 0.5em solid #F5F5F5; }
 
-.classical-light { background-color: #917550; } /* Gives the buttons and year labels a lighter colour to the rest of the box */
+.classical-light { background-color: #917550; }
 .blues-light { background-color: #3F4FCA; }
 .jazz-light { background-color: #ED9C9C }
 .country-light { background-color: #ADB889; }
@@ -347,7 +347,7 @@ a {
 .ukgarage-light { background-color: #A892CC; }
 .experimental-light { background-color: #F5F5F5; }
 
-.buttons.classical-light:hover { background-color: #A18259; } /* Makes the buttons even lighter when you hover on them. */
+.buttons.classical-light:hover { background-color: #A18259; }
 .buttons.blues-light:hover { background-color: #5361D0; }
 .buttons.jazz-light:hover { background-color: #F1B1B1; }
 .buttons.country-light:hover { background-color: #B8C299; }
@@ -370,14 +370,14 @@ a {
 .buttons.experimental-light:hover { background-color: #FFFFFF; }
 
 .clicked {
-    box-shadow:inset 0 0 0 0.1em #FFF; /* Puts a white outline inside the button when it's clicked on. */
+    box-shadow:inset 0 0 0 0.1em #FFF;
 }
 
 .pop-light.clicked, .experimental-light.clicked {
-    box-shadow:inset 0 0 0 0.1em #222; /* Puts a dark outline inside the button when clicked for the light genres. */
+    box-shadow:inset 0 0 0 0.1em #222;
 }
 
-#medieval {background: url("../images/classical/medieval.jpg") center center / cover fixed; } /* Specifies the image file for each genre and the sizing and positioning rules for them. */
+#medieval {background: url("../images/classical/medieval.jpg") center center / cover fixed; }
 #renaissance {background: url("../images/classical/renaissance.jpg") center center / cover fixed; }
 #baroque {background: url("../images/classical/baroque.jpg") center center / cover fixed; }
 #opera {background: url("../images/classical/opera.jpg") center center / cover fixed; }
@@ -608,72 +608,82 @@ a {
 
 /*---------------------------------------------------------------------------*/
 
-@media (max-width: 600px) and (orientation: portrait) {
+@media (orientation: landscape) {
+    .show-landscape {
+        display: block !important;
+    }
+}
+
+@media (orientation: portrait) {
+    .show-portrait {
+        display: block !important;
+    }
+
     #introbox, .buttons {
-        font-size: 2em; /* Increases the font size for all text on the landing page, and decreases the button sizes for the mobile version. */
+        font-size: 2em;
     }
 
     #genres-heading {
-        font-size: 5vw; /* Increases the heading size for the mobile Genre pages. */
-        text-align: center; /* Centres the Genre heading instead of having it in the left. */
-        margin: 1em; /* Adds more space above and below the Genre heading to vertically centre it more. */
+        font-size: 5vw;
+        text-align: center;
+        margin: 1em;
     }
 
     #genres-grid {
-        margin: 0 1.5em; /* Widens the genre grid area a bit more. */
+        margin: 0 1.5em;
     }
 
     #genres-grid span {
-        font-size: 8vw; /* Increases the size of the genre names for the mobile version. */
-        top: 20%; /* Pushes the genre names up to be vertically centred. */
+        font-size: 8vw;
+        top: 20%;
     }
 
     #genres-grid img {
-        height: 25vw; /* Decreases the height of the genres to make them rectangular. */
-        margin-bottom: 1.5em; /* Adds a little more space between the genres and the bottom of the page. */
-        object-fit: cover; /* Put part of the image inside the genre rectangles instead of stretching to fill the width. */
+        height: 25vw;
+        margin-bottom: 1.5em;
+        object-fit: cover;
     }
 
     .genrelist {
-        padding: 1em 1em 0.5em; /* Pushes the list of genres area a little bit down, to the left, and removes space from the bottom to make that area more even. */
-        font-size: 6vw; /* Increases the text size for the list of genres area. */
-        position: relative; /* Makes it so the list of genres area and sidebar don't overlap with each other. */
+        padding: 1em 1em 0.5em;
+        font-size: 6vw;
+        position: relative;
     }
 
     .genrelist h1 {
-        font-size: 1.75em; /* Increases the heading size for the list of genres area. */
+        font-size: 1.75em;
     }
 
     .sidebar {
-        width: 100%; /* Reduces the width of the sidebar so it fills the width of the page. */
-        height: 100%; /* Makes sure the sidebar fills the whole screen when reading from it. */
-        font-size: 4vw; /* Increases the size of the scrollbar text. */
-        padding-top: 1.5em; /* Reduces the space above the heading a tiny bit. */
+        width: 100%;
+        height: 100%;
+        font-size: 4vw;
+        padding-top: 1.5em;
     }
 
     .box {
-        font-size: 3.5vw; /* Increases the text size of everything inside the subgenre box. */
-        width: 89%; /* Reduces the width of the box so it fits within a vertical screen size. */
-        margin: 1.5em; /* Makes the left and right margins even.  */
+        font-size: 3.5vw;
+        width: 89%;
+        margin: 1.5em;
     }
 
     .box h1 {
-        margin-bottom: 0.3em; /* Reduces the space under the subgenre heading to make the space between the year more even. */
+        margin-bottom: 0.3em;
     }
 
     .year {
-        float: left; /* Keeps the year inside the box and aligned to the left. */
-        margin-right: 100%; /* Makes sure nothing gets placed next to the year so it breaks onto a new line. */
-        margin-bottom: 0.5em; /* Adds a bit more space under the year label. */
-        font-size: 1.5em; /* Decreases the size of the text in the year label. */
-        white-space: nowrap; /* Prevents text in the year label from breaking down onto a new line. */
+        float: left;
+        margin-right: 100%;
+        margin-bottom: 0.5em;
+        font-size: 1.5em;
+        white-space: nowrap;
     }
 
     .artisttrack {
-        font-size: 3.5vw; /* Decreases the text size for the artist and track info so it stays within the box. */
+        font-size: 3.5vw;
     }
 
     .col-1 {
-        margin-right: 0.5em; /* Adds a bit of space between the buttons on mobile, so they don't get squashed together. */
+        margin-right: 0.5em;
     }
 }
