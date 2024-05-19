@@ -10,25 +10,25 @@
 
     <body id="nowave">
         <div class="box punk">
-            <h1>NO WAVE</h1><div class="year year-punk">1978</div>
+            <h1>NO WAVE</h1><div class="year punk-light">1978</div>
 
             <p>No Wave was a cultural avant-garde movement sprawling forth out of the darker, more industrial and abandoned places of New York City. Many intellectual artists could no longer bear the depressing events of the 70s, nor the irony of the rising tendency to make New Wave catchier and happier. In the concrete underground jungle of their urban warzone, they created a soundtrack fit for total apocalypse &ndash; atonal, eclectic, super pissed-off and depressing Post-Post-Punk. Often there were extremely chaotic passages directly inspired by Free Jazz. But No Wave was more than just music &ndash; directors, inspired by the French Nouvelle Vague movement and performance artists displayed similar expressions of deconstruction and nihilism. The minimal lifespan of No Wave can be explained by the absence of a unified goal. All No Wave artists were connected by their rejection of everything, yet failed to become a conglomerated movement. If it weren't for Brian Eno's infamous compilation "No New York", No Wave's face would probably still be masqueraded in the grainy low-key shadows it embraced.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-punk">1</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">2</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">3</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">4</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">5</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">6</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">7</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">8</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">9</div></div>
+                <div class="col-1"><div class="buttons punk-light">1</div></div>
+                <div class="col-1"><div class="buttons punk-light">2</div></div>
+                <div class="col-1"><div class="buttons punk-light">3</div></div>
+                <div class="col-1"><div class="buttons punk-light">4</div></div>
+                <div class="col-1"><div class="buttons punk-light">5</div></div>
+                <div class="col-1"><div class="buttons punk-light">6</div></div>
+                <div class="col-1"><div class="buttons punk-light">7</div></div>
+                <div class="col-1"><div class="buttons punk-light">8</div></div>
+                <div class="col-1"><div class="buttons punk-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons punk-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsPunk = $('.buttons-punk');
+                const $buttonRow = $('.buttons');
 
-                $buttonsPunk.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsPunk.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-punk-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsPunk.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

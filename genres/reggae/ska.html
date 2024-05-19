@@ -10,25 +10,25 @@
 
     <body id="ska">
         <div class="box reggae">
-            <h1>SKA</h1><div class="year year-reggae">1959</div>
+            <h1>SKA</h1><div class="year reggae-light">1959</div>
 
             <p>Ska put the Jamaican music scene on the map. The nearest American city, New Orleans, brought its own version of R&amp;B to the island where the sound was drastically changed. The R&amp;B rhythm of Bluebeat became accompanied by a marching beat, an influence from Rock &amp; Roll. Although there are African vocals, Ska is more about the sound and feeling &ndash; optimistic, serene and peaceful. Blissful jazzy riffs, horns and staccato guitars are the main tools to achieve this. Ska is also known for its large brass orchestras (10-20 people) dominating the music, whereas bass is rather simplistic with the accent on the offbeat. When Philadelphia Soul started to eclipse earlier Soul and Blues, Ska experienced a sharp rise, as the Jamaican public &ndash; fond of the Crescent City's music &ndash; was forced to take matters in their own hands. This happens simultaneously with the independence of Jamaica in 1962, providing a tremendous opportunity to create a unique and national sound for a new country. Ska becomes a huge success, accompanied by its own jagged, hyperactive type of dancing.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-reggae">1</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">2</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">3</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">4</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">5</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">6</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">7</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">8</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">9</div></div>
+                <div class="col-1"><div class="buttons reggae-light">1</div></div>
+                <div class="col-1"><div class="buttons reggae-light">2</div></div>
+                <div class="col-1"><div class="buttons reggae-light">3</div></div>
+                <div class="col-1"><div class="buttons reggae-light">4</div></div>
+                <div class="col-1"><div class="buttons reggae-light">5</div></div>
+                <div class="col-1"><div class="buttons reggae-light">6</div></div>
+                <div class="col-1"><div class="buttons reggae-light">7</div></div>
+                <div class="col-1"><div class="buttons reggae-light">8</div></div>
+                <div class="col-1"><div class="buttons reggae-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-reggae-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons reggae-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsReggae = $('.buttons-reggae');
+                const $buttonRow = $('.buttons');
 
-                $buttonsReggae.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsReggae.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-reggae-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsReggae.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

@@ -10,25 +10,25 @@
 
     <body id="rave">
         <div class="box hardcore">
-            <h1>RAVE</h1><div class="year year-hardcore">1990</div>
+            <h1>RAVE</h1><div class="year hardcore-light">1990</div>
 
             <p>What Punk was to Rock, Rave was to Dance. The all-changing shock-revolution, shaking things up where things might have gone stale. In Germany and Belgium, young, militant DJs discovered the infamous "hoover" sound &ndash; an accelerated, distorted sound of an alien vacuum cleaner. In the beginning, this dark and brutal European underground Techno was purely instrumental and barely melodic, but gradually the tempo increased and the hoover sounds were used to establish an anthem-like, bombastic melody. This led to a sort of Dance music unheard of &ndash; dark, hard, ecstatic and overwhelming. Rave became a party phenomenon &ndash; massive illegal and secret pop-up parties (called "Raves") with excessive drug abuse were soon the target of a nationwide police hunt. This was even reflected in the music &ndash; alarm bells, sirens and other paranoia-inducing effects all added to the theatrical overstimulation that is Rave. The most important aspect of Rave is undoubtedly XTC. What was already a small shock during New Beat completely erupted when the perfect XTC soundtrack was finally conceived.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-hardcore">1</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">2</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">3</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">4</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">5</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">6</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">7</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">8</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">9</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">1</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">2</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">3</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">4</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">5</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">6</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">7</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">8</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-hardcore-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons hardcore-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsHardcore = $('.buttons-hardcore');
+                const $buttonRow = $('.buttons');
 
-                $buttonsHardcore.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsHardcore.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-hardcore-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsHardcore.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

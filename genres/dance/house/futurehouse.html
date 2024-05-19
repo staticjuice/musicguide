@@ -10,25 +10,25 @@
 
     <body id="futurehouse">
         <div class="box house">
-            <h1>FUTURE HOUSE</h1><div class="year year-house">2013</div>
+            <h1>FUTURE HOUSE</h1><div class="year house-light">2013</div>
 
             <p>Emerging in the 2010s, some musicians took the musical characteristics of Deep House (especially regarding its chromatic chords and use of 7ths, 9ths and 13ths) and applied them to the upbeat sounds of Big Room which was popular at the time. The rise of Future House is generally credited to Oliver Heldens with his international chart successes of "Gecko" and "Last All Night" which brought the genre to wider mainstream recognition in 2014. Following the success of Oliver Heldens' tracks, other artists such as Don Diablo, Kerri Chandler, Martin Solveig, Mesto and Swanky Tunes have since incorporated the sound into their work, leading some commentators to observe and criticise the commercialisation of the style, just like what happened with Big Room. Stylistically, songs within the genre are normally characterised by a muted melody with a metallic, elastic sounding drop and frequency modulated basslines. Although the genre didn't receive any crossovers into Pop music, the genre remains one of the top-selling genres of Beatport and is frequently featured at EDM festivals.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-house">1</div></div>
-                <div class="col-1"><div class="buttons buttons-house">2</div></div>
-                <div class="col-1"><div class="buttons buttons-house">3</div></div>
-                <div class="col-1"><div class="buttons buttons-house">4</div></div>
-                <div class="col-1"><div class="buttons buttons-house">5</div></div>
-                <div class="col-1"><div class="buttons buttons-house">6</div></div>
-                <div class="col-1"><div class="buttons buttons-house">7</div></div>
-                <div class="col-1"><div class="buttons buttons-house">8</div></div>
-                <div class="col-1"><div class="buttons buttons-house">9</div></div>
+                <div class="col-1"><div class="buttons house-light">1</div></div>
+                <div class="col-1"><div class="buttons house-light">2</div></div>
+                <div class="col-1"><div class="buttons house-light">3</div></div>
+                <div class="col-1"><div class="buttons house-light">4</div></div>
+                <div class="col-1"><div class="buttons house-light">5</div></div>
+                <div class="col-1"><div class="buttons house-light">6</div></div>
+                <div class="col-1"><div class="buttons house-light">7</div></div>
+                <div class="col-1"><div class="buttons house-light">8</div></div>
+                <div class="col-1"><div class="buttons house-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-house-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons house-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsHouse = $('.buttons-house');
+                const $buttonRow = $('.buttons');
 
-                $buttonsHouse.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsHouse.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-house-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsHouse.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

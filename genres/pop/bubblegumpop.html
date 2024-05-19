@@ -10,25 +10,25 @@
 
     <body id="bubblegumpop">
         <div class="box pop">
-            <h1>BUBBLEGUM POP</h1><div class="year year-pop">1962</div>
+            <h1>BUBBLEGUM POP</h1><div class="year pop-light">1962</div>
 
             <p>The 60s was a glorious decade of prosperity and happiness, but also of new inventions and gadgets for the whole family ushering the age of consumerism. A lot of baby boomer teenagers and preteens were a perfect target for a new music genre, fittingly called Bubblegum Pop. Music producers (acting like franchise CEOs) took Rock &amp; Roll and stripped it down to simple, melodic Pop music that was premanufactured, commercialised, bought and sold. Bubblegum often featured fun, colourful instruments such as Hammond Organs. Teenybop was Pop music specifically made for very young or sensitive teens, which dealt with melodramatic and sentimental events (such as the first high school crush). It's clear that Teenybop shares a great deal of resemblance with Bubblegum Pop &ndash; music as shiny merchandise or therapeutical triage for children. Bubblegum became an umbrella term for any studio-based catchy tune under three minutes, and eventually used as a negative synonym for shallowness and lightheartedness, despite several other Rock and Pop bands creating similar music.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-pop">1</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">2</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">3</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">4</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">5</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">6</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">7</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">8</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">9</div></div>
+                <div class="col-1"><div class="buttons pop-light">1</div></div>
+                <div class="col-1"><div class="buttons pop-light">2</div></div>
+                <div class="col-1"><div class="buttons pop-light">3</div></div>
+                <div class="col-1"><div class="buttons pop-light">4</div></div>
+                <div class="col-1"><div class="buttons pop-light">5</div></div>
+                <div class="col-1"><div class="buttons pop-light">6</div></div>
+                <div class="col-1"><div class="buttons pop-light">7</div></div>
+                <div class="col-1"><div class="buttons pop-light">8</div></div>
+                <div class="col-1"><div class="buttons pop-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-pop-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons pop-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsPop = $('.buttons-pop');
+                const $buttonRow = $('.buttons');
 
-                $buttonsPop.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsPop.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-pop-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsPop.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

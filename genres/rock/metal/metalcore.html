@@ -10,25 +10,25 @@
 
     <body id="metalcore">
         <div class="box metal">
-            <h1>METALCORE</h1><div class="year year-metal">1995</div>
+            <h1>METALCORE</h1><div class="year metal-light">1995</div>
 
             <p>In a desperate attempt to prevent Nu Metal from remaining the last chapter in the history of Metal, the ambiguous term Metalcore was conceived. This was far from necessary, as Metal is perhaps the only supergenre where all different styles are still being practised and performed intensively. At first, this wave of American bands seemed only unified in their stance against Nu Metal, but gradually a specific, well-defined genre unfolded, named Metalcore. Instead of mutually aggravating each other towards the extreme like Grindcore, Metalcore is a balanced mix of Hardcore and Death Metal elements, which undoubtedly has led to longer, more complex songs. The song structure and mentality is still Hardcore, but with a slower drum beat and metallic single note guitars. Metalcore is also the least emotional type of Hardcore. Metalcore is a forced marriage between Hardcore Punk and Metal to save both genres their legacies, despite mutual differences. Nevertheless, Metalcore's numerous offspring subgenres prove the healthiness of this marriage in one way or another.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-metal">1</div></div>
-                <div class="col-1"><div class="buttons buttons-metal">2</div></div>
-                <div class="col-1"><div class="buttons buttons-metal">3</div></div>
-                <div class="col-1"><div class="buttons buttons-metal">4</div></div>
-                <div class="col-1"><div class="buttons buttons-metal">5</div></div>
-                <div class="col-1"><div class="buttons buttons-metal">6</div></div>
-                <div class="col-1"><div class="buttons buttons-metal">7</div></div>
-                <div class="col-1"><div class="buttons buttons-metal">8</div></div>
-                <div class="col-1"><div class="buttons buttons-metal">9</div></div>
+                <div class="col-1"><div class="buttons metal-light">1</div></div>
+                <div class="col-1"><div class="buttons metal-light">2</div></div>
+                <div class="col-1"><div class="buttons metal-light">3</div></div>
+                <div class="col-1"><div class="buttons metal-light">4</div></div>
+                <div class="col-1"><div class="buttons metal-light">5</div></div>
+                <div class="col-1"><div class="buttons metal-light">6</div></div>
+                <div class="col-1"><div class="buttons metal-light">7</div></div>
+                <div class="col-1"><div class="buttons metal-light">8</div></div>
+                <div class="col-1"><div class="buttons metal-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-metal-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons metal-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsMetal = $('.buttons-metal');
+                const $buttonRow = $('.buttons');
 
-                $buttonsMetal.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsMetal.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-metal-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsMetal.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

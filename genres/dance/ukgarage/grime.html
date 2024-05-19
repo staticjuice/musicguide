@@ -10,25 +10,25 @@
 
     <body id="grime">
         <div class="box ukgarage">
-            <h1>GRIME</h1><div class="year year-ukgarage">2000</div>
+            <h1>GRIME</h1><div class="year ukgarage-light">2000</div>
 
             <p>At the turn of the millennium, 2-Step Garage loses its momentum. The scene changes into two different directions &ndash; Breakbeat Garage leaves all House and fancy influences behind, and almost immediately a new wave of very young artists starts adding rap vocals and more Drum &amp; Bass elements on top of this. The old UKG classes of the second half of the 90s however, found it hard to get along with such an aggressive style and a generational gap ensues. From the comfort of their bedrooms, British kids started to make home-produced music, featuring Drum &amp; Bass-like breaks at a slower tempo with dark, "grimy" rhymes &ndash; Grime is born. Thanks to internet streaming, Grime rapidly conquers the globe. Its violent sawtooth basslines onto lo-fi riddims was truly unique and original in an era of few innovative genres. Grime bridges Hip Hop, Breakbeat and Drum &amp; Bass, and brings UK Garage back to the streets, to the youth and the clubs. Its popularity and subsonic quality becomes exposed by its variety of aliases and it would have been the star of the 2000s if Dubstep didn't claim that prize shortly after.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-ukgarage">1</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">2</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">3</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">4</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">5</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">6</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">7</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">8</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">9</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">1</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">2</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">3</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">4</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">5</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">6</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">7</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">8</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-ukgarage-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons ukgarage-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsUkgarage = $('.buttons-ukgarage');
+                const $buttonRow = $('.buttons');
 
-                $buttonsUkgarage.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsUkgarage.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-ukgarage-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsUkgarage.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

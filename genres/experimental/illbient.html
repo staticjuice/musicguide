@@ -10,25 +10,25 @@
 
     <body id="illbient">
         <div class="box experimental">
-            <h1>ILLBIENT</h1><div class="year year-experimental">1994</div>
+            <h1>ILLBIENT</h1><div class="year experimental-light">1994</div>
 
             <p>The powerful idea of slowed down Breakbeat led to a range of similar experiments &ndash; first Trip Hop, and then Illbient as the most derivative example. The experimental and innovative nature of Breakbeat synergises with that of Experimental, resulting in a highly fascinating electronic music genre. Ambient Breaks differs from Trip Hop as it is not Hip Hop music &ndash; it is the work of electronic music producers using various samples instead of a movement bridging remote subcultures into one. When Trip Hop arrived in the US (specifically New York), conceptual artists got inspired by the sound but worked the other way around &ndash; they laid multiple layers of echoing ambient sounds on top of each other (influenced by Dub) and then added a breakbeat. These soundscapes are often eclectic noisescapes &ndash; dark, experimental and drawing from different genres to create some sort of deep mysterious force. Illbient (Ill Ambient, in its slang meaning &ndash; "this beat is ill") is not drug music as one might suspect, but an artsy, contemplative soundtrack for an unwritten creepy or deeply psychological film.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-experimental">1</div></div>
-                <div class="col-1"><div class="buttons buttons-experimental">2</div></div>
-                <div class="col-1"><div class="buttons buttons-experimental">3</div></div>
-                <div class="col-1"><div class="buttons buttons-experimental">4</div></div>
-                <div class="col-1"><div class="buttons buttons-experimental">5</div></div>
-                <div class="col-1"><div class="buttons buttons-experimental">6</div></div>
-                <div class="col-1"><div class="buttons buttons-experimental">7</div></div>
-                <div class="col-1"><div class="buttons buttons-experimental">8</div></div>
-                <div class="col-1"><div class="buttons buttons-experimental">9</div></div>
+                <div class="col-1"><div class="buttons experimental-light">1</div></div>
+                <div class="col-1"><div class="buttons experimental-light">2</div></div>
+                <div class="col-1"><div class="buttons experimental-light">3</div></div>
+                <div class="col-1"><div class="buttons experimental-light">4</div></div>
+                <div class="col-1"><div class="buttons experimental-light">5</div></div>
+                <div class="col-1"><div class="buttons experimental-light">6</div></div>
+                <div class="col-1"><div class="buttons experimental-light">7</div></div>
+                <div class="col-1"><div class="buttons experimental-light">8</div></div>
+                <div class="col-1"><div class="buttons experimental-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-experimental-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons experimental-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsExperimental = $('.buttons-experimental');
+                const $buttonRow = $('.buttons');
 
-                $buttonsExperimental.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsExperimental.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-experimental-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsExperimental.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

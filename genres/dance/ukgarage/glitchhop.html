@@ -10,25 +10,25 @@
 
     <body id="glitchhop">
         <div class="box ukgarage">
-            <h1>GLITCH HOP</h1><div class="year year-ukgarage">2011</div>
+            <h1>GLITCH HOP</h1><div class="year ukgarage-light">2011</div>
 
             <p>The definition of Glitch Hop has changed throughout the years. Though Glitch Hop has its roots in Hip Hop and Glitch music from the early 2000s, it was thrust into the spotlight during the early 2010s with close ties to Dubstep. Where it was once based on heavily twisted, sliced and distorted glitchy Hip Hop beats, modern Glitch Hop has become a more defined standalone genre, quite detached from its Hip Hop origins. Glitch Hop sits between 80-115 BPM. Apart from its relatively slow speed, the defining characteristic of Glitch Hop is the rhythm of its drum sequencing, often giving an extremely groovy swing feel. More recently, the sounds used can be far more aggressive than their earlier counterparts, taking influence from Dubstep and the Drum &amp; Bass subgenre Neurofunk (hence Neurohop). Aside from heavy bass sounds, however, Glitch Hop that is being produced today can sometimes include influences from other genres, such as Jazz, Funk and Future Synth. Some Glitch Hop tracks even go back to their original Hip Hop roots, featuring rapping on top of various R&amp;B-type instruments.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-ukgarage">1</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">2</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">3</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">4</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">5</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">6</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">7</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">8</div></div>
-                <div class="col-1"><div class="buttons buttons-ukgarage">9</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">1</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">2</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">3</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">4</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">5</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">6</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">7</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">8</div></div>
+                <div class="col-1"><div class="buttons ukgarage-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-ukgarage-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons ukgarage-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsUkgarage = $('.buttons-ukgarage');
+                const $buttonRow = $('.buttons');
 
-                $buttonsUkgarage.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsUkgarage.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-ukgarage-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsUkgarage.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

@@ -10,25 +10,25 @@
 
     <body id="trap">
         <div class="box hiphop">
-            <h1>TRAP</h1><div class="year year-hiphop">2003</div>
+            <h1>TRAP</h1><div class="year hiphop-light">2003</div>
 
             <p>Slowly a new style of Hip Hop music bubbled up in the shadows of the Southern US underground. This particular type of Hip Hop differs from other styles by adding lots of busy hat and snare fills and often being completely digitally made. Trap also drops the beat on an offbeat, giving a more dramatic, slow-motion build-and-drop feel. Pronounced snares, doubled crisp hi-hats, heavy TR-808 use and sometimes even brass instruments all add perfectly to Trap's aggressive, bleak lyrical content. It is no coincidence that the word "Trap" is Hip Hop slang for a drug trade location, adding a sense of paranoia to the music. After 2010, Ghettotech influences certain Trap producers and the subgenre Drill is born &ndash; even darker and grittier than Trap, but with less pronounced breaks and obsessed with drugs. After all, Trap's sound is heavily influenced by the habit of syrup sipping &ndash; a new type of drug behaviour where codeine or promethazine cough syrup is mixed with soda or liquor. Combined with the effects of marijuana, a slow-motion sound with strong hooks, unexpected interrupts and slurry, intoxicated lyrics is the outcome.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-hiphop">1</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">2</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">3</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">4</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">5</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">6</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">7</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">8</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">1</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">2</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">3</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">4</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">5</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">6</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">7</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">8</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons hiphop-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsHiphop = $('.buttons-hiphop');
+                const $buttonRow = $('.buttons');
 
-                $buttonsHiphop.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsHiphop.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-hiphop-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsHiphop.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

@@ -10,25 +10,25 @@
 
     <body id="funk">
         <div class="box rhythmandblues">
-            <h1>FUNK</h1><div class="year year-rhythmandblues">1965</div>
+            <h1>FUNK</h1><div class="year rhythmandblues-light">1965</div>
 
             <p>Soul was very popular and melodic, but it wasn't really daring or danceable. After a while, artists started looking at Rock and Jazz for new elements. They preferred the psychedelic, rebellious nature of Psychedelic Rock alongside the deep, dynamic part of Soul Jazz as flavours of choice for the revolutionary fusion that was Funk. James Brown spearheaded the evolution from Soul to what became known as Funk Soul and eventually Funk. Funk places strong emphasis on the first beat of each bar while the rest of the rhythm constantly changes, like an early form of Breakbeat. This is known as "The Rhythm of the One" (the one beat, instead of four or two). All instruments work together to enhance this feeling. Percussion becomes accentuated by short, monotone riffs, slapping bass, brass instruments, and accents on synth/piano to create what is known as "the groove" &ndash; the pulsing force behind each Funk song. Yet Funk does not try to blend all instruments into a carefully assembled and produced whole (like Soul) but it maintains their individuality to create a more organic sound.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">1</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">2</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">3</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">4</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">5</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">6</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">7</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">8</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">9</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">1</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">2</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">3</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">4</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">5</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">6</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">7</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">8</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-rhythmandblues-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons rhythmandblues-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsRhythmandblues = $('.buttons-rhythmandblues');
+                const $buttonRow = $('.buttons');
 
-                $buttonsRhythmandblues.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsRhythmandblues.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-rhythmandblues-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsRhythmandblues.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

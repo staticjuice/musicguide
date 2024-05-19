@@ -10,25 +10,25 @@
 
     <body id="skapunk">
         <div class="box punk">
-            <h1>SKA PUNK</h1><div class="year year-punk">1979</div>
+            <h1>SKA PUNK</h1><div class="year punk-light">1979</div>
 
             <p>During the years of Punk rebellion in the UK, an unexpected ally appeared as Rastafarians started protesting alongside Punks, united by their fight against oppression. Punk and Reggae never merged, though Reggae's influence is certainly noticeable in many New Wave records. Reactionary Street Punk known as Oi! was the result of UK skinheads looking for new music to dance to and they found it in Ska. Though Oi! is sometimes associated with fascist, racist and nihilistic subcultures, most of the Oi! skinheads picked up the appearance as a satirical protest against the new right-wing UK National Front Party. The famous British label 2-Tone Records released a new series of British Ska artists, which lead to a large revival and the discovery of Ska in the US and the UK, nearly two decades after the genre was invented. Inspired by Oi!, this second wave of Ska got mixed up with Punk and by the end of the 80s, the formation of Ska Punk was complete. The second wave of Ska changed Punk songs into uptempo, optimistic tracks with brass instruments, though still politically aware.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-punk">1</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">2</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">3</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">4</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">5</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">6</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">7</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">8</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">9</div></div>
+                <div class="col-1"><div class="buttons punk-light">1</div></div>
+                <div class="col-1"><div class="buttons punk-light">2</div></div>
+                <div class="col-1"><div class="buttons punk-light">3</div></div>
+                <div class="col-1"><div class="buttons punk-light">4</div></div>
+                <div class="col-1"><div class="buttons punk-light">5</div></div>
+                <div class="col-1"><div class="buttons punk-light">6</div></div>
+                <div class="col-1"><div class="buttons punk-light">7</div></div>
+                <div class="col-1"><div class="buttons punk-light">8</div></div>
+                <div class="col-1"><div class="buttons punk-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons punk-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsPunk = $('.buttons-punk');
+                const $buttonRow = $('.buttons');
 
-                $buttonsPunk.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsPunk.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-punk-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsPunk.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

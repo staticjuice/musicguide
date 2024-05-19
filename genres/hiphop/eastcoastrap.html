@@ -10,25 +10,25 @@
 
     <body id="eastcoastrap">
         <div class="box hiphop">
-            <h1>EAST COAST RAP</h1><div class="year year-hiphop">1986</div>
+            <h1>EAST COAST RAP</h1><div class="year hiphop-light">1986</div>
 
             <p>It took a decade before Hip Hop got out of the ghetto and onto records, conquering the globe. What started in New York, spread throughout the whole US East Coast, with different Hip Hop groups selling gold or platinum albums. This period was the heyday of Hip Hop, when there was massive appeal combined with little negative publicity as Hip Hop wasn't affiliated with either criminality or commercial selling-out yet. There are several reasons for this large appeal. Hip Hop gets more appreciated by middle class and white audiences because they can relate to the music. Rappers start rapping about responsibility, political messages, anti-drugs, anti-capitalism and Hip Hop is no longer a secluded subculture with "weird" customs. But perhaps the most important aspect of this genre is a different approach in making the music &ndash; MCs no longer rap over existing records, but the beat and the rhyme become one. The beat gets made from scratch, sometimes specifically made for a rhyme, and MCs evolve in their rhyming skills, resulting in more professional and eloquent flows than Old School Rap.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-hiphop">1</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">2</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">3</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">4</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">5</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">6</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">7</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">8</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">1</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">2</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">3</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">4</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">5</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">6</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">7</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">8</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons hiphop-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsHiphop = $('.buttons-hiphop');
+                const $buttonRow = $('.buttons');
 
-                $buttonsHiphop.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsHiphop.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-hiphop-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsHiphop.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

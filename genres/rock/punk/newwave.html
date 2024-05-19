@@ -10,25 +10,25 @@
 
     <body id="newwave">
         <div class="box punk">
-            <h1>NEW WAVE</h1><div class="year year-punk">1977</div>
+            <h1>NEW WAVE</h1><div class="year punk-light">1977</div>
 
             <p>As one of the most misused genre names, New Wave often stands for any 80s music that sounds somewhere between Rock and Electronic. In the strict sense, however, New Wave is only the parallel after Punk reaction, alongside (and quite similar to) Post-Punk, but often with the addition of synthesisers. An important influence from Reggae is also noticeable in the music &ndash; a consequence of the collaboration between Punk and Reggae subcultures during their political protest. The main difference, however, is not this growing shift towards electronic Pop, but a clear positive mentality and matching subculture. Herein, the fashion legacy of Punk continues and reaches a new height and hipster look, accompanied by matching graphic design and art. New Wave then, is all about image and looking hip. About embracing the unknown electronic future, instead of reminiscing the glory days of Punk. From the early 80s onwards, a lot of New Wave rapidly changes into Synthpop &ndash; which was truly futuristic and progressive &ndash; though it still bore the melancholic remnants of the dark Post-Punk days.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-punk">1</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">2</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">3</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">4</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">5</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">6</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">7</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">8</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">9</div></div>
+                <div class="col-1"><div class="buttons punk-light">1</div></div>
+                <div class="col-1"><div class="buttons punk-light">2</div></div>
+                <div class="col-1"><div class="buttons punk-light">3</div></div>
+                <div class="col-1"><div class="buttons punk-light">4</div></div>
+                <div class="col-1"><div class="buttons punk-light">5</div></div>
+                <div class="col-1"><div class="buttons punk-light">6</div></div>
+                <div class="col-1"><div class="buttons punk-light">7</div></div>
+                <div class="col-1"><div class="buttons punk-light">8</div></div>
+                <div class="col-1"><div class="buttons punk-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons punk-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsPunk = $('.buttons-punk');
+                const $buttonRow = $('.buttons');
 
-                $buttonsPunk.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsPunk.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-punk-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsPunk.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

@@ -10,25 +10,25 @@
 
     <body id="spirituals">
         <div class="box blues">
-            <h1>SPIRITUALS</h1><div class="year year-blues">17th century</div>
+            <h1>SPIRITUALS</h1><div class="year blues-light">17th century</div>
 
             <p>An interesting fact about Popular Music is that it emerged out of necessity rather than being a form of art or expression. The earliest genres can be traced back as early as the 19th century, at a time when slavery of African people was still omnipresent in the United States. When African slaves were brought to the United States and Christianised, they began to perceive biblical parallels to their own situation (and were sometimes even encouraged to do so by zealously Evangelical whites). Thus, many Spirituals address themes of freedom, earthly suffering and hope for deliverance. They were sung both at worship services and in the fields and were passed down orally from generation to generation. Given those origins, Spirituals are usually performed very simply and written in repetitive, easily remembered structures (for example, many verses in Spirituals include a one-line refrain that's sung by the entire group and repeated after each new line of the verse). In that sense, Spirituals often bear a resemblance to secular pre-war Blues, a music stemming from a similarly rural lineage.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-blues">1</div></div>
-                <div class="col-1"><div class="buttons buttons-blues">2</div></div>
-                <div class="col-1"><div class="buttons buttons-blues">3</div></div>
-                <div class="col-1"><div class="buttons buttons-blues">4</div></div>
-                <div class="col-1"><div class="buttons buttons-blues">5</div></div>
-                <div class="col-1"><div class="buttons buttons-blues">6</div></div>
-                <div class="col-1"><div class="buttons buttons-blues">7</div></div>
-                <div class="col-1"><div class="buttons buttons-blues">8</div></div>
-                <div class="col-1"><div class="buttons buttons-blues">9</div></div>
+                <div class="col-1"><div class="buttons blues-light">1</div></div>
+                <div class="col-1"><div class="buttons blues-light">2</div></div>
+                <div class="col-1"><div class="buttons blues-light">3</div></div>
+                <div class="col-1"><div class="buttons blues-light">4</div></div>
+                <div class="col-1"><div class="buttons blues-light">5</div></div>
+                <div class="col-1"><div class="buttons blues-light">6</div></div>
+                <div class="col-1"><div class="buttons blues-light">7</div></div>
+                <div class="col-1"><div class="buttons blues-light">8</div></div>
+                <div class="col-1"><div class="buttons blues-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-blues-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons blues-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsBlues = $('.buttons-blues');
+                const $buttonRow = $('.buttons');
 
-                $buttonsBlues.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsBlues.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-blues-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsBlues.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

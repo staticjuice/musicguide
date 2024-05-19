@@ -10,25 +10,25 @@
 
     <body id="miamibass">
         <div class="box hiphop">
-            <h1>MIAMI BASS</h1><div class="year year-hiphop">1985</div>
+            <h1>MIAMI BASS</h1><div class="year hiphop-light">1985</div>
 
             <p>Musically speaking, Miami used to be one of the most important cities in the 80s. After the arrival of sequencers and the TR-808 drum machine, local producer Amos Larkins used these tools intensively to create a new type of Hip Hop. The bass of Hip Hop beats was enhanced as hard as possible, creating a fat, greasy bass &ndash; ideal for shaking big booties to. In a very straightforward way, Miami Bass was redubbed "Booty Bass". However, the genre probably wouldn't have grown into a fully mature genre if it wasn't for Miami's "stereo wars", where people showed off and called out each other to see who had the best, most bass-heavy stereo sound system. Images of palm trees, 80s stereo cassette boomboxes, and slick pink or leopard-print convertibles immediately spring to mind when listening to this music, which is firmly rooted within that idiosyncratic subcultural context. Miami Bass is pure summer music, with lots of fresh Electro effects and no political or serious lyrics whatsoever. It only dealt about sex and booming sounds in the most explicit way possible, like an Americanised form of Ragga.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-hiphop">1</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">2</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">3</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">4</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">5</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">6</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">7</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">8</div></div>
-                <div class="col-1"><div class="buttons buttons-hiphop">9</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">1</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">2</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">3</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">4</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">5</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">6</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">7</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">8</div></div>
+                <div class="col-1"><div class="buttons hiphop-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-hiphop-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons hiphop-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsHiphop = $('.buttons-hiphop');
+                const $buttonRow = $('.buttons');
 
-                $buttonsHiphop.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsHiphop.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-hiphop-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsHiphop.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

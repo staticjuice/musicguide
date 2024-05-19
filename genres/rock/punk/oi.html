@@ -10,25 +10,25 @@
 
     <body id="oi">
         <div class="box punk">
-            <h1>OI!</h1><div class="year year-punk">1978</div>
+            <h1>OI!</h1><div class="year punk-light">1978</div>
 
             <p>Following the lead of first-wave British Punk bands, in the late 70s second-wave units sought to realign Punk Rock with a working-class, street-level following. For that purpose, they believed the music needed to stay "accessible and unpretentious". The name Oi! is partly derived from the Cockney Rejects' habit of shouting "Oi! Oi! Oi!" before each song, instead of the time-honoured "1,2,3,4!" The Oi! movement was fueled by a sense that many participants in the early Punk Eock scene were trendy university people using long words, trying to be artistic and losing touch. Punk was meant to be the voice of the dole queue, and in reality most of them were not. But Oi! was the reality of the Punk mythology. Although most Oi! bands in the initial wave were apolitical or left wing, many of them began to attract a white power skinhead following. Racist skinheads sometimes disrupted Oi! concerts by shouting fascist slogans and starting fights, but some Oi! bands were reluctant to endorse criticism of their fans from what they perceived as the "middle-class establishment".</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-punk">1</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">2</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">3</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">4</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">5</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">6</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">7</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">8</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">9</div></div>
+                <div class="col-1"><div class="buttons punk-light">1</div></div>
+                <div class="col-1"><div class="buttons punk-light">2</div></div>
+                <div class="col-1"><div class="buttons punk-light">3</div></div>
+                <div class="col-1"><div class="buttons punk-light">4</div></div>
+                <div class="col-1"><div class="buttons punk-light">5</div></div>
+                <div class="col-1"><div class="buttons punk-light">6</div></div>
+                <div class="col-1"><div class="buttons punk-light">7</div></div>
+                <div class="col-1"><div class="buttons punk-light">8</div></div>
+                <div class="col-1"><div class="buttons punk-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons punk-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsPunk = $('.buttons-punk');
+                const $buttonRow = $('.buttons');
 
-                $buttonsPunk.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsPunk.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-punk-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsPunk.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

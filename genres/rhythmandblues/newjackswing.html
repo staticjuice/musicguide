@@ -10,25 +10,25 @@
 
     <body id="newjackswing">
         <div class="box rhythmandblues">
-            <h1>NEW JACK SWING</h1><div class="year year-rhythmandblues">1986</div>
+            <h1>NEW JACK SWING</h1><div class="year rhythmandblues-light">1986</div>
 
             <p>New Jack Swing evolved in the late 80s when R&amp;B artists began incorporating Hip Hop rhythms, samples and production techniques into their sound. Some songs simply had Hip Hop beats, others had rapped sections and sung choruses, but the overall result was an edgier, more street-orientated sound that seamlessly blended both the melodic qualities of Soul and the funky rhythms of Hip Hop. Although many New Jack Swing artists seemed like young, innocent casanovas, they often had hidden gangster habits, precluding an era of East Coast Rap. New Jack Swing is exactly the way it sounds &ndash; extremely catchy and funky with a strong emphasis on the beat. The TV series "The Fresh Prince of Bel-Air" knew how to bring New Jack Swing to a larger audience, featuring some of its songs alongside that particular late 80s New Jack Swing fashion &ndash; loose Hip Hop wear with flashy colours, round sunglasses, female dreads or male hightop haircuts. But what makes this genre of particular gravity is the marriage of R&amp;B and Hip Hop into the third wave of R&amp;B &ndash; Urban &ndash; a strong bond that has never fallen apart since.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">1</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">2</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">3</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">4</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">5</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">6</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">7</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">8</div></div>
-                <div class="col-1"><div class="buttons buttons-rhythmandblues">9</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">1</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">2</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">3</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">4</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">5</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">6</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">7</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">8</div></div>
+                <div class="col-1"><div class="buttons rhythmandblues-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-rhythmandblues-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons rhythmandblues-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsRhythmandblues = $('.buttons-rhythmandblues');
+                const $buttonRow = $('.buttons');
 
-                $buttonsRhythmandblues.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsRhythmandblues.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-rhythmandblues-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsRhythmandblues.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

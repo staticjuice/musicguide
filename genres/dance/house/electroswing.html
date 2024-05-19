@@ -10,25 +10,25 @@
 
     <body id="electroswing">
         <div class="box house">
-            <h1>ELECTRO SWING</h1><div class="year year-house">2004</div>
+            <h1>ELECTRO SWING</h1><div class="year house-light">2004</div>
 
             <p>Electro Swing combines the influence of vintage or modern Swing Jazz with House music. Successful examples of the genre create a modern and dancefloor-focused sound that is more readily accessible to the modern ear but that also retains the feeling of live brass and the energetic excitement of the early Swing recordings. While the genre gained a lot of popularity in Europe, it never managed to break through in the United States or elsewhere. The two most important bands in this genre are probably Caravan Palace and Parov Stelar. Taking an interest in the sounds of Big Band Jazz, these groups recreated the original sound of Swing with electronic means and intermitting sounds, which makes it sound somewhat sharper, syncopated and chopped (like Breakbeat). Electro Swing is sometimes regarded as a subgenre of Jazz, but including it in House would be much more accurate. A certain degree of overlapping with other styles occurs as well, with some Electro Swing musicians preferring to combine Swing with Hip Hop elements instead.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-house">1</div></div>
-                <div class="col-1"><div class="buttons buttons-house">2</div></div>
-                <div class="col-1"><div class="buttons buttons-house">3</div></div>
-                <div class="col-1"><div class="buttons buttons-house">4</div></div>
-                <div class="col-1"><div class="buttons buttons-house">5</div></div>
-                <div class="col-1"><div class="buttons buttons-house">6</div></div>
-                <div class="col-1"><div class="buttons buttons-house">7</div></div>
-                <div class="col-1"><div class="buttons buttons-house">8</div></div>
-                <div class="col-1"><div class="buttons buttons-house">9</div></div>
+                <div class="col-1"><div class="buttons house-light">1</div></div>
+                <div class="col-1"><div class="buttons house-light">2</div></div>
+                <div class="col-1"><div class="buttons house-light">3</div></div>
+                <div class="col-1"><div class="buttons house-light">4</div></div>
+                <div class="col-1"><div class="buttons house-light">5</div></div>
+                <div class="col-1"><div class="buttons house-light">6</div></div>
+                <div class="col-1"><div class="buttons house-light">7</div></div>
+                <div class="col-1"><div class="buttons house-light">8</div></div>
+                <div class="col-1"><div class="buttons house-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-house-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons house-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsHouse = $('.buttons-house');
+                const $buttonRow = $('.buttons');
 
-                $buttonsHouse.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsHouse.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-house-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsHouse.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

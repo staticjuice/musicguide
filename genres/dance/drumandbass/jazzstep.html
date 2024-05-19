@@ -10,25 +10,25 @@
 
     <body id="jazzstep">
         <div class="box drumandbass">
-            <h1>JAZZSTEP</h1><div class="year year-drumandbass">1994</div>
+            <h1>JAZZSTEP</h1><div class="year drumandbass-light">1994</div>
 
             <p>Jazzstep is essentially the same as Atmospheric Drum &amp; Bass, but the difference this time is that the focus is on incorporating jazzy elements instead of having general atmospheric soundscapes. Jazzstep mostly evolved at the same time as its Atmospheric counterpart, as both were reactions against the heavy, pounding chaos of their Drum &amp; Bass predecessors. This helped attract a broader audience of listeners to the D&amp;B genre, including many people who wouldn't normally listen to the genre. Notable Jazzstep artists include Roni Size &amp; Reprazent, Goldie, Utah Jazz, Morgan Sullyvan, Makoto, Alex Reece and DJ Dextrous. Soon after, Jazzstep evolved to incorporate Disco and House elements, ultimately leading to the next big chapter in Drum &amp; Bass known as Liquid Funk. This was especially important as it was the genre that ultimately led to the second wave of Liquid Drum &amp; Bass that became immensely popular from 2009 onwards. However, Jazzstep continues to be produced to this day, with various record labels dedicated to the sound of nothing more than relaxing, jazzy, summer vibes.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-drumandbass">1</div></div>
-                <div class="col-1"><div class="buttons buttons-drumandbass">2</div></div>
-                <div class="col-1"><div class="buttons buttons-drumandbass">3</div></div>
-                <div class="col-1"><div class="buttons buttons-drumandbass">4</div></div>
-                <div class="col-1"><div class="buttons buttons-drumandbass">5</div></div>
-                <div class="col-1"><div class="buttons buttons-drumandbass">6</div></div>
-                <div class="col-1"><div class="buttons buttons-drumandbass">7</div></div>
-                <div class="col-1"><div class="buttons buttons-drumandbass">8</div></div>
-                <div class="col-1"><div class="buttons buttons-drumandbass">9</div></div>
+                <div class="col-1"><div class="buttons drumandbass-light">1</div></div>
+                <div class="col-1"><div class="buttons drumandbass-light">2</div></div>
+                <div class="col-1"><div class="buttons drumandbass-light">3</div></div>
+                <div class="col-1"><div class="buttons drumandbass-light">4</div></div>
+                <div class="col-1"><div class="buttons drumandbass-light">5</div></div>
+                <div class="col-1"><div class="buttons drumandbass-light">6</div></div>
+                <div class="col-1"><div class="buttons drumandbass-light">7</div></div>
+                <div class="col-1"><div class="buttons drumandbass-light">8</div></div>
+                <div class="col-1"><div class="buttons drumandbass-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-drumandbass-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons drumandbass-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsDrumandbass = $('.buttons-drumandbass');
+                const $buttonRow = $('.buttons');
 
-                $buttonsDrumandbass.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsDrumandbass.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-drumandbass-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsDrumandbass.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

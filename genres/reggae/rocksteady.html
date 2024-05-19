@@ -10,25 +10,25 @@
 
     <body id="rocksteady">
         <div class="box reggae">
-            <h1>ROCKSTEADY</h1><div class="year year-reggae">1966</div>
+            <h1>ROCKSTEADY</h1><div class="year reggae-light">1966</div>
 
             <p>Right after the British Merseybeat Revolution reached its height, a small youth subculture known as the mods existed, that listened to their own type of Rock &amp; Roll. Almost the same happened in Jamaica after the Ska revolution &ndash; young gangsters and street kids known as "rude boys" changed the happy, uptempo Ska in something they could relate to &ndash; much cooler, slower music with an easy but powerful bass and more Rock influences with many tracks incorporating electric guitars. This rude boy music became known as Rocksteady. And just like Punk, Hip Hop or Mod, the lyrics were more often than not about political issues, although the music sounded nowhere near as rough, but was often performed in R&amp;B-like small harmony groups. The reason for implementing political content and a slower, laidback and more serious tempo was a slowly growing discontent with the very first Jamaican government installed after the independence in 1962. Another reason for the slowing down of Jamaican music lay in the simple fact that many musicians just didn't like to play Ska's hyperactive rhythm.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-reggae">1</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">2</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">3</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">4</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">5</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">6</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">7</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">8</div></div>
-                <div class="col-1"><div class="buttons buttons-reggae">9</div></div>
+                <div class="col-1"><div class="buttons reggae-light">1</div></div>
+                <div class="col-1"><div class="buttons reggae-light">2</div></div>
+                <div class="col-1"><div class="buttons reggae-light">3</div></div>
+                <div class="col-1"><div class="buttons reggae-light">4</div></div>
+                <div class="col-1"><div class="buttons reggae-light">5</div></div>
+                <div class="col-1"><div class="buttons reggae-light">6</div></div>
+                <div class="col-1"><div class="buttons reggae-light">7</div></div>
+                <div class="col-1"><div class="buttons reggae-light">8</div></div>
+                <div class="col-1"><div class="buttons reggae-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-reggae-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons reggae-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsReggae = $('.buttons-reggae');
+                const $buttonRow = $('.buttons');
 
-                $buttonsReggae.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsReggae.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-reggae-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsReggae.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

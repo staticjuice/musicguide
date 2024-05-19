@@ -10,25 +10,25 @@
 
     <body id="synthpop">
         <div class="box pop">
-            <h1>SYNTHPOP</h1><div class="year year-pop">1978</div>
+            <h1>SYNTHPOP</h1><div class="year pop-light">1978</div>
 
             <p>In the 80s, Synthpop reigns supreme &ndash; electronic New Wave that became highly popular due to the combination of a recognisable Pop structure and new and exciting synthesiser sounds. The release of the Yamaha DX7 in 1983 as the essential synthesiser dramatically increased the production of Synthpop music. Guitars are barely noticeable if they are present at all or replaced by keytars. The difference between the original New Wave and mid-80s Synthpop is quite large. It's less aggressive and more melodic, with less Rock and more Pop. It's sleek and sterile, contagious and danceable, accessible and fun. Another difference is the increased emphasis on fashion, style, glamour and make-up. In this momentum a temporary movement also existed, known as the New Romantics &ndash; a hybrid of Synthpop and New Wave. Synthpop can be a misleading term, as it is probably the least Pop-like of all Pop genres. Many Synthpop artists crave experimentalism and conceptual music, building further on the legacy of Post-Punk. Synthpop was also one of the few music genres heavily featured on early MTV.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-pop">1</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">2</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">3</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">4</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">5</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">6</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">7</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">8</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">9</div></div>
+                <div class="col-1"><div class="buttons pop-light">1</div></div>
+                <div class="col-1"><div class="buttons pop-light">2</div></div>
+                <div class="col-1"><div class="buttons pop-light">3</div></div>
+                <div class="col-1"><div class="buttons pop-light">4</div></div>
+                <div class="col-1"><div class="buttons pop-light">5</div></div>
+                <div class="col-1"><div class="buttons pop-light">6</div></div>
+                <div class="col-1"><div class="buttons pop-light">7</div></div>
+                <div class="col-1"><div class="buttons pop-light">8</div></div>
+                <div class="col-1"><div class="buttons pop-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-pop-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons pop-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsPop = $('.buttons-pop');
+                const $buttonRow = $('.buttons');
 
-                $buttonsPop.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsPop.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-pop-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsPop.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

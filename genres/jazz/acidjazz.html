@@ -10,25 +10,25 @@
 
     <body id="acidjazz">
         <div class="box jazz">
-            <h1>ACID JAZZ</h1><div class="year year-jazz">1986</div>
+            <h1>ACID JAZZ</h1><div class="year jazz-light">1986</div>
 
             <p>Acid Jazz is a crossover genre gone too far &ndash; there is barely any Jazz left in it. There's almost zero "acid" about it as well, except a slight psychedelic sound, placing it high on the chart for poorly chosen genre names. In fact, it's more of the deepest funky Jazz Fusion combined with Hip Hop, so Fusion Hip Hop would be more appropriate. The leading record label &ndash; also named Acid Jazz &ndash; was determined to compensate Acid House with what they regarded as "quality music", heavily influenced by Rare Groove records. A steady Hip Hop breakbeat, lots of percussion, Jazz harmonies and funky basslines (often with the aid of a synthesiser) are the key flavours of Acid Jazz. These elements blend perfectly until the roots of the genre are no longer traceable. It was a short but popular craze, right before EDM conquered the music scene. Due to its highly danceable nature, a new type of dance, Jazzdance, was invented along with it (which became more or less a synonym of the music itself). It can be hard to separate Acid Jazz from Soul Jazz with heavy breaks if it wasn't for the (abundant) use of vocals.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-jazz">1</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">2</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">3</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">4</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">5</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">6</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">7</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">8</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">9</div></div>
+                <div class="col-1"><div class="buttons jazz-light">1</div></div>
+                <div class="col-1"><div class="buttons jazz-light">2</div></div>
+                <div class="col-1"><div class="buttons jazz-light">3</div></div>
+                <div class="col-1"><div class="buttons jazz-light">4</div></div>
+                <div class="col-1"><div class="buttons jazz-light">5</div></div>
+                <div class="col-1"><div class="buttons jazz-light">6</div></div>
+                <div class="col-1"><div class="buttons jazz-light">7</div></div>
+                <div class="col-1"><div class="buttons jazz-light">8</div></div>
+                <div class="col-1"><div class="buttons jazz-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-jazz-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons jazz-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsJazz = $('.buttons-jazz');
+                const $buttonRow = $('.buttons');
 
-                $buttonsJazz.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsJazz.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-jazz-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsJazz.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

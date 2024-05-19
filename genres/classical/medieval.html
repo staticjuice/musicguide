@@ -10,25 +10,25 @@
 
     <body id="medieval">
         <div class="box classical">
-            <h1>MEDIEVAL</h1><div class="year year-classical">c. 500</div>
+            <h1>MEDIEVAL</h1><div class="year classical-light">c. 500</div>
 
             <p>Medieval music consists of liturgical music, songs and instrumental pieces from about 400 CE to 1400 CE. Medieval music was an era of Western music, including liturgical music (also known as sacred) used for the church, and secular music or non-religious music. Medieval music includes solely vocal music, such as Gregorian Chant and choral music (music for a group of singers), solely instrumental music and music that uses both voices and instruments (typically with the instruments accompanying the voices). Gregorian Chant was sung by monks during Catholic Mass. The Mass is a reenactment of Christ's Last Supper, intended to provide a spiritual connection between man and God. Part of this connection was established through music. This era begins with the fall of the Western Roman Empire in the 5th century and ends sometime in the early 15th century. Establishing the end of the Medieval era and the beginning of the Renaissance music era is difficult since the trends started at different times in different regions. The date range outlined at the start is the one usually adopted by musicologists.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-classical">1</div></div>
-                <div class="col-1"><div class="buttons buttons-classical">2</div></div>
-                <div class="col-1"><div class="buttons buttons-classical">3</div></div>
-                <div class="col-1"><div class="buttons buttons-classical">4</div></div>
-                <div class="col-1"><div class="buttons buttons-classical">5</div></div>
-                <div class="col-1"><div class="buttons buttons-classical">6</div></div>
-                <div class="col-1"><div class="buttons buttons-classical">7</div></div>
-                <div class="col-1"><div class="buttons buttons-classical">8</div></div>
-                <div class="col-1"><div class="buttons buttons-classical">9</div></div>
+                <div class="col-1"><div class="buttons classical-light">1</div></div>
+                <div class="col-1"><div class="buttons classical-light">2</div></div>
+                <div class="col-1"><div class="buttons classical-light">3</div></div>
+                <div class="col-1"><div class="buttons classical-light">4</div></div>
+                <div class="col-1"><div class="buttons classical-light">5</div></div>
+                <div class="col-1"><div class="buttons classical-light">6</div></div>
+                <div class="col-1"><div class="buttons classical-light">7</div></div>
+                <div class="col-1"><div class="buttons classical-light">8</div></div>
+                <div class="col-1"><div class="buttons classical-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-classical-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons classical-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsClassical = $('.buttons-classical');
+                const $buttonRow = $('.buttons');
 
-                $buttonsClassical.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsClassical.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-classical-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsClassical.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

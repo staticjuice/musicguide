@@ -10,25 +10,25 @@
 
     <body id="ebm">
         <div class="box industrial">
-            <h1>EBM</h1><div class="year year-industrial">1981</div>
+            <h1>EBM</h1><div class="year industrial-light">1981</div>
 
             <p>More mechanical, more electronic and more repetitive than Industrial, but without the noise and arty obsession for the bizarre. This is almost military music with a sort of robotic aggression. With hard striking and kicking beats, EBM manufactured the prototype for Electronic Dance Music. EBM (short for Electronic Body Music) was the first Industrial genre to produce some sort of vocals (though very atonal) that could actually be understood or made any sense, which made it far more accessible than its counterpart genres. The dark, monotonous beating sound became an important influence on other dance genres and artists since House and Techno weren't invented yet. EBM also influenced Synthpop and the other way around because these were the only true digital genres in the early 80s (though they came from very different paths). Even after the full-blown European expansion of House and Techno, EBM remained an important and distinctive genre &ndash; especially in Germany where it gradually faded but not without influencing the whole of Industrial music.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-industrial">1</div></div>
-                <div class="col-1"><div class="buttons buttons-industrial">2</div></div>
-                <div class="col-1"><div class="buttons buttons-industrial">3</div></div>
-                <div class="col-1"><div class="buttons buttons-industrial">4</div></div>
-                <div class="col-1"><div class="buttons buttons-industrial">5</div></div>
-                <div class="col-1"><div class="buttons buttons-industrial">6</div></div>
-                <div class="col-1"><div class="buttons buttons-industrial">7</div></div>
-                <div class="col-1"><div class="buttons buttons-industrial">8</div></div>
-                <div class="col-1"><div class="buttons buttons-industrial">9</div></div>
+                <div class="col-1"><div class="buttons industrial-light">1</div></div>
+                <div class="col-1"><div class="buttons industrial-light">2</div></div>
+                <div class="col-1"><div class="buttons industrial-light">3</div></div>
+                <div class="col-1"><div class="buttons industrial-light">4</div></div>
+                <div class="col-1"><div class="buttons industrial-light">5</div></div>
+                <div class="col-1"><div class="buttons industrial-light">6</div></div>
+                <div class="col-1"><div class="buttons industrial-light">7</div></div>
+                <div class="col-1"><div class="buttons industrial-light">8</div></div>
+                <div class="col-1"><div class="buttons industrial-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-industrial-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons industrial-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsIndustrial = $('.buttons-industrial');
+                const $buttonRow = $('.buttons');
 
-                $buttonsIndustrial.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsIndustrial.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-industrial-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsIndustrial.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

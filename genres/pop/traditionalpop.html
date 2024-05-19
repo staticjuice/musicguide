@@ -10,25 +10,25 @@
 
     <body id="traditionalpop">
         <div class="box pop">
-            <h1>TRADITIONAL POP</h1><div class="year year-pop">1940</div>
+            <h1>TRADITIONAL POP</h1><div class="year pop-light">1940</div>
 
             <p>Traditional Pop music consists of Western popular music that generally predates the advent of Rock &amp; Roll in the mid-50s. The most popular and enduring songs from this style of music are known as Pop Standards or American Standards. The works of these songwriters and composers are usually considered part of the canon known as the "Great American Songbook". More generally, the term "standard" can be applied to any popular song that has become very widely known within mainstream culture. Traditional Pop music is generally regarded as having existed between the mid-40s and mid-50s. Two notable innovations were the addition of string sections and orchestral arrangements and more emphasis on vocal performance. The addition of lush strings can be heard in much of the popular music throughout the 40s and 50s. In the early 50s as the dominance of Swing gave way to the Traditional Pop music era, many of the vocalists associated with Swing bands became even more popular, and were central figures in popular music. Notable artists include Frank Sinatra, Bing Crosby and Nat King Cole.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-pop">1</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">2</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">3</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">4</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">5</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">6</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">7</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">8</div></div>
-                <div class="col-1"><div class="buttons buttons-pop">9</div></div>
+                <div class="col-1"><div class="buttons pop-light">1</div></div>
+                <div class="col-1"><div class="buttons pop-light">2</div></div>
+                <div class="col-1"><div class="buttons pop-light">3</div></div>
+                <div class="col-1"><div class="buttons pop-light">4</div></div>
+                <div class="col-1"><div class="buttons pop-light">5</div></div>
+                <div class="col-1"><div class="buttons pop-light">6</div></div>
+                <div class="col-1"><div class="buttons pop-light">7</div></div>
+                <div class="col-1"><div class="buttons pop-light">8</div></div>
+                <div class="col-1"><div class="buttons pop-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-pop-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons pop-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsPop = $('.buttons-pop');
+                const $buttonRow = $('.buttons');
 
-                $buttonsPop.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsPop.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-pop-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsPop.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

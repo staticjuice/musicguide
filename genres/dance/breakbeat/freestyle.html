@@ -10,25 +10,25 @@
 
     <body id="freestyle">
         <div class="box breakbeat">
-            <h1>FREESTYLE</h1><div class="year year-breakbeat">1983</div>
+            <h1>FREESTYLE</h1><div class="year breakbeat-light">1983</div>
 
             <p>Breakdancing is a fundamental element of Hip Hop culture, as old as Hip Hop itself. As a music genre however, it doesn't really exist. It's a collection of anything one can breakdance to. When the drum sampler was invented, music specifically made for breakdancing popped up. On one hand, there is a much heavier, faster and bass-driven type of Electro called Freestyle, with less subtle and catchier melodies accompanied by powerful raps. On the other hand, new heavy and melodic instrumental Funk records with lots of breaks and drum samples were being released for all the "b-boys" to dance to. This Breakdance is quite different from Freestyle, but both are strongly tied together in the same subculture. The difference between Freestyle and Electro can be marginal, but Freestyle is true Breakbeat &ndash; it uses more pronounced breaks and more percussion while implementing Hip Hop elements such as scratching, sampling and electronic sounds. However, Freestyle also has a different meaning when it is used to describe Electro-influenced Disco, like Joyce Sims' "Lifetime Love" for example.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-breakbeat">1</div></div>
-                <div class="col-1"><div class="buttons buttons-breakbeat">2</div></div>
-                <div class="col-1"><div class="buttons buttons-breakbeat">3</div></div>
-                <div class="col-1"><div class="buttons buttons-breakbeat">4</div></div>
-                <div class="col-1"><div class="buttons buttons-breakbeat">5</div></div>
-                <div class="col-1"><div class="buttons buttons-breakbeat">6</div></div>
-                <div class="col-1"><div class="buttons buttons-breakbeat">7</div></div>
-                <div class="col-1"><div class="buttons buttons-breakbeat">8</div></div>
-                <div class="col-1"><div class="buttons buttons-breakbeat">9</div></div>
+                <div class="col-1"><div class="buttons breakbeat-light">1</div></div>
+                <div class="col-1"><div class="buttons breakbeat-light">2</div></div>
+                <div class="col-1"><div class="buttons breakbeat-light">3</div></div>
+                <div class="col-1"><div class="buttons breakbeat-light">4</div></div>
+                <div class="col-1"><div class="buttons breakbeat-light">5</div></div>
+                <div class="col-1"><div class="buttons breakbeat-light">6</div></div>
+                <div class="col-1"><div class="buttons breakbeat-light">7</div></div>
+                <div class="col-1"><div class="buttons breakbeat-light">8</div></div>
+                <div class="col-1"><div class="buttons breakbeat-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-breakbeat-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons breakbeat-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsBreakbeat = $('.buttons-breakbeat');
+                const $buttonRow = $('.buttons');
 
-                $buttonsBreakbeat.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsBreakbeat.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-breakbeat-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsBreakbeat.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

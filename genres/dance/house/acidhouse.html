@@ -10,25 +10,25 @@
 
     <body id="acidhouse">
         <div class="box house">
-            <h1>ACID HOUSE</h1><div class="year year-house">1986</div>
+            <h1>ACID HOUSE</h1><div class="year house-light">1986</div>
 
             <p>Originally, Acid House was strongly tied with Chicago House. In fact, it was not much more than Chicago House with the added distorted sound of the infamous TB-303 bass synthesiser. By looping a certain note and then distorting the resulting wave (by cutoff, resonance or envelope), the characteristic and psychedelic "acid" sound was created, which could be used for basslines, melodies or synth stabs. It was called acid for its resemblance to the distorting sound of auditory hallucinations on the drug LSD. This sound became so popular in the entire world of Dance music, that Acid House soon was a well-established genre on its own. But the trademark of Acid House is a severance with House's Disco influences and the corresponding gay and hipster subcultures. In Acid House, there is no longer a warm groove, no R&amp;B feel, but harsh and distorted sounds onto a loud four-to-the-floor beat. All of a sudden, House becomes something even white Punk artists can relate to, being rough and revolutionary. Though these evolutions were incidental, the consequences were unimaginable.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-house">1</div></div>
-                <div class="col-1"><div class="buttons buttons-house">2</div></div>
-                <div class="col-1"><div class="buttons buttons-house">3</div></div>
-                <div class="col-1"><div class="buttons buttons-house">4</div></div>
-                <div class="col-1"><div class="buttons buttons-house">5</div></div>
-                <div class="col-1"><div class="buttons buttons-house">6</div></div>
-                <div class="col-1"><div class="buttons buttons-house">7</div></div>
-                <div class="col-1"><div class="buttons buttons-house">8</div></div>
-                <div class="col-1"><div class="buttons buttons-house">9</div></div>
+                <div class="col-1"><div class="buttons house-light">1</div></div>
+                <div class="col-1"><div class="buttons house-light">2</div></div>
+                <div class="col-1"><div class="buttons house-light">3</div></div>
+                <div class="col-1"><div class="buttons house-light">4</div></div>
+                <div class="col-1"><div class="buttons house-light">5</div></div>
+                <div class="col-1"><div class="buttons house-light">6</div></div>
+                <div class="col-1"><div class="buttons house-light">7</div></div>
+                <div class="col-1"><div class="buttons house-light">8</div></div>
+                <div class="col-1"><div class="buttons house-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-house-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons house-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsHouse = $('.buttons-house');
+                const $buttonRow = $('.buttons');
 
-                $buttonsHouse.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsHouse.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-house-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsHouse.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

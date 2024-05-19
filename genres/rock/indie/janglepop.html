@@ -10,25 +10,25 @@
 
     <body id="janglepop">
         <div class="box indie">
-            <h1>JANGLE POP</h1><div class="year year-indie">1983</div>
+            <h1>JANGLE POP</h1><div class="year indie-light">1983</div>
 
             <p>By the end of the 80s, the power of Hard Rock or the spirit of Punk Rock seemed nowhere to be found. The majority of Rock had become electronic and commercialised. Many Generation X rock artists tried to stay away from the big record companies to prevent their music from succumbing to the same fate and turned to smaller, independent labels instead, where they had the freedom to make what they liked &ndash; serious, downbeat rock with heavy, distorted guitar riffs, often dealing about emotional troubles or tragic thoughts. The music consciously partakes in the debate about the music industry, with a strong stance against MTV. To strengthen and justify its point of view, Indie often uses objectified lyrics instead of a personal perspective. Early Alternative music was primarily college radio music with jangly guitars and minimal attention to rhythm. Therefore it became known as "Jangle Pop". Closely related and heavily overlapping with Jangle Pop was the Paisley Underground movement &ndash; a revival of 60s Psychedelic Rock in LA with a variety of Rock and Folk influences.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-indie">1</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">2</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">3</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">4</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">5</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">6</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">7</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">8</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">9</div></div>
+                <div class="col-1"><div class="buttons indie-light">1</div></div>
+                <div class="col-1"><div class="buttons indie-light">2</div></div>
+                <div class="col-1"><div class="buttons indie-light">3</div></div>
+                <div class="col-1"><div class="buttons indie-light">4</div></div>
+                <div class="col-1"><div class="buttons indie-light">5</div></div>
+                <div class="col-1"><div class="buttons indie-light">6</div></div>
+                <div class="col-1"><div class="buttons indie-light">7</div></div>
+                <div class="col-1"><div class="buttons indie-light">8</div></div>
+                <div class="col-1"><div class="buttons indie-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons indie-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsIndie = $('.buttons-indie');
+                const $buttonRow = $('.buttons');
 
-                $buttonsIndie.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsIndie.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-indie-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsIndie.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

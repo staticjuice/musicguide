@@ -10,25 +10,25 @@
 
     <body id="bebop">
         <div class="box jazz">
-            <h1>BEBOP</h1><div class="year year-jazz">1941</div>
+            <h1>BEBOP</h1><div class="year jazz-light">1941</div>
 
             <p>As more white people were copying Jazz music, several black Jazz musicians felt a need to redefine the music. Bebop developed gradually in the early 40s and exploded in 1945. The main difference between Bebop and Swing is that the soloists engaged in chordal (rather than melodic) improvisation, often discarding the melody altogether after the first chorus and using the chords as the basis for the solo. Ensembles tended to be unisons, most Jazz groups were under seven pieces, and the soloist was free to get as adventurous as possible as long as the overall improvisation fit into the chord structure. Since the virtuoso musicians were getting away from using the melodies as the basis for their solos and some of the tempos were very fast, Bebop divorced itself from popular music and a dancing audience, uplifting Jazz to an art form but cutting deeply into its potential commercial success. Ironically the once-radical Bebop style has become the foundation for all of the innovations that followed and now can be almost thought of as establishment music.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-jazz">1</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">2</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">3</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">4</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">5</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">6</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">7</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">8</div></div>
-                <div class="col-1"><div class="buttons buttons-jazz">9</div></div>
+                <div class="col-1"><div class="buttons jazz-light">1</div></div>
+                <div class="col-1"><div class="buttons jazz-light">2</div></div>
+                <div class="col-1"><div class="buttons jazz-light">3</div></div>
+                <div class="col-1"><div class="buttons jazz-light">4</div></div>
+                <div class="col-1"><div class="buttons jazz-light">5</div></div>
+                <div class="col-1"><div class="buttons jazz-light">6</div></div>
+                <div class="col-1"><div class="buttons jazz-light">7</div></div>
+                <div class="col-1"><div class="buttons jazz-light">8</div></div>
+                <div class="col-1"><div class="buttons jazz-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-jazz-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons jazz-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsJazz = $('.buttons-jazz');
+                const $buttonRow = $('.buttons');
 
-                $buttonsJazz.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsJazz.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-jazz-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsJazz.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

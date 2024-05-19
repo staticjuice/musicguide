@@ -10,25 +10,25 @@
 
     <body id="shoegaze">
         <div class="box indie">
-            <h1>SHOEGAZE</h1><div class="year year-indie">1988</div>
+            <h1>SHOEGAZE</h1><div class="year indie-light">1988</div>
 
             <p>Mostly interchangeable with Dream Pop but more saturated in reverb, the term "shoegazing" was coined by the British music press to describe the stage presence of a wave of groups who stood still during live performances in a detached, introspective, non-confrontational state, often with their heads down, as the heavy use of effects pedals meant the performers were often looking down at their feet during concerts. The sound of the music was overwhelmingly loud, with long, droning riffs, waves of distortion, and cascades of feedback. Vocals and melodies disappeared into the walls of guitars, creating a wash of sound where no instrument was distinguishable from another. Almost none of the Shoegazers were dynamic performers, which prevented them from breaking through into the US market. In the early 90s &ndash; after the groups had dominated the British Indie charts &ndash; the Shoegaze groups were swept aside by the twin tides of Grunge and Britpop. Some Shoegazers broke up within a few years, while other groups evolved with the times and were able to sustain careers well into the late 90s.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-indie">1</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">2</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">3</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">4</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">5</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">6</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">7</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">8</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">9</div></div>
+                <div class="col-1"><div class="buttons indie-light">1</div></div>
+                <div class="col-1"><div class="buttons indie-light">2</div></div>
+                <div class="col-1"><div class="buttons indie-light">3</div></div>
+                <div class="col-1"><div class="buttons indie-light">4</div></div>
+                <div class="col-1"><div class="buttons indie-light">5</div></div>
+                <div class="col-1"><div class="buttons indie-light">6</div></div>
+                <div class="col-1"><div class="buttons indie-light">7</div></div>
+                <div class="col-1"><div class="buttons indie-light">8</div></div>
+                <div class="col-1"><div class="buttons indie-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons indie-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsIndie = $('.buttons-indie');
+                const $buttonRow = $('.buttons');
 
-                $buttonsIndie.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsIndie.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-indie-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsIndie.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

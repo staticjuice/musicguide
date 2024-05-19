@@ -10,25 +10,25 @@
 
     <body id="britpop">
         <div class="box indie">
-            <h1>BRITPOP</h1><div class="year year-indie">1992</div>
+            <h1>BRITPOP</h1><div class="year indie-light">1992</div>
 
             <p>Britpop was the British reaction to Grunge. Enough with all the feeble, depressing sorrow and back to glamorous Rock. This soft but catchy kind of Rock is sometimes credited as being the least original genre of the 90s. On an auditory level there is indeed not much shocking &ndash; a clear wink to British Merseybeat but roughened up by the presence of Indie, with sometimes synthesisers and electronic effects to cast a certain glam mood. What makes the genre so well-known and clearly defined is not its sound then, but the Rock &amp; Roll mentality of it &ndash; the cocky attitude of British frontmen determined to conquer the stage, steal the show and awe the masses. There is a reason for such attitude &ndash; many British bands were fed up with the overall dominance of American Rock bands in the British hit charts of the early 90s. As such, they created a strong anti-American music genre, with a very narrow range of influences (all British). Of course, the sound, vocals and song structure are all means to this end. Which explains why Britpop is the same meat, different gravy, but very attractive all the same.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-indie">1</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">2</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">3</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">4</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">5</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">6</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">7</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">8</div></div>
-                <div class="col-1"><div class="buttons buttons-indie">9</div></div>
+                <div class="col-1"><div class="buttons indie-light">1</div></div>
+                <div class="col-1"><div class="buttons indie-light">2</div></div>
+                <div class="col-1"><div class="buttons indie-light">3</div></div>
+                <div class="col-1"><div class="buttons indie-light">4</div></div>
+                <div class="col-1"><div class="buttons indie-light">5</div></div>
+                <div class="col-1"><div class="buttons indie-light">6</div></div>
+                <div class="col-1"><div class="buttons indie-light">7</div></div>
+                <div class="col-1"><div class="buttons indie-light">8</div></div>
+                <div class="col-1"><div class="buttons indie-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-indie-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons indie-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsIndie = $('.buttons-indie');
+                const $buttonRow = $('.buttons');
 
-                $buttonsIndie.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsIndie.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-indie-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsIndie.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

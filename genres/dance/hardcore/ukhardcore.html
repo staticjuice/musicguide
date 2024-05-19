@@ -10,25 +10,25 @@
 
     <body id="ukhardcore">
         <div class="box hardcore">
-            <h1>UK HARDCORE</h1><div class="year year-hardcore">2000</div>
+            <h1>UK HARDCORE</h1><div class="year hardcore-light">2000</div>
 
             <p>At the end of the 90s, the "happy" sound of Happy Hardcore had gone stale and predictable. In the UK, Happy Hardcore traded its happiness and formal structure for something rougher and free. UK Hardcore or "UK Hardcore" is essentially the survival outcome of Happy Hardcore &ndash; stronger, faster, harder and less happy. The type of music went really well with Trance, merging into a new type of music. Just like Trance, different channels of melodies, sound effects and basslines are part of the music, and all of the songs are instrumental. Because UK Hardcore fuses Hardcore with Trance it is very similar to the fusions of either Acid Trance or Psychedelic Trance with Hardcore, respectively known as Freeform or Acidcore. The connection between these two subgenres is unsurprisingly the heavy use of the TB-303, which becomes explored (or even abused) in every possible way, and is no stranger in the world of UK Hardcore either. Therefore, all these genres are one big bowl of acid and spacy speedy Hardcore, as if Rave never died. This current sound similarly has also found followers from all corners of the globe.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-hardcore">1</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">2</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">3</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">4</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">5</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">6</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">7</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">8</div></div>
-                <div class="col-1"><div class="buttons buttons-hardcore">9</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">1</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">2</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">3</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">4</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">5</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">6</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">7</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">8</div></div>
+                <div class="col-1"><div class="buttons hardcore-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-hardcore-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons hardcore-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsHardcore = $('.buttons-hardcore');
+                const $buttonRow = $('.buttons');
 
-                $buttonsHardcore.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsHardcore.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-hardcore-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsHardcore.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

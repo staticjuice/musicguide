@@ -10,25 +10,25 @@
 
     <body id="honkytonk">
         <div class="box country">
-            <h1>HONKY TONK</h1><div class="year year-country">1941</div>
+            <h1>HONKY TONK</h1><div class="year country-light">1941</div>
 
             <p>Country before the 40s had a bit of a multiple personality disorder. While one part of it evolved as a crazy, fun barn dance music, the other part went the opposite way. It evolved as an introvert, back-to-the-roots music that wasn't happy at all and often involved tragic ballads, known as Honky Tonk. Most Honky Tonk songs deal about relationship problems, alcohol abuse, financial worries or other misfortunes. Instead of large barns, this music was played in the more intimate bars of the southern US, which were called "honky tonks". However, these were still large enough to force the artist to implement electric instrumentation to top the crowd volume-wise. Honky Tonk also introduced a steady 4/4 beat to Country music, which diverted the genre from Folk. Honky Tonk artists often sang with a thick, southern tongue and in a nasal tone. Combined with the cowboy hat, boots and costume, the caricature of the traditional Country singer was complete. Honky Tonk remains an important separate stream in Country's history, and is sometimes synonymous with so-called "Hardcore Country".</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-country">1</div></div>
-                <div class="col-1"><div class="buttons buttons-country">2</div></div>
-                <div class="col-1"><div class="buttons buttons-country">3</div></div>
-                <div class="col-1"><div class="buttons buttons-country">4</div></div>
-                <div class="col-1"><div class="buttons buttons-country">5</div></div>
-                <div class="col-1"><div class="buttons buttons-country">6</div></div>
-                <div class="col-1"><div class="buttons buttons-country">7</div></div>
-                <div class="col-1"><div class="buttons buttons-country">8</div></div>
-                <div class="col-1"><div class="buttons buttons-country">9</div></div>
+                <div class="col-1"><div class="buttons country-light">1</div></div>
+                <div class="col-1"><div class="buttons country-light">2</div></div>
+                <div class="col-1"><div class="buttons country-light">3</div></div>
+                <div class="col-1"><div class="buttons country-light">4</div></div>
+                <div class="col-1"><div class="buttons country-light">5</div></div>
+                <div class="col-1"><div class="buttons country-light">6</div></div>
+                <div class="col-1"><div class="buttons country-light">7</div></div>
+                <div class="col-1"><div class="buttons country-light">8</div></div>
+                <div class="col-1"><div class="buttons country-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-country-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons country-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsCountry = $('.buttons-country');
+                const $buttonRow = $('.buttons');
 
-                $buttonsCountry.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsCountry.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-country-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsCountry.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

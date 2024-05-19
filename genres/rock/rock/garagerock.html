@@ -10,25 +10,25 @@
 
     <body id="garagerock">
         <div class="box rock">
-            <h1>GARAGE ROCK</h1><div class="year year-rock">1963</div>
+            <h1>GARAGE ROCK</h1><div class="year rock-light">1963</div>
 
             <p>After the advent of Rock &amp; Roll, countless ambitious teens got hooked on the sound and started forming their own Rock bands. More often than not, they rehearsed in the garages of their parents. The result was a very raw, amateur, lo-fi sound of Rock &amp; Roll and the first experiments with distorted guitars. Garage Rock is a genre where the "fuzz" distortion effect is used intensively, which fits nicely with Garage Rock's recurring content of anger and frustration about dealing with heartbreak and other bad experiences. Because most Garage Rock musicians couldn't afford decent audio equipment, there was often no budget for voice amplification, resulting in wailing, screaming singers. It wasn't until the great British Invasion of the mid-60s that Garage Rock truly broke loose, with even more bands and crossovers to Psychedelic Rock as a result. Garage Rock's big teenage "we do what we want" attitude and sound inspired Punk itself, as well as contemporary artists who felt a revival was well deserved. After all, Garage Rock is the embodiment of sleaziness, roughness and Rock's nonchalance in all its glory.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-rock">1</div></div>
-                <div class="col-1"><div class="buttons buttons-rock">2</div></div>
-                <div class="col-1"><div class="buttons buttons-rock">3</div></div>
-                <div class="col-1"><div class="buttons buttons-rock">4</div></div>
-                <div class="col-1"><div class="buttons buttons-rock">5</div></div>
-                <div class="col-1"><div class="buttons buttons-rock">6</div></div>
-                <div class="col-1"><div class="buttons buttons-rock">7</div></div>
-                <div class="col-1"><div class="buttons buttons-rock">8</div></div>
-                <div class="col-1"><div class="buttons buttons-rock">9</div></div>
+                <div class="col-1"><div class="buttons rock-light">1</div></div>
+                <div class="col-1"><div class="buttons rock-light">2</div></div>
+                <div class="col-1"><div class="buttons rock-light">3</div></div>
+                <div class="col-1"><div class="buttons rock-light">4</div></div>
+                <div class="col-1"><div class="buttons rock-light">5</div></div>
+                <div class="col-1"><div class="buttons rock-light">6</div></div>
+                <div class="col-1"><div class="buttons rock-light">7</div></div>
+                <div class="col-1"><div class="buttons rock-light">8</div></div>
+                <div class="col-1"><div class="buttons rock-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-rock-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons rock-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsRock = $('.buttons-rock');
+                const $buttonRow = $('.buttons');
 
-                $buttonsRock.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsRock.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-rock-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsRock.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

@@ -10,25 +10,25 @@
 
     <body id="punkrock">
         <div class="box punk">
-            <h1>PUNK ROCK</h1><div class="year year-punk">1974</div>
+            <h1>PUNK ROCK</h1><div class="year punk-light">1974</div>
 
             <p>Punk Rock probably was the biggest revolution in Rock history. The economic and political situation in the UK during the early 70s made a few young up-to-no-good kids ("punks") angry. In the US, they rediscovered the similar forgotten Garage Rock mentality, but the most important contributor of Punk was a strong backlash against "Arena Rock" of the early 70s. Popular Progressive Rock and Heartland Rock bands started to reach massive audiences and Rock had become an eclectic spectacle for the elite masses. It was time for a return to the primordial roots of Rock &ndash; to give the youth back its stolen and deformed middle finger. The music was Garage Rock, but with much shorter, faster, energetic, raw and stripped-to-the-base chords which blended in with the rapidly growing out-of-control Punk subculture. Many early amateur Punk Rock band names were gross and sleazy &ndash; Punk liked to indulge in a provocative culture of extreme haircuts and rebellious fashion. A lot of UK Punk was witnessed in the Roxy club, London, whereas US Punk evolved mainly out of the legendary club CBGB's in New York.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-punk">1</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">2</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">3</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">4</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">5</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">6</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">7</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">8</div></div>
-                <div class="col-1"><div class="buttons buttons-punk">9</div></div>
+                <div class="col-1"><div class="buttons punk-light">1</div></div>
+                <div class="col-1"><div class="buttons punk-light">2</div></div>
+                <div class="col-1"><div class="buttons punk-light">3</div></div>
+                <div class="col-1"><div class="buttons punk-light">4</div></div>
+                <div class="col-1"><div class="buttons punk-light">5</div></div>
+                <div class="col-1"><div class="buttons punk-light">6</div></div>
+                <div class="col-1"><div class="buttons punk-light">7</div></div>
+                <div class="col-1"><div class="buttons punk-light">8</div></div>
+                <div class="col-1"><div class="buttons punk-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-punk-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons punk-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsPunk = $('.buttons-punk');
+                const $buttonRow = $('.buttons');
 
-                $buttonsPunk.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsPunk.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-punk-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsPunk.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>

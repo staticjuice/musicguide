@@ -10,25 +10,25 @@
 
     <body id="acidtrance">
         <div class="box trance">
-            <h1>ACID TRANCE</h1><div class="year year-trance">1989</div>
+            <h1>ACID TRANCE</h1><div class="year trance-light">1989</div>
 
             <p>In the centre of the great electronic Dance storm of the late 80s and early 90s, House music started to take on many forms. As both Techno and Ambient music had their influence on Eurodance, a whirlwind of subgenres confused many music enthusiasts. It is within this surge of styles that the earliest evolutions of Trance can also be found. Like House and Techno, Trance features a strong four-to-the-floor kick beat and a similar bassline but unlike both of them, synthesiser melodies dominate any other part of the music. Usually, there is more than one melody, strongly intertwined with the synth bassline, hereby creating a layered structure. To facilitate the hypnotic, entrancing effect of the music, the beat and rhythm are highly repetitive, with as little variation as possible. The earliest forms of Trance started in Germany, where House/Techno DJs created the plainest, purest Trance style. Acid Trance is a highly varied genre and difficult to outline, but its identity lies in sheer simplicity, serenity and harmony &ndash; Acid Trance searches for an enlightened state of consciousness without forcing itself onto the listener.</p>
 
             <div class="row">
-                <div class="col-1"><div class="buttons buttons-trance">1</div></div>
-                <div class="col-1"><div class="buttons buttons-trance">2</div></div>
-                <div class="col-1"><div class="buttons buttons-trance">3</div></div>
-                <div class="col-1"><div class="buttons buttons-trance">4</div></div>
-                <div class="col-1"><div class="buttons buttons-trance">5</div></div>
-                <div class="col-1"><div class="buttons buttons-trance">6</div></div>
-                <div class="col-1"><div class="buttons buttons-trance">7</div></div>
-                <div class="col-1"><div class="buttons buttons-trance">8</div></div>
-                <div class="col-1"><div class="buttons buttons-trance">9</div></div>
+                <div class="col-1"><div class="buttons trance-light">1</div></div>
+                <div class="col-1"><div class="buttons trance-light">2</div></div>
+                <div class="col-1"><div class="buttons trance-light">3</div></div>
+                <div class="col-1"><div class="buttons trance-light">4</div></div>
+                <div class="col-1"><div class="buttons trance-light">5</div></div>
+                <div class="col-1"><div class="buttons trance-light">6</div></div>
+                <div class="col-1"><div class="buttons trance-light">7</div></div>
+                <div class="col-1"><div class="buttons trance-light">8</div></div>
+                <div class="col-1"><div class="buttons trance-light">9</div></div>
             </div>
 
             <p class="artisttrack">Artist: <span id="artist"><span></p><br>
             <p class="artisttrack">Track: <span id="track"></span></p>
-            <div class="col-1 stop"><div class="buttons buttons-trance-stop">&FilledSmallSquare;</div></div>
+            <div class="col-1 stop"><div class="buttons trance-light">&FilledSmallSquare;</div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonsTrance = $('.buttons-trance');
+                const $buttonRow = $('.buttons');
 
-                $buttonsTrance.on('click', function() {
+                $buttonRow.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonsTrance.index(this);
+                    const index = $buttonRow.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -62,7 +62,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.buttons-trance-stop').on('click', function() {
+                $('.stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonsTrance.removeClass('clicked');
+                    $buttonRow.removeClass('clicked');
                 }
             });
         </script>
