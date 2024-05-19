@@ -50,11 +50,11 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $buttonRow = $('.buttons');
+                const $button = $('.buttons');
 
-                $buttonRow.on('click', function() {
+                $button.on('click', function() {
                     stopAllMusic();
-                    const index = $buttonRow.index(this);
+                    const index = $button.index(this);
                     $(this).toggleClass('clicked');
                     const audio = audioInstances[index];
                     audio.play();
@@ -73,7 +73,7 @@
                         audio.pause();
                         audio.currentTime = 0;
                     });
-                    $buttonRow.removeClass('clicked');
+                    $button.removeClass('clicked');
                 }
             });
         </script>
