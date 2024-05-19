@@ -131,6 +131,7 @@ a {
 .genrelist h1 {
     font-size: 2em; /* Increases the size of the genre heading. */
     padding-bottom: 0.33em; /* Adds some extra space under the genre heading. */
+    width: 10em;
 }
 
 .sidebar {
@@ -144,7 +145,7 @@ a {
 }
 
 .sidebar h1 {
-    font-size: 2.5em;
+    font-size: 2.5em; /* Increases the sidebar heading size and makes it responsive. */
 }
 
 .classical { background-color: #705A3D; } /* Adds a background colour to the sidebar for each of the genres. */
@@ -259,11 +260,11 @@ a {
 
 .box h1 {
     float: left; /* Allows other content to exist next to the box genre heading. */
-    font-size: 2.5em;
+    font-size: 2.5em; /* Increases the box heading size and makes it responsive. */
 }
 
 .box p {
-    margin-top: 4.3em; /* Pushes the paragraph text to make sure it's under the heading. */
+    padding-top: 2.75em; /* Pushes the paragraph text to make sure it's under the heading. */
 }
 
 .year {
@@ -281,9 +282,9 @@ a {
     text-align: center; /* Centres the numbers to be horizontally in the middle of the buttons. */
     width: 1em; /* Adds a bit more space for the buttons. */
     line-height: 1.25; /* Reduces the height of the buttons. */
-    user-select: none; /* Makes the numbers unselectable. */
     border-radius: 0.15em; /* Slightly rounds the corners of the buttons. */
     margin-bottom: 0.6em; /* Adds a bit more space under the buttons to make more room for the artist and track names. */
+    user-select: none; /* Makes the numbers unselectable. */
 }
 
 .artisttrack {
@@ -372,7 +373,7 @@ a {
     box-shadow:inset 0 0 0 0.1em #FFF; /* Puts a white outline inside the button when it's clicked on. */
 }
 
-.buttons-pop.clicked, .buttons-experimental.clicked {
+.pop-light.clicked, .experimental-light.clicked {
     box-shadow:inset 0 0 0 0.1em #222; /* Puts a dark outline inside the button when clicked for the light genres. */
 }
 
