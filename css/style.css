@@ -608,7 +608,7 @@ a {
 
 /*---------------------------------------------------------------------------*/
 
-@media (max-width: 991px) {
+@media (max-width: 600px) and (orientation: portrait) {
     #introbox, .buttons {
         font-size: 2em; /* Increases the font size for all text on the landing page, and decreases the button sizes for the mobile version. */
     }
