@@ -289,6 +289,16 @@ a {
     user-select: none;
 }
 
+.flex-container-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25vw;
+}
+
+.flex-item-buttons {
+    flex: 0 0 calc(100% / 12);
+}
+
 .buttons {
     font-weight: 700;
     font-size: 2.5em;
@@ -313,7 +323,6 @@ a {
 .stop {
     float: right;
     margin-top: -1.5em;
-    margin-right: -0.5em;
 }
 
 .box.classical { border: 0.5em solid #917550; }
@@ -622,6 +631,10 @@ a {
 /*---------------------------------------------------------------------------*/
 
 @media (orientation: portrait) {
+    ::-webkit-scrollbar {
+        width: 0; height: 0;
+    }
+
     #introbox {
         font-size: 6vw;
     }
@@ -657,7 +670,6 @@ a {
     .genrelist {
         padding: 1em 1em 0.5em;
         font-size: 6vw;
-        position: relative;
     }
 
     .genrelist h1 {
@@ -668,12 +680,11 @@ a {
         width: 100%;
         height: 100%;
         font-size: 4vw;
-        padding-top: 1.5em;
     }
 
     .box {
         font-size: 3.5vw;
-        width: 89%;
+        width: 90%;
         margin: 1.5em;
     }
 
@@ -689,15 +700,15 @@ a {
         white-space: nowrap;
     }
 
+    .flex-container-buttons {
+        gap: 2.15%;
+    }
+
     .buttons {
         font-size: 2em;
     }
 
     .artisttrack {
         font-size: 3.5vw;
-    }
-
-    .col-1 {
-        margin-right: 0.5em;
     }
 }
