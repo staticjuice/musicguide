@@ -94,7 +94,7 @@ a {
 }
 
 #genres-grid img {
-    margin-bottom: 1.5em;
+    margin-bottom: 2vw;
     width: 100%;
     border-radius: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -102,7 +102,7 @@ a {
 }
 
 #genres-grid span {
-    top: 2.6em;
+    top: 2.5em;
     left: 0;
     right: 0;
     font-size: 2.8vw;
@@ -118,6 +118,7 @@ a {
 
 .col-3, .col-12 {
     position: relative;
+    padding: 0 1vw;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -264,7 +265,7 @@ a {
 }
 
 .box p {
-    padding-top: 2.75em;
+    padding-top: 3em;
 }
 
 .year {
@@ -619,8 +620,8 @@ a {
         display: block !important;
     }
 
-    #introbox, .buttons {
-        font-size: 2em;
+    #introbox {
+        font-size: 6vw;
     }
 
     #genres-heading {
@@ -677,6 +678,10 @@ a {
         margin-bottom: 0.5em;
         font-size: 1.5em;
         white-space: nowrap;
+    }
+
+    .buttons {
+        font-size: 2em;
     }
 
     .artisttrack {
