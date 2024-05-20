@@ -76,8 +76,15 @@ a {
 
 /*---------------------------------------------------------------------------*/
 
-#allgenres::-webkit-scrollbar-track {
-    background: #000;
+#allgenres {
+    background: url("../images/wood.jpg");
+    position: absolute;
+    background-size: cover;
+}
+
+#allgenres::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 #genres-heading {
@@ -126,22 +133,21 @@ a {
 .genrelist {
     padding: 0.85em 1.35em;
     font-size: 3.5vh;
-    position: absolute;
+    flex: 1;
+    word-break: break-word;
 }
 
 .genrelist h1 {
     font-size: 2em;
     padding-bottom: 0.33em;
-    width: 53vw;
 }
 
 .sidebar {
     font-size: 2vh;
-    width: 33.33em;
+    width: 33em;
     height: 100vh;
     padding: 1.25em 1.5em 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    float: right;
     overflow: auto;
 }
 
@@ -171,7 +177,11 @@ a {
 .ukgarage { background-color: #8F7CAD; }
 .experimental { background-color: #EDEDED; color: #222; }
 
-[id*="main"]:before, #intro:before {
+[id*="main"] {
+    display: flex;
+}
+
+[id*="main"]:before {
     content: "";
     position: fixed;
     width: 100vw;
@@ -180,8 +190,7 @@ a {
     z-index: -1;
 }
 
-#intro:before { background: url("../images/intro.jpg") center center / cover fixed; }
-#allgenres { background: url("../images/wood.jpg"); position: absolute; background-size: cover; }
+#mainintro:before { background: url("../images/intro.jpg") center center / cover fixed; }
 #mainclassical:before { background: url("../images/classicalbig.jpg") center center / cover fixed; }
 #mainblues:before { background: url("../images/bluesbig.jpg") center center / cover fixed; }
 #mainjazz:before { background: url("../images/jazzbig.jpg") center center / cover fixed; }
@@ -643,6 +652,10 @@ a {
         height: 25vw;
         margin-bottom: 1.5em;
         object-fit: cover;
+    }
+
+    [id*="main"] {
+        display: block;
     }
 
     .genrelist {
