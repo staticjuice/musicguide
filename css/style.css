@@ -10,7 +10,6 @@ body {
 }
 
 p {
-    font-weight: 300;
     margin: 1.5em 0;
 }
 
@@ -52,7 +51,7 @@ a {
     font-size: 4vw;
     text-align: center;
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -63,10 +62,11 @@ a {
 }
 
 #introbutton {
+    font-weight: 600;
     font-size: 1.75em;
-    padding: 0.25em 0.5em;
-    border: 0.1em solid #FFF;
-    border-radius: 1em;
+    padding: 0.2em 0.4em;
+    border: 0.125em solid #FFF;
+    border-radius: 2em;
 }
 
 #introbutton:hover {
@@ -87,7 +87,7 @@ a {
 }
 
 #genres-heading {
-    margin: 2vw 9vw;
+    margin: 2vw 8vw;
     font-size: 1.5vw;
 }
 
@@ -96,7 +96,7 @@ a {
 }
 
 #genres-grid {
-    margin: 2vw 9vw;
+    margin: 2vw 8vw;
 }
 
 .flex-container {
@@ -114,7 +114,7 @@ a {
 .flex-item img {
     width: 100%;
     border-radius: 1em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0.01em 0.01em 0.5em rgba(0, 0, 0, 0.6);
     filter: brightness(40%);
 }
 
@@ -127,30 +127,29 @@ a {
     white-space: nowrap;
 }
 
-.flex-item span#fit {
+#fit {
     font-size: 2.5vw;
 }
 
 /*---------------------------------------------------------------------------*/
 
 .genrelist {
-    padding: 0.85em 1.35em;
+    padding: 0.75em 1.25em;
     font-size: 3.5vh;
     flex: 1;
-    word-break: break-word;
 }
 
 .genrelist h1 {
     font-size: 2em;
-    padding-bottom: 0.33em;
+    padding-bottom: 0.25em;
 }
 
 .sidebar {
     font-size: 2vh;
-    width: 33em;
-    height: 100vh;
+    width: 33.33em; height: 100vh;
+    max-width: 50vw;
     padding: 1.25em 1.5em 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: -0.01em 0 0.5em rgba(0, 0, 0, 0.6);
     overflow: auto;
 }
 
@@ -182,13 +181,13 @@ a {
 
 [id*="main"] {
     display: flex;
+    overflow: hidden;
 }
 
 [id*="main"]:before {
     content: "";
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    width: 100vw; height: 100vh;
     filter: brightness(40%);
     z-index: -1;
 }
@@ -266,9 +265,10 @@ a {
     font-size: 2vh;
     width: 40em;
     padding: 1.5em;
-    margin: 2.5em;
+    margin: 2em;
     border-radius: 1.5em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.6);
+    position: relative;
 }
 
 .box h1 {
@@ -277,7 +277,7 @@ a {
 }
 
 .box p {
-    padding-top: 3em;
+    padding-top: 2.5em;
 }
 
 .year {
@@ -313,16 +313,22 @@ a {
 .artisttrack {
     font-weight: 900;
     font-size: 1.2em;
-    display: inline;
+    user-select: none;
+}
+
+.artisttrack::before {
+    content: attr(data-label);
+    width: 3.31em;
+    display: inline-block;
 }
 
 #artist, #track {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .stop {
-    float: right;
-    margin-top: -1.5em;
+    position: absolute;
+    bottom: 0.5em; right: 1.5em;
 }
 
 .box.classical { border: 0.5em solid #917550; }
@@ -392,11 +398,11 @@ a {
 .buttons.experimental-light:hover { background-color: #FFFFFF; }
 
 .clicked {
-    box-shadow:inset 0 0 0 0.1em #FFF;
+    box-shadow: inset 0 0 0 0.1em #FFF;
 }
 
 .pop-light.clicked, .experimental-light.clicked {
-    box-shadow:inset 0 0 0 0.1em #222;
+    box-shadow: inset 0 0 0 0.1em #222;
 }
 
 #medieval {background: url("../images/classical/medieval.jpg") center center / cover fixed; }
@@ -650,7 +656,7 @@ a {
     }
 
     .flex-item {
-        flex: calc(100% - 2vw);
+        flex: 1 1 calc(100% - 2vw);
         margin-bottom: 3vw;
     }
 
@@ -659,12 +665,13 @@ a {
         object-fit: cover;
     }
 
-    .flex-item :is(span, span#fit) {
+    .flex-item span, #fit {
         font-size: 8vw;
     }
 
     [id*="main"] {
         display: block;
+        overflow: auto;
     }
 
     .genrelist {
@@ -677,9 +684,10 @@ a {
     }
 
     .sidebar {
-        width: 100%;
-        height: 100%;
         font-size: 4vw;
+        width: 100%; height: 100%;
+        max-width: 100vw;
+        box-shadow: 0 -0.01em 0.5em rgba(0, 0, 0, 0.6);
     }
 
     .box {
