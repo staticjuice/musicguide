@@ -10,26 +10,26 @@
     </head>
 
     <body id="progressivetrance">
-        <div class="box trance">
-            <h1>PROGRESSIVE TRANCE</h1><div class="year trance-light">1994</div>
+        <div class="quaternary-box trance">
+            <h1>PROGRESSIVE TRANCE</h1><div class="quaternary-year trance-light">1994</div>
 
             <p>One of the most complicated stories in popular music history is the tangle between Progressive House and Progressive Trance. The House version is very, very Trance-like and the Trance version is strongly influenced by House. The word "Progressive" in Progressive House and Trance points to a progress of chords within the music &ndash; the song gradually evolves. Progressive Trance appears after and is influenced by Progressive House. Between mainstream, radio-edited Balearic Trance and underground, uncompromising Psytrance, there was a need for a flexible middle ground. Inspired by the success and formula of Deep House, Trance evolves into much longer songs (thus easier to mix) with extended build-ups, chords and breakdowns. With an average tempo lower than most Trance (around 130 BPM) and heavy use of reverb, delay and washing sounds, Progressive Trance aims at a serious sound. Slightly heavy and gloomy and more subtle in its approach of melody (usually in a minor key), the genre is perhaps one of the most effective Trance genres to well up images from another reality.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons trance-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons trance-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button trance-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

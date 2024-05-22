@@ -10,26 +10,26 @@
     </head>
 
     <body id="indietronica">
-        <div class="box indie">
-            <h1>INDIETRONICA</h1><div class="year indie-light">2002</div>
+        <div class="quaternary-box indie">
+            <h1>INDIETRONICA</h1><div class="quaternary-year indie-light">2002</div>
 
             <p>In the 2000s, as computer technology became more accessible and music software advanced, it became possible to create high-quality music using little more than a single laptop computer. This resulted in a massive increase in the amount of home-produced electronic music available to the general public via the expanding internet and new forms of performance such as live coding. These techniques also began to be used by existing bands and by developing genres that mixed Rock with digital techniques and sounds, including Dance Punk, Electroclash and Nu Gaze. Unsurprisingly, this is a fairly broad and flexible genre, which can easily tap into a wide spectrum of related genres. Where Nu Gaze is rather an obscure and rare genre and Indietronica too loosely defined, they share many common characteristics. They have a very summery mood, full of optimism and dreamy Pop vocals, 80s retro aesthetics and lots of reverb on different song parts. A term frequently associated with these latest Rock genres is Laptronica &ndash; electronic music performed entirely by simply a laptop.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons indie-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons indie-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button indie-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

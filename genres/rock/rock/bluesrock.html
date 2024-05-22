@@ -10,26 +10,26 @@
     </head>
 
     <body id="bluesrock">
-        <div class="box rock">
-            <h1>BLUES ROCK</h1><div class="year rock-light">1963</div>
+        <div class="quaternary-box rock">
+            <h1>BLUES ROCK</h1><div class="quaternary-year rock-light">1963</div>
 
             <p>Parallel to the British Rock Invasion, the British Blues Invasion took hold, which was sometimes hard to separate from the other one. Yet British Blues started out in London instead of Liverpool and was not influenced by Merseybeat. As Blues became harder, faster and louder and Rock started to take an interest in Jazz, the two grew from quite different paths into a powerful combination which was performed by a huge amount of artists during the 60s. There is a large area of overlapping between Blues Rock and Psychedelic Rock and often the same artists are mentioned for both genres. Blues Rock artists usually sang anti-establishment lyrics, paving the road for later Metal. Blues Rock stayed true to the early three-chord Chicago Blues but added more guitar improvisation (solos), distortion and psychedelic effects. Especially Chicago legends Muddy Waters, Howlin' Wolf and Robert Johnson were a huge influence on this new wave of Blues artists. A remarkable fact, considering that all original Blues Rock artists are white. And thus African-American Blues was injected into the world of white British Rock.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons rock-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons rock-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

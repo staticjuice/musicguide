@@ -10,26 +10,26 @@
     </head>
 
     <body id="rhythmandblues">
-        <div class="box rhythmandblues">
-            <h1>RHYTHM &amp; BLUES</h1><div class="year rhythmandblues-light">1943</div>
+        <div class="quaternary-box rhythmandblues">
+            <h1>RHYTHM &amp; BLUES</h1><div class="quaternary-year rhythmandblues-light">1943</div>
 
             <p>Jump Blues dramatically changed when the band stopped being an anonymous whole but received a face &ndash; the frontman. The moment black musicians stepped forward with their own music, driven by a powerful and driven backbeat, it quickly was discarded as something vile, not meant for "decent, white people". The previous term for R&amp;B, "Race Music", already made that very clear. Race Music was a Billboard category reserved for Blues music, as Jazz and Gospel also featured white musicians. True R&amp;B had very few instruments, similar to Gospel. Melodies became shorter and more repetitive like riffs, and a steady backbeat is omnipresent. With more emphasis on albums, performance and singer personality than ever before, the birth of Rhythm &amp; Blues must be acknowledged as a milestone in the evolution of popular music. It creates the concept of high-profile singers with personal music, who combine their songs on albums to reach large audiences. And when finally white singers start reshaping R&amp;B in the form of Rock &amp; Roll, few realised that they witnessed the shape of grand things to come.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

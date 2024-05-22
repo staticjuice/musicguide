@@ -10,26 +10,26 @@
     </head>
 
     <body id="rocksteady">
-        <div class="box reggae">
-            <h1>ROCKSTEADY</h1><div class="year reggae-light">1966</div>
+        <div class="quaternary-box reggae">
+            <h1>ROCKSTEADY</h1><div class="quaternary-year reggae-light">1966</div>
 
             <p>Right after the British Merseybeat Revolution reached its height, a small youth subculture known as the mods existed, that listened to their own type of Rock &amp; Roll. Almost the same happened in Jamaica after the Ska revolution &ndash; young gangsters and street kids known as "rude boys" changed the happy, uptempo Ska in something they could relate to &ndash; much cooler, slower music with an easy but powerful bass and more Rock influences with many tracks incorporating electric guitars. This rude boy music became known as Rocksteady. And just like Punk, Hip Hop or Mod, the lyrics were more often than not about political issues, although the music sounded nowhere near as rough, but was often performed in R&amp;B-like small harmony groups. The reason for implementing political content and a slower, laidback and more serious tempo was a slowly growing discontent with the very first Jamaican government installed after the independence in 1962. Another reason for the slowing down of Jamaican music lay in the simple fact that many musicians just didn't like to play Ska's hyperactive rhythm.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons reggae-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons reggae-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button reggae-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

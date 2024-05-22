@@ -10,26 +10,26 @@
     </head>
 
     <body id="atmosphericdrumandbass">
-        <div class="box drumandbass">
-            <h1>ATMOSPHERIC D&amp;B</h1><div class="year drumandbass-light">1993</div>
+        <div class="quaternary-box drumandbass">
+            <h1>ATMOSPHERIC D&amp;B</h1><div class="quaternary-year drumandbass-light">1993</div>
 
             <p>The older styles all focused on the "ravy" side of Drum &amp; Bass and tried to blow the crowd away with subsonic booming basslines and an avalanche of drum rolls. Very soon, a countermovement emerged that tried to recreate the original Drum &amp; Bass sound, before the Darkcore influences. As to be expected, it was neither raw nor heavy, but highly polished, produced and soothing to the ear. With crossovers into other music such as Jazz, this "intelligent" Drum &amp; Bass took itself very seriously. Major record labels took an interest and started releasing records with complex, deep, atmospheric melodies and labelling itself "Artcore", but many synonyms exist &amp; Ambient, Atmospheric or Intelligent Drum &amp; Bass. Its "artistic", complex nature makes the genre even more associated with cannabis than other Drum &amp; Bass &ndash; it's often the preferred soundtrack for any non-clubbing film scene dominated by ganja presence. Atmospheric Drum &amp; Bass (which is by most preferred over the term Intelligent Drum &amp; Bass) made Drum &amp; Bass very popular, even in circles that normally don't hold Jungle in high esteem.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons drumandbass-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button drumandbass-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

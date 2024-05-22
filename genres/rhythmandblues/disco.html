@@ -10,26 +10,26 @@
     </head>
 
     <body id="disco">
-        <div class="box rhythmandblues">
-            <h1>DISCO</h1><div class="year rhythmandblues-light">1974</div>
+        <div class="quaternary-box rhythmandblues">
+            <h1>DISCO</h1><div class="quaternary-year rhythmandblues-light">1974</div>
 
             <p>Disco marked the dawn of the modern era of Dance-based popular music. Growing out of the increasingly groove-orientated sound of early 70s and Funk, Disco emphasised the beat above anything else, even the singer and the song. Disco was named after discotheques, clubs that played nothing but music for dancing. Most of the discotheques were gay clubs in New York, and the DJs in these clubs specifically picked Soul and Funk records that had a strong, heavy groove. Along from that, the singles were often issued on 12-inch records, which allowed for extended remixes. DJs could mix these tracks together, matching the beats on each song since they were marked with how fast they were in terms of beats per minute. As one of the biggest mainstream hypes in the history of music, it is no surprise that Disco declined almost as fast as it peaked and that it sparked a wave of revulsion (symbolised by the infamous "Disco Sucks" tag). Although not without leaving a legacy of various Post-Disco genres and eventually what became known as "Disco's Revenge" &ndash; House music.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

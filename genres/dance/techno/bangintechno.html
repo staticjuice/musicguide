@@ -10,26 +10,26 @@
     </head>
 
     <body id="bangintechno">
-        <div class="box techno">
-            <h1>BANGIN TECHNO</h1><div class="year techno-light">1995</div>
+        <div class="quaternary-box techno">
+            <h1>BANGIN TECHNO</h1><div class="quaternary-year techno-light">1995</div>
 
             <p>Bangin Techno is more of a descriptive catch-all than a genre, but it is the most accessible and the most interesting, and for that reason it is as sleek and shiny as Techno is willing to get. Bangin Techno started out as a paragon of repetitive, percolating progression of perfunctory percussion that perfectly parallels shoes, keys, belts, coins, bunched up socks and a baseball all stuck in a laundry dryer. It is Detroit Techno at its most machinelike essence, catalysed raw efficiency to such an extent that after awhile people were wondering why the two were separated in the first place. Bangin Techno also serves as a collection of regional Detroit-sounding genres and there are a lot of them that emerged in the mid to late 90s, all with subtle local flavouring. The biggest are Swedish Techno and German Techno. Detroit Techno has always been more of a DJ's genre. The records are released as repetitive loops, like half-finished songs with no melody or vocals (sometimes), often as battle tools or beats and breaks samplers with plenty of space between them on the vinyl to aid the DJ in his quick cuts and mixes.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons techno-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons techno-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons techno-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons techno-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons techno-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons techno-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons techno-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons techno-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons techno-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button techno-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button techno-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button techno-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button techno-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button techno-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button techno-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button techno-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button techno-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button techno-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons techno-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button techno-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

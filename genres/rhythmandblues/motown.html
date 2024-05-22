@@ -10,26 +10,26 @@
     </head>
 
     <body id="motown">
-        <div class="box rhythmandblues">
-            <h1>MOTOWN</h1><div class="year rhythmandblues-light">1959</div>
+        <div class="quaternary-box rhythmandblues">
+            <h1>MOTOWN</h1><div class="quaternary-year rhythmandblues-light">1959</div>
 
             <p>After the rural areas, Soul quickly caught on in the urban areas, where it lost a bit of that rural roughness (just as happened with Country). First almost immediately in Chicago and a bit later in the motor city &ndash; Detroit. These urban types of Soul were more uptempo and happy than usual (the first wave of Soul could sometimes be tragic). The experimental melting pot was turned into a factory-produced popular recipe &ndash; a strong backbeat, a bouncy, melodic bassline, four-part harmony vocals (often female), a tight snare drum, and usually tambourines. It was heavily produced, polished music, especially by that record company that became so well known that its name is a synonym for the genre &ndash; Motown. Compared to early Soul, Motown has more an "urban" sound and production and is a lot more danceable. Motown's rhythm sections (drum and bass or tambourine) were all very uniform but thoroughly contemplated. Motown became exceptionally popular with both black and white audiences (hereby connecting the two cultures), whereas the first Soul was purely black-orientated.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons rhythmandblues-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rhythmandblues-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

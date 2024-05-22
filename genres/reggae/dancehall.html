@@ -10,26 +10,26 @@
     </head>
 
     <body id="dancehall">
-        <div class="box reggae">
-            <h1>DANCEHALL</h1><div class="year reggae-light">1981</div>
+        <div class="quaternary-box reggae">
+            <h1>DANCEHALL</h1><div class="quaternary-year reggae-light">1981</div>
 
             <p>Violence, gang wars and passive governance coerced many Jamaicans to flee into escapist party music, eventually creating the phenomenon known as Dancehall. Disco introduced the nightclub party culture around the world which eventually found its way to Jamaica. Jamaica too had its own dancing clubs, but DJs here stayed true to the native music. They took the rhythm from old 60s Ska records, the bass and sound of Reggae and influences from Rock such as the addition of Rock drums. There was little left of the spirituality of Reggae though. This was in-your-face, secular and aggressive party music. Instead of drugs, God or politics, the lyrics dealt with so-called "slackness" &ndash; explicit sexual and vulgar content. Dancehall also brought back the concept of toasting, which Reggae had abandoned. These types of vocals are much more fitting to both the sound and content. A new type of fashion to go along with the party phenomenon of Dancehall makes this more than just a music genre &ndash; combined with Ragga it is a well-established subculture of debauchery and escapism.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons reggae-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons reggae-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button reggae-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons reggae-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button reggae-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

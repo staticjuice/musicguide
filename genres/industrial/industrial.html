@@ -10,26 +10,26 @@
     </head>
 
     <body id="industrial">
-        <div class="box industrial">
-            <h1>INDUSTRIAL</h1><div class="year industrial-light">1976</div>
+        <div class="quaternary-box industrial">
+            <h1>INDUSTRIAL</h1><div class="quaternary-year industrial-light">1976</div>
 
             <p>A conceptual artist scene taken to the extreme, where eager avant-gardists tried to be as provocative as possible &ndash; totalitarian iconography andcover art, disturbing imagery and lyrics, and using every trick in the guitar and synth book to create a collage of factory sounds with distorted and false mumbling and minimalistic melodies. This is a genre that would sound no different than unbearable, psychotic noise for the vast majority of people. The overwhelming majority of Industrial music comes from Germany &ndash; an unfathomable legacy of and a powerful testament to the grand experiment of Krautrock. Early Industrial draws heavily on influences from Modernism and Dadaïsm, believing in tearing down society and building it up again. Industrial likes to refer to recurring themes of constructivism, machinery, industrialisation and world order &ndash; we are all gears in the clockwork of society. More than any other music genre, Industrial seeks out the bigger philosophical issues, yet does not deliver answers &ndash; only a shock treatment the likes of which have never been heard.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons industrial-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons industrial-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button industrial-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

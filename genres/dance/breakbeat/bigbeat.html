@@ -10,26 +10,26 @@
     </head>
 
     <body id="bigbeat">
-        <div class="box breakbeat">
-            <h1>BIG BEAT</h1><div class="year breakbeat-light">1995</div>
+        <div class="quaternary-box breakbeat">
+            <h1>BIG BEAT</h1><div class="quaternary-year breakbeat-light">1995</div>
 
             <p>The perfect soundtrack for a nocturnal technoir or urban noir film or game, stacked with high-paced action and adrenaline &ndash; this is Big Beat. With neverending drum rolls and constant rhythmic builds and drops, the music feels like a rollercoaster of complex breakbeats, often flavoured with acidy Rock and Industrial sounds. Big Beat is rarely played at parties or clubs because it is deemed more suitable for soundtracks and because it quickly got replaced by the Breakbeat styles of UK Garage. Big Beat was addictive for many composers, who fused it with a lot of other genres, especially Rock. The use of mid-frequency Rock riffs and eclectic silly samples changed Chemical Breaks into a new genre &ndash; Big Beat, named after its pronounced, heavy breaks. Big Beat made Breakbeat burst into the mainstream, as it was accessible, fun, loud, catchy and influenced by diverse genres &ndash; Funk grooves and Acid House synths. Pretty soon, Big Beat artists became headliners for huge stages. The mainstream success and eclectic nature of Big Beat ensured a heavy backlash by more purist producers.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons breakbeat-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons breakbeat-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons breakbeat-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons breakbeat-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons breakbeat-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons breakbeat-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons breakbeat-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons breakbeat-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons breakbeat-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button breakbeat-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button breakbeat-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button breakbeat-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button breakbeat-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button breakbeat-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button breakbeat-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button breakbeat-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button breakbeat-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button breakbeat-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons breakbeat-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button breakbeat-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

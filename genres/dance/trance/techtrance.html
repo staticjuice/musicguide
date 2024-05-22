@@ -10,26 +10,26 @@
     </head>
 
     <body id="techtrance">
-        <div class="box trance">
-            <h1>TECH TRANCE</h1><div class="year trance-light">1998</div>
+        <div class="quaternary-box trance">
+            <h1>TECH TRANCE</h1><div class="quaternary-year trance-light">1998</div>
 
             <p>Tech Trance is the middle ground between Techno and Trance. Tech Trance differs from other styles of Trance by lacking buildups or breakdowns, and melody is approached with restraint &ndash; no arpeggios, progressive evolution or multi-layering. Its Trance personality lies in the conjunction of distorted synthesised sounds into a repetitive motif. This is Tech Trance's most recognisable trademark. One can hardly describe this motif as melody in a traditional, hypnotic Trance manner. Innovative and intensive use of delay on a recurring series of hard synth notes turns the genre more into a one-trick-pony, but with perfect execution of that trick. Tech Trance is also responsible for introducing side-chaining into the world of EDM &ndash; a technology to reduce the volume of certain frequencies, which is often used to create the illusion of a loud bassline. Though originated at the end of the 90s, it wasn't until much later that Tech Trance rose to the foreground. Compared to other Trance genres, Tech Trance is more uptempo and features an abundance of percussion assembled into complex, rushing rhythms.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons trance-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons trance-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button trance-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

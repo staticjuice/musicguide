@@ -10,26 +10,26 @@
     </head>
 
     <body id="brillbuildingpop">
-        <div class="box pop">
-            <h1>BRILL BUILDING POP</h1><div class="year pop-light">1958</div>
+        <div class="quaternary-box pop">
+            <h1>BRILL BUILDING POP</h1><div class="quaternary-year pop-light">1958</div>
 
             <p>Pop music is a commercial and light variant of either Rock or R&amp;B music, often crossing over to whatever genre sells the most. However, before Rock music, producers were already creating Pop music. The dominant source of Pop in the early 20th century was Tin Pan Alley &ndash; a musical neighbourhood in New York near Broadway. Nearby was the famous Brill Building. When EPs became more commonplace in the 50s and the first hit appeared, this building turned into a giant busy hive, filled with countless recording studios. At first, Brill Building's focus lay at creating music for the family, but that all changed in the late 50s. Charming male crooners and hired girl groups were meant to express an irresistible image of sexiness, turning their work into large profits. The first crooners appeared in the 20s and were named after their singing technique of gently moaning in the microphone. The Brill Building sound evolved from a more minimal Singer-Songwriter type of music into a light version of Rock &amp; Roll written in 6/8 signature with Latin or exotic sounds, strings, children's melodies and R&amp;B influences.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons pop-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons pop-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button pop-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

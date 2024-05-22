@@ -10,26 +10,26 @@
     </head>
 
     <body id="smoothjazz">
-        <div class="box jazz">
-            <h1>SMOOTH JAZZ</h1><div class="year jazz-light">1975</div>
+        <div class="quaternary-box jazz">
+            <h1>SMOOTH JAZZ</h1><div class="quaternary-year jazz-light">1975</div>
 
             <p>The Jazz era after Fusion had to deal with the growing popularity and commercial approach of R&amp;B, particularly Disco. As such, an offshoot of Jazz Fusion known as Smooth Jazz became the favourite puppet of Jazz-related record companies, more profit-fixated than before. Experimentality became replaced by radio-friendly, Easy-Listening music. Smooth Jazz is supposed to sell with a slick, heavily produced and of course smooth sound. Of all the different Jazz genres, it's one of the plainest, with only one or two instruments playing melodies. Often there's a saxophone, which is characteristic for Smooth Jazz's (unintentional) erotic connotation &ndash; the music genre was a staple in erotic films or scenes during the late 70s and early 80s. Derogatory genre names like "Fuzak" and "Hot Tub Jazz" reassert their opinions, while also holding a certain ground. After all, Smooth Jazz is often catered as background music for bars or restaurants or just to relax at home. Be that as it may, its overall popularity is still significant, because it delivers exactly what it promises &ndash; Easy-Listening.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons jazz-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons jazz-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button jazz-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

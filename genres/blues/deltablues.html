@@ -10,26 +10,26 @@
     </head>
 
     <body id="deltablues">
-        <div class="box blues">
-            <h1>DELTA BLUES</h1><div class="year blues-light">c. 1860</div>
+        <div class="quaternary-box blues">
+            <h1>DELTA BLUES</h1><div class="quaternary-year blues-light">c. 1860</div>
 
             <p>Almost automatically, Blues becomes the antithesis of Gospel. Wandering black singers who lost their faith due to misfortune slowly but steadily developed their personal, secular type of Gospel or more accurately &ndash; "badspel", as there was little positive news for them to tell. Delta Blues style comes from a region in the southern part of Mississippi, a place romantically referred to as "the land where the Blues were born." In its earliest form, the style became the first black guitar-dominated music to make it onto phonograph records back in the late 20s. Although many original Delta Blues performers worked in a string-band context for live appearances, very few of them recorded in this manner. Consequently, the recordings from the late 20s through mid-30s consist primarily of performers working in a solo, self-accompanied context. The form is dominated by fiery slide guitar and passionate vocalising, with the deepest of feelings being applied directly to the music. The form continues to the present time with new performers working in the older solo artist traditions and style.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons blues-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons blues-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button blues-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

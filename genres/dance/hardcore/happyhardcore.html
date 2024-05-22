@@ -10,26 +10,26 @@
     </head>
 
     <body id="happyhardcore">
-        <div class="box hardcore">
-            <h1>HAPPY HARDCORE</h1><div class="year hardcore-light">1993</div>
+        <div class="quaternary-box hardcore">
+            <h1>HAPPY HARDCORE</h1><div class="quaternary-year hardcore-light">1993</div>
 
             <p>In the Dance hit charts of the early 90s, Eurodance and derivative forms reigned supreme. Eventually, even Hardcore became influenced &ndash; the catchy synth melodies were extremely sped up to around 180 BPM (which made them sound super cheesy), oldschool piano sounds were added and accelerated female chorus vocals filled in the remaining parts. Happy Hardcore was a true parody of Gabber, a satire taken to the extreme, with children's merchandising, colourful teen compilation CDs and even children's parties, where Happy Hardcore was played all the time. Without a doubt, Happy Hardcore was despised by many of the "serious" Hardcore community, for which the genre was not only a commercial sellout but a threat to their culture. They were right, as in a way it already marked the end of the Gabber culture, though it would still take a couple of years. More often than not, DJs were repelled and intimidated when playing Happy Hardcore. Although in some clubs or parties these genres could be played alongside each other without any fuss, allowing for interesting fusions and crossovers.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons hardcore-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button hardcore-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

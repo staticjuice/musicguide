@@ -10,26 +10,26 @@
     </head>
 
     <body id="darkwave">
-        <div class="box industrial">
-            <h1>DARKWAVE</h1><div class="year industrial-light">1980</div>
+        <div class="quaternary-box industrial">
+            <h1>DARKWAVE</h1><div class="quaternary-year industrial-light">1980</div>
 
             <p>After the heydays of the few early Goth Rock pioneers, the Gothic movement took their legacy and started creating darker, more melancholic and more electronic-sounding music with haunting synth melodies, drum machines, and Post-Punk guitar riffs. The introvert lyrics were typically about Gothic (romantic) topics. This darker form of New Wave (usually it was more Post-Punk than New Wave) was called Darkwave. Darkwave emerged in Germany as the second wave of Goth Rock. It merged with Synthpop and thus became much more electronic. Another genre emerged from this known as Coldwave. To the American press, Coldwave is very heavy, guitar-based Darkwave and a predecessor of Industrial Rock (such as bands Chemlab, Hate Department or 16 Volt). In Europe (especially in France) Coldwave is known as a minimal, Gothic type of Synthpop. Darkwave and Coldwave encompass all Goth music from the late 80s until present. Together with Industrial Rock and Electro-Industrial, it would form a musical trinity as the music of choice for the underground but undying Industrial subculture.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons industrial-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons industrial-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button industrial-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons industrial-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button industrial-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

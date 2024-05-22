@@ -10,26 +10,26 @@
     </head>
 
     <body id="opera">
-        <div class="box classical">
-            <h1>OPERA</h1><div class="year classical-light">c. 1600</div>
+        <div class="quaternary-box classical">
+            <h1>OPERA</h1><div class="quaternary-year classical-light">c. 1600</div>
 
             <p>Opera is a form of theatre in which music has a leading role and the parts are taken by singers, but is distinct from musical theatre. Such a work is typically a collaboration between a composer and a librettist and incorporates a number of the performing arts, such as acting, scenery, costume and sometimes dance or ballet. The performance is typically given in an Opera House, accompanied by an orchestra or smaller musical ensemble. Opera is a key part of the Western classical music tradition. Originally understood as an entirely sung piece, in contrast to a play with songs, Opera has come to include numerous genres, including some that include spoken dialogue such as musical theatre, Singspiel and Opéra comique. In traditional number Opera, singers employ two styles of singing &ndash; recitative, a speech-inflected style, and self-contained arias. Opera originated in Italy at the end of the 16th century and soon spread through the rest of Europe. The most renowned figure of late 18th-century opera is Wolfgang Amadeus Mozart, who is most famous for his Italian comic operas.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons classical-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons classical-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons classical-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons classical-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons classical-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons classical-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons classical-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons classical-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons classical-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button classical-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button classical-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button classical-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button classical-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button classical-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button classical-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button classical-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button classical-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button classical-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons classical-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button classical-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

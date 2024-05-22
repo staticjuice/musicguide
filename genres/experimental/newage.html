@@ -10,26 +10,26 @@
 </head>
 
     <body id="newage">
-        <div class="box experimental">
-            <h1>NEW AGE</h1><div class="year experimental-light">1976</div>
+        <div class="quaternary-box experimental">
+            <h1>NEW AGE</h1><div class="quaternary-year experimental-light">1976</div>
 
             <p>Two evolutions in the 70s laid the foundations for New Age. On one hand, there was the introduction of nature sounds in Ambient music. Music did not need to repulse the environment but could be the voice of the environment &ndash; a beautiful and escapist one. On the other hand, there was the rise of unprecedented heavy, macho music such as Heavy Metal. Hereby, record stores saw a steady increase in demand in the opposite genre. With the spotlights on so much noise and teen-orientated music, many people craved music with a sense of calmness. New Age is often a careful balance of both acoustic and electronic instruments, which is unique among genres. Though a lot of New Age is instrumental, soothing voices are not uncommon. The overall tempo is very low and transitions occur gradually and smoothly. New Age caresses the mind with trembling timbres and stimulates the body with an inner rhythm. But New Age is more than a music genre. The urge for nature-connected, tranquillising music is intertwined with the birth of an affined spiritual subculture also known as New Age.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons experimental-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons experimental-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button experimental-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

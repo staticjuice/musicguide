@@ -10,26 +10,26 @@
     </head>
 
     <body id="vaporwave">
-        <div class="box experimental">
-            <h1>VAPORWAVE</h1><div class="year experimental-light">2009</div>
+        <div class="quaternary-box experimental">
+            <h1>VAPORWAVE</h1><div class="quaternary-year experimental-light">2009</div>
 
             <p>Vaporwave can be credited with the only metaphysically reactionary genre of the last decade. The subculture associated with Vaporwave sets out to satirise consumer capitalism and popular culture and tends to be characterised by a nostalgic or surrealist engagement with the popular entertainment, technology and advertising of the 80s and 90s. It also incorporates early Internet imagery, 90s web design and Japanese glyphs. Connotations of mass-consumerism and capitalistic technology spring automatically forth out of the 80s synth melodies, but also get a satirical overhaul by sound manipulation (compression and slow-motion) to create a corporate office/shopping mall background aesthetic. These sounds can either have a Disco, Smooth Jazz or Pop origin to further strengthen their parody on commercialism, just like the brand-based artist names. Many Vaporwave artists dwell in anonymity, and release unknown (often illegally sampled) music onto the masses, spurring the debate about music integrity and artist liberation versus intellectual property.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons experimental-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons experimental-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button experimental-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

@@ -10,26 +10,26 @@
     </head>
 
     <body id="postrock">
-        <div class="box indie">
-            <h1>POST-ROCK</h1><div class="year indie-light">1994</div>
+        <div class="quaternary-box indie">
+            <h1>POST-ROCK</h1><div class="quaternary-year indie-light">1994</div>
 
             <p>The next chapter in Indie was the quest for a new sound, a new direction for Rock music in general. Something beyond what was already done, whether it was indie or mainstream. The result of this "Post-Rock" was indeed drastically different &ndash; one can easily recognise the spaced out, ambient sound. Post-Rock revolted against both the self-indulgent attitude of Indie bands, more concerned with coolness than sound and the greedy commercial bands, composing whatever sells best. The songs are almost hypnotic, taking the listener on a musical voyage. Of course, the synthesiser is a key instrument of Post-Rock, while drums and the gentle bass guitar form a steady background structure. Post-Rock lacks a classic song structure to create surprising music and likes to implement unusual techniques on traditional Rock instruments. There are guitars, drums and bass but one would hardly recognise them in a familiar Rock way. Post-Rock might have been called Ambient Rock, being very soft with hardly any riffs or noticeable guitars, but that wouldn't do the experimental nature of the genre justice.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons indie-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons indie-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button indie-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons indie-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button indie-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

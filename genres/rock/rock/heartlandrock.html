@@ -10,26 +10,26 @@
     </head>
 
     <body id="heartlandrock">
-        <div class="box rock">
-            <h1>HEARTLAND ROCK</h1><div class="year rock-light">1975</div>
+        <div class="quaternary-box rock">
+            <h1>HEARTLAND ROCK</h1><div class="quaternary-year rock-light">1975</div>
 
             <p>Heartland Rock developed in the 70s when Hard Rock and Heavy Metal bands began to gain popularity. Heartland Rock provided the counterweight for loud, sharp, in-your-face Rock within more mature circles. The music became more commercially-orientated and radio-friendly, boasting slick productions and anthemic choruses through their sweeping power ballads. Most of these bands earned their following through saturation airplay on the radio and constant touring. The contrast with Hard Rock increased, leading to the antonym Soft Rock. Heartland Rock bands focused on the album as a whole (singles were less important) and they were filled with long and varying songs. Heartland Rock is a lot more catchy and accessible than other forms of Rock. The main reason for Heartland Rock's success does not lie in its glossy production or the combination of dramatic guitar chords with simple drum patterns. Though this certainly helped, its success lies in a twisted nostalgia of the free spirit of the 60s, and a strong desire to forget all negative things of the early 70s.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons rock-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons rock-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button rock-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons rock-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

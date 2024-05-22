@@ -10,26 +10,26 @@
     </head>
 
     <body id="eurotrance">
-        <div class="box trance">
-            <h1>EUROTRANCE</h1><div class="year trance-light">1995</div>
+        <div class="quaternary-box trance">
+            <h1>EUROTRANCE</h1><div class="quaternary-year trance-light">1995</div>
 
             <p>When the great Eurodance craze was finally about to lay down, a new hit chart-orientated Dance music took its place. Dream Trance, Balearic Trance and Acid Trance remixes by big Trance Producers and pioneering Uplifting Trance tracks start to show up sporadically in the second half of the 90s on mainstream radio and hit charts. Taking cues from this new and exciting music, Eurodance transformed into Eurotrance. Eurotrance has a clear radio-friendly orientation &ndash; songs are edited singles, not long mix tracks. Therefore, Eurotrance is more structured, both in harmony and melody, than any other form of Trance, and most similar to Pop music. The genre became most popular in the same countries where Eurodance was &ndash; Germany, Netherlands, Belgium, Sweden and the UK. Though rather small and modestly influential, Eurotrance tremendously helped spread Trance to a much greater audience. Together with Uplifting Trance, Eurotrance forms "commercial" Trance, which lost popularity shortly after the 2000s began in favour of more "underground" types of Trance.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons trance-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons trance-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button trance-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

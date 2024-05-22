@@ -10,26 +10,26 @@
     </head>
 
     <body id="postpunk">
-        <div class="box punk">
-            <h1>POST-PUNK</h1><div class="year punk-light">1977</div>
+        <div class="quaternary-box punk">
+            <h1>POST-PUNK</h1><div class="quaternary-year punk-light">1977</div>
 
             <p>The Punk movement died around the same time Disco reached its peak. This cast a gloomy shadow of both fear and hate among Rock artists. This can be witnessed in the many genres interwoven in the same sociocultural framework as Post-Punk &ndash; Early Industrial genres, Goth Rock and the No Wave movement. But the immediate aftermath of Punk was Post-Punk &ndash; Punk Rock without its edges, but also without some of its amateurism and naïvety. In this genre, a dark, arty struggle is noticeable &ndash; a difficult coping with what society had become and the impotence of music to change it. Post-Punk songs became longer, less aggressive but more complex and challenging. Searching for new structures, Post-Punk explored less conventional techniques such as those found in Funk and Dub. Different Post-Punk songs can sound entirely different and a cohesive definition of the genre is lacking. The experimental nature of Post-Punk prevented a true countermovement as there was no unified sound, merely an endless quest. Only New Wave was capable of shedding a light at the end of the tunnel.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons punk-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons punk-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons punk-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons punk-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons punk-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons punk-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons punk-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons punk-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons punk-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons punk-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button punk-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

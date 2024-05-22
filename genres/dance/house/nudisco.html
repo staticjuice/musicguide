@@ -10,26 +10,26 @@
     </head>
 
     <body id="nudisco">
-        <div class="box house">
-            <h1>NU DISCO</h1><div class="year house-light">2013</div>
+        <div class="quaternary-box house">
+            <h1>NU DISCO</h1><div class="quaternary-year house-light">2013</div>
 
             <p>Nu Disco focuses specifically on Disco of the late 70s and Eurodisco of the early 80s. This is Disco mixed with a slower form of House, making it more accessible for the modern public. Just like Electroclash brought back Synthpop to an EDM-fatigued audience, Nu Disco reinstalls Disco with similar success. Nu Disco recreates these classic genres by using the latest equipment and technologies. This allows razor-sharp productions and crystal clear sounds. Aside from this updated sound, the difference with the original era is minimal. Funktronica emerges around the same time and might be more or less interpreted as an Electro Funk Revival. Because Funktronica is influenced by Italo Disco too, it shares much resemblance with Nu Disco. Both genres signify a magical junction right in the centre between Eurodisco, House and Electro Funk. After a long era of Electro House, Nu Disco became welcomed with open arms. From the moment the genre appeared on Beatport, its popularity kept increasing drastically &ndash; a possible omen that R&amp;B's Golden Age could return with a vengeance.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons house-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons house-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button house-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

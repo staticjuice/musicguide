@@ -10,26 +10,26 @@
     </head>
 
     <body id="honkytonk">
-        <div class="box country">
-            <h1>HONKY TONK</h1><div class="year country-light">1941</div>
+        <div class="quaternary-box country">
+            <h1>HONKY TONK</h1><div class="quaternary-year country-light">1941</div>
 
             <p>Country before the 40s had a bit of a multiple personality disorder. While one part of it evolved as a crazy, fun barn dance music, the other part went the opposite way. It evolved as an introvert, back-to-the-roots music that wasn't happy at all and often involved tragic ballads, known as Honky Tonk. Most Honky Tonk songs deal about relationship problems, alcohol abuse, financial worries or other misfortunes. Instead of large barns, this music was played in the more intimate bars of the southern US, which were called "honky tonks". However, these were still large enough to force the artist to implement electric instrumentation to top the crowd volume-wise. Honky Tonk also introduced a steady 4/4 beat to Country music, which diverted the genre from Folk. Honky Tonk artists often sang with a thick, southern tongue and in a nasal tone. Combined with the cowboy hat, boots and costume, the caricature of the traditional Country singer was complete. Honky Tonk remains an important separate stream in Country's history, and is sometimes synonymous with so-called "Hardcore Country".</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons country-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons country-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button country-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

@@ -10,26 +10,26 @@
     </head>
 
     <body id="darkambient">
-        <div class="box experimental">
-            <h1>DARK AMBIENT</h1><div class="year experimental-light">1982</div>
+        <div class="quaternary-box experimental">
+            <h1>DARK AMBIENT</h1><div class="quaternary-year experimental-light">1982</div>
 
             <p>Dark Ambient is exactly what it says on the tin &ndash; Ambient music, but with a dark, eerie atmosphere &ndash; sometimes beautiful but often downright frightening and disturbing. A minimal soundscape of the past resurrected with typical Industrial sound effects, in which haunting and gloomy sounds form the foreground. In the background, one regularly finds a stream of heavily distorted noise. The difference with Early Industrial lies in a less noisy/experimental approach and a more ambient/atmospheric one. Dark Ambient is your typical graveyard ruin by night soundtrack, or the sound of a monochrome forest echoing through a picture from the past. It's no surprise that this genre is often used in Horror films or scary game soundtracks. Out of Dark Ambient, an important subgenre in the late 80s arises &ndash; Ethereal Wave. Ethereal Wave becomes a big thing in France, where spooky French hushes or weeping voices are added on top of melodramatic Classical music infused with Dark Ambient elements. The result is the ultimate Gothic music and a further strengthening of its relationship with Industrial.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons experimental-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons experimental-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button experimental-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

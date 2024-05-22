@@ -10,26 +10,26 @@
     </head>
 
     <body id="futurehouse">
-        <div class="box house">
-            <h1>FUTURE HOUSE</h1><div class="year house-light">2013</div>
+        <div class="quaternary-box house">
+            <h1>FUTURE HOUSE</h1><div class="quaternary-year house-light">2013</div>
 
             <p>Emerging in the 2010s, some musicians took the musical characteristics of Deep House (especially regarding its chromatic chords and use of 7ths, 9ths and 13ths) and applied them to the upbeat sounds of Big Room which was popular at the time. The rise of Future House is generally credited to Oliver Heldens with his international chart successes of "Gecko" and "Last All Night" which brought the genre to wider mainstream recognition in 2014. Following the success of Oliver Heldens' tracks, other artists such as Don Diablo, Kerri Chandler, Martin Solveig, Mesto and Swanky Tunes have since incorporated the sound into their work, leading some commentators to observe and criticise the commercialisation of the style, just like what happened with Big Room. Stylistically, songs within the genre are normally characterised by a muted melody with a metallic, elastic sounding drop and frequency modulated basslines. Although the genre didn't receive any crossovers into Pop music, the genre remains one of the top-selling genres of Beatport and is frequently featured at EDM festivals.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons house-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons house-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button house-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

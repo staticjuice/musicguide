@@ -10,26 +10,26 @@
     </head>
 
     <body id="hillcountryblues">
-        <div class="box blues">
-            <h1>HILL COUNTRY BLUES</h1><div class="year blues-light">1959</div>
+        <div class="quaternary-box blues">
+            <h1>HILL COUNTRY BLUES</h1><div class="quaternary-year blues-light">1959</div>
 
             <p>"Hill Country" refers to a specific region in Northeast Mississippi where a more radical style of Country Blues was being developed. The genre is characterised by a strong emphasis on rhythm and percussion, steady guitar riffs, few chord changes, unconventional song structures, and heavy emphasis on the groove. This style has no 12 bar rhythms and is more riff and percussion-based than other Blues styles. It can be a very pure, almost stripped type of Blues with classic instruments, sometimes only an acoustic guitar. This makes it reminiscent of Country Blues but with a faster, highly rhythmic, repetitive tempo intensified by the punctuated, shivering sound of guitar or harmonica, guaranteed to entrance the listener or give one goosebumps. The hypnotic quality of Hill Country Blues was further extended in the 90s, due to experimental use of techniques atypical of Blues such as sampling, mixing or digital elements. With the use of repetitive breakbeats or cut-and-paste sound loops, a continuous and eclectic style emerges that surprises the average Blues fan with a modernised sound.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons blues-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons blues-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button blues-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

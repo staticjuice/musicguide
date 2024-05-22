@@ -10,26 +10,26 @@
     </head>
 
     <body id="turntablism">
-        <div class="box hiphop">
-            <h1>TURNTABLISM</h1><div class="year hiphop-light">1982</div>
+        <div class="quaternary-box hiphop">
+            <h1>TURNTABLISM</h1><div class="quaternary-year hiphop-light">1982</div>
 
             <p>Turntablism is Hip Hop music without vocals. Hip Hop as a general rule consists of two elements &ndash; an instrumental track (the "beat") and a vocal track (the "rap"). The artist who crafts the beat is the producer and the one who crafts the rap is the MC. In this format, the rap is almost always the primary focus of the song, providing most of the complexity and variation over a fairly repetitive beat. Turntablism does not feature any rapping, thus giving the producer the flexibility to create more complex, detailed and varied instrumentals. Songs of this genre may wander off in different musical directions and explore various subgenres because the instruments do not have to supply a steady beat for an MC. Although producers have made and released Hip Hop beats without MCs since Hip Hop's inception, those records rarely became well-known. Due to the current state of copyright law, most Turntablism tracks are released on small, independent labels. Producers often have difficulty obtaining clearance for the many samples found throughout their work, and labels are often fraught with legal problems.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons hiphop-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons hiphop-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons hiphop-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons hiphop-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons hiphop-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons hiphop-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons hiphop-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons hiphop-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons hiphop-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button hiphop-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hiphop-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hiphop-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hiphop-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hiphop-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hiphop-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hiphop-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hiphop-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hiphop-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons hiphop-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

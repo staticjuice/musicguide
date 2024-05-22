@@ -10,26 +10,26 @@
     </head>
 
     <body id="softrock">
-        <div class="box pop">
-            <h1>SOFT ROCK</h1><div class="year pop-light">1969</div>
+        <div class="quaternary-box pop">
+            <h1>SOFT ROCK</h1><div class="quaternary-year pop-light">1969</div>
 
             <p>Arguably the most immortal of all music genres, some Heartland Rock bands took a lighter approach (no guitar solos and less bass) and created Soft Rock. What started as an alternative countermovement became so commercial that eventually, it was pure Pop music. The outcome and legacy of Heartland Rock was a large and soft genre, yet not targeted at teens, but specifically for adults &ndash; hence the synonym Soft Rock. The name Soft Rock did not start as a genre but as a billboard category for music, officially installed at the end of the 70s. Soft Rock replaced the Easy Listening category, and as such, it is rather lightweight music for more mature people who like their music relaxing and politically correct. Unsurprisingly, there is quite some overlapping with similar genres such as Country Pop and Smooth Jazz. In the 80s, an offshoot emerged, which uses more synth than usual, though subdivision within the genre is a bit hair-splitting. Soft Rock is still being broadcasted on specialised radio channels throughout the world, as these golden classics seem to have a timeless appeal.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons pop-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons pop-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button pop-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons pop-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button pop-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

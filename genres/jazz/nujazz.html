@@ -10,26 +10,26 @@
     </head>
 
     <body id="nujazz">
-        <div class="box jazz">
-            <h1>NU JAZZ</h1><div class="year jazz-light">1993</div>
+        <div class="quaternary-box jazz">
+            <h1>NU JAZZ</h1><div class="quaternary-year jazz-light">1993</div>
 
             <p>During summer afternoons or evenings, in picturesque metropolitan suburbs (such as Saint-Germain, Paris), Nu Jazz would be the ideal background music for any café terrace or coffee bar. It is electronic, melodic and playful Jazz with lots of soothing, ambient sound effects that wash over the gentle Jazz percussion like a warm summer breeze. Being made entirely electronic, it marked the end of the traditional Jazz band. Nu Jazz can have a broad range of influences, such as deep basses from Ambient House or Deep House, groovy drum rhythms from Breakbeat and exotic percussion from Latin genres. This makes Nu Jazz a core genre of the second or electronic wave of Lounge, but these influences are subtle enough to not masquerade the fact that it truly is Jazz. Nevertheless, Nu Jazz differs radically from older Jazz genres in means of production and its electronic sound. Hence, most Jazz enthusiasts regard Nu Jazz rather as a rupture instead of a continuation within Jazz and encourage its classification among non-Jazz genres. But in the realm of music, tradition is a bad advisor for survival.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons jazz-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons jazz-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons jazz-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button jazz-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

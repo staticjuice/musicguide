@@ -10,26 +10,26 @@
     </head>
 
     <body id="musiqueconcrete">
-        <div class="box experimental">
-            <h1>MUSIQUE CONCRÈTE</h1><div class="year experimental-light">1944</div>
+        <div class="quaternary-box experimental">
+            <h1>MUSIQUE CONCRÈTE</h1><div class="quaternary-year experimental-light">1944</div>
 
             <p>The origin of all electronic music already started in the 40s &ndash; Classical composers (mostly European) experimented in advanced sound studios with the new possibilities of magnetic tape. By recording, replaying, looping, multi-tracking, reserving, sound altering and delaying they were able to create long and diverse compositions without the need for live instruments. Thus the first artificially created music was born. Musique Concrète has no origin, no parent genre &ndash; it evolves directly out of the very first electro-acoustic music, such as theremin performances. The avant-garde composers of Musique Concrète saw themselves more than academic researchers. To them, this music was more real (concrete) than any other. Music played by live instruments was something abstract and fleeting. Once you heard it, it was gone. Their music wasn't &ndash; it was recorded and stored, saved for eternity and capable of being paused, rewound, re-listened and more. In the mid-70s, a second wave of Musique Concrète (Sound Collage or Tape Music) took place, sampling all sounds into soundscapes with advanced recorders.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons experimental-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons experimental-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button experimental-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

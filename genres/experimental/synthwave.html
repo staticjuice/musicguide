@@ -10,26 +10,26 @@
     </head>
 
     <body id="synthwave">
-        <div class="box experimental">
-            <h1>SYNTHWAVE</h1><div class="year experimental-light">2008</div>
+        <div class="quaternary-box experimental">
+            <h1>SYNTHWAVE</h1><div class="quaternary-year experimental-light">2008</div>
 
             <p>Synthwave is a revival of earlier Synth music that shies no cliché &ndash; the genre is integrated with an artwork of purple and pink neon, sports cars, Miami palm trees, 80s cartoons, Horror sci-fi and Retro-Futurism. Synthwave is a time machine to Miami 1984, with the same synthesisers and melodies from that era, producing the same kind of Synth music with crystal clear, resonating sounds. The style is mainly instrumental, and often contains 80s cliché elements in the sound such as electronic drums, gated reverb, analogue synthesiser basslines and leads, all to resemble tracks from that time. However, Synthwave incorporates modern production techniques such as sidechain compression and placing the bassline and kick drum prominently in the mix as heard in modern Dance genres such as Electro House. Aesthetically, Synthwave gives a retrofuturistic perspective, emulating 80s science-fiction and action, sometimes compared to Cyberpunk. This aesthetic has been incorporated into retro-themed movies such as "Drive" and video games such as "Far Cry 3: Blood Dragon".</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons experimental-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons experimental-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons experimental-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button experimental-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

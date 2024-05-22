@@ -10,26 +10,26 @@
     </head>
 
     <body id="bigroom">
-        <div class="box house">
-            <h1>BIG ROOM</h1><div class="year house-light">2010</div>
+        <div class="quaternary-box house">
+            <h1>BIG ROOM</h1><div class="quaternary-year house-light">2010</div>
 
             <p>At the end of the 2000s, another Electro House subgenre arrives &ndash; Big Room. As one of the most despised genres by music connoisseurs, Big Room seldom finds its way into music genealogies. With its predictable maximum-gravity drops and over-the-top bombastic anthems, critics define this style as extremely shallow, monotonous and commercial. The genre is composed of lengthy Trance-influenced buildups and a powerful and driving drop. A popular subgenre that emerged from this was Big Room, typically featuring bass-heavy kicks, with minimal musical elements and sometimes only a syncopated supersaw. The immense popularity of typical Mainroom festivals proves that the genre cannot be shuffled away. Another evolution of this occurred in Australia where they coined the term Melbourne Bounce &ndash; a niche-genre pioneered by artists such as Will Sparks and Timmy Trumpet. All these genres ultimately belong to a family of Dance music catered to the masses that in more recent terms has been dubbed "EDM" as a pejorative against the heavily commercialised nature of the music.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons house-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons house-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button house-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons house-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button house-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

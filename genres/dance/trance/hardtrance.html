@@ -10,26 +10,26 @@
     </head>
 
     <body id="hardtrance">
-        <div class="box trance">
-            <h1>HARD TRANCE</h1><div class="year trance-light">1997</div>
+        <div class="quaternary-box trance">
+            <h1>HARD TRANCE</h1><div class="quaternary-year trance-light">1997</div>
 
             <p>Hoovers, acid sounds and reverb on very hard kick beats are the staples of Hard Trance, which has a very ravy feeling to it. Mega clubs start to rise, with heavy laser use, gadgets and stimulating dancers. Rave was back but in disguise. Female or distorted vocal samples with a haunting and sinister but promiscuous touch accumulate to an already dark and melancholic sound &ndash; this is music for the long night, driving from club to club without a sense of time. The British Gatecrasher clubs were particularly responsible for making the genre popular. With an average tempo between 140-180 BPM, Hard Trance is very fast &ndash; its bassline is deep and driving. But leading synth melodies come less to the foreground or are replaced by synth stabs, partially as a response to the commercialism of mainstream Uplifting Trance. The beats become even stronger and Hip Hop elements turn up when Breakbeat Hardcore producers have their way with Hard Trance. As the 2000s progressed, the genre became harder once more, less melodic and progressive, and gradually evolved into Hardstyle.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons trance-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons trance-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons trance-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button trance-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

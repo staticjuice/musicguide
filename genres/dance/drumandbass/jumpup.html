@@ -10,26 +10,26 @@
     </head>
 
     <body id="jumpup">
-        <div class="box drumandbass">
-            <h1>JUMP UP</h1><div class="year drumandbass-light">1994</div>
+        <div class="quaternary-box drumandbass">
+            <h1>JUMP UP</h1><div class="quaternary-year drumandbass-light">1994</div>
 
             <p>Drum &amp; Bass transformed in an avalanche of subgenres in a minimal timespan. These genres were significantly more complex and sophisticated than before. The main reason for this was the compactness and affordability of hard disk recorders, replacing traditional multi-track recorders and which also allowed non-linear editing. Because of Drum &amp; Bass' historical connection with marijuana, an unexpected problem arose with these complex subgenres. The behaviour of stationary nodding to the beat became commonplace and alarmed many producers. They wanted the crowd to party, which lead to a genre specifically aimed at doing so &amp; Jump Up. Definitely more heavy and bass-focused than early Drum &amp; Bass but still less dark than Nu Jump Up and Drumstep, Jump Up seeks to combine the most popular elements of Jungle, for which it sometimes also gets despised &ndash; simple, catchy melodies, Ragga basslines and speedy drum loops. Lately, Jump Up has been revived with a drier, more minimal second wave, called Nu Jump Up, being a sort of fusion between Jump Up and Dubstep.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons drumandbass-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button drumandbass-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

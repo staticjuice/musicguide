@@ -10,26 +10,26 @@
     </head>
 
     <body id="speedcore">
-        <div class="box hardcore">
-            <h1>SPEEDCORE</h1><div class="year hardcore-light">1994</div>
+        <div class="quaternary-box hardcore">
+            <h1>SPEEDCORE</h1><div class="quaternary-year hardcore-light">1994</div>
 
             <p>The grip Gabber had on the world of Hardcore was so strong that both genre names are used synonymously, and fragmentation into subgenres was bound to occur. Speedcore is so fast that there are barely any other adjectives to describe it. Any description of sound gets lost in the ultra-acceleration of Gabber beats. Because Speedcore is all about speed, the only way to introduce variation is going even faster &ndash; eventually, this resulted in Splittercore (over 700 BPM) and finally Extratone (1000 BPM+). In this final frontier, beats succeed each other so rapidly that a single tone is all that remains. In France, another subgenre known as Frenchcore gains popularity with a far more distorted, grittier sound and a "moderate" tempo (up to 200 BPM). Another related genre known as Terrorcore expands on Gabber's imagery and content of apocalypse and horror. Skulls, blood, steel and dark colours match the synthesised, sharp sounds of Terrorcore. Eventually, these styles became independent Hardcore schools that would gain their own clubrooms or party stages.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons hardcore-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hardcore-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons hardcore-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button hardcore-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

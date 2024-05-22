@@ -10,26 +10,26 @@
     </head>
 
     <body id="neurofunk">
-        <div class="box drumandbass">
-            <h1>NEUROFUNK</h1><div class="year drumandbass-light">1997</div>
+        <div class="quaternary-box drumandbass">
+            <h1>NEUROFUNK</h1><div class="quaternary-year drumandbass-light">1997</div>
 
             <p>The name Neurofunk suggests a soft, ambient genre, but it's still very much alive and kicking. Drumstep's popular "destroy-em-all"-attitude formed a powerful mainstream sound in the world of Jungle. This stream evolved into something new &ndash; something more clinical and less melodic with ambient drone sounds and blips of noise, but still aggressive and Ravelike. "Neuro" &ndash; as it is called &ndash; sounds like the natural soundtrack of the brain &ndash; neurological chemicals flowing and rushing, creating both deeply obscure and delicate emotions. As the name suggests, Neurofunk borrowed some influence from Funk (and Jazz) to make this happen, but in a barely noticeable manner. The difference between Drumstep and Neurofunk can be challenging. Important is that Neurofunk incorporates acid sounds and features few or moderate builds and breakdowns. Neurofunk is a continuous stream of washes and waves emitting a strong atmosphere that sparks the imagination. Neurofunk likes to reel you in a sci-fi fantasy world with its hyper-clean production, yet remains as hard and dark as Drum &amp; Bass can be.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons drumandbass-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button drumandbass-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons drumandbass-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button drumandbass-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

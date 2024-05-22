@@ -10,26 +10,26 @@
     </head>
 
     <body id="numetal">
-        <div class="box metal">
-            <h1>NU METAL</h1><div class="year metal-light">1993</div>
+        <div class="quaternary-box metal">
+            <h1>NU METAL</h1><div class="quaternary-year metal-light">1993</div>
 
             <p>When Nu Metal formed, the heaviest Metal genres of the time were all thrown into a large melting pot, but it was mostly Groove Metal and Rap Rock that formed the basis for Nu Metal. These genres were only a small step away from fusing Hip Hop or Breakbeat elements into Metal. The outcome was a recipe that could not fail because it was Rap, Rock and Metal all-in-one. Indeed, Nu Metal had many Hip Hop and few Metal elements &ndash; down-tuned riffs, breakbeats, scratching, emphasis on kick drums and most noticeably no guitar solos, though the genre lacked no heavy bass or aggressiveness anyway. Nu Metal is often linked to Emo, as piercing lyrics about frustration and depression (self-mutilation, suicide and abuse) find its way into the heart of adolescents through melancholic choruses &ndash; a very distinctive rupture with previous Metal genres. Fashion is another topic where Nu Metal breaks the rules, with a bizarre mix of Emo and Metal styles and some marginal extravaganza. All these elements contribute to a living paradigm of disturbance &ndash; psychosis in sound and flesh.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons metal-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons metal-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons metal-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons metal-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons metal-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons metal-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons metal-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons metal-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons metal-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button metal-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button metal-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button metal-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button metal-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button metal-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button metal-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button metal-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button metal-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button metal-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons metal-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button metal-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

@@ -10,26 +10,26 @@
     </head>
 
     <body id="electrictexasblues">
-        <div class="box blues">
-            <h1>ELECTRIC TEXAS BLUES</h1><div class="year blues-light">1968</div>
+        <div class="quaternary-box blues">
+            <h1>ELECTRIC TEXAS BLUES</h1><div class="quaternary-year blues-light">1968</div>
 
             <p>Electric Blues is one of the most important types of Blues. Like so many other genres, Blues evolved from a strictly acoustic style to an electric one. The addition of electric guitars wouldn't happen until the late 40s, but this changed it into something else &ndash; proto-Blues Rock. Blues suddenly sounded a lot more edgy, emotional and rough &ndash; something that made up the core of Blues, but which it had lost along the way. Because this modern approach ironically put Blues back in touch with its roots, electric guitars were suddenly found in all types of Blues. Strictly speaking, Electric Blues is, therefore, an umbrella term, but a very real and important one. Electric Texas Blues is characterised by exuberant showmanship &ndash; its musicians like to impress the audience with energetic solos and assertive performance. Typical for this genre is loud, wailing guitars with sustained high notes, a great emphasis on guitar solos, like cries from the ghetto, and a wilder-than-thou sound. Electric Blues was of great influence to more modern Blues genres and the primary exponent of the Country style of Blues.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons blues-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons blues-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button blues-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons blues-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button blues-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

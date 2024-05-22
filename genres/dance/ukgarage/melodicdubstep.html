@@ -10,26 +10,26 @@
     </head>
 
     <body id="melodicdubstep">
-        <div class="box ukgarage">
-            <h1>MELODIC DUBSTEP</h1><div class="year ukgarage-light">2010</div>
+        <div class="quaternary-box ukgarage">
+            <h1>MELODIC DUBSTEP</h1><div class="quaternary-year ukgarage-light">2010</div>
 
             <p>Since the rise of Dubstep's popularity largely coincided with the rise of Liquid Funk, some artists decided to forge a go-between of the two. Melodic Dubstep is essentially just Liquid Funk instrumentation and melody fused with the rhythms of Dubstep. The result was a much more accessible variation of Dubstep that was both upbeat and melodic, as opposed to the harsh and atonal sounds that everyone was familiar with. However, the heavy bass sounds of regular Dubstep are often still present, but this time they are secondary instruments, usually with intense pads and orchestration at the foreground. It's generally believed that Adventure Club helped popularise the sound with their remix of Flight Facilities' "Crave You" in 2011. Since then, a large wave of diverse and emotional tracks have been released since, only recently been overshadowed by the new Future Bass sound. The Liquid genres prove that sometimes Dance music isn't all about big drops and aggression &ndash; Dance music can also be all about feeling emotions. Despite this, the genre is still upbeat enough to be played by DJs in large clubs.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons ukgarage-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button ukgarage-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

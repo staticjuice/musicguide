@@ -10,26 +10,26 @@
     </head>
 
     <body id="twostepgarage">
-        <div class="box ukgarage">
-            <h1>2-STEP GARAGE</h1><div class="year ukgarage-light">1997</div>
+        <div class="quaternary-box ukgarage">
+            <h1>2-STEP GARAGE</h1><div class="quaternary-year ukgarage-light">1997</div>
 
             <p>Drum &amp; Bass was hip because it was underground and new. The problem was that it sounded too heavy and hardcore for the masses and that it detracted too many women from going to the clubs. By merging Garage House with Jungle and adding sampled Soul vocals, a smooth, textured music was being created that had little in common with regular Drum &amp; Bass. This was fancy Breakbeat. Fast, but gentle, bass-driven but with a subtle timbre. The first form of UK Garage was a rapid type of syncopated Garage, known as Speed Garage. Speed Garage's abundant percussion and heavy bass made the influences from Garage barely noticeable and thus was still not good enough to attract a large female crowd. Speed Garage became influenced by Ragga and Drum &amp; Bass which altered its time signature in two beats per bar instead of four, which is known as "2-Step". Despite these influences, 2-Step Garage abandoned bass in favour of sharp but soft treble and returned the sound of Garage with a touch of R&amp;B. Ultimately, this marked the start of a large music family that led to Dubstep and UK Bass.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons ukgarage-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons ukgarage-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button ukgarage-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');

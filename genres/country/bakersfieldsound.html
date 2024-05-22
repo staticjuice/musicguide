@@ -10,26 +10,26 @@
     </head>
 
     <body id="bakersfieldsound">
-        <div class="box country">
-            <h1>BAKERSFIELD SOUND</h1><div class="year country-light">1954</div>
+        <div class="quaternary-box country">
+            <h1>BAKERSFIELD SOUND</h1><div class="quaternary-year country-light">1954</div>
 
             <p>Bakersfield Sound is a lesser-known type of Country, named after the place where it originated &ndash; the city of Bakersfield, California, so it could as well be called West Coast Country. Country musicians came from the midwest to southern California where they brew up a melting pot of Honky-Tonk with a pinch of Rock &amp; Roll and Western Swing. Bakersfield Sound was the first genre of Country music to rely heavily on electric instrumentation, as well as a defined backbeat &ndash; in other words, it was the first to be significantly influenced by Rock &amp; Roll. The sound was pioneered by Wynn Stewart and popularised by Buck Owens and Merle Haggard. Using telecaster guitars, the singers developed a clean, ringing sound that stood in direct opposition to the produced, string-laden Nashville Sound. Typical Bakersfield instruments include fiddle, steel guitar, drums and the telecaster. The Bakersfield Sound became one of the most popular &ndash; and arguably the most influential &ndash; Country genres of the 60s, setting the stage for Country Rock and Outlaw Country, as well as reviving the spirit of Honky-Tonk.</p>
 
-            <div class="flex-container-buttons">
-                <div class="flex-item-buttons"><div class="buttons country-light">1</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">2</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">3</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">4</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">5</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">6</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">7</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">8</div></div>
-                <div class="flex-item-buttons"><div class="buttons country-light">9</div></div>
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button country-light">9</div></div>
             </div>
 
-            <div class="artisttrack" data-label="Artist:"><span id="artist"></span></div>
-            <div class="artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="stop"><div class="buttons country-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button country-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -51,7 +51,7 @@
                 const audioInstances = tracks.map(track => new Audio(track.path));
                 const $artistSpan = $('#artist');
                 const $trackSpan = $('#track');
-                const $button = $('.buttons');
+                const $button = $('.quaternary-button');
 
                 $button.on('click', function() {
                     stopAllMusic();
@@ -63,7 +63,7 @@
                     $trackSpan.text(tracks[index].track);
                 });
 
-                $('.stop').on('click', function() {
+                $('.quaternary-stop').on('click', function() {
                     stopAllMusic();
                     $artistSpan.text('');
                     $trackSpan.text('');
