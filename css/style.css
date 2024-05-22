@@ -27,16 +27,6 @@ a {
 
 /*---------------------------------------------------------------------------*/
 
-::selection {
-    background-color: #FFF;
-    color: #222;
-}
-
-.pop ::selection, .experimental ::selection {
-    background-color: #222;
-    color: #FFF;
-}
-
 ::-webkit-scrollbar {
     width: 0.5em;
 }
@@ -290,6 +280,8 @@ a {
 #tertiary-ukgarage a:hover { color: #B59DDB; }
 #tertiary-experimental a:hover { color: #BDBDBD; }
 
+::selection { background: #FFF; color: #222; }
+.pop ::selection, .experimental ::selection { background: #222; color: #FFF; }
 #tertiary-classical .tertiary-genrelist ::selection { background: #705A3D; color: #FFF; }
 #tertiary-blues .tertiary-genrelist ::selection { background: #283593; color: #FFF; }
 #tertiary-jazz .tertiary-genrelist ::selection { background: #E57373; color: #FFF; }
