@@ -42,10 +42,6 @@ a {
 
 /*---------------------------------------------------------------------------*/
 
-#primary:before {
-    background-image: url("../images/intro.jpg");
-}
-
 #primary-intro {
     font-size: 4vw;
     text-align: center;
@@ -90,7 +86,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     gap: 2vw;
-    margin-top: 1.25em;
+    margin: 1.25em 0 2em;
 }
 
 .secondary-grid-item {
@@ -365,6 +361,7 @@ a {
     background-position: center center;
 }
 
+#primary:before { background-image: url("../images/intro.jpg"); }
 #tertiary-classical:before { background-image: url("../images/classicalbig.jpg"); }
 #tertiary-blues:before { background-image: url("../images/bluesbig.jpg"); }
 #tertiary-jazz:before { background-image: url("../images/jazzbig.jpg"); }
@@ -554,7 +551,7 @@ a {
 
 #acidtrance {background: url("../images/trance/acidtrance.jpg") center center / cover fixed; }
 #psychedelictrance {background: url("../images/trance/psychedelictrance.jpg") center center / cover fixed; }
-#balearictrance {background: url("../images/trance/balearictrance.jpg") center center / cover fixed; }
+#ibizatrance {background: url("../images/trance/ibizatrance.jpg") center center / cover fixed; }
 #dreamtrance {background: url("../images/trance/dreamtrance.jpg") center center / cover fixed; }
 #progressivetrance {background: url("../images/trance/progressivetrance.jpg") center center / cover fixed; }
 #eurotrance {background: url("../images/trance/eurotrance.jpg") center center / cover fixed; }
@@ -635,7 +632,7 @@ a {
     }
 
     .secondary-grid {
-        margin-top: 1em;
+        margin: 1em 0 1em;
     }
 
     .secondary-grid-item {
