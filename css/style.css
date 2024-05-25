@@ -186,13 +186,16 @@ a {
 
 .quaternary-artisttrack {
     font-size: 1.2em;
+    display: flex;
+    padding-right: 2.5em;
+    align-items: baseline;
     user-select: none;
 }
 
 .quaternary-artisttrack::before {
     content: attr(data-label);
     width: 3em;
-    display: inline-block;
+    flex-shrink: 0;
 }
 
 .quaternary-stop {
@@ -210,49 +213,49 @@ a {
 
 /*---------------------------------------------------------------------------*/
 
-.classical { background-color: #705A3D; }
-.blues { background-color: #283593; }
-.jazz { background-color: #E57373; }
-.country { background-color: #8A9A5B; }
-.rhythmandblues { background-color: #00695C; }
-.pop { background-color: #FDD835; color: #222; }
-.rock { background-color: #C62828; }
-.metal { background-color: #080808; }
-.punk { background-color: #EF6C00; }
-.alternative { background-color: #37474F; }
-.industrial { background-color: #4E342E; }
-.reggae { background-color: #2E7D32; }
-.hiphop { background-color: #4E3852; }
-.house { background-color: #009F6B; }
-.trance { background-color: #6A1B9A; }
-.techno { background-color: #555555; }
-.hardcore { background-color: #464039; }
-.breakbeat { background-color: #783F5D; }
-.drumandbass { background-color: #9A1839; }
-.ukgarage { background-color: #8F7CAD; }
-.experimental { background-color: #EDEDED; color: #222; }
+.classical { background: #705A3D; }
+.blues { background: #283593; }
+.jazz { background: #E57373; }
+.country { background: #8A9A5B; }
+.rhythmandblues { background: #00695C; }
+.pop { background: #FDD835; color: #222; }
+.rock { background: #C62828; }
+.metal { background: #080808; }
+.punk { background: #EF6C00; }
+.alternative { background: #37474F; }
+.industrial { background: #4E342E; }
+.reggae { background: #2E7D32; }
+.hiphop { background: #4E3852; }
+.house { background: #009F6B; }
+.trance { background: #6A1B9A; }
+.techno { background: #555555; }
+.hardcore { background: #464039; }
+.breakbeat { background: #783F5D; }
+.drumandbass { background: #9A1839; }
+.ukgarage { background: #8F7CAD; }
+.experimental { background: #EDEDED; color: #222; }
 
-.classical-light { background-color: #917550; }
-.blues-light { background-color: #3F4FCA; }
-.jazz-light { background-color: #ED9C9C }
-.country-light { background-color: #ADB889; }
-.rhythmandblues-light { background-color: #009688; }
-.pop-light { background-color: #FFEB3B; }
-.rock-light { background-color: #F44336; }
-.metal-light { background-color: #212121; }
-.punk-light { background-color: #FF9800; }
-.alternative-light { background-color: #56707B; }
-.industrial-light { background-color: #795548;}
-.reggae-light { background-color: #4CAF50; }
-.hiphop-light { background-color: #6A4C70; }
-.house-light { background-color: #00D18D; }
-.trance-light { background-color: #8522C3; }
-.techno-light { background-color: #666666; }
-.hardcore-light { background-color: #625A50; }
-.breakbeat-light { background-color: #9A5177; }
-.drumandbass-light { background-color: #C71F49; }
-.ukgarage-light { background-color: #A892CC; }
-.experimental-light { background-color: #F5F5F5; }
+.classical-light { background: #917550; }
+.blues-light { background: #3F4FCA; }
+.jazz-light { background: #ED9C9C }
+.country-light { background: #ADB889; }
+.rhythmandblues-light { background: #009688; }
+.pop-light { background: #FFEB3B; }
+.rock-light { background: #F44336; }
+.metal-light { background: #212121; }
+.punk-light { background: #FF9800; }
+.alternative-light { background: #56707B; }
+.industrial-light { background: #795548;}
+.reggae-light { background: #4CAF50; }
+.hiphop-light { background: #6A4C70; }
+.house-light { background: #00D18D; }
+.trance-light { background: #8522C3; }
+.techno-light { background: #666666; }
+.hardcore-light { background: #625A50; }
+.breakbeat-light { background: #9A5177; }
+.drumandbass-light { background: #C71F49; }
+.ukgarage-light { background: #A892CC; }
+.experimental-light { background: #F5F5F5; }
 
 #tertiary-classical a:hover { color: #A18259; }
 #tertiary-blues a:hover { color: #5361D0; }
@@ -322,27 +325,27 @@ a {
 .quaternary-box.ukgarage { border: 0.5em solid #A892CC; }
 .quaternary-box.experimental { border: 0.5em solid #F5F5F5; }
 
-.quaternary-button.classical-light:hover { background-color: #A18259; }
-.quaternary-button.blues-light:hover { background-color: #5361D0; }
-.quaternary-button.jazz-light:hover { background-color: #F1B1B1; }
-.quaternary-button.country-light:hover { background-color: #B8C299; }
-.quaternary-button.rhythmandblues-light:hover { background-color: #26A69A; }
-.quaternary-button.pop-light:hover { background-color: #FFF176; }
-.quaternary-button.rock-light:hover { background-color: #EF5350; }
-.quaternary-button.metal-light:hover { background-color: #424242; }
-.quaternary-button.punk-light:hover { background-color: #FFA726; }
-.quaternary-button.alternative-light:hover { background-color: #78909C; }
-.quaternary-button.industrial-light:hover { background-color: #8D6E63; }
-.quaternary-button.reggae-light:hover { background-color: #66BB6A; }
-.quaternary-button.hiphop-light:hover { background-color: #79577F; }
-.quaternary-button.house-light:hover { background-color: #00DE95; }
-.quaternary-button.trance-light:hover { background-color: #9426D9; }
-.quaternary-button.techno-light:hover { background-color: #777777; }
-.quaternary-button.hardcore-light:hover { background-color: #70675C; }
-.quaternary-button.breakbeat-light:hover { background-color: #A95B83; }
-.quaternary-button.drumandbass-light:hover { background-color: #DD2251; }
-.quaternary-button.ukgarage-light:hover { background-color: #B59DDB; }
-.quaternary-button.experimental-light:hover { background-color: #FFFFFF; }
+.quaternary-button.classical-light:hover { background: #A18259; }
+.quaternary-button.blues-light:hover { background: #5361D0; }
+.quaternary-button.jazz-light:hover { background: #F1B1B1; }
+.quaternary-button.country-light:hover { background: #B8C299; }
+.quaternary-button.rhythmandblues-light:hover { background: #26A69A; }
+.quaternary-button.pop-light:hover { background: #FFF176; }
+.quaternary-button.rock-light:hover { background: #EF5350; }
+.quaternary-button.metal-light:hover { background: #424242; }
+.quaternary-button.punk-light:hover { background: #FFA726; }
+.quaternary-button.alternative-light:hover { background: #78909C; }
+.quaternary-button.industrial-light:hover { background: #8D6E63; }
+.quaternary-button.reggae-light:hover { background: #66BB6A; }
+.quaternary-button.hiphop-light:hover { background: #79577F; }
+.quaternary-button.house-light:hover { background: #00DE95; }
+.quaternary-button.trance-light:hover { background: #9426D9; }
+.quaternary-button.techno-light:hover { background: #777777; }
+.quaternary-button.hardcore-light:hover { background: #70675C; }
+.quaternary-button.breakbeat-light:hover { background: #A95B83; }
+.quaternary-button.drumandbass-light:hover { background: #DD2251; }
+.quaternary-button.ukgarage-light:hover { background: #B59DDB; }
+.quaternary-button.experimental-light:hover { background: #FFFFFF; }
 
 /*---------------------------------------------------------------------------*/
 
@@ -654,10 +657,6 @@ a {
         font-size: 6vw;
     }
 
-    .tertiary-genrelist h1 {
-        font-size: 1.75em;
-    }
-
     .tertiary-sidebar {
         font-size: 4vw;
         height: 100%;
@@ -665,8 +664,12 @@ a {
         box-shadow: 0 -0.01em 0.5em rgba(0, 0, 0, 0.6);
     }
 
+    .quaternary-grid-item {
+        flex: 0 0 calc(100% / 6);
+    }
+
     .quaternary-box {
-        font-size: 3.5vw;
+        font-size: 4vw;
         width: 89vw;
         margin: 1.5em;
     }
@@ -685,16 +688,12 @@ a {
         white-space: nowrap;
     }
 
-    .quaternary-grid {
-        gap: 2%;
-    }
-
     .quaternary-button {
         font-size: 2em;
     }
 
     .quaternary-artisttrack {
-        font-size: 3.5vw;
+        font-size: 4vw;
     }
 
     [id*="tertiary-"] {
