@@ -1,8 +1,13 @@
+/*---------------------------------------------------------------------------
+Font face
+/*---------------------------------------------------------------------------*/
 @font-face {
     font-family: Outfit;
     src: url(../fonts/Outfit.ttf);
 }
 
+/*---------------------------------------------------------------------------
+General styling
 /*---------------------------------------------------------------------------*/
 
 body {
@@ -25,6 +30,8 @@ a {
     text-decoration: none;
 }
 
+/*---------------------------------------------------------------------------
+Scrollbar styling
 /*---------------------------------------------------------------------------*/
 
 ::-webkit-scrollbar {
@@ -33,13 +40,15 @@ a {
 
 ::-webkit-scrollbar-thumb {
     background: #FFF;
-    border-radius: 0.5em;
+    border-radius: 1em;
 }
 
 .pop::-webkit-scrollbar-thumb, .experimental::-webkit-scrollbar-thumb {
     background: #222;
 }
 
+/*---------------------------------------------------------------------------
+Primary section
 /*---------------------------------------------------------------------------*/
 
 #primary-intro {
@@ -59,7 +68,7 @@ a {
     font-weight: 600;
     font-size: 1.75em;
     border: 0.125em solid;
-    border-radius: 2em;
+    border-radius: 1em;
     padding: 0.2em 0.4em;
 }
 
@@ -68,6 +77,8 @@ a {
     border-color: #FF6D00;
 }
 
+/*---------------------------------------------------------------------------
+Secondary section
 /*---------------------------------------------------------------------------*/
 
 #secondary {
@@ -115,6 +126,8 @@ a {
     font-size: 2.65vw;
 }
 
+/*---------------------------------------------------------------------------
+Tertiary section
 /*---------------------------------------------------------------------------*/
 
 .tertiary-genrelist {
@@ -137,6 +150,8 @@ a {
     overflow: auto;
 }
 
+/*---------------------------------------------------------------------------
+Quaternary section
 /*---------------------------------------------------------------------------*/
 
 .quaternary-box {
@@ -147,10 +162,6 @@ a {
     border-radius: 1.5em;
     box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.6);
     position: relative;
-}
-
-.quaternary-box h1 {
-    width: 100%;
 }
 
 .quaternary-year {
@@ -211,6 +222,8 @@ a {
     box-shadow: inset 0 0 0 0.1em #222;
 }
 
+/*---------------------------------------------------------------------------
+Colours
 /*---------------------------------------------------------------------------*/
 
 .classical { background: #705A3D; }
@@ -237,7 +250,7 @@ a {
 
 .classical-light { background: #917550; }
 .blues-light { background: #3F4FCA; }
-.jazz-light { background: #ED9C9C }
+.jazz-light { background: #ED9C9C; }
 .country-light { background: #ADB889; }
 .rhythmandblues-light { background: #009688; }
 .pop-light { background: #FFEB3B; }
@@ -347,6 +360,8 @@ a {
 .quaternary-button.ukgarage-light:hover { background: #B59DDB; }
 .quaternary-button.experimental-light:hover { background: #FFFFFF; }
 
+/*---------------------------------------------------------------------------
+Background images
 /*---------------------------------------------------------------------------*/
 
 [id*="tertiary"] {
@@ -616,6 +631,8 @@ a {
 #synthwave {background: url("../images/experimental/synthwave.jpg") center center / cover fixed; }
 #vaporwave {background: url("../images/experimental/vaporwave.jpg") center center / cover fixed; }
 
+/*---------------------------------------------------------------------------
+Media queries
 /*---------------------------------------------------------------------------*/
 
 @media (orientation: portrait) {
@@ -670,7 +687,7 @@ a {
 
     .quaternary-box {
         font-size: 4vw;
-        width: 89vw;
+        width: calc(100% - 3em);
         margin: 1.5em;
     }
 
