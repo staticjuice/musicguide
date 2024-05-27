@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Riot Grrrl</title>
+    </head>
+
+    <body id="riotgrrrl">
+        <div class="quaternary-box punk">
+            <h1>RIOT GRRRL</h1><div class="quaternary-year punk-light">1991</div>
+
+            <p>The Riot Grrrl movement, a significant aspect in the formation of the Third Wave Feminist movement, was organised by taking the values and rhetoric of Punk and using it to convey Feminist messages. In 1991, a concert of female-led bands at the International Pop Underground Convention heralded the emerging Riot Grrrl phenomenon. The Riot Grrrl movement foregrounded Feminist concerns and progressive politics in general &ndash; the DIY ethic and fanzines were also central elements of the scene. This movement relied on media and technology to spread their ideas and messages, creating a cultural space for Feminists to voice their concerns. They embodied the Punk perspective, taking the anger and emotions and creating a separate culture from it. With Riot Grrrl, they were grounded in girl Punk, but also rooted in modern Feminism. Riot Grrrl bands often address issues such as rape, domestic abuse, sexuality, racism, patriarchy, classism, anarchism and female empowerment. In addition to a music scene and genre, Riot Grrrl is a subculture involving a DIY ethic, zines, art, political action and activism.</p>
+
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button punk-light">9</div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button punk-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "Bikini Kill", track: "Rebel Girl", path: "../../../samples/punk/riotgrrrl1.ogg" },
+                    { artist: "Bratmobile", track: "Gimme Brains", path: "../../../samples/punk/riotgrrrl2.ogg" },
+                    { artist: "Heavens To Betsy", track: "Terrorist", path: "../../../samples/punk/riotgrrrl3.ogg" },
+                    { artist: "Excuse 17", track: "I'd Rather Eat Glass", path: "../../../samples/punk/riotgrrrl4.ogg" },
+                    { artist: "Huggy Bear", track: "Herjazz", path: "../../../samples/punk/riotgrrrl5.ogg" },
+                    { artist: "7 Year Bitch", track: "Scratch", path: "../../../samples/punk/riotgrrrl6.ogg" },
+                    { artist: "Babes In Toyland", track: "Sweet '69", path: "../../../samples/punk/riotgrrrl7.ogg" },
+                    { artist: "Sleater-Kinney", track: "Dig Me Out", path: "../../../samples/punk/riotgrrrl8.ogg" },
+                    { artist: "X-Ray Spex", track: "Oh Bondage, Up Yours!", path: "../../../samples/punk/riotgrrrl9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>

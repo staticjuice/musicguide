@@ -507,8 +507,10 @@ Background images
 #oi {background: url("../images/punk/oi.jpg") center center / cover fixed; }
 #skapunk {background: url("../images/punk/skapunk.jpg") center center / cover fixed; }
 #hardcorepunk {background: url("../images/punk/hardcorepunk.jpg") center center / cover fixed; }
+#crustpunk {background: url("../images/punk/crustpunk.jpg") center center / cover fixed; }
 #psychobilly {background: url("../images/punk/psychobilly.jpg") center center / cover fixed; }
 #posthardcore {background: url("../images/punk/posthardcore.jpg") center center / cover fixed; }
+#riotgrrrl {background: url("../images/punk/riotgrrrl.jpg") center center / cover fixed; }
 
 #janglepop {background: url("../images/alternative/janglepop.jpg") center center / cover fixed; }
 #grunge {background: url("../images/alternative/grunge.jpg") center center / cover fixed; }
@@ -595,6 +597,7 @@ Background images
 #electro {background: url("../images/breakbeat/electro.jpg") center center / cover fixed; }
 #freestyle {background: url("../images/breakbeat/freestyle.jpg") center center / cover fixed; }
 #floridabreaks {background: url("../images/breakbeat/floridabreaks.jpg") center center / cover fixed; }
+#chemicalbreaks {background: url("../images/breakbeat/chemicalbreaks.jpg") center center / cover fixed; }
 #bigbeat {background: url("../images/breakbeat/bigbeat.jpg") center center / cover fixed; }
 #progressivebreaks {background: url("../images/breakbeat/progressivebreaks.jpg") center center / cover fixed; }
 #nuskoolbreaks {background: url("../images/breakbeat/nuskoolbreaks.jpg") center center / cover fixed; }
@@ -616,7 +619,9 @@ Background images
 #bassline {background: url("../images/ukgarage/bassline.jpg") center center / cover fixed; }
 #dubstep {background: url("../images/ukgarage/dubstep.jpg") center center / cover fixed; }
 #futuregarage {background: url("../images/ukgarage/futuregarage.jpg") center center / cover fixed; }
-#melodicdubstep {background: url("../images/ukgarage/melodicdubstep.jpg") center center / cover fixed; }
+#brostep {background: url("../images/ukgarage/brostep.jpg") center center / cover fixed; }
+#liquiddubstep {background: url("../images/ukgarage/liquiddubstep.jpg") center center / cover fixed; }
+#chillstep {background: url("../images/ukgarage/chillstep.jpg") center center / cover fixed; }
 #glitchhop {background: url("../images/ukgarage/glitchhop.jpg") center center / cover fixed; }
 #edmtrap {background: url("../images/ukgarage/edmtrap.jpg") center center / cover fixed; }
 #futurebass {background: url("../images/ukgarage/futurebass.jpg") center center / cover fixed; }
