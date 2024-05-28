@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Russian Folk</title>
+    </head>
+
+    <body id="russianfolk">
+        <div class="quaternary-box folk">
+            <h1>RUSSIAN FOLK</h1>
+
+            <p>The performance and promulgation of ethnic music in Russia has a long tradition. Initially it was intertwined with various forms of art music, however, in the late 19th century it began to take on a life of its own with the rise in popularity of folkloric ensembles, such as the Folk choir movement. In Soviet Russia, Folk music was categorised as being democratic (of the people) or proletarian (of the working class) as opposed to art music, which was often regarded as being bourgeois. After the revolution, along with Proletarian "mass music" it received significant support from the state. In Post World War II Russia, Proletarian mass music lost its appeal, whereas folkloric music continued to have widespread support among the population, inside and outside of the Soviet Union. However, the authentic nature of Folk music was severely distorted by the drive to professionalise performers, regardless of the genre they worked in &ndash; thus all folk singers were obliged to both learn Western-style classical notation, and to learn to perform classical repertoire &ndash; or else risk losing their right to perform as professionals.</p>
+
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">9</div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button folk-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "Moscow Nights", track: "Katusha", path: "../../samples/folk/russianfolk1.ogg" },
+                    { artist: "Limpopo", track: "Katiusha", path: "../../samples/folk/russianfolk2.ogg" },
+                    { artist: "From Russia With Love Choir", track: "Moonlight", path: "../../samples/folk/russianfolk3.ogg" },
+                    { artist: "Andreyev Balalaika Ensemble", track: "Korobushka", path: "../../samples/folk/russianfolk4.ogg" },
+                    { artist: "Ivan Rebroff", track: "Katjuscha, Katjuscha", path: "../../samples/folk/russianfolk5.ogg" },
+                    { artist: "Boris Rubaschkin", track: "Syp, Simeon", path: "../../samples/folk/russianfolk6.ogg" },
+                    { artist: "Galina Zuzina", track: "Utuska Lugovaja", path: "../../samples/folk/russianfolk7.ogg" },
+                    { artist: "Merab Megrely", track: "Russia, My Motherland", path: "../../samples/folk/russianfolk8.ogg" },
+                    { artist: "Oleg Ukhalev", track: "A Soldier Is Always A Soldier", path: "../../samples/folk/russianfolk9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>

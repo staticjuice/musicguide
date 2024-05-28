@@ -248,6 +248,7 @@ Colours
 .ukgarage { background: #8F7CAD; }
 .experimental { background: #EDEDED; color: #222; }
 .hauntology { background: #C2185B; }
+.folk { background: #C6A44D; }
 
 .classical-light { background: #917550; }
 .blues-light { background: #3F4FCA; }
@@ -271,6 +272,7 @@ Colours
 .ukgarage-light { background: #A892CC; }
 .experimental-light { background: #F5F5F5; }
 .hauntology-light { background: #E91E63; }
+.folk-light { background: #D2B774; }
 
 #tertiary-classical a:hover { color: #A18259; }
 #tertiary-blues a:hover { color: #5361D0; }
@@ -294,6 +296,7 @@ Colours
 #tertiary-ukgarage a:hover { color: #B59DDB; }
 #tertiary-experimental a:hover { color: #BDBDBD; }
 #tertiary-hauntology a:hover { color: #EC407A; }
+#tertiary-folk a:hover { color: #D8C188; }
 
 ::selection { background: #FFF; color: #222; }
 .pop ::selection, .experimental ::selection { background: #222; color: #FFF; }
@@ -319,6 +322,7 @@ Colours
 #tertiary-ukgarage .tertiary-genrelist ::selection { background: #8F7CAD; color: #FFF; }
 #tertiary-experimental .tertiary-genrelist ::selection { background: #EDEDED; color: #222; }
 #tertiary-hauntology .tertiary-genrelist ::selection { background: #C2185B; color: #FFF; }
+#tertiary-folk .tertiary-genrelist ::selection { background: #C6A44D; color: #FFF; }
 
 .quaternary-box.classical { border: 0.5em solid #917550; }
 .quaternary-box.blues { border: 0.5em solid #3F4FCA; }
@@ -342,6 +346,7 @@ Colours
 .quaternary-box.ukgarage { border: 0.5em solid #A892CC; }
 .quaternary-box.experimental { border: 0.5em solid #F5F5F5; }
 .quaternary-box.hauntology { border: 0.5em solid #E91E63; }
+.quaternary-box.folk { border: 0.5em solid #D2B774; }
 
 .quaternary-button.classical-light:hover { background: #A18259; }
 .quaternary-button.blues-light:hover { background: #5361D0; }
@@ -365,6 +370,7 @@ Colours
 .quaternary-button.ukgarage-light:hover { background: #B59DDB; }
 .quaternary-button.experimental-light:hover { background: #FFFFFF; }
 .quaternary-button.hauntology-light:hover { background: #EC407A; }
+.quaternary-button.folk-light:hover { background: #D8C188; }
 
 /*---------------------------------------------------------------------------
 Background images
@@ -408,6 +414,7 @@ Background images
 #tertiary-ukgarage:before { background-image: url("../images/ukgaragebig.jpg"); }
 #tertiary-experimental:before { background-image: url("../images/experimentalbig.jpg"); }
 #tertiary-hauntology:before { background-image: url("../images/hauntologybig.jpg"); }
+#tertiary-folk:before { background-image: url("../images/folkbig.jpg"); }
 
 #medieval {background: url("../images/classical/medieval.jpg") center center / cover fixed; }
 #renaissance {background: url("../images/classical/renaissance.jpg") center center / cover fixed; }
@@ -651,6 +658,17 @@ Background images
 #futurefunk {background: url("../images/hauntology/futurefunk.jpg") center center / cover fixed; }
 #mallsoft {background: url("../images/hauntology/mallsoft.jpg") center center / cover fixed; }
 #lofihiphop {background: url("../images/hauntology/lofihiphop.jpg") center center / cover fixed; }
+
+#africanfolk {background: url("../images/folk/africanfolk.jpg") center center / cover fixed; }
+#australianfolk {background: url("../images/folk/australianfolk.jpg") center center / cover fixed; }
+#chinesefolk {background: url("../images/folk/chinesefolk.jpg") center center / cover fixed; }
+#indianfolk {background: url("../images/folk/indianfolk.jpg") center center / cover fixed; }
+#frenchfolk {background: url("../images/folk/frenchfolk.jpg") center center / cover fixed; }
+#latinfolk {background: url("../images/folk/latinfolk.jpg") center center / cover fixed; }
+#irishfolk {background: url("../images/folk/irishfolk.jpg") center center / cover fixed; }
+#scottishfolk {background: url("../images/folk/scottishfolk.jpg") center center / cover fixed; }
+#nordicfolk {background: url("../images/folk/nordicfolk.jpg") center center / cover fixed; }
+#russianfolk {background: url("../images/folk/russianfolk.jpg") center center / cover fixed; }
 
 /*---------------------------------------------------------------------------
 Media queries
