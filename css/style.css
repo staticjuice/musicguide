@@ -527,6 +527,7 @@ Background images
 #riotgrrrl {background: url("../images/punk/riotgrrrl.jpg") center center / cover fixed; }
 
 #janglepop {background: url("../images/alternative/janglepop.jpg") center center / cover fixed; }
+#noiserock {background: url("../images/alternative/noiserock.jpg") center center / cover fixed; }
 #grunge {background: url("../images/alternative/grunge.jpg") center center / cover fixed; }
 #shoegaze {background: url("../images/alternative/shoegaze.jpg") center center / cover fixed; }
 #raprock {background: url("../images/alternative/raprock.jpg") center center / cover fixed; }
@@ -537,8 +538,12 @@ Background images
 #postgrunge {background: url("../images/alternative/postgrunge.jpg") center center / cover fixed; }
 #postbritpop {background: url("../images/alternative/postbritpop.jpg") center center / cover fixed; }
 #emo {background: url("../images/alternative/emo.jpg") center center / cover fixed; }
+#screamo {background: url("../images/alternative/screamo.jpg") center center / cover fixed; }
 #garagerockrevival {background: url("../images/alternative/garagerockrevival.jpg") center center / cover fixed; }
+#nuprog {background: url("../images/alternative/nuprog.jpg") center center / cover fixed; }
+#dancepunk {background: url("../images/alternative/dancepunk.jpg") center center / cover fixed; }
 #indietronica {background: url("../images/alternative/indietronica.jpg") center center / cover fixed; }
+#indiefolk {background: url("../images/alternative/indiefolk.jpg") center center / cover fixed; }
 
 #industrial {background: url("../images/industrial/industrial.jpg") center center / cover fixed; }
 #gothrock {background: url("../images/industrial/gothrock.jpg") center center / cover fixed; }
@@ -558,6 +563,7 @@ Background images
 #dancehall {background: url("../images/reggae/dancehall.jpg") center center / cover fixed; }
 #ragga {background: url("../images/reggae/ragga.jpg") center center / cover fixed; }
 #reggaefusion {background: url("../images/reggae/reggaefusion.jpg") center center / cover fixed; }
+#reggaeton {background: url("../images/reggae/reggaeton.jpg") center center / cover fixed; }
 
 #oldschoolrap {background: url("../images/hiphop/oldschoolrap.jpg") center center / cover fixed; }
 #turntablism {background: url("../images/hiphop/turntablism.jpg") center center / cover fixed; }
@@ -592,6 +598,7 @@ Background images
 #hardtrance {background: url("../images/trance/hardtrance.jpg") center center / cover fixed; }
 #techtrance {background: url("../images/trance/techtrance.jpg") center center / cover fixed; }
 #upliftingtrance {background: url("../images/trance/upliftingtrance.jpg") center center / cover fixed; }
+#neotrance {background: url("../images/trance/neotrance.jpg") center center / cover fixed; }
 
 #detroittechno {background: url("../images/techno/detroittechno.jpg") center center / cover fixed; }
 #acidtechno {background: url("../images/techno/acidtechno.jpg") center center / cover fixed; }
@@ -605,6 +612,7 @@ Background images
 #gabber {background: url("../images/hardcore/gabber.jpg") center center / cover fixed; }
 #happyhardcore {background: url("../images/hardcore/happyhardcore.jpg") center center / cover fixed; }
 #speedcore {background: url("../images/hardcore/speedcore.jpg") center center / cover fixed; }
+#breakcore {background: url("../images/hardcore/breakcore.jpg") center center / cover fixed; }
 #hardstyle {background: url("../images/hardcore/hardstyle.jpg") center center / cover fixed; }
 #ukhardcore {background: url("../images/hardcore/ukhardcore.jpg") center center / cover fixed; }
 

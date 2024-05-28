@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Neo Trance</title>
+    </head>
+
+    <body id="neotrance">
+        <div class="quaternary-box trance">
+            <h1>NEO TRANCE</h1><div class="quaternary-year trance-light">2005</div>
+
+            <p>Neo Trance is the further progress of Progressive Trance, albeit in a minimal direction. This genre obviously is more melodic than its inspirations, Microhouse and Techno. But the melody has no builds or climaxes nor is it anything anthem-like or sensational. It fades into the background, barely capable of entrancing the listener. Combined with a slower average tempo than most Trance, Neo Trance might pretty accurately be described as Ambient Minimal Trance. The breezing, gentle melodies and soft kicks make Neo Trance summer club music, like Ibiza Trance. But there is also compression and gritty distortion on the basslines, like a dark threat penetrating through an atmosphere that seems serene and harmless at first sight. Ironically, the music does not come from Ibiza at all but Denmark and Germany, where the last remnants of Trance dissolve into this generic crossover, accused by critics of self-indulgence and artificial sophistication. In those same countries, a minimal form of Goa rises as well &ndash; a sign that after years and years of "maximalist" Rave and Trance genres, there is only one direction left to go.</p>
+
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button trance-light">9</div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button trance-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "Pozitive", track: "Who Are You (Aeropolis Remix)", path: "../../../samples/trance/neotrance1.ogg" },
+                    { artist: "Trentemøller", track: "Moan", path: "../../../samples/trance/neotrance2.ogg" },
+                    { artist: "Gui Boratto", track: "No Turning Back", path: "../../../samples/trance/neotrance3.ogg" },
+                    { artist: "James Holden", track: "A Break In The Clouds", path: "../../../samples/trance/neotrance4.ogg" },
+                    { artist: "Nathan Fake", track: "HoursDaysMonthsSeasons", path: "../../../samples/trance/neotrance5.ogg" },
+                    { artist: "Ricardo Tobar", track: "Made", path: "../../../samples/trance/neotrance6.ogg" },
+                    { artist: "Pig & Dan", track: "Epic Adventure", path: "../../../samples/trance/neotrance7.ogg" },
+                    { artist: "Marek Hemmann", track: "Endless", path: "../../../samples/trance/neotrance8.ogg" },
+                    { artist: "Kyau & Albert", track: "Hooked On Infinity", path: "../../../samples/trance/neotrance9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>
