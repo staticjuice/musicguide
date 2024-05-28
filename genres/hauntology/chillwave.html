@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <title>Chillwave</title>
+    </head>
+
+    <body id="chillwave">
+        <div class="quaternary-box hauntology">
+            <h1>CHILLWAVE</h1><div class="quaternary-year hauntology-light">2007</div>
+
+            <p>Chillwave first emerged in the late 2000s. It is characterised by a faded or dreamy retro-pop sound, escapist lyrics (frequent topics include the beach or summer), psychedelic or lo-fi aesthetics, mellow vocals, low-to-moderate tempos, effects processing (especially reverb), and vintage synthesisers. Chillwave loosely emulates 1980s Synthpop and engages with notions of memory and nostalgia. It was one of the first music genres to develop primarily through the Internet. The term was coined in 2009 by the satirical blog Hipster Runoff to describe Indie acts whose sounds resembled incidental music from 1980s VHS tapes. Washed Out's 2009 track "Feel It All Around" remains the best-known Chillwave song. The term was criticised for being nebulous and contrived by various media publications, while the music was often derided for its reliance on nostalgia. Some artists rejected the tag, while many exploited the style's low-budget simplicity, which led to an oversaturation of acts. Another Internet-based microgenre, Vaporwave, evolved from Chillwave.</p>
+
+            <div class="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">9</div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button hauntology-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "Washed Out", track: "Feel It All Around", path: "../../samples/hauntology/chillwave1.ogg" },
+                    { artist: "Panda Bear", track: "Take Pills", path: "../../samples/hauntology/chillwave2.ogg" },
+                    { artist: "Neon Indian", track: "Deadbeat Summer", path: "../../samples/hauntology/chillwave3.ogg" },
+                    { artist: "Slow Magic", track: "Corvette Cassette", path: "../../samples/hauntology/chillwave4.ogg" },
+                    { artist: "Toro Y Moi", track: "Labyrinth", path: "../../samples/hauntology/chillwave5.ogg" },
+                    { artist: "Blackbird Blackbird", track: "Pure", path: "../../samples/hauntology/chillwave6.ogg" },
+                    { artist: "Ariel Pink", track: "Lipstick", path: "../../samples/hauntology/chillwave7.ogg" },
+                    { artist: "Summer Heart", track: "Beat Of Your Heart", path: "../../samples/hauntology/chillwave8.ogg" },
+                    { artist: "Tycho", track: "Daydream", path: "../../samples/hauntology/chillwave9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>

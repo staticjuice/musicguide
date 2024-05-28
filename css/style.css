@@ -247,6 +247,7 @@ Colours
 .drumandbass { background: #9A1839; }
 .ukgarage { background: #8F7CAD; }
 .experimental { background: #EDEDED; color: #222; }
+.hauntology { background: #C2185B; }
 
 .classical-light { background: #917550; }
 .blues-light { background: #3F4FCA; }
@@ -269,6 +270,7 @@ Colours
 .drumandbass-light { background: #C71F49; }
 .ukgarage-light { background: #A892CC; }
 .experimental-light { background: #F5F5F5; }
+.hauntology-light { background: #E91E63; }
 
 #tertiary-classical a:hover { color: #A18259; }
 #tertiary-blues a:hover { color: #5361D0; }
@@ -291,6 +293,7 @@ Colours
 #tertiary-drumandbass a:hover { color: #DD2251; }
 #tertiary-ukgarage a:hover { color: #B59DDB; }
 #tertiary-experimental a:hover { color: #BDBDBD; }
+#tertiary-hauntology a:hover { color: #EC407A; }
 
 ::selection { background: #FFF; color: #222; }
 .pop ::selection, .experimental ::selection { background: #222; color: #FFF; }
@@ -315,6 +318,7 @@ Colours
 #tertiary-drumandbass .tertiary-genrelist ::selection { background: #9A1839; color: #FFF; }
 #tertiary-ukgarage .tertiary-genrelist ::selection { background: #8F7CAD; color: #FFF; }
 #tertiary-experimental .tertiary-genrelist ::selection { background: #EDEDED; color: #222; }
+#tertiary-hauntology .tertiary-genrelist ::selection { background: #C2185B; color: #FFF; }
 
 .quaternary-box.classical { border: 0.5em solid #917550; }
 .quaternary-box.blues { border: 0.5em solid #3F4FCA; }
@@ -337,6 +341,7 @@ Colours
 .quaternary-box.drumandbass { border: 0.5em solid #C71F49; }
 .quaternary-box.ukgarage { border: 0.5em solid #A892CC; }
 .quaternary-box.experimental { border: 0.5em solid #F5F5F5; }
+.quaternary-box.hauntology { border: 0.5em solid #E91E63; }
 
 .quaternary-button.classical-light:hover { background: #A18259; }
 .quaternary-button.blues-light:hover { background: #5361D0; }
@@ -359,6 +364,7 @@ Colours
 .quaternary-button.drumandbass-light:hover { background: #DD2251; }
 .quaternary-button.ukgarage-light:hover { background: #B59DDB; }
 .quaternary-button.experimental-light:hover { background: #FFFFFF; }
+.quaternary-button.hauntology-light:hover { background: #EC407A; }
 
 /*---------------------------------------------------------------------------
 Background images
@@ -401,6 +407,7 @@ Background images
 #tertiary-drumandbass:before { background-image: url("../images/drumandbassbig.jpg"); }
 #tertiary-ukgarage:before { background-image: url("../images/ukgaragebig.jpg"); }
 #tertiary-experimental:before { background-image: url("../images/experimentalbig.jpg"); }
+#tertiary-hauntology:before { background-image: url("../images/hauntologybig.jpg"); }
 
 #medieval {background: url("../images/classical/medieval.jpg") center center / cover fixed; }
 #renaissance {background: url("../images/classical/renaissance.jpg") center center / cover fixed; }
@@ -635,8 +642,15 @@ Background images
 #triphop {background: url("../images/experimental/triphop.jpg") center center / cover fixed; }
 #illbient {background: url("../images/experimental/illbient.jpg") center center / cover fixed; }
 #glitch {background: url("../images/experimental/glitch.jpg") center center / cover fixed; }
-#synthwave {background: url("../images/experimental/synthwave.jpg") center center / cover fixed; }
-#vaporwave {background: url("../images/experimental/vaporwave.jpg") center center / cover fixed; }
+
+#chillwave {background: url("../images/hauntology/chillwave.jpg") center center / cover fixed; }
+#synthwave {background: url("../images/hauntology/synthwave.jpg") center center / cover fixed; }
+#vaporwave {background: url("../images/hauntology/vaporwave.jpg") center center / cover fixed; }
+#witchhouse {background: url("../images/hauntology/witchhouse.jpg") center center / cover fixed; }
+#seapunk {background: url("../images/hauntology/seapunk.jpg") center center / cover fixed; }
+#futurefunk {background: url("../images/hauntology/futurefunk.jpg") center center / cover fixed; }
+#mallsoft {background: url("../images/hauntology/mallsoft.jpg") center center / cover fixed; }
+#lofihiphop {background: url("../images/hauntology/lofihiphop.jpg") center center / cover fixed; }
 
 /*---------------------------------------------------------------------------
 Media queries
