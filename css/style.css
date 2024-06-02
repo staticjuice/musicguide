@@ -251,56 +251,6 @@ Colours
 .hauntology { background: #29CCCC; }
 .folk { background: #C6A44D; }
 
-.classical-light { background: #917550; }
-.blues-light { background: #3F4FCA; }
-.jazz-light { background: #ED9C9C; }
-.country-light { background: #969748; }
-.rhythmandblues-light { background: #009688; }
-.pop-light { background: #FFEB3B; }
-.rock-light { background: #F44336; }
-.metal-light { background: #212121; }
-.punk-light { background: #FF9800; }
-.alternative-light { background: #56707B; }
-.disco-light { background: #E91E63; }
-.reggae-light { background: #4CAF50; }
-.hiphop-light { background: #6A4C70; }
-.industrial-light { background: #795548;}
-.house-light { background: #00D18D; }
-.trance-light { background: #8522C3; }
-.techno-light { background: #666666; }
-.hardcore-light { background: #625A50; }
-.breakbeat-light { background: #9A5177; }
-.drumandbass-light { background: #C71F49; }
-.ukgarage-light { background: #A892CC; }
-.experimental-light { background: #F5F5F5; }
-.hauntology-light { background: #2CDEDE; }
-.folk-light { background: #D2B774; }
-
-#tertiary-classical a:hover { color: #A18259; }
-#tertiary-blues a:hover { color: #5361D0; }
-#tertiary-jazz a:hover { color: #F1B1B1; }
-#tertiary-country a:hover { color: #A1A34E; }
-#tertiary-rhythmandblues a:hover { color: #26A69A; }
-#tertiary-pop a:hover { color: #FFF176; }
-#tertiary-rock a:hover { color: #EF5350; }
-#tertiary-metal a:hover { color: #424242; }
-#tertiary-punk a:hover { color: #FFA726; }
-#tertiary-alternative a:hover { color: #78909C; }
-#tertiary-disco a:hover { color: #EC407A; }
-#tertiary-reggae a:hover { color: #66BB6A; }
-#tertiary-hiphop a:hover { color: #79577F; }
-#tertiary-industrial a:hover { color: #8D6E63; }
-#tertiary-house a:hover { color: #00DE95; }
-#tertiary-trance a:hover { color: #9426D9; }
-#tertiary-techno a:hover { color: #777777; }
-#tertiary-hardcore a:hover { color: #70675C; }
-#tertiary-breakbeat a:hover { color: #A95B83; }
-#tertiary-drumandbass a:hover { color: #DD2251; }
-#tertiary-ukgarage a:hover { color: #B59DDB; }
-#tertiary-experimental a:hover { color: #BDBDBD; }
-#tertiary-hauntology a:hover { color: #2FEDED; }
-#tertiary-folk a:hover { color: #D8C188; }
-
 ::selection { background: #FFF; color: #222; }
 .pop ::selection, .experimental ::selection { background: #222; color: #FFF; }
 #tertiary-classical .tertiary-genrelist ::selection { background: #705A3D; color: #FFF; }
@@ -328,6 +278,31 @@ Colours
 #tertiary-hauntology .tertiary-genrelist ::selection { background: #29CCCC; color: #FFF; }
 #tertiary-folk .tertiary-genrelist ::selection { background: #C6A44D; color: #FFF; }
 
+.classical-light { background: #917550; }
+.blues-light { background: #3F4FCA; }
+.jazz-light { background: #ED9C9C; }
+.country-light { background: #969748; }
+.rhythmandblues-light { background: #009688; }
+.pop-light { background: #FFEB3B; }
+.rock-light { background: #F44336; }
+.metal-light { background: #212121; }
+.punk-light { background: #FF9800; }
+.alternative-light { background: #56707B; }
+.disco-light { background: #E91E63; }
+.reggae-light { background: #4CAF50; }
+.hiphop-light { background: #6A4C70; }
+.industrial-light { background: #795548;}
+.house-light { background: #00D18D; }
+.trance-light { background: #8522C3; }
+.techno-light { background: #666666; }
+.hardcore-light { background: #625A50; }
+.breakbeat-light { background: #9A5177; }
+.drumandbass-light { background: #C71F49; }
+.ukgarage-light { background: #A892CC; }
+.experimental-light { background: #F5F5F5; }
+.hauntology-light { background: #2CDEDE; }
+.folk-light { background: #D2B774; }
+
 .quaternary-box.classical { border: 0.5em solid #917550; }
 .quaternary-box.blues { border: 0.5em solid #3F4FCA; }
 .quaternary-box.jazz { border: 0.5em solid #ED9C9C; }
@@ -352,6 +327,31 @@ Colours
 .quaternary-box.experimental { border: 0.5em solid #F5F5F5; }
 .quaternary-box.hauntology { border: 0.5em solid #2CDEDE; }
 .quaternary-box.folk { border: 0.5em solid #D2B774; }
+
+#tertiary-classical a:hover { color: #A18259; }
+#tertiary-blues a:hover { color: #5361D0; }
+#tertiary-jazz a:hover { color: #F1B1B1; }
+#tertiary-country a:hover { color: #A1A34E; }
+#tertiary-rhythmandblues a:hover { color: #26A69A; }
+#tertiary-pop a:hover { color: #FFF176; }
+#tertiary-rock a:hover { color: #EF5350; }
+#tertiary-metal a:hover { color: #424242; }
+#tertiary-punk a:hover { color: #FFA726; }
+#tertiary-alternative a:hover { color: #78909C; }
+#tertiary-disco a:hover { color: #EC407A; }
+#tertiary-reggae a:hover { color: #66BB6A; }
+#tertiary-hiphop a:hover { color: #79577F; }
+#tertiary-industrial a:hover { color: #8D6E63; }
+#tertiary-house a:hover { color: #00DE95; }
+#tertiary-trance a:hover { color: #9426D9; }
+#tertiary-techno a:hover { color: #777777; }
+#tertiary-hardcore a:hover { color: #70675C; }
+#tertiary-breakbeat a:hover { color: #A95B83; }
+#tertiary-drumandbass a:hover { color: #DD2251; }
+#tertiary-ukgarage a:hover { color: #B59DDB; }
+#tertiary-experimental a:hover { color: #BDBDBD; }
+#tertiary-hauntology a:hover { color: #2FEDED; }
+#tertiary-folk a:hover { color: #D8C188; }
 
 .quaternary-button.classical-light:hover { background: #A18259; }
 .quaternary-button.blues-light:hover { background: #5361D0; }
