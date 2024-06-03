@@ -43,7 +43,7 @@ Scrollbar styling
     border-radius: 1em;
 }
 
-.pop::-webkit-scrollbar-thumb, .experimental::-webkit-scrollbar-thumb {
+.pop::-webkit-scrollbar-thumb, .experimental::-webkit-scrollbar-thumb, .hauntology::-webkit-scrollbar-thumb {
     background: #222;
 }
 
@@ -218,7 +218,7 @@ Quaternary section
     box-shadow: inset 0 0 0 0.1em #FFF;
 }
 
-.pop-light.clicked, .experimental-light.clicked {
+.pop-light.clicked, .experimental-light.clicked, .hauntology-light.clicked {
     box-shadow: inset 0 0 0 0.1em #222;
 }
 
@@ -248,17 +248,17 @@ Colours
 .drumandbass { background: #9A1839; }
 .ukgarage { background: #8F7CAD; }
 .experimental { background: #EDEDED; color: #222; }
-.hauntology { background: #29CCCC; }
+.hauntology { background: #29CCCC; color: #222; }
 .folk { background: #C6A44D; }
 
 ::selection { background: #FFF; color: #222; }
-.pop ::selection, .experimental ::selection { background: #222; color: #FFF; }
+.pop ::selection, .experimental ::selection, .hauntology ::selection { background: #222; color: #FFF; }
 #tertiary-classical .tertiary-genrelist ::selection { background: #705A3D; color: #FFF; }
 #tertiary-blues .tertiary-genrelist ::selection { background: #283593; color: #FFF; }
 #tertiary-jazz .tertiary-genrelist ::selection { background: #E57373; color: #FFF; }
 #tertiary-country .tertiary-genrelist ::selection { background: #747538; color: #FFF; }
 #tertiary-rhythmandblues .tertiary-genrelist ::selection { background: #00695C; color: #FFF; }
-#tertiary-pop .tertiary-genrelist ::selection { background: #FDD835; color: #222; }
+#tertiary-pop .tertiary-genrelist ::selection { background: #FDD835; }
 #tertiary-rock .tertiary-genrelist ::selection { background: #C62828; color: #FFF; }
 #tertiary-metal .tertiary-genrelist ::selection { background: #080808; color: #FFF; }
 #tertiary-punk .tertiary-genrelist ::selection { background: #EF6C00; color: #FFF; }
@@ -274,8 +274,8 @@ Colours
 #tertiary-breakbeat .tertiary-genrelist ::selection { background: #783F5D; color: #FFF; }
 #tertiary-drumandbass .tertiary-genrelist ::selection { background: #9A1839; color: #FFF; }
 #tertiary-ukgarage .tertiary-genrelist ::selection { background: #8F7CAD; color: #FFF; }
-#tertiary-experimental .tertiary-genrelist ::selection { background: #EDEDED; color: #222; }
-#tertiary-hauntology .tertiary-genrelist ::selection { background: #29CCCC; color: #FFF; }
+#tertiary-experimental .tertiary-genrelist ::selection { background: #EDEDED; }
+#tertiary-hauntology .tertiary-genrelist ::selection { background: #29CCCC; }
 #tertiary-folk .tertiary-genrelist ::selection { background: #C6A44D; color: #FFF; }
 
 .classical-light { background: #917550; }
