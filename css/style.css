@@ -142,8 +142,8 @@ Tertiary section
 }
 
 .tertiary-genrelist a {
-    display: list-item;
-    list-style-type: none;
+    float: left;
+    clear: both;
 }
 
 .tertiary-sidebar {
