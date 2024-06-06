@@ -93,7 +93,7 @@ Secondary section
     width: 0;
 }
 
-.secondary-grid {
+#secondary-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 2vw;
@@ -108,7 +108,7 @@ Secondary section
 .secondary-grid-item img {
     width: 100%;
     border-radius: 1em;
-    box-shadow: 0.01em 0.01em 0.5em rgba(0, 0, 0, 0.6);
+    box-shadow: 0.01em 0.01em 0.5em #00000099;
     filter: brightness(40%);
 }
 
@@ -141,12 +141,17 @@ Tertiary section
     margin-bottom: 0.25em;
 }
 
+.tertiary-genrelist a {
+    display: list-item;
+    list-style-type: none;
+}
+
 .tertiary-sidebar {
     font-size: 2vh;
     width: 33.33em; height: 100vh;
     max-width: 50vw;
     padding: 1.5em 1.5em 0;
-    box-shadow: -0.01em 0 0.5em rgba(0, 0, 0, 0.6);
+    box-shadow: -0.01em 0 0.5em #00000099;
     overflow: auto;
 }
 
@@ -159,8 +164,9 @@ Quaternary section
     width: 40em;
     padding: 1.5em;
     margin: 2em;
+    border: 0.5em solid;
     border-radius: 1.5em;
-    box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.6);
+    box-shadow: 0.1em 0.1em 0.5em #00000099;
     position: relative;
 }
 
@@ -174,7 +180,7 @@ Quaternary section
     top: 0.75em; right: 0.75em;
 }
 
-.quaternary-grid {
+#quaternary-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 0.25em;
@@ -226,30 +232,30 @@ Quaternary section
 Colours
 /*---------------------------------------------------------------------------*/
 
-.classical { background: #705A3D; }
-.blues { background: #283593; }
-.jazz { background: #E57373; }
-.country { background: #747538; }
-.rhythmandblues { background: #00695C; }
-.pop { background: #FDD835; color: #222; }
-.rock { background: #C62828; }
-.metal { background: #080808; }
-.punk { background: #EF6C00; }
-.alternative { background: #37474F; }
-.disco { background: #C2185B; }
-.reggae { background: #2E7D32; }
-.hiphop { background: #4E3852; }
-.industrial { background: #4E342E; }
-.house { background: #009F6B; }
-.trance { background: #6A1B9A; }
-.techno { background: #555555; }
-.hardcore { background: #464039; }
-.breakbeat { background: #783F5D; }
-.drumandbass { background: #9A1839; }
-.ukgarage { background: #8F7CAD; }
-.experimental { background: #EDEDED; color: #222; }
-.hauntology { background: #29CCCC; color: #222; }
-.folk { background: #C6A44D; }
+.classical { background: #705A3D; border-color: #917550; }
+.blues { background: #283593; border-color: #3F4FCA; }
+.jazz { background: #E57373; border-color: #ED9C9C; }
+.country { background: #747538; border-color: #969748; }
+.rhythmandblues { background: #00695C; border-color: #009688; }
+.pop { background: #FDD835; border-color: #FFEB3B; color: #222; }
+.rock { background: #C62828; border-color: #F44336; }
+.metal { background: #080808; border-color: #212121; }
+.punk { background: #EF6C00; border-color: #FF9800; }
+.alternative { background: #37474F; border-color: #56707B; }
+.disco { background: #C2185B; border-color: #E91E63; }
+.reggae { background: #2E7D32; border-color: #4CAF50; }
+.hiphop { background: #4E3852; border-color: #6A4C70; }
+.industrial { background: #4E342E; border-color: #795548; }
+.house { background: #009F6B; border-color: #00D18D; }
+.trance { background: #6A1B9A; border-color: #8522C3; }
+.techno { background: #555555; border-color: #666666; }
+.hardcore { background: #464039; border-color: #625A50; }
+.breakbeat { background: #783F5D; border-color: #9A5177; }
+.drumandbass { background: #9A1839; border-color: #C71F49; }
+.ukgarage { background: #8F7CAD; border-color: #A892CC; }
+.experimental { background: #EDEDED; border-color: #F5F5F5; color: #222; }
+.hauntology { background: #29CCCC; border-color: #2CDEDE; color: #222; }
+.folk { background: #C6A44D; border-color: #D2B774; }
 
 ::selection { background: #FFF; color: #222; }
 .pop ::selection, .experimental ::selection, .hauntology ::selection { background: #222; color: #FFF; }
@@ -302,31 +308,6 @@ Colours
 .experimental-light { background: #F5F5F5; }
 .hauntology-light { background: #2CDEDE; }
 .folk-light { background: #D2B774; }
-
-.quaternary-box.classical { border: 0.5em solid #917550; }
-.quaternary-box.blues { border: 0.5em solid #3F4FCA; }
-.quaternary-box.jazz { border: 0.5em solid #ED9C9C; }
-.quaternary-box.country { border: 0.5em solid #969748; }
-.quaternary-box.rhythmandblues { border: 0.5em solid #009688; }
-.quaternary-box.pop { border: 0.5em solid #FFEB3B; }
-.quaternary-box.rock { border: 0.5em solid #F44336; }
-.quaternary-box.metal { border: 0.5em solid #212121; }
-.quaternary-box.punk { border: 0.5em solid #FF9800; }
-.quaternary-box.alternative { border: 0.5em solid #56707B; }
-.quaternary-box.disco { border: 0.5em solid #E91E63; }
-.quaternary-box.reggae { border: 0.5em solid #4CAF50; }
-.quaternary-box.hiphop { border: 0.5em solid #6A4C70; }
-.quaternary-box.industrial { border: 0.5em solid #795548; }
-.quaternary-box.house { border: 0.5em solid #00D18D; }
-.quaternary-box.trance { border: 0.5em solid #8522C3; }
-.quaternary-box.techno { border: 0.5em solid #666666; }
-.quaternary-box.hardcore { border: 0.5em solid #625A50; }
-.quaternary-box.breakbeat { border: 0.5em solid #9A5177; }
-.quaternary-box.drumandbass { border: 0.5em solid #C71F49; }
-.quaternary-box.ukgarage { border: 0.5em solid #A892CC; }
-.quaternary-box.experimental { border: 0.5em solid #F5F5F5; }
-.quaternary-box.hauntology { border: 0.5em solid #2CDEDE; }
-.quaternary-box.folk { border: 0.5em solid #D2B774; }
 
 #tertiary-classical a:hover { color: #A18259; }
 #tertiary-blues a:hover { color: #5361D0; }
@@ -614,7 +595,6 @@ Background images
 #italohouse {background: url("../images/house/italohouse.jpg") center center / cover fixed; }
 #funkyhouse {background: url("../images/house/funkyhouse.jpg") center center / cover fixed; }
 #latinhouse {background: url("../images/house/latinhouse.jpg") center center / cover fixed; }
-#jackinhouse {background: url("../images/house/jackinhouse.jpg") center center / cover fixed; }
 #progressivehouse {background: url("../images/house/progressivehouse.jpg") center center / cover fixed; }
 #techhouse {background: url("../images/house/techhouse.jpg") center center / cover fixed; }
 #frenchhouse {background: url("../images/house/frenchhouse.jpg") center center / cover fixed; }
@@ -626,7 +606,6 @@ Background images
 #moombahton {background: url("../images/house/moombahton.jpg") center center / cover fixed; }
 #electroswing {background: url("../images/house/electroswing.jpg") center center / cover fixed; }
 #bigroom {background: url("../images/house/bigroom.jpg") center center / cover fixed; }
-#jungleterror {background: url("../images/house/jungleterror.jpg") center center / cover fixed; }
 #nudisco {background: url("../images/house/nudisco.jpg") center center / cover fixed; }
 #tropicalhouse {background: url("../images/house/tropicalhouse.jpg") center center / cover fixed; }
 #futurehouse {background: url("../images/house/futurehouse.jpg") center center / cover fixed; }
@@ -761,7 +740,7 @@ Media queries
         text-align: center;
     }
 
-    .secondary-grid {
+    #secondary-grid {
         margin: 1em 0 1em;
     }
 
@@ -788,7 +767,7 @@ Media queries
         font-size: 4vw;
         height: 100%;
         max-width: 100vw;
-        box-shadow: 0 -0.01em 0.5em rgba(0, 0, 0, 0.6);
+        box-shadow: 0 -0.01em 0.5em #00000099;
     }
 
     .quaternary-grid-item {

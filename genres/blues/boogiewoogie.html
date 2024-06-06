@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
         <title>Boogie Woogie</title>
     </head>
 
@@ -15,7 +16,7 @@
 
             <p>Boogie Woogie is a Blues-based piano style in which the right hand plays an accompaniment figure that resembles a strummed rhythm. Inspired by Ragtime music, Blues got introduced to the piano by the end of the 20s, forming Piano Blues but better known as Boogie Woogie. Similar to Ragtime, left hand provided a steady bass and the right hand provided the treble counterpoint. The result was a very rhythmic, syncopated Blues, much more uptempo and happy than usual. The piano also made it possible to add a 4/4 beat, with the accent on 2nd and 4th beat. Hence, Boogie Woogie introduced the backbeat into the world of music &ndash; a milestone of great significance. Boogie Woogie's backbeat is called a shuffle, and it made people's feet move everywhere. Boogie Woogie formed the ideal relief after the Great Depression and epitomised music following the end of prohibition. As a post-depression natural muscle stimulant, Boogie Woogie rapidly became the drug of choice in the 30s, and it wouldn't take long before "doing the boogie" was a common phrase for dancing to this hyperactive type of Blues.</p>
 
-            <div class="quaternary-grid">
+            <div id="quaternary-grid">
                 <div class="quaternary-grid-item"><div class="quaternary-button blues-light">1</div></div>
                 <div class="quaternary-grid-item"><div class="quaternary-button blues-light">2</div></div>
                 <div class="quaternary-grid-item"><div class="quaternary-button blues-light">3</div></div>
@@ -31,8 +32,6 @@
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
             <div class="quaternary-stop"><div class="quaternary-button blues-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
-
-        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
             $(function() {

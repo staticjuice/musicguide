@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
         <title>Honky-Tonk</title>
     </head>
 
@@ -15,7 +16,7 @@
 
             <p>Country before the 40s had a bit of a multiple personality disorder. While one part of it evolved as a crazy, fun barn dance music, the other part went the opposite way. It evolved as an introvert, back-to-the-roots music that wasn't happy at all and often involved tragic ballads, known as Honky Tonk. Most Honky Tonk songs deal about relationship problems, alcohol abuse, financial worries or other misfortunes. Instead of large barns, this music was played in the more intimate bars of the southern US, which were called "honky tonks". However, these were still large enough to force the artist to implement electric instrumentation to top the crowd volume-wise. Honky Tonk also introduced a steady 4/4 beat to Country music, which diverted the genre from Folk. Honky Tonk artists often sang with a thick, southern tongue and in a nasal tone. Combined with the cowboy hat, boots and costume, the caricature of the traditional Country singer was complete. Honky Tonk remains an important separate stream in Country's history, and is sometimes synonymous with so-called "Hardcore Country".</p>
 
-            <div class="quaternary-grid">
+            <div id="quaternary-grid">
                 <div class="quaternary-grid-item"><div class="quaternary-button country-light">1</div></div>
                 <div class="quaternary-grid-item"><div class="quaternary-button country-light">2</div></div>
                 <div class="quaternary-grid-item"><div class="quaternary-button country-light">3</div></div>
@@ -31,8 +32,6 @@
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
             <div class="quaternary-stop"><div class="quaternary-button country-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
-
-        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
             $(function() {
