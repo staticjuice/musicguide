@@ -7,44 +7,44 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <title>Latin Folk</title>
+        <title>Latin</title>
     </head>
 
-    <body id="latinfolk">
-        <div class="quaternary-box folk">
-            <h1>LATIN FOLK</h1>
+    <body id="latin">
+        <div class="quaternary-box world">
+            <h1>LATIN</h1>
 
             <p>Latin music refers to music originating from Latin America, namely the Romance-speaking countries and territories of the Americas and the Caribbean south of the United States. Latin music also incorporates African music from slaves who were transported to the Americas by European settlers as well as music from the indigenous peoples of the Americas. Due to its highly syncretic nature, Latin music encompasses a wide variety of styles, including Bachata, Bossa Nova, Merengue, Rumba, Salsa, Samba, Son and Tango. Geographically, it usually refers to the Spanish and Portuguese-speaking regions of Latin America, but sometimes includes Francophone countries and territories of the Caribbean and South America as well. It also encompasses Latin American styles that have originated in the United States such as Salsa and Tejano. The origins of Latin music can be traced back to the Spanish and Portuguese conquest of the Americas in the 16th century when the European settlers brought their music from overseas. Latin music is performed in Spanish, Portuguese and to a lesser extent &ndash; French.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button folk-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button world-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Frankie Ruiz", track: "Tu Con El", path: "../../samples/folk/latinfolk1.ogg" },
-                    { artist: "Gilberto Santa Rosa", track: "La Agarro Bajando", path: "../../samples/folk/latinfolk2.ogg" },
-                    { artist: "Adalberto Álvarez Zayas", track: "Para Bailar Casino", path: "../../samples/folk/latinfolk3.ogg" },
-                    { artist: "Pichy Valdés & Saoco Son", track: "Poca Importancia", path: "../../samples/folk/latinfolk4.ogg" },
-                    { artist: "Antonio Tony Graci", track: "Living Carioca", path: "../../samples/folk/latinfolk5.ogg" },
-                    { artist: "M. Aaron Heick", track: "Carnaval Loco", path: "../../samples/folk/latinfolk6.ogg" },
-                    { artist: "Carey Haynes", track: "Samba Mamba", path: "../../samples/folk/latinfolk7.ogg" },
-                    { artist: "Tito Nieves", track: "Fabricando Fantasias", path: "../../samples/folk/latinfolk8.ogg" },
-                    { artist: "Scott Christian Marzullo", track: "Rio Road To Victory", path: "../../samples/folk/latinfolk9.ogg" }
+                    { artist: "Frankie Ruiz", track: "Tu Con El", path: "../../samples/world/latin1.ogg" },
+                    { artist: "Gilberto Santa Rosa", track: "La Agarro Bajando", path: "../../samples/world/latin2.ogg" },
+                    { artist: "Adalberto Álvarez Zayas", track: "Para Bailar Casino", path: "../../samples/world/latin3.ogg" },
+                    { artist: "Pichy Valdés & Saoco Son", track: "Poca Importancia", path: "../../samples/world/latin4.ogg" },
+                    { artist: "Antonio Tony Graci", track: "Living Carioca", path: "../../samples/world/latin5.ogg" },
+                    { artist: "M. Aaron Heick", track: "Carnaval Loco", path: "../../samples/world/latin6.ogg" },
+                    { artist: "Carey Haynes", track: "Samba Mamba", path: "../../samples/world/latin7.ogg" },
+                    { artist: "Tito Nieves", track: "Fabricando Fantasias", path: "../../samples/world/latin8.ogg" },
+                    { artist: "Scott Christian Marzullo", track: "Rio Road To Victory", path: "../../samples/world/latin9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

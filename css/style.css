@@ -142,8 +142,8 @@ Tertiary section
 }
 
 .tertiary-genrelist a {
-    float: left;
-    clear: both;
+    display: table;
+    line-height: 1.5;
 }
 
 .tertiary-sidebar {
@@ -256,6 +256,7 @@ Colours
 .experimental { background: #EDEDED; border-color: #F5F5F5; color: #222; }
 .hauntology { background: #29CCCC; border-color: #2CDEDE; color: #222; }
 .folk { background: #C6A44D; border-color: #D2B774; }
+.world { background: #364F30; border-color: #4C6F44; }
 
 ::selection { background: #FFF; color: #222; }
 .pop ::selection, .experimental ::selection, .hauntology ::selection { background: #222; color: #FFF; }
@@ -283,6 +284,7 @@ Colours
 #tertiary-experimental .tertiary-genrelist ::selection { background: #EDEDED; }
 #tertiary-hauntology .tertiary-genrelist ::selection { background: #29CCCC; }
 #tertiary-folk .tertiary-genrelist ::selection { background: #C6A44D; color: #FFF; }
+#tertiary-world .tertiary-genrelist ::selection { background: #364F30; color: #FFF; }
 
 .classical-light { background: #917550; }
 .blues-light { background: #3F4FCA; }
@@ -308,6 +310,7 @@ Colours
 .experimental-light { background: #F5F5F5; }
 .hauntology-light { background: #2CDEDE; }
 .folk-light { background: #D2B774; }
+.world-light { background: #4C6F44; }
 
 #tertiary-classical a:hover { color: #A18259; }
 #tertiary-blues a:hover { color: #5361D0; }
@@ -333,6 +336,7 @@ Colours
 #tertiary-experimental a:hover { color: #BDBDBD; }
 #tertiary-hauntology a:hover { color: #2FEDED; }
 #tertiary-folk a:hover { color: #D8C188; }
+#tertiary-world a:hover { color: #567E4E; }
 
 .quaternary-button.classical-light:hover { background: #A18259; }
 .quaternary-button.blues-light:hover { background: #5361D0; }
@@ -358,6 +362,7 @@ Colours
 .quaternary-button.experimental-light:hover { background: #FFFFFF; }
 .quaternary-button.hauntology-light:hover { background: #2FEDED; }
 .quaternary-button.folk-light:hover { background: #D8C188; }
+.quaternary-button.world-light:hover { background: #567E4E; }
 
 /*---------------------------------------------------------------------------
 Background images
@@ -403,6 +408,7 @@ Background images
 #tertiary-experimental:before { background-image: url("../images/experimentalbig.jpg"); }
 #tertiary-hauntology:before { background-image: url("../images/hauntologybig.jpg"); }
 #tertiary-folk:before { background-image: url("../images/folkbig.jpg"); }
+#tertiary-world:before { background-image: url("../images/worldbig.jpg"); }
 
 #medieval {background: url("../images/classical/medieval.jpg") center center / cover fixed; }
 #renaissance {background: url("../images/classical/renaissance.jpg") center center / cover fixed; }
@@ -471,6 +477,7 @@ Background images
 #brillbuildingpop {background: url("../images/pop/brillbuildingpop.jpg") center center / cover fixed; }
 #bubblegumpop {background: url("../images/pop/bubblegumpop.jpg") center center / cover fixed; }
 #sunshinepop {background: url("../images/pop/sunshinepop.jpg") center center / cover fixed; }
+#powerpop {background: url("../images/pop/powerpop.jpg") center center / cover fixed; }
 #poprock {background: url("../images/pop/poprock.jpg") center center / cover fixed; }
 #softrock {background: url("../images/pop/softrock.jpg") center center / cover fixed; }
 #synthpop {background: url("../images/pop/synthpop.jpg") center center / cover fixed; }
@@ -546,9 +553,9 @@ Background images
 #neopsychedelia {background: url("../images/alternative/neopsychedelia.jpg") center center / cover fixed; }
 #indiefolk {background: url("../images/alternative/indiefolk.jpg") center center / cover fixed; }
 
-#italodisco {background: url("../images/disco/italodisco.jpg") center center / cover fixed; }
 #hinrg {background: url("../images/disco/hinrg.jpg") center center / cover fixed; }
 #spacesynth {background: url("../images/disco/spacesynth.jpg") center center / cover fixed; }
+#italodisco {background: url("../images/disco/italodisco.jpg") center center / cover fixed; }
 #eurobeat {background: url("../images/disco/eurobeat.jpg") center center / cover fixed; }
 #eurodance {background: url("../images/disco/eurodance.jpg") center center / cover fixed; }
 #italodance {background: url("../images/disco/italodance.jpg") center center / cover fixed; }
@@ -709,16 +716,17 @@ Background images
 #hyperpop {background: url("../images/hauntology/hyperpop.jpg") center center / cover fixed; }
 #lofihouse {background: url("../images/hauntology/lofihouse.jpg") center center / cover fixed; }
 
-#africanfolk {background: url("../images/folk/africanfolk.jpg") center center / cover fixed; }
-#australianfolk {background: url("../images/folk/australianfolk.jpg") center center / cover fixed; }
-#chinesefolk {background: url("../images/folk/chinesefolk.jpg") center center / cover fixed; }
-#indianfolk {background: url("../images/folk/indianfolk.jpg") center center / cover fixed; }
-#frenchfolk {background: url("../images/folk/frenchfolk.jpg") center center / cover fixed; }
-#latinfolk {background: url("../images/folk/latinfolk.jpg") center center / cover fixed; }
 #irishfolk {background: url("../images/folk/irishfolk.jpg") center center / cover fixed; }
 #scottishfolk {background: url("../images/folk/scottishfolk.jpg") center center / cover fixed; }
+#frenchfolk {background: url("../images/folk/frenchfolk.jpg") center center / cover fixed; }
 #nordicfolk {background: url("../images/folk/nordicfolk.jpg") center center / cover fixed; }
 #russianfolk {background: url("../images/folk/russianfolk.jpg") center center / cover fixed; }
+
+#african {background: url("../images/world/african.jpg") center center / cover fixed; }
+#australian {background: url("../images/world/australian.jpg") center center / cover fixed; }
+#chinese {background: url("../images/world/chinese.jpg") center center / cover fixed; }
+#indian {background: url("../images/world/indian.jpg") center center / cover fixed; }
+#latin {background: url("../images/world/latin.jpg") center center / cover fixed; }
 
 /*---------------------------------------------------------------------------
 Media queries

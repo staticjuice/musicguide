@@ -7,44 +7,44 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <title>African Folk</title>
+        <title>African</title>
     </head>
 
-    <body id="africanfolk">
-        <div class="quaternary-box folk">
-            <h1>AFRICAN FOLK</h1>
+    <body id="african">
+        <div class="quaternary-box world">
+            <h1>AFRICAN</h1>
 
             <p>The traditional music of Africa, given the vastness of the continent, is historically ancient, rich and diverse, with different regions and nations of Africa having many distinct musical traditions. Music in Africa is especially important when it comes to religion and spirituality. Songs and music are used in rituals and religious ceremonies, to pass down stories from generation to generation, as well as to sing and dance to. Traditional music in most of the continent is passed down orally (or aurally) and is not written. In Sub-Saharan African music traditions, it frequently relies on percussion instruments of every variety, including xylophones, djembes, drums and tone-producing instruments such as the mbira or "thumb piano". The music and dance of the African diaspora, formed to varying degrees on African musical traditions, include American music and many Caribbean genres, such as Soca, Calypso and Zouk. Latin American music genres such as the Rumba, Conga, Bomba, Cumbia and Samba were also founded on the music of enslaved Africans, and have in turn influenced African popular music.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button folk-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button world-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Black Bear Moon Rhythm Ensemble", track: "Sofa", path: "../../samples/folk/africanfolk1.ogg" },
-                    { artist: "Universal African Dance & Drum Ensemble", track: "Forest Dance", path: "../../samples/folk/africanfolk2.ogg" },
-                    { artist: "Farafina", track: "Mogoman Wouelé", path: "../../samples/folk/africanfolk3.ogg" },
-                    { artist: "Tony Vacca", track: "Baoule Dance Song", path: "../../samples/folk/africanfolk4.ogg" },
-                    { artist: "Babatunde Olatunji", track: "Jin-Go-Lo-Ba (Jin-Go-Low-Bah)", path: "../../samples/folk/africanfolk5.ogg" },
-                    { artist: "Fore-Fote", track: "Guine Fare", path: "../../samples/folk/africanfolk6.ogg" },
-                    { artist: "The Drummers Of Burundi", track: "Extract", path: "../../samples/folk/africanfolk7.ogg" },
-                    { artist: "Sokan", track: "Aīwa Bobo", path: "../../samples/folk/africanfolk8.ogg" },
-                    { artist: "Les Ballets Africains", track: "Ballade Of Bolons", path: "../../samples/folk/africanfolk9.ogg" }
+                    { artist: "Black Bear Moon Rhythm Ensemble", track: "Sofa", path: "../../samples/world/african1.ogg" },
+                    { artist: "Universal African Dance & Drum Ensemble", track: "Forest Dance", path: "../../samples/world/african2.ogg" },
+                    { artist: "Farafina", track: "Mogoman Wouelé", path: "../../samples/world/african3.ogg" },
+                    { artist: "Tony Vacca", track: "Baoule Dance Song", path: "../../samples/world/african4.ogg" },
+                    { artist: "Babatunde Olatunji", track: "Jin-Go-Lo-Ba (Jin-Go-Low-Bah)", path: "../../samples/world/african5.ogg" },
+                    { artist: "Fore-Fote", track: "Guine Fare", path: "../../samples/world/african6.ogg" },
+                    { artist: "The Drummers Of Burundi", track: "Extract", path: "../../samples/world/african7.ogg" },
+                    { artist: "Sokan", track: "Aīwa Bobo", path: "../../samples/world/african8.ogg" },
+                    { artist: "Les Ballets Africains", track: "Ballade Of Bolons", path: "../../samples/world/african9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

@@ -7,44 +7,44 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <title>Indian Folk</title>
+        <title>Indian</title>
     </head>
 
-    <body id="indianfolk">
-        <div class="quaternary-box folk">
-            <h1>INDIAN FOLK</h1>
+    <body id="indian">
+        <div class="quaternary-box world">
+            <h1>INDIAN</h1>
 
             <p>India is a country with a rich musical history dating back millennia. The two main traditions of Indian classical music are Carnatic music, which is found predominantly in the peninsular regions, and Hindustani music, which is found in the northern, eastern and central regions. The basic concepts of this music include shruti (microtones), swaras (notes), alankar (ornamentations), raga (melodies improvised from basic grammars) and tala (rhythmic patterns used in percussion). Its tonal system divides the octave into 22 segments called shrutis, not all equal but each roughly equal to a quarter of a whole tone of Western music. Carnatic music can be traced to the 14th centuries and thereafter. It is melodic, with improvised variations, but tends to have more fixed compositions. The main emphasis is on the vocals as most compositions are written to be sung. The Hindustani music tradition diverged from Carnatic music around the 13th century. The practice of singing based on notes was popular even from the Vedic times where the hymns in Sama Veda were sung as Samagana and not chanted.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button folk-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button world-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Ashwini Bhide Deshpande", track: "Raga Bhimpalasi", path: "../../samples/folk/indianfolk1.ogg" },
-                    { artist: "Nikhil Banerjee", track: "Bhimpalasri Fast Tintal", path: "../../samples/folk/indianfolk2.ogg" },
-                    { artist: "Baluji Shrivastav", track: "Raag Maru Bihag", path: "../../samples/folk/indianfolk3.ogg" },
-                    { artist: "Girija Devi", track: "Ras Ke Bhare", path: "../../samples/folk/indianfolk4.ogg" },
-                    { artist: "Pandit Jasraj", track: "Gayatri Aarati And Chorus", path: "../../samples/folk/indianfolk5.ogg" },
-                    { artist: "Shruti Sadolikar", track: "Shri Ravankrit Shiv Tandav Stotra", path: "../../samples/folk/indianfolk6.ogg" },
-                    { artist: "Jnan Prakash Ghosh", track: "Hari Hari Hari Sumiran Karo", path: "../../samples/folk/indianfolk7.ogg" },
-                    { artist: "Sudha Rangunathan", track: "Shree Mahaganapatim", path: "../../samples/folk/indianfolk8.ogg" },
-                    { artist: "Bhimsen Joshi", track: "Prabhu Kar Sab Dukh Door Hamare", path: "../../samples/folk/indianfolk9.ogg" }
+                    { artist: "Ashwini Bhide Deshpande", track: "Raga Bhimpalasi", path: "../../samples/world/indian1.ogg" },
+                    { artist: "Nikhil Banerjee", track: "Bhimpalasri Fast Tintal", path: "../../samples/world/indian2.ogg" },
+                    { artist: "Baluji Shrivastav", track: "Raag Maru Bihag", path: "../../samples/world/indian3.ogg" },
+                    { artist: "Girija Devi", track: "Ras Ke Bhare", path: "../../samples/world/indian4.ogg" },
+                    { artist: "Pandit Jasraj", track: "Gayatri Aarati And Chorus", path: "../../samples/world/indian5.ogg" },
+                    { artist: "Shruti Sadolikar", track: "Shri Ravankrit Shiv Tandav Stotra", path: "../../samples/world/indian6.ogg" },
+                    { artist: "Jnan Prakash Ghosh", track: "Hari Hari Hari Sumiran Karo", path: "../../samples/world/indian7.ogg" },
+                    { artist: "Sudha Rangunathan", track: "Shree Mahaganapatim", path: "../../samples/world/indian8.ogg" },
+                    { artist: "Bhimsen Joshi", track: "Prabhu Kar Sab Dukh Door Hamare", path: "../../samples/world/indian9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

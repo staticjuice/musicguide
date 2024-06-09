@@ -7,44 +7,44 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <title>Chinese Folk</title>
+        <title>Chinese</title>
     </head>
 
-    <body id="chinesefolk">
-        <div class="quaternary-box folk">
-            <h1>CHINESE FOLK</h1>
+    <body id="chinese">
+        <div class="quaternary-box world">
+            <h1>CHINESE</h1>
 
             <p>Chinese music may refer to the music of the Han Chinese as well as other ethnic minorities within mainland China. It also includes music produced by people of Chinese origin in some territories outside mainland China using traditional Chinese instruments or in the Chinese language. Different types of music have been recorded in historical Chinese documents from the early periods of Chinese civilisation which &ndash; together with archaeological artefacts discovered &ndash; provided evidence of a well-developed musical culture as early as the Zhou Dynasty (1122 BCE to 256 BCE). These further developed into various forms of music through succeeding dynasties, producing the rich heritage of music that is part of the Chinese cultural landscape today. Chinese music continues to evolve in modern times, and more contemporary forms have also emerged. According to legends, the founder of music in Chinese mythology was Ling Lun who &ndash; at the request of the Yellow Emperor to create a system of music &ndash; made bamboo pipes tuned to the sounds of birds &ndash; including the phoenix.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button world-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button folk-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button world-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Xu Jiangde", track: "Willow In The Spring Breeze", path: "../../samples/folk/chinesefolk1.ogg" },
-                    { artist: "Chen Zhong", track: "Six Clappers In Zhong Hua", path: "../../samples/folk/chinesefolk2.ogg" },
-                    { artist: "Hu Haiquan", track: "One Flower", path: "../../samples/folk/chinesefolk3.ogg" },
-                    { artist: "Xiao Ying", track: "Spring On Snowy Mountains", path: "../../samples/folk/chinesefolk4.ogg" },
-                    { artist: "The Beijing Instrumental Ensemble", track: "Moonlight Dancing Song", path: "../../samples/folk/chinesefolk5.ogg" },
-                    { artist: "Ming Flute Ensemble", track: "The Song Of The Four Seasons", path: "../../samples/folk/chinesefolk6.ogg" },
-                    { artist: "Pan Jing & Ensemble", track: "A Journey To Suzhou", path: "../../samples/folk/chinesefolk7.ogg" },
-                    { artist: "Chinese Plucked Instruments Quintet", track: "Flowing Spring On The Rock", path: "../../samples/folk/chinesefolk8.ogg" },
-                    { artist: "Jiangsu Art Troupe Folk Music Band", track: "A Reed Catkin", path: "../../samples/folk/chinesefolk9.ogg" }
+                    { artist: "Xu Jiangde", track: "Willow In The Spring Breeze", path: "../../samples/world/chinese1.ogg" },
+                    { artist: "Chen Zhong", track: "Six Clappers In Zhong Hua", path: "../../samples/world/chinese2.ogg" },
+                    { artist: "Hu Haiquan", track: "One Flower", path: "../../samples/world/chinese3.ogg" },
+                    { artist: "Xiao Ying", track: "Spring On Snowy Mountains", path: "../../samples/world/chinese4.ogg" },
+                    { artist: "The Beijing Instrumental Ensemble", track: "Moonlight Dancing Song", path: "../../samples/world/chinese5.ogg" },
+                    { artist: "Ming Flute Ensemble", track: "The Song Of The Four Seasons", path: "../../samples/world/chinese6.ogg" },
+                    { artist: "Pan Jing & Ensemble", track: "A Journey To Suzhou", path: "../../samples/world/chinese7.ogg" },
+                    { artist: "Chinese Plucked Instruments Quintet", track: "Flowing Spring On The Rock", path: "../../samples/world/chinese8.ogg" },
+                    { artist: "Jiangsu Art Troupe Folk Music Band", track: "A Reed Catkin", path: "../../samples/world/chinese9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));
