@@ -535,11 +535,11 @@ Background images
 #britpop {background: url("../images/alternative/britpop.jpg") center center / cover fixed; }
 #poppunk {background: url("../images/alternative/poppunk.jpg") center center / cover fixed; }
 #indierock {background: url("../images/alternative/indierock.jpg") center center / cover fixed; }
+#lofi {background: url("../images/alternative/lofi.jpg") center center / cover fixed; }
 #mathrock {background: url("../images/alternative/mathrock.jpg") center center / cover fixed; }
 #spacerock {background: url("../images/alternative/spacerock.jpg") center center / cover fixed; }
-#slowcore {background: url("../images/alternative/slowcore.jpg") center center / cover fixed; }
+#sadcore {background: url("../images/alternative/sadcore.jpg") center center / cover fixed; }
 #baroquepop {background: url("../images/alternative/baroquepop.jpg") center center / cover fixed; }
-#lofi {background: url("../images/alternative/lofi.jpg") center center / cover fixed; }
 #postrock {background: url("../images/alternative/postrock.jpg") center center / cover fixed; }
 #postgrunge {background: url("../images/alternative/postgrunge.jpg") center center / cover fixed; }
 #postbritpop {background: url("../images/alternative/postbritpop.jpg") center center / cover fixed; }
@@ -635,7 +635,7 @@ Background images
 
 #detroittechno {background: url("../images/techno/detroittechno.jpg") center center / cover fixed; }
 #bleeptechno {background: url("../images/techno/bleeptechno.jpg") center center / cover fixed; }
-#freetekno {background: url("../images/techno/freetekno.jpg") center center / cover fixed; }
+#hardtechno {background: url("../images/techno/hardtechno.jpg") center center / cover fixed; }
 #acidtechno {background: url("../images/techno/acidtechno.jpg") center center / cover fixed; }
 #minimaltechno {background: url("../images/techno/minimaltechno.jpg") center center / cover fixed; }
 #dubtechno {background: url("../images/techno/dubtechno.jpg") center center / cover fixed; }
