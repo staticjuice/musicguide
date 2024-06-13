@@ -12,7 +12,7 @@ General styling
 
 body {
     font-family: Outfit;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #FFF;
 }
 
@@ -143,7 +143,6 @@ Tertiary section
 
 .tertiary-genrelist a {
     display: table;
-    line-height: 1.5;
 }
 
 .tertiary-sidebar {
