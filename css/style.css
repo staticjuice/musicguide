@@ -12,7 +12,7 @@ General styling
 
 body {
     font-family: Outfit;
-    line-height: 1.5;
+    line-height: 1.6;
     color: #FFF;
 }
 
@@ -143,6 +143,7 @@ Tertiary section
 
 .tertiary-genrelist a {
     display: table;
+    line-height: 1.5;
 }
 
 .tertiary-sidebar {
@@ -169,6 +170,10 @@ Quaternary section
     position: relative;
 }
 
+.quaternary-box p {
+    margin: 1em 0 0.5em;
+}
+
 .quaternary-year {
     font-weight: 700;
     font-size: 2em;
@@ -176,7 +181,7 @@ Quaternary section
     border-radius: 1em;
     user-select: none;
     position: absolute;
-    top: 0.75em; right: 0.75em;
+    top: 0.7em; right: 0.7em;
 }
 
 #quaternary-grid {
@@ -196,16 +201,15 @@ Quaternary section
     width: 1em;
     line-height: 1.25;
     border-radius: 0.15em;
-    margin-bottom: 0.6em;
+    margin: 0.5em 0;
     user-select: none;
 }
 
 .quaternary-artisttrack {
-    font-size: 1.2em;
+    font-size: 1.25em;
     display: flex;
     padding-right: 2.5em;
     align-items: baseline;
-    user-select: none;
 }
 
 .quaternary-artisttrack::before {
