@@ -113,7 +113,7 @@ Secondary section
 }
 
 .secondary-grid-item span {
-    font-size: 2.9vw;
+    font-size: 3vw;
     text-align: center;
     position: absolute;
     top: 50%; left: 50%;
@@ -123,7 +123,7 @@ Secondary section
 }
 
 #shrink {
-    font-size: 2.65vw;
+    font-size: 2.6vw;
 }
 
 /*---------------------------------------------------------------------------
@@ -161,7 +161,7 @@ Quaternary section
 
 .quaternary-box {
     font-size: 2vh;
-    width: 40em;
+    width: 40em; height: 40em;
     padding: 1.5em;
     margin: 2em;
     border: 0.5em solid;
@@ -192,6 +192,7 @@ Quaternary section
 
 .quaternary-grid-item {
     flex: 0 0 calc(100% / 12);
+    margin: 1.25em 0;
 }
 
 .quaternary-button {
@@ -201,7 +202,6 @@ Quaternary section
     width: 1em;
     line-height: 1.25;
     border-radius: 0.15em;
-    margin: 0.5em 0;
     user-select: none;
 }
 
@@ -220,7 +220,7 @@ Quaternary section
 
 .quaternary-stop {
     position: absolute;
-    bottom: 0.5em; right: 1.5em;
+    bottom: 1.75em; right: 1.5em;
 }
 
 .clicked {
@@ -562,6 +562,9 @@ Background images
 #eurobeat {background: url("../images/disco/eurobeat.jpg") center center / cover fixed; }
 #eurodance {background: url("../images/disco/eurodance.jpg") center center / cover fixed; }
 #italodance {background: url("../images/disco/italodance.jpg") center center / cover fixed; }
+#garage {background: url("../images/disco/garage.jpg") center center / cover fixed; }
+#synthwave {background: url("../images/disco/synthwave.jpg") center center / cover fixed; }
+#nudisco {background: url("../images/disco/nudisco.jpg") center center / cover fixed; }
 
 #mento {background: url("../images/reggae/mento.jpg") center center / cover fixed; }
 #ska {background: url("../images/reggae/ska.jpg") center center / cover fixed; }
@@ -616,7 +619,6 @@ Background images
 #moombahton {background: url("../images/house/moombahton.jpg") center center / cover fixed; }
 #electroswing {background: url("../images/house/electroswing.jpg") center center / cover fixed; }
 #bigroom {background: url("../images/house/bigroom.jpg") center center / cover fixed; }
-#nudisco {background: url("../images/house/nudisco.jpg") center center / cover fixed; }
 #tropicalhouse {background: url("../images/house/tropicalhouse.jpg") center center / cover fixed; }
 #futurehouse {background: url("../images/house/futurehouse.jpg") center center / cover fixed; }
 #basshouse {background: url("../images/house/basshouse.jpg") center center / cover fixed; }
@@ -625,7 +627,6 @@ Background images
 #psychedelictrance {background: url("../images/trance/psychedelictrance.jpg") center center / cover fixed; }
 #ibizatrance {background: url("../images/trance/ibizatrance.jpg") center center / cover fixed; }
 #dreamtrance {background: url("../images/trance/dreamtrance.jpg") center center / cover fixed; }
-#hardacidtrance {background: url("../images/trance/hardacidtrance.jpg") center center / cover fixed; }
 #progressivetrance {background: url("../images/trance/progressivetrance.jpg") center center / cover fixed; }
 #eurotrance {background: url("../images/trance/eurotrance.jpg") center center / cover fixed; }
 #hardnrg {background: url("../images/trance/hardnrg.jpg") center center / cover fixed; }
@@ -638,12 +639,12 @@ Background images
 
 #detroittechno {background: url("../images/techno/detroittechno.jpg") center center / cover fixed; }
 #bleeptechno {background: url("../images/techno/bleeptechno.jpg") center center / cover fixed; }
-#hardtechno {background: url("../images/techno/hardtechno.jpg") center center / cover fixed; }
 #acidtechno {background: url("../images/techno/acidtechno.jpg") center center / cover fixed; }
 #minimaltechno {background: url("../images/techno/minimaltechno.jpg") center center / cover fixed; }
 #dubtechno {background: url("../images/techno/dubtechno.jpg") center center / cover fixed; }
-#bangintechno {background: url("../images/techno/bangintechno.jpg") center center / cover fixed; }
+#hardtechno {background: url("../images/techno/hardtechno.jpg") center center / cover fixed; }
 #industrialtechno {background: url("../images/techno/industrialtechno.jpg") center center / cover fixed; }
+#bangintechno {background: url("../images/techno/bangintechno.jpg") center center / cover fixed; }
 #schranz {background: url("../images/techno/schranz.jpg") center center / cover fixed; }
 
 #newbeat {background: url("../images/hardcore/newbeat.jpg") center center / cover fixed; }
@@ -677,6 +678,7 @@ Background images
 #drumstep {background: url("../images/drumandbass/drumstep.jpg") center center / cover fixed; }
 
 #twostepgarage {background: url("../images/ukgarage/2stepgarage.jpg") center center / cover fixed; }
+#speedgarage {background: url("../images/ukgarage/speedgarage.jpg") center center / cover fixed; }
 #grime {background: url("../images/ukgarage/grime.jpg") center center / cover fixed; }
 #bassline {background: url("../images/ukgarage/bassline.jpg") center center / cover fixed; }
 #dubstep {background: url("../images/ukgarage/dubstep.jpg") center center / cover fixed; }
@@ -708,7 +710,6 @@ Background images
 #lowercase {background: url("../images/experimental/lowercase.jpg") center center / cover fixed; }
 
 #chillwave {background: url("../images/hauntology/chillwave.jpg") center center / cover fixed; }
-#synthwave {background: url("../images/hauntology/synthwave.jpg") center center / cover fixed; }
 #vaporwave {background: url("../images/hauntology/vaporwave.jpg") center center / cover fixed; }
 #witchhouse {background: url("../images/hauntology/witchhouse.jpg") center center / cover fixed; }
 #seapunk {background: url("../images/hauntology/seapunk.jpg") center center / cover fixed; }
@@ -770,7 +771,7 @@ Media queries
     }
 
     .tertiary-genrelist {
-        padding: 1em 1em 0.5em;
+        padding: 1em;
         font-size: 6vw;
     }
 
@@ -781,18 +782,14 @@ Media queries
         box-shadow: 0 -0.01em 0.5em #00000099;
     }
 
-    .quaternary-grid-item {
-        flex: 0 0 calc(100% / 6);
-    }
-
     .quaternary-box {
         font-size: 4vw;
-        width: calc(100% - 3em);
+        width: calc(100% - 3em); height: auto;
         margin: 1.5em;
     }
 
     .quaternary-box h1 {
-        margin-bottom: 0.33em;
+        margin-bottom: 0.3em;
     }
 
     .quaternary-year {
@@ -803,6 +800,10 @@ Media queries
         position: relative;
         top: 0; right: 0;
         white-space: nowrap;
+    }
+
+    .quaternary-grid-item {
+        flex: 0 0 calc(100% / 6);
     }
 
     .quaternary-button {

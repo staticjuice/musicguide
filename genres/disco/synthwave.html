@@ -11,40 +11,40 @@
     </head>
 
     <body id="synthwave">
-        <div class="quaternary-box hauntology">
-            <h1>SYNTHWAVE</h1><div class="quaternary-year hauntology-light">2008</div>
+        <div class="quaternary-box disco">
+            <h1>SYNTHWAVE</h1><div class="quaternary-year disco-light">2008</div>
 
             <p>Synthwave is a revival of earlier Synth music that shies no cliché &ndash; the genre is integrated with an artwork of purple and pink neon, sports cars, Miami palm trees, 80s cartoons, Horror sci-fi and Retro-Futurism. Synthwave is a time machine to Miami 1984, with the same synthesisers and melodies from that era, producing the same kind of Synth music with crystal clear, resonating sounds. The style is mainly instrumental, and often contains 80s cliché elements in the sound such as electronic drums, gated reverb, analogue synthesiser basslines and leads, all to resemble tracks from that time. However, Synthwave incorporates modern production techniques such as sidechain compression and placing the bassline and kick drum prominently in the mix as heard in modern Dance genres such as Electro House. Aesthetically, Synthwave gives a retrofuturistic perspective, emulating 80s science-fiction and action, sometimes compared to Cyberpunk. This aesthetic has been incorporated into retro-themed movies such as "Drive" and video games such as "Far Cry 3: Blood Dragon".</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button hauntology-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button disco-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button disco-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button disco-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button disco-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button disco-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button disco-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button disco-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button disco-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button disco-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button hauntology-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button disco-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Kavinsky", track: "Nightcall", path: "../../samples/hauntology/synthwave1.ogg" },
-                    { artist: "Lazerhawk", track: "Overdrive", path: "../../samples/hauntology/synthwave2.ogg" },
-                    { artist: "Betamaxx", track: "Guided By Moonlight", path: "../../samples/hauntology/synthwave3.ogg" },
-                    { artist: "FM-84", track: "Mainframe", path: "../../samples/hauntology/synthwave4.ogg" },
-                    { artist: "VHS Dreams", track: "Vice Point", path: "../../samples/hauntology/synthwave5.ogg" },
-                    { artist: "Arwelone", track: "Everlasting Journey", path: "../../samples/hauntology/synthwave6.ogg" },
-                    { artist: "W O L F C L U B", track: "Binary Stars", path: "../../samples/hauntology/synthwave7.ogg" },
-                    { artist: "Cloud Battalion", track: "High Octane", path: "../../samples/hauntology/synthwave8.ogg" },
-                    { artist: "Scandroid", track: "Salvation Code", path: "../../samples/hauntology/synthwave9.ogg" }
+                    { artist: "Kavinsky", track: "Nightcall", path: "../../samples/disco/synthwave1.ogg" },
+                    { artist: "Lazerhawk", track: "Overdrive", path: "../../samples/disco/synthwave2.ogg" },
+                    { artist: "Betamaxx", track: "Guided By Moonlight", path: "../../samples/disco/synthwave3.ogg" },
+                    { artist: "FM-84", track: "Mainframe", path: "../../samples/disco/synthwave4.ogg" },
+                    { artist: "VHS Dreams", track: "Vice Point", path: "../../samples/disco/synthwave5.ogg" },
+                    { artist: "Arwelone", track: "Everlasting Journey", path: "../../samples/disco/synthwave6.ogg" },
+                    { artist: "W O L F C L U B", track: "Binary Stars", path: "../../samples/disco/synthwave7.ogg" },
+                    { artist: "Cloud Battalion", track: "High Octane", path: "../../samples/disco/synthwave8.ogg" },
+                    { artist: "Scandroid", track: "Salvation Code", path: "../../samples/disco/synthwave9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));
