@@ -7,12 +7,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <title>Plunderphonics</title>
+        <title>Sound Collage</title>
     </head>
 
-    <body id="plunderphonics">
+    <body id="soundcollage">
         <div class="quaternary-box experimental">
-            <h1>PLUNDERPHONICS</h1><div class="quaternary-year experimental-light">1956</div>
+            <h1>SOUND COLLAGE</h1><div class="quaternary-year experimental-light">1951</div>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum interdum enim. Fusce scelerisque urna ipsum. Nam eget sapien hendrerit, feugiat metus ac, euismod lectus. Etiam tincidunt lacus eu est efficitur, et vestibulum orci commodo. Nulla id elit velit. Duis consequat pharetra ultrices. Proin id nunc risus. Vivamus eget elit lectus. Donec vitae mauris vitae ipsum dictum elementum at vitae magna. Pellentesque condimentum erat ut libero sagittis malesuada. Fusce et nisi arcu. Quisque lacinia malesuada nisl. Aenean nisi nunc, pulvinar quis lacus et, luctus laoreet arcu. Etiam aliquam mollis metus in consequat. Proin ac ultricies lectus. Sed imperdiet tortor elit. Cras vel magna nec purus ornare dignissim. Aliquam quis efficitur tellus, blandit pretium quam. Aliquam ultricies dolor quis elit egestas, ac imperdiet sem molestie. Praesent vestibulum enim et malesuada tincidunt. Duis elementum dapibus quam, et maximus sem varius in. Vestibulum ullamcorper varius molestie. Praesent nec nibh tincidunt, aliquam urna quis, facilisis lectus. Vivamus luctus, lorem in lacinia laoreet, dui dui auctor massa.</p>
 
@@ -36,15 +36,15 @@
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "John Oswald", track: "Open", path: "../../samples/experimental/plunderphonics1.ogg" },
-                    { artist: "", track: "", path: "../../samples/experimental/plunderphonics2.ogg" },
-                    { artist: "", track: "", path: "../../samples/experimental/plunderphonics3.ogg" },
-                    { artist: "", track: "", path: "../../samples/experimental/plunderphonics4.ogg" },
-                    { artist: "", track: "", path: "../../samples/experimental/plunderphonics5.ogg" },
-                    { artist: "", track: "", path: "../../samples/experimental/plunderphonics6.ogg" },
-                    { artist: "", track: "", path: "../../samples/experimental/plunderphonics7.ogg" },
-                    { artist: "", track: "", path: "../../samples/experimental/plunderphonics8.ogg" },
-                    { artist: "", track: "", path: "../../samples/experimental/plunderphonics9.ogg" }
+                    { artist: "John Oswald", track: "Open", path: "../../samples/experimental/soundcollage1.ogg" },
+                    { artist: "", track: "", path: "../../samples/experimental/soundcollage2.ogg" },
+                    { artist: "", track: "", path: "../../samples/experimental/soundcollage3.ogg" },
+                    { artist: "", track: "", path: "../../samples/experimental/soundcollage4.ogg" },
+                    { artist: "", track: "", path: "../../samples/experimental/soundcollage5.ogg" },
+                    { artist: "", track: "", path: "../../samples/experimental/soundcollage6.ogg" },
+                    { artist: "", track: "", path: "../../samples/experimental/soundcollage7.ogg" },
+                    { artist: "", track: "", path: "../../samples/experimental/soundcollage8.ogg" },
+                    { artist: "", track: "", path: "../../samples/experimental/soundcollage9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));
