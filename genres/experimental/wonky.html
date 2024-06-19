@@ -5,46 +5,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../../css/style.css">
+        <link rel="stylesheet" href="../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
         <title>Wonky</title>
     </head>
 
     <body id="wonky">
-        <div class="quaternary-box ukgarage">
-            <h1>WONKY</h1><div class="quaternary-year ukgarage-light">2008</div>
+        <div class="quaternary-box experimental">
+            <h1>WONKY</h1><div class="quaternary-year experimental-light">2008</div>
 
             <p>At the beginning of the 2010s, Glitch Hop merged with a number of genres into a much larger style that can be described as a sort of off-kilter and low-slung form of Hip Hop. Apart from Dubstep-influenced beats, the main characteristic of Wonky are its heavily distorted mid-frequency synthlines that seem to be broken by their unstable or "wonky" sound. The "wet and unstable" sound of Wonky is achieved by producing mid-range basses using pitch bending, LFOs on lowpassing and highpassing as well as phasing and delaying. The resonance parameters of the synth's LFOs are often high, giving the synth and bass unique "wonky" sounds. Wonky can be regarded as the "IDM" of Hip Hop &ndash; experimenting with unexpected sounds, interrupts and unconventional techniques. Many Wonky artists also reside at Warp Records, the principal IDM label. Wonky has some overlapping with Post-Dubstep and forms therefore another bridge between Hip Hop and UK Garage or Drum &amp; Bass, next to EDM Trap. Lately these supergenres have become more intertwined leading to some interesting results.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button ukgarage-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button ukgarage-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button experimental-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Flume", track: "Sintra", path: "../../../samples/ukgarage/wonky1.ogg" },
-                    { artist: "Dillon Francis feat. TEED", track: "Without You (Hayden James Remix)", path: "../../../samples/ukgarage/wonky2.ogg" },
-                    { artist: "Grynpyret", track: "A Song About Naps", path: "../../../samples/ukgarage/wonky3.ogg" },
-                    { artist: "Eskmo", track: "Cloudlight", path: "../../../samples/ukgarage/wonky4.ogg" },
-                    { artist: "Baths", track: "Apologetic Shoulder Blades", path: "../../../samples/ukgarage/wonky5.ogg" },
-                    { artist: "Electric Mantis", track: "Daybreak", path: "../../../samples/ukgarage/wonky6.ogg" },
-                    { artist: "Lapalux", track: "Don't Mean A Thing", path: "../../../samples/ukgarage/wonky7.ogg" },
-                    { artist: "Samiyam", track: "Catch Me Riding Dirty", path: "../../../samples/ukgarage/wonky8.ogg" },
-                    { artist: "Shigeto", track: "Soul Searching", path: "../../../samples/ukgarage/wonky9.ogg" }
+                    { artist: "Flume", track: "Sintra", path: "../../samples/experimental/wonky1.ogg" },
+                    { artist: "Dillon Francis feat. TEED", track: "Without You (Hayden James Remix)", path: "../../samples/experimental/wonky2.ogg" },
+                    { artist: "Grynpyret", track: "A Song About Naps", path: "../../samples/experimental/wonky3.ogg" },
+                    { artist: "Eskmo", track: "Cloudlight", path: "../../samples/experimental/wonky4.ogg" },
+                    { artist: "Baths", track: "Apologetic Shoulder Blades", path: "../../samples/experimental/wonky5.ogg" },
+                    { artist: "Electric Mantis", track: "Daybreak", path: "../../samples/experimental/wonky6.ogg" },
+                    { artist: "Lapalux", track: "Don't Mean A Thing", path: "../../samples/experimental/wonky7.ogg" },
+                    { artist: "Samiyam", track: "Catch Me Riding Dirty", path: "../../samples/experimental/wonky8.ogg" },
+                    { artist: "Shigeto", track: "Soul Searching", path: "../../samples/experimental/wonky9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

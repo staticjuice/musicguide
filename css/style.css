@@ -687,7 +687,6 @@ Background images
 #bassline {background: url("../images/ukgarage/bassline.jpg") center center / cover fixed; }
 #dubstep {background: url("../images/ukgarage/dubstep.jpg") center center / cover fixed; }
 #futuregarage {background: url("../images/ukgarage/futuregarage.jpg") center center / cover fixed; }
-#wonky {background: url("../images/ukgarage/wonky.jpg") center center / cover fixed; }
 #brostep {background: url("../images/ukgarage/brostep.jpg") center center / cover fixed; }
 #chillstep {background: url("../images/ukgarage/chillstep.jpg") center center / cover fixed; }
 #liquiddubstep {background: url("../images/ukgarage/liquiddubstep.jpg") center center / cover fixed; }
@@ -712,6 +711,7 @@ Background images
 #glitch {background: url("../images/experimental/glitch.jpg") center center / cover fixed; }
 #illbient {background: url("../images/experimental/illbient.jpg") center center / cover fixed; }
 #lowercase {background: url("../images/experimental/lowercase.jpg") center center / cover fixed; }
+#wonky {background: url("../images/experimental/wonky.jpg") center center / cover fixed; }
 
 #chillwave {background: url("../images/hauntology/chillwave.jpg") center center / cover fixed; }
 #vaporwave {background: url("../images/hauntology/vaporwave.jpg") center center / cover fixed; }
@@ -727,14 +727,20 @@ Background images
 #irishfolk {background: url("../images/folk/irishfolk.jpg") center center / cover fixed; }
 #scottishfolk {background: url("../images/folk/scottishfolk.jpg") center center / cover fixed; }
 #frenchfolk {background: url("../images/folk/frenchfolk.jpg") center center / cover fixed; }
+#spanishfolk {background: url("../images/folk/spanishfolk.jpg") center center / cover fixed; }
+#italianfolk {background: url("../images/folk/italianfolk.jpg") center center / cover fixed; }
+#czechfolk {background: url("../images/folk/czechfolk.jpg") center center / cover fixed; }
 #nordicfolk {background: url("../images/folk/nordicfolk.jpg") center center / cover fixed; }
 #russianfolk {background: url("../images/folk/russianfolk.jpg") center center / cover fixed; }
 
 #african {background: url("../images/world/african.jpg") center center / cover fixed; }
 #australian {background: url("../images/world/australian.jpg") center center / cover fixed; }
 #chinese {background: url("../images/world/chinese.jpg") center center / cover fixed; }
+#japanese {background: url("../images/world/japanese.jpg") center center / cover fixed; }
+#arabic {background: url("../images/world/arabic.jpg") center center / cover fixed; }
 #indian {background: url("../images/world/indian.jpg") center center / cover fixed; }
 #latin {background: url("../images/world/latin.jpg") center center / cover fixed; }
+#polynesian {background: url("../images/world/polynesian.jpg") center center / cover fixed; }
 
 /*---------------------------------------------------------------------------
 Media queries

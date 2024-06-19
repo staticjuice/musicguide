@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <title>Spanish Folk</title>
+    </head>
+
+    <body id="spanishfolk">
+        <div class="quaternary-box folk">
+            <h1>SPANISH FOLK</h1>
+
+            <p>The music of Spain has a long history and has played an important role in the development of Western music and has greatly influenced Latin American music. Spanish music is often associated with traditional styles such as Flamenco and classical guitar. While these forms of music are common, there are many different traditional musical and dance styles across the regions. For example, music from the north-west regions is heavily reliant on bagpipes, the jota is widespread in the centre and north of the country and Flamenco originated in the south. Spanish music played a notable part in the early developments of Western Classical music, from the 15th through the early 17th centuries. The breadth of musical innovation can be seen in composers like Tomás Luis de Victoria, styles like the Zarzuela of Spanish Opera, the ballet of Manuel de Falla, and the classical guitar music of Francisco Tárrega. There is also a movement of singer-songwriters with politically-active lyrics, paralleling similar developments in Latin America and Portugal. Nowadays commercial Pop music dominates the region.</p>
+
+            <div id="quaternary-grid">
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button folk-light">9</div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button folk-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "Jota Aragonesa", track: "Un Baturro Subió Al Cielo", path: "../../samples/folk/spanishfolk1.ogg" },
+                    { artist: "A Quenlla", track: "Rumboia", path: "../../samples/folk/spanishfolk2.ogg" },
+                    { artist: "Radio Cos", track: "Muiñeira Da Despedida", path: "../../samples/folk/spanishfolk3.ogg" },
+                    { artist: "Manuel Luna", track: "Flor De Almendra", path: "../../samples/folk/spanishfolk4.ogg" },
+                    { artist: "A Puro Viento", track: "Metéle Que El Tuerto Paga", path: "../../samples/folk/spanishfolk5.ogg" },
+                    { artist: "Roi Casel & Laritza Bacallao", track: "Abrazongo", path: "../../samples/folk/spanishfolk6.ogg" },
+                    { artist: "Música Nostra", track: "Jota De Sa Guitarra", path: "../../samples/folk/spanishfolk7.ogg" },
+                    { artist: "Hermanos Anoz", track: "El Campanero", path: "../../samples/folk/spanishfolk8.ogg" },
+                    { artist: "Azarbe", track: "Amor Que Me Das", path: "../../samples/folk/spanishfolk9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>
