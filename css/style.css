@@ -2,8 +2,8 @@
 Font face
 /*---------------------------------------------------------------------------*/
 @font-face {
-    font-family: outfit;
-    src: url(../fonts/outfit.ttf);
+    font-family: Outfit;
+    src: url(../fonts/Outfit.ttf);
 }
 
 /*---------------------------------------------------------------------------
@@ -11,7 +11,7 @@ Global styling
 /*---------------------------------------------------------------------------*/
 
 body {
-    font-family: outfit;
+    font-family: Outfit;
     line-height: 1.6;
     color: #FFF;
 }
