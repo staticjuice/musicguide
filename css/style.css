@@ -2,8 +2,8 @@
 Font face
 /*---------------------------------------------------------------------------*/
 @font-face {
-    font-family: Outfit;
-    src: url(../fonts/Outfit.ttf);
+    font-family: outfit;
+    src: url(../fonts/outfit.ttf);
 }
 
 /*---------------------------------------------------------------------------
@@ -11,7 +11,7 @@ Global styling
 /*---------------------------------------------------------------------------*/
 
 body {
-    font-family: Outfit;
+    font-family: outfit;
     line-height: 1.6;
     color: #FFF;
 }
@@ -47,7 +47,7 @@ Scrollbar styling
     border-radius: 1em;
 }
 
-.pop::-webkit-scrollbar-thumb, .experimental::-webkit-scrollbar-thumb, .hauntology::-webkit-scrollbar-thumb {
+.pop::-webkit-scrollbar-thumb, .downtempo::-webkit-scrollbar-thumb, .hauntology::-webkit-scrollbar-thumb {
     background: #222;
 }
 
@@ -117,17 +117,13 @@ Secondary section
 }
 
 .secondary-grid-item span {
-    font-size: 3vw;
+    font-size: 2.9vw;
     text-align: center;
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
     white-space: nowrap;
-}
-
-#shrink {
-    font-size: 2.6vw;
 }
 
 /*---------------------------------------------------------------------------
@@ -138,7 +134,7 @@ Tertiary section
     flex: 1;
     font-size: 3.75vh;
     padding: 0.75em 1.25em;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .tertiary-genrelist h1 {
@@ -149,7 +145,7 @@ Tertiary section
 #tertiary-genrelist-columns {
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: repeat(14, auto);
+    grid-template-rows: repeat(16, auto);
 }
 
 .tertiary-sidebar {
@@ -233,7 +229,7 @@ Quaternary section
     box-shadow: inset 0 0 0 0.1em #FFF;
 }
 
-.pop-light.clicked, .experimental-light.clicked, .hauntology-light.clicked {
+.pop-light.clicked, .downtempo-light.clicked, .hauntology-light.clicked {
     box-shadow: inset 0 0 0 0.1em #222;
 }
 
@@ -262,13 +258,13 @@ Colours
 .breakbeat { background: #783F5D; border-color: #9A5177; }
 .drumandbass { background: #9A1839; border-color: #C71F49; }
 .ukgarage { background: #8F7CAD; border-color: #A892CC; }
-.experimental { background: #EDEDED; border-color: #F5F5F5; color: #222; }
+.downtempo { background: #EDEDED; border-color: #F5F5F5; color: #222; }
 .hauntology { background: #29CCCC; border-color: #2CDEDE; color: #222; }
 .folk { background: #C6A44D; border-color: #D2B774; }
 .world { background: #364F30; border-color: #4C6F44; }
 
 ::selection { background: #FFF; color: #222; }
-.pop ::selection, .experimental ::selection, .hauntology ::selection { background: #222; color: #FFF; }
+.pop ::selection, .downtempo ::selection, .hauntology ::selection { background: #222; color: #FFF; }
 #tertiary-classical .tertiary-genrelist ::selection { background: #705A3D; color: #FFF; }
 #tertiary-blues .tertiary-genrelist ::selection { background: #283593; color: #FFF; }
 #tertiary-jazz .tertiary-genrelist ::selection { background: #E57373; color: #FFF; }
@@ -290,7 +286,7 @@ Colours
 #tertiary-breakbeat .tertiary-genrelist ::selection { background: #783F5D; color: #FFF; }
 #tertiary-drumandbass .tertiary-genrelist ::selection { background: #9A1839; color: #FFF; }
 #tertiary-ukgarage .tertiary-genrelist ::selection { background: #8F7CAD; color: #FFF; }
-#tertiary-experimental .tertiary-genrelist ::selection { background: #EDEDED; }
+#tertiary-downtempo .tertiary-genrelist ::selection { background: #EDEDED; }
 #tertiary-hauntology .tertiary-genrelist ::selection { background: #29CCCC; }
 #tertiary-folk .tertiary-genrelist ::selection { background: #C6A44D; color: #FFF; }
 #tertiary-world .tertiary-genrelist ::selection { background: #364F30; color: #FFF; }
@@ -316,7 +312,7 @@ Colours
 .breakbeat-light { background: #9A5177; }
 .drumandbass-light { background: #C71F49; }
 .ukgarage-light { background: #A892CC; }
-.experimental-light { background: #F5F5F5; }
+.downtempo-light { background: #F5F5F5; }
 .hauntology-light { background: #2CDEDE; }
 .folk-light { background: #D2B774; }
 .world-light { background: #4C6F44; }
@@ -342,7 +338,7 @@ Colours
 #tertiary-breakbeat a:hover { color: #A95B83; }
 #tertiary-drumandbass a:hover { color: #DD2251; }
 #tertiary-ukgarage a:hover { color: #B59DDB; }
-#tertiary-experimental a:hover { color: #BDBDBD; }
+#tertiary-downtempo a:hover { color: #BDBDBD; }
 #tertiary-hauntology a:hover { color: #2FEDED; }
 #tertiary-folk a:hover { color: #D8C188; }
 #tertiary-world a:hover { color: #567E4E; }
@@ -368,7 +364,7 @@ Colours
 .quaternary-button.breakbeat-light:hover { background: #A95B83; }
 .quaternary-button.drumandbass-light:hover { background: #DD2251; }
 .quaternary-button.ukgarage-light:hover { background: #B59DDB; }
-.quaternary-button.experimental-light:hover { background: #FFFFFF; }
+.quaternary-button.downtempo-light:hover { background: #FFFFFF; }
 .quaternary-button.hauntology-light:hover { background: #2FEDED; }
 .quaternary-button.folk-light:hover { background: #D8C188; }
 .quaternary-button.world-light:hover { background: #567E4E; }
@@ -414,7 +410,7 @@ Background images
 #tertiary-breakbeat:before { background-image: url("../images/breakbeatbig.jpg"); }
 #tertiary-drumandbass:before { background-image: url("../images/drumandbassbig.jpg"); }
 #tertiary-ukgarage:before { background-image: url("../images/ukgaragebig.jpg"); }
-#tertiary-experimental:before { background-image: url("../images/experimentalbig.jpg"); }
+#tertiary-downtempo:before { background-image: url("../images/downtempobig.jpg"); }
 #tertiary-hauntology:before { background-image: url("../images/hauntologybig.jpg"); }
 #tertiary-folk:before { background-image: url("../images/folkbig.jpg"); }
 #tertiary-world:before { background-image: url("../images/worldbig.jpg"); }
@@ -453,8 +449,6 @@ Background images
 #freejazz {background: url("../images/jazz/freejazz.jpg") center center / cover fixed; }
 #jazzfusion {background: url("../images/jazz/jazzfusion.jpg") center center / cover fixed; }
 #smoothjazz {background: url("../images/jazz/smoothjazz.jpg") center center / cover fixed; }
-#acidjazz {background: url("../images/jazz/acidjazz.jpg") center center / cover fixed; }
-#nujazz {background: url("../images/jazz/nujazz.jpg") center center / cover fixed; }
 
 #hillbilly {background: url("../images/country/hillbilly.jpg") center center / cover fixed; }
 #westernswing {background: url("../images/country/westernswing.jpg") center center / cover fixed; }
@@ -535,6 +529,8 @@ Background images
 #crustpunk {background: url("../images/punk/crustpunk.jpg") center center / cover fixed; }
 #posthardcore {background: url("../images/punk/posthardcore.jpg") center center / cover fixed; }
 #riotgrrrl {background: url("../images/punk/riotgrrrl.jpg") center center / cover fixed; }
+#emo {background: url("../images/punk/emo.jpg") center center / cover fixed; }
+#screamo {background: url("../images/punk/screamo.jpg") center center / cover fixed; }
 
 #janglepop {background: url("../images/alternative/janglepop.jpg") center center / cover fixed; }
 #noiserock {background: url("../images/alternative/noiserock.jpg") center center / cover fixed; }
@@ -546,10 +542,7 @@ Background images
 #poppunk {background: url("../images/alternative/poppunk.jpg") center center / cover fixed; }
 #postrock {background: url("../images/alternative/postrock.jpg") center center / cover fixed; }
 #postgrunge {background: url("../images/alternative/postgrunge.jpg") center center / cover fixed; }
-#emo {background: url("../images/alternative/emo.jpg") center center / cover fixed; }
 #postbritpop {background: url("../images/alternative/postbritpop.jpg") center center / cover fixed; }
-#electroclash {background: url("../images/alternative/electroclash.jpg") center center / cover fixed; }
-#screamo {background: url("../images/alternative/screamo.jpg") center center / cover fixed; }
 #garagerockrevival {background: url("../images/alternative/garagerockrevival.jpg") center center / cover fixed; }
 #nuprog {background: url("../images/alternative/nuprog.jpg") center center / cover fixed; }
 #dancepunk {background: url("../images/alternative/dancepunk.jpg") center center / cover fixed; }
@@ -562,6 +555,7 @@ Background images
 #garage {background: url("../images/disco/garage.jpg") center center / cover fixed; }
 #eurobeat {background: url("../images/disco/eurobeat.jpg") center center / cover fixed; }
 #eurodance {background: url("../images/disco/eurodance.jpg") center center / cover fixed; }
+#electroclash {background: url("../images/disco/electroclash.jpg") center center / cover fixed; }
 #italodance {background: url("../images/disco/italodance.jpg") center center / cover fixed; }
 #synthwave {background: url("../images/disco/synthwave.jpg") center center / cover fixed; }
 #nudisco {background: url("../images/disco/nudisco.jpg") center center / cover fixed; }
@@ -612,8 +606,8 @@ Background images
 #techhouse {background: url("../images/house/techhouse.jpg") center center / cover fixed; }
 #frenchhouse {background: url("../images/house/frenchhouse.jpg") center center / cover fixed; }
 #electrohouse {background: url("../images/house/electrohouse.jpg") center center / cover fixed; }
-#fidgethouse {background: url("../images/house/fidgethouse.jpg") center center / cover fixed; }
 #electroswing {background: url("../images/house/electroswing.jpg") center center / cover fixed; }
+#fidgethouse {background: url("../images/house/fidgethouse.jpg") center center / cover fixed; }
 #dutchhouse {background: url("../images/house/dutchhouse.jpg") center center / cover fixed; }
 #complextro {background: url("../images/house/complextro.jpg") center center / cover fixed; }
 #bigroom {background: url("../images/house/bigroom.jpg") center center / cover fixed; }
@@ -693,17 +687,19 @@ Background images
 #midtempobass {background: url("../images/ukgarage/midtempobass.jpg") center center / cover fixed; }
 #wave {background: url("../images/ukgarage/wave.jpg") center center / cover fixed; }
 
-#musiqueconcrete {background: url("../images/experimental/musiqueconcrete.jpg") center center / cover fixed; }
-#synth {background: url("../images/experimental/synth.jpg") center center / cover fixed; }
-#ambient {background: url("../images/experimental/ambient.jpg") center center / cover fixed; }
-#newage {background: url("../images/experimental/newage.jpg") center center / cover fixed; }
-#chiptune {background: url("../images/experimental/chiptune.png") center center / cover fixed; }
-#triphop {background: url("../images/experimental/triphop.jpg") center center / cover fixed; }
-#idm {background: url("../images/experimental/idm.jpg") center center / cover fixed; }
-#glitch {background: url("../images/experimental/glitch.jpg") center center / cover fixed; }
-#illbient {background: url("../images/experimental/illbient.jpg") center center / cover fixed; }
-#lowercase {background: url("../images/experimental/lowercase.jpg") center center / cover fixed; }
-#wonky {background: url("../images/experimental/wonky.jpg") center center / cover fixed; }
+#musiqueconcrete {background: url("../images/downtempo/musiqueconcrete.jpg") center center / cover fixed; }
+#synth {background: url("../images/downtempo/synth.jpg") center center / cover fixed; }
+#ambient {background: url("../images/downtempo/ambient.jpg") center center / cover fixed; }
+#newage {background: url("../images/downtempo/newage.jpg") center center / cover fixed; }
+#chiptune {background: url("../images/downtempo/chiptune.png") center center / cover fixed; }
+#acidjazz {background: url("../images/downtempo/acidjazz.jpg") center center / cover fixed; }
+#triphop {background: url("../images/downtempo/triphop.jpg") center center / cover fixed; }
+#idm {background: url("../images/downtempo/idm.jpg") center center / cover fixed; }
+#nujazz {background: url("../images/downtempo/nujazz.jpg") center center / cover fixed; }
+#glitch {background: url("../images/downtempo/glitch.jpg") center center / cover fixed; }
+#illbient {background: url("../images/downtempo/illbient.jpg") center center / cover fixed; }
+#lowercase {background: url("../images/downtempo/lowercase.jpg") center center / cover fixed; }
+#wonky {background: url("../images/downtempo/wonky.jpg") center center / cover fixed; }
 
 #chillwave {background: url("../images/hauntology/chillwave.jpg") center center / cover fixed; }
 #vaporwave {background: url("../images/hauntology/vaporwave.jpg") center center / cover fixed; }
@@ -768,7 +764,7 @@ Media queries
         object-fit: cover;
     }
 
-    .secondary-grid-item span, #shrink {
+    .secondary-grid-item span {
         font-size: 8vw;
     }
 

@@ -11,40 +11,40 @@
     </head>
 
     <body id="newage">
-        <div class="quaternary-box experimental">
-            <h1>NEW AGE</h1><div class="quaternary-year experimental-light">1980</div>
+        <div class="quaternary-box downtempo">
+            <h1>NEW AGE</h1><div class="quaternary-year downtempo-light">1980</div>
 
             <p>Two evolutions in the 70s laid the foundations for New Age. On one hand, there was the introduction of nature sounds in Ambient music. Music did not need to repulse the environment but could be the voice of the environment &ndash; a beautiful and escapist one. On the other hand, there was the rise of unprecedented heavy, macho music such as Heavy Metal. Hereby, record stores saw a steady increase in demand in the opposite genre. With the spotlights on so much noise and teen-orientated music, many people craved music with a sense of calmness. New Age is often a careful balance of both acoustic and electronic instruments, which is unique among genres. Though a lot of New Age is instrumental, soothing voices are not uncommon. The overall tempo is very low and transitions occur gradually and smoothly. New Age caresses the mind with trembling timbres and stimulates the body with an inner rhythm. But New Age is more than a music genre. The urge for nature-connected, tranquillising music is intertwined with the birth of an affined spiritual subculture also known as New Age.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button experimental-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button downtempo-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Enya", track: "Orinoco Flow", path: "../../samples/experimental/newage1.ogg" },
-                    { artist: "Boko Suzuki", track: "Spirit, Breath And Movement", path: "../../samples/experimental/newage2.ogg" },
-                    { artist: "Medwyn Goodall", track: "Crystal Alignment", path: "../../samples/experimental/newage3.ogg" },
-                    { artist: "Nicholas Gunn", track: "Entering Twin Falls", path: "../../samples/experimental/newage4.ogg" },
-                    { artist: "Karl Jenkins", track: "Adiemus", path: "../../samples/experimental/newage5.ogg" },
-                    { artist: "Chris Spheeris", track: "Kingdom In The Clouds", path: "../../samples/experimental/newage6.ogg" },
-                    { artist: "Secret Garden", track: "Sleepsong", path: "../../samples/experimental/newage7.ogg" },
-                    { artist: "Loreena McKennitt", track: "Snow", path: "../../samples/experimental/newage8.ogg" },
-                    { artist: "Enigma", track: "The Child In Us", path: "../../samples/experimental/newage9.ogg" }
+                    { artist: "Enya", track: "Orinoco Flow", path: "../../samples/downtempo/newage1.ogg" },
+                    { artist: "Boko Suzuki", track: "Spirit, Breath And Movement", path: "../../samples/downtempo/newage2.ogg" },
+                    { artist: "Medwyn Goodall", track: "Crystal Alignment", path: "../../samples/downtempo/newage3.ogg" },
+                    { artist: "Nicholas Gunn", track: "Entering Twin Falls", path: "../../samples/downtempo/newage4.ogg" },
+                    { artist: "Karl Jenkins", track: "Adiemus", path: "../../samples/downtempo/newage5.ogg" },
+                    { artist: "Chris Spheeris", track: "Kingdom In The Clouds", path: "../../samples/downtempo/newage6.ogg" },
+                    { artist: "Secret Garden", track: "Sleepsong", path: "../../samples/downtempo/newage7.ogg" },
+                    { artist: "Loreena McKennitt", track: "Snow", path: "../../samples/downtempo/newage8.ogg" },
+                    { artist: "Enigma", track: "The Child In Us", path: "../../samples/downtempo/newage9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

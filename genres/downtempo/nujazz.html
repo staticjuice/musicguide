@@ -11,40 +11,40 @@
     </head>
 
     <body id="nujazz">
-        <div class="quaternary-box jazz">
-            <h1>NU JAZZ</h1><div class="quaternary-year jazz-light">1993</div>
+        <div class="quaternary-box downtempo">
+            <h1>NU JAZZ</h1><div class="quaternary-year downtempo-light">1993</div>
 
             <p>During summer afternoons or evenings, in picturesque metropolitan suburbs (such as Saint-Germain, Paris), Nu Jazz would be the ideal background music for any café terrace or coffee bar. It is electronic, melodic and playful Jazz with lots of soothing, ambient sound effects that wash over the gentle Jazz percussion like a warm summer breeze. Being made entirely electronic, it marked the end of the traditional Jazz band. Nu Jazz can have a broad range of influences, such as deep basses from Ambient House or Deep House, groovy drum rhythms from Breakbeat and exotic percussion from Latin genres. This makes Nu Jazz a core genre of the second or electronic wave of Lounge, but these influences are subtle enough to not masquerade the fact that it truly is Jazz. Nevertheless, Nu Jazz differs radically from older Jazz genres in means of production and its electronic sound. Hence, most Jazz enthusiasts regard Nu Jazz rather as a rupture instead of a continuation within Jazz and encourage its classification among non-Jazz genres. But in the realm of music, tradition is a bad advisor for survival.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button jazz-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button downtempo-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Sven Van Hees", track: "Breakfast With Abductees", path: "../../samples/jazz/nujazz1.ogg" },
-                    { artist: "Funki Porcini", track: "Long Road", path: "../../samples/jazz/nujazz2.ogg" },
-                    { artist: "Pnu Riff", track: "Comfy Club", path: "../../samples/jazz/nujazz3.ogg" },
-                    { artist: "Jaga Jazzist", track: "Made For Radio", path: "../../samples/jazz/nujazz4.ogg" },
-                    { artist: "Fila Brazillia", track: "Harmonicas Are Shite", path: "../../samples/jazz/nujazz5.ogg" },
-                    { artist: "Jazzanova", track: "Bohemian Sunset", path: "../../samples/jazz/nujazz6.ogg" },
-                    { artist: "Journeyman", track: "Biscuits", path: "../../samples/jazz/nujazz7.ogg" },
-                    { artist: "Luke Vibert", track: "Get Your Head Down", path: "../../samples/jazz/nujazz8.ogg" },
-                    { artist: "Skalpel", track: "So Far", path: "../../samples/jazz/nujazz9.ogg" }
+                    { artist: "Sven Van Hees", track: "Breakfast With Abductees", path: "../../samples/downtempo/nujazz1.ogg" },
+                    { artist: "Funki Porcini", track: "Long Road", path: "../../samples/downtempo/nujazz2.ogg" },
+                    { artist: "Pnu Riff", track: "Comfy Club", path: "../../samples/downtempo/nujazz3.ogg" },
+                    { artist: "Jaga Jazzist", track: "Made For Radio", path: "../../samples/downtempo/nujazz4.ogg" },
+                    { artist: "Fila Brazillia", track: "Harmonicas Are Shite", path: "../../samples/downtempo/nujazz5.ogg" },
+                    { artist: "Jazzanova", track: "Bohemian Sunset", path: "../../samples/downtempo/nujazz6.ogg" },
+                    { artist: "Journeyman", track: "Biscuits", path: "../../samples/downtempo/nujazz7.ogg" },
+                    { artist: "Luke Vibert", track: "Get Your Head Down", path: "../../samples/downtempo/nujazz8.ogg" },
+                    { artist: "Skalpel", track: "So Far", path: "../../samples/downtempo/nujazz9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

@@ -11,40 +11,40 @@
     </head>
 
     <body id="acidjazz">
-        <div class="quaternary-box jazz">
-            <h1>ACID JAZZ</h1><div class="quaternary-year jazz-light">1986</div>
+        <div class="quaternary-box downtempo">
+            <h1>ACID JAZZ</h1><div class="quaternary-year downtempo-light">1986</div>
 
             <p>Acid Jazz is a crossover genre gone too far &ndash; there is barely any Jazz left in it. There's almost zero "acid" about it as well, except a slight psychedelic sound, placing it high on the chart for poorly chosen genre names. In fact, it's more of the deepest funky Jazz Fusion combined with Hip Hop, so Fusion Hip Hop would be more appropriate. The leading record label &ndash; also named Acid Jazz &ndash; was determined to compensate Acid House with what they regarded as "quality music", heavily influenced by Rare Groove records. A steady Hip Hop breakbeat, lots of percussion, Jazz harmonies and funky basslines (often with the aid of a synthesiser) are the key flavours of Acid Jazz. These elements blend perfectly until the roots of the genre are no longer traceable. It was a short but popular craze, right before EDM conquered the music scene. Due to its highly danceable nature, a new type of dance, Jazzdance, was invented along with it (which became more or less a synonym of the music itself). It can be hard to separate Acid Jazz from Soul Jazz with heavy breaks if it wasn't for the (abundant) use of vocals.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button jazz-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button jazz-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button downtempo-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Raw Instinct", track: "De La Bass", path: "../../samples/jazz/acidjazz1.ogg" },
-                    { artist: "Mateo & Matos", track: "Taste Of Funk", path: "../../samples/jazz/acidjazz2.ogg" },
-                    { artist: "Ronny Jordan", track: "After Hours", path: "../../samples/jazz/acidjazz3.ogg" },
-                    { artist: "Galliano", track: "So Much Confusion", path: "../../samples/jazz/acidjazz4.ogg" },
-                    { artist: "Nightmares On Wax", track: "Les Nuits", path: "../../samples/jazz/acidjazz5.ogg" },
-                    { artist: "Us3", track: "Cantaloop", path: "../../samples/jazz/acidjazz6.ogg" },
-                    { artist: "Groove Collective", track: "In Your Mind", path: "../../samples/jazz/acidjazz7.ogg" },
-                    { artist: "DJ Cam Quartet", track: "Rebirth Of Cool", path: "../../samples/jazz/acidjazz8.ogg" },
-                    { artist: "Silent Poets", track: "Break In The Circle", path: "../../samples/jazz/acidjazz9.ogg" }
+                    { artist: "Raw Instinct", track: "De La Bass", path: "../../samples/downtempo/acidjazz1.ogg" },
+                    { artist: "Mateo & Matos", track: "Taste Of Funk", path: "../../samples/downtempo/acidjazz2.ogg" },
+                    { artist: "Ronny Jordan", track: "After Hours", path: "../../samples/downtempo/acidjazz3.ogg" },
+                    { artist: "Galliano", track: "So Much Confusion", path: "../../samples/downtempo/acidjazz4.ogg" },
+                    { artist: "Nightmares On Wax", track: "Les Nuits", path: "../../samples/downtempo/acidjazz5.ogg" },
+                    { artist: "Us3", track: "Cantaloop", path: "../../samples/downtempo/acidjazz6.ogg" },
+                    { artist: "Groove Collective", track: "In Your Mind", path: "../../samples/downtempo/acidjazz7.ogg" },
+                    { artist: "DJ Cam Quartet", track: "Rebirth Of Cool", path: "../../samples/downtempo/acidjazz8.ogg" },
+                    { artist: "Silent Poets", track: "Break In The Circle", path: "../../samples/downtempo/acidjazz9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

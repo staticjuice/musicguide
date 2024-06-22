@@ -11,40 +11,40 @@
     </head>
 
     <body id="triphop">
-        <div class="quaternary-box experimental">
-            <h1>TRIP HOP</h1><div class="quaternary-year experimental-light">1991</div>
+        <div class="quaternary-box downtempo">
+            <h1>TRIP HOP</h1><div class="quaternary-year downtempo-light">1991</div>
 
             <p>Trip Hop started within Bristol's multicultural Hip Hop scene where people tried to bring Hip Hop music to a larger audience. Trip Hop became an interesting and meticulously crafted blend of styles &ndash; part Rock, part Hip Hop and part Ambient. Around the same time in the US, musicians started to experiment with slower forms of Breakbeat while adding out-of-the-box acoustic samples. Although the American and British forms of Trip Hop evolved from different paths, the result was the same &ndash; Downtempo Breakbeat with minimal instrumentation but often dramatic and/or melancholic. Trip Hop creates a surreal and moody dream world but with just the right amount of "punch" to prevent becoming background music. This makes Trip Hop very popular among marijuana users, but it also allowed a large mainstream breakthrough, especially when vocals were added. It could've been just a small and insignificant Breakbeat subgenre, but Trip Hop wouldn't settle for mediocre popularity. After Massive Attack's big breakthrough, more artists jumped on the bandwagon with successful results.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button experimental-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button downtempo-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Massive Attack feat. Elizabeth Fraser", track: "Teardrop", path: "../../samples/experimental/triphop1.ogg" },
-                    { artist: "Portishead", track: "Humming", path: "../../samples/experimental/triphop2.ogg" },
-                    { artist: "Björk", track: "Army Of Me", path: "../../samples/experimental/triphop3.ogg" },
-                    { artist: "Kognitif", track: "Without Her", path: "../../samples/experimental/triphop4.ogg" },
-                    { artist: "SomehowArt", track: "A Day At The Office", path: "../../samples/experimental/triphop5.ogg" },
-                    { artist: "Kno", track: "Loneliness", path: "../../samples/experimental/triphop6.ogg" },
-                    { artist: "Boards Of Canada", track: "Julie And Candy", path: "../../samples/experimental/triphop7.ogg" },
-                    { artist: "Sneaker Pimps", track: "6 Underground", path: "../../samples/experimental/triphop8.ogg" },
-                    { artist: "Sutrastore", track: "Precious Moments", path: "../../samples/experimental/triphop9.ogg" }
+                    { artist: "Massive Attack feat. Elizabeth Fraser", track: "Teardrop", path: "../../samples/downtempo/triphop1.ogg" },
+                    { artist: "Portishead", track: "Humming", path: "../../samples/downtempo/triphop2.ogg" },
+                    { artist: "Björk", track: "Army Of Me", path: "../../samples/downtempo/triphop3.ogg" },
+                    { artist: "Kognitif", track: "Without Her", path: "../../samples/downtempo/triphop4.ogg" },
+                    { artist: "SomehowArt", track: "A Day At The Office", path: "../../samples/downtempo/triphop5.ogg" },
+                    { artist: "Kno", track: "Loneliness", path: "../../samples/downtempo/triphop6.ogg" },
+                    { artist: "Boards Of Canada", track: "Julie And Candy", path: "../../samples/downtempo/triphop7.ogg" },
+                    { artist: "Sneaker Pimps", track: "6 Underground", path: "../../samples/downtempo/triphop8.ogg" },
+                    { artist: "Sutrastore", track: "Precious Moments", path: "../../samples/downtempo/triphop9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

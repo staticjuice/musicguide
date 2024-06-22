@@ -11,40 +11,40 @@
     </head>
 
     <body id="chiptune">
-        <div class="quaternary-box experimental">
-            <h1>CHIPTUNE</h1><div class="quaternary-year experimental-light">1980</div>
+        <div class="quaternary-box downtempo">
+            <h1>CHIPTUNE</h1><div class="quaternary-year downtempo-light">1980</div>
 
             <p>With the arrival of early home computers and the first game consoles, a weird and particular kind of music was born &ndash; electronic music made for electronic games. Because of primitive chips and hardware, this music had to be small in data and was therefore by default minimalistic, lo-fi and consisting of recurring parts. Often it was barely more than a catchy, high-frequency melody and a single rhythmic bass chord produced by a small sound chip. The result is an extremely primitive sound, but that didn't matter as early computers or arcade consoles had low-quality speakers anyway. However, during the coming decades, countless artists were drawn to the sound and started to make their own game music &ndash; without games. At first Video Game Music consisted primarily of two subgenres &ndash; very basic 8-bit music and the slightly more advanced 16-bit, which allowed for a richer and more layered sound, though still very rudimentary. Although this genre might seem unimportant, the technology itself brought forth lots of other instruments and influenced a lot of other electronic music.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">1</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">2</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">3</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">4</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">5</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">6</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">7</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">8</div></div>
-                <div class="quaternary-grid-item"><div class="quaternary-button experimental-light">9</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">1</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">2</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">3</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">4</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">5</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">6</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">7</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">8</div></div>
+                <div class="quaternary-grid-item"><div class="quaternary-button downtempo-light">9</div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button experimental-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button downtempo-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Koji Kondo", track: "Super Mario Bros. Theme", path: "../../samples/experimental/chiptune1.ogg" },
-                    { artist: "Hirokazu Tanaka", track: "Tetris Theme", path: "../../samples/experimental/chiptune2.ogg" },
-                    { artist: "Brad Fuller", track: "Marble Madness - Beginner Race", path: "../../samples/experimental/chiptune3.ogg" },
-                    { artist: "Tadashi Kimijima", track: "Bubble Bobble - Main Theme", path: "../../samples/experimental/chiptune4.ogg" },
-                    { artist: "Masato Nakamura", track: "Sonic The Hedgehog - Green Hill Zone Theme", path: "../../samples/experimental/chiptune5.ogg" },
-                    { artist: "Brian Johnston, Tim Wright & Tony Williams", track: "Lemmings - Lemming 1", path: "../../samples/experimental/chiptune6.ogg" },
-                    { artist: "Nullsleep", track: "Chippon", path: "../../samples/experimental/chiptune7.ogg" },
-                    { artist: "C-Jeff", track: "Angels Flying", path: "../../samples/experimental/chiptune8.ogg" },
-                    { artist: "Morusque", track: "Linerman", path: "../../samples/experimental/chiptune9.ogg" }
+                    { artist: "Koji Kondo", track: "Super Mario Bros. Theme", path: "../../samples/downtempo/chiptune1.ogg" },
+                    { artist: "Hirokazu Tanaka", track: "Tetris Theme", path: "../../samples/downtempo/chiptune2.ogg" },
+                    { artist: "Brad Fuller", track: "Marble Madness - Beginner Race", path: "../../samples/downtempo/chiptune3.ogg" },
+                    { artist: "Tadashi Kimijima", track: "Bubble Bobble - Main Theme", path: "../../samples/downtempo/chiptune4.ogg" },
+                    { artist: "Masato Nakamura", track: "Sonic The Hedgehog - Green Hill Zone Theme", path: "../../samples/downtempo/chiptune5.ogg" },
+                    { artist: "Brian Johnston, Tim Wright & Tony Williams", track: "Lemmings - Lemming 1", path: "../../samples/downtempo/chiptune6.ogg" },
+                    { artist: "Nullsleep", track: "Chippon", path: "../../samples/downtempo/chiptune7.ogg" },
+                    { artist: "C-Jeff", track: "Angels Flying", path: "../../samples/downtempo/chiptune8.ogg" },
+                    { artist: "Morusque", track: "Linerman", path: "../../samples/downtempo/chiptune9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));
