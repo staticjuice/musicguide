@@ -170,13 +170,17 @@ Quaternary section
     font-size: 2vh;
 }
 
+.quaternary-box h1 {
+    padding-top: 0.1em;
+}
+
 .quaternary-box p {
     margin: 0;
 }
 
 .quaternary-year {
     position: absolute;
-    top: 0.6em;
+    top: 0.7em;
     right: 0.7em;
     border-radius: 1em;
     padding: 0 0.3em;
@@ -190,7 +194,7 @@ Quaternary section
     flex: 0 0 calc(100% / 12);
     flex-wrap: wrap;
     gap: 0.3em;
-    margin: 0.6em 0;
+    margin: 0.6em 0 0.5em;
     text-align: center;
     line-height: 1.25;
     font-size: 2.5em;
@@ -216,7 +220,7 @@ Quaternary section
     content: attr(data-label);
 }
 
-.quaternary-stop {
+#quaternary-stop {
     position: absolute;
     right: 0.6em;
     bottom: 0.6em;
@@ -227,7 +231,7 @@ Quaternary section
     user-select: none;
 }
 
-#quaternary-grid .quaternary-stop {
+#quaternary-grid #quaternary-stop {
     display: none;
 }
 
@@ -788,7 +792,7 @@ Portrait mode
         top: 0;
         right: 0;
         float: left;
-        margin: 0 100% 0.5em 0;
+        margin: -0.2em 100% 0.5em 0;
         font-size: 1.5em;
         white-space: nowrap;
     }
@@ -802,11 +806,11 @@ Portrait mode
         font-size: 4vw;
     }
 
-    .quaternary-stop {
+    #quaternary-stop {
         display: none;
     }
 
-    #quaternary-grid .quaternary-stop {
+    #quaternary-grid #quaternary-stop {
         display: flex;
         position: relative;
         top: 0;
