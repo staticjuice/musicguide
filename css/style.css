@@ -171,7 +171,7 @@ Quaternary section
 }
 
 .quaternary-box p {
-    margin: 1.25em 0 0.25em;
+    margin: 0;
 }
 
 .quaternary-year {
@@ -225,6 +225,10 @@ Quaternary section
     font-size: 2.5em;
     font-weight: 700;
     user-select: none;
+}
+
+#quaternary-grid .quaternary-stop {
+    display: none;
 }
 
 .clicked {
@@ -784,7 +788,7 @@ Portrait mode
         top: 0;
         right: 0;
         float: left;
-        margin: 0.5em 100% 0.5em 0;
+        margin: 0 100% 0.5em 0;
         font-size: 1.5em;
         white-space: nowrap;
     }
@@ -794,7 +798,20 @@ Portrait mode
     }
 
     .quaternary-artisttrack {
+        padding-right: 0;
         font-size: 4vw;
+    }
+
+    .quaternary-stop {
+        display: none;
+    }
+
+    #quaternary-grid .quaternary-stop {
+        display: flex;
+        position: relative;
+        top: 0;
+        right: 0;
+        font-size: 1em;
     }
 
     [id*="tertiary-"] {
