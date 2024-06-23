@@ -1,24 +1,28 @@
 /*---------------------------------------------------------------------------
-Font face
+Global styling
 /*---------------------------------------------------------------------------*/
+
 @font-face {
     font-family: Outfit;
     src: url(../fonts/Outfit.ttf);
 }
 
-/*---------------------------------------------------------------------------
-Global styling
-/*---------------------------------------------------------------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
 
 body {
-    font-family: Outfit;
     line-height: 1.6;
     color: #FFF;
+    font-family: Outfit;
 }
 
 h1 {
-    font-weight: 900;
+    margin-bottom: 0.5em;
+    line-height: 1;
     font-size: 2.5em;
+    font-weight: 900;
 }
 
 p {
@@ -26,12 +30,13 @@ p {
 }
 
 a {
-    color: #FFF;
     text-decoration: none;
+    color: inherit;
 }
 
 li {
     list-style: none;
+    line-height: 1.4;
 }
 
 /*---------------------------------------------------------------------------
@@ -42,9 +47,13 @@ Scrollbar styling
     width: 0.5em;
 }
 
+#secondary::-webkit-scrollbar {
+    width: 0;
+}
+
 ::-webkit-scrollbar-thumb {
-    background: #FFF;
     border-radius: 1em;
+    background: #FFF;
 }
 
 .pop::-webkit-scrollbar-thumb, .downtempo::-webkit-scrollbar-thumb, .hauntology::-webkit-scrollbar-thumb {
@@ -56,29 +65,26 @@ Primary section
 /*---------------------------------------------------------------------------*/
 
 #primary-intro {
-    font-size: 4vw;
-    text-align: center;
-    width: 100%;
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-}
-
-#primary-intro h1 {
-    margin-bottom: 0.5em;
+    width: 100%;
+    text-align: center;
+    font-size: 4vw;
 }
 
 #primary-intro-button {
-    font-weight: 600;
-    font-size: 1.75em;
     border: 0.125em solid;
     border-radius: 1em;
     padding: 0.2em 0.4em;
+    font-size: 1.75em;
+    font-weight: 600;
 }
 
 #primary-intro-button:hover {
-    color: #FF6D00;
     border-color: #FF6D00;
+    color: #FF6D00;
 }
 
 /*---------------------------------------------------------------------------
@@ -86,43 +92,41 @@ Secondary section
 /*---------------------------------------------------------------------------*/
 
 #secondary {
-    margin: 2vw 8vw;
-    font-size: 1.5vw;
-    background: url("../images/wood.jpg");
     position: absolute;
+    margin: 2vw 8vw;
+    background: url("../images/wood.jpg");
     background-size: cover;
-}
-
-#secondary::-webkit-scrollbar {
-    width: 0;
+    font-size: 1.5vw;
 }
 
 #secondary-grid {
     display: flex;
     flex-wrap: wrap;
+    margin: 2vw 0;
     gap: 2vw;
-    margin: 1.25em 0 2em;
 }
 
 .secondary-grid-item {
-    flex: 1 1 calc(25% - 2vw);
     position: relative;
+    flex: 1 1 calc(25% - 2vw);
 }
 
 .secondary-grid-item img {
-    width: 100%;
+    display: block;
     border-radius: 1em;
     box-shadow: 0.01em 0.01em 0.5em #00000099;
+    width: 100%;
     filter: brightness(40%);
 }
 
 .secondary-grid-item span {
-    font-size: 2.9vw;
-    text-align: center;
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    text-align: center;
+    font-size: 2.85vw;
     white-space: nowrap;
 }
 
@@ -132,29 +136,23 @@ Tertiary section
 
 .tertiary-genrelist {
     flex: 1;
-    font-size: 3.75vh;
     padding: 0.75em 1.25em;
-    line-height: 1.4;
+    font-size: 3.75vh;
 }
 
 .tertiary-genrelist h1 {
+    margin-bottom: 0.4em;
     font-size: 1.85em;
-    margin-bottom: 0.25em;
-}
-
-#tertiary-genrelist-columns {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(16, auto);
 }
 
 .tertiary-sidebar {
-    font-size: 2vh;
-    width: 33.33em; height: 100vh;
-    max-width: 50vw;
-    padding: 1.5em 1.5em 0;
     box-shadow: -0.01em 0 0.5em #00000099;
+    padding: 1.5em 1.5em 0;
+    width: 33.33em;
+    max-width: 50vw;
+    height: 100vh;
     overflow: auto;
+    font-size: 2vh;
 }
 
 /*---------------------------------------------------------------------------
@@ -162,67 +160,71 @@ Quaternary section
 /*---------------------------------------------------------------------------*/
 
 .quaternary-box {
-    font-size: 2vh;
-    width: 40em;
-    padding: 1.5em;
+    position: relative;
     margin: 2em;
     border: 0.5em solid;
     border-radius: 1.5em;
     box-shadow: 0.1em 0.1em 0.5em #00000099;
-    position: relative;
+    padding: 1.5em;
+    width: 40em;
+    font-size: 2vh;
 }
 
 .quaternary-box p {
-    margin: 1em 0 0.5em;
+    margin: 1.25em 0 0.25em;
 }
 
 .quaternary-year {
-    font-weight: 700;
-    font-size: 2em;
-    padding: 0 0.3em;
-    border-radius: 1em;
-    user-select: none;
     position: absolute;
-    top: 0.7em; right: 0.7em;
+    top: 0.6em;
+    right: 0.7em;
+    border-radius: 1em;
+    padding: 0 0.3em;
+    font-size: 2em;
+    font-weight: 700;
+    user-select: none;
 }
 
 #quaternary-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.25em;
-}
-
-.quaternary-grid-item {
     flex: 0 0 calc(100% / 12);
-    margin: 1.25em 0;
-}
-
-.quaternary-button {
-    font-weight: 700;
-    font-size: 2.5em;
+    flex-wrap: wrap;
+    gap: 0.3em;
+    margin: 0.6em 0;
     text-align: center;
-    width: 1em;
     line-height: 1.25;
-    border-radius: 0.15em;
+    font-size: 2.5em;
+    font-weight: 700;
     user-select: none;
 }
 
+.quaternary-button {
+    border-radius: 0.15em;
+    width: 1em;
+}
+
 .quaternary-artisttrack {
-    font-size: 1.25em;
     display: flex;
-    padding-right: 2.5em;
     align-items: baseline;
+    padding-right: 2em;
+    font-size: 1.25em;
 }
 
 .quaternary-artisttrack::before {
-    content: attr(data-label);
-    width: 3em;
     flex-shrink: 0;
+    width: 3em;
+    content: attr(data-label);
 }
 
 .quaternary-stop {
     position: absolute;
-    bottom: 1.75em; right: 1.5em;
+    right: 0.6em;
+    bottom: 0.6em;
+    text-align: center;
+    line-height: 1.25;
+    font-size: 2.5em;
+    font-weight: 700;
+    user-select: none;
 }
 
 .clicked {
@@ -237,31 +239,31 @@ Quaternary section
 Colours
 /*---------------------------------------------------------------------------*/
 
-.classical { background: #705A3D; border-color: #917550; }
-.blues { background: #283593; border-color: #3F4FCA; }
-.jazz { background: #E57373; border-color: #ED9C9C; }
-.country { background: #747538; border-color: #969748; }
-.rhythmandblues { background: #00695C; border-color: #009688; }
-.pop { background: #FDD835; border-color: #FFEB3B; color: #222; }
-.rock { background: #C62828; border-color: #F44336; }
-.metal { background: #080808; border-color: #212121; }
-.punk { background: #EF6C00; border-color: #FF9800; }
-.alternative { background: #37474F; border-color: #56707B; }
-.disco { background: #C2185B; border-color: #E91E63; }
-.reggae { background: #2E7D32; border-color: #4CAF50; }
-.hiphop { background: #4E3852; border-color: #6A4C70; }
-.industrial { background: #4E342E; border-color: #795548; }
-.house { background: #009F6B; border-color: #00D18D; }
-.trance { background: #6A1B9A; border-color: #8522C3; }
-.techno { background: #555555; border-color: #666666; }
-.hardcore { background: #464039; border-color: #625A50; }
-.breakbeat { background: #783F5D; border-color: #9A5177; }
-.drumandbass { background: #9A1839; border-color: #C71F49; }
-.ukgarage { background: #8F7CAD; border-color: #A892CC; }
-.downtempo { background: #EDEDED; border-color: #F5F5F5; color: #222; }
-.hauntology { background: #29CCCC; border-color: #2CDEDE; color: #222; }
-.folk { background: #C6A44D; border-color: #D2B774; }
-.world { background: #364F30; border-color: #4C6F44; }
+.classical { border-color: #917550; background: #705A3D; }
+.blues { border-color: #3F4FCA; background: #283593; }
+.jazz { border-color: #ED9C9C; background: #E57373; }
+.country { border-color: #969748; background: #747538; }
+.rhythmandblues { border-color: #009688; background: #00695C; }
+.pop { border-color: #FFEB3B; background: #FDD835; color: #222; }
+.rock { border-color: #F44336; background: #C62828; }
+.metal { border-color: #212121; background: #080808; }
+.punk { border-color: #FF9800; background: #EF6C00; }
+.alternative { border-color: #56707B; background: #37474F; }
+.disco { border-color: #E91E63; background: #C2185B; }
+.reggae { border-color: #4CAF50; background: #2E7D32; }
+.hiphop { border-color: #6A4C70; background: #4E3852; }
+.industrial { border-color: #795548; background: #4E342E; }
+.house { border-color: #00D18D; background: #009F6B; }
+.trance { border-color: #8522C3; background: #6A1B9A; }
+.techno { border-color: #666666; background: #555555; }
+.hardcore { border-color: #625A50; background: #464039; }
+.breakbeat { border-color: #9A5177; background: #783F5D; }
+.drumandbass { border-color: #C71F49; background: #9A1839; }
+.ukgarage { border-color: #A892CC; background: #8F7CAD; }
+.downtempo { border-color: #F5F5F5; background: #EDEDED; color: #222; }
+.hauntology { border-color: #2CDEDE; background: #29CCCC; color: #222; }
+.folk { border-color: #D2B774; background: #C6A44D; }
+.world { border-color: #4C6F44; background: #364F30; }
 
 ::selection { background: #FFF; color: #222; }
 .pop ::selection, .downtempo ::selection, .hauntology ::selection { background: #222; color: #FFF; }
@@ -379,13 +381,14 @@ Background images
 }
 
 [id*="tertiary"]:before, #primary:before {
-    content: "";
     position: fixed;
-    width: 100vw; height: 100vh;
-    filter: brightness(40%);
     z-index: -1;
-    background-size: cover;
     background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    content: "";
+    filter: brightness(40%);
 }
 
 #primary:before { background-image: url("../images/intro.jpg"); }
@@ -607,11 +610,8 @@ Background images
 #frenchhouse {background: url("../images/house/frenchhouse.jpg") center center / cover fixed; }
 #electrohouse {background: url("../images/house/electrohouse.jpg") center center / cover fixed; }
 #electroswing {background: url("../images/house/electroswing.jpg") center center / cover fixed; }
-#fidgethouse {background: url("../images/house/fidgethouse.jpg") center center / cover fixed; }
 #dutchhouse {background: url("../images/house/dutchhouse.jpg") center center / cover fixed; }
-#complextro {background: url("../images/house/complextro.jpg") center center / cover fixed; }
 #bigroom {background: url("../images/house/bigroom.jpg") center center / cover fixed; }
-#melbournebounce {background: url("../images/house/melbournebounce.jpg") center center / cover fixed; }
 #tropicalhouse {background: url("../images/house/tropicalhouse.jpg") center center / cover fixed; }
 #futurehouse {background: url("../images/house/futurehouse.jpg") center center / cover fixed; }
 #basshouse {background: url("../images/house/basshouse.jpg") center center / cover fixed; }
@@ -633,7 +633,6 @@ Background images
 #detroittechno {background: url("../images/techno/detroittechno.jpg") center center / cover fixed; }
 #acidtechno {background: url("../images/techno/acidtechno.jpg") center center / cover fixed; }
 #bleeptechno {background: url("../images/techno/bleeptechno.jpg") center center / cover fixed; }
-#industrialtechno {background: url("../images/techno/industrialtechno.jpg") center center / cover fixed; }
 #minimaltechno {background: url("../images/techno/minimaltechno.jpg") center center / cover fixed; }
 #dubtechno {background: url("../images/techno/dubtechno.jpg") center center / cover fixed; }
 #hardtechno {background: url("../images/techno/hardtechno.jpg") center center / cover fixed; }
@@ -682,7 +681,6 @@ Background images
 #glitchhop {background: url("../images/ukgarage/glitchhop.jpg") center center / cover fixed; }
 #edmtrap {background: url("../images/ukgarage/edmtrap.jpg") center center / cover fixed; }
 #futurebass {background: url("../images/ukgarage/futurebass.jpg") center center / cover fixed; }
-#riddim {background: url("../images/ukgarage/riddim.jpg") center center / cover fixed; }
 #colourbass {background: url("../images/ukgarage/colourbass.jpg") center center / cover fixed; }
 #midtempobass {background: url("../images/ukgarage/midtempobass.jpg") center center / cover fixed; }
 #wave {background: url("../images/ukgarage/wave.jpg") center center / cover fixed; }
@@ -698,7 +696,6 @@ Background images
 #nujazz {background: url("../images/downtempo/nujazz.jpg") center center / cover fixed; }
 #glitch {background: url("../images/downtempo/glitch.jpg") center center / cover fixed; }
 #illbient {background: url("../images/downtempo/illbient.jpg") center center / cover fixed; }
-#lowercase {background: url("../images/downtempo/lowercase.jpg") center center / cover fixed; }
 #wonky {background: url("../images/downtempo/wonky.jpg") center center / cover fixed; }
 
 #chillwave {background: url("../images/hauntology/chillwave.jpg") center center / cover fixed; }
@@ -731,7 +728,7 @@ Background images
 #polynesian {background: url("../images/world/polynesian.jpg") center center / cover fixed; }
 
 /*---------------------------------------------------------------------------
-Media queries
+Portrait mode
 /*---------------------------------------------------------------------------*/
 
 @media (orientation: portrait) {
@@ -743,23 +740,19 @@ Media queries
         font-size: 6vw;
     }
 
-    #secondary {
-        margin: 3vw 6vw;
-        padding-top: 0.5em;
-        font-size: 5vw;
+    #secondary h1 {
+        margin: 6vw;
         text-align: center;
-    }
-
-    #secondary-grid {
-        margin: 1em 0 1em;
+        font-size: 12vw;
     }
 
     .secondary-grid-item {
-        flex: 1 1 calc(100% - 2vw);
+        flex: 1 1 100%;
         margin-bottom: 3vw;
     }
 
     .secondary-grid-item img {
+        border-radius: 3.5em;
         height: 25vw;
         object-fit: cover;
     }
@@ -773,43 +766,31 @@ Media queries
         font-size: 6vw;
     }
 
-    #tertiary-genrelist-columns {
-        display: inline;
-    }
-
     .tertiary-sidebar {
-        font-size: 4vw;
-        height: 100%;
-        max-width: 100vw;
         box-shadow: 0 -0.01em 0.5em #00000099;
+        max-width: 100vw;
+        height: 100%;
+        font-size: 4vw;
     }
 
     .quaternary-box {
-        font-size: 4vw;
-        width: calc(100% - 3em);
         margin: 1.5em;
-    }
-
-    .quaternary-box h1 {
-        margin-bottom: 0.3em;
+        width: calc(100% - 3em);
+        font-size: 4vw;
     }
 
     .quaternary-year {
-        float: left;
-        margin-right: 100%;
-        margin-bottom: 0.5em;
-        font-size: 1.5em;
         position: relative;
-        top: 0; right: 0;
+        top: 0;
+        right: 0;
+        float: left;
+        margin: 0.5em 100% 0.5em 0;
+        font-size: 1.5em;
         white-space: nowrap;
     }
 
-    .quaternary-grid-item {
+    #quaternary-grid {
         flex: 0 0 calc(100% / 6);
-    }
-
-    .quaternary-button {
-        font-size: 2em;
     }
 
     .quaternary-artisttrack {
