@@ -220,7 +220,7 @@ Quaternary section
     content: attr(data-label);
 }
 
-#quaternary-stop {
+.quaternary-stop {
     position: absolute;
     right: 0.6em;
     bottom: 0.6em;
@@ -231,7 +231,7 @@ Quaternary section
     user-select: none;
 }
 
-#quaternary-grid #quaternary-stop {
+#quaternary-grid .quaternary-stop {
     display: none;
 }
 
@@ -806,11 +806,11 @@ Portrait mode
         font-size: 4vw;
     }
 
-    #quaternary-stop {
+    .quaternary-stop {
         display: none;
     }
 
-    #quaternary-grid #quaternary-stop {
+    #quaternary-grid .quaternary-stop {
         display: flex;
         position: relative;
         top: 0;
