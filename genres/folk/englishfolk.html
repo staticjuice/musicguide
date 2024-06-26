@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <title>English Folk</title>
+    </head>
+
+    <body id="englishfolk">
+        <div class="quaternary-box folk">
+            <h1>ENGLISH FOLK</h1>
+
+            <p>The Folk music of England has existed since the later medieval period. It was traditionally preserved and passed on orally within communities, but print and audio recordings have since become the primary means of transmission. There are distinct regional and local variations in content and style, particularly in areas more removed from the most prominent English cities, as in Northumbria and the West Country. Cultural interchange and processes of migration mean that English Folk music has significant crossovers with the music of Scotland. When English communities migrated to the United States, Canada and Australia, they brought their Folk traditions with them. English Folk music has produced or contributed to several cultural phenomena, including sea shanties, jigs, hornpipes and the music for Morris dancing. It has also interacted with other musical traditions, particularly Classical and Rock music. There remains a flourishing subculture of English Folk music, which continues to influence other genres and occasionally gains mainstream attention.</p>
+
+            <div id="quaternary-grid">
+                <div class="quaternary-button folk-light">1</div>
+                <div class="quaternary-button folk-light">2</div>
+                <div class="quaternary-button folk-light">3</div>
+                <div class="quaternary-button folk-light">4</div>
+                <div class="quaternary-button folk-light">5</div>
+                <div class="quaternary-button folk-light">6</div>
+                <div class="quaternary-button folk-light">7</div>
+                <div class="quaternary-button folk-light">8</div>
+                <div class="quaternary-button folk-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button folk-light"><i class="fa-solid fa-stop"></i></div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button folk-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "Kate Rusby", track: "Benjamin Bowmaneer", path: "../../samples/folk/englishfolk1.ogg" },
+                    { artist: "The Elizabethan Session", track: "Broadside", path: "../../samples/folk/englishfolk2.ogg" },
+                    { artist: "Jim Causley", track: "Pride Of The Moor", path: "../../samples/folk/englishfolk3.ogg" },
+                    { artist: "Jack Rutter", track: "I Was Once A Young Ploughboy", path: "../../samples/folk/englishfolk4.ogg" },
+                    { artist: "Sam Sweeney", track: "Escape That", path: "../../samples/folk/englishfolk5.ogg" },
+                    { artist: "O'Hooley & Tidow", track: "Gentleman Jack", path: "../../samples/folk/englishfolk6.ogg" },
+                    { artist: "Emily Portman", track: "Two Sisters", path: "../../samples/folk/englishfolk7.ogg" },
+                    { artist: "Ninebarrow", track: "Among The Boughs", path: "../../samples/folk/englishfolk8.ogg" },
+                    { artist: "Sam Kelly & The Lost Boys", track: "Angeline The Baker", path: "../../samples/folk/englishfolk9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>
