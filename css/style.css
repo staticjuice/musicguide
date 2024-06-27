@@ -498,6 +498,7 @@ Background images
 #sophistipop {background: url("../images/pop/sophistipop.jpg") center center / cover fixed; }
 #dancepop {background: url("../images/pop/dancepop.jpg") center center / cover fixed; }
 #electropop {background: url("../images/pop/electropop.jpg") center center / cover fixed; }
+#alternativepop {background: url("../images/pop/alternativepop.jpg") center center / cover fixed; }
 
 #rockandroll {background: url("../images/rock/rockandroll.jpg") center center / cover fixed; }
 #surfrock {background: url("../images/rock/surfrock.jpg") center center / cover fixed; }
@@ -517,6 +518,7 @@ Background images
 #nwobhm {background: url("../images/metal/nwobhm.jpg") center center / cover fixed; }
 #glammetal {background: url("../images/metal/glammetal.jpg") center center / cover fixed; }
 #thrashmetal {background: url("../images/metal/thrashmetal.jpg") center center / cover fixed; }
+#speedmetal {background: url("../images/metal/speedmetal.jpg") center center / cover fixed; }
 #doommetal {background: url("../images/metal/doommetal.jpg") center center / cover fixed; }
 #progressivemetal {background: url("../images/metal/progressivemetal.jpg") center center / cover fixed; }
 #powermetal {background: url("../images/metal/powermetal.jpg") center center / cover fixed; }
@@ -540,7 +542,6 @@ Background images
 #crustpunk {background: url("../images/punk/crustpunk.jpg") center center / cover fixed; }
 #posthardcore {background: url("../images/punk/posthardcore.jpg") center center / cover fixed; }
 #riotgrrrl {background: url("../images/punk/riotgrrrl.jpg") center center / cover fixed; }
-#emo {background: url("../images/punk/emo.jpg") center center / cover fixed; }
 #screamo {background: url("../images/punk/screamo.jpg") center center / cover fixed; }
 
 #janglepop {background: url("../images/alternative/janglepop.jpg") center center / cover fixed; }
@@ -554,11 +555,11 @@ Background images
 #postrock {background: url("../images/alternative/postrock.jpg") center center / cover fixed; }
 #postgrunge {background: url("../images/alternative/postgrunge.jpg") center center / cover fixed; }
 #postbritpop {background: url("../images/alternative/postbritpop.jpg") center center / cover fixed; }
+#emo {background: url("../images/alternative/emo.jpg") center center / cover fixed; }
 #garagerockrevival {background: url("../images/alternative/garagerockrevival.jpg") center center / cover fixed; }
 #nuprog {background: url("../images/alternative/nuprog.jpg") center center / cover fixed; }
 #dancepunk {background: url("../images/alternative/dancepunk.jpg") center center / cover fixed; }
 #indietronica {background: url("../images/alternative/indietronica.jpg") center center / cover fixed; }
-#indiefolk {background: url("../images/alternative/indiefolk.jpg") center center / cover fixed; }
 
 #hinrg {background: url("../images/disco/hinrg.jpg") center center / cover fixed; }
 #spacesynth {background: url("../images/disco/spacesynth.jpg") center center / cover fixed; }
@@ -611,8 +612,7 @@ Background images
 #hiphouse {background: url("../images/house/hiphouse.jpg") center center / cover fixed; }
 #italohouse {background: url("../images/house/italohouse.jpg") center center / cover fixed; }
 #deephouse {background: url("../images/house/deephouse.jpg") center center / cover fixed; }
-#discohouse {background: url("../images/house/discohouse.jpg") center center / cover fixed; }
-#latinhouse {background: url("../images/house/latinhouse.jpg") center center / cover fixed; }
+#funkyhouse {background: url("../images/house/funkyhouse.jpg") center center / cover fixed; }
 #progressivehouse {background: url("../images/house/progressivehouse.jpg") center center / cover fixed; }
 #techhouse {background: url("../images/house/techhouse.jpg") center center / cover fixed; }
 #frenchhouse {background: url("../images/house/frenchhouse.jpg") center center / cover fixed; }

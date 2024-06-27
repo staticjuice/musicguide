@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <title>Speed Metal</title>
+    </head>
+
+    <body id="speedmetal">
+        <div class="quaternary-box metal">
+            <h1>SPEED METAL</h1><div class="quaternary-year metal-light">1982</div>
+
+            <p>In the early 80s, Speed Metal became the most popular form of Metal in the American underground. Turning the energy and tempo of Thrash even higher, Speed Metal was extremely fast, abrasive and technically demanding &ndash; the bands played fast, but their attack was precise and clean. In that sense, Speed Metal always remained true to its Metal roots. With the explosion of British and Thrash Metal in the early 80s, some bands realised the extreme potential Metal had to offer. Two similar genres became the product of experiments with Metal outside the regular comfort zone. A small number of these bands created dark, evil, atmospheric Metal (early Black), while others turned the energy and tempo of Thrash even higher, forging Speed Metal. Sometimes the term Speed Metal is reserved for early Thrash Metal, forming a sort of proto-genre, or simply as a synonym for Thrash. In the strictest sense, Speed Metal is faster, and more melodic than Thrash. Lead guitarists display extreme craftsmanship in extensive virtuoso solos, playing ever more rapid than before.</p>
+
+            <div id="quaternary-grid">
+                <div class="quaternary-button metal-light">1</div>
+                <div class="quaternary-button metal-light">2</div>
+                <div class="quaternary-button metal-light">3</div>
+                <div class="quaternary-button metal-light">4</div>
+                <div class="quaternary-button metal-light">5</div>
+                <div class="quaternary-button metal-light">6</div>
+                <div class="quaternary-button metal-light">7</div>
+                <div class="quaternary-button metal-light">8</div>
+                <div class="quaternary-button metal-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button metal-light"><i class="fa-solid fa-stop"></i></div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button metal-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "Helloween", track: "Metal Invaders", path: "../../../samples/metal/speedmetal1.ogg" },
+                    { artist: "Flotsam & Jetsam", track: "Hammerhead", path: "../../../samples/metal/speedmetal2.ogg" },
+                    { artist: "Celtic Frost", track: "Inner Sanctum", path: "../../../samples/metal/speedmetal3.ogg" },
+                    { artist: "Hellhammer", track: "Messiah", path: "../../../samples/metal/speedmetal4.ogg" },
+                    { artist: "Exciter", track: "Violence And Force", path: "../../../samples/metal/speedmetal5.ogg" },
+                    { artist: "Anvil", track: "666", path: "../../../samples/metal/speedmetal6.ogg" },
+                    { artist: "Annihilator", track: "King Of The Kill", path: "../../../samples/metal/speedmetal7.ogg" },
+                    { artist: "Accept", track: "Fast As A Shark", path: "../../../samples/metal/speedmetal8.ogg" },
+                    { artist: "Rage", track: "Deceiver", path: "../../../samples/metal/speedmetal9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>
