@@ -126,7 +126,7 @@ Secondary section
     transform: translate(-50%, -50%);
     z-index: 1;
     text-align: center;
-    font-size: 2.85vw;
+    font-size: 3vw;
     white-space: nowrap;
 }
 
@@ -699,11 +699,9 @@ Background images
 #chiptune {background: url("../images/downtempo/chiptune.png") center center / cover fixed; }
 #acidjazz {background: url("../images/downtempo/acidjazz.jpg") center center / cover fixed; }
 #triphop {background: url("../images/downtempo/triphop.jpg") center center / cover fixed; }
-#idm {background: url("../images/downtempo/idm.jpg") center center / cover fixed; }
 #nujazz {background: url("../images/downtempo/nujazz.jpg") center center / cover fixed; }
-#glitch {background: url("../images/downtempo/glitch.jpg") center center / cover fixed; }
 #illbient {background: url("../images/downtempo/illbient.jpg") center center / cover fixed; }
-#wonky {background: url("../images/downtempo/wonky.jpg") center center / cover fixed; }
+#glitch {background: url("../images/downtempo/glitch.jpg") center center / cover fixed; }
 
 #chillwave {background: url("../images/hauntology/chillwave.jpg") center center / cover fixed; }
 #vaporwave {background: url("../images/hauntology/vaporwave.jpg") center center / cover fixed; }
