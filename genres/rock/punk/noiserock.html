@@ -10,41 +10,41 @@
     </head>
 
     <body id="noiserock">
-        <div class="quaternary-box alternative">
-            <h1>NOISE ROCK</h1><div class="quaternary-year alternative-light">1984</div>
+        <div class="quaternary-box punk">
+            <h1>NOISE ROCK</h1><div class="quaternary-year punk-light">1984</div>
 
             <p>Noise Rock started as a small but influential offshoot of Post-Hardcore. In a way, the genre is a sort of missing link between Hardcore Punk and Alternative Rock. Inspired by not only Hardcore's aggression but also its strict and drug-free lifestyle, Noise Rock deliberately turned its back on the excesses of the final Punk movement. Noise Rock artists liked Punk, but they were repulsed by what it had turned into. Idealism and revolution were replaced by nonchalance and chain tweaking. Based on Proto-Punk's experimentation and No Wave's nihilistic and destructive mentality, Noise Rock used that aversion to fuel songs of high-octane hate. Unsurprisingly, Noise Rock is extremely dissonant with massive guitar feedback. Riffs are slower than Hardcore Punk, but faster than most Rock and often at a low frequency. Singers scream angry lyrics on the top of their lungs that usually make no sense whatsoever or are highly offensive. The result is a serious contender for the most chaotic of all genres. Though small and unpopular, Noise Rock was a great influence on later music genres, such as Grunge.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-button alternative-light">1</div>
-                <div class="quaternary-button alternative-light">2</div>
-                <div class="quaternary-button alternative-light">3</div>
-                <div class="quaternary-button alternative-light">4</div>
-                <div class="quaternary-button alternative-light">5</div>
-                <div class="quaternary-button alternative-light">6</div>
-                <div class="quaternary-button alternative-light">7</div>
-                <div class="quaternary-button alternative-light">8</div>
-                <div class="quaternary-button alternative-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button alternative-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-button punk-light">1</div>
+                <div class="quaternary-button punk-light">2</div>
+                <div class="quaternary-button punk-light">3</div>
+                <div class="quaternary-button punk-light">4</div>
+                <div class="quaternary-button punk-light">5</div>
+                <div class="quaternary-button punk-light">6</div>
+                <div class="quaternary-button punk-light">7</div>
+                <div class="quaternary-button punk-light">8</div>
+                <div class="quaternary-button punk-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button punk-light"><i class="fa-solid fa-stop"></i></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button alternative-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button punk-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Sonic Youth", track: "Kotton Krown", path: "../../../samples/alternative/noiserock1.ogg" },
-                    { artist: "Helmet", track: "Milquetoast", path: "../../../samples/alternative/noiserock2.ogg" },
-                    { artist: "Butthole Surfers", track: "Who Was In My Room Last Night?", path: "../../../samples/alternative/noiserock3.ogg" },
-                    { artist: "The Jesus Lizard", track: "Nub", path: "../../../samples/alternative/noiserock4.ogg" },
-                    { artist: "Melvins", track: "A History Of Bad Men", path: "../../../samples/alternative/noiserock5.ogg" },
-                    { artist: "Pussy Galore", track: "Evil Eye", path: "../../../samples/alternative/noiserock6.ogg" },
-                    { artist: "Dinosaur Jr.", track: "Start Choppin'", path: "../../../samples/alternative/noiserock7.ogg" },
-                    { artist: "Laughing Hyenas", track: "Just Can't Win", path: "../../../samples/alternative/noiserock8.ogg" },
-                    { artist: "Lightning Bolt", track: "Dracula Mountain", path: "../../../samples/alternative/noiserock9.ogg" }
+                    { artist: "Sonic Youth", track: "Kotton Krown", path: "../../../samples/punk/noiserock1.ogg" },
+                    { artist: "Helmet", track: "Milquetoast", path: "../../../samples/punk/noiserock2.ogg" },
+                    { artist: "Butthole Surfers", track: "Who Was In My Room Last Night?", path: "../../../samples/punk/noiserock3.ogg" },
+                    { artist: "The Jesus Lizard", track: "Nub", path: "../../../samples/punk/noiserock4.ogg" },
+                    { artist: "Melvins", track: "A History Of Bad Men", path: "../../../samples/punk/noiserock5.ogg" },
+                    { artist: "Pussy Galore", track: "Evil Eye", path: "../../../samples/punk/noiserock6.ogg" },
+                    { artist: "Dinosaur Jr.", track: "Start Choppin'", path: "../../../samples/punk/noiserock7.ogg" },
+                    { artist: "Laughing Hyenas", track: "Just Can't Win", path: "../../../samples/punk/noiserock8.ogg" },
+                    { artist: "Lightning Bolt", track: "Dracula Mountain", path: "../../../samples/punk/noiserock9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

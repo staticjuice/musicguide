@@ -6,14 +6,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <title>Dark Ambient</title>
+        <title>New Beat</title>
     </head>
 
-    <body id="darkambient">
+    <body id="newbeat">
         <div class="quaternary-box industrial">
-            <h1>DARK AMBIENT</h1><div class="quaternary-year industrial-light">1982</div>
+            <h1>NEW BEAT</h1><div class="quaternary-year industrial-light">1987</div>
 
-            <p>Dark Ambient is exactly what it says on the tin &ndash; Ambient music, but with a dark, eerie atmosphere &ndash; sometimes beautiful but often downright frightening and disturbing. A minimal soundscape of the past resurrected with typical Industrial sound effects, in which haunting and gloomy sounds form the foreground. In the background, one regularly finds a stream of heavily distorted noise. The difference with Early Industrial lies in a less noisy and experimental approach and a more ambient/atmospheric one. Dark Ambient is your typical graveyard ruin by night soundtrack, or the sound of a monochrome forest echoing through a picture from the past. It's no surprise that this genre is often used in Horror films or scary game soundtracks. Out of Dark Ambient, an important subgenre in the late 80s arises &ndash; Ethereal Wave. Ethereal Wave becomes a big thing in France, where spooky French hushes or weeping voices are added on top of melodramatic Classical music infused with Dark Ambient elements. The result is the ultimate Gothic music and a further strengthening of its relationship with Industrial.</p>
+            <p>Once upon a time, there was a club in a strange country where they decided to take some brand new and exciting Acid House records and play them at the lower 33 RPM instead of their intentional 45 RPM. The club was the famous Boccaccio and the country was Belgium &ndash; home to the gloomy EBM. The atmosphere and sounds of EBM matched perfectly with the slower tempo of this sound, forming a gateway between Industrial and EDM and leading eventually to a whole new group of genres. The genre was not dark or depressing though. The sounds were heavy and sluggish, like a crushing giant, but the lyrics were a mix of fun and nonsense. With its rather slow 110 BPM, New Beat formed a comfortable prologue for House/Techno, as the European public wasn't ready yet for American 130 BPM House or Techno. Eventually New Beat became too ridiculous (with opportunistic bands cashing in on a template of mystery and sex), which forced the original composers to flee the scene. But the foundations were already laid for a whole new supergenre that was not born to please the majority &ndash; Hardcore.</p>
 
             <div id="quaternary-grid">
                 <div class="quaternary-button industrial-light">1</div>
@@ -36,15 +36,15 @@
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Robert Rich", track: "Hidden Refuge", path: "../../samples/industrial/darkambient1.ogg" },
-                    { artist: "In Slaughter Natives", track: "113th Scar", path: "../../samples/industrial/darkambient2.ogg" },
-                    { artist: "Lustmord", track: "Primordial", path: "../../samples/industrial/darkambient3.ogg" },
-                    { artist: "Cities Last Broadcast", track: "Glossolalia", path: "../../samples/industrial/darkambient4.ogg" },
-                    { artist: "Dronny Darko", track: "Mortal Skin", path: "../../samples/industrial/darkambient5.ogg" },
-                    { artist: "Melek-Tha", track: "Hymn Of The Dead", path: "../../samples/industrial/darkambient6.ogg" },
-                    { artist: "Dahlia's Tear", track: "Toward The Dark Cellar", path: "../../samples/industrial/darkambient7.ogg" },
-                    { artist: "Vestigial", track: "The Void", path: "../../samples/industrial/darkambient8.ogg" },
-                    { artist: "Triangular Ascension", track: "The Future Code", path: "../../samples/industrial/darkambient9.ogg" }
+                    { artist: "Lords Of Acid", track: "I Sit On Acid", path: "../../samples/industrial/newbeat1.ogg" },
+                    { artist: "Amnesia", track: "Ibiza", path: "../../samples/industrial/newbeat2.ogg" },
+                    { artist: "101", track: "Rock To The Beat", path: "../../samples/industrial/newbeat3.ogg" },
+                    { artist: "The KLF", track: "It's Grim Up North", path: "../../samples/industrial/newbeat4.ogg" },
+                    { artist: "Dirty Harry", track: "D'Bop", path: "../../samples/industrial/newbeat5.ogg" },
+                    { artist: "Confetti's", track: "The Sound Of C", path: "../../samples/industrial/newbeat6.ogg" },
+                    { artist: "Edwards & Armani", track: "La Cosa Nostra", path: "../../samples/industrial/newbeat7.ogg" },
+                    { artist: "Major Problem", track: "I Still Have A Dream", path: "../../samples/industrial/newbeat8.ogg" },
+                    { artist: "Nasty Thoughts", track: "Rock The House", path: "../../samples/industrial/newbeat9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

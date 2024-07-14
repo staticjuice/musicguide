@@ -4,47 +4,47 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
         <title>Garage</title>
     </head>
 
     <body id="garage">
-        <div class="quaternary-box disco">
-            <h1>GARAGE</h1><div class="quaternary-year disco-light">1979</div>
+        <div class="quaternary-box house">
+            <h1>GARAGE</h1><div class="quaternary-year house-light">1985</div>
 
             <p>Garage music is a genre of Dance music that originated in the late 70s and early 80s in New York City. It predated and influenced the development of House music. The genre is named after the Paradise Garage, a famed nightclub where DJ Larry Levan played a pivotal role in shaping its sound. Garage music has soulful vocals, smooth basslines, and lush, melodic instrumentation. It typically features a slower tempo compared to House music, focusing more on groove and emotional expression rather than the relentless, driving beats of later Dance genres. The music often incorporates elements of Disco, R&amp;B, and Funk, with a strong emphasis on musicality and sophisticated arrangements. Key elements of Garage music include rich, layered production with live instruments such as keyboards, bass, and drums, vocals that are often deeply expressive, and a focus on creating a warm, inviting atmosphere conducive to dancing and socialising. Garage music laid the groundwork for the development of House music and later influenced various other genres within the Dance music spectrum.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-button disco-light">1</div>
-                <div class="quaternary-button disco-light">2</div>
-                <div class="quaternary-button disco-light">3</div>
-                <div class="quaternary-button disco-light">4</div>
-                <div class="quaternary-button disco-light">5</div>
-                <div class="quaternary-button disco-light">6</div>
-                <div class="quaternary-button disco-light">7</div>
-                <div class="quaternary-button disco-light">8</div>
-                <div class="quaternary-button disco-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button disco-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-button house-light">1</div>
+                <div class="quaternary-button house-light">2</div>
+                <div class="quaternary-button house-light">3</div>
+                <div class="quaternary-button house-light">4</div>
+                <div class="quaternary-button house-light">5</div>
+                <div class="quaternary-button house-light">6</div>
+                <div class="quaternary-button house-light">7</div>
+                <div class="quaternary-button house-light">8</div>
+                <div class="quaternary-button house-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button house-light"><i class="fa-solid fa-stop"></i></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button disco-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button house-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Logic", track: "The Warning (Inner Mix)", path: "../../samples/disco/garage1.ogg" },
-                    { artist: "Blaze", track: "If You Should Need A Friend (Friendship Mix)", path: "../../samples/disco/garage2.ogg" },
-                    { artist: "Hardrive", track: "Deep Inside", path: "../../samples/disco/garage3.ogg" },
-                    { artist: "Banana Republic feat. Judy Obeya", track: "Catch The Feeling (Tuff Jam's Catch The Dub)", path: "../../samples/disco/garage4.ogg" },
-                    { artist: "A Baffled Republic", track: "Bad Boys (Move In Silence) (Blouse 'N' Skirt Mix)", path: "../../samples/disco/garage5.ogg" },
-                    { artist: "Deep Sensation", track: "Better Love (Deep Vocal Mix)", path: "../../samples/disco/garage6.ogg" },
-                    { artist: "Sound Of One", track: "As I Am (Todd Edwards Mix)", path: "../../samples/disco/garage7.ogg" },
-                    { artist: "Soul Creation", track: "That Feeling", path: "../../samples/disco/garage8.ogg" },
-                    { artist: "Kristine Blond", track: "Love Shy (Tuff Jam Vocal Mix)", path: "../../samples/disco/garage9.ogg" }
+                    { artist: "Logic", track: "The Warning (Inner Mix)", path: "../../../samples/house/garage1.ogg" },
+                    { artist: "Blaze", track: "If You Should Need A Friend (Friendship Mix)", path: "../../../samples/house/garage2.ogg" },
+                    { artist: "Hardrive", track: "Deep Inside", path: "../../../samples/house/garage3.ogg" },
+                    { artist: "Banana Republic feat. Judy Obeya", track: "Catch The Feeling (Tuff Jam's Catch The Dub)", path: "../../../samples/house/garage4.ogg" },
+                    { artist: "A Baffled Republic", track: "Bad Boys (Move In Silence) (Blouse 'N' Skirt Mix)", path: "../../../samples/house/garage5.ogg" },
+                    { artist: "Deep Sensation", track: "Better Love (Deep Vocal Mix)", path: "../../../samples/house/garage6.ogg" },
+                    { artist: "Sound Of One", track: "As I Am (Todd Edwards Mix)", path: "../../../samples/house/garage7.ogg" },
+                    { artist: "Soul Creation", track: "That Feeling", path: "../../../samples/house/garage8.ogg" },
+                    { artist: "Kristine Blond", track: "Love Shy (Tuff Jam Vocal Mix)", path: "../../../samples/house/garage9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));
