@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <title>Dirty South Rap</title>
+    </head>
+
+    <body id="dirtysouthrap">
+        <div class="quaternary-box hiphop">
+            <h1>DIRTY SOUTH RAP</h1><div class="quaternary-year hiphop-light">1986</div>
+
+            <p>Dirty South Rap popped up in the latter half of the 90s, after Gangsta Rap became the standard currency of Hip Hop. Dirty South drew from The Chronic and 2 Live Crew's filthy traditions in equal measure, arriving at a stoned, violent, sex-obsessed and naturally profane brand of modern Hip Hop. Typical about these genres is generally a slower tempo than usual, combined with increased emphasis on bass. The music is supposed to feel "thick" and "hot", displaying the same atmosphere as its environment. Catchy choruses and sexual-themed lyrics are a staple among the more happy styles of Dirty South Rap, in which funny or everyday stories can also appear. On the other hand, raw, gritty rhymes focused on drug trade form the blueprint of other styles. What they all have in common however, is a strong tendency towards partying and clubbing, either happy and nonsensical or dark and heavy. Thanks to a rather eclectic nature and a certain basic shielding from commercial mainstream, Dirty South Rap has survived as one of the fittest Rap genres, leading Hip Hop into the new millennium.</p>
+
+            <div id="quaternary-grid">
+                <div class="quaternary-button hiphop-light">1</div>
+                <div class="quaternary-button hiphop-light">2</div>
+                <div class="quaternary-button hiphop-light">3</div>
+                <div class="quaternary-button hiphop-light">4</div>
+                <div class="quaternary-button hiphop-light">5</div>
+                <div class="quaternary-button hiphop-light">6</div>
+                <div class="quaternary-button hiphop-light">7</div>
+                <div class="quaternary-button hiphop-light">8</div>
+                <div class="quaternary-button hiphop-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><i class="fa-solid fa-stop"></i></div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "2 Live Crew", track: "We Want Some Pussy", path: "../../samples/hiphop/dirtysouthrap1.ogg" },
+                    { artist: "The Dogs", track: "Take It Off", path: "../../samples/hiphop/dirtysouthrap2.ogg" },
+                    { artist: "Luke", track: "I Wanna Rock", path: "../../samples/hiphop/dirtysouthrap3.ogg" },
+                    { artist: "Splack Pack", track: "Shake That Ass Bitch", path: "../../samples/hiphop/dirtysouthrap4.ogg" },
+                    { artist: "Disco Rick", track: "Wiggle, Wiggle", path: "../../samples/hiphop/dirtysouthrap5.ogg" },
+                    { artist: "Wreckx-N-Effect", track: "Rumpshaker", path: "../../samples/hiphop/dirtysouthrap6.ogg" },
+                    { artist: "Clay D feat. MC Nas-D & Aim To Please", track: "That Booty In There", path: "../../samples/hiphop/dirtysouthrap7.ogg" },
+                    { artist: "Get It Boyz", track: "Let Me See U Pop It", path: "../../samples/hiphop/dirtysouthrap8.ogg" },
+                    { artist: "Gucci Crew", track: "Sally (That Girl)", path: "../../samples/hiphop/dirtysouthrap9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>

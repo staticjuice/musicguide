@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <title>Urban Country</title>
+    </head>
+
+    <body id="urbancountry">
+        <div class="quaternary-box country">
+            <h1>URBAN COUNTRY</h1><div class="quaternary-year country-light">1980</div>
+
+            <p>The so-called second wave of Country Rock actually shifted Country further away from its original roots. Instead of becoming more hardcore, it turned into a slick and glossy archetype. It was barely Rock at all, it was more Country Pop. The popularity of "Urban Cowboy", a film from 1978 starring John Travolta, got the style going and also lended its name to the genre. With poster boys and girls singing catchy, emotional songs without much tempo or volume change, they created sentimental soundtrack music that seemed ripped right off the next big romance or teenage blockbuster. Electric guitars and pianos were used to give Country a more modern feel and Pop Rock and Soft Rock influences were used to appeal to an even bigger audience. The hip image of newer country dance clubs, like in Urban Cowboy, became an exploited illusion to sell this music en masse. The commercial (or even greedy) mindset of Urban Cowboy evoked a strong backlash by a new wave of alternative Country musicians who explored opposite directions with Americana.</p>
+
+            <div id="quaternary-grid">
+                <div class="quaternary-button country-light">1</div>
+                <div class="quaternary-button country-light">2</div>
+                <div class="quaternary-button country-light">3</div>
+                <div class="quaternary-button country-light">4</div>
+                <div class="quaternary-button country-light">5</div>
+                <div class="quaternary-button country-light">6</div>
+                <div class="quaternary-button country-light">7</div>
+                <div class="quaternary-button country-light">8</div>
+                <div class="quaternary-button country-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button country-light"><i class="fa-solid fa-stop"></i></div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button country-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "Johnny Lee", track: "Lookin' For Love", path: "../../samples/country/urbancountry1.ogg" },
+                    { artist: "Mickey Gilley", track: "Make The World Go Away", path: "../../samples/country/urbancountry2.ogg" },
+                    { artist: "Alabama", track: "Song Of The South", path: "../../samples/country/urbancountry3.ogg" },
+                    { artist: "Janie Fricke", track: "She's Single Again", path: "../../samples/country/urbancountry4.ogg" },
+                    { artist: "David Allan Coe", track: "Another Pretty Country Song", path: "../../samples/country/urbancountry5.ogg" },
+                    { artist: "Earl Thomas Conley", track: "Once In A Blue Moon", path: "../../samples/country/urbancountry6.ogg" },
+                    { artist: "Eagles", track: "Lyin' Eyes", path: "../../samples/country/urbancountry7.ogg" },
+                    { artist: "Kenny Rogers", track: "Love The World Away", path: "../../samples/country/urbancountry8.ogg" },
+                    { artist: "Anne Murray", track: "Could I Have This Dance", path: "../../samples/country/urbancountry9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>

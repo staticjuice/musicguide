@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <title>Post-Disco</title>
+    </head>
+
+    <body id="postdisco">
+        <div class="quaternary-box rhythmandblues">
+            <h1>POST-DISCO</h1><div class="quaternary-year rhythmandblues-light">1979</div>
+
+            <p>In the aftermath of the great Disco supernova implosion, a supermassive, eclectic post-genre opened up, attracting a bit of everything that was hot at the time (but mostly Synthpop and a touch of instant recognisable glammy metallic guitar solos). The result is Post-Disco &ndash; a collection of all Disco-based R&amp;B music that is almost synonymous with "the sound of the 80s". This was music for the age of superficiality &ndash; a thin layer of neon, fast vehicles, palm trees and white powder. But there was more than synthesiser bands stuck in an escapist wave of Disco nostalgia. Post-Disco is mainly the embodiment of artists with an R&amp;B background who got influenced by its successor Disco, but never really made pure Disco. Instead they released Pop crossovers and became international superstars, selling more records than anyone before. By combining the most catchy elements of Rock, Synth and R&amp;B, while also implementing less conventional chords and song structures, professional Pop producers donated their artists immaculately crafted superhits eternalised in music's collective memory.</p>
+
+            <div id="quaternary-grid">
+                <div class="quaternary-button rhythmandblues-light">1</div>
+                <div class="quaternary-button rhythmandblues-light">2</div>
+                <div class="quaternary-button rhythmandblues-light">3</div>
+                <div class="quaternary-button rhythmandblues-light">4</div>
+                <div class="quaternary-button rhythmandblues-light">5</div>
+                <div class="quaternary-button rhythmandblues-light">6</div>
+                <div class="quaternary-button rhythmandblues-light">7</div>
+                <div class="quaternary-button rhythmandblues-light">8</div>
+                <div class="quaternary-button rhythmandblues-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "The Whispers", track: "And The Beat Goes On", path: "../../samples/rhythmandblues/postdisco1.ogg" },
+                    { artist: "Kool & The Gang", track: "Celebration", path: "../../samples/rhythmandblues/postdisco2.ogg" },
+                    { artist: "Patrice Rushen", track: "Forget Me Nots", path: "../../samples/rhythmandblues/postdisco3.ogg" },
+                    { artist: "Madonna", track: "Holiday", path: "../../samples/rhythmandblues/postdisco4.ogg" },
+                    { artist: "Michael Jackson", track: "Billie Jean", path: "../../samples/rhythmandblues/postdisco5.ogg" },
+                    { artist: "Whitney Houston", track: "I Wanna Dance With Somebody (Who Loves Me)", path: "../../samples/rhythmandblues/postdisco6.ogg" },
+                    { artist: "Siedah Garrett", track: "Do You Want It Right Now", path: "../../samples/rhythmandblues/postdisco7.ogg" },
+                    { artist: "Diana Ross", track: "Chain Reaction", path: "../../samples/rhythmandblues/postdisco8.ogg" },
+                    { artist: "The Pointer Sisters", track: "Jump (For My Love)", path: "../../samples/rhythmandblues/postdisco9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>

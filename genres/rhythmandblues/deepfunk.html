@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <title>Deep Funk</title>
+    </head>
+
+    <body id="deepfunk">
+        <div class="quaternary-box rhythmandblues">
+            <h1>DEEP FUNK</h1><div class="quaternary-year rhythmandblues-light">1976</div>
+
+            <p>Some may say that Funk is just Funk, but there is a difference between well-known vocal Funk aimed at performing and the heavier, instrumental Funk focused on recording, known as Deep Funk. Although this genre already existed in the early 70s, the popularity of Disco pushed many artists underground during the 80s. Bass got stronger and breaks became more pronounced. The focus laid slightly less on fast drums and rolls but more on a slower tempo groove, pushing the music forward. Production was very raw and gritty like Soul. Lots and lots of barely known artists brought out their own, more modern approach of their favourite genre, almost always on vinyl (particularly 45 RPM singles). Although these records did get pressed, the number of editions were usually meagre. These hard-to-find records (hence the term Rare Groove) were being hunted by Hip Hop, Acid Jazz and Breakbeat DJs everywhere (and still are). Rare Groove's characteristics (heavy beats, instrumental, recording-focused and obscurity) make the genre ideal for sampling and extremely popular with Hip Hop and Breakbeat artists.</p>
+
+            <div id="quaternary-grid">
+                <div class="quaternary-button rhythmandblues-light">1</div>
+                <div class="quaternary-button rhythmandblues-light">2</div>
+                <div class="quaternary-button rhythmandblues-light">3</div>
+                <div class="quaternary-button rhythmandblues-light">4</div>
+                <div class="quaternary-button rhythmandblues-light">5</div>
+                <div class="quaternary-button rhythmandblues-light">6</div>
+                <div class="quaternary-button rhythmandblues-light">7</div>
+                <div class="quaternary-button rhythmandblues-light">8</div>
+                <div class="quaternary-button rhythmandblues-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "Incredible Bongo Band", track: "Apache", path: "../../samples/rhythmandblues/deepfunk1.ogg" },
+                    { artist: "Fred Wesley & The J.B.'s", track: "Blow Your Head", path: "../../samples/rhythmandblues/deepfunk2.ogg" },
+                    { artist: "The Mohawks", track: "The Champ", path: "../../samples/rhythmandblues/deepfunk3.ogg" },
+                    { artist: "Rhythm Heritage", track: "Theme From S.W.A.T.", path: "../../samples/rhythmandblues/deepfunk4.ogg" },
+                    { artist: "Commodores", track: "Machine Gun", path: "../../samples/rhythmandblues/deepfunk5.ogg" },
+                    { artist: "The Bamboos", track: "The Bamboos Theme", path: "../../samples/rhythmandblues/deepfunk6.ogg" },
+                    { artist: "Fort Knox Five", track: "Blowing Up The Barrio", path: "../../samples/rhythmandblues/deepfunk7.ogg" },
+                    { artist: "Ashley & Jackson", track: "Solid Gold (Acid Jazz Mix)", path: "../../samples/rhythmandblues/deepfunk8.ogg" },
+                    { artist: "Brownout", track: "Flaximus (Renegades Of Jazz Bboy Edit)", path: "../../samples/rhythmandblues/deepfunk9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>

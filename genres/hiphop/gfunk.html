@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <title>G-Funk</title>
+    </head>
+
+    <body id="gfunk">
+        <div class="quaternary-box hiphop">
+            <h1>G-FUNK</h1><div class="quaternary-year hiphop-light">1989</div>
+
+            <p>G-Funk is the laid-back, Funk-inspired variation of West Coast Rap. Distinguished by its whiny, cheap synthesisers, slow grooves and deep bass, G-Funk became the most popular genre of Hip Hop in the early 90s. After the success of Dr. Dre's 1992 album The Chronic &ndash; the album where he invented and named the genre &ndash; many new rap artists and producers followed his musical techniques, making it the most recognisable sound in Hip Hop for most of the early 90s. G-Funk incorporates multi-layered and melodic synthesisers, slow hypnotic grooves, a deep bass, background female vocals, the extensive sampling of P-Funk tunes, and a high-pitched portamento saw wave synthesiser lead. The lyrical content depended on the artist and could consist of sex, drugs, violence, vandalism and women, but also of love for a city, love for friends and relaxing words. There was also a slurred "lazy" or "smooth" way of rapping in order to clarify words and stay in rhythmic cadence. Unlike other earlier Hip Hop acts that also utilised Funk samples, G-Funk often utilised fewer, unaltered samples per song.</p>
+
+            <div id="quaternary-grid">
+                <div class="quaternary-button hiphop-light">1</div>
+                <div class="quaternary-button hiphop-light">2</div>
+                <div class="quaternary-button hiphop-light">3</div>
+                <div class="quaternary-button hiphop-light">4</div>
+                <div class="quaternary-button hiphop-light">5</div>
+                <div class="quaternary-button hiphop-light">6</div>
+                <div class="quaternary-button hiphop-light">7</div>
+                <div class="quaternary-button hiphop-light">8</div>
+                <div class="quaternary-button hiphop-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><i class="fa-solid fa-stop"></i></div></div>
+            </div>
+
+            <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
+            <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
+            <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><i class="fa-solid fa-stop"></i></div></div>
+        </div>
+
+        <script>
+            $(function() {
+                const tracks = [
+                    { artist: "Dr. Dre", track: "Fuck Wit Dre Day (And Everybody's Celebratin')", path: "../../samples/hiphop/gfunk1.ogg" },
+                    { artist: "Snoop Doggy Dogg", track: "Who Am I? (What's My Name?)", path: "../../samples/hiphop/gfunk2.ogg" },
+                    { artist: "2Pac", track: "California Love", path: "../../samples/hiphop/gfunk3.ogg" },
+                    { artist: "Above The Law", track: "Black Superman", path: "../../samples/hiphop/gfunk4.ogg" },
+                    { artist: "Tha Dogg Pound", track: "Ridin', Slipin' And Slidin'", path: "../../samples/hiphop/gfunk5.ogg" },
+                    { artist: "Thug Life", track: "Pour Out A Little Liquor", path: "../../samples/hiphop/gfunk6.ogg" },
+                    { artist: "Coolio", track: "Fantastic Voyage", path: "../../samples/hiphop/gfunk7.ogg" },
+                    { artist: "Kurupt", track: "Neva Gonna Give It Up", path: "../../samples/hiphop/gfunk8.ogg" },
+                    { artist: "Eminem", track: "The Real Slim Shady", path: "../../samples/hiphop/gfunk9.ogg" }
+                ];
+
+                const audioInstances = tracks.map(track => new Audio(track.path));
+                const $artistSpan = $('#artist');
+                const $trackSpan = $('#track');
+                const $button = $('.quaternary-button');
+
+                $button.on('click', function() {
+                    stopAllMusic();
+                    const index = $button.index(this);
+                    $(this).toggleClass('clicked');
+                    const audio = audioInstances[index];
+                    audio.play();
+                    $artistSpan.text(tracks[index].artist);
+                    $trackSpan.text(tracks[index].track);
+                });
+
+                $('.quaternary-stop').on('click', function() {
+                    stopAllMusic();
+                    $artistSpan.text('');
+                    $trackSpan.text('');
+                });
+
+                function stopAllMusic() {
+                    audioInstances.forEach(audio => {
+                        audio.pause();
+                        audio.currentTime = 0;
+                    });
+                    $button.removeClass('clicked');
+                }
+            });
+        </script>
+    </body>
+</html>
