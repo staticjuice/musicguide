@@ -126,8 +126,16 @@ Secondary section
     transform: translate(-50%, -50%);
     z-index: 1;
     text-align: center;
-    font-size: 2.9vw;
+    font-size: 2.85vw;
     white-space: nowrap;
+}
+
+.rockgrid {
+    flex: 1 1 calc(20% - 2vw);
+}
+
+.rockgrid span {
+    font-size: 2.15vw;
 }
 
 /*---------------------------------------------------------------------------
@@ -253,7 +261,8 @@ Colours
 .country { border-color: #969748; background: #747538; }
 .rhythmandblues { border-color: #009688; background: #00695C; }
 .pop { border-color: #FFEB3B; background: #FDD835; color: #222; }
-.rock { border-color: #F44336; background: #C62828; }
+.rockandroll { border-color: #29B6F6; background: #039BE5; }
+.classicrock { border-color: #F44336; background: #C62828; }
 .metal { border-color: #212121; background: #080808; }
 .punk { border-color: #FF9800; background: #EF6C00; }
 .alternative { border-color: #56707B; background: #37474F; }
@@ -281,7 +290,8 @@ Colours
 #tertiary-country .tertiary-genrelist ::selection { background: #747538; color: #FFF; }
 #tertiary-rhythmandblues .tertiary-genrelist ::selection { background: #00695C; color: #FFF; }
 #tertiary-pop .tertiary-genrelist ::selection { background: #FDD835; }
-#tertiary-rock .tertiary-genrelist ::selection { background: #C62828; color: #FFF; }
+#tertiary-rockandroll .tertiary-genrelist ::selection { background: #039BE5; color: #FFF; }
+#tertiary-classicrock .tertiary-genrelist ::selection { background: #C62828; color: #FFF; }
 #tertiary-metal .tertiary-genrelist ::selection { background: #080808; color: #FFF; }
 #tertiary-punk .tertiary-genrelist ::selection { background: #EF6C00; color: #FFF; }
 #tertiary-alternative .tertiary-genrelist ::selection { background: #37474F; color: #FFF; }
@@ -307,7 +317,8 @@ Colours
 .country-light { background: #969748; }
 .rhythmandblues-light { background: #009688; }
 .pop-light { background: #FFEB3B; }
-.rock-light { background: #F44336; }
+.rockandroll-light { background: #29B6F6; }
+.classicrock-light { background: #F44336; }
 .metal-light { background: #212121; }
 .punk-light { background: #FF9800; }
 .alternative-light { background: #56707B; }
@@ -333,7 +344,8 @@ Colours
 #tertiary-country a:hover { color: #A1A34E; }
 #tertiary-rhythmandblues a:hover { color: #26A69A; }
 #tertiary-pop a:hover { color: #FFF176; }
-#tertiary-rock a:hover { color: #EF5350; }
+#tertiary-rockandroll a:hover { color: #4FC3F7; }
+#tertiary-classicrock a:hover { color: #EF5350; }
 #tertiary-metal a:hover { color: #424242; }
 #tertiary-punk a:hover { color: #FFA726; }
 #tertiary-alternative a:hover { color: #78909C; }
@@ -359,7 +371,8 @@ Colours
 .quaternary-button.country-light:hover { background: #A1A34E; }
 .quaternary-button.rhythmandblues-light:hover { background: #26A69A; }
 .quaternary-button.pop-light:hover { background: #FFF176; }
-.quaternary-button.rock-light:hover { background: #EF5350; }
+.quaternary-button.rockandroll-light:hover { background: #4FC3F7; }
+.quaternary-button.classicrock-light:hover { background: #EF5350; }
 .quaternary-button.metal-light:hover { background: #424242; }
 .quaternary-button.punk-light:hover { background: #FFA726; }
 .quaternary-button.alternative-light:hover { background: #78909C; }
@@ -406,7 +419,8 @@ Background images
 #tertiary-country:before { background-image: url("../images/countrybig.jpg"); }
 #tertiary-rhythmandblues:before { background-image: url("../images/rhythmandbluesbig.jpg"); }
 #tertiary-pop:before { background-image: url("../images/popbig.jpg"); }
-#tertiary-rock:before { background-image: url("../images/rockbig.jpg"); }
+#tertiary-rockandroll:before { background-image: url("../images/rockandrollbig.jpg"); }
+#tertiary-classicrock:before { background-image: url("../images/classicrockbig.jpg"); }
 #tertiary-metal:before { background-image: url("../images/metalbig.jpg"); }
 #tertiary-punk:before { background-image: url("../images/punkbig.jpg"); }
 #tertiary-alternative:before { background-image: url("../images/alternativebig.jpg"); }
@@ -503,19 +517,20 @@ Background images
 #electropop {background: url("../images/pop/electropop.jpg") center center / cover fixed; }
 #alternativepop {background: url("../images/pop/alternativepop.jpg") center center / cover fixed; }
 
-#rockandroll {background: url("../images/rock/rockandroll.jpg") center center / cover fixed; }
-#surfrock {background: url("../images/rock/surfrock.jpg") center center / cover fixed; }
-#beat {background: url("../images/rock/beat.jpg") center center / cover fixed; }
-#garagerock {background: url("../images/rock/garagerock.jpg") center center / cover fixed; }
-#bluesrock {background: url("../images/rock/bluesrock.jpg") center center / cover fixed; }
-#folkrock {background: url("../images/rock/folkrock.jpg") center center / cover fixed; }
-#psychedelicrock {background: url("../images/rock/psychedelicrock.jpg") center center / cover fixed; }
-#progressiverock {background: url("../images/rock/progressiverock.jpg") center center / cover fixed; }
-#hardrock {background: url("../images/rock/hardrock.jpg") center center / cover fixed; }
-#southernrock {background: url("../images/rock/southernrock.jpg") center center / cover fixed; }
-#krautrock {background: url("../images/rock/krautrock.jpg") center center / cover fixed; }
-#glamrock {background: url("../images/rock/glamrock.jpg") center center / cover fixed; }
-#heartlandrock {background: url("../images/rock/heartlandrock.jpg") center center / cover fixed; }
+#rockandroll {background: url("../images/rockandroll/rockandroll.jpg") center center / cover fixed; }
+#surfrock {background: url("../images/rockandroll/surfrock.jpg") center center / cover fixed; }
+#beat {background: url("../images/rockandroll/beat.jpg") center center / cover fixed; }
+#garagerock {background: url("../images/rockandroll/garagerock.jpg") center center / cover fixed; }
+
+#bluesrock {background: url("../images/classicrock/bluesrock.jpg") center center / cover fixed; }
+#folkrock {background: url("../images/classicrock/folkrock.jpg") center center / cover fixed; }
+#psychedelicrock {background: url("../images/classicrock/psychedelicrock.jpg") center center / cover fixed; }
+#progressiverock {background: url("../images/classicrock/progressiverock.jpg") center center / cover fixed; }
+#hardrock {background: url("../images/classicrock/hardrock.jpg") center center / cover fixed; }
+#southernrock {background: url("../images/classicrock/southernrock.jpg") center center / cover fixed; }
+#krautrock {background: url("../images/classicrock/krautrock.jpg") center center / cover fixed; }
+#glamrock {background: url("../images/classicrock/glamrock.jpg") center center / cover fixed; }
+#heartlandrock {background: url("../images/classicrock/heartlandrock.jpg") center center / cover fixed; }
 
 #heavymetal {background: url("../images/metal/heavymetal.jpg") center center / cover fixed; }
 #nwobhm {background: url("../images/metal/nwobhm.jpg") center center / cover fixed; }

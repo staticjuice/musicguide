@@ -10,41 +10,41 @@
     </head>
 
     <body id="surfrock">
-        <div class="quaternary-box rock">
-            <h1>SURF ROCK</h1><div class="quaternary-year rock-light">1961</div>
+        <div class="quaternary-box rockandroll">
+            <h1>SURF ROCK</h1><div class="quaternary-year rockandroll-light">1961</div>
 
             <p>The sun, the beach, palm trees and a carefree lifestyle were the perfect atmosphere for surf boys to retreat in the shack to work on their guitar technique. With incredibly fast, rolling guitar riffs put in reverb, they created a washing sound that could easily imitate ocean waves and impress girls in that true Rock &amp; Roll heritage. Almost all Surf Rock is purely instrumental and this draws even more attention towards the proficiency of its guitarists. Non-instrumental genres were often much slower and less technical, such as the music of The Beach Boys, who were by far the most well-known exponent. Surf Rock features standard 4/4 Rock &amp; Roll riffs, yet spiced up by influences from Cuban malagueña songs. This made them so fast, catchy and addictive that everyone wanted to play them. Covering Surf Rock tunes from other bands was so common and tolerated, that eventually, nobody knew who made the originals anymore. This was non-commercial, DIY, fun music in its purest form, which sadly almost became extinct because almost all bands cared too little for professional distribution or promotion of their music.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-button rock-light">1</div>
-                <div class="quaternary-button rock-light">2</div>
-                <div class="quaternary-button rock-light">3</div>
-                <div class="quaternary-button rock-light">4</div>
-                <div class="quaternary-button rock-light">5</div>
-                <div class="quaternary-button rock-light">6</div>
-                <div class="quaternary-button rock-light">7</div>
-                <div class="quaternary-button rock-light">8</div>
-                <div class="quaternary-button rock-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-button rockandroll-light">1</div>
+                <div class="quaternary-button rockandroll-light">2</div>
+                <div class="quaternary-button rockandroll-light">3</div>
+                <div class="quaternary-button rockandroll-light">4</div>
+                <div class="quaternary-button rockandroll-light">5</div>
+                <div class="quaternary-button rockandroll-light">6</div>
+                <div class="quaternary-button rockandroll-light">7</div>
+                <div class="quaternary-button rockandroll-light">8</div>
+                <div class="quaternary-button rockandroll-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button rockandroll-light"><i class="fa-solid fa-stop"></i></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button rockandroll-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "The Surfaris", track: "Wipe Out", path: "../../../samples/rock/surfrock1.ogg" },
-                    { artist: "Dick Dale And The Del-Tones", track: "Misirlou", path: "../../../samples/rock/surfrock2.ogg" },
-                    { artist: "The Beach Boys", track: "Surfin' U.S.A.", path: "../../../samples/rock/surfrock3.ogg" },
-                    { artist: "The Shadows", track: "Apache", path: "../../../samples/rock/surfrock4.ogg" },
-                    { artist: "The Ventures", track: "Walk, Don't Run", path: "../../../samples/rock/surfrock5.ogg" },
-                    { artist: "The Chantays", track: "Pipeline", path: "../../../samples/rock/surfrock6.ogg" },
-                    { artist: "The Marketts", track: "Out Of Limits", path: "../../../samples/rock/surfrock7.ogg" },
-                    { artist: "The Champs", track: "Tequila", path: "../../../samples/rock/surfrock8.ogg" },
-                    { artist: "The Bel-Aires", track: "Mr. Moto", path: "../../../samples/rock/surfrock9.ogg" }
+                    { artist: "The Surfaris", track: "Wipe Out", path: "../../../samples/rockandroll/surfrock1.ogg" },
+                    { artist: "Dick Dale And The Del-Tones", track: "Misirlou", path: "../../../samples/rockandroll/surfrock2.ogg" },
+                    { artist: "The Beach Boys", track: "Surfin' U.S.A.", path: "../../../samples/rockandroll/surfrock3.ogg" },
+                    { artist: "The Shadows", track: "Apache", path: "../../../samples/rockandroll/surfrock4.ogg" },
+                    { artist: "The Ventures", track: "Walk, Don't Run", path: "../../../samples/rockandroll/surfrock5.ogg" },
+                    { artist: "The Chantays", track: "Pipeline", path: "../../../samples/rockandroll/surfrock6.ogg" },
+                    { artist: "The Marketts", track: "Out Of Limits", path: "../../../samples/rockandroll/surfrock7.ogg" },
+                    { artist: "The Champs", track: "Tequila", path: "../../../samples/rockandroll/surfrock8.ogg" },
+                    { artist: "The Bel-Aires", track: "Mr. Moto", path: "../../../samples/rockandroll/surfrock9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

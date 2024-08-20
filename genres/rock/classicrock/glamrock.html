@@ -10,41 +10,41 @@
     </head>
 
     <body id="glamrock">
-        <div class="quaternary-box rock">
-            <h1>GLAM ROCK</h1><div class="quaternary-year rock-light">1971</div>
+        <div class="quaternary-box classicrock">
+            <h1>GLAM ROCK</h1><div class="quaternary-year classicrock-light">1971</div>
 
             <p>The implosion of the flower power age led to a shift of focus towards individualism and with some artists to a cult of personality. One important contributor to this change is the introduction of popular music onto television. At first with broadcasted performances and music programmes, then with specialised music channels and video clips. This was strongly felt in the world of Rock where Hard Rock became less about the sound and more about the visual. Certain Rock artists grasped the opportunity of TV to stand out and get noticed. Either by shocking audiences with sexual or provocative acts or by conceiving eccentric alter egos through makeup and fashion. Glam Rock's style could range from Singer-Songwriter to Progressive Rock or even Hard Rock, but often with piano melodies. Androgynous singers and electronic influences frightened traditional Rock enthusiasts who started forming a large countermovement in "Roots Rock". Glam Rock overlaps with its successor, Proto-Punk, which would transfer the glam universe of excess and eccentricity to Punk Rock.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-button rock-light">1</div>
-                <div class="quaternary-button rock-light">2</div>
-                <div class="quaternary-button rock-light">3</div>
-                <div class="quaternary-button rock-light">4</div>
-                <div class="quaternary-button rock-light">5</div>
-                <div class="quaternary-button rock-light">6</div>
-                <div class="quaternary-button rock-light">7</div>
-                <div class="quaternary-button rock-light">8</div>
-                <div class="quaternary-button rock-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-button classicrock-light">1</div>
+                <div class="quaternary-button classicrock-light">2</div>
+                <div class="quaternary-button classicrock-light">3</div>
+                <div class="quaternary-button classicrock-light">4</div>
+                <div class="quaternary-button classicrock-light">5</div>
+                <div class="quaternary-button classicrock-light">6</div>
+                <div class="quaternary-button classicrock-light">7</div>
+                <div class="quaternary-button classicrock-light">8</div>
+                <div class="quaternary-button classicrock-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button classicrock-light"><i class="fa-solid fa-stop"></i></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button classicrock-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "David Bowie", track: "Starman", path: "../../../samples/rock/glamrock1.ogg" },
-                    { artist: "Queen", track: "Don't Stop Me Now", path: "../../../samples/rock/glamrock2.ogg" },
-                    { artist: "Roxy Music", track: "Love Is The Drug", path: "../../../samples/rock/glamrock3.ogg" },
-                    { artist: "Lou Reed", track: "Satellite Of Love", path: "../../../samples/rock/glamrock4.ogg" },
-                    { artist: "T. Rex", track: "Children Of The Revolution", path: "../../../samples/rock/glamrock5.ogg" },
-                    { artist: "Suzi Quatro", track: "Can The Can", path: "../../../samples/rock/glamrock6.ogg" },
-                    { artist: "Slade", track: "Far Far Away", path: "../../../samples/rock/glamrock7.ogg" },
-                    { artist: "Sweet", track: "The Ballroom Blitz", path: "../../../samples/rock/glamrock8.ogg" },
-                    { artist: "Garry Glitter", track: "Rock And Roll (Part 1)", path: "../../../samples/rock/glamrock9.ogg" }
+                    { artist: "David Bowie", track: "Starman", path: "../../../samples/classicrock/glamrock1.ogg" },
+                    { artist: "Queen", track: "Don't Stop Me Now", path: "../../../samples/classicrock/glamrock2.ogg" },
+                    { artist: "Roxy Music", track: "Love Is The Drug", path: "../../../samples/classicrock/glamrock3.ogg" },
+                    { artist: "Lou Reed", track: "Satellite Of Love", path: "../../../samples/classicrock/glamrock4.ogg" },
+                    { artist: "T. Rex", track: "Children Of The Revolution", path: "../../../samples/classicrock/glamrock5.ogg" },
+                    { artist: "Suzi Quatro", track: "Can The Can", path: "../../../samples/classicrock/glamrock6.ogg" },
+                    { artist: "Slade", track: "Far Far Away", path: "../../../samples/classicrock/glamrock7.ogg" },
+                    { artist: "Sweet", track: "The Ballroom Blitz", path: "../../../samples/classicrock/glamrock8.ogg" },
+                    { artist: "Garry Glitter", track: "Rock And Roll (Part 1)", path: "../../../samples/classicrock/glamrock9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

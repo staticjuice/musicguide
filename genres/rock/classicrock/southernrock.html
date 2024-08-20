@@ -10,41 +10,41 @@
     </head>
 
     <body id="southernrock">
-        <div class="quaternary-box rock">
-            <h1>SOUTHERN ROCK</h1><div class="quaternary-year rock-light">1969</div>
+        <div class="quaternary-box classicrock">
+            <h1>SOUTHERN ROCK</h1><div class="quaternary-year classicrock-light">1969</div>
 
             <p>When a nation loses a war, often a deep urge arises to reestablish its pride and express its identity. Southern Rock is another example of many styles typical for the southern states of the US and arguably the one that stresses most the will of pride, glory and freedom. This fusion genre is patriotic to the bone &ndash; southern American Blues meets southern American Country meets American Rock. After a period of experimentation and Psychedelic Rock, the time for back-to-the-roots Rock music was at hand. Southern Rock is distinguishable by being raw and loud. It is the celebration and adoration of electric guitars by having multiple lead guitars playing (often improvised) solos whenever they're not used for some heavy boogie jamming. In conclusion &ndash; Southern Rock is either a gentle Country ballad with a touch of Blues Rock or a freight train rollercoaster looping and spinning off its tracks until the shaking boogie rhythm puts it back on again for another ride. In the 21st century, a new wave of Southern Rock artists comes on the scene such as the Kings of Leon and the Black Crowes.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-button rock-light">1</div>
-                <div class="quaternary-button rock-light">2</div>
-                <div class="quaternary-button rock-light">3</div>
-                <div class="quaternary-button rock-light">4</div>
-                <div class="quaternary-button rock-light">5</div>
-                <div class="quaternary-button rock-light">6</div>
-                <div class="quaternary-button rock-light">7</div>
-                <div class="quaternary-button rock-light">8</div>
-                <div class="quaternary-button rock-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-button classicrock-light">1</div>
+                <div class="quaternary-button classicrock-light">2</div>
+                <div class="quaternary-button classicrock-light">3</div>
+                <div class="quaternary-button classicrock-light">4</div>
+                <div class="quaternary-button classicrock-light">5</div>
+                <div class="quaternary-button classicrock-light">6</div>
+                <div class="quaternary-button classicrock-light">7</div>
+                <div class="quaternary-button classicrock-light">8</div>
+                <div class="quaternary-button classicrock-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button classicrock-light"><i class="fa-solid fa-stop"></i></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button classicrock-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Lynyrd Skynyrd", track: "Sweet Home Alabama", path: "../../../samples/rock/southernrock1.ogg" },
-                    { artist: "The Allman Brothers Band", track: "Midnight Rider", path: "../../../samples/rock/southernrock2.ogg" },
-                    { artist: "Creedence Clearwater Revival", track: "Run Through The Jungle", path: "../../../samples/rock/southernrock3.ogg" },
-                    { artist: "ZZ Top", track: "Sharp Dressed Man", path: "../../../samples/rock/southernrock4.ogg" },
-                    { artist: "Black Oak Arkansas", track: "Lord Have Mercy On My Soul", path: "../../../samples/rock/southernrock5.ogg" },
-                    { artist: "Blackfoot", track: "Train, Train", path: "../../../samples/rock/southernrock6.ogg" },
-                    { artist: "Kings Of Leon", track: "Red Morning Light", path: "../../../samples/rock/southernrock7.ogg" },
-                    { artist: "The Black Crowes", track: "Remedy", path: "../../../samples/rock/southernrock8.ogg" },
-                    { artist: "The Georgia Satellites", track: "Keep Your Hands To Yourself", path: "../../../samples/rock/southernrock9.ogg" }
+                    { artist: "Lynyrd Skynyrd", track: "Sweet Home Alabama", path: "../../../samples/classicrock/southernrock1.ogg" },
+                    { artist: "The Allman Brothers Band", track: "Midnight Rider", path: "../../../samples/classicrock/southernrock2.ogg" },
+                    { artist: "Creedence Clearwater Revival", track: "Run Through The Jungle", path: "../../../samples/classicrock/southernrock3.ogg" },
+                    { artist: "ZZ Top", track: "Sharp Dressed Man", path: "../../../samples/classicrock/southernrock4.ogg" },
+                    { artist: "Black Oak Arkansas", track: "Lord Have Mercy On My Soul", path: "../../../samples/classicrock/southernrock5.ogg" },
+                    { artist: "Blackfoot", track: "Train, Train", path: "../../../samples/classicrock/southernrock6.ogg" },
+                    { artist: "Kings Of Leon", track: "Red Morning Light", path: "../../../samples/classicrock/southernrock7.ogg" },
+                    { artist: "The Black Crowes", track: "Remedy", path: "../../../samples/classicrock/southernrock8.ogg" },
+                    { artist: "The Georgia Satellites", track: "Keep Your Hands To Yourself", path: "../../../samples/classicrock/southernrock9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));
