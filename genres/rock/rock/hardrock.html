@@ -10,41 +10,41 @@
     </head>
 
     <body id="hardrock">
-        <div class="quaternary-box classicrock">
-            <h1>HARD ROCK</h1><div class="quaternary-year classicrock-light">1968</div>
+        <div class="quaternary-box rock">
+            <h1>HARD ROCK</h1><div class="quaternary-year rock-light">1968</div>
 
             <p>Many music genres have been restyled into a rougher version of themselves. The same happened with Blues Rock in the late 60s, which got restyled into Hard Rock. With the shutdown of UK's pirate radios of the 60s, a louder and faster kind of Blues Rock was born which ultimately lead to the birth of Heavy Metal. The genre quickly caught on with the masses, as it was the first "heavy" music genre to exist or certainly the heaviest at the time. Hard Rock uses the same instrument setup as other Rock but with more distortion on the guitars. Hard Rock also introduced one of the most quintessential Rock elements &ndash; the Riff. Riffs are short unique melodies, often repetitive and a recognisable trademark of many Rock anthems. Bursting with testosterone, Hard Rock is a macho thing, regardless if you're a biker, leather-clad Rock star, or simply part of the rebel-outlaw subculture. The lyrical content often dealt with these lifestyles, talking about dark, criminal or macho topics. A new direction of music was born, so large and prominent that it's hard to say which Rock genre thereafter wasn't influenced by it.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-button classicrock-light">1</div>
-                <div class="quaternary-button classicrock-light">2</div>
-                <div class="quaternary-button classicrock-light">3</div>
-                <div class="quaternary-button classicrock-light">4</div>
-                <div class="quaternary-button classicrock-light">5</div>
-                <div class="quaternary-button classicrock-light">6</div>
-                <div class="quaternary-button classicrock-light">7</div>
-                <div class="quaternary-button classicrock-light">8</div>
-                <div class="quaternary-button classicrock-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button classicrock-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-button rock-light">1</div>
+                <div class="quaternary-button rock-light">2</div>
+                <div class="quaternary-button rock-light">3</div>
+                <div class="quaternary-button rock-light">4</div>
+                <div class="quaternary-button rock-light">5</div>
+                <div class="quaternary-button rock-light">6</div>
+                <div class="quaternary-button rock-light">7</div>
+                <div class="quaternary-button rock-light">8</div>
+                <div class="quaternary-button rock-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button classicrock-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "AC/DC", track: "Thunderstruck", path: "../../../samples/classicrock/hardrock1.ogg" },
-                    { artist: "George Thorogood & The Destroyers", track: "Bad To The Bone", path: "../../../samples/classicrock/hardrock2.ogg" },
-                    { artist: "Ram Jam", track: "Black Betty", path: "../../../samples/classicrock/hardrock3.ogg" },
-                    { artist: "Aerosmith", track: "Love In An Elevator", path: "../../../samples/classicrock/hardrock4.ogg" },
-                    { artist: "Thin Lizzy", track: "Johnny", path: "../../../samples/classicrock/hardrock5.ogg" },
-                    { artist: "Free", track: "All Right Now", path: "../../../samples/classicrock/hardrock6.ogg" },
-                    { artist: "Humble Pie", track: "Honky Tonk Women", path: "../../../samples/classicrock/hardrock7.ogg" },
-                    { artist: "Steppenwolf", track: "Born To Be Wild", path: "../../../samples/classicrock/hardrock8.ogg" },
-                    { artist: "The Who", track: "Won't Get Fooled Again", path: "../../../samples/classicrock/hardrock9.ogg" }
+                    { artist: "AC/DC", track: "Thunderstruck", path: "../../../samples/rock/hardrock1.ogg" },
+                    { artist: "George Thorogood & The Destroyers", track: "Bad To The Bone", path: "../../../samples/rock/hardrock2.ogg" },
+                    { artist: "Ram Jam", track: "Black Betty", path: "../../../samples/rock/hardrock3.ogg" },
+                    { artist: "Aerosmith", track: "Love In An Elevator", path: "../../../samples/rock/hardrock4.ogg" },
+                    { artist: "Thin Lizzy", track: "Johnny", path: "../../../samples/rock/hardrock5.ogg" },
+                    { artist: "Free", track: "All Right Now", path: "../../../samples/rock/hardrock6.ogg" },
+                    { artist: "Humble Pie", track: "Honky Tonk Women", path: "../../../samples/rock/hardrock7.ogg" },
+                    { artist: "Steppenwolf", track: "Born To Be Wild", path: "../../../samples/rock/hardrock8.ogg" },
+                    { artist: "The Who", track: "Won't Get Fooled Again", path: "../../../samples/rock/hardrock9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

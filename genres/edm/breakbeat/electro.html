@@ -4,47 +4,47 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
         <title>Electro</title>
     </head>
 
     <body id="electro">
-        <div class="quaternary-box hiphop">
-            <h1>ELECTRO</h1><div class="quaternary-year hiphop-light">1982</div>
+        <div class="quaternary-box breakbeat">
+            <h1>ELECTRO</h1><div class="quaternary-year breakbeat-light">1982</div>
 
             <p>The genre of Electro is essentially Hip Hop music with lots of Krautrock influences. American rappers embraced the German revolutionary music and quickly started making Hip Hop music with the aid of drum machines and sequencers, resulting in digital sampling and looping of breakbeats. Electro has few vocals let alone raps, though if they are present they are usually vocoded. Robotic breakdancing and vocoders give Electro that stereotypical futuristic "robo-feel", often imitated or parodied. On the other hand, the experiment of Old School Rap found itself in a precarious and fragile state at the beginning of the 80s. The music never really caught on and was in danger of being suppressed by Synthpop, which was growing exponentially in popularity. With lots of spacy, robotic sounds and basic synthesiser melodies, this was a completely different sound than your average Rap song or any early 80s genre for that matter. It must come as no surprise, therefore, that Electro's mission was accomplished and its influence on further electronic music beyond the scale.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-button hiphop-light">1</div>
-                <div class="quaternary-button hiphop-light">2</div>
-                <div class="quaternary-button hiphop-light">3</div>
-                <div class="quaternary-button hiphop-light">4</div>
-                <div class="quaternary-button hiphop-light">5</div>
-                <div class="quaternary-button hiphop-light">6</div>
-                <div class="quaternary-button hiphop-light">7</div>
-                <div class="quaternary-button hiphop-light">8</div>
-                <div class="quaternary-button hiphop-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-button breakbeat-light">1</div>
+                <div class="quaternary-button breakbeat-light">2</div>
+                <div class="quaternary-button breakbeat-light">3</div>
+                <div class="quaternary-button breakbeat-light">4</div>
+                <div class="quaternary-button breakbeat-light">5</div>
+                <div class="quaternary-button breakbeat-light">6</div>
+                <div class="quaternary-button breakbeat-light">7</div>
+                <div class="quaternary-button breakbeat-light">8</div>
+                <div class="quaternary-button breakbeat-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button breakbeat-light"><i class="fa-solid fa-stop"></i></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button breakbeat-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Grandmaster Flash & The Furious Five", track: "Scorpio", path: "../../samples/hiphop/electro1.ogg" },
-                    { artist: "Afrika Bambaataa", track: "Planet Rock", path: "../../samples/hiphop/electro2.ogg" },
-                    { artist: "Freestyle", track: "Don't Stop The Rock", path: "../../samples/hiphop/electro3.ogg" },
-                    { artist: "Mantronix", track: "Needle To The Groove", path: "../../samples/hiphop/electro4.ogg" },
-                    { artist: "Herbie Hancock", track: "Rockit", path: "../../samples/hiphop/electro5.ogg" },
-                    { artist: "The Alliance", track: "Action", path: "../../samples/hiphop/electro6.ogg" },
-                    { artist: "B.O.S.E.", track: "Rock The World", path: "../../samples/hiphop/electro7.ogg" },
-                    { artist: "Newcleus", track: "Computer Age (Push The Button)", path: "../../samples/hiphop/electro8.ogg" },
-                    { artist: "The Egyptian Lover", track: "Egypt Egypt", path: "../../samples/hiphop/electro9.ogg" }
+                    { artist: "Grandmaster Flash & The Furious Five", track: "Scorpio", path: "../../../samples/breakbeat/electro1.ogg" },
+                    { artist: "Afrika Bambaataa", track: "Planet Rock", path: "../../../samples/breakbeat/electro2.ogg" },
+                    { artist: "Freestyle", track: "Don't Stop The Rock", path: "../../../samples/breakbeat/electro3.ogg" },
+                    { artist: "Mantronix", track: "Needle To The Groove", path: "../../../samples/breakbeat/electro4.ogg" },
+                    { artist: "Herbie Hancock", track: "Rockit", path: "../../../samples/breakbeat/electro5.ogg" },
+                    { artist: "The Alliance", track: "Action", path: "../../../samples/breakbeat/electro6.ogg" },
+                    { artist: "B.O.S.E.", track: "Rock The World", path: "../../../samples/breakbeat/electro7.ogg" },
+                    { artist: "Newcleus", track: "Computer Age (Push The Button)", path: "../../../samples/breakbeat/electro8.ogg" },
+                    { artist: "The Egyptian Lover", track: "Egypt Egypt", path: "../../../samples/breakbeat/electro9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

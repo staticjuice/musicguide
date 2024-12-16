@@ -10,41 +10,41 @@
     </head>
 
     <body id="garagerock">
-        <div class="quaternary-box rockandroll">
-            <h1>GARAGE ROCK</h1><div class="quaternary-year rockandroll-light">1963</div>
+        <div class="quaternary-box rock">
+            <h1>GARAGE ROCK</h1><div class="quaternary-year rock-light">1963</div>
 
             <p>After the advent of Rock &amp; Roll, countless ambitious teens got hooked on the sound and started forming their own Rock bands. More often than not, they rehearsed in the garages of their parents. The result was a very raw, amateur, lo-fi sound of Rock &amp; Roll and the first experiments with distorted guitars. Garage Rock is a genre where the "fuzz" distortion effect is used intensively, which fits nicely with Garage Rock's recurring content of anger and frustration about dealing with heartbreak and other bad experiences. Because most Garage Rock musicians couldn't afford decent audio equipment, there was often no budget for voice amplification, resulting in wailing, screaming singers. It wasn't until the great British Invasion of the mid-60s that Garage Rock truly broke loose, with even more bands and crossovers to Psychedelic Rock as a result. Garage Rock's big teenage "we do what we want" attitude and sound inspired Punk itself, as well as contemporary artists who felt a revival was well deserved. After all, Garage Rock is the embodiment of sleaziness, roughness and Rock's nonchalance in all its glory.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-button rockandroll-light">1</div>
-                <div class="quaternary-button rockandroll-light">2</div>
-                <div class="quaternary-button rockandroll-light">3</div>
-                <div class="quaternary-button rockandroll-light">4</div>
-                <div class="quaternary-button rockandroll-light">5</div>
-                <div class="quaternary-button rockandroll-light">6</div>
-                <div class="quaternary-button rockandroll-light">7</div>
-                <div class="quaternary-button rockandroll-light">8</div>
-                <div class="quaternary-button rockandroll-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button rockandroll-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-button rock-light">1</div>
+                <div class="quaternary-button rock-light">2</div>
+                <div class="quaternary-button rock-light">3</div>
+                <div class="quaternary-button rock-light">4</div>
+                <div class="quaternary-button rock-light">5</div>
+                <div class="quaternary-button rock-light">6</div>
+                <div class="quaternary-button rock-light">7</div>
+                <div class="quaternary-button rock-light">8</div>
+                <div class="quaternary-button rock-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button rockandroll-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "The Sonics", track: "Have Love Will Travel", path: "../../../samples/rockandroll/garagerock1.ogg" },
-                    { artist: "The Castaways", track: "Liar, Liar", path: "../../../samples/rockandroll/garagerock2.ogg" },
-                    { artist: "The Wailers", track: "Hang Up", path: "../../../samples/rockandroll/garagerock3.ogg" },
-                    { artist: "The Kingsmen", track: "Louie Louie", path: "../../../samples/rockandroll/garagerock4.ogg" },
-                    { artist: "The Electric Prunes", track: "Get Me To The World On Time", path: "../../../samples/rockandroll/garagerock5.ogg" },
-                    { artist: "The 13th Floor Elevators", track: "You're Gonna Miss Me", path: "../../../samples/rockandroll/garagerock6.ogg" },
-                    { artist: "Count Five", track: "Psychotic Reaction", path: "../../../samples/rockandroll/garagerock7.ogg" },
-                    { artist: "The Seeds", track: "Pushin' Too Hard", path: "../../../samples/rockandroll/garagerock8.ogg" },
-                    { artist: "Halloween Fright Night", track: "Gloria (The Shadows Of The Knight)", path: "../../../samples/rockandroll/garagerock9.ogg" }
+                    { artist: "The Sonics", track: "Have Love Will Travel", path: "../../../samples/rock/garagerock1.ogg" },
+                    { artist: "The Castaways", track: "Liar, Liar", path: "../../../samples/rock/garagerock2.ogg" },
+                    { artist: "The Wailers", track: "Hang Up", path: "../../../samples/rock/garagerock3.ogg" },
+                    { artist: "The Kingsmen", track: "Louie Louie", path: "../../../samples/rock/garagerock4.ogg" },
+                    { artist: "The Electric Prunes", track: "Get Me To The World On Time", path: "../../../samples/rock/garagerock5.ogg" },
+                    { artist: "The 13th Floor Elevators", track: "You're Gonna Miss Me", path: "../../../samples/rock/garagerock6.ogg" },
+                    { artist: "Count Five", track: "Psychotic Reaction", path: "../../../samples/rock/garagerock7.ogg" },
+                    { artist: "The Seeds", track: "Pushin' Too Hard", path: "../../../samples/rock/garagerock8.ogg" },
+                    { artist: "Halloween Fright Night", track: "Gloria (The Shadows Of The Knight)", path: "../../../samples/rock/garagerock9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

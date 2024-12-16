@@ -10,41 +10,41 @@
     </head>
 
     <body id="progressiverock">
-        <div class="quaternary-box classicrock">
-            <h1>PROGRESSIVE ROCK</h1><div class="quaternary-year classicrock-light">1967</div>
+        <div class="quaternary-box rock">
+            <h1>PROGRESSIVE ROCK</h1><div class="quaternary-year rock-light">1967</div>
 
             <p>By the mid-60s, the new 33 RPM long-play records had pushed away the older 78 RPM records, allowing for more playtime on one record. This shifted the focus from hit singles to elaborate concept albums, in which longer songs were possible. Longer songs meant more opportunity to experiment with passages, structure and song progression. The freeform and crossover of Psychedelic Rock inspired some progressive artists to experiment as well, but more towards Classical music. Softer, longer and more intricate songs were the result, with lots of tempo changes and special instruments like the mellotron. It was contemplative, difficult to write music and not really meant for live performances, but to be mastered to perfection on vinyl. Because during the 60s, another key event in music history occurred that explains Progressive Rock's appeal &ndash; the appearance of stereo headphones and hi-fidelity speakers. Stereo becomes the norm instead of mono and music listening turns into an uncanny sensation through technology that still delivers excellent sound quality even by today's standards.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-button classicrock-light">1</div>
-                <div class="quaternary-button classicrock-light">2</div>
-                <div class="quaternary-button classicrock-light">3</div>
-                <div class="quaternary-button classicrock-light">4</div>
-                <div class="quaternary-button classicrock-light">5</div>
-                <div class="quaternary-button classicrock-light">6</div>
-                <div class="quaternary-button classicrock-light">7</div>
-                <div class="quaternary-button classicrock-light">8</div>
-                <div class="quaternary-button classicrock-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button classicrock-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-button rock-light">1</div>
+                <div class="quaternary-button rock-light">2</div>
+                <div class="quaternary-button rock-light">3</div>
+                <div class="quaternary-button rock-light">4</div>
+                <div class="quaternary-button rock-light">5</div>
+                <div class="quaternary-button rock-light">6</div>
+                <div class="quaternary-button rock-light">7</div>
+                <div class="quaternary-button rock-light">8</div>
+                <div class="quaternary-button rock-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button classicrock-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Pink Floyd", track: "Time", path: "../../../samples/classicrock/progressiverock1.ogg" },
-                    { artist: "The Moody Blues", track: "Nights In White Satin", path: "../../../samples/classicrock/progressiverock2.ogg" },
-                    { artist: "Jethro Tull", track: "Aqualung", path: "../../../samples/classicrock/progressiverock3.ogg" },
-                    { artist: "Yes", track: "Siberian Khatru", path: "../../../samples/classicrock/progressiverock4.ogg" },
-                    { artist: "Emerson, Lake & Palmer", track: "Knife Edge", path: "../../../samples/classicrock/progressiverock5.ogg" },
-                    { artist: "Procol Harum", track: "A Whiter Shade Of Pale", path: "../../../samples/classicrock/progressiverock6.ogg" },
-                    { artist: "Marillion", track: "Script For A Jester's Tear", path: "../../../samples/classicrock/progressiverock7.ogg" },
-                    { artist: "Rush", track: "Xanadu", path: "../../../samples/classicrock/progressiverock8.ogg" },
-                    { artist: "King Crimson", track: "In The Court Of The Crimson King", path: "../../../samples/classicrock/progressiverock9.ogg" }
+                    { artist: "Pink Floyd", track: "Time", path: "../../../samples/rock/progressiverock1.ogg" },
+                    { artist: "The Moody Blues", track: "Nights In White Satin", path: "../../../samples/rock/progressiverock2.ogg" },
+                    { artist: "Jethro Tull", track: "Aqualung", path: "../../../samples/rock/progressiverock3.ogg" },
+                    { artist: "Yes", track: "Siberian Khatru", path: "../../../samples/rock/progressiverock4.ogg" },
+                    { artist: "Emerson, Lake & Palmer", track: "Knife Edge", path: "../../../samples/rock/progressiverock5.ogg" },
+                    { artist: "Procol Harum", track: "A Whiter Shade Of Pale", path: "../../../samples/rock/progressiverock6.ogg" },
+                    { artist: "Marillion", track: "Script For A Jester's Tear", path: "../../../samples/rock/progressiverock7.ogg" },
+                    { artist: "Rush", track: "Xanadu", path: "../../../samples/rock/progressiverock8.ogg" },
+                    { artist: "King Crimson", track: "In The Court Of The Crimson King", path: "../../../samples/rock/progressiverock9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));
