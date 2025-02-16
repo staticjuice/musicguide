@@ -6,14 +6,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <title>Disco House</title>
+        <title>Bass House</title>
     </head>
 
-    <body id="discohouse">
+    <body id="basshouse">
         <div class="quaternary-box house">
-            <h1>DISCO HOUSE</h1><div class="quaternary-year house-light">1990</div>
+            <h1>BASS HOUSE</h1><div class="quaternary-year house-light">2014</div>
 
-            <p>Disco House is a subgenre of House music that uses Funk and Disco samples, a Funk-inspired bass line or a strong Soul influence, combined with drum breaks that draw inspiration from 70s and 80s Funk records. The use of Disco strings are also common in the genre, although this is not always the case. Disco House uses specific techniques and sounds, characterised by Italo-inspired basslines, lush swooshes, swirls and other synthesised sounds which give the music a bouncy tempo usually around 128 BPM which is typical for House music. The genre is commercially popular, with record labels such as Defected Records, Ministry of Sound, Hed Kandi and Fierce Angel all releasing compilation albums dedicated to the genre. With the renewed interest in Funk and Disco in recent years, Disco House is often mistaken for Nu Disco. While Nu Disco also likes to make use of Funk and Disco samples, it tends to abadon the traditional four-to-the-floor drum programming of its sister genres. In many ways, Disco House is perhaps the purest of all House genres, returning to its true Disco roots.</p>
+            <p>Bass House is a dynamic genre of House that merges the deep, heavy basslines of UK Garage and Dubstep with the rhythmic, four-to-the-floor beat of House music. Emerging in the mid-2010s, it’s known for its high-energy drops, infectious grooves, and aggressive yet danceable vibe. Producers often incorporate elements of Grime, Trap, and Hip Hop, resulting in a sound that's both gritty and polished. Key artists like Jauz, Joyryde, and AC Slater have propelled the genre forward, infusing their tracks with pulsating sub-bass, intricate sound design, and catchy vocal hooks. Bass House tracks typically feature distorted basslines, punchy drums, and shuffled hi-hats, creating a driving, club-ready sound that's perfect for festivals and underground raves alike. The genre's versatility allows for a broad range of experimentation, from dark and intense to bright and funky. Given the popularity of Dubstep and other Bass music styles, it seemed inevitable that people would eventually package that sound into a 128 BPM, four-to-the-floor House beat.</p>
 
             <div id="quaternary-grid">
                 <div class="quaternary-button house-light">1</div>
@@ -36,15 +36,15 @@
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Sgt Slick", track: "Got To Love Somebody", path: "../../../samples/house/discohouse1.ogg" },
-                    { artist: "Jack's On", track: "Relight My Fire (Richard Grey Extended Edit)", path: "../../../samples/house/discohouse2.ogg" },
-                    { artist: "Block & Crown", track: "Makes Me Love You", path: "../../../samples/house/discohouse3.ogg" },
-                    { artist: "Harry Lemon", track: "Happy Dayz (Jack Russell's NYC Mix)", path: "../../../samples/house/discohouse4.ogg" },
-                    { artist: "Cabin Crew", track: "Star2Fall", path: "../../../samples/house/discohouse5.ogg" },
-                    { artist: "Teamsters feat. Errol Reid", track: "Feels Like Love", path: "../../../samples/house/discohouse6.ogg" },
-                    { artist: "Ritmo Dynamic", track: "Calinda 2005 (Alex Gold Remix)", path: "../../../samples/house/discohouse7.ogg" },
-                    { artist: "Olav Basoski", track: "Waterman", path: "../../../samples/house/discohouse8.ogg" },
-                    { artist: "Whelan & Di Scala feat. Nikki Belle", track: "Teardrops (Hott 22 Remix)", path: "../../../samples/house/discohouse9.ogg" }
+                    { artist: "Öwnboss & Sevek", track: "Move Your Body", path: "../../../samples/house/basshouse1.ogg" },
+                    { artist: "Henry Fong & Knock2 feat. General Degree", track: "What's The Move", path: "../../../samples/house/basshouse2.ogg" },
+                    { artist: "JOYRYDE", track: "HOT DRUM", path: "../../../samples/house/basshouse3.ogg" },
+                    { artist: "Valentino Khan", track: "Pump", path: "../../../samples/house/basshouse4.ogg" },
+                    { artist: "TV Noise", track: "Rave", path: "../../../samples/house/basshouse5.ogg" },
+                    { artist: "LOOPERS", track: "I'm Heavy", path: "../../../samples/house/basshouse6.ogg" },
+                    { artist: "Chris Lorenzo & COBRAH", track: "MAMI (AC Slater Remix)", path: "../../../samples/house/basshouse7.ogg" },
+                    { artist: "Dr. Fresch & MARTEN HØRGER", track: "Take A Step Back", path: "../../../samples/house/basshouse8.ogg" },
+                    { artist: "Bossfight", track: "Nock Em", path: "../../../samples/house/basshouse9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

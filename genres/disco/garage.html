@@ -6,14 +6,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <title>Eurobeat</title>
+        <title>Garage</title>
     </head>
 
-    <body id="eurobeat">
+    <body id="garage">
         <div class="quaternary-box disco">
-            <h1>EUROBEAT</h1><div class="quaternary-year disco-light">1987</div>
+            <h1>GARAGE</h1><div class="quaternary-year disco-light">1979</div>
 
-            <p>Eurobeat is a high-energy genre of Disco that originated in Europe during the late 80s. It evolved from Italo Disco and Hi-NRG, characterised by its fast tempo, typically ranging from 140 to 160 BPM, and a distinctive, pulsating rhythm. The genre is known for its catchy melodies, powerful synths, and upbeat, energetic vibe, often featuring prominent basslines, bright, staccato melodies, and enthusiastic vocals. Eurobeat gained a significant following in Japan, where it became closely associated with the parapara dance culture and anime which featured numerous Eurobeat tracks in its soundtracks. This Japanese influence helped propel the genre to international recognition. Distinctive elements of Eurobeat include rapid-fire drum patterns, euphoric chord progressions, and repetitive yet infectious hooks. Lyrics often revolve around themes of love, dancing, and high energy, adding to the genre's feel-good, adrenaline-pumping atmosphere. Eurobeat continues to have a dedicated fanbase, particularly in Japan, where it remains a staple in dance clubs and anime culture.</p>
+            <p>Garage music is a genre of Dance music that originated in the late 70s and early 80s in New York City. It predated and influenced the development of House music. The genre is named after the Paradise Garage, a famed nightclub where DJ Larry Levan played a pivotal role in shaping its sound. Garage music has soulful vocals, smooth basslines, and lush, melodic instrumentation. It typically features a slower tempo compared to House music, focusing more on groove and emotional expression rather than the relentless, driving beats of later Dance genres. The music often incorporates elements of Disco, R&amp;B, and Funk, with a strong emphasis on musicality and sophisticated arrangements. Key elements of Garage music include rich, layered production with live instruments such as keyboards, bass, and drums, vocals that are often deeply expressive, and a focus on creating a warm, inviting atmosphere conducive to dancing and socialising. Garage music laid the groundwork for the development of House music and later influenced various other genres within the Dance music spectrum.</p>
 
             <div id="quaternary-grid">
                 <div class="quaternary-button disco-light">1</div>
@@ -36,15 +36,15 @@
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Dee Dee Wonder", track: "Darkmoon Fighter", path: "../../samples/disco/eurobeat1.ogg" },
-                    { artist: "Max Coveri", track: "Running In The 90's", path: "../../samples/disco/eurobeat2.ogg" },
-                    { artist: "Nikita Jr.", track: "Dancing In The Jungle", path: "../../samples/disco/eurobeat3.ogg" },
-                    { artist: "Marko Polo", track: "Money Go!", path: "../../samples/disco/eurobeat4.ogg" },
-                    { artist: "Pizza Girl", track: "Funny Boy", path: "../../samples/disco/eurobeat5.ogg" },
-                    { artist: "Delta Queens", track: "Baccarah", path: "../../samples/disco/eurobeat6.ogg" },
-                    { artist: "Suzy Lazy", track: "Love Generation", path: "../../samples/disco/eurobeat7.ogg" },
-                    { artist: "Mako", track: "Kiss To Kiss", path: "../../samples/disco/eurobeat8.ogg" },
-                    { artist: "Tam Arrow", track: "One Shot Girl", path: "../../samples/disco/eurobeat9.ogg" }
+                    { artist: "Logic", track: "The Warning (Inner Mix)", path: "../../samples/disco/garage1.ogg" },
+                    { artist: "Blaze", track: "If You Should Need A Friend (Friendship Mix)", path: "../../samples/disco/garage2.ogg" },
+                    { artist: "Hardrive", track: "Deep Inside", path: "../../samples/disco/garage3.ogg" },
+                    { artist: "Banana Republic feat. Judy Obeya", track: "Catch The Feeling (Tuff Jam's Catch The Dub)", path: "../../samples/disco/garage4.ogg" },
+                    { artist: "A Baffled Republic", track: "Bad Boys (Move In Silence) (Blouse 'N' Skirt Mix)", path: "../../samples/disco/garage5.ogg" },
+                    { artist: "Deep Sensation", track: "Better Love (Deep Vocal Mix)", path: "../../samples/disco/garage6.ogg" },
+                    { artist: "Sound Of One", track: "As I Am (Todd Edwards Mix)", path: "../../samples/disco/garage7.ogg" },
+                    { artist: "Soul Creation", track: "That Feeling", path: "../../samples/disco/garage8.ogg" },
+                    { artist: "Kristine Blond", track: "Love Shy (Tuff Jam Vocal Mix)", path: "../../samples/disco/garage9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

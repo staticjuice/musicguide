@@ -4,47 +4,47 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
         <title>IDM</title>
     </head>
 
     <body id="idm">
-        <div class="quaternary-box downtempo">
-            <h1>IDM</h1><div class="quaternary-year downtempo-light">1992</div>
+        <div class="quaternary-box techno">
+            <h1>IDM</h1><div class="quaternary-year techno-light">1993</div>
 
             <p>The term "Intelligent Dance Music" or IDM is despised by both its practitioners as its opponents. This makes sense, as what exactly does make music intelligent? There certainly never was any intention to do so. Early IDM composers just wanted to create electronic music with analogue instruments and samples. The songs have a complicated, unexpected structure and are compiled of a variety of analogue effects, acid bleeps, washes, breaks and scratches. There's often more than one bassline, as deep as possible. IDM is sometimes hard to separate from more downtempo forms of Breakbeat, because the classic four-to-the-floor Techno beat is often abandoned. After the rise of Jungle, IDM starts to use Drum &amp; Bass rhythms as well, which makes the genre almost impossible to categorise within a single supergenre. IDM can also be regarded as one with Ambient Techno, as they share a great deal of overlapping. Like Rave, IDM was born in a series of illegal parties across the UK, but where they preferred the opposite type of music. At first the music was rather minimal and less downtempo.</p>
 
             <div id="quaternary-grid">
-                <div class="quaternary-button downtempo-light">1</div>
-                <div class="quaternary-button downtempo-light">2</div>
-                <div class="quaternary-button downtempo-light">3</div>
-                <div class="quaternary-button downtempo-light">4</div>
-                <div class="quaternary-button downtempo-light">5</div>
-                <div class="quaternary-button downtempo-light">6</div>
-                <div class="quaternary-button downtempo-light">7</div>
-                <div class="quaternary-button downtempo-light">8</div>
-                <div class="quaternary-button downtempo-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button downtempo-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-button techno-light">1</div>
+                <div class="quaternary-button techno-light">2</div>
+                <div class="quaternary-button techno-light">3</div>
+                <div class="quaternary-button techno-light">4</div>
+                <div class="quaternary-button techno-light">5</div>
+                <div class="quaternary-button techno-light">6</div>
+                <div class="quaternary-button techno-light">7</div>
+                <div class="quaternary-button techno-light">8</div>
+                <div class="quaternary-button techno-light">9</div>
+                <div class="quaternary-stop"><div class="quaternary-button techno-light"><i class="fa-solid fa-stop"></i></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button downtempo-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button techno-light"><i class="fa-solid fa-stop"></i></div></div>
         </div>
 
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Oval", track: "Delft", path: "../../samples/downtempo/idm1.ogg" },
-                    { artist: "Autechre", track: "Acro Year II", path: "../../samples/downtempo/idm2.ogg" },
-                    { artist: "Joel Mull", track: "Don't Go", path: "../../samples/downtempo/idm3.ogg" },
-                    { artist: "The Gasman", track: "Freezer", path: "../../samples/downtempo/idm4.ogg" },
-                    { artist: "Aphex Twin", track: "CIRCLONT14 [152.97] (Shrymoming Mix)", path: "../../samples/downtempo/idm5.ogg" },
-                    { artist: "Lodsb", track: "Xxlazereyeslovexx", path: "../../samples/downtempo/idm6.ogg" },
-                    { artist: "Hrvatski", track: "Insect Digestion Melancholy", path: "../../samples/downtempo/idm7.ogg" },
-                    { artist: "Ochre", track: "Infotain Me", path: "../../samples/downtempo/idm8.ogg" },
-                    { artist: "Amon Tobin", track: "Journeyman", path: "../../samples/downtempo/idm9.ogg" }
+                    { artist: "Oval", track: "Delft", path: "../../../samples/techno/idm1.ogg" },
+                    { artist: "Autechre", track: "Acro Year II", path: "../../../samples/techno/idm2.ogg" },
+                    { artist: "Joel Mull", track: "Don't Go", path: "../../../samples/techno/idm3.ogg" },
+                    { artist: "The Gasman", track: "Freezer", path: "../../../samples/techno/idm4.ogg" },
+                    { artist: "Aphex Twin", track: "CIRCLONT14 [152.97] (Shrymoming Mix)", path: "../../../samples/techno/idm5.ogg" },
+                    { artist: "Lodsb", track: "Xxlazereyeslovexx", path: "../../../samples/techno/idm6.ogg" },
+                    { artist: "Hrvatski", track: "Insect Digestion Melancholy", path: "../../../samples/techno/idm7.ogg" },
+                    { artist: "Ochre", track: "Infotain Me", path: "../../../samples/techno/idm8.ogg" },
+                    { artist: "Amon Tobin", track: "Journeyman", path: "../../../samples/techno/idm9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));

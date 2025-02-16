@@ -6,14 +6,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="../../../css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <title>Garage</title>
+        <title>Funky House</title>
     </head>
 
-    <body id="garage">
+    <body id="funkyhouse">
         <div class="quaternary-box house">
-            <h1>GARAGE</h1><div class="quaternary-year house-light">1985</div>
+            <h1>FUNKY HOUSE</h1><div class="quaternary-year house-light">1990</div>
 
-            <p>Garage music is a genre of Dance music that originated in the late 70s and early 80s in New York City. It predated and influenced the development of House music. The genre is named after the Paradise Garage, a famed nightclub where DJ Larry Levan played a pivotal role in shaping its sound. Garage music has soulful vocals, smooth basslines, and lush, melodic instrumentation. It typically features a slower tempo compared to House music, focusing more on groove and emotional expression rather than the relentless, driving beats of later Dance genres. The music often incorporates elements of Disco, R&amp;B, and Funk, with a strong emphasis on musicality and sophisticated arrangements. Key elements of Garage music include rich, layered production with live instruments such as keyboards, bass, and drums, vocals that are often deeply expressive, and a focus on creating a warm, inviting atmosphere conducive to dancing and socialising. Garage music laid the groundwork for the development of House music and later influenced various other genres within the Dance music spectrum.</p>
+            <p>Funky House is a subgenre of House music that uses Funk and Disco samples, a Funk-inspired bass line or a strong Soul influence, combined with drum breaks that draw inspiration from 70s and 80s Funk records. The use of Disco strings are also common in the genre, although this is not always the case. Funky House uses specific techniques and sounds, characterised by Italo-inspired basslines, lush swooshes, swirls and other synthesised sounds which give the music a bouncy tempo usually around 128 BPM which is typical for House music. The genre is commercially popular, with record labels such as Defected Records, Ministry of Sound, Hed Kandi and Fierce Angel all releasing compilation albums dedicated to the genre. With the renewed interest in Funk and Disco in recent years, Funky House is often mistaken for Nu Disco. While Nu Disco also likes to make use of Funk and Disco samples, it tends to abadon the traditional four-to-the-floor drum programming of its sister genres. In many ways, Funky House is perhaps the purest of all House genres, returning to its true Disco roots.</p>
 
             <div id="quaternary-grid">
                 <div class="quaternary-button house-light">1</div>
@@ -36,15 +36,15 @@
         <script>
             $(function() {
                 const tracks = [
-                    { artist: "Logic", track: "The Warning (Inner Mix)", path: "../../../samples/house/garage1.ogg" },
-                    { artist: "Blaze", track: "If You Should Need A Friend (Friendship Mix)", path: "../../../samples/house/garage2.ogg" },
-                    { artist: "Hardrive", track: "Deep Inside", path: "../../../samples/house/garage3.ogg" },
-                    { artist: "Banana Republic feat. Judy Obeya", track: "Catch The Feeling (Tuff Jam's Catch The Dub)", path: "../../../samples/house/garage4.ogg" },
-                    { artist: "A Baffled Republic", track: "Bad Boys (Move In Silence) (Blouse 'N' Skirt Mix)", path: "../../../samples/house/garage5.ogg" },
-                    { artist: "Deep Sensation", track: "Better Love (Deep Vocal Mix)", path: "../../../samples/house/garage6.ogg" },
-                    { artist: "Sound Of One", track: "As I Am (Todd Edwards Mix)", path: "../../../samples/house/garage7.ogg" },
-                    { artist: "Soul Creation", track: "That Feeling", path: "../../../samples/house/garage8.ogg" },
-                    { artist: "Kristine Blond", track: "Love Shy (Tuff Jam Vocal Mix)", path: "../../../samples/house/garage9.ogg" }
+                    { artist: "Sgt Slick", track: "Got To Love Somebody", path: "../../../samples/house/funkyhouse1.ogg" },
+                    { artist: "Jack's On", track: "Relight My Fire (Richard Grey Extended Edit)", path: "../../../samples/house/funkyhouse2.ogg" },
+                    { artist: "Block & Crown", track: "Makes Me Love You", path: "../../../samples/house/funkyhouse3.ogg" },
+                    { artist: "Harry Lemon", track: "Happy Dayz (Jack Russell's NYC Mix)", path: "../../../samples/house/funkyhouse4.ogg" },
+                    { artist: "Cabin Crew", track: "Star2Fall", path: "../../../samples/house/funkyhouse5.ogg" },
+                    { artist: "Teamsters feat. Errol Reid", track: "Feels Like Love", path: "../../../samples/house/funkyhouse6.ogg" },
+                    { artist: "Ritmo Dynamic", track: "Calinda 2005 (Alex Gold Remix)", path: "../../../samples/house/funkyhouse7.ogg" },
+                    { artist: "Olav Basoski", track: "Waterman", path: "../../../samples/house/funkyhouse8.ogg" },
+                    { artist: "Whelan & Di Scala feat. Nikki Belle", track: "Teardrops (Hott 22 Remix)", path: "../../../samples/house/funkyhouse9.ogg" }
                 ];
 
                 const audioInstances = tracks.map(track => new Audio(track.path));
