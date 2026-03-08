@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../../css/style.css">
         <title>Psychedelic Rock</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button rock-light">7</div>
                 <div class="quaternary-button rock-light">8</div>
                 <div class="quaternary-button rock-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button rock-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button rock-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button rock-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Jefferson Airplane", track: "Somebody To Love", path: "../../../samples/rock/psychedelicrock1.ogg" },
-                    { artist: "The Jimi Hendrix Experience", track: "All Along The Watchtower", path: "../../../samples/rock/psychedelicrock2.ogg" },
-                    { artist: "The Beatles", track: "Tomorrow Never Knows", path: "../../../samples/rock/psychedelicrock3.ogg" },
-                    { artist: "Pink Floyd", track: "See Emily Play", path: "../../../samples/rock/psychedelicrock4.ogg" },
-                    { artist: "The Yardbirds", track: "Happenings Ten Years Time Ago", path: "../../../samples/rock/psychedelicrock5.ogg" },
-                    { artist: "The Doors", track: "Strange Days", path: "../../../samples/rock/psychedelicrock6.ogg" },
-                    { artist: "Quicksilver Messenger Service", track: "Fresh Air", path: "../../../samples/rock/psychedelicrock7.ogg" },
-                    { artist: "The Crazy World Of Arthur Brown", track: "Fire", path: "../../../samples/rock/psychedelicrock8.ogg" },
-                    { artist: "Strawberry Alarm Clock", track: "Incense And Peppermints", path: "../../../samples/rock/psychedelicrock9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Jefferson Airplane", track: "Somebody To Love", path: "../../../samples/rock/psychedelicrock1.ogg" },
+                { artist: "The Jimi Hendrix Experience", track: "All Along The Watchtower", path: "../../../samples/rock/psychedelicrock2.ogg" },
+                { artist: "The Beatles", track: "Tomorrow Never Knows", path: "../../../samples/rock/psychedelicrock3.ogg" },
+                { artist: "Pink Floyd", track: "See Emily Play", path: "../../../samples/rock/psychedelicrock4.ogg" },
+                { artist: "The Yardbirds", track: "Happenings Ten Years Time Ago", path: "../../../samples/rock/psychedelicrock5.ogg" },
+                { artist: "The Doors", track: "Strange Days", path: "../../../samples/rock/psychedelicrock6.ogg" },
+                { artist: "Quicksilver Messenger Service", track: "Fresh Air", path: "../../../samples/rock/psychedelicrock7.ogg" },
+                { artist: "The Crazy World Of Arthur Brown", track: "Fire", path: "../../../samples/rock/psychedelicrock8.ogg" },
+                { artist: "Strawberry Alarm Clock", track: "Incense And Peppermints", path: "../../../samples/rock/psychedelicrock9.ogg" }
+            ];
         </script>
+
+        <script src="../../../js/audio.js"></script>
     </body>
 </html>

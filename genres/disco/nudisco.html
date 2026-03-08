@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../css/style.css">
         <title>Nu Disco</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button disco-light">7</div>
                 <div class="quaternary-button disco-light">8</div>
                 <div class="quaternary-button disco-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button disco-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button disco-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button disco-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button disco-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Televisor feat. Richard Judge", track: "Find That Someone", path: "../../samples/disco/nudisco1.ogg" },
-                    { artist: "Tobtok feat. Emil Heró", track: "Higher", path: "../../samples/disco/nudisco2.ogg" },
-                    { artist: "Skogsrå", track: "Out Of Time", path: "../../samples/disco/nudisco3.ogg" },
-                    { artist: "Yeah Boy", track: "Can't Get Enough (Sam Padrul Remix)", path: "../../samples/disco/nudisco4.ogg" },
-                    { artist: "Everywhere", track: "Eddie (Oliver Nelson Remix)", path: "../../samples/disco/nudisco5.ogg" },
-                    { artist: "Breakbot feat. Ruckazoid", track: "Fantasy", path: "../../samples/disco/nudisco6.ogg" },
-                    { artist: "ZHU", track: "Generationwhy", path: "../../samples/disco/nudisco7.ogg" },
-                    { artist: "Lenno feat. Benson", track: "Fever", path: "../../samples/disco/nudisco8.ogg" },
-                    { artist: "Dua Lipa", track: "Dance The Night", path: "../../samples/disco/nudisco9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Televisor feat. Richard Judge", track: "Find That Someone", path: "../../samples/disco/nudisco1.ogg" },
+                { artist: "Tobtok feat. Emil Heró", track: "Higher", path: "../../samples/disco/nudisco2.ogg" },
+                { artist: "Skogsrå", track: "Out Of Time", path: "../../samples/disco/nudisco3.ogg" },
+                { artist: "Yeah Boy", track: "Can't Get Enough (Sam Padrul Remix)", path: "../../samples/disco/nudisco4.ogg" },
+                { artist: "Everywhere", track: "Eddie (Oliver Nelson Remix)", path: "../../samples/disco/nudisco5.ogg" },
+                { artist: "Breakbot feat. Ruckazoid", track: "Fantasy", path: "../../samples/disco/nudisco6.ogg" },
+                { artist: "ZHU", track: "Generationwhy", path: "../../samples/disco/nudisco7.ogg" },
+                { artist: "Lenno feat. Benson", track: "Fever", path: "../../samples/disco/nudisco8.ogg" },
+                { artist: "Dua Lipa", track: "Dance The Night", path: "../../samples/disco/nudisco9.ogg" }
+            ];
         </script>
+
+        <script src="../../js/audio.js"></script>
     </body>
 </html>

@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../css/style.css">
         <title>Hard Bop</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button jazz-light">7</div>
                 <div class="quaternary-button jazz-light">8</div>
                 <div class="quaternary-button jazz-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button jazz-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button jazz-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button jazz-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button jazz-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Horace Silver", track: "Song For My Father", path: "../../samples/jazz/hardbop1.ogg" },
-                    { artist: "John Coltrane", track: "Blue Train", path: "../../samples/jazz/hardbop2.ogg" },
-                    { artist: "Art Blakey", track: "Moanin'", path: "../../samples/jazz/hardbop3.ogg" },
-                    { artist: "Hank Mobley", track: "My Groove Your Move", path: "../../samples/jazz/hardbop4.ogg" },
-                    { artist: "Charles Mingus", track: "Devil Blues", path: "../../samples/jazz/hardbop5.ogg" },
-                    { artist: "Clifford Jordan & John Gilmore", track: "Status Quo", path: "../../samples/jazz/hardbop6.ogg" },
-                    { artist: "Cannonball Adderley", track: "Somethin' Else", path: "../../samples/jazz/hardbop7.ogg" },
-                    { artist: "Lee Morgan", track: "The Sidewinder", path: "../../samples/jazz/hardbop8.ogg" },
-                    { artist: "Sonny Rollins", track: "The Most Beautiful Girl In The World", path: "../../samples/jazz/hardbop9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Horace Silver", track: "Song For My Father", path: "../../samples/jazz/hardbop1.ogg" },
+                { artist: "John Coltrane", track: "Blue Train", path: "../../samples/jazz/hardbop2.ogg" },
+                { artist: "Art Blakey", track: "Moanin'", path: "../../samples/jazz/hardbop3.ogg" },
+                { artist: "Hank Mobley", track: "My Groove Your Move", path: "../../samples/jazz/hardbop4.ogg" },
+                { artist: "Charles Mingus", track: "Devil Blues", path: "../../samples/jazz/hardbop5.ogg" },
+                { artist: "Clifford Jordan & John Gilmore", track: "Status Quo", path: "../../samples/jazz/hardbop6.ogg" },
+                { artist: "Cannonball Adderley", track: "Somethin' Else", path: "../../samples/jazz/hardbop7.ogg" },
+                { artist: "Lee Morgan", track: "The Sidewinder", path: "../../samples/jazz/hardbop8.ogg" },
+                { artist: "Sonny Rollins", track: "The Most Beautiful Girl In The World", path: "../../samples/jazz/hardbop9.ogg" }
+            ];
         </script>
+
+        <script src="../../js/audio.js"></script>
     </body>
 </html>

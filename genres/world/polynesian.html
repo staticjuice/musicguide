@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../css/style.css">
         <title>Polynesian</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button world-light">7</div>
                 <div class="quaternary-button world-light">8</div>
                 <div class="quaternary-button world-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button world-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button world-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button world-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button world-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Nonosina", track: "Te Tama Ma'ohi", path: "../../samples/world/polynesian1.ogg" },
-                    { artist: "Myrtle K. Hilo", track: "Kaimuki Hula", path: "../../samples/world/polynesian2.ogg" },
-                    { artist: "Pandanus Club", track: "E Ku'u Sweetie", path: "../../samples/world/polynesian3.ogg" },
-                    { artist: "Keale", track: "Nani O Kaala", path: "../../samples/world/polynesian4.ogg" },
-                    { artist: "Funga Veimumuni Group", track: "Kapuana", path: "../../samples/world/polynesian5.ogg" },
-                    { artist: "Mohe Taha Band", track: "Si'i Matangi Kuo Ma'ilinoa", path: "../../samples/world/polynesian6.ogg" },
-                    { artist: "Kátinia 'O Mahina Fekite", track: "Matiu 5:1-9", path: "../../samples/world/polynesian7.ogg" },
-                    { artist: "Lin-Manuel Miranda & Opetaia Foa'i", track: "We Know The Way", path: "../../samples/world/polynesian8.ogg" },
-                    { artist: "Patea Maori Club", track: "Poi E", path: "../../samples/world/polynesian9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Nonosina", track: "Te Tama Ma'ohi", path: "../../samples/world/polynesian1.ogg" },
+                { artist: "Myrtle K. Hilo", track: "Kaimuki Hula", path: "../../samples/world/polynesian2.ogg" },
+                { artist: "Pandanus Club", track: "E Ku'u Sweetie", path: "../../samples/world/polynesian3.ogg" },
+                { artist: "Keale", track: "Nani O Kaala", path: "../../samples/world/polynesian4.ogg" },
+                { artist: "Funga Veimumuni Group", track: "Kapuana", path: "../../samples/world/polynesian5.ogg" },
+                { artist: "Mohe Taha Band", track: "Si'i Matangi Kuo Ma'ilinoa", path: "../../samples/world/polynesian6.ogg" },
+                { artist: "Kátinia 'O Mahina Fekite", track: "Matiu 5:1-9", path: "../../samples/world/polynesian7.ogg" },
+                { artist: "Lin-Manuel Miranda & Opetaia Foa'i", track: "We Know The Way", path: "../../samples/world/polynesian8.ogg" },
+                { artist: "Patea Maori Club", track: "Poi E", path: "../../samples/world/polynesian9.ogg" }
+            ];
         </script>
+
+        <script src="../../js/audio.js"></script>
     </body>
 </html>

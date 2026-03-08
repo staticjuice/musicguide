@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../../css/style.css">
         <title>Hip House</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button house-light">7</div>
                 <div class="quaternary-button house-light">8</div>
                 <div class="quaternary-button house-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button house-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button house-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button house-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button house-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Run-D.M.C. vs. Jason Nevins", track: "It's Like That", path: "../../../samples/house/hiphouse1.ogg" },
-                    { artist: "Tyree Cooper", track: "Turn Up The Bass (Fast Eddie Scratch It Up Mix)", path: "../../../samples/house/hiphouse2.ogg" },
-                    { artist: "Tony Scott", track: "That's How I'm Living", path: "../../../samples/house/hiphouse3.ogg" },
-                    { artist: "X-Press 2", track: "Hip Housin' (Lo-Pro Vocal Mix)", path: "../../../samples/house/hiphouse4.ogg" },
-                    { artist: "White Knight", track: "Keep It Moving (Cause The Crowd Says So)", path: "../../../samples/house/hiphouse5.ogg" },
-                    { artist: "Mr. Lee", track: "Get Busy", path: "../../../samples/house/hiphouse6.ogg" },
-                    { artist: "Technotronic", track: "Pump Up The Jam", path: "../../../samples/house/hiphouse7.ogg" },
-                    { artist: "C & C Music Factory feat. Freedom Williams", track: "Gonna Make You Sweat (Everybody Dance Now)", path: "../../../samples/house/hiphouse8.ogg" },
-                    { artist: "Jungle Brothers", track: "I'll House You '98 (Hitmen Remix)", path: "../../../samples/house/hiphouse9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Run-D.M.C. vs. Jason Nevins", track: "It's Like That", path: "../../../samples/house/hiphouse1.ogg" },
+                { artist: "Tyree Cooper", track: "Turn Up The Bass (Fast Eddie Scratch It Up Mix)", path: "../../../samples/house/hiphouse2.ogg" },
+                { artist: "Tony Scott", track: "That's How I'm Living", path: "../../../samples/house/hiphouse3.ogg" },
+                { artist: "X-Press 2", track: "Hip Housin' (Lo-Pro Vocal Mix)", path: "../../../samples/house/hiphouse4.ogg" },
+                { artist: "White Knight", track: "Keep It Moving (Cause The Crowd Says So)", path: "../../../samples/house/hiphouse5.ogg" },
+                { artist: "Mr. Lee", track: "Get Busy", path: "../../../samples/house/hiphouse6.ogg" },
+                { artist: "Technotronic", track: "Pump Up The Jam", path: "../../../samples/house/hiphouse7.ogg" },
+                { artist: "C & C Music Factory feat. Freedom Williams", track: "Gonna Make You Sweat (Everybody Dance Now)", path: "../../../samples/house/hiphouse8.ogg" },
+                { artist: "Jungle Brothers", track: "I'll House You '98 (Hitmen Remix)", path: "../../../samples/house/hiphouse9.ogg" }
+            ];
         </script>
+
+        <script src="../../../js/audio.js"></script>
     </body>
 </html>

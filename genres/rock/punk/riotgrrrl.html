@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../../css/style.css">
         <title>Riot Grrrl</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button punk-light">7</div>
                 <div class="quaternary-button punk-light">8</div>
                 <div class="quaternary-button punk-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button punk-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button punk-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button punk-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button punk-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Bikini Kill", track: "Rebel Girl", path: "../../../samples/punk/riotgrrrl1.ogg" },
-                    { artist: "Bratmobile", track: "Gimme Brains", path: "../../../samples/punk/riotgrrrl2.ogg" },
-                    { artist: "Heavens To Betsy", track: "Terrorist", path: "../../../samples/punk/riotgrrrl3.ogg" },
-                    { artist: "Excuse 17", track: "I'd Rather Eat Glass", path: "../../../samples/punk/riotgrrrl4.ogg" },
-                    { artist: "Huggy Bear", track: "Herjazz", path: "../../../samples/punk/riotgrrrl5.ogg" },
-                    { artist: "7 Year Bitch", track: "Scratch", path: "../../../samples/punk/riotgrrrl6.ogg" },
-                    { artist: "Babes In Toyland", track: "Sweet '69", path: "../../../samples/punk/riotgrrrl7.ogg" },
-                    { artist: "Sleater-Kinney", track: "Dig Me Out", path: "../../../samples/punk/riotgrrrl8.ogg" },
-                    { artist: "X-Ray Spex", track: "Oh Bondage, Up Yours!", path: "../../../samples/punk/riotgrrrl9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Bikini Kill", track: "Rebel Girl", path: "../../../samples/punk/riotgrrrl1.ogg" },
+                { artist: "Bratmobile", track: "Gimme Brains", path: "../../../samples/punk/riotgrrrl2.ogg" },
+                { artist: "Heavens To Betsy", track: "Terrorist", path: "../../../samples/punk/riotgrrrl3.ogg" },
+                { artist: "Excuse 17", track: "I'd Rather Eat Glass", path: "../../../samples/punk/riotgrrrl4.ogg" },
+                { artist: "Huggy Bear", track: "Herjazz", path: "../../../samples/punk/riotgrrrl5.ogg" },
+                { artist: "7 Year Bitch", track: "Scratch", path: "../../../samples/punk/riotgrrrl6.ogg" },
+                { artist: "Babes In Toyland", track: "Sweet '69", path: "../../../samples/punk/riotgrrrl7.ogg" },
+                { artist: "Sleater-Kinney", track: "Dig Me Out", path: "../../../samples/punk/riotgrrrl8.ogg" },
+                { artist: "X-Ray Spex", track: "Oh Bondage, Up Yours!", path: "../../../samples/punk/riotgrrrl9.ogg" }
+            ];
         </script>
+
+        <script src="../../../js/audio.js"></script>
     </body>
 </html>

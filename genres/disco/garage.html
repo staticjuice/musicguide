@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../css/style.css">
         <title>Garage</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button disco-light">7</div>
                 <div class="quaternary-button disco-light">8</div>
                 <div class="quaternary-button disco-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button disco-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button disco-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button disco-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button disco-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Logic", track: "The Warning (Inner Mix)", path: "../../samples/disco/garage1.ogg" },
-                    { artist: "Blaze", track: "If You Should Need A Friend (Friendship Mix)", path: "../../samples/disco/garage2.ogg" },
-                    { artist: "Hardrive", track: "Deep Inside", path: "../../samples/disco/garage3.ogg" },
-                    { artist: "Banana Republic feat. Judy Obeya", track: "Catch The Feeling (Tuff Jam's Catch The Dub)", path: "../../samples/disco/garage4.ogg" },
-                    { artist: "A Baffled Republic", track: "Bad Boys (Move In Silence) (Blouse 'N' Skirt Mix)", path: "../../samples/disco/garage5.ogg" },
-                    { artist: "Deep Sensation", track: "Better Love (Deep Vocal Mix)", path: "../../samples/disco/garage6.ogg" },
-                    { artist: "Sound Of One", track: "As I Am (Todd Edwards Mix)", path: "../../samples/disco/garage7.ogg" },
-                    { artist: "Soul Creation", track: "That Feeling", path: "../../samples/disco/garage8.ogg" },
-                    { artist: "Kristine Blond", track: "Love Shy (Tuff Jam Vocal Mix)", path: "../../samples/disco/garage9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Logic", track: "The Warning (Inner Mix)", path: "../../samples/disco/garage1.ogg" },
+                { artist: "Blaze", track: "If You Should Need A Friend (Friendship Mix)", path: "../../samples/disco/garage2.ogg" },
+                { artist: "Hardrive", track: "Deep Inside", path: "../../samples/disco/garage3.ogg" },
+                { artist: "Banana Republic feat. Judy Obeya", track: "Catch The Feeling (Tuff Jam's Catch The Dub)", path: "../../samples/disco/garage4.ogg" },
+                { artist: "A Baffled Republic", track: "Bad Boys (Move In Silence) (Blouse 'N' Skirt Mix)", path: "../../samples/disco/garage5.ogg" },
+                { artist: "Deep Sensation", track: "Better Love (Deep Vocal Mix)", path: "../../samples/disco/garage6.ogg" },
+                { artist: "Sound Of One", track: "As I Am (Todd Edwards Mix)", path: "../../samples/disco/garage7.ogg" },
+                { artist: "Soul Creation", track: "That Feeling", path: "../../samples/disco/garage8.ogg" },
+                { artist: "Kristine Blond", track: "Love Shy (Tuff Jam Vocal Mix)", path: "../../samples/disco/garage9.ogg" }
+            ];
         </script>
+
+        <script src="../../js/audio.js"></script>
     </body>
 </html>

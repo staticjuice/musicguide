@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../css/style.css">
         <title>Lofi Hip Hop</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button hauntology-light">7</div>
                 <div class="quaternary-button hauntology-light">8</div>
                 <div class="quaternary-button hauntology-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button hauntology-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button hauntology-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button hauntology-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button hauntology-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Jinsang", track: "Genesis", path: "../../samples/hauntology/lofihiphop1.ogg" },
-                    { artist: "A L E X", track: "The Burn Marks On My Epiano Won't Go Away", path: "../../samples/hauntology/lofihiphop2.ogg" },
-                    { artist: "Burbank", track: "Sorry, I Like You", path: "../../samples/hauntology/lofihiphop3.ogg" },
-                    { artist: "BaaskaT", track: "Bittersweet", path: "../../samples/hauntology/lofihiphop4.ogg" },
-                    { artist: "Tonion x Xander", track: "Snow In April", path: "../../samples/hauntology/lofihiphop5.ogg" },
-                    { artist: "Made In M", track: "Chinua", path: "../../samples/hauntology/lofihiphop6.ogg" },
-                    { artist: "Saib", track: "Sakura Trees", path: "../../samples/hauntology/lofihiphop7.ogg" },
-                    { artist: "Leavv", track: "Valley", path: "../../samples/hauntology/lofihiphop8.ogg" },
-                    { artist: "SwuM x Bsd.U", track: "Swishers", path: "../../samples/hauntology/lofihiphop9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Jinsang", track: "Genesis", path: "../../samples/hauntology/lofihiphop1.ogg" },
+                { artist: "A L E X", track: "The Burn Marks On My Epiano Won't Go Away", path: "../../samples/hauntology/lofihiphop2.ogg" },
+                { artist: "Burbank", track: "Sorry, I Like You", path: "../../samples/hauntology/lofihiphop3.ogg" },
+                { artist: "BaaskaT", track: "Bittersweet", path: "../../samples/hauntology/lofihiphop4.ogg" },
+                { artist: "Tonion x Xander", track: "Snow In April", path: "../../samples/hauntology/lofihiphop5.ogg" },
+                { artist: "Made In M", track: "Chinua", path: "../../samples/hauntology/lofihiphop6.ogg" },
+                { artist: "Saib", track: "Sakura Trees", path: "../../samples/hauntology/lofihiphop7.ogg" },
+                { artist: "Leavv", track: "Valley", path: "../../samples/hauntology/lofihiphop8.ogg" },
+                { artist: "SwuM x Bsd.U", track: "Swishers", path: "../../samples/hauntology/lofihiphop9.ogg" }
+            ];
         </script>
+
+        <script src="../../js/audio.js"></script>
     </body>
 </html>

@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../css/style.css">
         <title>Romantic</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button classical-light">7</div>
                 <div class="quaternary-button classical-light">8</div>
                 <div class="quaternary-button classical-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button classical-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button classical-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button classical-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button classical-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Ludwig Van Beethoven", track: "Symphony No. 9 In D Minor, Op. 125", path: "../../samples/classical/romantic1.ogg" },
-                    { artist: "Franz Schubert", track: "Symphony No. 8 In B Minor", path: "../../samples/classical/romantic2.ogg" },
-                    { artist: "Frédéric Chopin", track: "Nocturne In E-Flat Major, Op. 9, No. 2", path: "../../samples/classical/romantic3.ogg" },
-                    { artist: "Felix Mendelssohn", track: "A Midsummer Night's Dream: Wedding March", path: "../../samples/classical/romantic4.ogg" },
-                    { artist: "Robert Schumann", track: "Kinderszenen, Op. 15", path: "../../samples/classical/romantic5.ogg" },
-                    { artist: "Franz Liszt", track: "Liebestraum No. 3 In A-Flat Major", path: "../../samples/classical/romantic6.ogg" },
-                    { artist: "Richard Wagner", track: "Die Walküre: Ride Of The Valkyries", path: "../../samples/classical/romantic7.ogg" },
-                    { artist: "Johannes Brahms", track: "Hungarian Dance No. 5 In G Minor", path: "../../samples/classical/romantic8.ogg" },
-                    { artist: "Pyotr Ilyich Tchaikovsky", track: "Swan Lake, Op. 20", path: "../../samples/classical/romantic9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Ludwig Van Beethoven", track: "Symphony No. 9 In D Minor, Op. 125", path: "../../samples/classical/romantic1.ogg" },
+                { artist: "Franz Schubert", track: "Symphony No. 8 In B Minor", path: "../../samples/classical/romantic2.ogg" },
+                { artist: "Frédéric Chopin", track: "Nocturne In E-Flat Major, Op. 9, No. 2", path: "../../samples/classical/romantic3.ogg" },
+                { artist: "Felix Mendelssohn", track: "A Midsummer Night's Dream: Wedding March", path: "../../samples/classical/romantic4.ogg" },
+                { artist: "Robert Schumann", track: "Kinderszenen, Op. 15", path: "../../samples/classical/romantic5.ogg" },
+                { artist: "Franz Liszt", track: "Liebestraum No. 3 In A-Flat Major", path: "../../samples/classical/romantic6.ogg" },
+                { artist: "Richard Wagner", track: "Die Walküre: Ride Of The Valkyries", path: "../../samples/classical/romantic7.ogg" },
+                { artist: "Johannes Brahms", track: "Hungarian Dance No. 5 In G Minor", path: "../../samples/classical/romantic8.ogg" },
+                { artist: "Pyotr Ilyich Tchaikovsky", track: "Swan Lake, Op. 20", path: "../../samples/classical/romantic9.ogg" }
+            ];
         </script>
+        
+        <script src="../../js/audio.js"></script>
     </body>
 </html>

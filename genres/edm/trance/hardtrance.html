@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../../css/style.css">
         <title>Hard Trance</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button trance-light">7</div>
                 <div class="quaternary-button trance-light">8</div>
                 <div class="quaternary-button trance-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button trance-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button trance-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button trance-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button trance-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Angel Beats", track: "Brightness", path: "../../../samples/trance/hardtrance1.ogg" },
-                    { artist: "Walt", track: "Let The Music Play", path: "../../../samples/trance/hardtrance2.ogg" },
-                    { artist: "Space Frog feat. The Grim Reaper", track: "X-Ray (Follow Me)", path: "../../../samples/trance/hardtrance3.ogg" },
-                    { artist: "Cinderella", track: "The Realm", path: "../../../samples/trance/hardtrance4.ogg" },
-                    { artist: "Hennes & Cold", track: "The Second Trip", path: "../../../samples/trance/hardtrance5.ogg" },
-                    { artist: "Hunter", track: "The Hammer", path: "../../../samples/trance/hardtrance6.ogg" },
-                    { artist: "Cosmic Gate", track: "Fire Wire (DJ Scot Project Remix)", path: "../../../samples/trance/hardtrance7.ogg" },
-                    { artist: "Voodoo & Serano", track: "Blood Is Pumping", path: "../../../samples/trance/hardtrance8.ogg" },
-                    { artist: "Public Domain", track: "Operation Blade", path: "../../../samples/trance/hardtrance9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Angel Beats", track: "Brightness", path: "../../../samples/trance/hardtrance1.ogg" },
+                { artist: "Walt", track: "Let The Music Play", path: "../../../samples/trance/hardtrance2.ogg" },
+                { artist: "Space Frog feat. The Grim Reaper", track: "X-Ray (Follow Me)", path: "../../../samples/trance/hardtrance3.ogg" },
+                { artist: "Cinderella", track: "The Realm", path: "../../../samples/trance/hardtrance4.ogg" },
+                { artist: "Hennes & Cold", track: "The Second Trip", path: "../../../samples/trance/hardtrance5.ogg" },
+                { artist: "Hunter", track: "The Hammer", path: "../../../samples/trance/hardtrance6.ogg" },
+                { artist: "Cosmic Gate", track: "Fire Wire (DJ Scot Project Remix)", path: "../../../samples/trance/hardtrance7.ogg" },
+                { artist: "Voodoo & Serano", track: "Blood Is Pumping", path: "../../../samples/trance/hardtrance8.ogg" },
+                { artist: "Public Domain", track: "Operation Blade", path: "../../../samples/trance/hardtrance9.ogg" }
+            ];
         </script>
+
+        <script src="../../../js/audio.js"></script>
     </body>
 </html>

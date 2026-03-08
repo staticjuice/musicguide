@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../css/style.css">
         <title>Neo Soul</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button rhythmandblues-light">7</div>
                 <div class="quaternary-button rhythmandblues-light">8</div>
                 <div class="quaternary-button rhythmandblues-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button rhythmandblues-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Lauryn Hill", track: "Doo Wop (That Thing)", path: "../../samples/rhythmandblues/neosoul1.ogg" },
-                    { artist: "Mary J. Blige", track: "Rainy Dayz", path: "../../samples/rhythmandblues/neosoul2.ogg" },
-                    { artist: "Ashanti", track: "Rock Wit U", path: "../../samples/rhythmandblues/neosoul3.ogg" },
-                    { artist: "Maxwell", track: "...Til The Cops Come Knockin'", path: "../../samples/rhythmandblues/neosoul4.ogg" },
-                    { artist: "Angie Stone feat. Calvin", track: "More Than A Woman", path: "../../samples/rhythmandblues/neosoul5.ogg" },
-                    { artist: "Amel Larrieux", track: "Get Up", path: "../../samples/rhythmandblues/neosoul6.ogg" },
-                    { artist: "India Arie", track: "Video", path: "../../samples/rhythmandblues/neosoul7.ogg" },
-                    { artist: "Erykah Badu", track: "On & On", path: "../../samples/rhythmandblues/neosoul8.ogg" },
-                    { artist: "D'Angelo", track: "Brown Sugar", path: "../../samples/rhythmandblues/neosoul9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Lauryn Hill", track: "Doo Wop (That Thing)", path: "../../samples/rhythmandblues/neosoul1.ogg" },
+                { artist: "Mary J. Blige", track: "Rainy Dayz", path: "../../samples/rhythmandblues/neosoul2.ogg" },
+                { artist: "Ashanti", track: "Rock Wit U", path: "../../samples/rhythmandblues/neosoul3.ogg" },
+                { artist: "Maxwell", track: "...Til The Cops Come Knockin'", path: "../../samples/rhythmandblues/neosoul4.ogg" },
+                { artist: "Angie Stone feat. Calvin", track: "More Than A Woman", path: "../../samples/rhythmandblues/neosoul5.ogg" },
+                { artist: "Amel Larrieux", track: "Get Up", path: "../../samples/rhythmandblues/neosoul6.ogg" },
+                { artist: "India Arie", track: "Video", path: "../../samples/rhythmandblues/neosoul7.ogg" },
+                { artist: "Erykah Badu", track: "On & On", path: "../../samples/rhythmandblues/neosoul8.ogg" },
+                { artist: "D'Angelo", track: "Brown Sugar", path: "../../samples/rhythmandblues/neosoul9.ogg" }
+            ];
         </script>
+
+        <script src="../../js/audio.js"></script>
     </body>
 </html>

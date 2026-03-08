@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../../css/style.css">
         <title>Oi!</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button punk-light">7</div>
                 <div class="quaternary-button punk-light">8</div>
                 <div class="quaternary-button punk-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button punk-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button punk-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button punk-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button punk-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Cockney Rejects", track: "Oi! Oi! Oi!", path: "../../../samples/punk/oi1.ogg" },
-                    { artist: "Sham 69", track: "If The Kids Are United", path: "../../../samples/punk/oi2.ogg" },
-                    { artist: "Cock Sparrer", track: "Take 'Em All", path: "../../../samples/punk/oi3.ogg" },
-                    { artist: "4 Skins", track: "Chaos", path: "../../../samples/punk/oi4.ogg" },
-                    { artist: "Blitz", track: "Razors In The Night", path: "../../../samples/punk/oi5.ogg" },
-                    { artist: "The Business", track: "Suburban Rebels", path: "../../../samples/punk/oi6.ogg" },
-                    { artist: "The Oppressed", track: "Ultra Violence", path: "../../../samples/punk/oi7.ogg" },
-                    { artist: "Bishops Green", track: "Tumbling Down", path: "../../../samples/punk/oi8.ogg" },
-                    { artist: "Evil Conduct", track: "Remember 81", path: "../../../samples/punk/oi9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Cockney Rejects", track: "Oi! Oi! Oi!", path: "../../../samples/punk/oi1.ogg" },
+                { artist: "Sham 69", track: "If The Kids Are United", path: "../../../samples/punk/oi2.ogg" },
+                { artist: "Cock Sparrer", track: "Take 'Em All", path: "../../../samples/punk/oi3.ogg" },
+                { artist: "4 Skins", track: "Chaos", path: "../../../samples/punk/oi4.ogg" },
+                { artist: "Blitz", track: "Razors In The Night", path: "../../../samples/punk/oi5.ogg" },
+                { artist: "The Business", track: "Suburban Rebels", path: "../../../samples/punk/oi6.ogg" },
+                { artist: "The Oppressed", track: "Ultra Violence", path: "../../../samples/punk/oi7.ogg" },
+                { artist: "Bishops Green", track: "Tumbling Down", path: "../../../samples/punk/oi8.ogg" },
+                { artist: "Evil Conduct", track: "Remember 81", path: "../../../samples/punk/oi9.ogg" }
+            ];
         </script>
+
+        <script src="../../../js/audio.js"></script>
     </body>
 </html>

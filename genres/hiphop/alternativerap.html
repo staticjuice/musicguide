@@ -3,9 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/style.css">
-        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="../../css/style.css">
         <title>Alternative Rap</title>
     </head>
 
@@ -25,57 +23,28 @@
                 <div class="quaternary-button hiphop-light">7</div>
                 <div class="quaternary-button hiphop-light">8</div>
                 <div class="quaternary-button hiphop-light">9</div>
-                <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><i class="fa-solid fa-stop"></i></div></div>
+                <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
             </div>
 
             <div class="quaternary-artisttrack" data-label="Artist:"><span id="artist"></span></div>
             <div class="quaternary-artisttrack" data-label="Track:"><span id="track"></span></div>
-            <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><i class="fa-solid fa-stop"></i></div></div>
+            <div class="quaternary-stop"><div class="quaternary-button hiphop-light"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div></div>
         </div>
 
         <script>
-            $(function() {
-                const tracks = [
-                    { artist: "Poor Righteous Teachers", track: "Word Iz Life", path: "../../samples/hiphop/alternativerap1.ogg" },
-                    { artist: "The Pharcyde", track: "Passin' Me By", path: "../../samples/hiphop/alternativerap2.ogg" },
-                    { artist: "OutKast feat. Khujo", track: "Gasoline Dreams", path: "../../samples/hiphop/alternativerap3.ogg" },
-                    { artist: "Mos Def", track: "Mathematics", path: "../../samples/hiphop/alternativerap4.ogg" },
-                    { artist: "MF Doom", track: "Hoe Cakes", path: "../../samples/hiphop/alternativerap5.ogg" },
-                    { artist: "Kanye West feat. Lil Wayne", track: "Barry Bonds", path: "../../samples/hiphop/alternativerap6.ogg" },
-                    { artist: "Tyler, The Creator & A$AP Rocky", track: "Potato Salad", path: "../../samples/hiphop/alternativerap7.ogg" },
-                    { artist: "Camp Lo", track: "Luchini AKA This Is It", path: "../../samples/hiphop/alternativerap8.ogg" },
-                    { artist: "Disposable Heroes Of Hiphoprisy", track: "Television, The Drug Of The Nation", path: "../../samples/hiphop/alternativerap9.ogg" }
-                ];
-
-                const audioInstances = tracks.map(track => new Audio(track.path));
-                const $artistSpan = $('#artist');
-                const $trackSpan = $('#track');
-                const $button = $('.quaternary-button');
-
-                $button.on('click', function() {
-                    stopAllMusic();
-                    const index = $button.index(this);
-                    $(this).toggleClass('clicked');
-                    const audio = audioInstances[index];
-                    audio.play();
-                    $artistSpan.text(tracks[index].artist);
-                    $trackSpan.text(tracks[index].track);
-                });
-
-                $('.quaternary-stop').on('click', function() {
-                    stopAllMusic();
-                    $artistSpan.text('');
-                    $trackSpan.text('');
-                });
-
-                function stopAllMusic() {
-                    audioInstances.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    $button.removeClass('clicked');
-                }
-            });
+			window.TRACKS = [
+                { artist: "Poor Righteous Teachers", track: "Word Iz Life", path: "../../samples/hiphop/alternativerap1.ogg" },
+                { artist: "The Pharcyde", track: "Passin' Me By", path: "../../samples/hiphop/alternativerap2.ogg" },
+                { artist: "OutKast feat. Khujo", track: "Gasoline Dreams", path: "../../samples/hiphop/alternativerap3.ogg" },
+                { artist: "Mos Def", track: "Mathematics", path: "../../samples/hiphop/alternativerap4.ogg" },
+                { artist: "MF Doom", track: "Hoe Cakes", path: "../../samples/hiphop/alternativerap5.ogg" },
+                { artist: "Kanye West feat. Lil Wayne", track: "Barry Bonds", path: "../../samples/hiphop/alternativerap6.ogg" },
+                { artist: "Tyler, The Creator & A$AP Rocky", track: "Potato Salad", path: "../../samples/hiphop/alternativerap7.ogg" },
+                { artist: "Camp Lo", track: "Luchini AKA This Is It", path: "../../samples/hiphop/alternativerap8.ogg" },
+                { artist: "Disposable Heroes Of Hiphoprisy", track: "Television, The Drug Of The Nation", path: "../../samples/hiphop/alternativerap9.ogg" }
+            ];
         </script>
+
+        <script src="../../js/audio.js"></script>
     </body>
 </html>
