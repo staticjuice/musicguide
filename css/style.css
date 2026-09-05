@@ -41,13 +41,13 @@ Scrollbar and highlighting
     width: 0.5em;
 }
 
-#secondary::-webkit-scrollbar {
+.genre-index-page::-webkit-scrollbar {
     width: 0;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 1em;
-    background: #FFF;
+    background: currentColor;
 }
 
 ::selection {
@@ -55,30 +55,28 @@ Scrollbar and highlighting
     color: #222;
 }
 
-.tertiary-genrelist ::selection {
+.subgenre-list ::selection {
     background: var(--base);
     color: #FFF;
 }
 
 /*---------------------------------------------------------------------------
-Primary section
+Home page
 ---------------------------------------------------------------------------*/
 
-#primary-intro {
+.home-intro {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 50% auto auto 50%;
+    translate: -50% -50%;
     width: 100%;
     text-align: center;
     font-size: 4vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    justify-items: center;
     gap: 0.5em;
 }
 
-#primary-intro-button {
+.home-enter {
     border: 0.125em solid;
     border-radius: 1em;
     padding: 0.3em 0.4em;
@@ -86,17 +84,17 @@ Primary section
     font-weight: 600;
 }
 
-#primary-intro-button:hover {
-    border-color: #FF6D00;
+.home-enter:hover {
     color: #FF6D00;
 }
 
 /*---------------------------------------------------------------------------
-Secondary section
+Genre index
 ---------------------------------------------------------------------------*/
 
-#secondary {
+.genre-index-page {
     position: absolute;
+    inset-inline: 0;
     margin: 2vw 8vw;
     background: url("../images/wood.jpg") top left / cover;
     font-size: 1.75vw;
@@ -106,46 +104,44 @@ Secondary section
     padding-bottom: 2vw;
 }
 
-.secondary-centred {
-    min-height: calc(100vh - 4vw);
-    justify-content: center;
-}
-
-#secondary-grid {
-    display: flex;
-    flex-wrap: wrap;
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2vw;
 }
 
-.secondary-grid-item {
+.genre-grid > a {
     position: relative;
-    flex: 1 1 calc(25% - 2vw);
 }
 
-.secondary-grid-item span {
+.genre-grid > a > span {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 50% auto auto 50%;
+    translate: -50% -50%;
     z-index: 1;
     text-align: center;
     font-size: 2.75vw;
     white-space: nowrap;
 }
 
-.secondary-grid-item img {
+.genre-grid > a > img {
     display: block;
     width: 100%;
     border-radius: 1em;
-    box-shadow: 0.01em 0.01em 0.5em #00000099;
+    box-shadow: 0.01em 0.01em 0.5em #0009;
     filter: brightness(40%);
 }
 
+.centred {
+    min-height: calc(100vh - 4vw);
+    justify-content: center;
+}
+
 /*---------------------------------------------------------------------------
-Tertiary section
+Genre overview
 ---------------------------------------------------------------------------*/
 
-.tertiary-page::before {
+:is(.home-page, .genre-overview-page)::before {
     position: fixed;
     inset: 0;
     z-index: -1;
@@ -154,38 +150,37 @@ Tertiary section
     filter: brightness(40%);
 }
 
-.tertiary-page {
+.genre-overview-page {
     display: flex;
     overflow: hidden;
 }
 
-.tertiary-genrelist {
+.subgenre-list {
     flex: 1;
     padding: 1em;
     font-size: calc(11vh / 3);
 }
 
-.tertiary-genrelist h1 {
+.subgenre-list > h1 {
     font-size: 2em;
     margin-bottom: 0.4em;
 }
 
-.tertiary-genrelist a {
+.subgenre-list > a {
     display: block;
     width: fit-content;
     line-height: 1.4;
 }
 
-.tertiary-genrelist a:hover {
+.subgenre-list > a:hover {
     color: var(--hover);
 }
 
-.tertiary-sidebar {
+.genre-description {
     border-left: 0.5em solid var(--light);
-    box-shadow: -0.01em 0 0.5em #00000099;
+    box-shadow: -0.01em 0 0.5em #0009;
     padding: 1.5em 1.5em 0;
-    width: calc(100em / 3);
-    max-width: 50vw;
+    width: min(calc(100em / 3), 50vw);
     height: 100vh;
     overflow: auto;
     font-size: 2vh;
@@ -193,30 +188,30 @@ Tertiary section
 }
 
 /*---------------------------------------------------------------------------
-Quaternary section
+Genre detail
 ---------------------------------------------------------------------------*/
 
-.quaternary-page {
+.genre-detail-page {
     background: var(--bg) center / cover fixed;
 }
 
-.quaternary-box {
+.genre-detail {
     position: relative;
     margin: 2em;
     border: 0.5em solid var(--light);
     border-radius: 2em;
-    box-shadow: 0.1em 0.1em 0.5em #00000099;
+    box-shadow: 0.1em 0.1em 0.5em #0009;
     padding: 1.5em;
     width: 40em;
     font-size: 2vh;
     background: var(--base);
 }
 
-.quaternary-box h1 {
+.genre-detail h1 {
     display: inline-block;
 }
 
-.quaternary-year {
+.genre-year {
     float: right;
     border-radius: 1em;
     padding: 0.25em;
@@ -226,14 +221,14 @@ Quaternary section
     background: var(--light);
 }
 
-#quaternary-grid {
+.sample-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75em;
     margin: 1.5em 0 1.25em;
 }
 
-.quaternary-button {
+.sample-button {
     border-radius: 0.15em;
     width: 1em;
     line-height: 1.25;
@@ -244,11 +239,11 @@ Quaternary section
     background: var(--light);
 }
 
-.quaternary-button:hover {
+.sample-button:hover {
     background: var(--hover);
 }
 
-.quaternary-artisttrack {
+.sample-meta {
     display: flex;
     align-items: baseline;
     padding-right: 2em;
@@ -256,20 +251,18 @@ Quaternary section
     line-height: 1.6;
 }
 
-.quaternary-artisttrack::before {
-    flex-shrink: 0;
-    width: 3em;
+.sample-meta::before {
+    flex: 0 0 3em;
     content: attr(data-label);
 }
 
-.quaternary-stop {
+.sample-stop {
     position: absolute;
-    right: 0.5em;
-    bottom: 0.5em;
+    inset: auto 0.5em 0.5em auto;
 }
 
-.clicked {
-    box-shadow: inset 0 0 0 0.1em #FFF;
+.is-playing {
+    box-shadow: inset 0 0 0 0.1em currentColor;
 }
 
 /*---------------------------------------------------------------------------
@@ -297,16 +290,14 @@ Colours
 .breakbeat { --base: #783F5D; --light: #9A5177; --hover: #A95B83; }
 .drumandbass { --base: #9A1839; --light: #C71F49; --hover: #DD2251; }
 .ukgarage { --base: #8F7CAD; --light: #A892CC; --hover: #B59DDB; }
-.downtempo { --base: #EDEDED; --light: #F5F5F5; --hover: #FFFFFF; }
+.downtempo { --base: #EDEDED; --light: #F5F5F5; --hover: #FFF; }
 .hauntology { --base: #29CCCC; --light: #2CDEDE; --hover: #2FEDED; }
 .folk { --base: #C6A44D; --light: #D2B774; --hover: #D8C188; }
 .world { --base: #364F30; --light: #4C6F44; --hover: #567E4E; }
 
 .light-theme { color: #222; }
-.light-theme::-webkit-scrollbar-thumb { background: #222; }
 .light-theme ::selection { background: #222; color: #FFF; }
-.tertiary-genrelist:is(.pop, .downtempo, .hauntology) ::selection { color: #222; }
-.light-theme .quaternary-button.clicked { box-shadow: inset 0 0 0 0.1em #222; }
+.subgenre-list:is(.pop, .downtempo, .hauntology) ::selection { color: #222; }
 
 /*---------------------------------------------------------------------------
 Portrait mode
@@ -317,62 +308,59 @@ Portrait mode
         width: 0;
     }
 
-    #primary-intro {
+    .home-intro {
         font-size: 7vw;
     }
 
-    #secondary h1 {
+    .genre-index-page h1 {
         margin: 3vw 0;
         font-size: 12vw;
     }
 
-    .secondary-grid-item {
-        flex: 1 1 100%;
-        margin-bottom: 3vw;
+    .genre-grid {
+        grid-template-columns: 1fr;
+        gap: 5vw;
+        padding-bottom: 3vw;
     }
 
-    .secondary-grid-item span {
+    .genre-grid > a > span {
         font-size: 8vw;
     }
 
-    .secondary-grid-item img {
+    .genre-grid > a > img {
         border-radius: 3.5em;
         height: 25vw;
         object-fit: cover;
     }
 
-    .tertiary-page {
+    .genre-overview-page {
         display: block;
         overflow: auto;
     }
 
-    .tertiary-genrelist {
+    .subgenre-list {
         font-size: 6vw;
     }
 
-    .tertiary-sidebar {
+    .genre-description {
         border-left: none;
         border-top: 0.5em solid var(--light);
-        box-shadow: 0 -0.01em 0.5em #00000099;
-        max-width: 100vw;
+        box-shadow: 0 -0.01em 0.5em #0009;
+        width: 100%;
         height: 100%;
         font-size: 3.5vw;
     }
 
-    .quaternary-box {
+    .genre-detail {
         margin: 1.5em;
-        width: calc(100% - 3em);
+        width: auto;
         font-size: 3.5vw;
     }
 
-    .quaternary-year {
+    .genre-year {
         float: left;
         margin: 0.6em 100% 0.5em 0;
         font-size: 1.5em;
         white-space: nowrap;
-    }
-
-    .quaternary-artisttrack {
-        font-size: 4vw;
     }
 }
