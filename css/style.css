@@ -13,9 +13,11 @@
 }
 
 body {
-    font-family: "Outfit";
-    color: #FFF;
-    line-height: 1;
+    font: 2vh/1 "Outfit";
+    color: var(--text, #FFF);
+    background: linear-gradient(var(--shade, #0009), var(--shade, #0009)), var(--bg) center / cover fixed;
+    &:has(> .genre-detail) { --shade: #0000; }
+    @media (orientation: portrait) { font-size: 3.5vw; }
 }
 
 h1 {
@@ -38,11 +40,8 @@ Scrollbar and highlighting
 ---------------------------------------------------------------------------*/
 
 ::-webkit-scrollbar {
-    width: 0.5em;
-}
-
-.genre-index-page::-webkit-scrollbar {
-    width: 0;
+    width: var(--scrollbar-width, 0.5em);
+    @media (orientation: portrait) { width: 0; }
 }
 
 ::-webkit-scrollbar-thumb {
@@ -51,218 +50,176 @@ Scrollbar and highlighting
 }
 
 ::selection {
-    background: #FFF;
-    color: #222;
-}
-
-.subgenre-list ::selection {
-    background: var(--base);
-    color: #FFF;
+    background: var(--text, #FFF);
+    color: var(--inverse, #222);
 }
 
 /*---------------------------------------------------------------------------
 Home page
 ---------------------------------------------------------------------------*/
 
-.home-intro {
-    position: absolute;
-    inset: 50% auto auto 50%;
-    translate: -50% -50%;
-    width: 100%;
-    text-align: center;
-    font-size: 4vw;
+main {
+    min-height: 100vh;
     display: grid;
+    place-content: center;
     justify-items: center;
     gap: 0.5em;
-}
+    text-align: center;
+    font-size: 4vw;
+    @media (orientation: portrait) { font-size: 7vw; }
 
-.home-enter {
-    border: 0.125em solid;
-    border-radius: 1em;
-    padding: 0.3em 0.4em;
-    font-size: 1.75em;
-    font-weight: 600;
-}
-
-.home-enter:hover {
-    color: #FF6D00;
+    > a {
+        border: 0.125em solid;
+        border-radius: 1em;
+        padding: 0.3em 0.4em;
+        font-size: 1.75em;
+        font-weight: 600;
+        &:hover { color: #FF6D00; }
+    }
 }
 
 /*---------------------------------------------------------------------------
 Genre index
 ---------------------------------------------------------------------------*/
 
-.genre-index-page {
+body:has(> h1) {
+    --scrollbar-width: 0;
     position: absolute;
     inset-inline: 0;
     margin: 2vw 8vw;
+    min-height: calc(100vh - 4vw);
     background: url("../images/wood.jpg") top left / cover;
     font-size: 1.75vw;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    align-content: center;
     gap: 2vw;
     padding-bottom: 2vw;
-}
+    @media (orientation: portrait) { h1 { margin: 3vw 0; font-size: 12vw; } }
 
-.genre-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2vw;
-}
+    > nav {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2vw;
+        @media (orientation: portrait) { grid-template-columns: 1fr; gap: 5vw; padding-bottom: 3vw; }
 
-.genre-grid > a {
-    position: relative;
-}
+        > a {
+            display: grid;
+            place-items: center;
+            > * { grid-area: 1 / 1; }
 
-.genre-grid > a > span {
-    position: absolute;
-    inset: 50% auto auto 50%;
-    translate: -50% -50%;
-    z-index: 1;
-    text-align: center;
-    font-size: 2.75vw;
-    white-space: nowrap;
-}
+            > span {
+                z-index: 1;
+                font-size: 2.75vw;
+                @media (orientation: portrait) { font-size: 8vw; }
+            }
 
-.genre-grid > a > img {
-    display: block;
-    width: 100%;
-    border-radius: 1em;
-    box-shadow: 0.01em 0.01em 0.5em #0009;
-    filter: brightness(40%);
-}
-
-.centred {
-    min-height: calc(100vh - 4vw);
-    justify-content: center;
+            > img {
+                width: 100%;
+                border-radius: 1em;
+                box-shadow: 0.01em 0.01em 0.5em #0009;
+                filter: brightness(40%);
+                @media (orientation: portrait) { border-radius: 3.5em; height: 25vw; object-fit: cover; }
+            }
+        }
+    }
 }
 
 /*---------------------------------------------------------------------------
 Genre overview
 ---------------------------------------------------------------------------*/
 
-:is(.home-page, .genre-overview-page)::before {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background: var(--bg) center / cover;
-    content: "";
-    filter: brightness(40%);
-}
-
-.genre-overview-page {
-    display: flex;
-    overflow: hidden;
-}
-
-.subgenre-list {
-    flex: 1;
-    padding: 1em;
-    font-size: calc(11vh / 3);
-}
-
-.subgenre-list > h1 {
-    font-size: 2em;
-    margin-bottom: 0.4em;
-}
-
-.subgenre-list > a {
-    display: block;
-    width: fit-content;
-    line-height: 1.4;
-}
-
-.subgenre-list > a:hover {
-    color: var(--hover);
-}
-
-.genre-description {
-    border-left: 0.5em solid var(--light);
-    box-shadow: -0.01em 0 0.5em #0009;
-    padding: 1.5em 1.5em 0;
-    width: min(calc(100em / 3), 50vw);
-    height: 100vh;
+body:has(> section) {
     overflow: auto;
-    font-size: 2vh;
-    background: var(--base);
+    @media (orientation: landscape) { display: grid; grid-template-columns: 1fr min(calc(100em / 3), 50vw); height: 100vh; overflow: hidden; }
+
+    > nav {
+        padding: 1em;
+        font-size: calc(11vh / 3);
+        color: #FFF;
+        & ::selection { background: var(--base); color: var(--text, #FFF); }
+        @media (orientation: portrait) { font-size: 6vw; }
+
+        > h1 {
+            font-size: 2em;
+            margin-bottom: 0.4em;
+        }
+
+        > a {
+            display: block;
+            width: fit-content;
+            line-height: 1.4;
+            &:hover { color: var(--hover); }
+        }
+    }
+
+    > section {
+        background: var(--base);
+        border-left: 0.5em solid var(--light);
+        box-shadow: -0.01em 0 0.5em #0009;
+        padding: 1.5em 1.5em 0;
+        overflow: auto;
+        @media (orientation: portrait) {
+            border-left: none;
+            border-top: 0.5em solid var(--light);
+            box-shadow: 0 -0.01em 0.5em #0009;
+        }
+    }
 }
 
 /*---------------------------------------------------------------------------
 Genre detail
 ---------------------------------------------------------------------------*/
 
-.genre-detail-page {
-    background: var(--bg) center / cover fixed;
-}
-
-.genre-detail {
+body > article {
+    background: var(--base);
     position: relative;
     margin: 2em;
     border: 0.5em solid var(--light);
     border-radius: 2em;
     box-shadow: 0.1em 0.1em 0.5em #0009;
     padding: 1.5em;
-    width: 40em;
-    font-size: 2vh;
-    background: var(--base);
-}
+    max-width: 40em;
+    @media (orientation: portrait) { margin: 1.5em; }
 
-.genre-detail h1 {
-    display: inline-block;
-}
+    :is(h1 > span, .sample-button) {
+        font-weight: 700;
+        user-select: none;
+        background: var(--light);
+    }
 
-.genre-year {
-    float: right;
-    border-radius: 1em;
-    padding: 0.25em;
-    font-size: 2em;
-    font-weight: 700;
-    user-select: none;
-    background: var(--light);
-}
+    h1 > span {
+        float: right;
+        border-radius: 1em;
+        padding: 0.25em;
+        font-size: 0.8em;
+        @media (orientation: portrait) { float: left; margin: 0.6em 100% 0.5em 0; font-size: 0.6em; }
+    }
 
-.sample-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75em;
-    margin: 1.5em 0 1.25em;
-}
+    .sample-button {
+        border-radius: 0.15em;
+        width: 1em;
+        line-height: 1.25;
+        text-align: center;
+        font-size: 2.5em;
+        &:hover { background: var(--hover); }
+        &.sample-stop { position: absolute; inset: auto 0.5em 0.5em auto; }
+        &.is-playing { box-shadow: inset 0 0 0 0.1em currentColor; }
+    }
 
-.sample-button {
-    border-radius: 0.15em;
-    width: 1em;
-    line-height: 1.25;
-    text-align: center;
-    font-size: 2.5em;
-    font-weight: 700;
-    user-select: none;
-    background: var(--light);
-}
+    .sample-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75em;
+        margin: 1.5em 0 1.25em;
+    }
 
-.sample-button:hover {
-    background: var(--hover);
-}
-
-.sample-meta {
-    display: flex;
-    align-items: baseline;
-    padding-right: 2em;
-    font-size: 1.25em;
-    line-height: 1.6;
-}
-
-.sample-meta::before {
-    flex: 0 0 3em;
-    content: attr(data-label);
-}
-
-.sample-stop {
-    position: absolute;
-    inset: auto 0.5em 0.5em auto;
-}
-
-.is-playing {
-    box-shadow: inset 0 0 0 0.1em currentColor;
+    > span[data-label] {
+        display: flex;
+        padding-right: 2em;
+        font-size: 1.25em;
+        line-height: 1.6;
+        &::before { flex: 0 0 3em; content: attr(data-label); }
+    }
 }
 
 /*---------------------------------------------------------------------------
@@ -274,7 +231,7 @@ Colours
 .jazz { --base: #E57373; --light: #ED9C9C; --hover: #F1B1B1; }
 .country { --base: #747538; --light: #969748; --hover: #A1A34E; }
 .rhythmandblues { --base: #00695C; --light: #009688; --hover: #26A69A; }
-.pop { --base: #FDD835; --light: #FFEB3B; --hover: #FFF176; }
+.pop { --base: #FDD835; --light: #FFEB3B; --hover: #FFF176; --text: #222; --inverse: #FFF; }
 .rock { --base: #C62828; --light: #F44336; --hover: #EF5350; }
 .metal { --base: #080808; --light: #212121; --hover: #424242; }
 .punk { --base: #EF6C00; --light: #FF9800; --hover: #FFA726; }
@@ -290,77 +247,7 @@ Colours
 .breakbeat { --base: #783F5D; --light: #9A5177; --hover: #A95B83; }
 .drumandbass { --base: #9A1839; --light: #C71F49; --hover: #DD2251; }
 .ukgarage { --base: #8F7CAD; --light: #A892CC; --hover: #B59DDB; }
-.downtempo { --base: #EDEDED; --light: #F5F5F5; --hover: #FFF; }
-.hauntology { --base: #29CCCC; --light: #2CDEDE; --hover: #2FEDED; }
+.downtempo { --base: #EDEDED; --light: #F5F5F5; --hover: #FFF; --text: #222; --inverse: #FFF; }
+.hauntology { --base: #29CCCC; --light: #2CDEDE; --hover: #2FEDED; --text: #222; --inverse: #FFF; }
 .folk { --base: #C6A44D; --light: #D2B774; --hover: #D8C188; }
 .world { --base: #364F30; --light: #4C6F44; --hover: #567E4E; }
-
-.light-theme { color: #222; }
-.light-theme ::selection { background: #222; color: #FFF; }
-.subgenre-list:is(.pop, .downtempo, .hauntology) ::selection { color: #222; }
-
-/*---------------------------------------------------------------------------
-Portrait mode
----------------------------------------------------------------------------*/
-
-@media (orientation: portrait) {
-    ::-webkit-scrollbar {
-        width: 0;
-    }
-
-    .home-intro {
-        font-size: 7vw;
-    }
-
-    .genre-index-page h1 {
-        margin: 3vw 0;
-        font-size: 12vw;
-    }
-
-    .genre-grid {
-        grid-template-columns: 1fr;
-        gap: 5vw;
-        padding-bottom: 3vw;
-    }
-
-    .genre-grid > a > span {
-        font-size: 8vw;
-    }
-
-    .genre-grid > a > img {
-        border-radius: 3.5em;
-        height: 25vw;
-        object-fit: cover;
-    }
-
-    .genre-overview-page {
-        display: block;
-        overflow: auto;
-    }
-
-    .subgenre-list {
-        font-size: 6vw;
-    }
-
-    .genre-description {
-        border-left: none;
-        border-top: 0.5em solid var(--light);
-        box-shadow: 0 -0.01em 0.5em #0009;
-        width: 100%;
-        height: 100%;
-        font-size: 3.5vw;
-    }
-
-    .genre-detail {
-        margin: 1.5em;
-        width: auto;
-        font-size: 3.5vw;
-    }
-
-    .genre-year {
-        float: left;
-        margin: 0.6em 100% 0.5em 0;
-        font-size: 1.5em;
-        white-space: nowrap;
-    }
-}
