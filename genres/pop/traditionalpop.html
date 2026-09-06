@@ -7,39 +7,24 @@
         <title>Traditional Pop</title>
     </head>
 
-    <body class="pop" style="--bg:url('../images/pop/traditionalpop.jpg')">
+    <body class="pop">
         <article>
             <h1>TRADITIONAL POP<span>1940</span></h1>
 
             <p>Traditional Pop music consists of Western popular music that generally predates the advent of Rock &amp; Roll in the mid-50s. The most popular and enduring songs from this style of music are known as Pop Standards or American Standards. The works of these songwriters and composers are usually considered part of the canon known as the "Great American Songbook". More generally, the term "standard" can be applied to any popular song that has become very widely known within mainstream culture. Traditional Pop music is generally regarded as having existed between the mid-40s and mid-50s. Two notable innovations were the addition of string sections and orchestral arrangements and more emphasis on vocal performance. The addition of lush strings can be heard in much of the popular music throughout the 40s and 50s. In the early 50s as the dominance of Swing gave way to the Traditional Pop music era, many of the vocalists associated with Swing bands became even more popular, and were central figures in popular music. Notable artists include Frank Sinatra, Bing Crosby and Nat King Cole.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Bing Crosby", track: "White Christmas", path: "../../samples/pop/traditionalpop1.ogg" },
-                { artist: "Frank Sinatra", track: "The Way You Look Tonight", path: "../../samples/pop/traditionalpop2.ogg" },
-                { artist: "Perry Como", track: "Fly Me To The Moon", path: "../../samples/pop/traditionalpop3.ogg" },
-                { artist: "Louis Armstrong", track: "What A Wonderful World", path: "../../samples/pop/traditionalpop4.ogg" },
-                { artist: "Bobby Vinton", track: "Mr. Lonely", path: "../../samples/pop/traditionalpop5.ogg" },
-                { artist: "Bobby Darin", track: "Beyond The Sea", path: "../../samples/pop/traditionalpop6.ogg" },
-                { artist: "Nat King Cole", track: "L-O-V-E", path: "../../samples/pop/traditionalpop7.ogg" },
-                { artist: "Johnny Mathis", track: "Misty", path: "../../samples/pop/traditionalpop8.ogg" },
-                { artist: "Tony Bennett", track: "I Left My Heart In San Francisco", path: "../../samples/pop/traditionalpop9.ogg" }
+			const tracks = [
+                ["Bing Crosby", "White Christmas"],
+                ["Frank Sinatra", "The Way You Look Tonight"],
+                ["Perry Como", "Fly Me To The Moon"],
+                ["Louis Armstrong", "What A Wonderful World"],
+                ["Bobby Vinton", "Mr. Lonely"],
+                ["Bobby Darin", "Beyond The Sea"],
+                ["Nat King Cole", "L-O-V-E"],
+                ["Johnny Mathis", "Misty"],
+                ["Tony Bennett", "I Left My Heart In San Francisco"]
             ];
         </script>
 

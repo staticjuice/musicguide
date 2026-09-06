@@ -7,39 +7,24 @@
         <title>Musique Concrète</title>
     </head>
 
-    <body class="downtempo" style="--bg:url('../images/downtempo/musiqueconcrete.jpg')">
+    <body class="downtempo">
         <article>
             <h1>MUSIQUE CONCRÈTE<span>1948</span></h1>
 
             <p>The origin of all electronic music already started in the 40s &ndash; Classical composers (mostly European) experimented in advanced sound studios with the new possibilities of magnetic tape. By recording, replaying, looping, multi-tracking, reserving, sound altering and delaying they were able to create long and diverse compositions without the need for live instruments. Thus the first artificially created music was born. Musique Concrète has no origin, no parent genre &ndash; it evolves directly out of the very first electro-acoustic music, such as theremin performances. The avant-garde composers of Musique Concrète saw themselves more than academic researchers. To them, this music was more real (concrete) than any other. Music played by live instruments was something abstract and fleeting. Once you heard it, it was gone. Their music wasn't &ndash; it was recorded and stored, saved for eternity and capable of being paused, rewound, re-listened and more. In the mid-70s, a second wave of Musique Concrète (Sound Collage or Tape Music) took place, sampling all sounds into soundscapes with advanced recorders.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Karlheinz Stockhausen", track: "Gesang Der Jünglinge", path: "../../samples/downtempo/musiqueconcrete1.ogg" },
-                { artist: "Morton Subotnick", track: "Silver Apples Of The Moon Part A", path: "../../samples/downtempo/musiqueconcrete2.ogg" },
-                { artist: "Pierre Schaeffer", track: "Étude Noire", path: "../../samples/downtempo/musiqueconcrete3.ogg" },
-                { artist: "John Cage", track: "Williams Mix", path: "../../samples/downtempo/musiqueconcrete4.ogg" },
-                { artist: "Iannis Xenakis", track: "Concret Ph", path: "../../samples/downtempo/musiqueconcrete5.ogg" },
-                { artist: "Kid Baltan", track: "Song Of The Second Moon", path: "../../samples/downtempo/musiqueconcrete6.ogg" },
-                { artist: "Raymond Scott", track: "Twilight In Turkey", path: "../../samples/downtempo/musiqueconcrete7.ogg" },
-                { artist: "Tom Dissevelt", track: "Anchor Chains", path: "../../samples/downtempo/musiqueconcrete8.ogg" },
-                { artist: "The Beatles", track: "Revolution 9", path: "../../samples/downtempo/musiqueconcrete9.ogg" }
+			const tracks = [
+                ["Karlheinz Stockhausen", "Gesang Der Jünglinge"],
+                ["Morton Subotnick", "Silver Apples Of The Moon Part A"],
+                ["Pierre Schaeffer", "Étude Noire"],
+                ["John Cage", "Williams Mix"],
+                ["Iannis Xenakis", "Concret Ph"],
+                ["Kid Baltan", "Song Of The Second Moon"],
+                ["Raymond Scott", "Twilight In Turkey"],
+                ["Tom Dissevelt", "Anchor Chains"],
+                ["The Beatles", "Revolution 9"]
             ];
         </script>
 

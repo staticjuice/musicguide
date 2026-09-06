@@ -7,39 +7,24 @@
         <title>Medieval</title>
     </head>
 
-    <body class="classical" style="--bg:url('../images/classical/medieval.jpg')">
+    <body class="classical">
         <article>
             <h1>MEDIEVAL<span>c. 800</span></h1>
 
             <p>Medieval music consists of liturgical music, songs and instrumental pieces from about 400 CE to 1400 CE. Medieval music was an era of Western music, including liturgical music (also known as sacred) used for the church, and secular music or non-religious music. Medieval music includes solely vocal music, such as Gregorian Chant and choral music (music for a group of singers), solely instrumental music and music that uses both voices and instruments (typically with the instruments accompanying the voices). Gregorian Chant was sung by monks during Catholic Mass. The Mass is a reenactment of Christ's Last Supper, intended to provide a spiritual connection between man and God. Part of this connection was established through music. This era begins with the fall of the Western Roman Empire in the 5th century and ends sometime in the early 15th century. Establishing the end of the Medieval era and the beginning of the Renaissance music era is difficult since the trends started at different times in different regions. The date range outlined at the start is the one usually adopted by musicologists.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Guillaume De Machaut", track: "Messe De Nostre Dame", path: "../../samples/classical/medieval1.ogg" },
-                { artist: "Hildegard Von Bingen", track: "O Deus", path: "../../samples/classical/medieval2.ogg" },
-                { artist: "Francesco Landini", track: "Quanto Piu Caro Fai", path: "../../samples/classical/medieval3.ogg" },
-                { artist: "Matteo Da Perugia", track: "Ave Sancta Mundi Salus", path: "../../samples/classical/medieval4.ogg" },
-                { artist: "Claudio Merulo", track: "O Adoranda Trinitas", path: "../../samples/classical/medieval5.ogg" },
-                { artist: "Jacob De Senleches", track: "La Harpe De Melodie", path: "../../samples/classical/medieval6.ogg" },
-                { artist: "Adam De Saint Victor", track: "Jubilemus Salvatori", path: "../../samples/classical/medieval7.ogg" },
-                { artist: "John Dunstable", track: "Quam Pulchra Es, JD 44", path: "../../samples/classical/medieval8.ogg" },
-                { artist: "Leonel Power", track: "Motet - Quam Pulchra Es", path: "../../samples/classical/medieval9.ogg" }
+			const tracks = [
+                ["Guillaume De Machaut", "Messe De Nostre Dame"],
+                ["Hildegard Von Bingen", "O Deus"],
+                ["Francesco Landini", "Quanto Piu Caro Fai"],
+                ["Matteo Da Perugia", "Ave Sancta Mundi Salus"],
+                ["Claudio Merulo", "O Adoranda Trinitas"],
+                ["Jacob De Senleches", "La Harpe De Melodie"],
+                ["Adam De Saint Victor", "Jubilemus Salvatori"],
+                ["John Dunstable", "Quam Pulchra Es, JD 44"],
+                ["Leonel Power", "Motet - Quam Pulchra Es"]
             ];
         </script>
 

@@ -7,39 +7,24 @@
         <title>Arabic</title>
     </head>
 
-    <body class="world" style="--bg:url('../images/world/arabic.jpg')">
+    <body class="world">
         <article>
             <h1>ARABIC</h1>
 
             <p>Arab music has a long history of interaction with many other regional musical styles and genres. It is an amalgam of the music of the Arab people in the Arabian Peninsula and the music of all the peoples that make up the Arab world today. As was the case in other artistic and scientific fields, Arabs translated Greek texts and works of music and developed the musical theory further. Both compositions and improvisations in traditional Arabic music are based on the maqam system. Maqams can be realised with either vocal or instrumental music and do not include a rhythmic component. Al-Kindi was the first great theoretician of Arabic music, who proposed adding a fifth string to the oud. The world of modern Arabic music has long been dominated by musical trends that have emerged from Cairo, Egypt. The city is generally considered a cultural centre in the Arab world. Innovations in popular music via the influence of other regional styles have also abounded from Morocco to Saudi Arabia. In recent years, Beirut has become a major centre, dictating trends in the development of Arabic Pop music.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Brandon Fiechter", track: "Desert Sphynx", path: "../../samples/world/arabic1.ogg" },
-                { artist: "Elias Rahbani", track: "Ya Nassini", path: "../../samples/world/arabic2.ogg" },
-                { artist: "Farid al-Atrash", track: "Hezze Ya Nawaem", path: "../../samples/world/arabic3.ogg" },
-                { artist: "Hossam Ramzy", track: "Aziza", path: "../../samples/world/arabic4.ogg" },
-                { artist: "Paolo Vivaldi & Siamak Guran", track: "Bandar", path: "../../samples/world/arabic5.ogg" },
-                { artist: "Mohamed Ali Ensemble", track: "Badr al-Mnawar", path: "../../samples/world/arabic6.ogg" },
-                { artist: "Salatin Al Tarab Orchestra", track: "Ah Ya Zein", path: "../../samples/world/arabic7.ogg" },
-                { artist: "Abdul Khalil Ensemble", track: "Rakset Assfrour Heleywa", path: "../../samples/world/arabic8.ogg" },
-                { artist: "Rahbani Brothers", track: "Rahbaniyat", path: "../../samples/world/arabic9.ogg" }
+			const tracks = [
+                ["Brandon Fiechter", "Desert Sphynx"],
+                ["Elias Rahbani", "Ya Nassini"],
+                ["Farid al-Atrash", "Hezze Ya Nawaem"],
+                ["Hossam Ramzy", "Aziza"],
+                ["Paolo Vivaldi & Siamak Guran", "Bandar"],
+                ["Mohamed Ali Ensemble", "Badr al-Mnawar"],
+                ["Salatin Al Tarab Orchestra", "Ah Ya Zein"],
+                ["Abdul Khalil Ensemble", "Rakset Assfrour Heleywa"],
+                ["Rahbani Brothers", "Rahbaniyat"]
             ];
         </script>
 

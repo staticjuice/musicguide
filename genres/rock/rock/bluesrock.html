@@ -7,39 +7,24 @@
         <title>Blues Rock</title>
     </head>
 
-    <body class="rock" style="--bg:url('../images/rock/bluesrock.jpg')">
+    <body class="rock">
         <article>
             <h1>BLUES ROCK<span>1966</span></h1>
 
             <p>Parallel to the British Rock Invasion, the British Blues Invasion took hold, which was sometimes hard to separate from the other one. Yet British Blues started out in London instead of Liverpool and was not influenced by Merseybeat. As Blues became harder, faster and louder and Rock started to take an interest in Jazz, the two grew from quite different paths into a powerful combination which was performed by a huge amount of artists during the 60s. There is a large area of overlapping between Blues Rock and Psychedelic Rock and often the same artists are mentioned for both genres. Blues Rock artists usually sang anti-establishment lyrics, paving the road for later Metal. Blues Rock stayed true to the early three-chord Chicago Blues but added more guitar improvisation (solos), distortion and psychedelic effects. Especially Chicago legends Muddy Waters, Howlin' Wolf and Robert Johnson were a huge influence on this new wave of Blues artists. A remarkable fact, considering that all original Blues Rock artists are white. And thus African-American Blues was injected into the world of white British Rock.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "The Rolling Stones", track: "Gimme Shelter", path: "../../../samples/rock/bluesrock1.ogg" },
-                { artist: "Cream", track: "Sunshine Of Your Love", path: "../../../samples/rock/bluesrock2.ogg" },
-                { artist: "Fleetwood Mac", track: "Black Magic Woman", path: "../../../samples/rock/bluesrock3.ogg" },
-                { artist: "Canned Heat", track: "On The Road Again", path: "../../../samples/rock/bluesrock4.ogg" },
-                { artist: "The Yardbirds", track: "Heart Full Of Soul", path: "../../../samples/rock/bluesrock5.ogg" },
-                { artist: "John Mayall & The Bluesbreakers", track: "All Your Love", path: "../../../samples/rock/bluesrock6.ogg" },
-                { artist: "The Paul Butterfield Blues Band", track: "Born In Chicago", path: "../../../samples/rock/bluesrock7.ogg" },
-                { artist: "The Spencer Davis Group", track: "I'm A Man", path: "../../../samples/rock/bluesrock8.ogg" },
-                { artist: "Derek & The Dominos", track: "Layla", path: "../../../samples/rock/bluesrock9.ogg" }
+			const tracks = [
+                ["The Rolling Stones", "Gimme Shelter"],
+                ["Cream", "Sunshine Of Your Love"],
+                ["Fleetwood Mac", "Black Magic Woman"],
+                ["Canned Heat", "On The Road Again"],
+                ["The Yardbirds", "Heart Full Of Soul"],
+                ["John Mayall & The Bluesbreakers", "All Your Love"],
+                ["The Paul Butterfield Blues Band", "Born In Chicago"],
+                ["The Spencer Davis Group", "I'm A Man"],
+                ["Derek & The Dominos", "Layla"]
             ];
         </script>
 

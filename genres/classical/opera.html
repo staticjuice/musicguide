@@ -7,39 +7,24 @@
         <title>Opera</title>
     </head>
 
-    <body class="classical" style="--bg:url('../images/classical/opera.jpg')">
+    <body class="classical">
         <article>
             <h1>OPERA<span>1597</span></h1>
 
             <p>Opera is a form of theatre in which music has a leading role and the parts are taken by singers, but is distinct from musical theatre. Such a work is typically a collaboration between a composer and a librettist and incorporates a number of the performing arts, such as acting, scenery, costume and sometimes dance or ballet. The performance is typically given in an Opera House, accompanied by an orchestra or smaller musical ensemble. Opera is a key part of the Western classical music tradition. Originally understood as an entirely sung piece, in contrast to a play with songs, Opera has come to include numerous genres, including some that include spoken dialogue such as musical theatre, Singspiel and Opéra comique. In traditional number Opera, singers employ two styles of singing &ndash; recitative, a speech-inflected style, and self-contained arias. Opera originated in Italy at the end of the 16th century and soon spread through the rest of Europe. The most renowned figure of late 18th-century opera is Wolfgang Amadeus Mozart, who is most famous for his Italian comic operas.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Georges Bizet", track: "Carmen - Act 1: L'amour Est Un Oiseau Rebelle", path: "../../samples/classical/opera1.ogg" },
-                { artist: "Giuseppe Verdi", track: "La Traviata - Act 1: Libiamo Ne'lieti Calici", path: "../../samples/classical/opera2.ogg" },
-                { artist: "Richard Wagner", track: "Tannhäuser - Act 3: O Du, Mein Holder Abendstern", path: "../../samples/classical/opera3.ogg" },
-                { artist: "Johann Strauss II", track: "Die Fledermaus - Act 1: So Muss Allein Ich Bleiben", path: "../../samples/classical/opera4.ogg" },
-                { artist: "Giovanni Battista Pergolesi", track: "La Serva Padrona - Intermezzo 1: Aria", path: "../../samples/classical/opera5.ogg" },
-                { artist: "George Frideric Handel", track: "Serse - Act 1 Scene 1 No. 2: Ombra Mai Fu", path: "../../samples/classical/opera6.ogg" },
-                { artist: "Giacomo Puccini", track: "Turandot - Act 3: Nessun Dorma!", path: "../../samples/classical/opera7.ogg" },
-                { artist: "Wolfgang Amadeus Mozart", track: "Die Zauberflöte - Act 2: Der Hölle Rache", path: "../../samples/classical/opera8.ogg" },
-                { artist: "Richard Strauss", track: "Salome - Scene 4: Ah! Ich Habe Deinen", path: "../../samples/classical/opera9.ogg" }
+			const tracks = [
+                ["Georges Bizet", "Carmen - Act 1: L'amour Est Un Oiseau Rebelle"],
+                ["Giuseppe Verdi", "La Traviata - Act 1: Libiamo Ne'lieti Calici"],
+                ["Richard Wagner", "Tannhäuser - Act 3: O Du, Mein Holder Abendstern"],
+                ["Johann Strauss II", "Die Fledermaus - Act 1: So Muss Allein Ich Bleiben"],
+                ["Giovanni Battista Pergolesi", "La Serva Padrona - Intermezzo 1: Aria"],
+                ["George Frideric Handel", "Serse - Act 1 Scene 1 No. 2: Ombra Mai Fu"],
+                ["Giacomo Puccini", "Turandot - Act 3: Nessun Dorma!"],
+                ["Wolfgang Amadeus Mozart", "Die Zauberflöte - Act 2: Der Hölle Rache"],
+                ["Richard Strauss", "Salome - Scene 4: Ah! Ich Habe Deinen"]
             ];
         </script>
 

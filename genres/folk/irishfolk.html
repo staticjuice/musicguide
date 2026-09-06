@@ -7,39 +7,24 @@
         <title>Irish Folk</title>
     </head>
 
-    <body class="folk" style="--bg:url('../images/folk/irishfolk.jpg')">
+    <body class="folk">
         <article>
             <h1>IRISH FOLK</h1>
 
             <p>Traditional Irish Folk instruments typically include the cruit (a small harp) and clairseach (a bigger harp with around 30 strings), the timpan (a small string instrument played with a bow or plectrum), the feadan (a fife), the buinne (an oboe or flute), the guthbuinne (a bassoon-type horn), the bennbuabhal and corn (hornpipes), the cuislenna (bagpipes), the stoc and sturgan (clarions or trumpets) and the cnamha (castanets). Irish traditional music has endured more strongly against the forces of cinema and radio than the Folk music of other European countries. This was possibly because the country was not a geographical battleground in either of the two World Wars. Another potential factor was that the economy was largely agricultural, where oral tradition usually thrives. Irish Folk music has for most of its history been held in low regard, but since the end of World War II there has been a revival of Irish Folk music in the country with some bands even achieving international success. Historically, much old-time music of the US grew out of the music of Ireland as a result of cultural diffusion.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "The Dubliners", track: "Seven Drunken Nights", path: "../../samples/folk/irishfolk1.ogg" },
-                { artist: "The Clancy Brothers", track: "Mountain Dew", path: "../../samples/folk/irishfolk2.ogg" },
-                { artist: "The High Kings", track: "The Rocky Road To Dublin", path: "../../samples/folk/irishfolk3.ogg" },
-                { artist: "Dervish", track: "Apples In Winter", path: "../../samples/folk/irishfolk4.ogg" },
-                { artist: "Cruiskeen", track: "King Of The Fairies", path: "../../samples/folk/irishfolk5.ogg" },
-                { artist: "Cara Dillon", track: "Moorlough Mary", path: "../../samples/folk/irishfolk6.ogg" },
-                { artist: "The Irish Rovers", track: "Drunken Sailor", path: "../../samples/folk/irishfolk7.ogg" },
-                { artist: "Beoga", track: "Eochaid", path: "../../samples/folk/irishfolk8.ogg" },
-                { artist: "Brian Finnegan", track: "Nightride", path: "../../samples/folk/irishfolk9.ogg" }
+			const tracks = [
+                ["The Dubliners", "Seven Drunken Nights"],
+                ["The Clancy Brothers", "Mountain Dew"],
+                ["The High Kings", "The Rocky Road To Dublin"],
+                ["Dervish", "Apples In Winter"],
+                ["Cruiskeen", "King Of The Fairies"],
+                ["Cara Dillon", "Moorlough Mary"],
+                ["The Irish Rovers", "Drunken Sailor"],
+                ["Beoga", "Eochaid"],
+                ["Brian Finnegan", "Nightride"]
             ];
         </script>
 

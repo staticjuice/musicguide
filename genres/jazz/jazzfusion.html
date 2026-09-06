@@ -7,39 +7,24 @@
         <title>Jazz Fusion</title>
     </head>
 
-    <body class="jazz" style="--bg:url('../images/jazz/jazzfusion.jpg')">
+    <body class="jazz">
         <article>
             <h1>JAZZ FUSION<span>1969</span></h1>
 
             <p>The original definition of Jazz Fusion was a mixture of Jazz improvisation with the power and rhythms of Rock. Up until around the late 60s, the worlds of Jazz and Rock were nearly completely separate. But as Rock became more creative and its musicianship improved, and as some in the Jazz world became bored with Hard Bop, the two different idioms began to trade ideas and occasionally combine forces. This powerful reinvention became so popular and well-spread, with many derivative genres, that it simply was called "Fusion", although Jazz Rock is also a correct term. Fusion fuses traditional Jazz melody and rhythm and Jazz elements such as improvisation and complex interplay with Rock instruments, amplification and simple harmonies. Rock influences came mostly from Psychedelic Rock, although Fusion artists were also interested in Progressive Rock and during the 70s, there was quite some overlapping between Progressive Rock of that time and Fusion. Jazz Fusion marked the end of a Jazz Era (Modern Jazz) and the beginning of a new one (Electronic Jazz or Post-Jazz).</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Miles Davis", track: "Bitches Brew", path: "../../samples/jazz/jazzfusion1.ogg" },
-                { artist: "Weather Report", track: "Birdland", path: "../../samples/jazz/jazzfusion2.ogg" },
-                { artist: "Billy Cobham", track: "Stratus", path: "../../samples/jazz/jazzfusion3.ogg" },
-                { artist: "Return To Forever", track: "Sorceress", path: "../../samples/jazz/jazzfusion4.ogg" },
-                { artist: "Tony Williams", track: "Sweet Revenge", path: "../../samples/jazz/jazzfusion5.ogg" },
-                { artist: "Mahavishnu Orchestra", track: "Vital Transformation", path: "../../samples/jazz/jazzfusion6.ogg" },
-                { artist: "Stanley Clarke", track: "School Days", path: "../../samples/jazz/jazzfusion7.ogg" },
-                { artist: "Chick Corea", track: "Dance Of Chance", path: "../../samples/jazz/jazzfusion8.ogg" },
-                { artist: "Frank Zappa", track: "Apostrophe (')", path: "../../samples/jazz/jazzfusion9.ogg" }
+			const tracks = [
+                ["Miles Davis", "Bitches Brew"],
+                ["Weather Report", "Birdland"],
+                ["Billy Cobham", "Stratus"],
+                ["Return To Forever", "Sorceress"],
+                ["Tony Williams", "Sweet Revenge"],
+                ["Mahavishnu Orchestra", "Vital Transformation"],
+                ["Stanley Clarke", "School Days"],
+                ["Chick Corea", "Dance Of Chance"],
+                ["Frank Zappa", "Apostrophe (')"]
             ];
         </script>
 

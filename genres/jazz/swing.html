@@ -7,39 +7,24 @@
         <title>Swing</title>
     </head>
 
-    <body class="jazz" style="--bg:url('../images/jazz/swing.jpg')">
+    <body class="jazz">
         <article>
             <h1>SWING<span>1932</span></h1>
 
             <p>Swing was a major force in American popular music until the Big Band era largely ended in the early 40s. Swing differs from Dixieland in that the ensembles are simpler and generally filled with repetitious riffs, while the solos are more sophisticated. Individual improvisations still paid close attention to the melody but due to the advance in musicianship, the solo flights were more adventurous. Swing started with Jazz bands of ten instruments, but soon orchestras of seventeen instruments became the standard &ndash; one can see that the phrase "Big Band" is not exaggerated. The setup consists of more reed and fewer brass instruments, and string basses are also added. The music is very catchy, with call and response tunes, hooky riffs and a 4/4 beat that makes it hard to stand still. Swing songs are highly structured compared to other Jazz. First, the melody is played by all instruments &ndash; then comes the vocal part with solos after which the chorus comes, consisting mostly of high notes. The music was accompanied by its own dance, also called "Swing", which has remained popular ever since.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Benny Goodman", track: "Sing, Sing, Sing", path: "../../samples/jazz/swing1.ogg" },
-                { artist: "Count Basie", track: "Swingin' The Blues", path: "../../samples/jazz/swing2.ogg" },
-                { artist: "Duke Ellington", track: "It Don't Mean A Thing (If It Ain't Got That Swing)", path: "../../samples/jazz/swing3.ogg" },
-                { artist: "Fletcher Henderson", track: "Shanghai Shuffle", path: "../../samples/jazz/swing4.ogg" },
-                { artist: "Gene Krupa & His Orchestra", track: "The Madame Swings It", path: "../../samples/jazz/swing5.ogg" },
-                { artist: "Chick Webb", track: "When I Get Low I Get High", path: "../../samples/jazz/swing6.ogg" },
-                { artist: "Jimmie Lunceford", track: "My Blue Heaven", path: "../../samples/jazz/swing7.ogg" },
-                { artist: "Glenn Miller", track: "In The Mood", path: "../../samples/jazz/swing8.ogg" },
-                { artist: "Tommy Dorsey", track: "Keepin' Out Of Mischief", path: "../../samples/jazz/swing9.ogg" }
+			const tracks = [
+                ["Benny Goodman", "Sing, Sing, Sing"],
+                ["Count Basie", "Swingin' The Blues"],
+                ["Duke Ellington", "It Don't Mean A Thing (If It Ain't Got That Swing)"],
+                ["Fletcher Henderson", "Shanghai Shuffle"],
+                ["Gene Krupa & His Orchestra", "The Madame Swings It"],
+                ["Chick Webb", "When I Get Low I Get High"],
+                ["Jimmie Lunceford", "My Blue Heaven"],
+                ["Glenn Miller", "In The Mood"],
+                ["Tommy Dorsey", "Keepin' Out Of Mischief"]
             ];
         </script>
 

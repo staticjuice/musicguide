@@ -7,39 +7,24 @@
         <title>Modal Jazz</title>
     </head>
 
-    <body class="jazz" style="--bg:url('../images/jazz/modaljazz.jpg')">
+    <body class="jazz">
         <article>
             <h1>MODAL JAZZ<span>1958</span></h1>
 
             <p>Modal Jazz is not so much a style of Jazz as it is a structure. Before the advent of modal improvisations in the 50s, solo improvisations were based around the specific key of a piece &ndash; that is, its tonal centre, the starting point to which its melodies and chord progressions would return for a feeling of resolution or completeness. Modal improvisations, on the other hand, were based on modes or scales &ndash; but not just the typical major and minor scales familiar to nearly all musicians. The most commonly used modes did relate to major scales, though &ndash; each note in the scale was also the first note of a new mode, which would incorporate all of the notes in the original major scale, but sounded different because the new starting point rearranged the order of distances between notes. Thus, if a musician were improvising over a D chord for example, he could essentially choose any key centre whose corresponding scale included the note D (unless the composer dictated specific modes to be used in the solos). The new order of distances between notes could produce very different moods.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Miles Davis", track: "So What", path: "../../samples/jazz/modaljazz1.ogg" },
-                { artist: "Herbie Hancock", track: "Dolphin Dance", path: "../../samples/jazz/modaljazz2.ogg" },
-                { artist: "John Coltrane", track: "Impressions", path: "../../samples/jazz/modaljazz3.ogg" },
-                { artist: "Wayne Shorter", track: "Speak No Evil", path: "../../samples/jazz/modaljazz4.ogg" },
-                { artist: "Joe Henderson", track: "Blue Bossa", path: "../../samples/jazz/modaljazz5.ogg" },
-                { artist: "Woody Shaw", track: "From Moment To Moment", path: "../../samples/jazz/modaljazz6.ogg" },
-                { artist: "Freddie Hubbard", track: "Red Clay", path: "../../samples/jazz/modaljazz7.ogg" },
-                { artist: "McCoy Tyner", track: "Passion Dance", path: "../../samples/jazz/modaljazz8.ogg" },
-                { artist: "Bill Evans Trio", track: "Beautiful Love", path: "../../samples/jazz/modaljazz9.ogg" }
+			const tracks = [
+                ["Miles Davis", "So What"],
+                ["Herbie Hancock", "Dolphin Dance"],
+                ["John Coltrane", "Impressions"],
+                ["Wayne Shorter", "Speak No Evil"],
+                ["Joe Henderson", "Blue Bossa"],
+                ["Woody Shaw", "From Moment To Moment"],
+                ["Freddie Hubbard", "Red Clay"],
+                ["McCoy Tyner", "Passion Dance"],
+                ["Bill Evans Trio", "Beautiful Love"]
             ];
         </script>
 

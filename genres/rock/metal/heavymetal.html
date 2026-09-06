@@ -7,39 +7,24 @@
         <title>Heavy Metal</title>
     </head>
 
-    <body class="metal" style="--bg:url('../images/metal/heavymetal.jpg')">
+    <body class="metal">
         <article>
             <h1>HEAVY METAL<span>1970</span></h1>
 
             <p>Heavy Metal used to be an interchangeable term with Hard Rock in the late 60s. The earliest examples of the genre are often cited as Hard Rock examples and vice versa. As such, Heavy Metal is a loosely defined genre &ndash; simply "harder than Hard Rock", mainly through more amplification and distortion. The shocking tragedy of four deaths and violence at the Altamont Festival in 1969 marked the end of the flower power age, a temporary exile of The Rolling Stones and most importantly &ndash; a loss of belief in the hippy utopia. Rock couldn't make the world a better place and everyone had witnessed the dark side of human nature. The first band to be influenced by this event was Led Zeppelin. Described at the time as Rock music being dark, heavy and gloomy, it was almost impossible to listen to. Black Sabbath developed an even slower, tuned-down sound, yet also full of distortion, with thick and heavy riffs. In their later work, they also experimented with different tempo and instrumentation. Both bands feature lengthy songs, with elaborate guitar solos, while often referring to evil or dark themes.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Black Sabbath", track: "Supernaut", path: "../../../samples/metal/heavymetal1.ogg" },
-                { artist: "Led Zeppelin", track: "Whole Lotta Love", path: "../../../samples/metal/heavymetal2.ogg" },
-                { artist: "Deep Purple", track: "Black Night", path: "../../../samples/metal/heavymetal3.ogg" },
-                { artist: "Judas Priest", track: "Breaking The Law", path: "../../../samples/metal/heavymetal4.ogg" },
-                { artist: "Budgie", track: "Breadfan", path: "../../../samples/metal/heavymetal5.ogg" },
-                { artist: "Buffalo", track: "Shylock", path: "../../../samples/metal/heavymetal6.ogg" },
-                { artist: "UFO", track: "Silver Bird", path: "../../../samples/metal/heavymetal7.ogg" },
-                { artist: "Rush", track: "Tom Sawyer", path: "../../../samples/metal/heavymetal8.ogg" },
-                { artist: "Mountain", track: "Mississippi Queen", path: "../../../samples/metal/heavymetal9.ogg" }
+			const tracks = [
+                ["Black Sabbath", "Supernaut"],
+                ["Led Zeppelin", "Whole Lotta Love"],
+                ["Deep Purple", "Black Night"],
+                ["Judas Priest", "Breaking The Law"],
+                ["Budgie", "Breadfan"],
+                ["Buffalo", "Shylock"],
+                ["UFO", "Silver Bird"],
+                ["Rush", "Tom Sawyer"],
+                ["Mountain", "Mississippi Queen"]
             ];
         </script>
 

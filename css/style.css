@@ -1,6 +1,4 @@
-/*---------------------------------------------------------------------------
-  Global styling
----------------------------------------------------------------------------*/
+/* Global styling */
 
 @font-face {
     font-family: "Outfit";
@@ -15,8 +13,7 @@
 body {
     font: 2vh/1 "Outfit";
     color: var(--text, #FFF);
-    background: linear-gradient(var(--shade, #0009), var(--shade, #0009)), var(--bg) center / cover fixed;
-    &:has(> .genre-detail) { --shade: #0000; }
+    background: linear-gradient(var(--shade, #0000), var(--shade, #0000)), var(--bg) center / cover fixed;
     @media (orientation: portrait) { font-size: 3.5vw; }
 }
 
@@ -35,9 +32,7 @@ a {
     color: inherit;
 }
 
-/*---------------------------------------------------------------------------
-Scrollbar and highlighting
----------------------------------------------------------------------------*/
+/* Scrollbar and highlighting */
 
 ::-webkit-scrollbar {
     width: var(--scrollbar-width, 0.5em);
@@ -54,177 +49,7 @@ Scrollbar and highlighting
     color: var(--inverse, #222);
 }
 
-/*---------------------------------------------------------------------------
-Home page
----------------------------------------------------------------------------*/
-
-main {
-    min-height: 100vh;
-    display: grid;
-    place-content: center;
-    justify-items: center;
-    gap: 0.5em;
-    text-align: center;
-    font-size: 4vw;
-    @media (orientation: portrait) { font-size: 7vw; }
-
-    > a {
-        border: 0.125em solid;
-        border-radius: 1em;
-        padding: 0.3em 0.4em;
-        font-size: 1.75em;
-        font-weight: 600;
-        &:hover { color: #FF6D00; }
-    }
-}
-
-/*---------------------------------------------------------------------------
-Genre index
----------------------------------------------------------------------------*/
-
-body:has(> h1) {
-    --scrollbar-width: 0;
-    position: absolute;
-    inset-inline: 0;
-    margin: 2vw 8vw;
-    min-height: calc(100vh - 4vw);
-    background: url("../images/wood.jpg") top left / cover;
-    font-size: 1.75vw;
-    display: grid;
-    align-content: center;
-    gap: 2vw;
-    padding-bottom: 2vw;
-    @media (orientation: portrait) { h1 { margin: 3vw 0; font-size: 12vw; } }
-
-    > nav {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2vw;
-        @media (orientation: portrait) { grid-template-columns: 1fr; gap: 5vw; padding-bottom: 3vw; }
-
-        > a {
-            display: grid;
-            place-items: center;
-            > * { grid-area: 1 / 1; }
-
-            > span {
-                z-index: 1;
-                font-size: 2.75vw;
-                @media (orientation: portrait) { font-size: 8vw; }
-            }
-
-            > img {
-                width: 100%;
-                border-radius: 1em;
-                box-shadow: 0.01em 0.01em 0.5em #0009;
-                filter: brightness(40%);
-                @media (orientation: portrait) { border-radius: 3.5em; height: 25vw; object-fit: cover; }
-            }
-        }
-    }
-}
-
-/*---------------------------------------------------------------------------
-Genre overview
----------------------------------------------------------------------------*/
-
-body:has(> section) {
-    overflow: auto;
-    @media (orientation: landscape) { display: grid; grid-template-columns: 1fr min(calc(100em / 3), 50vw); height: 100vh; overflow: hidden; }
-
-    > nav {
-        padding: 1em;
-        font-size: calc(11vh / 3);
-        color: #FFF;
-        & ::selection { background: var(--base); color: var(--text, #FFF); }
-        @media (orientation: portrait) { font-size: 6vw; }
-
-        > h1 {
-            font-size: 2em;
-            margin-bottom: 0.4em;
-        }
-
-        > a {
-            display: block;
-            width: fit-content;
-            line-height: 1.4;
-            &:hover { color: var(--hover); }
-        }
-    }
-
-    > section {
-        background: var(--base);
-        border-left: 0.5em solid var(--light);
-        box-shadow: -0.01em 0 0.5em #0009;
-        padding: 1.5em 1.5em 0;
-        overflow: auto;
-        @media (orientation: portrait) {
-            border-left: none;
-            border-top: 0.5em solid var(--light);
-            box-shadow: 0 -0.01em 0.5em #0009;
-        }
-    }
-}
-
-/*---------------------------------------------------------------------------
-Genre detail
----------------------------------------------------------------------------*/
-
-body > article {
-    background: var(--base);
-    position: relative;
-    margin: 2em;
-    border: 0.5em solid var(--light);
-    border-radius: 2em;
-    box-shadow: 0.1em 0.1em 0.5em #0009;
-    padding: 1.5em;
-    max-width: 40em;
-    @media (orientation: portrait) { margin: 1.5em; }
-
-    :is(h1 > span, .sample-button) {
-        font-weight: 700;
-        user-select: none;
-        background: var(--light);
-    }
-
-    h1 > span {
-        float: right;
-        border-radius: 1em;
-        padding: 0.25em;
-        font-size: 0.8em;
-        @media (orientation: portrait) { float: left; margin: 0.6em 100% 0.5em 0; font-size: 0.6em; }
-    }
-
-    .sample-button {
-        border-radius: 0.15em;
-        width: 1em;
-        line-height: 1.25;
-        text-align: center;
-        font-size: 2.5em;
-        &:hover { background: var(--hover); }
-        &.sample-stop { position: absolute; inset: auto 0.5em 0.5em auto; }
-        &.is-playing { box-shadow: inset 0 0 0 0.1em currentColor; }
-    }
-
-    .sample-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75em;
-        margin: 1.5em 0 1.25em;
-    }
-
-    > span[data-label] {
-        display: flex;
-        padding-right: 2em;
-        font-size: 1.25em;
-        line-height: 1.6;
-        &::before { flex: 0 0 3em; content: attr(data-label); }
-    }
-}
-
-/*---------------------------------------------------------------------------
-Colours
----------------------------------------------------------------------------*/
+/* Colours */
 
 .classical { --base: #705A3D; --light: #917550; --hover: #A18259; }
 .blues { --base: #283593; --light: #3F4FCA; --hover: #5361D0; }
@@ -251,3 +76,161 @@ Colours
 .hauntology { --base: #29CCCC; --light: #2CDEDE; --hover: #2FEDED; --text: #222; --inverse: #FFF; }
 .folk { --base: #C6A44D; --light: #D2B774; --hover: #D8C188; }
 .world { --base: #364F30; --light: #4C6F44; --hover: #567E4E; }
+
+/* Home page */
+
+main {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 0.5em;
+    text-align: center;
+    font-size: 4vw;
+    @media (orientation: portrait) { font-size: 7vw; }
+
+    > a {
+        border: 0.125em solid;
+        border-radius: 1em;
+        padding: 0.3em 0.4em;
+        font-size: 1.75em;
+        font-weight: 600;
+        &:hover { color: #FF6D00; }
+    }
+}
+
+:is(body:has(> main), body:has(> section)) { --shade: #0009; }
+
+/* Genre index */
+
+body:has(> h1) {
+    --scrollbar-width: 0;
+    &, > nav { display: grid; gap: 2vw; }
+    > nav > a { display: grid; }
+    position: absolute;
+    inset-inline: 0;
+    margin: 2vw 8vw;
+    min-height: calc(100vh - 4vw);
+    background: url("../images/wood.jpg") top left / cover;
+    font-size: 1.75vw;
+    align-content: center;
+    padding-bottom: 2vw;
+    @media (orientation: portrait) { h1 { margin: 3vw 0; font-size: 12vw; } }
+
+    > nav {
+        grid-template-columns: repeat(4, 1fr);
+        @media (orientation: portrait) { grid-template-columns: 1fr; gap: 5vw; padding-bottom: 3vw; }
+
+        > a {
+            place-items: center;
+            > * { grid-area: 1 / 1; }
+
+            > span {
+                z-index: 1;
+                font-size: 2.75vw;
+                @media (orientation: portrait) { font-size: 8vw; }
+            }
+
+            > img {
+                width: 100%;
+                border-radius: 1em;
+                box-shadow: 0.01em 0.01em 0.5em #0009;
+                filter: brightness(40%);
+                @media (orientation: portrait) { border-radius: 3.5em; height: 25vw; object-fit: cover; }
+            }
+        }
+    }
+}
+
+/* Genre overview */
+
+body > :is(section, article) { background: var(--base); }
+
+body:has(> section) {
+    &, > section { overflow: auto; }
+    @media (orientation: landscape) { display: grid; grid-template-columns: 1fr min(calc(100em / 3), 50vw); height: 100vh; overflow: hidden; }
+
+    > nav {
+        padding: 1em;
+        font-size: calc(11vh / 3);
+        color: #FFF;
+        & ::selection { background: var(--base); color: var(--text, #FFF); }
+        @media (orientation: portrait) { font-size: 6vw; }
+
+        > h1 {
+            font-size: 2em;
+            margin-bottom: 0.4em;
+        }
+
+        > a {
+            display: block;
+            width: fit-content;
+            line-height: 1.4;
+            &:hover { color: var(--hover); }
+        }
+    }
+
+    > section {
+        border-left: 0.5em solid var(--light);
+        box-shadow: -0.01em 0 0.5em #0009;
+        padding: 1.5em 1.5em 0;
+        @media (orientation: portrait) { border-left: none; border-top: 0.5em solid var(--light); box-shadow: 0 -0.01em 0.5em #0009; }
+    }
+}
+
+/* Genre detail */
+
+body > article {
+    position: relative;
+    margin: 2em;
+    border: 0.5em solid var(--light);
+    border-radius: 2em;
+    box-shadow: 0.1em 0.1em 0.5em #0009;
+    padding: 1.5em;
+    max-width: 40em;
+    @media (orientation: portrait) { margin: 1.5em; }
+
+    h1 > span, > div > div, > div:last-child {
+        font-weight: 700;
+        user-select: none;
+        background: var(--light);
+    }
+
+    h1 > span {
+        float: right;
+        border-radius: 1em;
+        padding: 0.25em;
+        font-size: 0.8em;
+        @media (orientation: portrait) { float: left; margin: 0.6em 100% 0.5em 0; font-size: 0.6em; }
+    }
+
+    > div:first-of-type {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75em;
+        margin: 1.5em 0 1.25em;
+    }
+
+    > div > div, > div:last-child {
+        border-radius: 0.15em;
+        width: 1em;
+        line-height: 1.25;
+        text-align: center;
+        font-size: 2.5em;
+        &:hover { background: var(--hover); }
+        &[data-playing] { box-shadow: inset 0 0 0 0.1em currentColor; }
+    }
+
+    > div:last-child {
+        position: absolute;
+        inset: auto 0.67em 0.67em auto;
+    }
+
+    > span {
+        display: grid;
+        grid-template-columns: 3em 1fr;
+        padding-right: 2em;
+        font-size: 1.25em;
+        line-height: 1.6;
+    }
+}

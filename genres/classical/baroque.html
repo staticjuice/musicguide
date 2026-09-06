@@ -7,39 +7,24 @@
         <title>Baroque</title>
     </head>
 
-    <body class="classical" style="--bg:url('../images/classical/baroque.jpg')">
+    <body class="classical">
         <article>
             <h1>BAROQUE<span>c. 1600</span></h1>
 
             <p>Baroque music is a style of Western art music composed from approximately 1580 to 1750. This era followed the Renaissance music era and was followed in turn by the Classical era. Baroque music forms a major portion of the Classical music canon, being widely studied, performed and listened to. The Baroque period saw the creation of tonality, an approach to writing music in which a song or piece is written in a particular key. During the Baroque era, professional musicians were expected to be accomplished improvisers of both solo melodic lines and accompaniment parts. Baroque concerts were typically accompanied by a basso continuo group which consisted of chord-playing instrumentalists such as harpsichordists and lute players improvising chords from a figured bass part while a group of bass instruments (viola, cello and double bass) played the bassline. A characteristic Baroque form was the dance suite. While the pieces in a dance suite were inspired by actual dance music, they were designed for listening, not for accompanying dancers.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Johann Sebastian Bach", track: "Orchestral Suite No. 3 In D Major, BWV 1068", path: "../../samples/classical/baroque1.ogg" },
-                { artist: "Antonio Vivaldi", track: "The Four Seasons, Op. 8 – Spring (La Primavera)", path: "../../samples/classical/baroque2.ogg" },
-                { artist: "George Frideric Handel", track: "Keyboard Suite In D Minor, HWV 437", path: "../../samples/classical/baroque3.ogg" },
-                { artist: "Domenico Scarlatti", track: "Keyboard Sonata In E Major, K. 380", path: "../../samples/classical/baroque4.ogg" },
-                { artist: "Jean-Philippe Rameau", track: "Les Indes Galantes – Les Sauvages", path: "../../samples/classical/baroque5.ogg" },
-                { artist: "Johann Pachelbel", track: "Canon In D Major", path: "../../samples/classical/baroque6.ogg" },
-                { artist: "François Couperin", track: "Le Tic-Toc-Choc Ou Les Maillotins", path: "../../samples/classical/baroque7.ogg" },
-                { artist: "Arcangelo Corelli", track: "Concerto Grosso In G Minor, Op. 6, No. 8", path: "../../samples/classical/baroque8.ogg" },
-                { artist: "Henry Purcell", track: "Suite From Abdelazer, Z. 570", path: "../../samples/classical/baroque9.ogg" }
+			const tracks = [
+                ["Johann Sebastian Bach", "Orchestral Suite No. 3 In D Major, BWV 1068"],
+                ["Antonio Vivaldi", "The Four Seasons, Op. 8 – Spring (La Primavera)"],
+                ["George Frideric Handel", "Keyboard Suite In D Minor, HWV 437"],
+                ["Domenico Scarlatti", "Keyboard Sonata In E Major, K. 380"],
+                ["Jean-Philippe Rameau", "Les Indes Galantes – Les Sauvages"],
+                ["Johann Pachelbel", "Canon In D Major"],
+                ["François Couperin", "Le Tic-Toc-Choc Ou Les Maillotins"],
+                ["Arcangelo Corelli", "Concerto Grosso In G Minor, Op. 6, No. 8"],
+                ["Henry Purcell", "Suite From Abdelazer, Z. 570"]
             ];
         </script>
 

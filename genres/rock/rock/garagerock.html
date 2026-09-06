@@ -7,39 +7,24 @@
         <title>Garage Rock</title>
     </head>
 
-    <body class="rock" style="--bg:url('../images/rock/garagerock.jpg')">
+    <body class="rock">
         <article>
             <h1>GARAGE ROCK<span>1963</span></h1>
 
             <p>After the advent of Rock &amp; Roll, countless ambitious teens got hooked on the sound and started forming their own Rock bands. More often than not, they rehearsed in the garages of their parents. The result was a very raw, amateur, lo-fi sound of Rock &amp; Roll and the first experiments with distorted guitars. Garage Rock is a genre where the "fuzz" distortion effect is used intensively, which fits nicely with Garage Rock's recurring content of anger and frustration about dealing with heartbreak and other bad experiences. Because most Garage Rock musicians couldn't afford decent audio equipment, there was often no budget for voice amplification, resulting in wailing, screaming singers. It wasn't until the great British Invasion of the mid-60s that Garage Rock truly broke loose, with even more bands and crossovers to Psychedelic Rock as a result. Garage Rock's big teenage "we do what we want" attitude and sound inspired Punk itself, as well as contemporary artists who felt a revival was well deserved. After all, Garage Rock is the embodiment of sleaziness, roughness and Rock's nonchalance in all its glory.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "The Sonics", track: "Have Love Will Travel", path: "../../../samples/rock/garagerock1.ogg" },
-                { artist: "The Castaways", track: "Liar, Liar", path: "../../../samples/rock/garagerock2.ogg" },
-                { artist: "The Wailers", track: "Hang Up", path: "../../../samples/rock/garagerock3.ogg" },
-                { artist: "The Kingsmen", track: "Louie Louie", path: "../../../samples/rock/garagerock4.ogg" },
-                { artist: "The Electric Prunes", track: "Get Me To The World On Time", path: "../../../samples/rock/garagerock5.ogg" },
-                { artist: "The 13th Floor Elevators", track: "You're Gonna Miss Me", path: "../../../samples/rock/garagerock6.ogg" },
-                { artist: "Count Five", track: "Psychotic Reaction", path: "../../../samples/rock/garagerock7.ogg" },
-                { artist: "The Seeds", track: "Pushin' Too Hard", path: "../../../samples/rock/garagerock8.ogg" },
-                { artist: "The Shadows Of Knight", track: "Gloria", path: "../../../samples/rock/garagerock9.ogg" }
+			const tracks = [
+                ["The Sonics", "Have Love Will Travel"],
+                ["The Castaways", "Liar, Liar"],
+                ["The Wailers", "Hang Up"],
+                ["The Kingsmen", "Louie Louie"],
+                ["The Electric Prunes", "Get Me To The World On Time"],
+                ["The 13th Floor Elevators", "You're Gonna Miss Me"],
+                ["Count Five", "Psychotic Reaction"],
+                ["The Seeds", "Pushin' Too Hard"],
+                ["The Shadows Of Knight", "Gloria"]
             ];
         </script>
 

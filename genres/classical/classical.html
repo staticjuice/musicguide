@@ -7,39 +7,24 @@
         <title>Classical</title>
     </head>
 
-    <body class="classical" style="--bg:url('../images/classical/classical.jpg')">
+    <body class="classical">
         <article>
             <h1>CLASSICAL<span>c. 1730</span></h1>
 
             <p>The dates of the Classical period are generally accepted as being between about the year 1730 and 1820. Compared to its predecessors, Classical music has a lighter, clearer texture than Baroque music and is less complex, being more clean and rational. It is mainly homophonic, using a clear melody line over a subordinate chordal accompaniment, but counterpoint was by no means forgotten, especially later in the period. It also uses a style which emphasised light elegance in place of the Baroque's dignified seriousness and impressive grandeur. Variety and contrast within a piece became more pronounced than before and the orchestra increased in size, range and power. The harpsichord was replaced as the main keyboard instrument by the piano. Unlike the harpsichord, which plucked strings with quills, pianos strike the strings with leather-covered hammers when the keys are pressed, which enables the performer to play louder or softer and play with more expression &ndash; in contrast, the force with which a performer plays the harpsichord does not change the sound.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Wolfgang Amadeus Mozart", track: "Eine Kleine Nachtmusik, K. 525", path: "../../samples/classical/classical1.ogg" },
-                { artist: "Joseph Haydn", track: "Symphony No. 94 In G Major", path: "../../samples/classical/classical2.ogg" },
-                { artist: "Ludwig Van Beethoven", track: "Symphony No. 5 In C Minor, Op. 67", path: "../../samples/classical/classical3.ogg" },
-                { artist: "Christoph Willibald Gluck", track: "Orfeo Ed Euridice: Dance Of The Blessed Spirits", path: "../../samples/classical/classical4.ogg" },
-                { artist: "Carl Philipp Emanuel Bach", track: "Solfeggietto In C Minor, H. 220", path: "../../samples/classical/classical5.ogg" },
-                { artist: "Muzio Clementi", track: "Piano Sonata In B-Flat Major, Op. 24, No. 2", path: "../../samples/classical/classical6.ogg" },
-                { artist: "Luigi Boccherini", track: "String Quintet In E Major, Op. 11, No. 5", path: "../../samples/classical/classical7.ogg" },
-                { artist: "Johann Stamitz", track: "Mannheim Symphony No. 1 In G Major", path: "../../samples/classical/classical8.ogg" },
-                { artist: "François-Joseph Gossec", track: "Gavotte In D Major", path: "../../samples/classical/classical9.ogg" }
+			const tracks = [
+                ["Wolfgang Amadeus Mozart", "Eine Kleine Nachtmusik, K. 525"],
+                ["Joseph Haydn", "Symphony No. 94 In G Major"],
+                ["Ludwig Van Beethoven", "Symphony No. 5 In C Minor, Op. 67"],
+                ["Christoph Willibald Gluck", "Orfeo Ed Euridice: Dance Of The Blessed Spirits"],
+                ["Carl Philipp Emanuel Bach", "Solfeggietto In C Minor, H. 220"],
+                ["Muzio Clementi", "Piano Sonata In B-Flat Major, Op. 24, No. 2"],
+                ["Luigi Boccherini", "String Quintet In E Major, Op. 11, No. 5"],
+                ["Johann Stamitz", "Mannheim Symphony No. 1 In G Major"],
+                ["François-Joseph Gossec", "Gavotte In D Major"]
             ];
         </script>
 

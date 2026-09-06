@@ -7,39 +7,24 @@
         <title>Japanese</title>
     </head>
 
-    <body class="world" style="--bg:url('../images/world/japanese.jpg')">
+    <body class="world">
         <article>
             <h1>JAPANESE</h1>
 
             <p>The music of Japan includes a wide array of performers in distinct styles both traditional and modern. The word for music in Japanese is ongaku. Traditional Japanese music is quite different from Western music as it is often based on the intervals of human breathing rather than mathematical timing. There are two forms of music recognised to be the oldest forms of traditional Japanese music. They are shōmyō, or Buddhist chanting, and gagaku, or orchestral court music, both of which date to the Nara and Heian periods. Originating as early as the 13th century are honkyoku, meaning "original pieces". These are single shakuhachi pieces played by mendicant Fuke sect priests of Zen Buddhism. These priests, called komusō, played honkyoku for alms and enlightenment. The Fuke sect ceased to exist in the 19th century, but a verbal and written lineage of many honkyoku continues today, though this music is now often practiced in a concert or performance setting. The samurai often listened to and performed in these music activities, in their practices of enriching their lives and understanding.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Koto Ensemble Of The Ikuta School", track: "Shockikubai", path: "../../samples/world/japanese1.ogg" },
-                { artist: "Aiko Hasegawa", track: "The Moment Of Spring: Pt. 2", path: "../../samples/world/japanese2.ogg" },
-                { artist: "Nozomi Myanishi", track: "Spring Yellow", path: "../../samples/world/japanese3.ogg" },
-                { artist: "Toshiko Yonekawa", track: "Soran-Bushi", path: "../../samples/world/japanese4.ogg" },
-                { artist: "Duo En", track: "Kojo No Tsuki", path: "../../samples/world/japanese5.ogg" },
-                { artist: "Isaku Kageyama & Yoshinori Kikuchi", track: "Sanctuary", path: "../../samples/world/japanese6.ogg" },
-                { artist: "Mizuyo Komiya", track: "Beyond The Window", path: "../../samples/world/japanese7.ogg" },
-                { artist: "Yamato Ensemble", track: "Seoto", path: "../../samples/world/japanese8.ogg" },
-                { artist: "Seijo Omure Ki", track: "Sorrow For Keiko", path: "../../samples/world/japanese9.ogg" }
+			const tracks = [
+                ["Koto Ensemble Of The Ikuta School", "Shockikubai"],
+                ["Aiko Hasegawa", "The Moment Of Spring: Pt. 2"],
+                ["Nozomi Myanishi", "Spring Yellow"],
+                ["Toshiko Yonekawa", "Soran-Bushi"],
+                ["Duo En", "Kojo No Tsuki"],
+                ["Isaku Kageyama & Yoshinori Kikuchi", "Sanctuary"],
+                ["Mizuyo Komiya", "Beyond The Window"],
+                ["Yamato Ensemble", "Seoto"],
+                ["Seijo Omure Ki", "Sorrow For Keiko"]
             ];
         </script>
 

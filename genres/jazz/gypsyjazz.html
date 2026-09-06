@@ -7,39 +7,24 @@
         <title>Gypsy Jazz</title>
     </head>
 
-    <body class="jazz" style="--bg:url('../images/jazz/gypsyjazz.jpg')">
+    <body class="jazz">
         <article>
             <h1>GYPSY JAZZ<span>1934</span></h1>
 
             <p>Gypsy Jazz, also known as Jazz Manouche, is a style of Jazz music that originated in the 1930s. It was pioneered by the Romani guitarist Django Reinhardt in France, blending traditional Romani music with the sounds of Swing Jazz. The genre is characterised by its lively tempo, virtuosic guitar playing, and a distinctively rhythmic feel known as "la pompe," which provides a percussive, driving beat. Gypsy Jazz typically features a combination of lead guitar, rhythm guitar, violin, and double bass, with occasional accordion or clarinet. The music often includes fast-paced, intricate melodies, and improvisation is a key element, allowing musicians to showcase their technical prowess and creativity. Gypsy Jazz soon gained international popularity, with many other musicians continuing to evolve its sound. It fell out of favour as the "Swing era" came to an end, being replaced in its homeland by Bebop, mainstream Jazz, and eventually, Rock &amp; Roll. Gypsy Jazz remains a vibrant and dynamic musical form, celebrating the rich cultural heritage of the Romani people while contributing to the broader Jazz tradition.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Django Reinhardt", track: "Minor Swing", path: "../../samples/jazz/gypsyjazz1.ogg" },
-                { artist: "Quintette Du Hot Club De France", track: "I'll See You In My Dreams", path: "../../samples/jazz/gypsyjazz2.ogg" },
-                { artist: "Tchan-Tchou Vidal", track: "Les Deux Guitares", path: "../../samples/jazz/gypsyjazz3.ogg" },
-                { artist: "Jimmy Rosenberg", track: "Swing For Ninine", path: "../../samples/jazz/gypsyjazz4.ogg" },
-                { artist: "Stephane Wrembel", track: "Bistro Fada", path: "../../samples/jazz/gypsyjazz5.ogg" },
-                { artist: "Angelo Debarre", track: "La Gitane", path: "../../samples/jazz/gypsyjazz6.ogg" },
-                { artist: "Dorado Schmitt", track: "Bleu Citron", path: "../../samples/jazz/gypsyjazz7.ogg" },
-                { artist: "Patrick Saussois", track: "Les Yeux Noirs", path: "../../samples/jazz/gypsyjazz8.ogg" },
-                { artist: "Pearl Django", track: "Flambee Montalbanaise", path: "../../samples/jazz/gypsyjazz9.ogg" }
+			const tracks = [
+                ["Django Reinhardt", "Minor Swing"],
+                ["Quintette Du Hot Club De France", "I'll See You In My Dreams"],
+                ["Tchan-Tchou Vidal", "Les Deux Guitares"],
+                ["Jimmy Rosenberg", "Swing For Ninine"],
+                ["Stephane Wrembel", "Bistro Fada"],
+                ["Angelo Debarre", "La Gitane"],
+                ["Dorado Schmitt", "Bleu Citron"],
+                ["Patrick Saussois", "Les Yeux Noirs"],
+                ["Pearl Django", "Flambee Montalbanaise"]
             ];
         </script>
 

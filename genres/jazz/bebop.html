@@ -7,39 +7,24 @@
         <title>Bebop</title>
     </head>
 
-    <body class="jazz" style="--bg:url('../images/jazz/bebop.jpg')">
+    <body class="jazz">
         <article>
             <h1>BEBOP<span>1942</span></h1>
 
             <p>As more white people were copying Jazz music, several black Jazz musicians felt a need to redefine the music. Bebop developed gradually in the early 40s and exploded in 1945. The main difference between Bebop and Swing is that the soloists engaged in chordal (rather than melodic) improvisation, often discarding the melody altogether after the first chorus and using the chords as the basis for the solo. Ensembles tended to be unisons, most Jazz groups were under seven pieces, and the soloist was free to get as adventurous as possible as long as the overall improvisation fit into the chord structure. Since the virtuoso musicians were getting away from using the melodies as the basis for their solos and some of the tempos were very fast, Bebop divorced itself from popular music and a dancing audience, uplifting Jazz to an art form but cutting deeply into its potential commercial success. Ironically the once-radical Bebop style has become the foundation for all of the innovations that followed and now can be almost thought of as establishment music.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Dizzy Gillespie", track: "Anthropology", path: "../../samples/jazz/bebop1.ogg" },
-                { artist: "Charlie Parker", track: "Koko", path: "../../samples/jazz/bebop2.ogg" },
-                { artist: "Bud Powell", track: "Tempus Fugit", path: "../../samples/jazz/bebop3.ogg" },
-                { artist: "Dexter Gordon", track: "Lady Bird", path: "../../samples/jazz/bebop4.ogg" },
-                { artist: "Fats Navarro", track: "Ko Ko", path: "../../samples/jazz/bebop5.ogg" },
-                { artist: "Bud Powell", track: "Cherokee", path: "../../samples/jazz/bebop6.ogg" },
-                { artist: "Sonny Stitt", track: "After You've Gone", path: "../../samples/jazz/bebop7.ogg" },
-                { artist: "Babs Gonzales", track: "Professor Bop", path: "../../samples/jazz/bebop8.ogg" },
-                { artist: "Charlie Parker Quintet", track: "Donna Lee", path: "../../samples/jazz/bebop9.ogg" }
+			const tracks = [
+                ["Dizzy Gillespie", "Anthropology"],
+                ["Charlie Parker", "Koko"],
+                ["Bud Powell", "Tempus Fugit"],
+                ["Dexter Gordon", "Lady Bird"],
+                ["Fats Navarro", "Ko Ko"],
+                ["Bud Powell", "Cherokee"],
+                ["Sonny Stitt", "After You've Gone"],
+                ["Babs Gonzales", "Professor Bop"],
+                ["Charlie Parker Quintet", "Donna Lee"]
             ];
         </script>
 

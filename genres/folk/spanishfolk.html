@@ -7,39 +7,24 @@
         <title>Spanish Folk</title>
     </head>
 
-    <body class="folk" style="--bg:url('../images/folk/spanishfolk.jpg')">
+    <body class="folk">
         <article>
             <h1>SPANISH FOLK</h1>
 
             <p>The music of Spain has a long history and has played an important role in the development of Western music and has greatly influenced Latin American music. Spanish music is often associated with traditional styles such as Flamenco and classical guitar. While these forms of music are common, there are many different traditional musical and dance styles across the regions. For example, music from the north-west regions is heavily reliant on bagpipes, the jota is widespread in the centre and north of the country and Flamenco originated in the south. Spanish music played a notable part in the early developments of Western Classical music, from the 15th through the early 17th centuries. The breadth of musical innovation can be seen in composers like Tomás Luis de Victoria, styles like the Zarzuela of Spanish Opera, the ballet of Manuel de Falla, and the classical guitar music of Francisco Tárrega. There is also a movement of singer-songwriters with politically-active lyrics, paralleling similar developments in Latin America and Portugal. Nowadays commercial Pop music dominates the region.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Jota Aragonesa", track: "Un Baturro Subió Al Cielo", path: "../../samples/folk/spanishfolk1.ogg" },
-                { artist: "A Quenlla", track: "Rumboia", path: "../../samples/folk/spanishfolk2.ogg" },
-                { artist: "Radio Cos", track: "Muiñeira Da Despedida", path: "../../samples/folk/spanishfolk3.ogg" },
-                { artist: "Manuel Luna", track: "Flor De Almendra", path: "../../samples/folk/spanishfolk4.ogg" },
-                { artist: "A Puro Viento", track: "Metéle Que El Tuerto Paga", path: "../../samples/folk/spanishfolk5.ogg" },
-                { artist: "Roi Casel & Laritza Bacallao", track: "Abrazongo", path: "../../samples/folk/spanishfolk6.ogg" },
-                { artist: "Música Nostra", track: "Jota De Sa Guitarra", path: "../../samples/folk/spanishfolk7.ogg" },
-                { artist: "Hermanos Anoz", track: "El Campanero", path: "../../samples/folk/spanishfolk8.ogg" },
-                { artist: "Azarbe", track: "Amor Que Me Das", path: "../../samples/folk/spanishfolk9.ogg" }
+			const tracks = [
+                ["Jota Aragonesa", "Un Baturro Subió Al Cielo"],
+                ["A Quenlla", "Rumboia"],
+                ["Radio Cos", "Muiñeira Da Despedida"],
+                ["Manuel Luna", "Flor De Almendra"],
+                ["A Puro Viento", "Metéle Que El Tuerto Paga"],
+                ["Roi Casel & Laritza Bacallao", "Abrazongo"],
+                ["Música Nostra", "Jota De Sa Guitarra"],
+                ["Hermanos Anoz", "El Campanero"],
+                ["Azarbe", "Amor Que Me Das"]
             ];
         </script>
 

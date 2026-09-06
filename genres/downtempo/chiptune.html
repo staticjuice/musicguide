@@ -12,34 +12,19 @@
             <h1>CHIPTUNE<span>1978</span></h1>
 
             <p>With the arrival of early home computers and the first game consoles, a weird and particular kind of music was born &ndash; electronic music made for electronic games. Because of primitive chips and hardware, this music had to be small in data and was therefore by default minimalistic, lo-fi and consisting of recurring parts. Often it was barely more than a catchy, high-frequency melody and a single rhythmic bass chord produced by a small sound chip. The result is an extremely primitive sound, but that didn't matter as early computers or arcade consoles had low-quality speakers anyway. However, during the coming decades, countless artists were drawn to the sound and started to make their own game music &ndash; without games. At first Video Game Music consisted primarily of two subgenres &ndash; very basic 8-bit music and the slightly more advanced 16-bit, which allowed for a richer and more layered sound, though still very rudimentary. Although this genre might seem unimportant, the technology itself brought forth lots of other instruments and influenced a lot of other electronic music.</p>
-
-            <div class="sample-grid">
-                <div class="sample-button">1</div>
-                <div class="sample-button">2</div>
-                <div class="sample-button">3</div>
-                <div class="sample-button">4</div>
-                <div class="sample-button">5</div>
-                <div class="sample-button">6</div>
-                <div class="sample-button">7</div>
-                <div class="sample-button">8</div>
-                <div class="sample-button">9</div>
-            </div>
-
-            <span data-label="Artist:" id="sample-artist"></span><span data-label="Track:" id="sample-track"></span>
-            <div class="sample-button sample-stop"><svg viewBox="0 -3 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"></rect></svg></div>
         </article>
 
         <script>
-			window.TRACKS = [
-                { artist: "Koji Kondo", track: "Super Mario Bros. Theme", path: "../../samples/downtempo/chiptune1.ogg" },
-                { artist: "Hirokazu Tanaka", track: "Tetris Theme", path: "../../samples/downtempo/chiptune2.ogg" },
-                { artist: "Brad Fuller", track: "Marble Madness - Beginner Race", path: "../../samples/downtempo/chiptune3.ogg" },
-                { artist: "Tadashi Kimijima", track: "Bubble Bobble - Main Theme", path: "../../samples/downtempo/chiptune4.ogg" },
-                { artist: "Masato Nakamura", track: "Sonic The Hedgehog - Green Hill Zone Theme", path: "../../samples/downtempo/chiptune5.ogg" },
-                { artist: "Brian Johnston, Tim Wright & Tony Williams", track: "Lemmings - Lemming 1", path: "../../samples/downtempo/chiptune6.ogg" },
-                { artist: "Nullsleep", track: "Chippon", path: "../../samples/downtempo/chiptune7.ogg" },
-                { artist: "C-Jeff", track: "Angels Flying", path: "../../samples/downtempo/chiptune8.ogg" },
-                { artist: "Morusque", track: "Linerman", path: "../../samples/downtempo/chiptune9.ogg" }
+			const tracks = [
+                ["Koji Kondo", "Super Mario Bros. Theme"],
+                ["Hirokazu Tanaka", "Tetris Theme"],
+                ["Brad Fuller", "Marble Madness - Beginner Race"],
+                ["Tadashi Kimijima", "Bubble Bobble - Main Theme"],
+                ["Masato Nakamura", "Sonic The Hedgehog - Green Hill Zone Theme"],
+                ["Brian Johnston, Tim Wright & Tony Williams", "Lemmings - Lemming 1"],
+                ["Nullsleep", "Chippon"],
+                ["C-Jeff", "Angels Flying"],
+                ["Morusque", "Linerman"]
             ];
         </script>
 
