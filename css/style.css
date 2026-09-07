@@ -119,24 +119,38 @@ body:has(> h1) {
 
     > nav {
         grid-template-columns: repeat(4, 1fr);
-        @media (orientation: portrait) { grid-template-columns: 1fr; gap: 5vw; padding-bottom: 3vw; }
-
         > a {
+            aspect-ratio: 1;
+            grid-template: "top" 1fr "icon" auto "text" auto "bottom" 1fr / 1fr;
+            gap: 0.3em;
             place-items: center;
-            > * { grid-area: 1 / 1; }
 
-            > span {
-                z-index: 1;
-                font-size: 2.75vw;
-                @media (orientation: portrait) { font-size: 8vw; }
-            }
-
-            > img {
+            > .genre-image {
+                grid-area: 1 / 1 / -1 / -1;
                 width: 100%;
+                height: 100%;
+                object-fit: cover;
                 border-radius: 1em;
                 box-shadow: 0.01em 0.01em 0.5em #0009;
                 filter: brightness(40%);
-                @media (orientation: portrait) { border-radius: 3.5em; height: 25vw; object-fit: cover; }
+                @media (orientation: portrait) { border-radius: 3.5em; }
+            }
+
+            > .genre-icon {
+                grid-area: icon;
+                z-index: 1;
+                width: 40%;
+                object-fit: contain;
+                filter: none;
+            }
+
+            > span {
+                grid-area: text;
+                z-index: 2;
+                font-size: 2.5vw;
+                line-height: 1;
+                text-align: center;
+                @media (orientation: portrait) { font-size: 6vw; }
             }
         }
     }
