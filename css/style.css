@@ -2,6 +2,10 @@
 Global styling
 ---------------------------------------------------------------------------*/
 
+@view-transition {
+    navigation: auto;
+}
+
 @font-face {
     font-family: "Outfit";
     src: url("../fonts/Outfit.woff2");
