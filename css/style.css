@@ -1,4 +1,6 @@
-/* Global styling */
+/*---------------------------------------------------------------------------
+Global styling
+---------------------------------------------------------------------------*/
 
 @font-face {
     font-family: "Outfit";
@@ -10,16 +12,19 @@
     margin: 0;
 }
 
+html {
+    font-size: 2vh;
+}
+
 body {
-    font: 2vh/1 "Outfit";
+    font: 1rem/1 "Outfit";
     color: var(--text, #FFF);
-    background: linear-gradient(var(--shade, #0000), var(--shade, #0000)), var(--bg) center / cover fixed;
-    @media (orientation: portrait) { font-size: 3.5vw; }
+    background: var(--bg) center / cover fixed;
 }
 
 h1 {
-    font-weight: 900;
     font-size: 2.5em;
+    font-weight: 900;
 }
 
 p {
@@ -28,15 +33,16 @@ p {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
-/* Scrollbar and highlighting */
+/*---------------------------------------------------------------------------
+Scrollbar and highlighting
+---------------------------------------------------------------------------*/
 
 ::-webkit-scrollbar {
-    width: var(--scrollbar-width, 0.5em);
-    @media (orientation: portrait) { width: 0; }
+    width: 0.5em;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -49,15 +55,17 @@ a {
     color: var(--inverse, #222);
 }
 
-/* Colours */
+/*---------------------------------------------------------------------------
+Colours
+---------------------------------------------------------------------------*/
 
 .classical { --base: #705A3D; --light: #917550; --hover: #A18259; }
 .blues { --base: #283593; --light: #3F4FCA; --hover: #5361D0; }
 .jazz { --base: #E57373; --light: #ED9C9C; --hover: #F1B1B1; }
 .country { --base: #747538; --light: #969748; --hover: #A1A34E; }
 .rhythmandblues { --base: #00695C; --light: #009688; --hover: #26A69A; }
-.pop { --base: #FDD835; --light: #FFEB3B; --hover: #FFF176; --text: #222; --inverse: #FFF; }
-.rock { --base: #C62828; --light: #F44336; --hover: #EF5350; }
+.pop { --base: #FDD835; --light: #FFEB3B; --hover: #FFF176; }
+.classicrock { --base: #C62828; --light: #F44336; --hover: #EF5350; }
 .metal { --base: #080808; --light: #212121; --hover: #424242; }
 .punk { --base: #EF6C00; --light: #FF9800; --hover: #FFA726; }
 .alternative { --base: #37474F; --light: #56707B; --hover: #78909C; }
@@ -72,12 +80,16 @@ a {
 .breakbeat { --base: #783F5D; --light: #9A5177; --hover: #A95B83; }
 .drumandbass { --base: #9A1839; --light: #C71F49; --hover: #DD2251; }
 .ukgarage { --base: #8F7CAD; --light: #A892CC; --hover: #B59DDB; }
-.downtempo { --base: #EDEDED; --light: #F5F5F5; --hover: #FFF; --text: #222; --inverse: #FFF; }
-.hauntology { --base: #29CCCC; --light: #2CDEDE; --hover: #2FEDED; --text: #222; --inverse: #FFF; }
+.downtempo { --base: #EDEDED; --light: #F5F5F5; --hover: #FFF; }
+.hauntology { --base: #29CCCC; --light: #2CDEDE; --hover: #2FEDED; }
 .folk { --base: #C6A44D; --light: #D2B774; --hover: #D8C188; }
 .world { --base: #364F30; --light: #4C6F44; --hover: #567E4E; }
 
-/* Home page */
+:is(.pop, .downtempo, .hauntology) { --text: #222; --inverse: #FFF; }
+
+/*---------------------------------------------------------------------------
+Home page
+---------------------------------------------------------------------------*/
 
 main {
     min-height: 100vh;
@@ -87,7 +99,6 @@ main {
     gap: 0.5em;
     text-align: center;
     font-size: 4vw;
-    @media (orientation: portrait) { font-size: 7vw; }
 
     > a {
         border: 0.125em solid;
@@ -99,81 +110,93 @@ main {
     }
 }
 
-:is(body:has(> main), body:has(> section)) { --shade: #0009; }
+body:has(> :is(main, section)) {
+    background-image: linear-gradient(#0009, #0009), var(--bg);
+}
 
-/* Genre index */
+/*---------------------------------------------------------------------------
+Genres grid
+---------------------------------------------------------------------------*/
 
 body:has(> h1) {
-    --scrollbar-width: 0;
-    &, > nav { display: grid; gap: 2vw; }
-    > nav > a { display: grid; }
+    &::-webkit-scrollbar { width: 0; }
+
     position: absolute;
-    inset-inline: 0;
-    margin: 2vw 8vw;
+    inset: 2vw 8vw auto;
     min-height: calc(100vh - 4vw);
+    padding-bottom: 2vw;
     background: url("../images/wood.jpg") top left / cover;
     font-size: 1.75vw;
+    display: grid;
     align-content: center;
-    padding-bottom: 2vw;
-    @media (orientation: portrait) { h1 { margin: 3vw 0; font-size: 12vw; } }
+    gap: 2vw;
 
     > nav {
+        display: grid;
         grid-template-columns: repeat(4, 1fr);
-        > a {
-            aspect-ratio: 1;
-            grid-template: "top" 1fr "icon" auto "text" auto "bottom" 1fr / 1fr;
-            gap: 0.3em;
-            place-items: center;
+        gap: 2vw;
 
-            > .genre-image {
-                grid-area: 1 / 1 / -1 / -1;
+        > a {
+            display: grid;
+            align-items: center;
+
+            > * { grid-area: 1 / 1; }
+
+            > img {
                 width: 100%;
-                height: 100%;
+                aspect-ratio: 1;
                 object-fit: cover;
                 border-radius: 1em;
                 box-shadow: 0.01em 0.01em 0.5em #0009;
                 filter: brightness(40%);
-                @media (orientation: portrait) { border-radius: 3.5em; }
-            }
-
-            > .genre-icon {
-                grid-area: icon;
-                z-index: 1;
-                width: 40%;
-                object-fit: contain;
-                filter: none;
             }
 
             > span {
-                grid-area: text;
-                z-index: 2;
+                z-index: 1;
                 font-size: 2.5vw;
-                line-height: 1;
                 text-align: center;
-                @media (orientation: portrait) { font-size: 6vw; }
+
+                > img {
+                    display: block;
+                    width: 40%;
+                    margin: 0 auto 0.2em;
+                }
             }
         }
     }
 }
 
-/* Genre overview */
+/*---------------------------------------------------------------------------
+Genre overviews
+---------------------------------------------------------------------------*/
 
-body > :is(section, article) { background: var(--base); }
+body > :is(section, article) {
+    background: var(--base);
+}
 
 body:has(> section) {
     &, > section { overflow: auto; }
-    @media (orientation: landscape) { display: grid; grid-template-columns: 1fr min(calc(100em / 3), 50vw); height: 100vh; overflow: hidden; }
+
+    @media (orientation: landscape) {
+        display: grid;
+        grid-template-columns: 1fr min(calc(100em / 3), 50vw);
+        height: 100vh;
+        overflow: hidden;
+    }
 
     > nav {
         padding: 1em;
         font-size: calc(11vh / 3);
         color: #FFF;
-        & ::selection { background: var(--base); color: var(--text, #FFF); }
-        @media (orientation: portrait) { font-size: 6vw; }
+
+        & ::selection {
+            background: var(--base);
+            color: var(--text, #FFF);
+        }
 
         > h1 {
-            font-size: 2em;
             margin-bottom: 0.4em;
+            font-size: 2em;
         }
 
         > a {
@@ -186,65 +209,131 @@ body:has(> section) {
 
     > section {
         border-left: 0.5em solid var(--light);
-        box-shadow: -0.01em 0 0.5em #0009;
+        box-shadow: 0 0 0.5em #0009;
         padding: 1.5em 1.5em 0;
-        @media (orientation: portrait) { border-left: none; border-top: 0.5em solid var(--light); box-shadow: 0 -0.01em 0.5em #0009; }
     }
 }
 
-/* Genre detail */
+/*---------------------------------------------------------------------------
+Subgenre pages
+---------------------------------------------------------------------------*/
 
 body > article {
+    --space: 1.5rem;
+
     position: relative;
     margin: 2em;
+    max-width: 40em;
+    padding: var(--space);
     border: 0.5em solid var(--light);
     border-radius: 2em;
     box-shadow: 0.1em 0.1em 0.5em #0009;
-    padding: 1.5em;
-    max-width: 40em;
-    @media (orientation: portrait) { margin: 1.5em; }
 
-    h1 > span, > div > div, > div:last-child {
-        font-weight: 700;
-        user-select: none;
-        background: var(--light);
+    > :is(h1, p) { margin: 0 0 calc(var(--space) - 0.3rem); }
+
+    h1 > span, > div:last-child {
+        position: absolute;
+        right: var(--space);
     }
 
     h1 > span {
-        float: right;
-        border-radius: 1em;
+        top: var(--space);
         padding: 0.25em;
+        border-radius: 1em;
         font-size: 0.8em;
-        @media (orientation: portrait) { float: left; margin: 0.6em 100% 0.5em 0; font-size: 0.6em; }
+        white-space: nowrap;
     }
 
     > div:first-of-type {
         display: flex;
         flex-wrap: wrap;
         gap: 0.75em;
-        margin: 1.5em 0 1.25em;
+        margin-bottom: var(--space);
+    }
+
+    h1 > span, > div > div, > div:last-child {
+        background: var(--light);
+        font-weight: 700;
+        user-select: none;
     }
 
     > div > div, > div:last-child {
-        border-radius: 0.15em;
+        display: grid;
+        place-items: center;
         width: 1em;
-        line-height: 1.25;
-        text-align: center;
+        height: 1.25em;
+        border-radius: 0.15em;
         font-size: 2.5em;
+
         &:hover { background: var(--hover); }
         &[data-playing] { box-shadow: inset 0 0 0 0.1em currentColor; }
     }
 
     > div:last-child {
-        position: absolute;
-        inset: auto 0.67em 0.67em auto;
+        bottom: var(--space);
     }
 
     > span {
         display: grid;
         grid-template-columns: 3em 1fr;
-        padding-right: 2em;
+        padding-right: 2.5rem;
         font-size: 1.25em;
         line-height: 1.6;
+
+        &:first-of-type { margin-top: -0.3em; }
+        &:last-of-type { margin-bottom: -0.3em; }
+    }
+}
+
+/*---------------------------------------------------------------------------
+Portrait mode
+---------------------------------------------------------------------------*/
+
+@media (orientation: portrait) {
+    html { font-size: 3.5vw; }
+    ::-webkit-scrollbar { width: 0; }
+    main { font-size: 7vw; }
+
+    body:has(> h1) {
+        h1 { margin: 3vw 0; font-size: 12vw; }
+
+        > nav {
+            grid-template-columns: 1fr;
+            gap: 5vw;
+            padding-bottom: 3vw;
+
+            > a {
+                > img {
+                    height: 25vw;
+                    border-radius: 3.5em;
+                }
+
+                > span {
+                    font-size: 8vw;
+                    > img { display: none; }
+                }
+            }
+        }
+    }
+
+    body:has(> section) {
+        > nav { font-size: 6vw; }
+
+        > section {
+            border-left: none;
+            border-top: 0.5em solid var(--light);
+        }
+    }
+
+    body > article {
+        margin: 1.5em;
+
+        h1 > span {
+            position: static;
+            display: block;
+            width: fit-content;
+            margin-top: 0.6em;
+            font-size: 0.6em;
+        }
     }
 }
