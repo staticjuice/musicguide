@@ -9,7 +9,7 @@ document.body.style.setProperty(
 );
 
 article.insertAdjacentHTML('beforeend', `
-    <div>${tracks.map((_, i) => `<div>${i + 1}<svg viewBox="0 0 100 125"><path d="M50 5 H85 Q95 5 95 15 V110 Q95 120 85 120 H15 Q5 120 5 110 V15 Q5 5 15 5 H50"/><path pathLength="100" d="M50 5 H85 Q95 5 95 15 V110 Q95 120 85 120 H15 Q5 120 5 110 V15 Q5 5 15 5 H50"/></svg></div>`).join('')}</div>
+    <div>${tracks.map((_, i) => `<div>${i + 1}<svg viewBox="0 0 100 125"><path pathLength="100" d="M50 5 H85 Q95 5 95 15 V110 Q95 120 85 120 H15 Q5 120 5 110 V15 Q5 5 15 5 H50"/></svg></div>`).join('')}</div>
     <span>Artist:<span></span></span>
     <span>Track:<span></span></span>
     <div><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"/></svg></div>
@@ -25,7 +25,6 @@ const stop = () => {
         active.pause();
         active.currentTime = 0;
         activeButton.removeAttribute('data-playing');
-        activeButton.style.removeProperty('--progress');
         cancelAnimationFrame(frame);
     }
 

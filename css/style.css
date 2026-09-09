@@ -290,11 +290,9 @@ body > article {
             > path {
                 stroke: currentColor;
                 stroke-width: 10;
-
-                + path {
-                    stroke: var(--light);
-                    stroke-dasharray: var(--progress, 0) 100;
-                }
+                stroke-linecap: butt;
+                stroke-dasharray: 100;
+                stroke-dashoffset: calc(0 - var(--progress, 0));
             }
         }
     }
