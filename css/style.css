@@ -270,7 +270,33 @@ body > article {
         font-size: 2.5em;
 
         &:hover { background: var(--hover); }
-        &[data-playing] { box-shadow: inset 0 0 0 0.1em currentColor; }
+    }
+
+    > div:first-of-type > div {
+    position: relative;
+
+        &:not([data-playing]) > svg {
+            display: none;
+        }
+
+        > svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            fill: none;
+            pointer-events: none;
+
+            > path {
+                stroke: currentColor;
+                stroke-width: 10;
+
+                + path {
+                    stroke: var(--light);
+                    stroke-dasharray: var(--progress, 0) 100;
+                }
+            }
+        }
     }
 
     > div:last-child {
