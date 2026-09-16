@@ -233,7 +233,13 @@ body > article {
     border-radius: 2em;
     box-shadow: 0.1em 0.1em 0.5em #0009;
 
-    > :is(h1, p) { margin: 0 0 calc(var(--space) - 0.3rem); }
+    > :is(h1, p) {
+        margin: 0 0 calc(var(--space) - 0.3rem);
+    }
+
+    > h1 {
+        padding-right: 2.5em;
+    }
 
     h1 > span, > div:last-child {
         position: absolute;
@@ -354,7 +360,9 @@ Portrait mode
     }
 
     body > article {
-        margin: 1.5em;
+        > h1 {
+            padding-right: 0;
+        }
 
         h1 > span {
             position: static;
