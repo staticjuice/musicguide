@@ -365,9 +365,28 @@ Portrait mode
         }
     }
 
+    body:has(> article) {
+        height: 100dvh;
+        padding: 2em;
+        overflow: hidden;
+    }
+
     body > article {
+        height: 100%;
+        max-width: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        > h1,
+        > div:first-of-type,
+        > span {
+            flex-shrink: 0;
+        }
+
         > h1 {
-            margin-bottom: 0.36em;
+            margin-bottom: 0.25em;
             padding-right: 0;
 
             > span {
@@ -377,6 +396,13 @@ Portrait mode
                 margin-top: 0.6em;
                 font-size: 0.6em;
             }
+        }
+
+        > p {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            overscroll-behavior: contain;
         }
 
         > div:first-of-type {
