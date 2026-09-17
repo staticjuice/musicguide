@@ -9,13 +9,17 @@ document.body.style.setProperty(
 );
 
 article.insertAdjacentHTML('beforeend', `
-    <div>${tracks.map((_, i) => `<div>${i + 1}<svg viewBox="0 0 100 125"><path pathLength="100" d="M50 5 H85 Q95 5 95 15 V110 Q95 120 85 120 H15 Q5 120 5 110 V15 Q5 5 15 5 H50"/></svg></div>`).join('')}</div>
+    <div>
+        ${tracks.map((_, i) => `<div>${i + 1}<svg viewBox="0 0 100 125"><path pathLength="100" d="M50 5 H85 Q95 5 95 15 V110 Q95 120 85 120 H15 Q5 120 5 110 V15 Q5 5 15 5 H50"/></svg></div>`).join('')}
+        <div data-stop><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"/></svg></div>
+    </div>
     <span>Artist:<span></span></span>
     <span>Track:<span></span></span>
-    <div><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="currentColor"/></svg></div>
 `);
 
-const buttons = article.querySelectorAll(':scope > div:first-of-type > div'),
+const buttons = article.querySelectorAll(
+        ':scope > div:first-of-type > div:not([data-stop])'
+    ),
     [artist, track] = article.querySelectorAll(':scope > span > span');
 
 let active, activeButton, frame;
@@ -71,7 +75,7 @@ const play = i => {
 article.onclick = ({ target }) => {
     const button = target.closest('div');
 
-    if (button === article.lastElementChild) return stop();
+    if (button?.hasAttribute('data-stop')) return stop();
     if (button?.parentElement?.parentElement !== article) return;
 
     play(button.textContent - 1);

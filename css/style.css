@@ -239,19 +239,19 @@ body > article {
 
     > h1 {
         padding-right: 2.5em;
-    }
 
-    h1 > span, > div:last-child {
-        position: absolute;
-        right: var(--space);
-    }
-
-    h1 > span {
-        top: var(--space);
-        padding: 0.25em;
-        border-radius: 1em;
-        font-size: 0.8em;
-        white-space: nowrap;
+        > span {
+            position: absolute;
+            top: var(--space);
+            right: var(--space);
+            padding: 0.25em;
+            border-radius: 1em;
+            background: var(--light);
+            font-size: 0.8em;
+            font-weight: 700;
+            white-space: nowrap;
+            user-select: none;
+        }
     }
 
     > div:first-of-type {
@@ -259,52 +259,53 @@ body > article {
         flex-wrap: wrap;
         gap: 0.75em;
         margin-bottom: var(--space);
-    }
 
-    h1 > span, > div > div, > div:last-child {
-        background: var(--light);
-        font-weight: 700;
-        user-select: none;
-    }
+        > div {
+            display: grid;
+            place-items: center;
+            width: 1em;
+            height: 1.25em;
+            border-radius: 0.15em;
+            background: var(--light);
+            font-size: 2.5em;
+            font-weight: 700;
+            user-select: none;
 
-    > div > div, > div:last-child {
-        display: grid;
-        place-items: center;
-        width: 1em;
-        height: 1.25em;
-        border-radius: 0.15em;
-        font-size: 2.5em;
-
-        &:hover { background: var(--hover); }
-    }
-
-    > div:first-of-type > div {
-    position: relative;
-
-        &:not([data-playing]) > svg {
-            display: none;
-        }
-
-        > svg {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            fill: none;
-            pointer-events: none;
-
-            > path {
-                stroke: currentColor;
-                stroke-width: 10;
-                stroke-linecap: butt;
-                stroke-dasharray: 100;
-                stroke-dashoffset: calc(0 - var(--progress, 0));
+            &:hover {
+                background: var(--hover);
             }
         }
-    }
 
-    > div:last-child {
-        bottom: var(--space);
+        > [data-stop] {
+            position: absolute;
+            right: var(--space);
+            bottom: var(--space);
+        }
+
+        > div:not([data-stop]) {
+            position: relative;
+
+            &:not([data-playing]) > svg {
+                display: none;
+            }
+
+            > svg {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                fill: none;
+                pointer-events: none;
+
+                > path {
+                    stroke: currentColor;
+                    stroke-width: 10;
+                    stroke-linecap: butt;
+                    stroke-dasharray: 100;
+                    stroke-dashoffset: calc(0 - var(--progress, 0));
+                }
+            }
+        }
     }
 
     > span {
@@ -314,8 +315,13 @@ body > article {
         font-size: 1.25em;
         line-height: 1.6;
 
-        &:first-of-type { margin-top: -0.3em; }
-        &:last-of-type { margin-bottom: -0.3em; }
+        &:first-of-type {
+            margin-top: -0.3em;
+        }
+
+        &:last-of-type {
+            margin-bottom: -0.3em;
+        }
     }
 }
 
@@ -361,15 +367,31 @@ Portrait mode
 
     body > article {
         > h1 {
+            margin-bottom: 0.36em;
             padding-right: 0;
+
+            > span {
+                position: static;
+                display: block;
+                width: fit-content;
+                margin-top: 0.6em;
+                font-size: 0.6em;
+            }
         }
 
-        h1 > span {
-            position: static;
-            display: block;
-            width: fit-content;
-            margin-top: 0.6em;
-            font-size: 0.6em;
+        > div:first-of-type {
+            display: grid;
+            grid-template-columns: repeat(5, max-content);
+            justify-content: space-between;
+            row-gap: var(--space);
+
+            > [data-stop] {
+                position: static;
+            }
+        }
+
+        > span {
+            padding-right: 0;
         }
     }
 }
