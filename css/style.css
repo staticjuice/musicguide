@@ -417,6 +417,7 @@ Portrait mode
         }
 
         > span {
+            font-size: 1em;
             padding-right: 0;
         }
     }
