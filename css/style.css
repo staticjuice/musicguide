@@ -141,10 +141,30 @@ body:has(> h1) {
         gap: 2vw;
 
         > a {
+            position: relative;
             display: grid;
             align-items: center;
+            isolation: isolate;
 
             > * { grid-area: 1 / 1; }
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                grid-area: 1 / 1;
+                z-index: 1;
+                border-radius: 1em;
+                pointer-events: none;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.09) 0%,
+                    rgba(0, 0, 0, 0.14) 25%,
+                    rgba(0, 0, 0, 0.24) 50%,
+                    rgba(0, 0, 0, 0.44) 78%,
+                    rgba(0, 0, 0, 0.50) 100%
+                );
+            }
 
             > img {
                 width: 100%;
@@ -152,13 +172,15 @@ body:has(> h1) {
                 object-fit: cover;
                 border-radius: 1em;
                 box-shadow: 0.01em 0.01em 0.5em #0009;
-                filter: brightness(40%);
+                filter: brightness(88%) saturate(120%) contrast(105%);
             }
 
             > span {
-                z-index: 1;
+                position: relative;
+                z-index: 2;
                 font-size: 2.5vw;
                 text-align: center;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 
                 > img {
                     display: block;
@@ -199,6 +221,9 @@ body:has(> section) {
         }
 
         > h1 {
+            display: flex;
+            align-items: center;
+            gap: 0.25em;
             margin-bottom: 0.4em;
             font-size: 2em;
         }
@@ -343,14 +368,38 @@ Portrait mode
             padding-bottom: 3vw;
 
             > a {
+                /* Mobile labels sit on the left, so shade left to right. */
+                &::before {
+                    border-radius: 3.5em;
+                    background: linear-gradient(
+                        to right,
+                        rgba(0, 0, 0, 0.62) 0%,
+                        rgba(0, 0, 0, 0.40) 48%,
+                        rgba(0, 0, 0, 0.12) 100%
+                    );
+                }
+
                 > img {
                     height: 25vw;
                     border-radius: 3.5em;
                 }
 
                 > span {
+                    display: flex;
+                    align-items: center;
+                    gap: 3vw;
+                    padding: 0 5vw;
                     font-size: 8vw;
-                    > img { display: none; }
+                    text-align: left;
+
+                    > img {
+                        display: block;
+                        flex: 0 0 18vw;
+                        width: 18vw;
+                        height: 18vw;
+                        margin: 0;
+                        object-fit: contain;
+                    }
                 }
             }
         }
