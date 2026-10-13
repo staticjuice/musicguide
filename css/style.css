@@ -201,6 +201,16 @@ body > :is(section, article) {
 }
 
 body:has(> section) {
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.53) 0%,
+            rgba(0, 0, 0, 0.47) 25%,
+            rgba(0, 0, 0, 0.34) 55%,
+            rgba(0, 0, 0, 0.15) 100%
+        ),
+        var(--bg);
+
     &, > section { overflow: auto; }
 
     @media (orientation: landscape) {
@@ -368,13 +378,13 @@ Portrait mode
             padding-bottom: 3vw;
 
             > a {
-                /* Mobile labels sit on the left, so shade left to right. */
                 &::before {
                     border-radius: 3.5em;
                     background: linear-gradient(
                         to right,
-                        rgba(0, 0, 0, 0.62) 0%,
-                        rgba(0, 0, 0, 0.40) 48%,
+                        rgba(0, 0, 0, 0.46) 0%,
+                        rgba(0, 0, 0, 0.42) 45%,
+                        rgba(0, 0, 0, 0.32) 70%,
                         rgba(0, 0, 0, 0.12) 100%
                     );
                 }
@@ -406,6 +416,15 @@ Portrait mode
     }
 
     body:has(> section) {
+        background-image:
+            linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.60) 0%,
+                rgba(0, 0, 0, 0.55) 50%,
+                rgba(0, 0, 0, 0.48) 100%
+            ),
+            var(--bg);
+
         > nav { font-size: 6vw; }
 
         > section {
