@@ -561,24 +561,20 @@ article.onclick = ({ target }) => {
 
 })();
 
-/* Orientation-dependent listening panels — rearrange existing nodes, without cloning audio controls. */
+/* Shared listening panels — retain the same inset structure in both orientations. */
 (() => {
-    // Find the listening article and skip panel initialization when it is absent or already
-    // responsive.
+    // Find the listening article and skip initialization if the panels already exist.
     const article = document.querySelector('body > article');
-    if (!article) return;
-    if (article.classList.contains('listening-responsive')) return;
+    if (!article || article.classList.contains('listening-responsive')) return;
 
-    // Locate the existing description, sample controls, metadata rows, and Stop control.
+    // Locate the original description, sample controls and Artist/Track metadata rows.
     const description = article.querySelector(':scope > p');
     const samples = article.querySelector(':scope > div:first-of-type');
     const rows = [...article.querySelectorAll(':scope > span')];
     const stop = samples?.querySelector(':scope > [data-stop]');
-    // Require the expected article structure before attempting to move any elements.
     if (!description || !samples || rows.length !== 2 || !stop) return;
 
-    // Replace plain Artist:/Track: text nodes with dedicated label spans for consistent
-    // metadata styling.
+    // Wrap metadata labels without replacing their dynamic track-value spans.
     rows.forEach((row, index) => {
         if (row.firstChild?.nodeType !== Node.TEXT_NODE) return;
         const label = document.createElement('span');
@@ -587,46 +583,17 @@ article.onclick = ({ target }) => {
         row.replaceChild(label, row.firstChild);
     });
 
-    // Prepare the two portrait-only boxes: one for the description and one for song metadata.
+    // Move, rather than clone, the description and metadata into panels for both layouts.
     const descriptionPanel = document.createElement('section');
     descriptionPanel.className = 'listening-description';
+    description.before(descriptionPanel);
+    descriptionPanel.append(description);
+
     const metadataPanel = document.createElement('section');
     metadataPanel.className = 'listening-meta';
+    samples.after(metadataPanel);
+    metadataPanel.append(...rows);
 
-    // Mark the article as responsive and subscribe to portrait/landscape orientation changes.
+    // CSS media queries handle orientation; both layouts share these panels.
     article.classList.add('listening-responsive');
-    const portrait = window.matchMedia('(orientation: portrait)');
-
-    // Move the existing description, metadata, and Stop control into the right structure for
-    // the orientation.
-    const setLayout = () => {
-        // In portrait, wrap the description and metadata in separate boxes while keeping Stop
-        // in the sample grid.
-        if (portrait.matches) {
-            // Skip repeated portrait setup if the panels are already active.
-            if (article.classList.contains('listening-mobile-panels')) return;
-            description.before(descriptionPanel);
-            descriptionPanel.append(description);
-            samples.after(metadataPanel);
-            metadataPanel.append(...rows);
-            samples.append(stop);
-            article.classList.add('listening-mobile-panels');
-        } else {
-            // In landscape, restore the description and metadata to direct article children
-            // and remove portrait styling.
-            if (descriptionPanel.parentElement === article) {
-                descriptionPanel.replaceWith(description);
-            }
-            if (metadataPanel.parentElement === article) {
-                metadataPanel.replaceWith(...rows);
-            }
-            samples.append(stop);
-            article.classList.remove('listening-mobile-panels');
-        }
-    };
-
-    // Apply the correct layout on first load, then reapply it when screen orientation
-    // changes.
-    setLayout();
-    portrait.addEventListener('change', setLayout);
 })();

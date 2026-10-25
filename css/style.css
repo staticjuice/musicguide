@@ -801,9 +801,9 @@ body.genre-overview {
         overflow: hidden;
     }
 
-    /* Sets the overview navigation’s text size, spacing, white colour and hover-marker thickness. */
+    /* Sets overview navigation spacing, text size, white colour and hover-marker thickness. */
     > nav {
-        padding: 1em;
+        padding: 0 1em 1em;
         font-size: calc(11vh / 3);
         --overview-marker-thickness: 0.44vh;
         color: #FFF;
@@ -814,11 +814,10 @@ body.genre-overview {
             color: var(--text, #FFF);
         }
 
-        /* Spaces and sizes the large genre name heading above the overview link list. */
+        /* Spaces the large genre name heading; its size inherits the global h1 rule. */
         > h1 {
             margin-top: -0.23em;
             margin-bottom: 0.22em;
-            font-size: 2.5em;
         }
 
         /* Stacks overview subgenre links vertically and prepares each for a left-side hover marker. */
@@ -917,11 +916,6 @@ body.genre-overview {
     }
 }
 
-/* Removes extra top padding from the overview navigation so its breadcrumbs align with the search row. */
-body.genre-overview > nav {
-    padding-top: 0;
-}
-
 /*---------------------------------------------------------------------------
 Subgenre listening pages
 ---------------------------------------------------------------------------*/
@@ -937,13 +931,10 @@ body > article {
     border-radius: 2em;
     box-shadow: 0.1em 0.1em 0.5em #0009;
 
-    /* Establishes consistent bottom spacing below listening-page titles and descriptions. */
-    > :is(h1, p) {
-        margin: 0 0 calc(var(--space) - 0.3rem);
-    }
-
-    /* Positions and styles the rounded year badge attached to a listening-page title. */
+    /* Sets listening title spacing and positions its rounded year badge. */
     > h1 {
+        margin: 0 0 calc(var(--space) - 0.3rem);
+
         > span {
             position: absolute;
             top: var(--space);
@@ -1019,34 +1010,31 @@ body > article {
             }
         }
     }
-
-    /* Places Artist/Track metadata in two-column rows with room beside each label. */
-    > span {
-        display: grid;
-        grid-template-columns: 3em 1fr;
-        padding-right: 2.5rem;
-        font-size: 1.25em;
-        line-height: 1.6;
-
-        /* Removes a small amount of space above the first metadata row. */
-        &:first-of-type {
-            margin-top: -0.3em;
-        }
-
-        /* Removes a small amount of space below the last metadata row. */
-        &:last-of-type {
-            margin-bottom: -0.3em;
-        }
-    }
 }
 
-/* Aligns Artist/Track label-and-value rows in the normal, unboxed listening layout. */
-body > article.listening-responsive:not(.listening-mobile-panels) > span {
-    grid-template-columns: 3em minmax(0, 1fr);
-    align-items: center;
-    gap: 0.35em;
-    min-height: 1.6em;
+/* Keeps the same genre-tinted inset-panel colours in landscape and portrait listening layouts. */
+body > article.listening-responsive {
+    --listening-panel-fill: color-mix(in srgb, var(--base) 77%, #000);
+    --listening-panel-line: color-mix(in srgb, var(--light) 78%, transparent);
+}
+
+/* Uses the existing lighter OKLCH-derived theme shade for pale genres, rather than
+   darkening their inset panels. Applies in both portrait and landscape. */
+body:is(.pop, .downtempo, .hauntology) > article.listening-responsive {
+    --listening-panel-fill: color-mix(in srgb, var(--base) 30%, var(--light));
+}
+
+/* Gives description and metadata panels matching backgrounds, borders and rounded corners. */
+body > article.listening-responsive > :is(.listening-description, .listening-meta) {
     min-width: 0;
+    border: 0.12em solid var(--listening-panel-line);
+    border-radius: 1.1em;
+    background: var(--listening-panel-fill);
+}
+
+/* Both orientations use one paragraph inside the description panel. */
+body > article.listening-responsive > .listening-description > p {
+    margin: 0;
 }
 
 /* Styles the small spaced-out “Artist” and “Track” metadata labels. */
@@ -1057,8 +1045,7 @@ body > article.listening-responsive .listening-meta-label {
 }
 
 /* Allows long artist and track names to wrap instead of extending beyond their panel. */
-body > article.listening-responsive > span > span:not(.listening-meta-label),
-body > article.listening-mobile-panels > .listening-meta > span > span:not(.listening-meta-label) {
+body > article.listening-responsive > .listening-meta > span > span:not(.listening-meta-label) {
     overflow-wrap: anywhere;
 }
 
@@ -1088,6 +1075,49 @@ body > article.listening-mobile-panels > .listening-meta > span > span:not(.list
         border-radius: 999px;
         transform: translateY(0.18em);
     }
+
+    /* On desktop, inset the description without internal scrolling or fixed heights. */
+    body > article.listening-responsive > .listening-description {
+        margin-bottom: calc(var(--space) - 0.3rem);
+        padding: 0.65em 0.95em;
+        overflow: visible;
+    }
+
+    /* Slightly reduce desktop description type to offset the panel's added padding. */
+    body > article.listening-responsive > .listening-description > p {
+        font-size: 0.94rem;
+        line-height: 1.5;
+    }
+
+    /* Keep Artist and Track in one inset box instead of two separate boxes. */
+    body > article.listening-responsive > .listening-meta {
+        padding: 0.22em 0.95em 0.26em;
+    }
+
+    /* Preserve two aligned metadata rows inside the new landscape inset box. */
+    body > article.listening-responsive > .listening-meta > span {
+        display: grid;
+        grid-template-columns: 4rem minmax(0, 1fr);
+        align-items: center;
+        gap: 0.55rem;
+        min-width: 0;
+        /* Reserve a full one-line metadata row before a sample starts playing. */
+        min-height: 2.3em;
+        padding: 0.4rem 0;
+        font-size: 1.12rem;
+        line-height: 1.5;
+    }
+
+    /* Separate Artist and Track with the same subtle themed dividing line as portrait. */
+    body > article.listening-responsive > .listening-meta > span + span {
+        border-top: 0.09em solid var(--listening-panel-line);
+    }
+
+    /* Keep Stop with the audio buttons, clear of the new metadata panel. */
+    body > article.listening-responsive > div:first-of-type > [data-stop] {
+        position: static;
+        margin-left: auto;
+    }
 }
 
 /*---------------------------------------------------------------------------
@@ -1096,6 +1126,12 @@ Portrait Mode
 
 /* Groups every site-wide portrait-only override into a single orientation mode. */
 @media (orientation: portrait) {
+    /* Keep off-screen vinyl, guitar and deck artwork from widening the page's scroll area. */
+    html:has(> body.genres-index),
+    body.genres-index {
+        overflow-x: clip;
+    }
+
     /* Global typography and scrollbars */
 
     /* Scales root typography to portrait viewport width. */
@@ -1173,19 +1209,6 @@ Portrait Mode
         margin-bottom: 0.85rem;
     }
 
-    /* Stacks header search result names above their context labels on narrow screens. */
-    .subgenre-search-list a {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 0.18rem;
-    }
-
-    /* Allows portrait header search context labels to use the full row width. */
-    .subgenre-search-context {
-        max-width: 100%;
-        text-align: left;
-    }
-
     /* Genre grid: artwork, introduction and cards */
 
     /* Moves and enlarges the same vinyl artwork layer for portrait screens. */
@@ -1220,10 +1243,10 @@ Portrait Mode
         width: max-content;
     }
 
-    /* Widens portrait intro blurbs and scales their text to screen width. */
+    /* Matches portrait genre-grid introductions to the overview section's paragraph text size. */
     .genres-hero p {
         max-width: 26rem;
-        font-size: clamp(0.85rem, 3.2vw, 1.25rem);
+        font-size: 1rem;
     }
 
     /* Switches the genre-card grid to a single-column portrait list with larger gaps. */
@@ -1270,6 +1293,14 @@ Portrait Mode
     }
 
     /* Rock and EDM genre grids */
+
+    /* Size short section pages to their content rather than leaving a blank 100vh tail. */
+    .genres-section {
+        min-height: 0;
+    }
+
+    /* The shared .genres-grid bottom padding (3vw) plus body padding (2vw)
+       already gives Rock and EDM the intended 5vw gap beneath the last card. */
 
     /* Lets Rock and EDM hero headings use the full available portrait width. */
     .genres-section .genres-hero > h1 {
@@ -1364,10 +1395,9 @@ Portrait Mode
         flex-direction: column;
         overflow: hidden;
 
-        /* Stops portrait title, audio controls and metadata from shrinking as the description scrolls. */
+        /* Stops portrait title and audio controls shrinking as the description scrolls. */
         > h1,
-        > div:first-of-type,
-        > span {
+        > div:first-of-type {
             flex-shrink: 0;
         }
 
@@ -1386,9 +1416,6 @@ Portrait Mode
             }
         }
 
-        /* Keeps the portrait description flexible between the fixed controls and metadata. */
-        > p { flex: 1; }
-
         /* Arranges numbered samples and Stop in a five-column portrait control grid. */
         > div:first-of-type {
             display: grid;
@@ -1401,12 +1428,6 @@ Portrait Mode
                 position: static;
             }
         }
-
-        /* Restores compact portrait metadata typography without the landscape right-side inset. */
-        > span {
-            font-size: 1em;
-            padding-right: 0;
-        }
     }
 
     /* Fine-tunes the root text scale for portrait listening pages only. */
@@ -1414,78 +1435,55 @@ Portrait Mode
         font-size: 3.3vw;
     }
 
-    /* Defines the darker tinted fill and lighter outline shared by portrait listening panels. */
-    body > article.listening-mobile-panels {
-        --listening-panel-fill: color-mix(in srgb, var(--base) 77%, #000);
-        --listening-panel-line: color-mix(in srgb, var(--light) 78%, transparent);
-    }
-
-    /* Gives the portrait description and metadata boxes matching borders, backgrounds and corners. */
-    body > article.listening-mobile-panels > :is(.listening-description, .listening-meta) {
-        min-width: 0;
-        border: 0.12em solid var(--listening-panel-line);
-        border-radius: 1.1em;
-        background: var(--listening-panel-fill);
-    }
-
-    /* Makes article descriptions scroll internally when their content exceeds the available height. */
-    body > article > p,
-    body > article.listening-mobile-panels > .listening-description {
-        min-height: 0;
-        overflow-y: auto;
-        overscroll-behavior: contain;
-    }
-
-    /* Sets the portrait description panel’s flexible height, padding and theme-coloured scrollbar. */
-    body > article.listening-mobile-panels > .listening-description {
+    /* Sizes the portrait description panel and enables internal scrolling with a themed scrollbar. */
+    body > article.listening-responsive > .listening-description {
         flex: 1 1 auto;
+        min-height: 0;
         margin-bottom: calc(var(--space) - 0.3rem);
         padding: 0.68em 0.95em;
+        overflow-y: auto;
+        overscroll-behavior: contain;
         scrollbar-width: thin;
         scrollbar-color: var(--light) transparent;
     }
 
-    /* Removes default paragraph margins inside the boxed listening description. */
-    body > article.listening-mobile-panels > .listening-description > p {
-        margin: 0;
-    }
-
     /* Uses a narrower scrollbar inside portrait listening descriptions. */
-    body > article.listening-mobile-panels > .listening-description::-webkit-scrollbar {
+    body > article.listening-responsive > .listening-description::-webkit-scrollbar {
         width: 0.35em;
     }
 
     /* Colours the portrait listening-description scrollbar thumb with the genre’s light shade. */
-    body > article.listening-mobile-panels > .listening-description::-webkit-scrollbar-thumb {
+    body > article.listening-responsive > .listening-description::-webkit-scrollbar-thumb {
         background: var(--light);
     }
 
-    /* Keeps the portrait metadata panel fixed in height and adds internal padding. */
-    body > article.listening-mobile-panels > .listening-meta {
+    /* Reserves the populated panel height before a sample starts, preventing portrait layout shifts. */
+    body > article.listening-responsive > .listening-meta {
         flex: 0 0 auto;
         position: relative;
         padding: 0.28em 0.95em 0.32em;
+        min-height: 6.2em;
     }
 
-    /* Forms two-column Artist/Track metadata rows inside the portrait panel. */
-    body > article.listening-mobile-panels > .listening-meta > span {
+    /* Keeps Artist/Track rows tall enough for their values before playback begins. */
+    body > article.listening-responsive > .listening-meta > span {
         display: grid;
         grid-template-columns: 4rem minmax(0, 1fr);
         align-items: center;
         gap: 0.55rem;
         min-width: 0;
-        min-height: 1.6em;
+        min-height: 2.7em;
         padding: 0.5rem 0;
         line-height: 1.6;
     }
 
     /* Draws a themed dividing line between the two boxed metadata rows. */
-    body > article.listening-mobile-panels > .listening-meta > span + span {
+    body > article.listening-responsive > .listening-meta > span + span {
         border-top: 0.09em solid var(--listening-panel-line);
     }
 
     /* Removes the extra transform from the portrait Stop control. */
-    body > article.listening-mobile-panels > div:first-of-type > [data-stop] {
+    body > article.listening-responsive > div:first-of-type > [data-stop] {
         transform: none;
     }
 }
