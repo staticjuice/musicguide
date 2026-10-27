@@ -2,49 +2,42 @@
 Global styling
 ---------------------------------------------------------------------------*/
 
-/* Enables the browser’s automatic view transition when navigating between site pages. */
 @view-transition {
     navigation: auto;
 }
 
-/* Loads the local Outfit font file so page typography uses the intended typeface. */
 @font-face {
     font-family: "Outfit";
     src: url("../fonts/Outfit.woff2");
 }
 
-/* Applies border-box sizing and removes default margins from every element. */
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
-/* Sets the root font scale relative to viewport height for the landscape design. */
 html {
     font-size: 2vh;
+    --detail-border-width: 0.12rem;
 }
 
-/* Establishes default body text, themed text colour and the full-page background. */
 body {
     font: 1rem/1 "Outfit";
     color: var(--text, #FFF);
     background: var(--bg) center / cover fixed;
 }
 
-/* Sets the default size and heavy weight of first-level headings. */
 h1 {
     font-size: 2.5em;
     font-weight: 900;
 }
 
-/* Gives ordinary paragraphs their vertical spacing and comfortable line height. */
 p {
     margin: 1.5em 0;
     line-height: 1.6;
     text-wrap: pretty;
 }
 
-/* Makes links inherit surrounding text colour and removes default underlines. */
 a {
     color: inherit;
     text-decoration: none;
@@ -54,18 +47,15 @@ a {
 Scrollbar and highlighting
 ---------------------------------------------------------------------------*/
 
-/* Sets the default width of WebKit scrollbars. */
 ::-webkit-scrollbar {
     width: 0.5em;
 }
 
-/* Rounds scrollbar thumbs and colours them to match their surrounding text. */
 ::-webkit-scrollbar-thumb {
     border-radius: 1em;
     background: currentColor;
 }
 
-/* Reverses the site’s theme colours when text is selected. */
 ::selection {
     background: var(--text, #FFF);
     color: var(--inverse, #222);
@@ -75,40 +65,13 @@ Scrollbar and highlighting
 Colours
 ---------------------------------------------------------------------------*/
 
-/* Builds each genre’s base, lighter and hover colours from its three OKLCH tone values. */
-:is(
-    .classical,
-    .blues,
-    .jazz,
-    .country,
-    .rnb,
-    .pop,
-    .classicrock,
-    .metal,
-    .punk,
-    .alternative,
-    .disco,
-    .reggae,
-    .hiphop,
-    .industrial,
-    .house,
-    .trance,
-    .techno,
-    .hardcore,
-    .breakbeat,
-    .drumandbass,
-    .ukgarage,
-    .downtempo,
-    .hauntology,
-    .folk,
-    .world
- ) {
+.genre-overview,
+body:has(> article) {
     --base: oklch(var(--tone-l) var(--tone-c) var(--tone-h));
     --light: oklch(clamp(0, calc(var(--tone-l) + 0.08), 1) var(--tone-c) var(--tone-h));
     --hover: oklch(clamp(0, calc(var(--tone-l) + 0.16), 1) var(--tone-c) var(--tone-h));
 }
 
-/* Sets each genre's base OKLCH tone (lightness, chroma and hue) for all generated genre shades. */
 .classical { --tone-l: 0.482288; --tone-c: 0.051615; --tone-h: 73.7692; }
 .blues { --tone-l: 0.382085; --tone-c: 0.153915; --tone-h: 270.9969; }
 .jazz { --tone-l: 0.687547; --tone-c: 0.141955; --tone-h: 21.4566; }
@@ -135,14 +98,12 @@ Colours
 .folk { --tone-l: 0.711281; --tone-c: 0.078235; --tone-h: 71.2416; }
 .world { --tone-l: 0.398136; --tone-c: 0.059049; --tone-h: 139.6423; }
 
-/* Uses dark foreground text, white inverse text and dark overview labels on pale genre themes. */
 :is(.pop, .downtempo, .hauntology) { --text: #222; --inverse: #FFF; --overview-heading-bg: var(--text); }
 
 /*---------------------------------------------------------------------------
 Home page
 ---------------------------------------------------------------------------*/
 
-/* Centres the landing page’s main content and spaces its title and entry link. */
 body:not(.genres-index) > main {
     min-height: 100vh;
     display: grid;
@@ -152,19 +113,17 @@ body:not(.genres-index) > main {
     text-align: center;
     font-size: 4vw;
 
-    /* Styles the landing page’s entry link as a large rounded outlined button. */
     > a {
         border: 0.125em solid;
         border-radius: 1em;
         padding: 0.3em 0.4em;
         font-size: 1.75em;
         font-weight: 600;
-        /* Turns the landing page’s entry link orange when hovered. */
+
         &:hover { color: #FF6D00; }
     }
 }
 
-/* Keeps the home-page title and Enter button readable while revealing more artwork toward the edges. */
 body:not(.genres-index):has(> main) {
     background-image:
         radial-gradient(
@@ -177,16 +136,14 @@ body:not(.genres-index):has(> main) {
 }
 
 /*---------------------------------------------------------------------------
-Genres index: layout and navigation
+Gneres index: Layout and navigation
 ---------------------------------------------------------------------------*/
 
-/* Removes WebKit scrollbar tracks on genre-grid pages. */
 body.genres-index::-webkit-scrollbar {
     display: none;
     width: 0;
 }
 
-/* Applies the wood background, page padding, body sizing and overflow rules to all genre grids. */
 .genres-index {
     position: relative;
     min-height: 100vh;
@@ -196,7 +153,6 @@ body.genres-index::-webkit-scrollbar {
     font: 1rem/1.3 'Outfit', sans-serif;
 }
 
-/* Creates the centred maximum-width canvas and shared content-width variable for genre grids. */
 .genres-shell {
     position: relative;
     max-width: 1440px;
@@ -205,15 +161,13 @@ body.genres-index::-webkit-scrollbar {
     --genres-content-width: 84vw;
 }
 
-/* Gives the grid navigation row, introduction and cards the same content width. */
 .genres-header,
 .genres-hero,
 .genres-grid {
     width: var(--genres-content-width);
 }
 
-/* Draws all three decorative images using one non-interactive CSS artwork layer. */
-.genres-index .genres-shell::before {
+.genres-shell::before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -225,12 +179,10 @@ body.genres-index::-webkit-scrollbar {
     background-size: contain;
 }
 
-/* Selects the vinyl record artwork for the main genre grid. */
 .genres-index:not(.genres-section) {
     --genre-artwork: url('../images/vinyl-record.png');
 }
 
-/* Restores the original vinyl size, position, and shadows using the shared artwork layer. */
 .genres-index:not(.genres-section) .genres-shell::before {
     top: -2vw;
     right: -28vw;
@@ -240,89 +192,68 @@ body.genres-index::-webkit-scrollbar {
             drop-shadow(0 1.2vw 1.5vw rgba(0, 0, 0, 0.42));
 }
 
-/* Aligns the genre-page navigation header and its toolbar contents on a flex row. */
 .genres-header,
 .genres-toolbar {
     display: flex;
     align-items: center;
 }
 
-/* Anchors the grid-page navigation/search row above the hero, aligned with the main content. */
-.genres-header {
+.genres-index .genres-header {
     margin-inline: auto;
-    gap: 2rem;
-    min-height: 5.2rem;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    min-height: var(--grid-navigation-height);
+    position: relative;
     justify-content: flex-end;
     z-index: 3;
-}
-
-/* Sets the gap between items in the genre-page navigation toolbar. */
-.genres-toolbar {
-    gap: clamp(1.2rem, 2.7vw, 3rem);
 }
 
 /*---------------------------------------------------------------------------
 Breadcrumbs
 ---------------------------------------------------------------------------*/
 
-/* Spreads breadcrumb labels and the search control to opposite ends of grid-page headers. */
-body.genres-index .genres-header.genres-header--breadcrumbs {
+.genres-index .genres-header--breadcrumbs {
     justify-content: space-between;
 }
 
-/* Defines layout, spacing, uppercase lettering and white text for genre-grid breadcrumbs. */
 .genres-breadcrumbs {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: clamp(0.46rem, 0.98vw, 0.94rem);
-    font-size: clamp(0.85rem, 1vw, 1.05rem);
     font-weight: 800;
     line-height: 1.35;
     letter-spacing: 0.18em;
     color: #FFF;
 }
 
-/* Provides each breadcrumb link with padding and an anchor for its hover underline. */
 .genres-breadcrumbs > a {
-    position: relative;
     padding: 0.55em 0;
     margin-right: -0.18em;
 }
 
-/* Highlights a grid breadcrumb link in orange when hovered or keyboard-focused. */
 .genres-breadcrumbs > a:is(:hover, :focus-visible) {
     color: #FF6D00;
 }
 
-/* Softens breadcrumb separator marks and removes their extra letter spacing. */
 .genres-breadcrumbs__divider {
     letter-spacing: 0;
     opacity: 0.72;
 }
 
-/* Balances letter spacing at the end of the current breadcrumb label. */
 .genres-breadcrumbs__current {
     margin-right: -0.18em;
 }
 
-/* Uses the current genre’s hover colour for breadcrumb links on overview pages. */
-body.genre-overview > nav .genres-breadcrumbs > a:is(:hover, :focus-visible) {
+.genre-overview > nav .genres-breadcrumbs > a:is(:hover, :focus-visible) {
     color: var(--hover, #FF6D00);
 }
 
-/* Keeps overview breadcrumbs in a full-height top navigation row with no outside margin. */
-body.genre-overview > nav > .genres-breadcrumbs {
+.genre-overview > nav > .genres-breadcrumbs {
     min-height: 5.2rem;
-    margin: 0;
+
+    font-size: 1.7vh;
+    gap: 1.6vh;
 }
 
-/* Lays out listening-page breadcrumb labels with room for the search icon at the right. */
-body > article > .subgenre-breadcrumbs {
+.subgenre-breadcrumbs {
     position: relative;
     display: flex;
     align-items: center;
@@ -336,32 +267,27 @@ body > article > .subgenre-breadcrumbs {
     text-transform: uppercase;
 }
 
-/* Applies the genre hover colour on interaction for listening-page breadcrumb links. */
-body > article > .subgenre-breadcrumbs a:is(:hover, :focus-visible) {
+article .subgenre-breadcrumbs a:is(:hover, :focus-visible) {
     color: var(--hover, #FFF);
 }
 
-/* Dims listening-page breadcrumb separators and prevents selecting separator symbols. */
-body > article > .subgenre-breadcrumbs__divider {
+.subgenre-breadcrumbs > .subgenre-breadcrumbs__divider {
     opacity: 0.65;
     user-select: none;
 }
 
-/* Shows the final listening-page breadcrumb as non-clickable text. */
-body > article > .subgenre-breadcrumbs__current {
+.subgenre-breadcrumbs > .subgenre-breadcrumbs__current {
     cursor: default;
 }
 
 /*---------------------------------------------------------------------------
-Search: shared controls, panels and results
+Search bar
 ---------------------------------------------------------------------------*/
 
-/* Changes the grid/overview search icon to orange on hover or keyboard focus. */
 .genres-search-button:is(:hover, :focus-visible) {
     color: #FF6D00;
 }
 
-/* Gives the reusable search component a predictable size and positioning context. */
 .genres-search-host {
     position: relative;
     flex: 0 0 2.3rem;
@@ -369,7 +295,6 @@ Search: shared controls, panels and results
     height: 5.2rem;
 }
 
-/* Provides shared button resets, centring and pointer cursor for every search button. */
 .music-search-button {
     display: grid;
     place-items: center;
@@ -379,7 +304,6 @@ Search: shared controls, panels and results
     cursor: pointer;
 }
 
-/* Positions and sizes the header search icon over the right edge of its expandable field. */
 .genres-search-button {
     position: absolute;
     top: 50%;
@@ -391,7 +315,6 @@ Search: shared controls, panels and results
     color: inherit;
 }
 
-/* Standardises search icon SVG size, outline weight and rounded line ends. */
 .music-search-button svg {
     display: block;
     width: 1.6rem;
@@ -403,7 +326,6 @@ Search: shared controls, panels and results
     stroke-linejoin: round;
 }
 
-/* Hides every search panel initially while keeping it positioned over page content. */
 .music-search-panel {
     position: absolute;
     opacity: 0;
@@ -411,14 +333,12 @@ Search: shared controls, panels and results
     pointer-events: none;
 }
 
-/* Shows an opened search panel and restores its ability to receive pointer input. */
 .music-search-panel.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
 
-/* Defines opaque search-panel colours and independent typography on every page type. */
 .genres-search {
     z-index: 11;
     top: calc(50% - 1.4rem);
@@ -441,12 +361,10 @@ Search: shared controls, panels and results
         visibility 330ms;
 }
 
-/* Expands the header search field to its allowed width when opened. */
 .genres-search.is-open {
     width: var(--subgenre-search-width, min(23rem, calc(84vw - 3rem)));
 }
 
-/* Resets shared query-input dimensions, outlines and shadows for both search interfaces. */
 .music-search-input {
     display: block;
     width: 100%;
@@ -456,7 +374,6 @@ Search: shared controls, panels and results
     box-shadow: none;
 }
 
-/* Sets the header search input’s height, inner spacing and white-on-dark text. */
 .genres-search input {
     height: 2.8rem;
     padding: 0.42rem 3rem 0.42rem 0.75rem;
@@ -466,18 +383,15 @@ Search: shared controls, panels and results
     font: inherit;
 }
 
-/* Keeps the header search results collapsed until JavaScript supplies a visible height. */
 .subgenre-search-results {
     height: 0;
     transition: height 400ms cubic-bezier(.22, 1, .36, 1);
 }
 
-/* Draws the subtle divider above populated header search results. */
 .subgenre-search-results.has-results {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.188235);
 }
 
-/* Styles the scrollable header results area, including its entry animation and scrollbar. */
 .subgenre-search-scroll {
     padding: 0.35rem 0.7rem;
     max-height: min(53vh, 29rem);
@@ -492,15 +406,12 @@ Search: shared controls, panels and results
         opacity 250ms ease;
 }
 
-/* Slides populated header search results into view and fades them in. */
 .subgenre-search-results.has-results .subgenre-search-scroll {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Styles the header search’s status message and result count text. */
-.subgenre-search-message,
-.subgenre-search-count {
+.subgenre-search-message {
     margin: 0;
     padding: 0.85rem 0 0.55rem;
     font-size: 0.85rem;
@@ -508,24 +419,20 @@ Search: shared controls, panels and results
     color: #C6B8AC;
 }
 
-/* Removes native list bullets and indentation from search result lists. */
 .music-search-list {
     list-style: none; padding: 0;
 }
 
-/* Separates adjacent header search result rows with subtle rules. */
 .subgenre-search-list > li + li {
     border-top: 1px solid rgba(255, 255, 255, 0.086275);
 }
 
-/* Aligns search result names and their context labels on a shared flex row. */
 .music-search-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Adds the spacing, padding, rounded corners and text rhythm for header result links. */
 .subgenre-search-list a {
     gap: 0.7rem;
     padding: 0.78rem 0;
@@ -533,113 +440,176 @@ Search: shared controls, panels and results
     line-height: 1.25;
 }
 
-/* Highlights hovered or focused header search matches with orange text and a faint fill. */
 .subgenre-search-list a:is(:hover, :focus-visible) {
     color: #FF6D00;
     background: rgba(255, 255, 255, 0.05098);
 }
 
-/* Makes the primary name of each search result visually prominent. */
 .music-search-name {
     font-weight: 700;
 }
 
-/* Limits the width, text size and muted colour of context labels in header results. */
 .subgenre-search-context {
     max-width: 45%;
     font-size: 0.82rem;
     color: #C3B3A6;
 }
 
-/* Uses a genre-specific light colour when hovering the overview-page search icon. */
-body.genre-overview > section .genre-overview-navigation .genres-search-button:is(:hover, :focus-visible) {
+.genre-overview-navigation .genres-search-button:is(:hover, :focus-visible) {
     color: var(--light, #FFF);
 }
 
-/* Places overview search controls at the top of the coloured information panel. */
-body.genre-overview > section > .genre-overview-navigation {
+.genre-overview > section > .genre-overview-navigation {
     position: absolute;
     z-index: 10;
     top: 0;
     left: 1.5em;
     right: 1.5em;
-    width: auto;
-    margin: 0;
     font: 1rem/1.3 "Outfit", sans-serif;
     color: var(--text, #FFF);
 }
 
-/* Resets header positioning inside overview search controls so it fits the information panel. */
-body.genre-overview > section .genre-overview-navigation .genres-header {
-    position: static;
+.genre-overview-navigation .genres-header {
+    min-height: 5.2rem;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    gap: 0;
-    inset: auto;
-    transform: none;
+    justify-content: flex-end;
 }
 
-/* Uses the genre hover colour for search results viewed from overview pages. */
-body.genre-overview > section .genre-overview-navigation .subgenre-search-list a:is(:hover, :focus-visible) {
+.genre-overview-navigation .subgenre-search-list a:is(:hover, :focus-visible) {
     color: var(--hover, #FF6D00);
 }
 
-/* Anchors the shared search panel beside listening-page breadcrumbs.
-   Its height matches the breadcrumb's 1.3 line-height so the icon stays centred. */
-body > article > .subgenre-breadcrumbs > .listening-search-host {
+.subgenre-breadcrumbs > .listening-search-host {
     position: absolute;
     z-index: 30;
     top: 0;
     right: 0;
+
+    width: 2.8em;
     height: 1.3em;
     --subgenre-search-width: min(23rem, calc(100vw - 9rem));
 }
 
-/* Keeps the listening search icon in the genre's text colour, not the grid's orange. */
-body > article > .subgenre-breadcrumbs .genres-search-button {
+.subgenre-breadcrumbs .genres-search-button {
     color: var(--text, #FFF);
+    font-size: inherit;
+    width: 2.8em;
+    height: 2.8em;
 }
 
-/* Applies the same genre-specific hover colour as the listening breadcrumbs. */
-body > article > .subgenre-breadcrumbs .genres-search-button:is(:hover, :focus-visible) {
+.subgenre-breadcrumbs .music-search-button svg {
+    width: 1.95em;
+    height: 1.95em;
+}
+
+.subgenre-breadcrumbs .genres-search-button:is(:hover, :focus-visible) {
     color: var(--hover, #FFF);
 }
 
+.genres-index .genres-search-host {
+    flex-basis: var(--grid-search-slot);
+    width: var(--grid-search-slot);
+    height: var(--grid-navigation-height);
+}
+
+.genres-index .genres-search-button {
+    width: var(--grid-search-slot);
+    height: var(--grid-search-slot);
+}
+
+.genres-index .music-search-button svg {
+    width: var(--grid-search-glyph);
+    height: var(--grid-search-glyph);
+}
+
+.genres-index .genres-search input {
+    height: var(--grid-search-field-height);
+}
+
+@media (orientation: landscape) {
+    .genres-index {
+        --grid-navigation-height: 5.98vw;
+        --grid-search-slot: 2.645vw;
+        --grid-search-glyph: 1.84vw;
+        --grid-search-field-height: 3.22vw;
+    }
+
+    .genres-index .genres-header {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 2.3vw;
+    }
+
+    .genres-index .genres-breadcrumbs {
+        font-size: 1vw;
+        gap: 0.9vw;
+    }
+
+    .genres-index .genres-search {
+        top: calc(50% - 1.61vw);
+        --subgenre-search-width: 26.45vw;
+        font-size: 1.15vw;
+        border-radius: 0.52vw;
+    }
+
+    .genres-index .genres-search input {
+        padding: 0.48vw 3.45vw 0.48vw 0.86vw;
+    }
+
+    .genres-index .subgenre-search-scroll {
+        padding: 0.4vw 0.8vw;
+        max-height: min(53vh, 33vw);
+        transform: translateY(-0.7vw);
+    }
+
+    .genres-index .subgenre-search-message {
+        padding: 0.98vw 0 0.63vw;
+        font-size: 0.98vw;
+    }
+
+    .genres-index .subgenre-search-list a {
+        gap: 0.8vw;
+        padding: 0.9vw 0;
+        border-radius: 0.35vw;
+    }
+
+    .genres-index .subgenre-search-context {
+        font-size: 0.94vw;
+    }
+}
+
 /*---------------------------------------------------------------------------
-Genres index: heading and genre cards
+Genres index: Heading and genre cards
 ---------------------------------------------------------------------------*/
 
-/* Positions and spaces the introductory heading and description above the genre card grid. */
 .genres-hero {
     position: relative;
-    margin-inline: auto;
-    min-height: clamp(300px, 27vw, 440px);
-    padding: calc(5.2rem - 0.45rem) 0 2.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 27vw;
+    padding: max(4.75rem, 5.9vw) 0 2.8vw;
     text-align: left;
 }
 
-/* Reduces line height between grid intros and overview-page main headings. */
 .genres-hero h1,
-body.genre-overview > nav > h1 {
+.genre-overview > nav > h1 {
     line-height: 0.98;
 }
 
-/* Sets the size, width and bottom spacing of the “Explore Music Genres” heading. */
 .genres-hero h1 {
-    width: min(26rem, 100%);
+    width: 100%;
     margin: 0 0 0.22em;
-    font-size: 10.2666667vh;
+    font-size: 6.3vw;
 }
 
-/* Controls line length, spacing and text size for introductory blurbs on the genre grids. */
 .genres-hero p {
-    max-width: 30rem;
+    max-width: 45%;
     margin: 0;
-    font-size: clamp(1rem, 1.35vw, 1.3rem);
+    font-size: 1.35vw;
 }
 
-/* Builds the four-column landscape genre-card grid and anchors it beneath the hero. */
 .genres-grid {
     position: relative;
     z-index: 2;
@@ -652,7 +622,6 @@ body.genre-overview > nav > h1 {
     line-height: 1;
 }
 
-/* Creates each genre card’s stacking context and reusable rounded-corner size. */
 .genres-grid > a {
     --genres-card-radius: 1em;
     position: relative;
@@ -661,14 +630,12 @@ body.genre-overview > nav > h1 {
     isolation: isolate;
 }
 
-/* Places the image and text children of a genre card in the same grid cell. */
 .genres-grid > a > * {
     grid-area: 1 / 1;
 }
 
-/* Aligns each card’s dark overlay and hover border to the card’s edges and corner radius. */
 .genres-grid > a::before,
-.genres-index .genres-grid > a::after {
+.genres-grid > a::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -677,7 +644,6 @@ body.genre-overview > nav > h1 {
     pointer-events: none;
 }
 
-/* Adds a darkening gradient over genre-card images so white labels remain legible. */
 .genres-grid > a::before {
     z-index: 1;
     background: linear-gradient(
@@ -690,7 +656,6 @@ body.genre-overview > nav > h1 {
     );
 }
 
-/* Sizes and crops genre-card background images with rounded corners and a subtle shadow. */
 .genres-grid > a > img {
     width: 100%;
     aspect-ratio: 1;
@@ -700,7 +665,6 @@ body.genre-overview > nav > h1 {
     filter: brightness(88%) saturate(120%) contrast(105%);
 }
 
-/* Centres the white genre-card label above the image overlay. */
 .genres-grid > a > span {
     position: relative;
     z-index: 2;
@@ -711,15 +675,13 @@ body.genre-overview > nav > h1 {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Sizes and centres the genre icon above its label inside a card. */
 .genres-grid > a > span > img {
     display: block;
     width: 40%;
     margin: 0 auto 0.2em;
 }
 
-/* Defines the initially invisible white outline and its reveal animation around genre cards. */
-.genres-index .genres-grid > a::after {
+.genres-grid > a::after {
     z-index: 3;
     border: 4px solid #FFF;
     opacity: 0;
@@ -727,8 +689,7 @@ body.genre-overview > nav > h1 {
     transition: opacity 240ms ease, transform 240ms ease;
 }
 
-/* Reveals the white outline around a hovered or focused genre card. */
-.genres-index .genres-grid > a:is(:hover, :focus-visible)::after {
+.genres-grid > a:is(:hover, :focus-visible)::after {
     opacity: 1;
     transform: scale(1);
 }
@@ -737,12 +698,10 @@ body.genre-overview > nav > h1 {
 Rock and EDM genre grids
 ---------------------------------------------------------------------------*/
 
-/* Selects the guitar artwork image for the Rock genre-grid page. */
 .genres-section--rock {
     --genre-artwork: url('../images/rock-guitar.png');
 }
 
-/* Positions and shadows the guitar artwork around the right edge of the Rock page. */
 .genres-section--rock .genres-shell::before {
     top: 0;
     right: calc(-45.5vh - max(5vw, 50vw - 720px));
@@ -753,12 +712,10 @@ Rock and EDM genre grids
             drop-shadow(0 1.5vw 1.8vw rgba(0, 0, 0, 0.4));
 }
 
-/* Selects the CDJ/deck artwork image for the EDM genre-grid page. */
 .genres-section--edm {
     --genre-artwork: url('../images/edm-cdj.png');
 }
 
-/* Positions and shadows the wide deck artwork across the top-right of the EDM page. */
 .genres-section--edm .genres-shell::before {
     top: -6.5vw;
     right: calc(-1vw - max(5vw, 50vw - 720px));
@@ -772,13 +729,11 @@ Rock and EDM genre grids
 Genre overview pages
 ---------------------------------------------------------------------------*/
 
-/* Fills overview information panels and listening-page article cards with the current genre colour. */
 body > article,
 body.genre-overview > section {
-    background: var(--base);
+    background: color-mix(in srgb, var(--base) 97%, transparent);
 }
 
-/* Overlays and darkens overview-page artwork so the navigation remains legible. */
 body.genre-overview {
     background-image:
         linear-gradient(
@@ -790,10 +745,8 @@ body.genre-overview {
         ),
         var(--bg);
 
-    /* Allows the overview page and its information panel to scroll when content exceeds the viewport. */
     &, > section { overflow: auto; }
 
-    /* Splits landscape overview pages into a navigation column and a scrollable article column. */
     @media (orientation: landscape) {
         display: grid;
         grid-template-columns: 1fr min(calc(100em / 3), 50vw);
@@ -801,32 +754,28 @@ body.genre-overview {
         overflow: hidden;
     }
 
-    /* Sets overview navigation spacing, text size, white colour and hover-marker thickness. */
     > nav {
         padding: 0 1em 1em;
         font-size: calc(11vh / 3);
         --overview-marker-thickness: 0.44vh;
         color: #FFF;
 
-        /* Highlights selected text in the overview navigation using the active genre colour. */
         & ::selection {
             background: var(--base);
             color: var(--text, #FFF);
         }
 
-        /* Spaces the large genre name heading; its size inherits the global h1 rule. */
         > h1 {
             margin-top: -0.23em;
             margin-bottom: 0.22em;
         }
 
-        /* Stacks overview subgenre links vertically and prepares each for a left-side hover marker. */
         > a {
             display: block;
             position: relative;
             width: fit-content;
             line-height: 1.4;
-            /* Draws an initially hidden coloured marker just to the left of each overview subgenre link. */
+
             &::before {
                 content: "";
                 position: absolute;
@@ -839,21 +788,22 @@ body.genre-overview {
                 opacity: 0;
                 pointer-events: none;
             }
-            /* Colours hovered or focused overview subgenre links with the theme’s brighter shade. */
+
             &:is(:hover, :focus-visible) { color: var(--hover); }
-            /* Shows the left-side marker for the hovered or focused overview link. */
+
             &:is(:hover, :focus-visible)::before { opacity: 1; }
         }
     }
 
-    /* Styles the overview information column with a themed dividing border, shadow and padding. */
     > section {
         position: relative;
         border-left: 0.5em solid var(--light);
         box-shadow: 0 0 0.5em #0009;
-        padding: 1.5em 1.5em 0;
 
-        /* Makes direct overview section headings compact, letter-spaced labels with an inverted fill. */
+        padding: 1.5em 2em 0 1.5em;
+
+        container-type: inline-size;
+
         > h2 {
             display: block;
             width: fit-content;
@@ -866,20 +816,30 @@ body.genre-overview {
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: 0.18em;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 100%;
+                bottom: 0;
+                width: max(0px, calc(100cqw - 100%));
+                height: 0;
+
+                border-top: var(--detail-border-width) solid var(--text, #FFF);
+                pointer-events: none;
+            }
         }
 
-        /* Sets the gap between each overview section label and the paragraph that follows. */
         > h2 + p {
             margin-top: 0.9em;
         }
 
-        /* Reduces top spacing before the first overview section label. */
         > .genre-overview-navigation + h2,
         > h2:first-child {
             margin-top: 0.5em;
         }
 
-        /* Arranges the key-artist portraits in four columns with consistent spacing. */
         > .overview-artist-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -889,21 +849,19 @@ body.genre-overview {
             text-align: center;
         }
 
-        /* Crops artist portraits into bordered circles and applies a neutral fallback background. */
         > .overview-artist-grid > figure img {
             display: block;
             width: min(100%, 7em);
             height: auto;
             aspect-ratio: 1;
             margin: 0 auto;
-            border: 0.12em solid var(--text, #FFF);
+            border: var(--detail-border-width) solid var(--text, #FFF);
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
             background: #222;
         }
 
-        /* Sets the centred typography beneath artist portraits, including wrapping for long names. */
         > .overview-artist-grid > figure figcaption {
             margin-top: 0.55em;
             color: var(--text, #FFF);
@@ -920,7 +878,6 @@ body.genre-overview {
 Subgenre listening pages
 ---------------------------------------------------------------------------*/
 
-/* Styles the listening article as a bordered, rounded card using the active genre colour. */
 body > article {
     --space: 1.5rem;
     position: relative;
@@ -931,7 +888,6 @@ body > article {
     border-radius: 2em;
     box-shadow: 0.1em 0.1em 0.5em #0009;
 
-    /* Sets listening title spacing and positions its rounded year badge. */
     > h1 {
         margin: 0 0 calc(var(--space) - 0.3rem);
 
@@ -939,24 +895,23 @@ body > article {
             position: absolute;
             top: var(--space);
             right: var(--space);
-            padding: 0.25em;
-            border-radius: 1em;
-            background: var(--light);
+            padding: 0.15em 0.38em;
+            border: var(--detail-border-width) solid currentColor;
+            border-radius: 999px;
+            background: transparent;
             font-size: 0.8em;
-            font-weight: 700;
+            font-weight: 500;
             white-space: nowrap;
             user-select: none;
         }
     }
 
-    /* Arranges numbered audio-sample controls in a wrapping row above song metadata. */
-    > div:first-of-type {
+    > .listening-controls {
         display: flex;
         flex-wrap: wrap;
         gap: 0.75em;
         margin-bottom: var(--space);
 
-        /* Makes each numbered audio control a large, coloured, interactive square. */
         > div {
             display: grid;
             place-items: center;
@@ -968,29 +923,24 @@ body > article {
             font-weight: 700;
             user-select: none;
 
-            /* Lightens a numbered sample control when hovered. */
             &:hover {
                 background: var(--hover);
             }
         }
 
-        /* Anchors the stop-playback control to the lower-right corner of the article card. */
         > [data-stop] {
             position: absolute;
             right: var(--space);
             bottom: var(--space);
         }
 
-        /* Makes each playable sample control the positioning anchor for its progress indicator. */
         > div:not([data-stop]) {
             position: relative;
 
-            /* Hides the progress graphic until its sample is playing. */
             &:not([data-playing]) > svg {
                 display: none;
             }
 
-            /* Overlays the sample progress SVG on its button without blocking pointer interaction. */
             > svg {
                 position: absolute;
                 inset: 0;
@@ -999,60 +949,82 @@ body > article {
                 fill: none;
                 pointer-events: none;
 
-                /* Draws and advances the circular playback-progress stroke using the --progress variable. */
                 > path {
                     stroke: currentColor;
                     stroke-width: 10;
                     stroke-linecap: butt;
                     stroke-dasharray: 100;
-                    stroke-dashoffset: calc(0 - var(--progress, 0));
+                    stroke-dashoffset: var(--progress, 0);
                 }
             }
         }
     }
 }
 
-/* Keeps the same genre-tinted inset-panel colours in landscape and portrait listening layouts. */
-body > article.listening-responsive {
+article.listening-responsive {
     --listening-panel-fill: color-mix(in srgb, var(--base) 77%, #000);
     --listening-panel-line: color-mix(in srgb, var(--light) 78%, transparent);
 }
 
-/* Uses the existing lighter OKLCH-derived theme shade for pale genres, rather than
-   darkening their inset panels. Applies in both portrait and landscape. */
 body:is(.pop, .downtempo, .hauntology) > article.listening-responsive {
     --listening-panel-fill: color-mix(in srgb, var(--base) 30%, var(--light));
 }
 
-/* Gives description and metadata panels matching backgrounds, borders and rounded corners. */
-body > article.listening-responsive > :is(.listening-description, .listening-meta) {
+/* In both orientations, the enhanced listening layout keeps the year and Stop control in flow. */
+article.listening-responsive > h1 > span,
+article.listening-responsive > .listening-controls > [data-stop] {
+    position: static;
+}
+
+article.listening-responsive > :is(.listening-description, .listening-meta) {
     min-width: 0;
     border: 0.12em solid var(--listening-panel-line);
     border-radius: 1.1em;
     background: var(--listening-panel-fill);
 }
 
-/* Both orientations use one paragraph inside the description panel. */
-body > article.listening-responsive > .listening-description > p {
+article.listening-responsive > .listening-description {
+    margin-bottom: calc(var(--space) - 0.3rem);
+}
+
+article.listening-responsive > .listening-description > p {
     margin: 0;
 }
 
-/* Styles the small spaced-out “Artist” and “Track” metadata labels. */
-body > article.listening-responsive .listening-meta-label {
+article.listening-responsive .listening-meta-label {
     font-size: 0.78rem;
     line-height: 1.35;
     letter-spacing: 0.19em;
 }
 
-/* Allows long artist and track names to wrap instead of extending beyond their panel. */
-body > article.listening-responsive > .listening-meta > span > span:not(.listening-meta-label) {
+article.listening-responsive > .listening-meta > span {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
+}
+
+article.listening-responsive > .listening-meta > span + span {
+    border-top: 0.09em solid var(--listening-panel-line);
+}
+
+article.listening-responsive > .listening-meta > span > span:not(.listening-meta-label) {
     overflow-wrap: anywhere;
 }
 
-/* Restricts the following listening-page title and year-badge layout changes to landscape. */
 @media (orientation: landscape) {
-    /* Places the listening title and year badge at opposite ends of one landscape row. */
-    body > article.listening-responsive > h1 {
+    article.listening-responsive > .listening-description {
+        padding: 0.65em 0.95em;
+        overflow: visible;
+    }
+
+    article.listening-responsive > .listening-description > p {
+        font-size: 0.94rem;
+        line-height: 1.5;
+    }
+
+    article.listening-responsive > h1 {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1060,158 +1032,113 @@ body > article.listening-responsive > .listening-meta > span > span:not(.listeni
         padding-right: 0;
     }
 
-    /* Centres and proportionally pads the year badge beside the landscape listening title. */
-    body > article.listening-responsive > h1 > span {
-        position: static;
+    article.listening-responsive > h1 > span {
         display: inline-flex;
         flex: 0 0 auto;
         align-items: center;
         justify-content: center;
-        height: auto;
-        margin: 0;
-        padding: 0.12em 0.35em;
-        font-size: 0.8em;
+        padding: 0.17em 0.52em;
+        font-size: 0.58em;
         line-height: 1;
-        border-radius: 999px;
-        transform: translateY(0.18em);
     }
 
-    /* On desktop, inset the description without internal scrolling or fixed heights. */
-    body > article.listening-responsive > .listening-description {
-        margin-bottom: calc(var(--space) - 0.3rem);
-        padding: 0.65em 0.95em;
-        overflow: visible;
-    }
-
-    /* Slightly reduce desktop description type to offset the panel's added padding. */
-    body > article.listening-responsive > .listening-description > p {
-        font-size: 0.94rem;
-        line-height: 1.5;
-    }
-
-    /* Keep Artist and Track in one inset box instead of two separate boxes. */
-    body > article.listening-responsive > .listening-meta {
+    article.listening-responsive > .listening-meta {
         padding: 0.22em 0.95em 0.26em;
     }
 
-    /* Preserve two aligned metadata rows inside the new landscape inset box. */
-    body > article.listening-responsive > .listening-meta > span {
-        display: grid;
-        grid-template-columns: 4rem minmax(0, 1fr);
-        align-items: center;
-        gap: 0.55rem;
-        min-width: 0;
-        /* Reserve a full one-line metadata row before a sample starts playing. */
+    article.listening-responsive > .listening-meta > span {
         min-height: 2.3em;
         padding: 0.4rem 0;
         font-size: 1.12rem;
         line-height: 1.5;
     }
 
-    /* Separate Artist and Track with the same subtle themed dividing line as portrait. */
-    body > article.listening-responsive > .listening-meta > span + span {
-        border-top: 0.09em solid var(--listening-panel-line);
-    }
-
-    /* Keep Stop with the audio buttons, clear of the new metadata panel. */
-    body > article.listening-responsive > div:first-of-type > [data-stop] {
+    article.listening-responsive > .listening-controls > [data-stop] {
         position: static;
         margin-left: auto;
     }
 }
 
 /*---------------------------------------------------------------------------
-Portrait Mode
+Portrait mode
 ---------------------------------------------------------------------------*/
 
-/* Groups every site-wide portrait-only override into a single orientation mode. */
 @media (orientation: portrait) {
-    /* Keep off-screen vinyl, guitar and deck artwork from widening the page's scroll area. */
+
+    /*---------------------------------------------------------------------------
+    Portrait: Global + landing page
+    ---------------------------------------------------------------------------*/
+
     html:has(> body.genres-index),
     body.genres-index {
         overflow-x: clip;
     }
 
-    /* Global typography and scrollbars */
-
-    /* Scales root typography to portrait viewport width. */
     html {
         font-size: 3.5vw;
     }
 
-    /* Suppresses WebKit scrollbar width in portrait mode. */
     ::-webkit-scrollbar {
         width: 0;
     }
 
-    /* Home page */
-
-    /* Enlarges the centred landing-page content for portrait screens. */
     body:not(.genres-index) > main {
         font-size: 7vw;
     }
 
-    /* Genre grid: navigation and search */
+    /*---------------------------------------------------------------------------
+    Portrait: Genre grids
+    ---------------------------------------------------------------------------*/
 
-    /* Makes the genre-grid breadcrumb/search bar a compact normal-flow row in portrait. */
+    .genres-index {
+        --grid-navigation-height: 12.25vw;
+        --grid-search-slot: 8.05vw;
+        --grid-search-glyph: 5.6vw;
+        --grid-search-field-height: 9.8vw;
+    }
+
     .genres-index .genres-header {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        min-height: 3.5rem;
         flex-wrap: wrap;
-        gap: 0.65rem;
-        padding: 0.35rem 0;
+        padding: 1.22vw 0;
     }
 
-    /* Reduces the search-button slot height to match the compact portrait navigation row. */
-    .genres-index .genres-search-host {
-        height: 3.5rem;
-    }
-
-    /* Allows the portrait grid navigation toolbar to fill and distribute its available width. */
     .genres-toolbar {
         width: 100%;
         justify-content: space-between;
-        gap: 1rem;
     }
 
-    /* Breadcrumbs */
-
-    /* Keeps grid breadcrumbs and search on a single portrait row with a smaller gap. */
-    body.genres-index .genres-header--breadcrumbs {
+    .genres-index .genres-header--breadcrumbs {
         flex-wrap: nowrap;
         gap: 0.7rem;
     }
 
-    /* Keeps the portrait grid search toolbar compact and aligned at the far right. */
-    body.genres-index .genres-header--breadcrumbs .genres-toolbar {
+    .genres-index .genres-header--breadcrumbs .genres-toolbar {
         width: auto;
         justify-content: flex-end;
-        gap: 0.65rem;
     }
 
-    /* Reduces breadcrumb font size so uppercase navigation fits narrow screens. */
-    .genres-breadcrumbs {
-        font-size: clamp(0.72rem, 2.2vw, 0.9rem);
+    .genres-index .genres-breadcrumbs {
+        font-size: 2.52vw;
+        gap: 1.4vw;
     }
 
-    /* Tightens the gap between breadcrumb segments on portrait genre-grid pages. */
-    body.genres-index .genres-header--breadcrumbs .genres-breadcrumbs {
-        gap: 0.39rem;
+    .genres-index .genres-search {
+        top: calc(50% - 4.9vw);
+        --subgenre-search-width: 74vw;
+        font-size: 3.5vw;
+        border-radius: 1.58vw;
     }
 
-    /* Tightens listening-page breadcrumb typography and spacing in portrait. */
-    body > article > .subgenre-breadcrumbs {
+    .genres-index .genres-search input {
+        padding: 1.47vw 10.5vw 1.47vw 2.63vw;
+    }
+
+    .subgenre-breadcrumbs {
         flex: 0 0 auto;
         font-size: 0.78rem;
         margin-bottom: 0.85rem;
     }
 
-    /* Genre grid: artwork, introduction and cards */
-
-    /* Moves and enlarges the same vinyl artwork layer for portrait screens. */
     .genres-index:not(.genres-section) .genres-shell::before {
         top: -1.5rem;
         right: -75vw;
@@ -1220,43 +1147,35 @@ Portrait Mode
         filter: drop-shadow(0 0.6rem 0.9rem rgba(0, 0, 0, 0.52));
     }
 
-    /* Sizes large genre-grid headings relative to portrait viewport width. */
     .genres-index .genres-hero h1 {
         font-size: 16.8vw;
     }
 
-    /* Rounds every layer of a portrait genre card more generously. */
     .genres-grid > a {
         --genres-card-radius: 3.5em;
     }
 
-    /* Tightens the intro’s top spacing while reserving room above portrait genre cards. */
     .genres-hero {
         min-height: 72vw;
         padding: 3vw 0 7vw;
-        align-items: start;
     }
 
-    /* Lets the main portrait “Explore Music Genres” heading occupy its natural word width. */
     .genres-hero > h1 {
         max-width: 100%;
         width: max-content;
     }
 
-    /* Matches portrait genre-grid introductions to the overview section's paragraph text size. */
     .genres-hero p {
         max-width: 26rem;
         font-size: 1rem;
     }
 
-    /* Switches the genre-card grid to a single-column portrait list with larger gaps. */
     .genres-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 5vw;
         padding-bottom: 3vw;
     }
 
-    /* Reorients the genre-card darkening gradient horizontally for wide, shallow portrait cards. */
     .genres-grid > a::before {
         background: linear-gradient(
             to right,
@@ -1267,12 +1186,10 @@ Portrait Mode
         );
     }
 
-    /* Changes genre-card images to shallow landscape crops in the portrait list. */
     .genres-grid > a > img {
         height: 25vw;
     }
 
-    /* Aligns portrait card icons and labels without letting long names stretch the card. */
     .genres-grid > a > span {
         display: flex;
         min-width: 0;
@@ -1283,7 +1200,6 @@ Portrait Mode
         text-align: left;
     }
 
-    /* Sizes portrait genre-card icons consistently beside their labels. */
     .genres-grid > a > span > img {
         flex: 0 0 18vw;
         width: 18vw;
@@ -1292,28 +1208,19 @@ Portrait Mode
         object-fit: contain;
     }
 
-    /* Rock and EDM genre grids */
-
-    /* Size short section pages to their content rather than leaving a blank 100vh tail. */
     .genres-section {
         min-height: 0;
     }
 
-    /* The shared .genres-grid bottom padding (3vw) plus body padding (2vw)
-       already gives Rock and EDM the intended 5vw gap beneath the last card. */
-
-    /* Lets Rock and EDM hero headings use the full available portrait width. */
     .genres-section .genres-hero > h1 {
         width: 100%;
     }
 
-    /* Removes Rock/EDM minimum hero height and controls the gap before their portrait cards. */
     .genres-section .genres-hero {
         min-height: 0;
         padding-bottom: 3rem;
     }
 
-    /* Repositions and resizes guitar artwork for the Rock page’s portrait composition. */
     .genres-section--rock .genres-shell::before {
         top: -1.25rem;
         right: -48vw;
@@ -1322,7 +1229,6 @@ Portrait Mode
         filter: drop-shadow(0 .6rem .85rem rgba(0, 0, 0, 0.55));
     }
 
-    /* Repositions and resizes CDJ artwork for the EDM page’s portrait composition. */
     .genres-section--edm .genres-shell::before {
         top: -2.5rem;
         right: -88vw;
@@ -1330,24 +1236,26 @@ Portrait Mode
         filter: drop-shadow(0 .55rem .9rem rgba(0, 0, 0, 0.52));
     }
 
-    /* Genre overview pages and search */
+    /*---------------------------------------------------------------------------
+    Portrait: Genre overview pages
+    ---------------------------------------------------------------------------*/
 
-    /* Wraps long overview page headings, such as “ALTERNATIVE”, inside the portrait screen. */
-    body.genre-overview > nav > h1 {
+    .genre-overview > nav > h1 {
         overflow-wrap: anywhere;
     }
 
-    /* Moves the overview search control to the upper-right breadcrumb row in portrait. */
-    body.genre-overview > section > .genre-overview-navigation {
-        position: absolute;
-        top: 0;
+    .genre-overview > nav > .genres-breadcrumbs {
+        font-size: 2.52vw;
+        gap: 1.4vw;
+    }
+
+    .genre-overview > section > .genre-overview-navigation {
         left: auto;
         right: 6vw;
         width: 2.3rem;
         color: #FFF;
     }
 
-    /* Uses a stronger, evenly distributed dark overlay on portrait overview backgrounds. */
     body.genre-overview {
         background-image:
             linear-gradient(
@@ -1358,35 +1266,34 @@ Portrait Mode
             ),
             var(--bg);
 
-        /* Enlarges portrait overview navigation text and its hover-marker thickness. */
         > nav {
             font-size: 6vw;
             --overview-marker-thickness: 0.72vw;
         }
 
-        /* Stacks the overview info panel under navigation with a themed top border in portrait. */
         > section {
             position: static;
             border-left: none;
             border-top: 0.5em solid var(--light);
+
+            padding-right: 1.5em;
         }
     }
 
-    /* Allows the overview search field to expand across most of the portrait screen. */
-    body.genre-overview > section .genre-overview-navigation .genres-search {
+    .genre-overview-navigation .genres-search {
         --subgenre-search-width: min(23rem, calc(100vw - 3rem));
     }
 
-    /* Subgenre listening pages */
+    /*---------------------------------------------------------------------------
+    Portrait: Subgenre listening pages
+    ---------------------------------------------------------------------------*/
 
-    /* Sizes portrait listening pages to viewport height and clips page-level overflow. */
     body:has(> article) {
         height: 100dvh;
         padding: 2em;
         overflow: hidden;
     }
 
-    /* Turns the listening card into a fixed-height vertical layout in portrait. */
     body > article {
         height: 100%;
         max-width: none;
@@ -1395,20 +1302,16 @@ Portrait Mode
         flex-direction: column;
         overflow: hidden;
 
-        /* Stops portrait title and audio controls shrinking as the description scrolls. */
         > h1,
-        > div:first-of-type {
+        > .listening-controls {
             flex-shrink: 0;
         }
 
-        /* Tightens title spacing and removes the landscape badge clearance in portrait. */
         > h1 {
             margin-bottom: 0.25em;
             padding-right: 0;
 
-            /* Places the listening-page year badge below the title rather than in its corner. */
             > span {
-                position: static;
                 display: block;
                 width: fit-content;
                 margin-top: 0.6em;
@@ -1416,30 +1319,22 @@ Portrait Mode
             }
         }
 
-        /* Arranges numbered samples and Stop in a five-column portrait control grid. */
-        > div:first-of-type {
+        > .listening-controls {
             display: grid;
             grid-template-columns: repeat(5, max-content);
             justify-content: space-between;
             row-gap: var(--space);
 
-            /* Returns the Stop control to normal grid flow as the tenth control in portrait. */
-            > [data-stop] {
-                position: static;
-            }
         }
     }
 
-    /* Fine-tunes the root text scale for portrait listening pages only. */
     html:has(> body > article.listening-responsive) {
         font-size: 3.3vw;
     }
 
-    /* Sizes the portrait description panel and enables internal scrolling with a themed scrollbar. */
-    body > article.listening-responsive > .listening-description {
+    article.listening-responsive > .listening-description {
         flex: 1 1 auto;
         min-height: 0;
-        margin-bottom: calc(var(--space) - 0.3rem);
         padding: 0.68em 0.95em;
         overflow-y: auto;
         overscroll-behavior: contain;
@@ -1447,43 +1342,24 @@ Portrait Mode
         scrollbar-color: var(--light) transparent;
     }
 
-    /* Uses a narrower scrollbar inside portrait listening descriptions. */
-    body > article.listening-responsive > .listening-description::-webkit-scrollbar {
+    article.listening-responsive > .listening-description::-webkit-scrollbar {
         width: 0.35em;
     }
 
-    /* Colours the portrait listening-description scrollbar thumb with the genre’s light shade. */
-    body > article.listening-responsive > .listening-description::-webkit-scrollbar-thumb {
+    article.listening-responsive > .listening-description::-webkit-scrollbar-thumb {
         background: var(--light);
     }
 
-    /* Reserves the populated panel height before a sample starts, preventing portrait layout shifts. */
-    body > article.listening-responsive > .listening-meta {
+    article.listening-responsive > .listening-meta {
         flex: 0 0 auto;
         position: relative;
         padding: 0.28em 0.95em 0.32em;
         min-height: 6.2em;
     }
 
-    /* Keeps Artist/Track rows tall enough for their values before playback begins. */
-    body > article.listening-responsive > .listening-meta > span {
-        display: grid;
-        grid-template-columns: 4rem minmax(0, 1fr);
-        align-items: center;
-        gap: 0.55rem;
-        min-width: 0;
+    article.listening-responsive > .listening-meta > span {
         min-height: 2.7em;
         padding: 0.5rem 0;
         line-height: 1.6;
-    }
-
-    /* Draws a themed dividing line between the two boxed metadata rows. */
-    body > article.listening-responsive > .listening-meta > span + span {
-        border-top: 0.09em solid var(--listening-panel-line);
-    }
-
-    /* Removes the extra transform from the portrait Stop control. */
-    body > article.listening-responsive > div:first-of-type > [data-stop] {
-        transform: none;
     }
 }
