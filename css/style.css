@@ -874,6 +874,12 @@ body.genre-overview {
     }
 }
 
+@media (orientation: landscape) {
+    .genre-overview > section > .genre-overview-navigation + h2::after {
+        width: max(0px, calc(100cqw - 100% - 3rem));
+    }
+}
+
 /*---------------------------------------------------------------------------
 Subgenre listening pages
 ---------------------------------------------------------------------------*/
@@ -980,7 +986,7 @@ article.listening-responsive > :is(.listening-description, .listening-meta) {
     min-width: 0;
     border: 0.12em solid var(--listening-panel-line);
     border-radius: 1.1em;
-    background: var(--listening-panel-fill);
+    background: color-mix(in srgb, var(--listening-panel-fill) 97%, transparent);
 }
 
 article.listening-responsive > .listening-description {
